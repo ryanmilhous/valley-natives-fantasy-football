@@ -1,0 +1,1304 @@
+{
+  "Nick Smielak": {
+    "Greg Swenson": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 606.9300000000001,
+      "points_against": 570.4300000000001
+    },
+    "Jeremy Settles": {
+      "wins": 5,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 707.3299999999999,
+      "points_against": 568.2099999999999
+    },
+    "Ben Beck": {
+      "wins": 6,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 784.29,
+      "points_against": 589.66
+    },
+    "Brendan Romale": {
+      "wins": 5,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 729.76,
+      "points_against": 686.26
+    },
+    "Jacob Luna": {
+      "wins": 5,
+      "losses": 8,
+      "ties": 0,
+      "points_for": 1388.8000000000002,
+      "points_against": 1354.66
+    },
+    "Jamie Coffis": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 553.5300000000001,
+      "points_against": 537.02
+    },
+    "Chris Vitale": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 621.6,
+      "points_against": 529.74
+    },
+    "Garrett Ulrich": {
+      "wins": 6,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 756.4899999999999,
+      "points_against": 561.95
+    },
+    "Kellen Coffis": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 655.23,
+      "points_against": 531.4
+    },
+    "Kyle Poppen": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 564.4300000000001,
+      "points_against": 517.23
+    },
+    "Rory McKee": {
+      "wins": 5,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 771.35,
+      "points_against": 640.51
+    },
+    "Ryan Milhous": {
+      "wins": 1,
+      "losses": 8,
+      "ties": 0,
+      "points_for": 888.4799999999999,
+      "points_against": 1171.43
+    },
+    "Bryan Whitaker": {
+      "wins": 2,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 753.19,
+      "points_against": 957.7099999999999
+    }
+  },
+  "Greg Swenson": {
+    "Nick Smielak": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 570.4300000000001,
+      "points_against": 606.9300000000001
+    },
+    "Ben Beck": {
+      "wins": 4,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 740.5,
+      "points_against": 694.28
+    },
+    "Jacob Luna": {
+      "wins": 0,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 545.65,
+      "points_against": 593.8800000000001
+    },
+    "Chris Vitale": {
+      "wins": 7,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 978.08,
+      "points_against": 811.35
+    },
+    "Kellen Coffis": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 571.71,
+      "points_against": 500.60999999999996
+    },
+    "Rory McKee": {
+      "wins": 5,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 1176.47,
+      "points_against": 1151.25
+    },
+    "Bryan Whitaker": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 569.97,
+      "points_against": 497.54
+    },
+    "Jeremy Settles": {
+      "wins": 3,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 868.28,
+      "points_against": 892.8600000000001
+    },
+    "Brendan Romale": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 555.06,
+      "points_against": 544.4100000000001
+    },
+    "Jamie Coffis": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 523.99,
+      "points_against": 508.13
+    },
+    "Garrett Ulrich": {
+      "wins": 5,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 782.27,
+      "points_against": 652.1000000000001
+    },
+    "Kyle Poppen": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 542.21,
+      "points_against": 555.58
+    },
+    "Ryan Milhous": {
+      "wins": 4,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 1051.36,
+      "points_against": 1126.0200000000002
+    }
+  },
+  "Jeremy Settles": {
+    "Bryan Whitaker": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 597.59,
+      "points_against": 520.47
+    },
+    "Nick Smielak": {
+      "wins": 1,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 568.2099999999999,
+      "points_against": 707.3299999999999
+    },
+    "Brendan Romale": {
+      "wins": 6,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 815.02,
+      "points_against": 661.21
+    },
+    "Jamie Coffis": {
+      "wins": 6,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 913.4300000000001,
+      "points_against": 857.1899999999999
+    },
+    "Garrett Ulrich": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 542.74,
+      "points_against": 398.32
+    },
+    "Kyle Poppen": {
+      "wins": 6,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 836.58,
+      "points_against": 706.76
+    },
+    "Ryan Milhous": {
+      "wins": 1,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 580.12,
+      "points_against": 660.36
+    },
+    "Greg Swenson": {
+      "wins": 5,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 892.8600000000001,
+      "points_against": 868.28
+    },
+    "Ben Beck": {
+      "wins": 2,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 631.33,
+      "points_against": 626.57
+    },
+    "Jacob Luna": {
+      "wins": 6,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 894.5000000000001,
+      "points_against": 939.6999999999999
+    },
+    "Chris Vitale": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 510.08000000000004,
+      "points_against": 498.42999999999995
+    },
+    "Kellen Coffis": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 637.02,
+      "points_against": 582.21
+    },
+    "Rory McKee": {
+      "wins": 4,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 679.9000000000001,
+      "points_against": 636.8100000000001
+    }
+  },
+  "Bryan Whitaker": {
+    "Jeremy Settles": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 520.47,
+      "points_against": 597.59
+    },
+    "Brendan Romale": {
+      "wins": 3,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 691.6899999999999,
+      "points_against": 690.0799999999999
+    },
+    "Jamie Coffis": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 485.24999999999994,
+      "points_against": 488.91
+    },
+    "Garrett Ulrich": {
+      "wins": 4,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 629.5499999999998,
+      "points_against": 616.0
+    },
+    "Kyle Poppen": {
+      "wins": 5,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 859.37,
+      "points_against": 593.62
+    },
+    "Ryan Milhous": {
+      "wins": 2,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 623.5699999999999,
+      "points_against": 683.69
+    },
+    "Greg Swenson": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 497.54,
+      "points_against": 569.97
+    },
+    "Ben Beck": {
+      "wins": 7,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 992.8899999999999,
+      "points_against": 839.0200000000001
+    },
+    "Jacob Luna": {
+      "wins": 3,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 810.3400000000001,
+      "points_against": 854.55
+    },
+    "Chris Vitale": {
+      "wins": 4,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 734.9300000000001,
+      "points_against": 779.28
+    },
+    "Kellen Coffis": {
+      "wins": 3,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 718.9299999999998,
+      "points_against": 615.75
+    },
+    "Rory McKee": {
+      "wins": 3,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 697.7800000000001,
+      "points_against": 712.1
+    },
+    "Nick Smielak": {
+      "wins": 5,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 957.7099999999999,
+      "points_against": 753.19
+    }
+  },
+  "Ben Beck": {
+    "Ryan Milhous": {
+      "wins": 4,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 836.77,
+      "points_against": 827.18
+    },
+    "Greg Swenson": {
+      "wins": 3,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 694.28,
+      "points_against": 740.5
+    },
+    "Nick Smielak": {
+      "wins": 0,
+      "losses": 6,
+      "ties": 0,
+      "points_for": 589.66,
+      "points_against": 784.29
+    },
+    "Jacob Luna": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 598.6199999999999,
+      "points_against": 596.3000000000001
+    },
+    "Chris Vitale": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 545.38,
+      "points_against": 559.8
+    },
+    "Kellen Coffis": {
+      "wins": 4,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 808.5100000000001,
+      "points_against": 796.67
+    },
+    "Rory McKee": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 525.18,
+      "points_against": 492.08
+    },
+    "Bryan Whitaker": {
+      "wins": 2,
+      "losses": 7,
+      "ties": 0,
+      "points_for": 839.0200000000001,
+      "points_against": 992.8899999999999
+    },
+    "Jeremy Settles": {
+      "wins": 4,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 626.57,
+      "points_against": 631.33
+    },
+    "Brendan Romale": {
+      "wins": 5,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 666.74,
+      "points_against": 604.16
+    },
+    "Jamie Coffis": {
+      "wins": 4,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 816.02,
+      "points_against": 796.6
+    },
+    "Garrett Ulrich": {
+      "wins": 6,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 768.6100000000001,
+      "points_against": 521.42
+    },
+    "Kyle Poppen": {
+      "wins": 4,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 697.6,
+      "points_against": 580.18
+    }
+  },
+  "Ryan Milhous": {
+    "Ben Beck": {
+      "wins": 3,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 827.18,
+      "points_against": 836.77
+    },
+    "Jacob Luna": {
+      "wins": 3,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 659.03,
+      "points_against": 674.6899999999999
+    },
+    "Chris Vitale": {
+      "wins": 3,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 629.5600000000001,
+      "points_against": 660.9
+    },
+    "Kellen Coffis": {
+      "wins": 4,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 861.11,
+      "points_against": 831.17
+    },
+    "Rory McKee": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 524.55,
+      "points_against": 603.76
+    },
+    "Bryan Whitaker": {
+      "wins": 4,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 683.69,
+      "points_against": 623.5699999999999
+    },
+    "Jeremy Settles": {
+      "wins": 5,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 660.36,
+      "points_against": 580.12
+    },
+    "Brendan Romale": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 551.58,
+      "points_against": 441.98
+    },
+    "Jamie Coffis": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 479.25,
+      "points_against": 490.47
+    },
+    "Garrett Ulrich": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 620.62,
+      "points_against": 461.31
+    },
+    "Kyle Poppen": {
+      "wins": 4,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 774.26,
+      "points_against": 703.77
+    },
+    "Nick Smielak": {
+      "wins": 8,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 1171.43,
+      "points_against": 888.4799999999999
+    },
+    "Greg Swenson": {
+      "wins": 5,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 1126.0200000000002,
+      "points_against": 1051.36
+    }
+  },
+  "Brendan Romale": {
+    "Rory McKee": {
+      "wins": 4,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 638.46,
+      "points_against": 547.58
+    },
+    "Bryan Whitaker": {
+      "wins": 3,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 690.0799999999999,
+      "points_against": 691.6899999999999
+    },
+    "Jeremy Settles": {
+      "wins": 1,
+      "losses": 6,
+      "ties": 0,
+      "points_for": 661.21,
+      "points_against": 815.02
+    },
+    "Nick Smielak": {
+      "wins": 1,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 686.26,
+      "points_against": 729.76
+    },
+    "Jamie Coffis": {
+      "wins": 3,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 783.69,
+      "points_against": 865.4699999999999
+    },
+    "Garrett Ulrich": {
+      "wins": 4,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 761.87,
+      "points_against": 657.52
+    },
+    "Kyle Poppen": {
+      "wins": 5,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 829.07,
+      "points_against": 661.88
+    },
+    "Ryan Milhous": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 441.98,
+      "points_against": 551.58
+    },
+    "Greg Swenson": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 544.4100000000001,
+      "points_against": 555.06
+    },
+    "Ben Beck": {
+      "wins": 1,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 604.16,
+      "points_against": 666.74
+    },
+    "Jacob Luna": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 494.51,
+      "points_against": 609.8299999999999
+    },
+    "Chris Vitale": {
+      "wins": 1,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 615.96,
+      "points_against": 689.77
+    },
+    "Kellen Coffis": {
+      "wins": 4,
+      "losses": 7,
+      "ties": 0,
+      "points_for": 1130.5299999999997,
+      "points_against": 1138.38
+    }
+  },
+  "Rory McKee": {
+    "Brendan Romale": {
+      "wins": 2,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 547.58,
+      "points_against": 638.46
+    },
+    "Jamie Coffis": {
+      "wins": 3,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 737.6099999999999,
+      "points_against": 741.3
+    },
+    "Garrett Ulrich": {
+      "wins": 4,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 613.8100000000001,
+      "points_against": 592.44
+    },
+    "Kyle Poppen": {
+      "wins": 6,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 890.96,
+      "points_against": 816.7299999999999
+    },
+    "Ryan Milhous": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 603.76,
+      "points_against": 524.55
+    },
+    "Greg Swenson": {
+      "wins": 5,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 1151.25,
+      "points_against": 1176.47
+    },
+    "Ben Beck": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 492.08,
+      "points_against": 525.18
+    },
+    "Jacob Luna": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 603.57,
+      "points_against": 505.37
+    },
+    "Chris Vitale": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 445.37999999999994,
+      "points_against": 569.98
+    },
+    "Kellen Coffis": {
+      "wins": 5,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 866.6499999999999,
+      "points_against": 641.69
+    },
+    "Nick Smielak": {
+      "wins": 1,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 640.51,
+      "points_against": 771.35
+    },
+    "Bryan Whitaker": {
+      "wins": 4,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 712.1,
+      "points_against": 697.7800000000001
+    },
+    "Jeremy Settles": {
+      "wins": 2,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 636.8100000000001,
+      "points_against": 679.9000000000001
+    }
+  },
+  "Kyle Poppen": {
+    "Jacob Luna": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 524.28,
+      "points_against": 547.3399999999999
+    },
+    "Chris Vitale": {
+      "wins": 3,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 733.79,
+      "points_against": 767.51
+    },
+    "Kellen Coffis": {
+      "wins": 3,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 578.0,
+      "points_against": 617.36
+    },
+    "Rory McKee": {
+      "wins": 2,
+      "losses": 6,
+      "ties": 0,
+      "points_for": 816.7299999999999,
+      "points_against": 890.96
+    },
+    "Bryan Whitaker": {
+      "wins": 2,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 593.62,
+      "points_against": 859.37
+    },
+    "Jeremy Settles": {
+      "wins": 2,
+      "losses": 6,
+      "ties": 0,
+      "points_for": 706.76,
+      "points_against": 836.58
+    },
+    "Brendan Romale": {
+      "wins": 2,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 661.88,
+      "points_against": 829.07
+    },
+    "Jamie Coffis": {
+      "wins": 6,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 725.4999999999999,
+      "points_against": 678.4499999999999
+    },
+    "Garrett Ulrich": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 539.45,
+      "points_against": 389.5
+    },
+    "Nick Smielak": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 517.23,
+      "points_against": 564.4300000000001
+    },
+    "Ryan Milhous": {
+      "wins": 3,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 703.77,
+      "points_against": 774.26
+    },
+    "Greg Swenson": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 555.58,
+      "points_against": 542.21
+    },
+    "Ben Beck": {
+      "wins": 2,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 580.18,
+      "points_against": 697.6
+    }
+  },
+  "Jacob Luna": {
+    "Kyle Poppen": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 547.3399999999999,
+      "points_against": 524.28
+    },
+    "Ryan Milhous": {
+      "wins": 3,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 674.6899999999999,
+      "points_against": 659.03
+    },
+    "Greg Swenson": {
+      "wins": 5,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 593.8800000000001,
+      "points_against": 545.65
+    },
+    "Ben Beck": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 596.3000000000001,
+      "points_against": 598.6199999999999
+    },
+    "Nick Smielak": {
+      "wins": 8,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 1354.66,
+      "points_against": 1388.8000000000002
+    },
+    "Chris Vitale": {
+      "wins": 5,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 812.6700000000001,
+      "points_against": 716.2700000000001
+    },
+    "Kellen Coffis": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 514.6700000000001,
+      "points_against": 549.1300000000001
+    },
+    "Rory McKee": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 505.37,
+      "points_against": 603.57
+    },
+    "Bryan Whitaker": {
+      "wins": 4,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 854.55,
+      "points_against": 810.3400000000001
+    },
+    "Jeremy Settles": {
+      "wins": 3,
+      "losses": 6,
+      "ties": 0,
+      "points_for": 939.6999999999999,
+      "points_against": 894.5000000000001
+    },
+    "Brendan Romale": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 609.8299999999999,
+      "points_against": 494.51
+    },
+    "Jamie Coffis": {
+      "wins": 6,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 701.8800000000001,
+      "points_against": 566.1899999999999
+    },
+    "Garrett Ulrich": {
+      "wins": 5,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 781.21,
+      "points_against": 658.6099999999999
+    }
+  },
+  "Kellen Coffis": {
+    "Jamie Coffis": {
+      "wins": 4,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 588.23,
+      "points_against": 524.9000000000001
+    },
+    "Garrett Ulrich": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 456.42999999999995,
+      "points_against": 521.92
+    },
+    "Kyle Poppen": {
+      "wins": 3,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 617.36,
+      "points_against": 578.0
+    },
+    "Ryan Milhous": {
+      "wins": 4,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 831.17,
+      "points_against": 861.11
+    },
+    "Greg Swenson": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 500.60999999999996,
+      "points_against": 571.71
+    },
+    "Ben Beck": {
+      "wins": 4,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 796.67,
+      "points_against": 808.5100000000001
+    },
+    "Jacob Luna": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 549.1300000000001,
+      "points_against": 514.6700000000001
+    },
+    "Chris Vitale": {
+      "wins": 0,
+      "losses": 7,
+      "ties": 0,
+      "points_for": 565.64,
+      "points_against": 799.73
+    },
+    "Nick Smielak": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 531.4,
+      "points_against": 655.23
+    },
+    "Rory McKee": {
+      "wins": 2,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 641.69,
+      "points_against": 866.6499999999999
+    },
+    "Bryan Whitaker": {
+      "wins": 3,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 615.75,
+      "points_against": 718.9299999999998
+    },
+    "Jeremy Settles": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 582.21,
+      "points_against": 637.02
+    },
+    "Brendan Romale": {
+      "wins": 7,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 1138.38,
+      "points_against": 1130.5299999999997
+    }
+  },
+  "Jamie Coffis": {
+    "Kellen Coffis": {
+      "wins": 2,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 524.9000000000001,
+      "points_against": 588.23
+    },
+    "Rory McKee": {
+      "wins": 5,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 741.3,
+      "points_against": 737.6099999999999
+    },
+    "Bryan Whitaker": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 488.91,
+      "points_against": 485.24999999999994
+    },
+    "Jeremy Settles": {
+      "wins": 2,
+      "losses": 6,
+      "ties": 0,
+      "points_for": 857.1899999999999,
+      "points_against": 913.4300000000001
+    },
+    "Brendan Romale": {
+      "wins": 4,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 865.4699999999999,
+      "points_against": 783.69
+    },
+    "Nick Smielak": {
+      "wins": 3,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 537.02,
+      "points_against": 553.5300000000001
+    },
+    "Garrett Ulrich": {
+      "wins": 6,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 871.4799999999998,
+      "points_against": 723.96
+    },
+    "Kyle Poppen": {
+      "wins": 2,
+      "losses": 6,
+      "ties": 0,
+      "points_for": 678.4499999999999,
+      "points_against": 725.4999999999999
+    },
+    "Ryan Milhous": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 490.47,
+      "points_against": 479.25
+    },
+    "Greg Swenson": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 508.13,
+      "points_against": 523.99
+    },
+    "Ben Beck": {
+      "wins": 3,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 796.6,
+      "points_against": 816.02
+    },
+    "Jacob Luna": {
+      "wins": 0,
+      "losses": 6,
+      "ties": 0,
+      "points_for": 566.1899999999999,
+      "points_against": 701.8800000000001
+    },
+    "Chris Vitale": {
+      "wins": 2,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 561.3100000000001,
+      "points_against": 636.69
+    }
+  },
+  "Chris Vitale": {
+    "Garrett Ulrich": {
+      "wins": 5,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 955.24,
+      "points_against": 932.5999999999999
+    },
+    "Kyle Poppen": {
+      "wins": 4,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 767.51,
+      "points_against": 733.79
+    },
+    "Ryan Milhous": {
+      "wins": 3,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 660.9,
+      "points_against": 629.5600000000001
+    },
+    "Greg Swenson": {
+      "wins": 1,
+      "losses": 7,
+      "ties": 0,
+      "points_for": 811.35,
+      "points_against": 978.08
+    },
+    "Ben Beck": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 559.8,
+      "points_against": 545.38
+    },
+    "Jacob Luna": {
+      "wins": 2,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 716.2700000000001,
+      "points_against": 812.6700000000001
+    },
+    "Nick Smielak": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 529.74,
+      "points_against": 621.6
+    },
+    "Kellen Coffis": {
+      "wins": 7,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 799.73,
+      "points_against": 565.64
+    },
+    "Rory McKee": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 569.98,
+      "points_against": 445.37999999999994
+    },
+    "Bryan Whitaker": {
+      "wins": 3,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 779.28,
+      "points_against": 734.9300000000001
+    },
+    "Jeremy Settles": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 0,
+      "points_for": 498.42999999999995,
+      "points_against": 510.08000000000004
+    },
+    "Brendan Romale": {
+      "wins": 5,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 689.77,
+      "points_against": 615.96
+    },
+    "Jamie Coffis": {
+      "wins": 4,
+      "losses": 2,
+      "ties": 0,
+      "points_for": 636.69,
+      "points_against": 561.3100000000001
+    }
+  },
+  "Garrett Ulrich": {
+    "Chris Vitale": {
+      "wins": 5,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 932.5999999999999,
+      "points_against": 955.24
+    },
+    "Kellen Coffis": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 0,
+      "points_for": 521.92,
+      "points_against": 456.42999999999995
+    },
+    "Rory McKee": {
+      "wins": 2,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 592.44,
+      "points_against": 613.8100000000001
+    },
+    "Bryan Whitaker": {
+      "wins": 3,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 616.0,
+      "points_against": 629.5499999999998
+    },
+    "Jeremy Settles": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 398.32,
+      "points_against": 542.74
+    },
+    "Brendan Romale": {
+      "wins": 3,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 657.52,
+      "points_against": 761.87
+    },
+    "Jamie Coffis": {
+      "wins": 2,
+      "losses": 6,
+      "ties": 0,
+      "points_for": 723.96,
+      "points_against": 871.4799999999998
+    },
+    "Nick Smielak": {
+      "wins": 0,
+      "losses": 6,
+      "ties": 0,
+      "points_for": 561.95,
+      "points_against": 756.4899999999999
+    },
+    "Kyle Poppen": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 389.5,
+      "points_against": 539.45
+    },
+    "Ryan Milhous": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 0,
+      "points_for": 461.31,
+      "points_against": 620.62
+    },
+    "Greg Swenson": {
+      "wins": 2,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 652.1000000000001,
+      "points_against": 782.27
+    },
+    "Ben Beck": {
+      "wins": 1,
+      "losses": 6,
+      "ties": 0,
+      "points_for": 521.42,
+      "points_against": 768.6100000000001
+    },
+    "Jacob Luna": {
+      "wins": 1,
+      "losses": 5,
+      "ties": 0,
+      "points_for": 658.6099999999999,
+      "points_against": 781.21
+    }
+  }
+}

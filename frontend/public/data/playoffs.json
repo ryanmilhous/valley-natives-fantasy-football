@@ -1,0 +1,52 @@
+[
+  {
+    "year": 2020,
+    "champion": "RichCity Yung Beevs",
+    "runner_up": "The Kellen Brothers",
+    "semifinalists": [
+      "B-LO Bleezos",
+      "S.F. Forty-Chiners"
+    ],
+    "playoff_teams": []
+  },
+  {
+    "year": 2021,
+    "champion": "The Pudd'n \ud83d\udc2c",
+    "runner_up": "Ding Dong Doid Brains",
+    "semifinalists": [
+      "RichCity Yung Beevs",
+      "Prime Time"
+    ],
+    "playoff_teams": []
+  },
+  {
+    "year": 2022,
+    "champion": "Ding Dong Doid Brains",
+    "runner_up": "The Smi Pies",
+    "semifinalists": [
+      "Emancipation of Jim and Vicki",
+      "Prime Time"
+    ],
+    "playoff_teams": []
+  },
+  {
+    "year": 2023,
+    "champion": "For Those About To Brock",
+    "runner_up": "Tampon Bay Blumpkineers",
+    "semifinalists": [
+      "The Smi Pies",
+      "Ding Dong Doid Brains"
+    ],
+    "playoff_teams": []
+  },
+  {
+    "year": 2024,
+    "champion": "Felton Sluggers",
+    "runner_up": "S.F. Forty-Chiners",
+    "semifinalists": [
+      "The Smi Pies",
+      "Tampon Bay Blumpkineers"
+    ],
+    "playoff_teams": []
+  }
+]
