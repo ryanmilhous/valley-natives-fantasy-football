@@ -19,6 +19,7 @@ OWNER_NAME_MAPPING = {
     'scson': 'Chris Vitale',
     'Kcoff07': 'Kellen Coffis',
     'Jamie Coffis': 'Jamie Coffis',
+    'touchcoffis86': 'Jamie Coffis',  # Old username (2010-2019)
     'gchildnl': 'Garrett Ulrich',
     'gswens83': 'Greg Swenson',
     'JeremySettles13': 'Jeremy Settles',
@@ -28,9 +29,14 @@ OWNER_NAME_MAPPING = {
     '17whitaker': 'Bryan Whitaker',
     'brom66': 'Brendan Romale',
     'Ryan Milhous': 'Ryan Milhous',
+    'kweezy31': 'Kellen Coffis',  # Old username (2010-2019)
     'HIS TIGHTNESS': 'Ben Beck',
     'kpop027': 'Kyle Poppen',
     'Benbasketball101': 'Ben Beck',  # Alternative username for Ben Beck
+    'bvitale1313': 'Bryan Vitale',  # 2010-2014
+    'bryanvitale': 'Bryan Vitale',  # 2017
+    '12inchnick': 'Nick Smielak',  # 2010-2012
+    'TPUSNESS': 'TPUSNESS',  # 2010-2014
 }
 
 

@@ -1,5 +1,105 @@
 [
   {
+    "year": 2010,
+    "champion": "Lo-Carb Monsters",
+    "runner_up": "Prime Time",
+    "semifinalists": [
+      "The Graduates",
+      "RIP Chris"
+    ],
+    "playoff_teams": []
+  },
+  {
+    "year": 2011,
+    "champion": "The Ghosts of Polak Past",
+    "runner_up": "S.F. Forty-Chiners",
+    "semifinalists": [
+      "Felton Sluggers",
+      "High Hopes"
+    ],
+    "playoff_teams": []
+  },
+  {
+    "year": 2012,
+    "champion": "The Replacement Graduates",
+    "runner_up": "B-Rom Baby  Bears",
+    "semifinalists": [
+      "What would MichaelVick do?",
+      "S.F. Forty-Chiners"
+    ],
+    "playoff_teams": []
+  },
+  {
+    "year": 2013,
+    "champion": "Felton Sluggers",
+    "runner_up": "south brookdale regulaters",
+    "semifinalists": [
+      "Tampon Bay Blumpcaneers",
+      "Cherry Poppen"
+    ],
+    "playoff_teams": []
+  },
+  {
+    "year": 2014,
+    "champion": "Hustle Bustle And Man Muscle",
+    "runner_up": "Tampon Bay Blumpkineers",
+    "semifinalists": [
+      "Schmee Squad",
+      "Youth Movement  !!!!!!!"
+    ],
+    "playoff_teams": []
+  },
+  {
+    "year": 2015,
+    "champion": "Nano Bubbles  And  Abstinence",
+    "runner_up": "The Chronic",
+    "semifinalists": [
+      "Scroopy Noopers",
+      "S.F. Forty-Chiners"
+    ],
+    "playoff_teams": []
+  },
+  {
+    "year": 2016,
+    "champion": "Youth Movement  !!!!!!!",
+    "runner_up": "Felton Sluggers",
+    "semifinalists": [
+      "Prime Time",
+      "Cherry Poppen"
+    ],
+    "playoff_teams": []
+  },
+  {
+    "year": 2017,
+    "champion": "Acoreycy and Prosision",
+    "runner_up": "Schmee Squad",
+    "semifinalists": [
+      "No Starties Even Beats Me",
+      "Felton Sluggers"
+    ],
+    "playoff_teams": []
+  },
+  {
+    "year": 2018,
+    "champion": "Prime Time",
+    "runner_up": "King of  The Doids",
+    "semifinalists": [
+      "Be Stills My Fart ",
+      "S.F. Forty-Chiners"
+    ],
+    "playoff_teams": []
+  },
+  {
+    "year": 2019,
+    "champion": "Jackson5 \ud83d\udc2c",
+    "runner_up": "The Chronic",
+    "semifinalists": [
+      "King of  The Doids",
+      "S.F. Forty-Chiners"
+    ],
+    "playoff_teams": []
+  },
+  {
     "year": 2020,
     "champion": "RichCity Yung Beevs",
     "runner_up": "The Kellen Brothers",

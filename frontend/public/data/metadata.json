@@ -1,16 +1,26 @@
 {
-  "total_seasons": 5,
+  "total_seasons": 15,
   "years": [
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
     2020,
     2021,
     2022,
     2023,
     2024
   ],
-  "first_season": 2020,
+  "first_season": 2010,
   "latest_season": 2024,
   "total_teams": 14,
-  "total_matchups": 588,
-  "processed_at": "2025-12-22T16:20:10.191666",
-  "league_name": "Valley Natives"
+  "total_matchups": 700,
+  "processed_at": "2026-01-03T12:55:07.171494",
+  "league_name": "Valley natives"
 }

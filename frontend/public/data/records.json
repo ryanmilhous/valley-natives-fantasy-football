@@ -7,10 +7,10 @@
     "opponent": "The Pudd'n \ud83d\udc2c"
   },
   "lowest_score": {
-    "team": "King of  The Doids",
-    "score": 41.5,
-    "week": 16,
-    "year": 2021,
+    "team": "Foot-Loose and Fancy Free",
+    "score": 38.13,
+    "week": 13,
+    "year": 2019,
     "opponent": "S.F. Forty-Chiners"
   },
   "biggest_blowout": {
@@ -85,16 +85,16 @@
     "playoff_seed": null
   },
   "fewest_wins_season": {
-    "year": 2022,
-    "team_name": "The Lucky Lefties",
-    "owner": "Jamie Coffis",
-    "wins": 2,
-    "losses": 12,
+    "year": 2016,
+    "team_name": "S.F. Forty-Chiners",
+    "owner": "Brendan Romale",
+    "wins": 0,
+    "losses": 13,
     "ties": 0,
-    "points_for": 1347.12,
-    "points_against": 1657.8,
+    "points_for": 1134.11,
+    "points_against": 1401.12,
     "standing": 14,
-    "final_standing": 13,
+    "final_standing": 10,
     "playoff_seed": null
   },
   "longest_win_streak": {
