@@ -38,6 +38,13 @@ export const apiService = {
     return { data };
   },
 
+  // Owners
+  getOwners: async () => {
+    const owners = await fetchJSON('owners.json');
+    const data = Object.values(owners);
+    return { data };
+  },
+
   // Matchups
   getMatchups: async () => {
     const data = await fetchJSON('matchups.json');

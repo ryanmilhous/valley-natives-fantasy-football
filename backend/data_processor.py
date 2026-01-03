@@ -47,6 +47,7 @@ class FantasyDataProcessor:
         self.raw_data = {}
         self.processed_data = {
             'teams': {},
+            'owners': {},
             'matchups': [],
             'standings': [],
             'playoffs': [],
@@ -158,6 +159,82 @@ class FantasyDataProcessor:
             }
 
         print(f"Processed {len(self.processed_data['teams'])} teams")
+
+    def process_owners(self):
+        """Process owner-based statistics (aggregates data by owner across all teams/years)"""
+        owners_stats = defaultdict(lambda: {
+            'seasons': [],
+            'total_wins': 0,
+            'total_losses': 0,
+            'total_ties': 0,
+            'championships': 0,
+            'playoff_appearances': 0,
+            'total_points_for': 0,
+            'total_points_against': 0,
+            'years_active': set()
+        })
+
+        # Aggregate stats by owner across all seasons
+        for year, season_data in self.raw_data.items():
+            for team in season_data.get('teams', []):
+                owner = self.normalize_owner_name(team['owner'])
+                owner_info = owners_stats[owner]
+
+                # Track year
+                owner_info['years_active'].add(year)
+
+                # Add season stats
+                season_stats = {
+                    'year': year,
+                    'team_name': team['team_name'],
+                    'wins': team['wins'],
+                    'losses': team['losses'],
+                    'ties': team['ties'],
+                    'points_for': team['points_for'],
+                    'points_against': team['points_against'],
+                    'standing': team['standing'],
+                    'final_standing': team['final_standing'],
+                    'playoff_seed': team.get('playoff_seed')
+                }
+                owner_info['seasons'].append(season_stats)
+
+                # Aggregate totals
+                owner_info['total_wins'] += team['wins']
+                owner_info['total_losses'] += team['losses']
+                owner_info['total_ties'] += team['ties']
+                owner_info['total_points_for'] += team['points_for']
+                owner_info['total_points_against'] += team['points_against']
+
+                # Count championships and playoff appearances
+                if team['final_standing'] == 1:
+                    owner_info['championships'] += 1
+                if team.get('playoff_seed'):
+                    owner_info['playoff_appearances'] += 1
+
+        # Convert to final format
+        self.processed_data['owners'] = {}
+        for owner_name, info in owners_stats.items():
+            years_list = sorted(list(info['years_active']))
+            self.processed_data['owners'][owner_name] = {
+                'owner': owner_name,
+                'seasons_played': len(info['years_active']),
+                'years_active': years_list,
+                'first_season': min(years_list) if years_list else None,
+                'last_season': max(years_list) if years_list else None,
+                'seasons': sorted(info['seasons'], key=lambda x: x['year']),
+                'all_time': {
+                    'wins': info['total_wins'],
+                    'losses': info['total_losses'],
+                    'ties': info['total_ties'],
+                    'win_percentage': round(info['total_wins'] / (info['total_wins'] + info['total_losses']) * 100, 1) if (info['total_wins'] + info['total_losses']) > 0 else 0,
+                    'points_for': round(info['total_points_for'], 2),
+                    'points_against': round(info['total_points_against'], 2),
+                    'championships': info['championships'],
+                    'playoff_appearances': info['playoff_appearances']
+                }
+            }
+
+        print(f"Processed {len(self.processed_data['owners'])} unique owners")
 
     def process_matchups(self):
         """Process all matchups into a flat list"""
@@ -472,6 +549,7 @@ class FantasyDataProcessor:
         print("\n=== Processing Fantasy Football Data ===\n")
 
         self.process_teams()
+        self.process_owners()
         self.process_matchups()
         self.process_standings()
         self.process_playoffs()
@@ -490,7 +568,7 @@ class FantasyDataProcessor:
         print(f"✓ Saved complete data to {complete_file}")
 
         # Save individual components for easier API access
-        for key in ['teams', 'matchups', 'standings', 'playoffs', 'head_to_head', 'records', 'metadata']:
+        for key in ['teams', 'owners', 'matchups', 'standings', 'playoffs', 'head_to_head', 'records', 'metadata']:
             component_file = PROCESSED_DATA_DIR / f'{key}.json'
             with open(component_file, 'w') as f:
                 json.dump(self.processed_data[key], f, indent=2)

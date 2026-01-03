@@ -4,18 +4,18 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 
 function Home() {
   const [metadata, setMetadata] = useState(null);
-  const [teams, setTeams] = useState([]);
+  const [owners, setOwners] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [metaResponse, teamsResponse] = await Promise.all([
+        const [metaResponse, ownersResponse] = await Promise.all([
           apiService.getMetadata(),
-          apiService.getTeams(),
+          apiService.getOwners(),
         ]);
         setMetadata(metaResponse.data);
-        setTeams(teamsResponse.data);
+        setOwners(ownersResponse.data);
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {
@@ -37,12 +37,12 @@ function Home() {
     );
   }
 
-  const championshipData = teams
-    .map(team => ({
-      owner: team.current_owner,
-      championships: team.all_time.championships,
+  const championshipData = owners
+    .map(owner => ({
+      owner: owner.owner,
+      championships: owner.all_time.championships,
     }))
-    .filter(t => t.championships > 0)
+    .filter(o => o.championships > 0)
     .sort((a, b) => b.championships - a.championships);
 
   const handleDownload = async () => {
@@ -176,6 +176,7 @@ function Home() {
                 <tr className="border-b border-white/10">
                   <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Rank</th>
                   <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Owner</th>
+                  <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Seasons</th>
                   <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Wins</th>
                   <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Losses</th>
                   <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Win %</th>
@@ -183,15 +184,15 @@ function Home() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
-                {teams
+                {owners
                   .sort((a, b) => b.all_time.wins - a.all_time.wins)
-                  .map((team, index) => {
-                    const winPct = (
-                      (team.all_time.wins / (team.all_time.wins + team.all_time.losses)) *
-                      100
-                    ).toFixed(1);
+                  .map((owner, index) => {
+                    const winPct = owner.all_time.win_percentage;
+                    const yearRange = owner.first_season === owner.last_season
+                      ? owner.first_season
+                      : `${owner.first_season}-${owner.last_season}`;
                     return (
-                      <tr key={team.team_id} className="hover:bg-white/5 transition-colors duration-200 group">
+                      <tr key={owner.owner} className="hover:bg-white/5 transition-colors duration-200 group">
                         <td className="px-6 py-4 whitespace-nowrap">
                           <span className={`text-lg font-bold ${
                             index === 0 ? 'text-yellow-400' :
@@ -203,23 +204,26 @@ function Home() {
                           </span>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-white font-semibold">{team.current_owner}</div>
-                          <div className="text-xs text-white/50">{team.current_name}</div>
+                          <div className="text-white font-semibold">{owner.owner}</div>
+                          <div className="text-xs text-white/50">{yearRange}</div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-purple-400 font-semibold">
+                          {owner.seasons_played}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-green-400 font-semibold">
-                          {team.all_time.wins}
+                          {owner.all_time.wins}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-red-400 font-semibold">
-                          {team.all_time.losses}
+                          {owner.all_time.losses}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-blue-400 font-semibold">
                           {winPct}%
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
-                          {team.all_time.championships > 0 ? (
+                          {owner.all_time.championships > 0 ? (
                             <span className="inline-flex items-center space-x-1 px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 font-bold border border-yellow-500/30">
                               <span>🏆</span>
-                              <span>{team.all_time.championships}</span>
+                              <span>{owner.all_time.championships}</span>
                             </span>
                           ) : (
                             <span className="text-white/30">-</span>
