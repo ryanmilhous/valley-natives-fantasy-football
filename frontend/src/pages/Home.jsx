@@ -6,6 +6,7 @@ function Home() {
   const [metadata, setMetadata] = useState(null);
   const [owners, setOwners] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [sortConfig, setSortConfig] = useState({ key: 'championships', direction: 'desc' });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -44,6 +45,75 @@ function Home() {
     }))
     .filter(o => o.championships > 0)
     .sort((a, b) => b.championships - a.championships);
+
+  const handleSort = (key) => {
+    let direction = 'asc';
+    if (sortConfig.key === key && sortConfig.direction === 'asc') {
+      direction = 'desc';
+    }
+    setSortConfig({ key, direction });
+  };
+
+  const getSortedOwners = () => {
+    const sorted = [...owners].sort((a, b) => {
+      let aValue, bValue;
+
+      switch (sortConfig.key) {
+        case 'owner':
+          aValue = a.owner;
+          bValue = b.owner;
+          break;
+        case 'seasons':
+          aValue = a.seasons_played;
+          bValue = b.seasons_played;
+          break;
+        case 'wins':
+          aValue = a.all_time.wins;
+          bValue = b.all_time.wins;
+          break;
+        case 'losses':
+          aValue = a.all_time.losses;
+          bValue = b.all_time.losses;
+          break;
+        case 'winPct':
+          aValue = a.all_time.win_percentage;
+          bValue = b.all_time.win_percentage;
+          break;
+        case 'championships':
+          aValue = a.all_time.championships;
+          bValue = b.all_time.championships;
+          // Secondary sort by win percentage
+          if (aValue === bValue) {
+            return sortConfig.direction === 'desc'
+              ? b.all_time.win_percentage - a.all_time.win_percentage
+              : a.all_time.win_percentage - b.all_time.win_percentage;
+          }
+          break;
+        default:
+          aValue = a.all_time.wins;
+          bValue = b.all_time.wins;
+      }
+
+      if (typeof aValue === 'string') {
+        return sortConfig.direction === 'asc'
+          ? aValue.localeCompare(bValue)
+          : bValue.localeCompare(aValue);
+      }
+
+      return sortConfig.direction === 'asc' ? aValue - bValue : bValue - aValue;
+    });
+
+    return sorted;
+  };
+
+  const SortIcon = ({ column }) => {
+    if (sortConfig.key !== column) {
+      return <span className="text-white/30 ml-1">⇅</span>;
+    }
+    return sortConfig.direction === 'asc' ?
+      <span className="text-purple-400 ml-1">↑</span> :
+      <span className="text-purple-400 ml-1">↓</span>;
+  };
 
   const handleDownload = async () => {
     try {
@@ -136,8 +206,8 @@ function Home() {
               <span>🏆</span>
               <span>Championship Winners</span>
             </h2>
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={championshipData}>
+            <ResponsiveContainer width="100%" height={350}>
+              <BarChart data={championshipData} margin={{ bottom: 60 }}>
                 <defs>
                   <linearGradient id="colorChampionships" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="#fbbf24" stopOpacity={0.8}/>
@@ -145,7 +215,14 @@ function Home() {
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="#ffffff20" />
-                <XAxis dataKey="owner" stroke="#ffffff70" />
+                <XAxis
+                  dataKey="owner"
+                  stroke="#ffffff70"
+                  angle={-45}
+                  textAnchor="end"
+                  height={80}
+                  tick={{ fontSize: 12 }}
+                />
                 <YAxis allowDecimals={false} stroke="#ffffff70" />
                 <Tooltip
                   contentStyle={{
@@ -175,18 +252,46 @@ function Home() {
               <thead>
                 <tr className="border-b border-white/10">
                   <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Rank</th>
-                  <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Owner</th>
-                  <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Seasons</th>
-                  <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Wins</th>
-                  <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Losses</th>
-                  <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Win %</th>
-                  <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Championships</th>
+                  <th
+                    onClick={() => handleSort('owner')}
+                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                  >
+                    Owner<SortIcon column="owner" />
+                  </th>
+                  <th
+                    onClick={() => handleSort('seasons')}
+                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                  >
+                    Seasons<SortIcon column="seasons" />
+                  </th>
+                  <th
+                    onClick={() => handleSort('wins')}
+                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                  >
+                    Wins<SortIcon column="wins" />
+                  </th>
+                  <th
+                    onClick={() => handleSort('losses')}
+                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                  >
+                    Losses<SortIcon column="losses" />
+                  </th>
+                  <th
+                    onClick={() => handleSort('winPct')}
+                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                  >
+                    Win %<SortIcon column="winPct" />
+                  </th>
+                  <th
+                    onClick={() => handleSort('championships')}
+                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                  >
+                    Championships<SortIcon column="championships" />
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
-                {owners
-                  .sort((a, b) => b.all_time.wins - a.all_time.wins)
-                  .map((owner, index) => {
+                {getSortedOwners().map((owner, index) => {
                     const winPct = owner.all_time.win_percentage;
                     const yearRange = owner.first_season === owner.last_season
                       ? owner.first_season

@@ -3,10 +3,10 @@
     "1": {
       "team_id": 1,
       "team_names": [
-        "The Chronic",
-        "RichCity Yung Beevs"
+        "RichCity Yung Beevs",
+        "The Chronic"
       ],
-      "current_name": "RichCity Yung Beevs",
+      "current_name": "The Chronic",
       "owners": [
         "Chris Vitale"
       ],
@@ -441,21 +441,21 @@
       "team_id": 3,
       "team_names": [
         "The Replacement Graduates",
-        "The Young Lefties",
-        "B-LO Par",
-        "The Graduates",
+        "B-LO Bleezos",
+        "Acoreycy and Prosision",
+        "The Lucky Lefties",
         "Stop Jerking My Johnson",
         "Ben Lomond  Half Baked Co.",
-        "Acoreycy and Prosision",
-        "B-LO Bleezos",
-        "The Golden Gods",
-        "The Lucky Lefties",
-        "The Post Graduates",
+        "The Young Lefties",
+        "Mono a Mono",
         "The Leftists",
+        "B-LO Par",
         "Be Stills My Fart ",
-        "Mono a Mono"
+        "The Post Graduates",
+        "The Golden Gods",
+        "The Graduates"
       ],
-      "current_name": "Mono a Mono",
+      "current_name": "The Graduates",
       "owners": [
         "Jamie Coffis"
       ],
@@ -671,15 +671,15 @@
     "4": {
       "team_id": 4,
       "team_names": [
-        "King of  The Doids",
-        "Nano Bubbles  And  Abstinence",
-        "No Starties Even Beats Me",
-        "What would MichaelVick do?",
-        "Hustle Bustle And Man Muscle",
+        "Emancipation of Jim and Vicki",
         "Mr. Thomas' Naberhood",
-        "Emancipation of Jim and Vicki"
+        "No Starties Even Beats Me",
+        "Nano Bubbles  And  Abstinence",
+        "Hustle Bustle And Man Muscle",
+        "King of  The Doids",
+        "What would MichaelVick do?"
       ],
-      "current_name": "Emancipation of Jim and Vicki",
+      "current_name": "What would MichaelVick do?",
       "owners": [
         "Garrett Ulrich"
       ],
@@ -895,10 +895,10 @@
     "5": {
       "team_id": 5,
       "team_names": [
-        "Prime Time",
-        "Out of Time"
+        "Out of Time",
+        "Prime Time"
       ],
-      "current_name": "Out of Time",
+      "current_name": "Prime Time",
       "owners": [
         "Greg Swenson"
       ],
@@ -1333,14 +1333,14 @@
     "7": {
       "team_id": 7,
       "team_names": [
-        "B-Rom Baby  Bears",
         "The Ghosts of Polak Past",
-        "RIP Chris",
-        "The Smi Pies",
+        "B-Rom Baby  Bears",
+        "Schmee Squad",
         ". Schmee",
-        "Schmee Squad"
+        "RIP Chris",
+        "The Smi Pies"
       ],
-      "current_name": "Schmee Squad",
+      "current_name": "The Smi Pies",
       "owners": [
         "Nick Smielak"
       ],
@@ -1556,31 +1556,31 @@
     "8": {
       "team_id": 8,
       "team_names": [
+        "U Koo with Younghoes?",
+        "Pantry The Puddn\u00e2\u0080\u0099",
+        "Kooter McGavin",
+        "Blackout or Back Out",
+        "Younghoe Bunghole",
         "Bros Before Younghoes",
-        "Scroopy Noopers",
+        "Protoss'd Salad",
+        "RichCity Yung Beevs",
         "Running Back-Snatch",
         "Younghoes Have Kooties",
-        "Younghoe Bunghole",
-        "south brookdale regulaters",
-        "Blackout or Back Out",
-        "Pantry The Puddn\u00e2\u0080\u0099",
-        "U Koo with Younghoes?",
-        "Kooter McGavin",
-        "Protoss'd Salad",
-        "RichCity Yung Beevs"
+        "Scroopy Noopers",
+        "south brookdale regulaters"
       ],
-      "current_name": "RichCity Yung Beevs",
+      "current_name": "south brookdale regulaters",
       "owners": [
-        "Rory McKee",
-        "Bryan Vitale"
+        "Brian Vitale",
+        "Rory McKee"
       ],
-      "current_owner": "Bryan Vitale",
+      "current_owner": "Rory McKee",
       "seasons_active": 15,
       "seasons": [
         {
           "year": 2010,
           "team_name": "RichCity Yung Beevs",
-          "owner": "Bryan Vitale",
+          "owner": "Brian Vitale",
           "wins": 3,
           "losses": 9,
           "ties": 0,
@@ -1593,7 +1593,7 @@
         {
           "year": 2011,
           "team_name": "south brookdale regulaters",
-          "owner": "Bryan Vitale",
+          "owner": "Brian Vitale",
           "wins": 5,
           "losses": 7,
           "ties": 0,
@@ -1606,7 +1606,7 @@
         {
           "year": 2012,
           "team_name": "south brookdale regulaters",
-          "owner": "Bryan Vitale",
+          "owner": "Brian Vitale",
           "wins": 9,
           "losses": 4,
           "ties": 0,
@@ -1619,7 +1619,7 @@
         {
           "year": 2013,
           "team_name": "south brookdale regulaters",
-          "owner": "Bryan Vitale",
+          "owner": "Brian Vitale",
           "wins": 9,
           "losses": 4,
           "ties": 0,
@@ -1632,7 +1632,7 @@
         {
           "year": 2014,
           "team_name": "south brookdale regulaters",
-          "owner": "Bryan Vitale",
+          "owner": "Brian Vitale",
           "wins": 6,
           "losses": 7,
           "ties": 0,
@@ -1671,7 +1671,7 @@
         {
           "year": 2017,
           "team_name": "Pantry The Puddn\u00e2\u0080\u0099",
-          "owner": "Bryan Vitale",
+          "owner": "Brian Vitale",
           "wins": 5,
           "losses": 8,
           "ties": 0,
@@ -1787,11 +1787,11 @@
       "team_id": 9,
       "team_names": [
         "High Hopes",
+        "Tampon Bay Blumpcaneers",
         "Tampon Bay Blumpkineers",
-        "Tampon Bay Chumpkineers",
-        "Tampon Bay Blumpcaneers"
+        "Tampon Bay Chumpkineers"
       ],
-      "current_name": "Tampon Bay Blumpcaneers",
+      "current_name": "Tampon Bay Chumpkineers",
       "owners": [
         "Jacob Luna"
       ],
@@ -2007,15 +2007,15 @@
     "10": {
       "team_id": 10,
       "team_names": [
-        "Foot-Loose and Fancy Free",
-        "Purdy Good Timing ",
-        "The Keepy No  Startie's",
-        "Tyreek And The Drain Pours",
         "For Those About To Brock",
-        "Nick Dak Paddy Wack",
-        "AB's Face Farts",
+        "The Keepy No  Startie's",
         "Lo-Carb Monsters",
+        "Tyreek And The Drain Pours",
+        "AB's Face Farts",
         "The Pierre Necessities",
+        "Nick Dak Paddy Wack",
+        "Purdy Good Timing ",
+        "Foot-Loose and Fancy Free",
         "For All The  Haters (Chris)"
       ],
       "current_name": "For All The  Haters (Chris)",
@@ -2453,11 +2453,11 @@
     "12": {
       "team_id": 12,
       "team_names": [
-        "Ding Dong Doid Brains",
         "Auto Drafties",
-        "Corn On The  Kolb"
+        "Corn On The  Kolb",
+        "Ding Dong Doid Brains"
       ],
-      "current_name": "Corn On The  Kolb",
+      "current_name": "Ding Dong Doid Brains",
       "owners": [
         "Kyle Morris",
         "Ryan Milhous"
@@ -2674,12 +2674,12 @@
     "13": {
       "team_id": 13,
       "team_names": [
-        "Youth Movement  !!!!!!!",
-        "The Pudd'n \ud83d\udc2c",
         "Jackson5 \ud83d\udc2c",
-        "the new kid  on the block"
+        "Youth Movement  !!!!!!!",
+        "the new kid  on the block",
+        "The Pudd'n \ud83d\udc2c"
       ],
-      "current_name": "the new kid  on the block",
+      "current_name": "The Pudd'n \ud83d\udc2c",
       "owners": [
         "Ben Beck"
       ],
@@ -4565,8 +4565,8 @@
         "playoff_appearances": 0
       }
     },
-    "Bryan Vitale": {
-      "owner": "Bryan Vitale",
+    "Brian Vitale": {
+      "owner": "Brian Vitale",
       "seasons_played": 6,
       "years_active": [
         2010,
@@ -15328,7 +15328,7 @@
     {
       "year": 2010,
       "team_name": "RichCity Yung Beevs",
-      "owner": "Bryan Vitale",
+      "owner": "Brian Vitale",
       "wins": 3,
       "losses": 9,
       "ties": 0,
@@ -15406,7 +15406,7 @@
     {
       "year": 2011,
       "team_name": "south brookdale regulaters",
-      "owner": "Bryan Vitale",
+      "owner": "Brian Vitale",
       "wins": 5,
       "losses": 7,
       "ties": 0,
@@ -15523,7 +15523,7 @@
     {
       "year": 2012,
       "team_name": "south brookdale regulaters",
-      "owner": "Bryan Vitale",
+      "owner": "Brian Vitale",
       "wins": 9,
       "losses": 4,
       "ties": 0,
@@ -15679,7 +15679,7 @@
     {
       "year": 2013,
       "team_name": "south brookdale regulaters",
-      "owner": "Bryan Vitale",
+      "owner": "Brian Vitale",
       "wins": 9,
       "losses": 4,
       "ties": 0,
@@ -15939,7 +15939,7 @@
     {
       "year": 2014,
       "team_name": "south brookdale regulaters",
-      "owner": "Bryan Vitale",
+      "owner": "Brian Vitale",
       "wins": 6,
       "losses": 7,
       "ties": 0,
@@ -16550,7 +16550,7 @@
     {
       "year": 2017,
       "team_name": "Pantry The Puddn\u00e2\u0080\u0099",
-      "owner": "Bryan Vitale",
+      "owner": "Brian Vitale",
       "wins": 5,
       "losses": 8,
       "ties": 0,
@@ -17865,150 +17865,270 @@
     {
       "year": 2010,
       "champion": "Lo-Carb Monsters",
+      "champion_owner": "Tyler Fullterton",
       "runner_up": "Prime Time",
+      "runner_up_owner": "Greg Swenson",
       "semifinalists": [
-        "The Graduates",
-        "RIP Chris"
+        {
+          "team_name": "The Graduates",
+          "owner": "Jamie Coffis"
+        },
+        {
+          "team_name": "RIP Chris",
+          "owner": "Nick Smielak"
+        }
       ],
       "playoff_teams": []
     },
     {
       "year": 2011,
       "champion": "The Ghosts of Polak Past",
+      "champion_owner": "Nick Smielak",
       "runner_up": "S.F. Forty-Chiners",
+      "runner_up_owner": "Brendan Romale",
       "semifinalists": [
-        "Felton Sluggers",
-        "High Hopes"
+        {
+          "team_name": "Felton Sluggers",
+          "owner": "Jeremy Settles"
+        },
+        {
+          "team_name": "High Hopes",
+          "owner": "Jacob Luna"
+        }
       ],
       "playoff_teams": []
     },
     {
       "year": 2012,
       "champion": "The Replacement Graduates",
+      "champion_owner": "Jamie Coffis",
       "runner_up": "B-Rom Baby  Bears",
+      "runner_up_owner": "Nick Smielak",
       "semifinalists": [
-        "What would MichaelVick do?",
-        "S.F. Forty-Chiners"
+        {
+          "team_name": "What would MichaelVick do?",
+          "owner": "Garrett Ulrich"
+        },
+        {
+          "team_name": "S.F. Forty-Chiners",
+          "owner": "Brendan Romale"
+        }
       ],
       "playoff_teams": []
     },
     {
       "year": 2013,
       "champion": "Felton Sluggers",
+      "champion_owner": "Jeremy Settles",
       "runner_up": "south brookdale regulaters",
+      "runner_up_owner": "Brian Vitale",
       "semifinalists": [
-        "Tampon Bay Blumpcaneers",
-        "Cherry Poppen"
+        {
+          "team_name": "Tampon Bay Blumpcaneers",
+          "owner": "Jacob Luna"
+        },
+        {
+          "team_name": "Cherry Poppen",
+          "owner": "Kyle Poppen"
+        }
       ],
       "playoff_teams": []
     },
     {
       "year": 2014,
       "champion": "Hustle Bustle And Man Muscle",
+      "champion_owner": "Garrett Ulrich",
       "runner_up": "Tampon Bay Blumpkineers",
+      "runner_up_owner": "Jacob Luna",
       "semifinalists": [
-        "Schmee Squad",
-        "Youth Movement  !!!!!!!"
+        {
+          "team_name": "Schmee Squad",
+          "owner": "Nick Smielak"
+        },
+        {
+          "team_name": "Youth Movement  !!!!!!!",
+          "owner": "Ben Beck"
+        }
       ],
       "playoff_teams": []
     },
     {
       "year": 2015,
       "champion": "Nano Bubbles  And  Abstinence",
+      "champion_owner": "Garrett Ulrich",
       "runner_up": "The Chronic",
+      "runner_up_owner": "Chris Vitale",
       "semifinalists": [
-        "Scroopy Noopers",
-        "S.F. Forty-Chiners"
+        {
+          "team_name": "Scroopy Noopers",
+          "owner": "Rory McKee"
+        },
+        {
+          "team_name": "S.F. Forty-Chiners",
+          "owner": "Brendan Romale"
+        }
       ],
       "playoff_teams": []
     },
     {
       "year": 2016,
       "champion": "Youth Movement  !!!!!!!",
+      "champion_owner": "Ben Beck",
       "runner_up": "Felton Sluggers",
+      "runner_up_owner": "Jeremy Settles",
       "semifinalists": [
-        "Prime Time",
-        "Cherry Poppen"
+        {
+          "team_name": "Prime Time",
+          "owner": "Greg Swenson"
+        },
+        {
+          "team_name": "Cherry Poppen",
+          "owner": "Kyle Poppen"
+        }
       ],
       "playoff_teams": []
     },
     {
       "year": 2017,
       "champion": "Acoreycy and Prosision",
+      "champion_owner": "Jamie Coffis",
       "runner_up": "Schmee Squad",
+      "runner_up_owner": "Nick Smielak",
       "semifinalists": [
-        "No Starties Even Beats Me",
-        "Felton Sluggers"
+        {
+          "team_name": "No Starties Even Beats Me",
+          "owner": "Garrett Ulrich"
+        },
+        {
+          "team_name": "Felton Sluggers",
+          "owner": "Jeremy Settles"
+        }
       ],
       "playoff_teams": []
     },
     {
       "year": 2018,
       "champion": "Prime Time",
+      "champion_owner": "Greg Swenson",
       "runner_up": "King of  The Doids",
+      "runner_up_owner": "Garrett Ulrich",
       "semifinalists": [
-        "Be Stills My Fart ",
-        "S.F. Forty-Chiners"
+        {
+          "team_name": "Be Stills My Fart ",
+          "owner": "Jamie Coffis"
+        },
+        {
+          "team_name": "S.F. Forty-Chiners",
+          "owner": "Brendan Romale"
+        }
       ],
       "playoff_teams": []
     },
     {
       "year": 2019,
       "champion": "Jackson5 \ud83d\udc2c",
+      "champion_owner": "Ben Beck",
       "runner_up": "The Chronic",
+      "runner_up_owner": "Chris Vitale",
       "semifinalists": [
-        "King of  The Doids",
-        "S.F. Forty-Chiners"
+        {
+          "team_name": "King of  The Doids",
+          "owner": "Garrett Ulrich"
+        },
+        {
+          "team_name": "S.F. Forty-Chiners",
+          "owner": "Brendan Romale"
+        }
       ],
       "playoff_teams": []
     },
     {
       "year": 2020,
       "champion": "RichCity Yung Beevs",
+      "champion_owner": "Chris Vitale",
       "runner_up": "The Kellen Brothers",
+      "runner_up_owner": "Kellen Coffis",
       "semifinalists": [
-        "B-LO Bleezos",
-        "S.F. Forty-Chiners"
+        {
+          "team_name": "B-LO Bleezos",
+          "owner": "Jamie Coffis"
+        },
+        {
+          "team_name": "S.F. Forty-Chiners",
+          "owner": "Brendan Romale"
+        }
       ],
       "playoff_teams": []
     },
     {
       "year": 2021,
       "champion": "The Pudd'n \ud83d\udc2c",
+      "champion_owner": "Ben Beck",
       "runner_up": "Ding Dong Doid Brains",
+      "runner_up_owner": "Ryan Milhous",
       "semifinalists": [
-        "RichCity Yung Beevs",
-        "Prime Time"
+        {
+          "team_name": "RichCity Yung Beevs",
+          "owner": "Chris Vitale"
+        },
+        {
+          "team_name": "Prime Time",
+          "owner": "Greg Swenson"
+        }
       ],
       "playoff_teams": []
     },
     {
       "year": 2022,
       "champion": "Ding Dong Doid Brains",
+      "champion_owner": "Ryan Milhous",
       "runner_up": "The Smi Pies",
+      "runner_up_owner": "Nick Smielak",
       "semifinalists": [
-        "Emancipation of Jim and Vicki",
-        "Prime Time"
+        {
+          "team_name": "Emancipation of Jim and Vicki",
+          "owner": "Garrett Ulrich"
+        },
+        {
+          "team_name": "Prime Time",
+          "owner": "Greg Swenson"
+        }
       ],
       "playoff_teams": []
     },
     {
       "year": 2023,
       "champion": "For Those About To Brock",
+      "champion_owner": "Bryan Whitaker",
       "runner_up": "Tampon Bay Blumpkineers",
+      "runner_up_owner": "Jacob Luna",
       "semifinalists": [
-        "The Smi Pies",
-        "Ding Dong Doid Brains"
+        {
+          "team_name": "The Smi Pies",
+          "owner": "Nick Smielak"
+        },
+        {
+          "team_name": "Ding Dong Doid Brains",
+          "owner": "Ryan Milhous"
+        }
       ],
       "playoff_teams": []
     },
     {
       "year": 2024,
       "champion": "Felton Sluggers",
+      "champion_owner": "Jeremy Settles",
       "runner_up": "S.F. Forty-Chiners",
+      "runner_up_owner": "Brendan Romale",
       "semifinalists": [
-        "The Smi Pies",
-        "Tampon Bay Blumpkineers"
+        {
+          "team_name": "The Smi Pies",
+          "owner": "Nick Smielak"
+        },
+        {
+          "team_name": "Tampon Bay Blumpkineers",
+          "owner": "Jacob Luna"
+        }
       ],
       "playoff_teams": []
     }
@@ -19640,7 +19760,7 @@
     "latest_season": 2024,
     "total_teams": 14,
     "total_matchups": 700,
-    "processed_at": "2026-01-03T13:21:40.332154",
+    "processed_at": "2026-01-03T13:36:51.562474",
     "league_name": "Valley natives"
   }
 }

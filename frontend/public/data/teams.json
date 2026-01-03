@@ -2,10 +2,10 @@
   "1": {
     "team_id": 1,
     "team_names": [
-      "The Chronic",
-      "RichCity Yung Beevs"
+      "RichCity Yung Beevs",
+      "The Chronic"
     ],
-    "current_name": "RichCity Yung Beevs",
+    "current_name": "The Chronic",
     "owners": [
       "Chris Vitale"
     ],
@@ -440,21 +440,21 @@
     "team_id": 3,
     "team_names": [
       "The Replacement Graduates",
-      "The Young Lefties",
-      "B-LO Par",
-      "The Graduates",
+      "B-LO Bleezos",
+      "Acoreycy and Prosision",
+      "The Lucky Lefties",
       "Stop Jerking My Johnson",
       "Ben Lomond  Half Baked Co.",
-      "Acoreycy and Prosision",
-      "B-LO Bleezos",
-      "The Golden Gods",
-      "The Lucky Lefties",
-      "The Post Graduates",
+      "The Young Lefties",
+      "Mono a Mono",
       "The Leftists",
+      "B-LO Par",
       "Be Stills My Fart ",
-      "Mono a Mono"
+      "The Post Graduates",
+      "The Golden Gods",
+      "The Graduates"
     ],
-    "current_name": "Mono a Mono",
+    "current_name": "The Graduates",
     "owners": [
       "Jamie Coffis"
     ],
@@ -670,15 +670,15 @@
   "4": {
     "team_id": 4,
     "team_names": [
-      "King of  The Doids",
-      "Nano Bubbles  And  Abstinence",
-      "No Starties Even Beats Me",
-      "What would MichaelVick do?",
-      "Hustle Bustle And Man Muscle",
+      "Emancipation of Jim and Vicki",
       "Mr. Thomas' Naberhood",
-      "Emancipation of Jim and Vicki"
+      "No Starties Even Beats Me",
+      "Nano Bubbles  And  Abstinence",
+      "Hustle Bustle And Man Muscle",
+      "King of  The Doids",
+      "What would MichaelVick do?"
     ],
-    "current_name": "Emancipation of Jim and Vicki",
+    "current_name": "What would MichaelVick do?",
     "owners": [
       "Garrett Ulrich"
     ],
@@ -894,10 +894,10 @@
   "5": {
     "team_id": 5,
     "team_names": [
-      "Prime Time",
-      "Out of Time"
+      "Out of Time",
+      "Prime Time"
     ],
-    "current_name": "Out of Time",
+    "current_name": "Prime Time",
     "owners": [
       "Greg Swenson"
     ],
@@ -1332,14 +1332,14 @@
   "7": {
     "team_id": 7,
     "team_names": [
-      "B-Rom Baby  Bears",
       "The Ghosts of Polak Past",
-      "RIP Chris",
-      "The Smi Pies",
+      "B-Rom Baby  Bears",
+      "Schmee Squad",
       ". Schmee",
-      "Schmee Squad"
+      "RIP Chris",
+      "The Smi Pies"
     ],
-    "current_name": "Schmee Squad",
+    "current_name": "The Smi Pies",
     "owners": [
       "Nick Smielak"
     ],
@@ -1555,31 +1555,31 @@
   "8": {
     "team_id": 8,
     "team_names": [
+      "U Koo with Younghoes?",
+      "Pantry The Puddn\u00e2\u0080\u0099",
+      "Kooter McGavin",
+      "Blackout or Back Out",
+      "Younghoe Bunghole",
       "Bros Before Younghoes",
-      "Scroopy Noopers",
+      "Protoss'd Salad",
+      "RichCity Yung Beevs",
       "Running Back-Snatch",
       "Younghoes Have Kooties",
-      "Younghoe Bunghole",
-      "south brookdale regulaters",
-      "Blackout or Back Out",
-      "Pantry The Puddn\u00e2\u0080\u0099",
-      "U Koo with Younghoes?",
-      "Kooter McGavin",
-      "Protoss'd Salad",
-      "RichCity Yung Beevs"
+      "Scroopy Noopers",
+      "south brookdale regulaters"
     ],
-    "current_name": "RichCity Yung Beevs",
+    "current_name": "south brookdale regulaters",
     "owners": [
-      "Rory McKee",
-      "Bryan Vitale"
+      "Brian Vitale",
+      "Rory McKee"
     ],
-    "current_owner": "Bryan Vitale",
+    "current_owner": "Rory McKee",
     "seasons_active": 15,
     "seasons": [
       {
         "year": 2010,
         "team_name": "RichCity Yung Beevs",
-        "owner": "Bryan Vitale",
+        "owner": "Brian Vitale",
         "wins": 3,
         "losses": 9,
         "ties": 0,
@@ -1592,7 +1592,7 @@
       {
         "year": 2011,
         "team_name": "south brookdale regulaters",
-        "owner": "Bryan Vitale",
+        "owner": "Brian Vitale",
         "wins": 5,
         "losses": 7,
         "ties": 0,
@@ -1605,7 +1605,7 @@
       {
         "year": 2012,
         "team_name": "south brookdale regulaters",
-        "owner": "Bryan Vitale",
+        "owner": "Brian Vitale",
         "wins": 9,
         "losses": 4,
         "ties": 0,
@@ -1618,7 +1618,7 @@
       {
         "year": 2013,
         "team_name": "south brookdale regulaters",
-        "owner": "Bryan Vitale",
+        "owner": "Brian Vitale",
         "wins": 9,
         "losses": 4,
         "ties": 0,
@@ -1631,7 +1631,7 @@
       {
         "year": 2014,
         "team_name": "south brookdale regulaters",
-        "owner": "Bryan Vitale",
+        "owner": "Brian Vitale",
         "wins": 6,
         "losses": 7,
         "ties": 0,
@@ -1670,7 +1670,7 @@
       {
         "year": 2017,
         "team_name": "Pantry The Puddn\u00e2\u0080\u0099",
-        "owner": "Bryan Vitale",
+        "owner": "Brian Vitale",
         "wins": 5,
         "losses": 8,
         "ties": 0,
@@ -1786,11 +1786,11 @@
     "team_id": 9,
     "team_names": [
       "High Hopes",
+      "Tampon Bay Blumpcaneers",
       "Tampon Bay Blumpkineers",
-      "Tampon Bay Chumpkineers",
-      "Tampon Bay Blumpcaneers"
+      "Tampon Bay Chumpkineers"
     ],
-    "current_name": "Tampon Bay Blumpcaneers",
+    "current_name": "Tampon Bay Chumpkineers",
     "owners": [
       "Jacob Luna"
     ],
@@ -2006,15 +2006,15 @@
   "10": {
     "team_id": 10,
     "team_names": [
-      "Foot-Loose and Fancy Free",
-      "Purdy Good Timing ",
-      "The Keepy No  Startie's",
-      "Tyreek And The Drain Pours",
       "For Those About To Brock",
-      "Nick Dak Paddy Wack",
-      "AB's Face Farts",
+      "The Keepy No  Startie's",
       "Lo-Carb Monsters",
+      "Tyreek And The Drain Pours",
+      "AB's Face Farts",
       "The Pierre Necessities",
+      "Nick Dak Paddy Wack",
+      "Purdy Good Timing ",
+      "Foot-Loose and Fancy Free",
       "For All The  Haters (Chris)"
     ],
     "current_name": "For All The  Haters (Chris)",
@@ -2452,11 +2452,11 @@
   "12": {
     "team_id": 12,
     "team_names": [
-      "Ding Dong Doid Brains",
       "Auto Drafties",
-      "Corn On The  Kolb"
+      "Corn On The  Kolb",
+      "Ding Dong Doid Brains"
     ],
-    "current_name": "Corn On The  Kolb",
+    "current_name": "Ding Dong Doid Brains",
     "owners": [
       "Kyle Morris",
       "Ryan Milhous"
@@ -2673,12 +2673,12 @@
   "13": {
     "team_id": 13,
     "team_names": [
-      "Youth Movement  !!!!!!!",
-      "The Pudd'n \ud83d\udc2c",
       "Jackson5 \ud83d\udc2c",
-      "the new kid  on the block"
+      "Youth Movement  !!!!!!!",
+      "the new kid  on the block",
+      "The Pudd'n \ud83d\udc2c"
     ],
-    "current_name": "the new kid  on the block",
+    "current_name": "The Pudd'n \ud83d\udc2c",
     "owners": [
       "Ben Beck"
     ],

@@ -39,18 +39,34 @@ function Playoffs() {
                 <div className="text-2xl font-bold text-gray-800">{playoff.year}</div>
                 <div className="mt-4">
                   <div className="text-lg font-semibold text-blue-600">{playoff.champion || 'N/A'}</div>
-                  <div className="text-sm text-gray-500">Champion</div>
+                  {playoff.champion_owner && (
+                    <div className="text-xs text-gray-600 mt-1">{playoff.champion_owner}</div>
+                  )}
+                  <div className="text-sm text-gray-500 mt-1">Champion</div>
                 </div>
                 {playoff.runner_up && (
                   <div className="mt-3">
                     <div className="text-md font-semibold text-gray-600">{playoff.runner_up}</div>
-                    <div className="text-xs text-gray-500">Runner-Up</div>
+                    {playoff.runner_up_owner && (
+                      <div className="text-xs text-gray-600 mt-1">{playoff.runner_up_owner}</div>
+                    )}
+                    <div className="text-xs text-gray-500 mt-1">Runner-Up</div>
                   </div>
                 )}
                 {playoff.semifinalists && playoff.semifinalists.length > 0 && (
                   <div className="mt-3">
                     <div className="text-xs text-gray-500">Semifinalists:</div>
-                    <div className="text-sm text-gray-600">{playoff.semifinalists.join(', ')}</div>
+                    <div className="text-sm text-gray-600">
+                      {Array.isArray(playoff.semifinalists) && typeof playoff.semifinalists[0] === 'object'
+                        ? playoff.semifinalists.map((sf, idx) => (
+                            <div key={idx} className="mt-1">
+                              <div>{sf.team_name}</div>
+                              <div className="text-xs text-gray-600">{sf.owner}</div>
+                            </div>
+                          ))
+                        : playoff.semifinalists.join(', ')
+                      }
+                    </div>
                   </div>
                 )}
               </div>
@@ -78,14 +94,28 @@ function Playoffs() {
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                     {playoff.year}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 font-semibold">
-                    {playoff.champion || 'N/A'}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                    {playoff.runner_up || 'N/A'}
+                  <td className="px-6 py-4 text-sm text-blue-600 font-semibold">
+                    <div>{playoff.champion || 'N/A'}</div>
+                    {playoff.champion_owner && (
+                      <div className="text-xs text-gray-600">{playoff.champion_owner}</div>
+                    )}
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-900">
-                    {playoff.semifinalists?.join(', ') || 'N/A'}
+                    <div>{playoff.runner_up || 'N/A'}</div>
+                    {playoff.runner_up_owner && (
+                      <div className="text-xs text-gray-600">{playoff.runner_up_owner}</div>
+                    )}
+                  </td>
+                  <td className="px-6 py-4 text-sm text-gray-900">
+                    {playoff.semifinalists && Array.isArray(playoff.semifinalists) && typeof playoff.semifinalists[0] === 'object'
+                      ? playoff.semifinalists.map((sf, idx) => (
+                          <div key={idx} className="mb-1">
+                            <div>{sf.team_name}</div>
+                            <div className="text-xs text-gray-600">{sf.owner}</div>
+                          </div>
+                        ))
+                      : playoff.semifinalists?.join(', ') || 'N/A'
+                    }
                   </td>
                 </tr>
               ))}

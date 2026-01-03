@@ -33,8 +33,8 @@ OWNER_NAME_MAPPING = {
     'HIS TIGHTNESS': 'Ben Beck',
     'kpop027': 'Kyle Poppen',
     'Benbasketball101': 'Ben Beck',  # Alternative username for Ben Beck
-    'bvitale1313': 'Bryan Vitale',  # 2010-2014
-    'bryanvitale': 'Bryan Vitale',  # 2017
+    'bvitale1313': 'Brian Vitale',  # 2010-2014
+    'bryanvitale': 'Brian Vitale',  # 2017
     '12inchnick': 'Nick Smielak',  # 2010-2012
     'TPUSNESS': 'Tyler Fullterton',  # 2010-2014
 }
@@ -288,24 +288,33 @@ class FantasyDataProcessor:
         for year, season_data in self.raw_data.items():
             # Find the champion (final_standing == 1)
             champion = None
+            champion_owner = None
             runner_up = None
+            runner_up_owner = None
             semifinalists = []
 
             teams = season_data.get('teams', [])
             for team in teams:
                 if team['final_standing'] == 1:
                     champion = team['team_name']
+                    champion_owner = self.normalize_owner_name(team['owner'])
                 elif team['final_standing'] == 2:
                     runner_up = team['team_name']
+                    runner_up_owner = self.normalize_owner_name(team['owner'])
                 elif team['final_standing'] == 3 or team['final_standing'] == 4:
-                    semifinalists.append(team['team_name'])
+                    semifinalists.append({
+                        'team_name': team['team_name'],
+                        'owner': self.normalize_owner_name(team['owner'])
+                    })
 
             playoff_entry = {
                 'year': year,
                 'champion': champion,
+                'champion_owner': champion_owner,
                 'runner_up': runner_up,
+                'runner_up_owner': runner_up_owner,
                 'semifinalists': semifinalists,
-                'playoff_teams': [t['team_name'] for t in teams if t.get('playoff_seed')]
+                'playoff_teams': [{'team_name': t['team_name'], 'owner': self.normalize_owner_name(t['owner'])} for t in teams if t.get('playoff_seed')]
             }
 
             self.processed_data['playoffs'].append(playoff_entry)
