@@ -97,6 +97,34 @@ export const apiService = {
     return { data };
   },
 
+  // Draft
+  getDraft: async () => {
+    const data = await fetchJSON('draft.json');
+    return { data };
+  },
+  getBestDraftPicks: async () => {
+    const data = await fetchJSON('best_draft_picks.json');
+    return { data };
+  },
+
+  // Rosters
+  getRosters: async () => {
+    const data = await fetchJSON('rosters.json');
+    return { data };
+  },
+
+  // Player Stats
+  getPlayerStats: async () => {
+    const data = await fetchJSON('player_stats.json');
+    return { data };
+  },
+
+  // Optimal Lineups
+  getOptimalLineups: async () => {
+    const data = await fetchJSON('optimal_lineups.json');
+    return { data };
+  },
+
   // Export Excel - Not available in static deployment
   // Users should generate this locally using the backend
   exportExcel: () => {

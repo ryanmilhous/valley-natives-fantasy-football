@@ -148,7 +148,7 @@ def test_specific_year(year):
 if __name__ == '__main__':
     # Test range of years to see what's available
     print("\nRunning comprehensive year availability test...\n")
-    available, unavailable = test_year_availability(start_year=2010, end_year=2024)
+    available, unavailable = test_year_availability(start_year=2007, end_year=2024)
 
     # If we found years before 2020, show details for the earliest one
     pre_2020 = [y for y in available if y < 2020]

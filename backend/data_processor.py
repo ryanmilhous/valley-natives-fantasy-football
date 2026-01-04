@@ -36,7 +36,11 @@ OWNER_NAME_MAPPING = {
     'bvitale1313': 'Brian Vitale',  # 2010-2014
     'bryanvitale': 'Brian Vitale',  # 2017
     '12inchnick': 'Nick Smielak',  # 2010-2012
-    'TPUSNESS': 'Tyler Fullterton',  # 2010-2014
+    'TPUSNESS': 'Tyler Fullerton',  # 2010-2014
+    'pkentstoll': 'Peter Kent-Stoll',
+    'DylanAndr3ws': 'Dylan Andrews',
+    'SLVBaller3189': 'Tanner Clark',
+    'ilovebammer24': 'Tanner Clark'
 }
 
 
@@ -53,12 +57,23 @@ class FantasyDataProcessor:
             'playoffs': [],
             'head_to_head': {},
             'records': {},
+            'draft': [],
+            'rosters': [],
+            'player_stats': [],
+            'best_draft_picks': [],
+            'optimal_lineups': [],
             'metadata': {}
         }
 
     @staticmethod
-    def normalize_owner_name(display_name):
-        """Convert display name to actual name using mapping"""
+    def normalize_owner_name(display_name, year=None):
+        """
+        Convert display name to actual name using mapping
+
+        Args:
+            display_name: The ESPN username/display name
+            year: Optional year for year-specific mappings
+        """
         return OWNER_NAME_MAPPING.get(display_name, display_name)
 
     def load_raw_data(self, years=None):
@@ -100,7 +115,7 @@ class FantasyDataProcessor:
                 team_info = teams_by_id[team_id]
 
                 # Normalize owner name
-                normalized_owner = self.normalize_owner_name(team['owner'])
+                normalized_owner = self.normalize_owner_name(team['owner'], year)
 
                 # Track names and owners (teams may change)
                 team_info['team_names'].add(team['team_name'])
@@ -168,16 +183,27 @@ class FantasyDataProcessor:
             'total_losses': 0,
             'total_ties': 0,
             'championships': 0,
+            'second_place': 0,
+            'third_place': 0,
+            'toilet_bowl': 0,
             'playoff_appearances': 0,
             'total_points_for': 0,
             'total_points_against': 0,
             'years_active': set()
         })
 
+        # First pass: find the last place standing for each year (for toilet bowl calculation)
+        last_place_by_year = {}
+        for year, season_data in self.raw_data.items():
+            teams = season_data.get('teams', [])
+            if teams:
+                # Last place is the highest standing number (worst rank)
+                last_place_by_year[year] = max(team['standing'] for team in teams)
+
         # Aggregate stats by owner across all seasons
         for year, season_data in self.raw_data.items():
             for team in season_data.get('teams', []):
-                owner = self.normalize_owner_name(team['owner'])
+                owner = self.normalize_owner_name(team['owner'], year)
                 owner_info = owners_stats[owner]
 
                 # Track year
@@ -205,9 +231,18 @@ class FantasyDataProcessor:
                 owner_info['total_points_for'] += team['points_for']
                 owner_info['total_points_against'] += team['points_against']
 
-                # Count championships and playoff appearances
+                # Count championships, 2nd place, 3rd place, and playoff appearances
                 if team['final_standing'] == 1:
                     owner_info['championships'] += 1
+                elif team['final_standing'] == 2:
+                    owner_info['second_place'] += 1
+                elif team['final_standing'] == 3:
+                    owner_info['third_place'] += 1
+
+                # Count toilet bowl (last place in regular season)
+                if team['standing'] == last_place_by_year.get(year):
+                    owner_info['toilet_bowl'] += 1
+
                 if team.get('playoff_seed'):
                     owner_info['playoff_appearances'] += 1
 
@@ -230,6 +265,9 @@ class FantasyDataProcessor:
                     'points_for': round(info['total_points_for'], 2),
                     'points_against': round(info['total_points_against'], 2),
                     'championships': info['championships'],
+                    'second_place': info['second_place'],
+                    'third_place': info['third_place'],
+                    'toilet_bowl': info['toilet_bowl'],
                     'playoff_appearances': info['playoff_appearances']
                 }
             }
@@ -266,7 +304,7 @@ class FantasyDataProcessor:
                 standing_entry = {
                     'year': year,
                     'team_name': team['team_name'],
-                    'owner': self.normalize_owner_name(team['owner']),
+                    'owner': self.normalize_owner_name(team['owner'], year),
                     'wins': team['wins'],
                     'losses': team['losses'],
                     'ties': team['ties'],
@@ -291,21 +329,20 @@ class FantasyDataProcessor:
             champion_owner = None
             runner_up = None
             runner_up_owner = None
-            semifinalists = []
+            third_place = None
+            third_place_owner = None
 
             teams = season_data.get('teams', [])
             for team in teams:
                 if team['final_standing'] == 1:
                     champion = team['team_name']
-                    champion_owner = self.normalize_owner_name(team['owner'])
+                    champion_owner = self.normalize_owner_name(team['owner'], year)
                 elif team['final_standing'] == 2:
                     runner_up = team['team_name']
-                    runner_up_owner = self.normalize_owner_name(team['owner'])
-                elif team['final_standing'] == 3 or team['final_standing'] == 4:
-                    semifinalists.append({
-                        'team_name': team['team_name'],
-                        'owner': self.normalize_owner_name(team['owner'])
-                    })
+                    runner_up_owner = self.normalize_owner_name(team['owner'], year)
+                elif team['final_standing'] == 3:
+                    third_place = team['team_name']
+                    third_place_owner = self.normalize_owner_name(team['owner'], year)
 
             playoff_entry = {
                 'year': year,
@@ -313,8 +350,9 @@ class FantasyDataProcessor:
                 'champion_owner': champion_owner,
                 'runner_up': runner_up,
                 'runner_up_owner': runner_up_owner,
-                'semifinalists': semifinalists,
-                'playoff_teams': [{'team_name': t['team_name'], 'owner': self.normalize_owner_name(t['owner'])} for t in teams if t.get('playoff_seed')]
+                'third_place': third_place,
+                'third_place_owner': third_place_owner,
+                'playoff_teams': [{'team_name': t['team_name'], 'owner': self.normalize_owner_name(t['owner'], year)} for t in teams if t.get('playoff_seed')]
             }
 
             self.processed_data['playoffs'].append(playoff_entry)
@@ -330,7 +368,7 @@ class FantasyDataProcessor:
         for year, season_data in self.raw_data.items():
             for team in season_data.get('teams', []):
                 key = (year, team['team_name'])
-                team_to_owner[key] = self.normalize_owner_name(team['owner'])
+                team_to_owner[key] = self.normalize_owner_name(team['owner'], year)
 
         # Calculate H2H by owner
         h2h = defaultdict(lambda: defaultdict(lambda: {'wins': 0, 'losses': 0, 'ties': 0, 'points_for': 0, 'points_against': 0}))
@@ -384,8 +422,12 @@ class FantasyDataProcessor:
             'most_wins_season': None,
             'most_points_against_season': None,
             'fewest_wins_season': None,
+            'fewest_points_season': None,
             'longest_win_streak': None,
-            'longest_loss_streak': None
+            'longest_loss_streak': None,
+            'highest_scoring_loss': None,
+            'most_combined_points': None,
+            'lowest_scoring_win': None
         }
 
         # Highest and lowest scores
@@ -449,6 +491,7 @@ class FantasyDataProcessor:
             full_season_teams = [s for s in self.processed_data['standings'] if s['wins'] + s['losses'] >= 10]
             if full_season_teams:
                 records['fewest_wins_season'] = min(full_season_teams, key=lambda x: x['wins'])
+                records['fewest_points_season'] = min(full_season_teams, key=lambda x: x['points_for'])
 
         # Calculate win/loss streaks
         # Build mapping of team_name -> owner for each year
@@ -456,7 +499,7 @@ class FantasyDataProcessor:
         for year, season_data in self.raw_data.items():
             for team in season_data.get('teams', []):
                 key = (year, team['team_name'])
-                team_to_owner[key] = self.normalize_owner_name(team['owner'])
+                team_to_owner[key] = self.normalize_owner_name(team['owner'], year)
 
         # Calculate streaks by owner across all matchups chronologically
         from collections import defaultdict
@@ -531,6 +574,74 @@ class FantasyDataProcessor:
         if max_loss_streak['streak'] > 0:
             records['longest_loss_streak'] = max_loss_streak
 
+        # Fun records from matchup data
+        if self.processed_data['matchups']:
+            # Highest scoring loss - team that scored high but still lost
+            losing_scores = []
+            for matchup in self.processed_data['matchups']:
+                if matchup['winner'] == matchup['home_team']:
+                    losing_scores.append({
+                        'team': matchup['away_team'],
+                        'score': matchup['away_score'],
+                        'week': matchup['week'],
+                        'year': matchup['year'],
+                        'opponent': matchup['home_team'],
+                        'opponent_score': matchup['home_score']
+                    })
+                elif matchup['winner'] == matchup['away_team']:
+                    losing_scores.append({
+                        'team': matchup['home_team'],
+                        'score': matchup['home_score'],
+                        'week': matchup['week'],
+                        'year': matchup['year'],
+                        'opponent': matchup['away_team'],
+                        'opponent_score': matchup['away_score']
+                    })
+
+            if losing_scores:
+                records['highest_scoring_loss'] = max(losing_scores, key=lambda x: x['score'])
+
+            # Most combined points in a game
+            combined_points_games = []
+            for matchup in self.processed_data['matchups']:
+                combined_points_games.append({
+                    'year': matchup['year'],
+                    'week': matchup['week'],
+                    'home_team': matchup['home_team'],
+                    'away_team': matchup['away_team'],
+                    'home_score': matchup['home_score'],
+                    'away_score': matchup['away_score'],
+                    'combined_points': matchup['home_score'] + matchup['away_score']
+                })
+
+            if combined_points_games:
+                records['most_combined_points'] = max(combined_points_games, key=lambda x: x['combined_points'])
+
+            # Lowest scoring win - team that won despite low score
+            winning_scores = []
+            for matchup in self.processed_data['matchups']:
+                if matchup['winner'] == matchup['home_team']:
+                    winning_scores.append({
+                        'team': matchup['home_team'],
+                        'score': matchup['home_score'],
+                        'week': matchup['week'],
+                        'year': matchup['year'],
+                        'opponent': matchup['away_team'],
+                        'opponent_score': matchup['away_score']
+                    })
+                elif matchup['winner'] == matchup['away_team']:
+                    winning_scores.append({
+                        'team': matchup['away_team'],
+                        'score': matchup['away_score'],
+                        'week': matchup['week'],
+                        'year': matchup['year'],
+                        'opponent': matchup['home_team'],
+                        'opponent_score': matchup['home_score']
+                    })
+
+            if winning_scores:
+                records['lowest_scoring_win'] = min(winning_scores, key=lambda x: x['score'])
+
         self.processed_data['records'] = records
 
         print("Calculated league records")
@@ -553,6 +664,180 @@ class FantasyDataProcessor:
         print(f"Added metadata: {self.processed_data['metadata']['total_seasons']} seasons, "
               f"{self.processed_data['metadata']['total_teams']} teams")
 
+    def process_draft(self):
+        """Process draft data across all years"""
+        all_drafts = []
+
+        for year, season_data in self.raw_data.items():
+            draft_picks = season_data.get('draft', [])
+            for pick in draft_picks:
+                # Skip keepers - only include actual draft picks
+                if pick.get('keeper_status', False):
+                    continue
+
+                # Add year and normalized owner name
+                pick_data = pick.copy()
+                pick_data['year'] = year
+                if pick.get('team_name'):
+                    # Find owner for this team
+                    for team in season_data.get('teams', []):
+                        if team['team_id'] == pick.get('team_id'):
+                            pick_data['owner'] = self.normalize_owner_name(team['owner'], year)
+                            break
+                all_drafts.append(pick_data)
+
+        self.processed_data['draft'] = all_drafts
+        print(f"Processed {len(all_drafts)} draft picks across all years (keepers excluded)")
+
+    def process_rosters(self):
+        """Process roster data across all years"""
+        all_rosters = []
+
+        for year, season_data in self.raw_data.items():
+            rosters_by_team = season_data.get('rosters', {})
+            teams = season_data.get('teams', [])
+
+            for team in teams:
+                team_id = team['team_id']
+                roster = rosters_by_team.get(str(team_id), [])
+
+                if roster:
+                    roster_entry = {
+                        'year': year,
+                        'team_id': team_id,
+                        'team_name': team['team_name'],
+                        'owner': self.normalize_owner_name(team['owner'], year),
+                        'roster': roster
+                    }
+                    all_rosters.append(roster_entry)
+
+        self.processed_data['rosters'] = all_rosters
+        print(f"Processed rosters for {len(all_rosters)} team-seasons")
+
+    def process_player_stats(self):
+        """Process player performance data and calculate optimal lineups"""
+        all_player_stats = []
+        optimal_lineups = []
+
+        for year, season_data in self.raw_data.items():
+            player_stats = season_data.get('player_stats', [])
+
+            # Add year and normalized owner to each stat
+            for stat in player_stats:
+                stat_data = stat.copy()
+                stat_data['year'] = year
+
+                # Find owner for this team
+                for team in season_data.get('teams', []):
+                    if team['team_id'] == stat.get('team_id'):
+                        stat_data['owner'] = self.normalize_owner_name(team['owner'], year)
+                        break
+
+                all_player_stats.append(stat_data)
+
+            # Calculate optimal lineups (only for years with player stats)
+            if player_stats:
+                optimal_lineups.extend(self.calculate_optimal_lineups(year, player_stats))
+
+        self.processed_data['player_stats'] = all_player_stats
+        self.processed_data['optimal_lineups'] = optimal_lineups
+        print(f"Processed {len(all_player_stats)} player performances")
+        print(f"Calculated {len(optimal_lineups)} optimal lineups")
+
+    def calculate_optimal_lineups(self, year, player_stats):
+        """Calculate optimal lineup for each team each week"""
+        # Group by team and week
+        from collections import defaultdict
+        team_week_players = defaultdict(list)
+
+        for stat in player_stats:
+            key = (stat['team_id'], stat['week'])
+            team_week_players[key].append(stat)
+
+        optimal_lineups = []
+
+        # Lineup slot definitions (non-bench slots)
+        # Slots like 'QB', 'RB', 'WR', 'TE', 'FLEX', 'D/ST', 'K' are starters
+        # Slot 'BE' or 'Bench' or 'IR' are bench slots
+        BENCH_SLOTS = ['BE', 'Bench', 'IR']
+
+        for (team_id, week), players in team_week_players.items():
+            # Calculate actual points (starters only)
+            actual_points = sum(p['points'] for p in players if p['slot'] not in BENCH_SLOTS)
+
+            # Calculate optimal points (all players sorted by points, taking top starters)
+            # This is simplified - ideally would respect position constraints
+            all_points = sorted([p['points'] for p in players], reverse=True)
+            num_starters = len([p for p in players if p['slot'] not in BENCH_SLOTS])
+            optimal_points = sum(all_points[:num_starters]) if all_points else 0
+
+            bench_points = sum(p['points'] for p in players if p['slot'] in BENCH_SLOTS)
+
+            # Find team info
+            team_name = next((p['team_name'] for p in players if 'team_name' in p), None)
+            owner = next((p.get('owner') for p in players if p.get('owner')), None)
+
+            optimal_lineups.append({
+                'year': year,
+                'week': week,
+                'team_id': team_id,
+                'team_name': team_name,
+                'owner': owner,
+                'actual_points': round(actual_points, 2),
+                'optimal_points': round(optimal_points, 2),
+                'bench_points': round(bench_points, 2),
+                'points_left_on_bench': round(optimal_points - actual_points, 2)
+            })
+
+        return optimal_lineups
+
+    def calculate_best_draft_picks(self):
+        """Analyze draft picks to find best value picks (excluding keepers)"""
+        # Group player stats by year and player
+        from collections import defaultdict
+        player_season_stats = defaultdict(lambda: {'total_points': 0, 'games': 0})
+
+        for stat in self.processed_data['player_stats']:
+            key = (stat['year'], stat.get('player_id') or stat['player_name'])
+            player_season_stats[key]['total_points'] += stat.get('points', 0)
+            player_season_stats[key]['games'] += 1
+
+        # Match draft picks with their season performance
+        # Keepers are already filtered out in process_draft()
+        best_picks = []
+
+        for draft_pick in self.processed_data['draft']:
+            year = draft_pick['year']
+            player_id = draft_pick.get('player_id') or draft_pick['player_name']
+
+            key = (year, player_id)
+            if key in player_season_stats:
+                stats = player_season_stats[key]
+                total_points = stats['total_points']
+                avg_points = total_points / stats['games'] if stats['games'] > 0 else 0
+
+                auction_cost = draft_pick.get('bid_amount', 0)
+                # Calculate value as points per dollar spent (for auction drafts)
+                value = round(total_points / auction_cost, 2) if auction_cost > 0 else 0
+
+                best_picks.append({
+                    'year': year,
+                    'player_name': draft_pick['player_name'],
+                    'owner': draft_pick.get('owner'),
+                    'team_name': draft_pick.get('team_name'),
+                    'auction_cost': auction_cost,
+                    'total_points': round(total_points, 2),
+                    'avg_points_per_game': round(avg_points, 2),
+                    'games_played': stats['games'],
+                    'value': value  # Points per dollar
+                })
+
+        # Sort by value (points per draft position)
+        best_picks.sort(key=lambda x: x['value'], reverse=True)
+
+        self.processed_data['best_draft_picks'] = best_picks
+        print(f"Analyzed {len(best_picks)} draft picks with performance data")
+
     def process_all(self):
         """Run all processing steps"""
         print("\n=== Processing Fantasy Football Data ===\n")
@@ -564,6 +849,10 @@ class FantasyDataProcessor:
         self.process_playoffs()
         self.process_head_to_head()
         self.calculate_records()
+        self.process_draft()
+        self.process_rosters()
+        self.process_player_stats()
+        self.calculate_best_draft_picks()
         self.add_metadata()
 
         print("\n✓ All processing complete!\n")
@@ -577,7 +866,7 @@ class FantasyDataProcessor:
         print(f"✓ Saved complete data to {complete_file}")
 
         # Save individual components for easier API access
-        for key in ['teams', 'owners', 'matchups', 'standings', 'playoffs', 'head_to_head', 'records', 'metadata']:
+        for key in ['teams', 'owners', 'matchups', 'standings', 'playoffs', 'head_to_head', 'records', 'draft', 'rosters', 'player_stats', 'best_draft_picks', 'optimal_lineups', 'metadata']:
             component_file = PROCESSED_DATA_DIR / f'{key}.json'
             with open(component_file, 'w') as f:
                 json.dump(self.processed_data[key], f, indent=2)

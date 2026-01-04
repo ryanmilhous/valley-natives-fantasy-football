@@ -12,9 +12,13 @@ function HeadToHead() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await apiService.getAllHeadToHead();
-        setH2hData(response.data);
-        const ownerList = Object.keys(response.data).sort();
+        const [h2hResponse, ownersResponse] = await Promise.all([
+          apiService.getAllHeadToHead(),
+          apiService.getOwners(),
+        ]);
+        setH2hData(h2hResponse.data);
+        // Use all owners, not just those with H2H records
+        const ownerList = ownersResponse.data.map(o => o.owner).sort();
         setOwners(ownerList);
         if (ownerList.length >= 2) {
           setSelectedOwner1(ownerList[0]);
@@ -31,8 +35,14 @@ function HeadToHead() {
   }, []);
 
   useEffect(() => {
-    if (selectedOwner1 && selectedOwner2 && h2hData[selectedOwner1]) {
-      setRecord(h2hData[selectedOwner1][selectedOwner2] || { wins: 0, losses: 0, ties: 0 });
+    if (selectedOwner1 && selectedOwner2) {
+      // Check if both owners exist in H2H data
+      if (h2hData[selectedOwner1] && h2hData[selectedOwner1][selectedOwner2]) {
+        setRecord(h2hData[selectedOwner1][selectedOwner2]);
+      } else {
+        // No H2H data available (owners didn't play each other or played before 2019)
+        setRecord({ wins: 0, losses: 0, ties: 0 });
+      }
     }
   }, [selectedOwner1, selectedOwner2, h2hData]);
 
@@ -43,6 +53,22 @@ function HeadToHead() {
   return (
     <div className="space-y-6">
       <h1 className="text-3xl font-bold text-gray-800">Head-to-Head Records</h1>
+
+      {/* Data Availability Notice */}
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+        <div className="flex items-start">
+          <div className="flex-shrink-0">
+            <svg className="h-5 w-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+            </svg>
+          </div>
+          <div className="ml-3">
+            <p className="text-sm text-blue-700">
+              <strong>Note:</strong> Head-to-head matchup data is only available from 2019-present due to ESPN API limitations. Owners who only played before 2019 will show 0-0 records.
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* Owner Selectors */}
       <div className="bg-white rounded-lg shadow p-6">

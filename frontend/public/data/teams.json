@@ -2,16 +2,55 @@
   "1": {
     "team_id": 1,
     "team_names": [
-      "RichCity Yung Beevs",
-      "The Chronic"
+      "The Chronic",
+      "RichCity Yung Beevs"
     ],
-    "current_name": "The Chronic",
+    "current_name": "RichCity Yung Beevs",
     "owners": [
       "Chris Vitale"
     ],
     "current_owner": "Chris Vitale",
-    "seasons_active": 15,
+    "seasons_active": 18,
     "seasons": [
+      {
+        "year": 2007,
+        "team_name": "The Chronic",
+        "owner": "Chris Vitale",
+        "wins": 3,
+        "losses": 9,
+        "ties": 0,
+        "points_for": 856.0,
+        "points_against": 1042.0,
+        "standing": 12,
+        "final_standing": 10,
+        "playoff_seed": null
+      },
+      {
+        "year": 2008,
+        "team_name": "The Chronic",
+        "owner": "Chris Vitale",
+        "wins": 6,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1072.0,
+        "points_against": 1032.0,
+        "standing": 8,
+        "final_standing": 9,
+        "playoff_seed": null
+      },
+      {
+        "year": 2009,
+        "team_name": "The Chronic",
+        "owner": "Chris Vitale",
+        "wins": 11,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 1380.0,
+        "points_against": 1075.0,
+        "standing": 1,
+        "final_standing": 3,
+        "playoff_seed": null
+      },
       {
         "year": 2010,
         "team_name": "The Chronic",
@@ -209,11 +248,11 @@
       }
     ],
     "all_time": {
-      "wins": 96,
-      "losses": 101,
+      "wins": 116,
+      "losses": 117,
       "ties": 0,
-      "points_for": 20535.18,
-      "points_against": 20091.46,
+      "points_for": 23843.18,
+      "points_against": 23240.46,
       "championships": 1,
       "playoff_appearances": 0
     }
@@ -221,15 +260,57 @@
   "2": {
     "team_id": 2,
     "team_names": [
-      "The Kellen Brothers"
+      "Back to Back Champioships",
+      "The Tom Brady Pus Bus",
+      "The Kellen Brothers",
+      "Tom Brady's New Pus Bus"
     ],
-    "current_name": "The Kellen Brothers",
+    "current_name": "Tom Brady's New Pus Bus",
     "owners": [
       "Kellen Coffis"
     ],
     "current_owner": "Kellen Coffis",
-    "seasons_active": 15,
+    "seasons_active": 18,
     "seasons": [
+      {
+        "year": 2007,
+        "team_name": "Back to Back Champioships",
+        "owner": "Kellen Coffis",
+        "wins": 9,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 1124.0,
+        "points_against": 913.0,
+        "standing": 1,
+        "final_standing": 3,
+        "playoff_seed": null
+      },
+      {
+        "year": 2008,
+        "team_name": "The Tom Brady Pus Bus",
+        "owner": "Kellen Coffis",
+        "wins": 7,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1106.0,
+        "points_against": 1087.0,
+        "standing": 3,
+        "final_standing": 3,
+        "playoff_seed": null
+      },
+      {
+        "year": 2009,
+        "team_name": "Tom Brady's New Pus Bus",
+        "owner": "Kellen Coffis",
+        "wins": 3,
+        "losses": 9,
+        "ties": 0,
+        "points_for": 987.0,
+        "points_against": 1256.0,
+        "standing": 12,
+        "final_standing": 9,
+        "playoff_seed": null
+      },
       {
         "year": 2010,
         "team_name": "The Kellen Brothers",
@@ -427,11 +508,11 @@
       }
     ],
     "all_time": {
-      "wins": 86,
-      "losses": 111,
+      "wins": 105,
+      "losses": 128,
       "ties": 0,
-      "points_for": 19362.9,
-      "points_against": 20608.85,
+      "points_for": 22579.9,
+      "points_against": 23864.85,
       "championships": 0,
       "playoff_appearances": 0
     }
@@ -439,28 +520,69 @@
   "3": {
     "team_id": 3,
     "team_names": [
-      "The Replacement Graduates",
-      "B-LO Bleezos",
-      "Acoreycy and Prosision",
-      "The Lucky Lefties",
-      "Stop Jerking My Johnson",
       "Ben Lomond  Half Baked Co.",
+      "The Lucky Lefties",
       "The Young Lefties",
-      "Mono a Mono",
+      "Be Stills My Fart ",
       "The Leftists",
       "B-LO Par",
-      "Be Stills My Fart ",
+      "Stop Jerking My Johnson",
+      "Acoreycy and Prosision",
+      " The Art Shell  Blueprint",
+      "B-LO Bleezos",
+      "The Graduates",
       "The Post Graduates",
       "The Golden Gods",
-      "The Graduates"
+      "The Overflowing Spongies",
+      "The Replacement Graduates",
+      "Mono a Mono"
     ],
-    "current_name": "The Graduates",
+    "current_name": "Mono a Mono",
     "owners": [
       "Jamie Coffis"
     ],
     "current_owner": "Jamie Coffis",
-    "seasons_active": 15,
+    "seasons_active": 18,
     "seasons": [
+      {
+        "year": 2007,
+        "team_name": " The Art Shell  Blueprint",
+        "owner": "Jamie Coffis",
+        "wins": 8,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 1008.0,
+        "points_against": 961.0,
+        "standing": 2,
+        "final_standing": 4,
+        "playoff_seed": null
+      },
+      {
+        "year": 2008,
+        "team_name": "The Overflowing Spongies",
+        "owner": "Jamie Coffis",
+        "wins": 6,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1245.0,
+        "points_against": 1146.0,
+        "standing": 5,
+        "final_standing": 7,
+        "playoff_seed": null
+      },
+      {
+        "year": 2009,
+        "team_name": "The Graduates",
+        "owner": "Jamie Coffis",
+        "wins": 8,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 1268.0,
+        "points_against": 1151.0,
+        "standing": 2,
+        "final_standing": 2,
+        "playoff_seed": null
+      },
       {
         "year": 2010,
         "team_name": "The Graduates",
@@ -658,11 +780,11 @@
       }
     ],
     "all_time": {
-      "wins": 100,
-      "losses": 97,
+      "wins": 122,
+      "losses": 111,
       "ties": 0,
-      "points_for": 20897.98,
-      "points_against": 20216.46,
+      "points_for": 24418.98,
+      "points_against": 23474.46,
       "championships": 2,
       "playoff_appearances": 0
     }
@@ -670,12 +792,13 @@
   "4": {
     "team_id": 4,
     "team_names": [
-      "Emancipation of Jim and Vicki",
-      "Mr. Thomas' Naberhood",
+      "Michael Vick's FreedomFighters",
       "No Starties Even Beats Me",
-      "Nano Bubbles  And  Abstinence",
-      "Hustle Bustle And Man Muscle",
       "King of  The Doids",
+      "Hustle Bustle And Man Muscle",
+      "Emancipation of Jim and Vicki",
+      "Nano Bubbles  And  Abstinence",
+      "Mr. Thomas' Naberhood",
       "What would MichaelVick do?"
     ],
     "current_name": "What would MichaelVick do?",
@@ -683,8 +806,47 @@
       "Garrett Ulrich"
     ],
     "current_owner": "Garrett Ulrich",
-    "seasons_active": 15,
+    "seasons_active": 18,
     "seasons": [
+      {
+        "year": 2007,
+        "team_name": "Michael Vick's FreedomFighters",
+        "owner": "Garrett Ulrich",
+        "wins": 7,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1090.0,
+        "points_against": 988.0,
+        "standing": 4,
+        "final_standing": 2,
+        "playoff_seed": null
+      },
+      {
+        "year": 2008,
+        "team_name": "Michael Vick's FreedomFighters",
+        "owner": "Garrett Ulrich",
+        "wins": 6,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1185.0,
+        "points_against": 1067.0,
+        "standing": 6,
+        "final_standing": 6,
+        "playoff_seed": null
+      },
+      {
+        "year": 2009,
+        "team_name": "What would MichaelVick do?",
+        "owner": "Garrett Ulrich",
+        "wins": 7,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1262.0,
+        "points_against": 1056.0,
+        "standing": 4,
+        "final_standing": 1,
+        "playoff_seed": null
+      },
       {
         "year": 2010,
         "team_name": "What would MichaelVick do?",
@@ -882,28 +1044,70 @@
       }
     ],
     "all_time": {
-      "wins": 92,
-      "losses": 105,
+      "wins": 112,
+      "losses": 121,
       "ties": 0,
-      "points_for": 19742.52,
-      "points_against": 20569.32,
-      "championships": 2,
+      "points_for": 23279.52,
+      "points_against": 23680.32,
+      "championships": 3,
       "playoff_appearances": 0
     }
   },
   "5": {
     "team_id": 5,
     "team_names": [
-      "Out of Time",
-      "Prime Time"
+      "Team Clark",
+      "Team Ramrod",
+      "Prime Time",
+      "Out of Time"
     ],
-    "current_name": "Prime Time",
+    "current_name": "Out of Time",
     "owners": [
-      "Greg Swenson"
+      "Greg Swenson",
+      "Tanner Clark"
     ],
-    "current_owner": "Greg Swenson",
-    "seasons_active": 15,
+    "current_owner": "Tanner Clark",
+    "seasons_active": 18,
     "seasons": [
+      {
+        "year": 2007,
+        "team_name": "Team Clark",
+        "owner": "Tanner Clark",
+        "wins": 5,
+        "losses": 7,
+        "ties": 0,
+        "points_for": 970.0,
+        "points_against": 1083.0,
+        "standing": 9,
+        "final_standing": 11,
+        "playoff_seed": null
+      },
+      {
+        "year": 2008,
+        "team_name": "Team Clark",
+        "owner": "Tanner Clark",
+        "wins": 4,
+        "losses": 8,
+        "ties": 0,
+        "points_for": 852.0,
+        "points_against": 1114.0,
+        "standing": 11,
+        "final_standing": 10,
+        "playoff_seed": null
+      },
+      {
+        "year": 2009,
+        "team_name": "Team Ramrod",
+        "owner": "Greg Swenson",
+        "wins": 7,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1298.0,
+        "points_against": 1064.0,
+        "standing": 3,
+        "final_standing": 4,
+        "playoff_seed": null
+      },
       {
         "year": 2010,
         "team_name": "Prime Time",
@@ -1101,11 +1305,11 @@
       }
     ],
     "all_time": {
-      "wins": 104,
-      "losses": 93,
+      "wins": 120,
+      "losses": 113,
       "ties": 0,
-      "points_for": 20792.78,
-      "points_against": 20010.33,
+      "points_for": 23912.78,
+      "points_against": 23271.33,
       "championships": 1,
       "playoff_appearances": 0
     }
@@ -1121,8 +1325,47 @@
       "Jeremy Settles"
     ],
     "current_owner": "Jeremy Settles",
-    "seasons_active": 15,
+    "seasons_active": 18,
     "seasons": [
+      {
+        "year": 2007,
+        "team_name": "Team Settles",
+        "owner": "Jeremy Settles",
+        "wins": 7,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1134.0,
+        "points_against": 988.0,
+        "standing": 3,
+        "final_standing": 1,
+        "playoff_seed": null
+      },
+      {
+        "year": 2008,
+        "team_name": "Team Settles",
+        "owner": "Jeremy Settles",
+        "wins": 7,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1043.0,
+        "points_against": 986.0,
+        "standing": 4,
+        "final_standing": 2,
+        "playoff_seed": null
+      },
+      {
+        "year": 2009,
+        "team_name": "Team Settles",
+        "owner": "Jeremy Settles",
+        "wins": 6,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1113.0,
+        "points_against": 1200.0,
+        "standing": 7,
+        "final_standing": 5,
+        "playoff_seed": null
+      },
       {
         "year": 2010,
         "team_name": "Team Settles",
@@ -1320,32 +1563,75 @@
       }
     ],
     "all_time": {
-      "wins": 105,
-      "losses": 92,
+      "wins": 125,
+      "losses": 108,
       "ties": 0,
-      "points_for": 20239.15,
-      "points_against": 19972.83,
-      "championships": 2,
+      "points_for": 23529.15,
+      "points_against": 23146.83,
+      "championships": 3,
       "playoff_appearances": 0
     }
   },
   "7": {
     "team_id": 7,
     "team_names": [
-      "The Ghosts of Polak Past",
-      "B-Rom Baby  Bears",
+      "Team Schmeeeelak",
       "Schmee Squad",
+      "Somewhere over the Dwayne Bowe",
+      "The Smi Pies",
+      "Team luna",
       ". Schmee",
       "RIP Chris",
-      "The Smi Pies"
+      "The Ghosts of Polak Past",
+      "B-Rom Baby  Bears"
     ],
-    "current_name": "The Smi Pies",
+    "current_name": "B-Rom Baby  Bears",
     "owners": [
-      "Nick Smielak"
+      "Nick Smielak",
+      "Jacob Luna"
     ],
-    "current_owner": "Nick Smielak",
-    "seasons_active": 15,
+    "current_owner": "Jacob Luna",
+    "seasons_active": 18,
     "seasons": [
+      {
+        "year": 2007,
+        "team_name": "Team luna",
+        "owner": "Jacob Luna",
+        "wins": 4,
+        "losses": 8,
+        "ties": 0,
+        "points_for": 930.0,
+        "points_against": 1030.0,
+        "standing": 11,
+        "final_standing": 12,
+        "playoff_seed": null
+      },
+      {
+        "year": 2008,
+        "team_name": "Team Schmeeeelak",
+        "owner": "Nick Smielak",
+        "wins": 6,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1116.0,
+        "points_against": 1080.0,
+        "standing": 7,
+        "final_standing": 5,
+        "playoff_seed": null
+      },
+      {
+        "year": 2009,
+        "team_name": "Somewhere over the Dwayne Bowe",
+        "owner": "Nick Smielak",
+        "wins": 4,
+        "losses": 8,
+        "ties": 0,
+        "points_for": 1095.0,
+        "points_against": 1222.0,
+        "standing": 9,
+        "final_standing": 12,
+        "playoff_seed": null
+      },
       {
         "year": 2010,
         "team_name": "RIP Chris",
@@ -1543,11 +1829,11 @@
       }
     ],
     "all_time": {
-      "wins": 117,
-      "losses": 80,
+      "wins": 131,
+      "losses": 102,
       "ties": 0,
-      "points_for": 21540.75,
-      "points_against": 20358.83,
+      "points_for": 24681.75,
+      "points_against": 23690.83,
       "championships": 1,
       "playoff_appearances": 0
     }
@@ -1555,27 +1841,69 @@
   "8": {
     "team_id": 8,
     "team_names": [
-      "U Koo with Younghoes?",
-      "Pantry The Puddn\u00e2\u0080\u0099",
-      "Kooter McGavin",
-      "Blackout or Back Out",
-      "Younghoe Bunghole",
-      "Bros Before Younghoes",
-      "Protoss'd Salad",
-      "RichCity Yung Beevs",
+      "the creek nut wildphish",
+      "south brookdale regulaters",
+      "Biggest  Fantasy Flop",
       "Running Back-Snatch",
       "Younghoes Have Kooties",
+      "Blackout or Back Out",
+      "Kooter McGavin",
       "Scroopy Noopers",
-      "south brookdale regulaters"
+      "RichCity Yung Beevs",
+      "Pantry The Puddn\u00e2\u0080\u0099",
+      "Protoss'd Salad",
+      "U Koo with Younghoes?",
+      "Bros Before Younghoes",
+      "Younghoe Bunghole"
     ],
-    "current_name": "south brookdale regulaters",
+    "current_name": "Younghoe Bunghole",
     "owners": [
       "Brian Vitale",
+      "Peter Kent-Stoll",
       "Rory McKee"
     ],
     "current_owner": "Rory McKee",
-    "seasons_active": 15,
+    "seasons_active": 18,
     "seasons": [
+      {
+        "year": 2007,
+        "team_name": "Biggest  Fantasy Flop",
+        "owner": "Peter Kent-Stoll",
+        "wins": 7,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1000.0,
+        "points_against": 930.0,
+        "standing": 5,
+        "final_standing": 6,
+        "playoff_seed": null
+      },
+      {
+        "year": 2008,
+        "team_name": "Biggest  Fantasy Flop",
+        "owner": "Brian Vitale",
+        "wins": 6,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 958.0,
+        "points_against": 1110.0,
+        "standing": 10,
+        "final_standing": 12,
+        "playoff_seed": null
+      },
+      {
+        "year": 2009,
+        "team_name": "the creek nut wildphish",
+        "owner": "Brian Vitale",
+        "wins": 4,
+        "losses": 8,
+        "ties": 0,
+        "points_for": 1087.0,
+        "points_against": 1207.0,
+        "standing": 10,
+        "final_standing": 7,
+        "playoff_seed": null
+      },
       {
         "year": 2010,
         "team_name": "RichCity Yung Beevs",
@@ -1773,11 +2101,11 @@
       }
     ],
     "all_time": {
-      "wins": 97,
-      "losses": 100,
+      "wins": 114,
+      "losses": 119,
       "ties": 0,
-      "points_for": 20413.38,
-      "points_against": 20442.0,
+      "points_for": 23458.38,
+      "points_against": 23689.0,
       "championships": 0,
       "playoff_appearances": 0
     }
@@ -1785,18 +2113,60 @@
   "9": {
     "team_id": 9,
     "team_names": [
-      "High Hopes",
+      "Less Gore Mo Pus",
       "Tampon Bay Blumpcaneers",
+      "More Gore",
       "Tampon Bay Blumpkineers",
-      "Tampon Bay Chumpkineers"
+      "Tampon Bay Chumpkineers",
+      "High Hopes"
     ],
-    "current_name": "Tampon Bay Chumpkineers",
+    "current_name": "High Hopes",
     "owners": [
+      "Dylan Andrews",
       "Jacob Luna"
     ],
     "current_owner": "Jacob Luna",
-    "seasons_active": 15,
+    "seasons_active": 18,
     "seasons": [
+      {
+        "year": 2007,
+        "team_name": "More Gore",
+        "owner": "Dylan Andrews",
+        "wins": 6,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1096.0,
+        "points_against": 940.0,
+        "standing": 6,
+        "final_standing": 7,
+        "playoff_seed": null
+      },
+      {
+        "year": 2008,
+        "team_name": "Less Gore Mo Pus",
+        "owner": "Jacob Luna",
+        "wins": 3,
+        "losses": 9,
+        "ties": 0,
+        "points_for": 826.0,
+        "points_against": 1050.0,
+        "standing": 12,
+        "final_standing": 11,
+        "playoff_seed": null
+      },
+      {
+        "year": 2009,
+        "team_name": "Less Gore Mo Pus",
+        "owner": "Jacob Luna",
+        "wins": 7,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1207.0,
+        "points_against": 1163.0,
+        "standing": 5,
+        "final_standing": 8,
+        "playoff_seed": null
+      },
       {
         "year": 2010,
         "team_name": "High Hopes",
@@ -1994,11 +2364,11 @@
       }
     ],
     "all_time": {
-      "wins": 104,
-      "losses": 93,
+      "wins": 120,
+      "losses": 113,
       "ties": 0,
-      "points_for": 20135.07,
-      "points_against": 20220.5,
+      "points_for": 23264.07,
+      "points_against": 23373.5,
       "championships": 0,
       "playoff_appearances": 0
     }
@@ -2006,29 +2376,68 @@
   "10": {
     "team_id": 10,
     "team_names": [
+      "Foot-Loose and Fancy Free",
+      "AB's Face Farts",
       "For Those About To Brock",
+      "Purdy Good Timing ",
+      "Tyreek And The Drain Pours",
+      "For All The  Haters (Chris)",
+      "Nick Dak Paddy Wack",
       "The Keepy No  Startie's",
       "Lo-Carb Monsters",
-      "Tyreek And The Drain Pours",
-      "AB's Face Farts",
-      "The Pierre Necessities",
-      "Nick Dak Paddy Wack",
-      "Purdy Good Timing ",
-      "Foot-Loose and Fancy Free",
-      "For All The  Haters (Chris)"
+      "The Pierre Necessities"
     ],
-    "current_name": "For All The  Haters (Chris)",
+    "current_name": "The Pierre Necessities",
     "owners": [
-      "Tyler Fullterton",
+      "Tyler Fullerton",
       "Bryan Whitaker"
     ],
     "current_owner": "Bryan Whitaker",
-    "seasons_active": 15,
+    "seasons_active": 18,
     "seasons": [
+      {
+        "year": 2007,
+        "team_name": "Lo-Carb Monsters",
+        "owner": "Tyler Fullerton",
+        "wins": 6,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 924.0,
+        "points_against": 1003.0,
+        "standing": 7,
+        "final_standing": 9,
+        "playoff_seed": null
+      },
+      {
+        "year": 2008,
+        "team_name": "Lo-Carb Monsters",
+        "owner": "Tyler Fullerton",
+        "wins": 7,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1290.0,
+        "points_against": 1192.0,
+        "standing": 2,
+        "final_standing": 1,
+        "playoff_seed": null
+      },
+      {
+        "year": 2009,
+        "team_name": "Lo-Carb Monsters",
+        "owner": "Tyler Fullerton",
+        "wins": 5,
+        "losses": 7,
+        "ties": 0,
+        "points_for": 1112.0,
+        "points_against": 1145.0,
+        "standing": 8,
+        "final_standing": 10,
+        "playoff_seed": null
+      },
       {
         "year": 2010,
         "team_name": "Lo-Carb Monsters",
-        "owner": "Tyler Fullterton",
+        "owner": "Tyler Fullerton",
         "wins": 8,
         "losses": 4,
         "ties": 0,
@@ -2041,7 +2450,7 @@
       {
         "year": 2011,
         "team_name": "Lo-Carb Monsters",
-        "owner": "Tyler Fullterton",
+        "owner": "Tyler Fullerton",
         "wins": 6,
         "losses": 6,
         "ties": 0,
@@ -2054,7 +2463,7 @@
       {
         "year": 2012,
         "team_name": "Lo-Carb Monsters",
-        "owner": "Tyler Fullterton",
+        "owner": "Tyler Fullerton",
         "wins": 6,
         "losses": 7,
         "ties": 0,
@@ -2067,7 +2476,7 @@
       {
         "year": 2013,
         "team_name": "Lo-Carb Monsters",
-        "owner": "Tyler Fullterton",
+        "owner": "Tyler Fullerton",
         "wins": 5,
         "losses": 8,
         "ties": 0,
@@ -2080,7 +2489,7 @@
       {
         "year": 2014,
         "team_name": "Lo-Carb Monsters",
-        "owner": "Tyler Fullterton",
+        "owner": "Tyler Fullerton",
         "wins": 3,
         "losses": 10,
         "ties": 0,
@@ -2222,18 +2631,19 @@
       }
     ],
     "all_time": {
-      "wins": 87,
-      "losses": 110,
+      "wins": 105,
+      "losses": 128,
       "ties": 0,
-      "points_for": 19748.08,
-      "points_against": 20313.52,
-      "championships": 2,
+      "points_for": 23074.08,
+      "points_against": 23653.52,
+      "championships": 3,
       "playoff_appearances": 0
     }
   },
   "11": {
     "team_id": 11,
     "team_names": [
+      "Team Romele",
       "S.F. Forty-Chiners"
     ],
     "current_name": "S.F. Forty-Chiners",
@@ -2241,8 +2651,47 @@
       "Brendan Romale"
     ],
     "current_owner": "Brendan Romale",
-    "seasons_active": 15,
+    "seasons_active": 18,
     "seasons": [
+      {
+        "year": 2007,
+        "team_name": "Team Romele",
+        "owner": "Brendan Romale",
+        "wins": 5,
+        "losses": 7,
+        "ties": 0,
+        "points_for": 973.0,
+        "points_against": 1078.0,
+        "standing": 8,
+        "final_standing": 5,
+        "playoff_seed": null
+      },
+      {
+        "year": 2008,
+        "team_name": "Team Romele",
+        "owner": "Brendan Romale",
+        "wins": 8,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 1152.0,
+        "points_against": 933.0,
+        "standing": 1,
+        "final_standing": 4,
+        "playoff_seed": null
+      },
+      {
+        "year": 2009,
+        "team_name": "S.F. Forty-Chiners",
+        "owner": "Brendan Romale",
+        "wins": 6,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1165.0,
+        "points_against": 1219.0,
+        "standing": 6,
+        "final_standing": 6,
+        "playoff_seed": null
+      },
       {
         "year": 2010,
         "team_name": "S.F. Forty-Chiners",
@@ -2440,11 +2889,11 @@
       }
     ],
     "all_time": {
-      "wins": 90,
-      "losses": 107,
+      "wins": 109,
+      "losses": 124,
       "ties": 0,
-      "points_for": 20336.36,
-      "points_against": 20277.87,
+      "points_for": 23626.36,
+      "points_against": 23507.87,
       "championships": 0,
       "playoff_appearances": 0
     }
@@ -2452,18 +2901,59 @@
   "12": {
     "team_id": 12,
     "team_names": [
-      "Auto Drafties",
+      "Team Morris",
+      "Ding Dong Doid Brains",
       "Corn On The  Kolb",
-      "Ding Dong Doid Brains"
+      "the revolting BLOB",
+      "Auto Drafties"
     ],
-    "current_name": "Ding Dong Doid Brains",
+    "current_name": "Auto Drafties",
     "owners": [
-      "Kyle Morris",
-      "Ryan Milhous"
+      "Ryan Milhous",
+      "Kyle Morris"
     ],
-    "current_owner": "Ryan Milhous",
-    "seasons_active": 15,
+    "current_owner": "Kyle Morris",
+    "seasons_active": 18,
     "seasons": [
+      {
+        "year": 2007,
+        "team_name": "Team Morris",
+        "owner": "Kyle Morris",
+        "wins": 5,
+        "losses": 7,
+        "ties": 0,
+        "points_for": 913.0,
+        "points_against": 1062.0,
+        "standing": 10,
+        "final_standing": 8,
+        "playoff_seed": null
+      },
+      {
+        "year": 2008,
+        "team_name": "Team Morris",
+        "owner": "Kyle Morris",
+        "wins": 6,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1070.0,
+        "points_against": 1118.0,
+        "standing": 9,
+        "final_standing": 8,
+        "playoff_seed": null
+      },
+      {
+        "year": 2009,
+        "team_name": "the revolting BLOB",
+        "owner": "Kyle Morris",
+        "wins": 4,
+        "losses": 8,
+        "ties": 0,
+        "points_for": 1002.0,
+        "points_against": 1218.0,
+        "standing": 11,
+        "final_standing": 11,
+        "playoff_seed": null
+      },
       {
         "year": 2010,
         "team_name": "Corn On The  Kolb",
@@ -2661,11 +3151,11 @@
       }
     ],
     "all_time": {
-      "wins": 99,
-      "losses": 98,
+      "wins": 114,
+      "losses": 119,
       "ties": 0,
-      "points_for": 20270.43,
-      "points_against": 20619.26,
+      "points_for": 23255.43,
+      "points_against": 24017.26,
       "championships": 1,
       "playoff_appearances": 0
     }
@@ -2674,8 +3164,8 @@
     "team_id": 13,
     "team_names": [
       "Jackson5 \ud83d\udc2c",
-      "Youth Movement  !!!!!!!",
       "the new kid  on the block",
+      "Youth Movement  !!!!!!!",
       "The Pudd'n \ud83d\udc2c"
     ],
     "current_name": "The Pudd'n \ud83d\udc2c",

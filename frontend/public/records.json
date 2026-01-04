@@ -1,0 +1,116 @@
+{
+  "highest_score": {
+    "team": "Ding Dong Doid Brains",
+    "score": 188.01,
+    "week": 3,
+    "year": 2023,
+    "opponent": "The Pudd'n \ud83d\udc2c"
+  },
+  "lowest_score": {
+    "team": "Foot-Loose and Fancy Free",
+    "score": 38.13,
+    "week": 13,
+    "year": 2019,
+    "opponent": "S.F. Forty-Chiners"
+  },
+  "biggest_blowout": {
+    "year": 2024,
+    "week": 11,
+    "is_playoff": false,
+    "home_team": "Cherry Poppen",
+    "home_team_id": 14,
+    "home_score": 170.66,
+    "away_team": "RichCity Yung Beevs",
+    "away_team_id": 1,
+    "away_score": 71.48,
+    "winner": "Cherry Poppen",
+    "point_differential": 99.18,
+    "loser": "RichCity Yung Beevs",
+    "winner_score": 170.66,
+    "loser_score": 71.48
+  },
+  "closest_game": {
+    "year": 2021,
+    "week": 14,
+    "is_playoff": false,
+    "home_team": "RichCity Yung Beevs",
+    "home_team_id": 1,
+    "home_score": 134.85,
+    "away_team": "Prime Time",
+    "away_team_id": 5,
+    "away_score": 134.88,
+    "winner": "Prime Time",
+    "point_differential": 0.03,
+    "loser": "RichCity Yung Beevs",
+    "winner_score": 134.88,
+    "loser_score": 134.85
+  },
+  "most_points_season": {
+    "year": 2024,
+    "team_name": "Prime Time",
+    "owner": "Greg Swenson",
+    "wins": 9,
+    "losses": 5,
+    "ties": 0,
+    "points_for": 1847.89,
+    "points_against": 1588.8,
+    "standing": 3,
+    "final_standing": 6,
+    "playoff_seed": null
+  },
+  "most_wins_season": {
+    "year": 2022,
+    "team_name": "The Smi Pies",
+    "owner": "Nick Smielak",
+    "wins": 12,
+    "losses": 2,
+    "ties": 0,
+    "points_for": 1830.48,
+    "points_against": 1444.84,
+    "standing": 1,
+    "final_standing": 2,
+    "playoff_seed": null
+  },
+  "most_points_against_season": {
+    "year": 2024,
+    "team_name": "The Kellen Brothers",
+    "owner": "Kellen Coffis",
+    "wins": 4,
+    "losses": 10,
+    "ties": 0,
+    "points_for": 1452.33,
+    "points_against": 1735.13,
+    "standing": 12,
+    "final_standing": 8,
+    "playoff_seed": null
+  },
+  "fewest_wins_season": {
+    "year": 2016,
+    "team_name": "S.F. Forty-Chiners",
+    "owner": "Brendan Romale",
+    "wins": 0,
+    "losses": 13,
+    "ties": 0,
+    "points_for": 1134.11,
+    "points_against": 1401.12,
+    "standing": 14,
+    "final_standing": 10,
+    "playoff_seed": null
+  },
+  "longest_win_streak": {
+    "owner": "Ryan Milhous",
+    "streak": 15,
+    "start_year": 2022,
+    "end_year": 2023,
+    "start_week": 6,
+    "end_week": 3
+  },
+  "longest_loss_streak": {
+    "owner": "Garrett Ulrich",
+    "streak": 11,
+    "start_year": 2023,
+    "end_year": 2024,
+    "start_week": 8,
+    "end_week": 1
+  }
+}

@@ -24,12 +24,21 @@ function Records() {
     return <div className="text-center py-12">Loading...</div>;
   }
 
-  const RecordCard = ({ title, record, icon, description }) => (
+  const RecordCard = ({ title, record, icon, description, dataRange = '2019-2024' }) => (
     <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
       <div className="flex items-start space-x-4">
         <div className="text-5xl group-hover:scale-110 transition-transform duration-300">{icon}</div>
         <div className="flex-1">
-          <h3 className="text-lg font-bold text-purple-400 uppercase tracking-wider mb-2">{title}</h3>
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-lg font-bold text-purple-400 uppercase tracking-wider">{title}</h3>
+            <span className={`text-xs px-2 py-1 rounded-full font-semibold ${
+              dataRange === '2007-2024'
+                ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+            }`}>
+              {dataRange}
+            </span>
+          </div>
           {record && (
             <div className="space-y-1">
               <div className="text-3xl font-bold text-white">
@@ -49,6 +58,32 @@ function Records() {
 
   return (
     <div className="space-y-8">
+      {/* Data Availability Notice */}
+      <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border-l-4 border-blue-500 p-4 rounded-lg backdrop-blur-sm">
+        <div className="flex items-start space-x-3">
+          <div className="flex-shrink-0">
+            <svg className="h-5 w-5 text-blue-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+            </svg>
+          </div>
+          <div className="flex-1">
+            <p className="text-sm text-blue-300 font-medium">
+              <strong>Data Availability:</strong> Records are based on different data sources depending on ESPN API limitations.
+            </p>
+            <div className="mt-2 flex flex-wrap gap-3 text-xs">
+              <div className="flex items-center space-x-2">
+                <span className="px-2 py-1 rounded-full bg-green-500/20 text-green-400 border border-green-500/30 font-semibold">2007-2024</span>
+                <span className="text-white/70">Full league history (season stats)</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30 font-semibold">2019-2024</span>
+                <span className="text-white/70">Matchup data only (game-by-game records)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-red-500/10 p-1">
         <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-8 flex items-center space-x-3">
@@ -66,6 +101,7 @@ function Records() {
                   record={records.highest_score}
                   icon="🔥"
                   description={`vs ${records.highest_score.opponent}`}
+                  dataRange="2019-2024"
                 />
               )}
               {records?.lowest_score && (
@@ -74,6 +110,7 @@ function Records() {
                   record={records.lowest_score}
                   icon="❄️"
                   description={`vs ${records.lowest_score.opponent}`}
+                  dataRange="2019-2024"
                 />
               )}
               {records?.biggest_blowout && (
@@ -81,7 +118,12 @@ function Records() {
                   <div className="flex items-start space-x-4">
                     <div className="text-5xl group-hover:scale-110 transition-transform duration-300">💥</div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-orange-400 uppercase tracking-wider mb-2">Biggest Blowout</h3>
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-orange-400 uppercase tracking-wider">Biggest Blowout</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                          2019-2024
+                        </span>
+                      </div>
                       <div className="text-3xl font-bold text-white">
                         {records.biggest_blowout.point_differential.toFixed(2)} points
                       </div>
@@ -103,7 +145,12 @@ function Records() {
                   <div className="flex items-start space-x-4">
                     <div className="text-5xl group-hover:scale-110 transition-transform duration-300">⚖️</div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-cyan-400 uppercase tracking-wider mb-2">Closest Game</h3>
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-cyan-400 uppercase tracking-wider">Closest Game</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                          2019-2024
+                        </span>
+                      </div>
                       <div className="text-3xl font-bold text-white">
                         {records.closest_game.point_differential.toFixed(2)} points
                       </div>
@@ -132,7 +179,12 @@ function Records() {
                   <div className="flex items-start space-x-4">
                     <div className="text-5xl group-hover:scale-110 transition-transform duration-300">📈</div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-green-400 uppercase tracking-wider mb-2">Most Points</h3>
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-green-400 uppercase tracking-wider">Most Points</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-green-500/20 text-green-400 border border-green-500/30">
+                          2007-2024
+                        </span>
+                      </div>
                       <div className="text-3xl font-bold text-white">
                         {records.most_points_season.points_for.toFixed(2)}
                       </div>
@@ -150,7 +202,12 @@ function Records() {
                   <div className="flex items-start space-x-4">
                     <div className="text-5xl group-hover:scale-110 transition-transform duration-300">🏅</div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-yellow-400 uppercase tracking-wider mb-2">Most Wins</h3>
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-yellow-400 uppercase tracking-wider">Most Wins</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-green-500/20 text-green-400 border border-green-500/30">
+                          2007-2024
+                        </span>
+                      </div>
                       <div className="text-3xl font-bold text-white">
                         {records.most_wins_season.wins} wins
                       </div>
@@ -168,7 +225,12 @@ function Records() {
                   <div className="flex items-start space-x-4">
                     <div className="text-5xl group-hover:scale-110 transition-transform duration-300">😬</div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-red-400 uppercase tracking-wider mb-2">Fewest Wins</h3>
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-red-400 uppercase tracking-wider">Fewest Wins</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-green-500/20 text-green-400 border border-green-500/30">
+                          2007-2024
+                        </span>
+                      </div>
                       <div className="text-3xl font-bold text-white">
                         {records.fewest_wins_season.wins} wins
                       </div>
@@ -186,7 +248,12 @@ function Records() {
                   <div className="flex items-start space-x-4">
                     <div className="text-5xl group-hover:scale-110 transition-transform duration-300">🎯</div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-purple-400 uppercase tracking-wider mb-2">Most Points Against</h3>
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-purple-400 uppercase tracking-wider">Most Points Against</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-green-500/20 text-green-400 border border-green-500/30">
+                          2007-2024
+                        </span>
+                      </div>
                       <div className="text-3xl font-bold text-white">
                         {records.most_points_against_season.points_against.toFixed(2)}
                       </div>
@@ -211,7 +278,12 @@ function Records() {
                   <div className="flex items-start space-x-4">
                     <div className="text-5xl group-hover:scale-110 transition-transform duration-300">🔥</div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-green-400 uppercase tracking-wider mb-2">Longest Win Streak</h3>
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-green-400 uppercase tracking-wider">Longest Win Streak</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                          2019-2024
+                        </span>
+                      </div>
                       <div className="text-3xl font-bold text-white">
                         {records.longest_win_streak.streak} wins
                       </div>
@@ -228,7 +300,12 @@ function Records() {
                   <div className="flex items-start space-x-4">
                     <div className="text-5xl group-hover:scale-110 transition-transform duration-300">💀</div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-gray-400 uppercase tracking-wider mb-2">Longest Loss Streak</h3>
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-gray-400 uppercase tracking-wider">Longest Loss Streak</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                          2019-2024
+                        </span>
+                      </div>
                       <div className="text-3xl font-bold text-white">
                         {records.longest_loss_streak.streak} losses
                       </div>
@@ -236,6 +313,107 @@ function Records() {
                       <div className="text-sm text-gray-400/80">
                         Week {records.longest_loss_streak.start_week} {records.longest_loss_streak.start_year} → Week {records.longest_loss_streak.end_week} {records.longest_loss_streak.end_year}
                       </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Fun Facts */}
+          <div className="mt-8">
+            <h2 className="text-2xl font-bold text-white mb-4">Wild Records</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {records?.highest_scoring_loss && (
+                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-orange-500/10 to-red-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">😤</div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-orange-400 uppercase tracking-wider">Highest Scoring Loss</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                          2019-2024
+                        </span>
+                      </div>
+                      <div className="text-3xl font-bold text-white">
+                        {records.highest_scoring_loss.score.toFixed(2)}
+                      </div>
+                      <div className="text-sm text-white/80 font-medium">{records.highest_scoring_loss.team}</div>
+                      <div className="text-sm text-orange-400/80">
+                        Lost to {records.highest_scoring_loss.opponent} ({records.highest_scoring_loss.opponent_score.toFixed(2)})
+                      </div>
+                      <div className="text-xs text-white/50 mt-1">Week {records.highest_scoring_loss.week}, {records.highest_scoring_loss.year}</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {records?.lowest_scoring_win && (
+                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">🍀</div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-indigo-400 uppercase tracking-wider">Lowest Scoring Win</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                          2019-2024
+                        </span>
+                      </div>
+                      <div className="text-3xl font-bold text-white">
+                        {records.lowest_scoring_win.score.toFixed(2)}
+                      </div>
+                      <div className="text-sm text-white/80 font-medium">{records.lowest_scoring_win.team}</div>
+                      <div className="text-sm text-indigo-400/80">
+                        Beat {records.lowest_scoring_win.opponent} ({records.lowest_scoring_win.opponent_score.toFixed(2)})
+                      </div>
+                      <div className="text-xs text-white/50 mt-1">Week {records.lowest_scoring_win.week}, {records.lowest_scoring_win.year}</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {records?.most_combined_points && (
+                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-yellow-500/10 to-red-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">🌟</div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-yellow-400 uppercase tracking-wider">Most Combined Points</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                          2019-2024
+                        </span>
+                      </div>
+                      <div className="text-3xl font-bold text-white">
+                        {records.most_combined_points.combined_points.toFixed(2)}
+                      </div>
+                      <div className="text-sm text-white/80 font-medium">
+                        {records.most_combined_points.home_team} ({records.most_combined_points.home_score.toFixed(2)}) vs {records.most_combined_points.away_team} ({records.most_combined_points.away_score.toFixed(2)})
+                      </div>
+                      <div className="text-xs text-white/50 mt-1">Week {records.most_combined_points.week}, {records.most_combined_points.year}</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {records?.fewest_points_season && (
+                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-500/10 to-slate-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">📉</div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-gray-400 uppercase tracking-wider">Fewest Points</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-green-500/20 text-green-400 border border-green-500/30">
+                          2007-2024
+                        </span>
+                      </div>
+                      <div className="text-3xl font-bold text-white">
+                        {records.fewest_points_season.points_for.toFixed(2)}
+                      </div>
+                      <div className="text-sm text-white/80 font-medium">{records.fewest_points_season.team_name}</div>
+                      <div className="text-sm text-gray-400/80">
+                        {records.fewest_points_season.wins}-{records.fewest_points_season.losses} record
+                      </div>
+                      <div className="text-xs text-white/50 mt-1">{records.fewest_points_season.year} season</div>
                     </div>
                   </div>
                 </div>

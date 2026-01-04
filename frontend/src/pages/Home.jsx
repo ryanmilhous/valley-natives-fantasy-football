@@ -89,6 +89,18 @@ function Home() {
               : a.all_time.win_percentage - b.all_time.win_percentage;
           }
           break;
+        case 'secondPlace':
+          aValue = a.all_time.second_place;
+          bValue = b.all_time.second_place;
+          break;
+        case 'thirdPlace':
+          aValue = a.all_time.third_place;
+          bValue = b.all_time.third_place;
+          break;
+        case 'toiletBowl':
+          aValue = a.all_time.toilet_bowl;
+          bValue = b.all_time.toilet_bowl;
+          break;
         default:
           aValue = a.all_time.wins;
           bValue = b.all_time.wins;
@@ -115,21 +127,6 @@ function Home() {
       <span className="text-purple-400 ml-1">↓</span>;
   };
 
-  const handleDownload = async () => {
-    try {
-      const response = await apiService.exportExcel();
-      const url = window.URL.createObjectURL(new Blob([response.data]));
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('download', 'fantasy_football_history.xlsx');
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-    } catch (error) {
-      console.error('Error downloading Excel:', error);
-      alert('Failed to download Excel file');
-    }
-  };
 
   return (
     <div className="space-y-8">
@@ -183,18 +180,6 @@ function Home() {
               </div>
             </div>
           </div>
-
-          <div className="mt-8">
-            <button
-              onClick={handleDownload}
-              className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl font-bold text-white shadow-lg hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105"
-            >
-              <span className="relative z-10 flex items-center space-x-2">
-                <span>📊</span>
-                <span>Download Excel Spreadsheet</span>
-              </span>
-            </button>
-          </div>
         </div>
       </div>
 
@@ -206,24 +191,36 @@ function Home() {
               <span>🏆</span>
               <span>Championship Winners</span>
             </h2>
-            <ResponsiveContainer width="100%" height={350}>
-              <BarChart data={championshipData} margin={{ bottom: 60 }}>
+            <ResponsiveContainer width="100%" height={400}>
+              <BarChart data={championshipData} margin={{ bottom: 80, top: 30 }}>
                 <defs>
                   <linearGradient id="colorChampionships" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="#fbbf24" stopOpacity={0.8}/>
                     <stop offset="100%" stopColor="#f59e0b" stopOpacity={0.3}/>
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="#ffffff20" />
                 <XAxis
                   dataKey="owner"
-                  stroke="#ffffff70"
-                  angle={-45}
-                  textAnchor="end"
+                  stroke="#fbbf24"
+                  interval={0}
                   height={80}
-                  tick={{ fontSize: 12 }}
+                  tick={(props) => {
+                    const { x, y, payload } = props;
+                    const names = payload.value.split(' ');
+                    const firstName = names[0];
+                    const lastName = names.slice(1).join(' ');
+                    return (
+                      <g transform={`translate(${x},${y})`}>
+                        <text x={0} y={0} dy={16} textAnchor="middle" fill="#fbbf24" fontSize={14} fontWeight="bold">
+                          {firstName}
+                        </text>
+                        <text x={0} y={0} dy={32} textAnchor="middle" fill="#fbbf24" fontSize={14} fontWeight="bold">
+                          {lastName}
+                        </text>
+                      </g>
+                    );
+                  }}
                 />
-                <YAxis allowDecimals={false} stroke="#ffffff70" />
                 <Tooltip
                   contentStyle={{
                     backgroundColor: '#1e293b',
@@ -232,8 +229,7 @@ function Home() {
                     color: '#fff'
                   }}
                 />
-                <Legend wrapperStyle={{ color: '#ffffff' }} />
-                <Bar dataKey="championships" fill="url(#colorChampionships)" name="Championships" radius={[8, 8, 0, 0]} />
+                <Bar dataKey="championships" fill="url(#colorChampionships)" name="Championships" radius={[8, 8, 0, 0]} label={{ position: 'top', fill: '#fbbf24', fontSize: 14, fontWeight: 'bold' }} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -286,7 +282,25 @@ function Home() {
                     onClick={() => handleSort('championships')}
                     className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
                   >
-                    Championships<SortIcon column="championships" />
+                    1st Place<SortIcon column="championships" />
+                  </th>
+                  <th
+                    onClick={() => handleSort('secondPlace')}
+                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                  >
+                    2nd Place<SortIcon column="secondPlace" />
+                  </th>
+                  <th
+                    onClick={() => handleSort('thirdPlace')}
+                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                  >
+                    3rd Place<SortIcon column="thirdPlace" />
+                  </th>
+                  <th
+                    onClick={() => handleSort('toiletBowl')}
+                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                  >
+                    Toilet Bowl<SortIcon column="toiletBowl" />
                   </th>
                 </tr>
               </thead>
@@ -329,6 +343,36 @@ function Home() {
                             <span className="inline-flex items-center space-x-1 px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 font-bold border border-yellow-500/30">
                               <span>🏆</span>
                               <span>{owner.all_time.championships}</span>
+                            </span>
+                          ) : (
+                            <span className="text-white/30">-</span>
+                          )}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          {owner.all_time.second_place > 0 ? (
+                            <span className="inline-flex items-center space-x-1 px-3 py-1 rounded-full bg-gray-400/20 text-gray-300 font-bold border border-gray-400/30">
+                              <span>🥈</span>
+                              <span>{owner.all_time.second_place}</span>
+                            </span>
+                          ) : (
+                            <span className="text-white/30">-</span>
+                          )}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          {owner.all_time.third_place > 0 ? (
+                            <span className="inline-flex items-center space-x-1 px-3 py-1 rounded-full bg-orange-600/20 text-orange-400 font-bold border border-orange-600/30">
+                              <span>🥉</span>
+                              <span>{owner.all_time.third_place}</span>
+                            </span>
+                          ) : (
+                            <span className="text-white/30">-</span>
+                          )}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          {owner.all_time.toilet_bowl > 0 ? (
+                            <span className="inline-flex items-center space-x-1 px-3 py-1 rounded-full bg-brown-600/20 text-white font-bold border border-brown-600/30">
+                              <span>🚽</span>
+                              <span>{owner.all_time.toilet_bowl}</span>
                             </span>
                           ) : (
                             <span className="text-white/30">-</span>

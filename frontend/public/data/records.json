@@ -97,6 +97,19 @@
     "final_standing": 10,
     "playoff_seed": null
   },
+  "fewest_points_season": {
+    "year": 2008,
+    "team_name": "Less Gore Mo Pus",
+    "owner": "Jacob Luna",
+    "wins": 3,
+    "losses": 9,
+    "ties": 0,
+    "points_for": 826.0,
+    "points_against": 1050.0,
+    "standing": 12,
+    "final_standing": 11,
+    "playoff_seed": null
+  },
   "longest_win_streak": {
     "owner": "Ryan Milhous",
     "streak": 15,
@@ -112,5 +125,30 @@
     "end_year": 2024,
     "start_week": 8,
     "end_week": 1
+  },
+  "highest_scoring_loss": {
+    "team": "For Those About To Brock",
+    "score": 161.39,
+    "week": 14,
+    "year": 2024,
+    "opponent": "The Smi Pies",
+    "opponent_score": 165.12
+  },
+  "most_combined_points": {
+    "year": 2024,
+    "week": 14,
+    "home_team": "For Those About To Brock",
+    "away_team": "The Smi Pies",
+    "home_score": 161.39,
+    "away_score": 165.12,
+    "combined_points": 326.51
+  },
+  "lowest_scoring_win": {
+    "team": "The Lucky Lefties",
+    "score": 56.36,
+    "week": 17,
+    "year": 2022,
+    "opponent": "Kooter McGavin",
+    "opponent_score": 51.26
   }
 }

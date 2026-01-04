@@ -64,6 +64,9 @@ class ESPNDataExtractor:
             'league_name': league.settings.name if hasattr(league.settings, 'name') else 'Unknown League',
             'teams': [],
             'matchups': [],
+            'draft': [],
+            'rosters': {},
+            'player_stats': [],
             'settings': {},
             'extracted_at': datetime.now().isoformat()
         }
@@ -179,7 +182,96 @@ class ESPNDataExtractor:
         except Exception as e:
             print(f"  Warning: Error extracting matchups: {e}")
 
-        print(f"  ✓ Extracted {len(season_data['teams'])} teams and {len(season_data['matchups'])} matchups")
+        # Extract draft data
+        print(f"  Extracting draft data...")
+        try:
+            if hasattr(league, 'draft') and league.draft:
+                for pick in league.draft:
+                    draft_pick = {
+                        'player_name': pick.playerName,
+                        'player_id': pick.playerId if hasattr(pick, 'playerId') else None,
+                        'team_id': pick.team.team_id if hasattr(pick.team, 'team_id') else None,
+                        'team_name': pick.team.team_name if hasattr(pick.team, 'team_name') else None,
+                        'round_num': pick.round_num,
+                        'round_pick': pick.round_pick,
+                        'overall_pick': (pick.round_num - 1) * len(league.teams) + pick.round_pick,
+                        'bid_amount': pick.bid_amount if hasattr(pick, 'bid_amount') else None,
+                        'keeper_status': pick.keeper_status if hasattr(pick, 'keeper_status') else False
+                    }
+                    season_data['draft'].append(draft_pick)
+                print(f"    ✓ Extracted {len(season_data['draft'])} draft picks")
+            else:
+                print(f"    ⚠ No draft data available")
+        except Exception as e:
+            print(f"    Warning: Error extracting draft data: {e}")
+
+        # Extract roster data for each team
+        print(f"  Extracting roster data...")
+        try:
+            for team in league.teams:
+                if hasattr(team, 'roster') and team.roster:
+                    roster_players = []
+                    for player in team.roster:
+                        player_data = {
+                            'name': player.name,
+                            'player_id': player.playerId if hasattr(player, 'playerId') else None,
+                            'position': player.position if hasattr(player, 'position') else None,
+                            'pro_team': player.proTeam if hasattr(player, 'proTeam') else None,
+                            'injured': player.injured if hasattr(player, 'injured') else False,
+                            'injury_status': player.injuryStatus if hasattr(player, 'injuryStatus') else None,
+                            'avg_points': player.avg_points if hasattr(player, 'avg_points') else 0,
+                            'total_points': player.total_points if hasattr(player, 'total_points') else 0,
+                        }
+                        roster_players.append(player_data)
+                    season_data['rosters'][team.team_id] = roster_players
+            print(f"    ✓ Extracted rosters for {len(season_data['rosters'])} teams")
+        except Exception as e:
+            print(f"    Warning: Error extracting roster data: {e}")
+
+        # Extract weekly player performance from box scores
+        print(f"  Extracting player performance data...")
+        try:
+            for week in range(1, league.settings.reg_season_count + 1):
+                try:
+                    box_scores = league.box_scores(week)
+                    for matchup in box_scores:
+                        # Home team lineup
+                        for player in matchup.home_lineup:
+                            player_stat = {
+                                'week': week,
+                                'team_id': matchup.home_team.team_id,
+                                'team_name': matchup.home_team.team_name,
+                                'player_name': player.name,
+                                'player_id': player.playerId if hasattr(player, 'playerId') else None,
+                                'position': player.position if hasattr(player, 'position') else None,
+                                'slot': player.lineupSlot if hasattr(player, 'lineupSlot') else None,
+                                'points': player.points if hasattr(player, 'points') else 0,
+                                'projected_points': player.projected_points if hasattr(player, 'projected_points') else 0,
+                            }
+                            season_data['player_stats'].append(player_stat)
+
+                        # Away team lineup
+                        for player in matchup.away_lineup:
+                            player_stat = {
+                                'week': week,
+                                'team_id': matchup.away_team.team_id,
+                                'team_name': matchup.away_team.team_name,
+                                'player_name': player.name,
+                                'player_id': player.playerId if hasattr(player, 'playerId') else None,
+                                'position': player.position if hasattr(player, 'position') else None,
+                                'slot': player.lineupSlot if hasattr(player, 'lineupSlot') else None,
+                                'points': player.points if hasattr(player, 'points') else 0,
+                                'projected_points': player.projected_points if hasattr(player, 'projected_points') else 0,
+                            }
+                            season_data['player_stats'].append(player_stat)
+                except Exception as e:
+                    # Skip weeks with no data
+                    pass
+            print(f"    ✓ Extracted {len(season_data['player_stats'])} player performances")
+        except Exception as e:
+            print(f"    Warning: Error extracting player stats: {e}")
+
+        print(f"  ✓ Extracted {len(season_data['teams'])} teams, {len(season_data['matchups'])} matchups, {len(season_data['draft'])} draft picks")
 
         return season_data
 
@@ -209,12 +301,12 @@ class ESPNDataExtractor:
         Extract data for all seasons
 
         Args:
-            start_year: First year to extract (defaults to 2014 - common ESPN start)
+            start_year: First year to extract (defaults to 2007 - Valley Natives league start)
             end_year: Last year to extract (defaults to current year)
             force_refresh: If True, re-fetch even if cached data exists
         """
         current_year = datetime.now().year
-        start_year = start_year or 2014
+        start_year = start_year or 2007
         end_year = end_year or current_year
 
         print(f"=== ESPN Fantasy Football Data Extraction ===")
@@ -259,8 +351,7 @@ def main():
     """Main entry point for data extraction"""
     extractor = ESPNDataExtractor()
 
-    # Try to automatically detect year range
-    # Start from 2014 (common ESPN league start) to current year
+    # Extract all available years from league start (2007) to current year
     extractor.extract_all_seasons()
 
 

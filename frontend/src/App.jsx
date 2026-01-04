@@ -6,6 +6,8 @@ import HeadToHead from './pages/HeadToHead';
 import Teams from './pages/Teams';
 import Playoffs from './pages/Playoffs';
 import Records from './pages/Records';
+import Draft from './pages/Draft';
+import Rosters from './pages/Rosters';
 
 function NavLink({ to, children }) {
   const location = useLocation();
@@ -44,12 +46,13 @@ function App() {
               </Link>
               <div className="flex items-center space-x-2">
                 <NavLink to="/">Home</NavLink>
+                <NavLink to="/playoffs">Playoffs</NavLink>
+                <NavLink to="/records">Records</NavLink>
+                <NavLink to="/draft">Draft</NavLink>
+                <NavLink to="/rosters">Rosters</NavLink>
                 <NavLink to="/seasons">Seasons</NavLink>
                 <NavLink to="/matchups">Matchups</NavLink>
                 <NavLink to="/head-to-head">H2H</NavLink>
-                <NavLink to="/teams">Teams</NavLink>
-                <NavLink to="/playoffs">Playoffs</NavLink>
-                <NavLink to="/records">Records</NavLink>
               </div>
             </div>
           </div>
@@ -65,6 +68,8 @@ function App() {
             <Route path="/teams" element={<Teams />} />
             <Route path="/playoffs" element={<Playoffs />} />
             <Route path="/records" element={<Records />} />
+            <Route path="/draft" element={<Draft />} />
+            <Route path="/rosters" element={<Rosters />} />
           </Routes>
         </main>
 
@@ -72,7 +77,7 @@ function App() {
         <footer className="bg-slate-900/50 backdrop-blur-lg border-t border-white/10 py-8 mt-20">
           <div className="container mx-auto px-6 text-center">
             <p className="text-white/80 font-medium">Valley Natives Fantasy Football</p>
-            <p className="text-sm text-white/50 mt-2">Historical Data Explorer • 2020-2025</p>
+            <p className="text-sm text-white/50 mt-2">Historical Data Explorer • 2007-2024</p>
           </div>
         </footer>
       </div>
