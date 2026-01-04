@@ -152,19 +152,19 @@
     "opponent_score": 51.26
   },
   "best_team_worst_result": {
-    "year": 2025,
-    "team_name": "The Kellen Brothers",
-    "owner": "Kellen Coffis",
-    "wins": 7,
-    "losses": 7,
+    "year": 2024,
+    "team_name": "Prime Time",
+    "owner": "Greg Swenson",
+    "wins": 9,
+    "losses": 5,
     "ties": 0,
-    "points_for": 1635,
-    "points_against": 1565,
-    "standing": 7,
-    "final_standing": 14,
+    "points_for": 1847.89,
+    "points_against": 1588.8,
+    "standing": 3,
+    "final_standing": 6,
     "playoff_seed": null,
-    "points_rank": 6,
-    "standing_gap": 8
+    "points_rank": 1,
+    "standing_gap": 5
   },
   "worst_team_best_result": {
     "year": 2013,

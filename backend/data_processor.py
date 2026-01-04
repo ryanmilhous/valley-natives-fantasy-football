@@ -667,7 +667,8 @@ class FantasyDataProcessor:
                 records['lowest_scoring_win'] = min(winning_scores, key=lambda x: x['score'])
 
         # Best team that didn't win championship (or finish top 3)
-        # Look at teams with best points ranking in their season who finished 4th or worse
+        # Look at teams with best points ranking in their season who finished 4th-6th
+        # (Exclude consolation bracket results which can be misleading)
         best_team_worst_result = None
         if self.processed_data['standings']:
             # Group standings by year to compare within seasons
@@ -678,16 +679,17 @@ class FantasyDataProcessor:
                     standings_by_year[year] = []
                 standings_by_year[year].append(standing)
 
-            # For each year, rank teams by points and find teams that finished 4th+ despite high points ranking
+            # For each year, rank teams by points and find teams that finished 4th-6th despite high points ranking
             best_gap = 0
             for year, year_standings in standings_by_year.items():
                 # Sort by points to get points ranking
                 sorted_by_points = sorted(year_standings, key=lambda x: x['points_for'], reverse=True)
 
-                # Find teams that finished 4th or worse
+                # Find teams that finished 4th-6th (playoff teams that didn't medal)
+                # Exclude 7th+ as those are often consolation bracket results
                 for standing in year_standings:
                     final_standing = standing.get('final_standing')
-                    if final_standing and final_standing >= 4:
+                    if final_standing and 4 <= final_standing <= 6:
                         # Find this team's points ranking
                         points_rank = next((i+1 for i, s in enumerate(sorted_by_points) if s['team_name'] == standing['team_name']), None)
 
