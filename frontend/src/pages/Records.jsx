@@ -92,6 +92,117 @@ function Records() {
             <span>League Records & Milestones</span>
           </h1>
 
+          {/* Interesting Results */}
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-white mb-4">Interesting Results</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {records?.best_champion && (
+                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-yellow-500/10 to-amber-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">👑</div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-yellow-400 uppercase tracking-wider">Best Champion</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.best_champion.year}
+                        </span>
+                      </div>
+                      <div className="text-sm text-white/80 font-medium mb-2">
+                        {records.best_champion.team_name}
+                        <span className="text-white/60"> ({records.best_champion.owner})</span>
+                      </div>
+                      <div className="text-sm text-white/70">
+                        <div>{records.best_champion.wins}-{records.best_champion.losses} record, {records.best_champion.points_for.toFixed(2)} points</div>
+                        <div className="mt-1"><span className="text-yellow-400 font-semibold">{records.best_champion.points_gap.toFixed(2)} point gap</span> over 2nd place in points</div>
+                        <div className="text-green-400 font-bold mt-1">🏆 Won Championship</div>
+                      </div>
+                      <div className="text-xs text-white/50 mt-2">{records.best_champion.year} season</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {records?.worst_team_best_result && (
+                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">🍀</div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-green-400 uppercase tracking-wider">Worst Champion</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.worst_team_best_result.year}
+                        </span>
+                      </div>
+                      <div className="text-sm text-white/80 font-medium mb-2">
+                        {records.worst_team_best_result.team_name}
+                        <span className="text-white/60"> ({records.worst_team_best_result.owner})</span>
+                      </div>
+                      <div className="text-sm text-white/70">
+                        <div>{records.worst_team_best_result.wins}-{records.worst_team_best_result.losses} record, {records.worst_team_best_result.points_for.toFixed(2)} points</div>
+                        <div className="mt-1">Ranked <span className="text-orange-400 font-semibold">#{records.worst_team_best_result.points_rank}</span> out of {records.worst_team_best_result.total_teams} in points</div>
+                        <div className="text-green-400 font-bold mt-1">🏆 Won Championship</div>
+                      </div>
+                      <div className="text-xs text-white/50 mt-2">{records.worst_team_best_result.year} season</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {records?.unluckiest_reg_season_winner && (
+                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/10 to-indigo-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">💔</div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-purple-400 uppercase tracking-wider">Unluckiest Regular Season Winner</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.unluckiest_reg_season_winner.year}
+                        </span>
+                      </div>
+                      <div className="text-sm text-white/80 font-medium mb-2">
+                        {records.unluckiest_reg_season_winner.team_name}
+                        <span className="text-white/60"> ({records.unluckiest_reg_season_winner.owner})</span>
+                      </div>
+                      <div className="text-sm text-white/70">
+                        <div>{records.unluckiest_reg_season_winner.wins}-{records.unluckiest_reg_season_winner.losses} record, {records.unluckiest_reg_season_winner.points_for.toFixed(2)} points</div>
+                        <div className="mt-1"><span className="text-purple-400 font-semibold">{records.unluckiest_reg_season_winner.points_gap.toFixed(2)} point gap</span> over 2nd place</div>
+                        <div className="text-red-400 font-bold mt-1">Finished #{records.unluckiest_reg_season_winner.final_standing} - No Championship 💔</div>
+                      </div>
+                      <div className="text-xs text-white/50 mt-2">{records.unluckiest_reg_season_winner.year} season</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {records?.best_team_worst_result && (
+                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-orange-500/10 to-red-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">😤</div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-orange-400 uppercase tracking-wider">Best Team, Worst Result</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.best_team_worst_result.year}
+                        </span>
+                      </div>
+                      <div className="text-sm text-white/80 font-medium mb-2">
+                        {records.best_team_worst_result.team_name}
+                        <span className="text-white/60"> ({records.best_team_worst_result.owner})</span>
+                      </div>
+                      <div className="text-sm text-white/70">
+                        <div>{records.best_team_worst_result.wins}-{records.best_team_worst_result.losses} record, {records.best_team_worst_result.points_for.toFixed(2)} points</div>
+                        <div className="mt-1">Ranked <span className="text-green-400 font-semibold">#{records.best_team_worst_result.points_rank}</span> in points</div>
+                        <div className="text-orange-400 font-semibold">Finished <span className="text-red-400">#{records.best_team_worst_result.final_standing}</span> overall</div>
+                        <div className="text-red-400 font-bold mt-1">↓ {records.best_team_worst_result.standing_gap} place gap</div>
+                      </div>
+                      <div className="text-xs text-white/50 mt-2">{records.best_team_worst_result.year} season</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
           {/* Single Game Records */}
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-white mb-4">Single Game Records</h2>
@@ -417,65 +528,6 @@ function Records() {
                         {records.fewest_points_season.wins}-{records.fewest_points_season.losses} record
                       </div>
                       <div className="text-xs text-white/50 mt-1">{records.fewest_points_season.year} season</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Interesting Results */}
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-white mb-4">Interesting Results</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {records?.best_team_worst_result && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-orange-500/10 to-red-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">😤</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-orange-400 uppercase tracking-wider">Best Team, Worst Result</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.best_team_worst_result.year}
-                        </span>
-                      </div>
-                      <div className="text-sm text-white/80 font-medium mb-2">
-                        {records.best_team_worst_result.team_name}
-                        <span className="text-white/60"> ({records.best_team_worst_result.owner})</span>
-                      </div>
-                      <div className="text-sm text-white/70">
-                        <div>{records.best_team_worst_result.wins}-{records.best_team_worst_result.losses} record, {records.best_team_worst_result.points_for.toFixed(2)} points</div>
-                        <div className="mt-1">Ranked <span className="text-green-400 font-semibold">#{records.best_team_worst_result.points_rank}</span> in points</div>
-                        <div className="text-orange-400 font-semibold">Finished <span className="text-red-400">#{records.best_team_worst_result.final_standing}</span> overall</div>
-                        <div className="text-red-400 font-bold mt-1">↓ {records.best_team_worst_result.standing_gap} place gap</div>
-                      </div>
-                      <div className="text-xs text-white/50 mt-2">{records.best_team_worst_result.year} season</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {records?.worst_team_best_result && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">🍀</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-green-400 uppercase tracking-wider">Worst Champion</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.worst_team_best_result.year}
-                        </span>
-                      </div>
-                      <div className="text-sm text-white/80 font-medium mb-2">
-                        {records.worst_team_best_result.team_name}
-                        <span className="text-white/60"> ({records.worst_team_best_result.owner})</span>
-                      </div>
-                      <div className="text-sm text-white/70">
-                        <div>{records.worst_team_best_result.wins}-{records.worst_team_best_result.losses} record, {records.worst_team_best_result.points_for.toFixed(2)} points</div>
-                        <div className="mt-1">Ranked <span className="text-orange-400 font-semibold">#{records.worst_team_best_result.points_rank}</span> out of {records.worst_team_best_result.total_teams} in points</div>
-                        <div className="text-green-400 font-bold mt-1">🏆 Won Championship</div>
-                      </div>
-                      <div className="text-xs text-white/50 mt-2">{records.worst_team_best_result.year} season</div>
                     </div>
                   </div>
                 </div>

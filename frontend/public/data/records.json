@@ -180,5 +180,35 @@
     "playoff_seed": null,
     "points_rank": 6,
     "total_teams": 14
+  },
+  "best_champion": {
+    "year": 2020,
+    "team_name": "RichCity Yung Beevs",
+    "owner": "Chris Vitale",
+    "wins": 11,
+    "losses": 2,
+    "ties": 0,
+    "points_for": 1550.35,
+    "points_against": 1181.29,
+    "standing": 1,
+    "final_standing": 1,
+    "playoff_seed": null,
+    "points_gap": 147.49,
+    "second_place_points": 1402.86
+  },
+  "unluckiest_reg_season_winner": {
+    "year": 2014,
+    "team_name": "Youth Movement  !!!!!!!",
+    "owner": "Ben Beck",
+    "wins": 11,
+    "losses": 2,
+    "ties": 0,
+    "points_for": 1576.16,
+    "points_against": 1340.32,
+    "standing": 1,
+    "final_standing": 4,
+    "playoff_seed": null,
+    "points_gap": 161.3,
+    "second_place_points": 1414.86
   }
 }

@@ -258,9 +258,18 @@ class FantasyDataProcessor:
         self.processed_data['owners'] = {}
         for owner_name, info in owners_stats.items():
             years_list = sorted(list(info['years_active']))
+            seasons_played = len(info['years_active'])
+
+            # Calculate ranking points: 7 for 1st, 3 for 2nd, 1 for 3rd, -1 for toilet bowl
+            ranking_points = (info['championships'] * 7) + (info['second_place'] * 3) + (info['third_place'] * 1) - (info['toilet_bowl'] * 1)
+
+            # Calculate percentages
+            toilet_bowl_pct = round((info['toilet_bowl'] / seasons_played) * 100, 1) if seasons_played > 0 else 0
+            top_3_pct = round(((info['championships'] + info['second_place'] + info['third_place']) / seasons_played) * 100, 1) if seasons_played > 0 else 0
+
             self.processed_data['owners'][owner_name] = {
                 'owner': owner_name,
-                'seasons_played': len(info['years_active']),
+                'seasons_played': seasons_played,
                 'years_active': years_list,
                 'first_season': min(years_list) if years_list else None,
                 'last_season': max(years_list) if years_list else None,
@@ -280,7 +289,10 @@ class FantasyDataProcessor:
                     'championship_years': sorted(info['championship_years']),
                     'second_place_years': sorted(info['second_place_years']),
                     'third_place_years': sorted(info['third_place_years']),
-                    'toilet_bowl_years': sorted(info['toilet_bowl_years'])
+                    'toilet_bowl_years': sorted(info['toilet_bowl_years']),
+                    'ranking_points': ranking_points,
+                    'toilet_bowl_pct': toilet_bowl_pct,
+                    'top_3_pct': top_3_pct
                 }
             }
 

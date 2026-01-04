@@ -280,7 +280,10 @@
       "toilet_bowl_years": [
         2007,
         2012
-      ]
+      ],
+      "ranking_points": 12,
+      "toilet_bowl_pct": 10.5,
+      "top_3_pct": 21.1
     }
   },
   "Kellen Coffis": {
@@ -561,7 +564,10 @@
       ],
       "toilet_bowl_years": [
         2009
-      ]
+      ],
+      "ranking_points": 4,
+      "toilet_bowl_pct": 5.3,
+      "top_3_pct": 15.8
     }
   },
   "Jamie Coffis": {
@@ -845,7 +851,10 @@
       ],
       "toilet_bowl_years": [
         2022
-      ]
+      ],
+      "ranking_points": 18,
+      "toilet_bowl_pct": 5.3,
+      "top_3_pct": 26.3
     }
   },
   "Garrett Ulrich": {
@@ -1134,7 +1143,10 @@
         2013,
         2023,
         2024
-      ]
+      ],
+      "ranking_points": 25,
+      "toilet_bowl_pct": 21.1,
+      "top_3_pct": 36.8
     }
   },
   "Tanner Clark": {
@@ -1187,7 +1199,10 @@
       "championship_years": [],
       "second_place_years": [],
       "third_place_years": [],
-      "toilet_bowl_years": []
+      "toilet_bowl_years": [],
+      "ranking_points": 0,
+      "toilet_bowl_pct": 0.0,
+      "top_3_pct": 0.0
     }
   },
   "Jeremy Settles": {
@@ -1474,7 +1489,10 @@
         2018,
         2020,
         2025
-      ]
+      ],
+      "ranking_points": 25,
+      "toilet_bowl_pct": 15.8,
+      "top_3_pct": 31.6
     }
   },
   "Jacob Luna": {
@@ -1757,7 +1775,10 @@
       "toilet_bowl_years": [
         2008,
         2017
-      ]
+      ],
+      "ranking_points": 6,
+      "toilet_bowl_pct": 10.5,
+      "top_3_pct": 21.1
     }
   },
   "Peter Kent-Stoll": {
@@ -1797,7 +1818,10 @@
       "championship_years": [],
       "second_place_years": [],
       "third_place_years": [],
-      "toilet_bowl_years": []
+      "toilet_bowl_years": [],
+      "ranking_points": 0,
+      "toilet_bowl_pct": 0.0,
+      "top_3_pct": 0.0
     }
   },
   "Dylan Andrews": {
@@ -1837,7 +1861,10 @@
       "championship_years": [],
       "second_place_years": [],
       "third_place_years": [],
-      "toilet_bowl_years": []
+      "toilet_bowl_years": [],
+      "ranking_points": 0,
+      "toilet_bowl_pct": 0.0,
+      "top_3_pct": 0.0
     }
   },
   "Tyler Fullerton": {
@@ -1973,7 +2000,10 @@
       "third_place_years": [],
       "toilet_bowl_years": [
         2014
-      ]
+      ],
+      "ranking_points": 13,
+      "toilet_bowl_pct": 12.5,
+      "top_3_pct": 25.0
     }
   },
   "Brendan Romale": {
@@ -2255,7 +2285,10 @@
       ],
       "toilet_bowl_years": [
         2016
-      ]
+      ],
+      "ranking_points": 7,
+      "toilet_bowl_pct": 5.3,
+      "top_3_pct": 21.1
     }
   },
   "Kyle Morris": {
@@ -2453,7 +2486,10 @@
       "third_place_years": [],
       "toilet_bowl_years": [
         2019
-      ]
+      ],
+      "ranking_points": -1,
+      "toilet_bowl_pct": 7.7,
+      "top_3_pct": 0.0
     }
   },
   "Nick Smielak": {
@@ -2723,7 +2759,10 @@
         2014,
         2025
       ],
-      "toilet_bowl_years": []
+      "toilet_bowl_years": [],
+      "ranking_points": 18,
+      "toilet_bowl_pct": 0.0,
+      "top_3_pct": 33.3
     }
   },
   "Brian Vitale": {
@@ -2858,7 +2897,10 @@
       "third_place_years": [],
       "toilet_bowl_years": [
         2010
-      ]
+      ],
+      "ranking_points": 2,
+      "toilet_bowl_pct": 12.5,
+      "top_3_pct": 12.5
     }
   },
   "Greg Swenson": {
@@ -3116,7 +3158,10 @@
       ],
       "toilet_bowl_years": [
         2015
-      ]
+      ],
+      "ranking_points": 12,
+      "toilet_bowl_pct": 5.9,
+      "top_3_pct": 29.4
     }
   },
   "Ben Beck": {
@@ -3316,7 +3361,10 @@
       ],
       "second_place_years": [],
       "third_place_years": [],
-      "toilet_bowl_years": []
+      "toilet_bowl_years": [],
+      "ranking_points": 21,
+      "toilet_bowl_pct": 0.0,
+      "top_3_pct": 23.1
     }
   },
   "Kyle Poppen": {
@@ -3529,7 +3577,10 @@
       "third_place_years": [],
       "toilet_bowl_years": [
         2021
-      ]
+      ],
+      "ranking_points": 2,
+      "toilet_bowl_pct": 7.1,
+      "top_3_pct": 7.1
     }
   },
   "Rory McKee": {
@@ -3690,7 +3741,10 @@
       "third_place_years": [
         2015
       ],
-      "toilet_bowl_years": []
+      "toilet_bowl_years": [],
+      "ranking_points": 8,
+      "toilet_bowl_pct": 0.0,
+      "top_3_pct": 20.0
     }
   },
   "Bryan Whitaker": {
@@ -3862,7 +3916,10 @@
       ],
       "second_place_years": [],
       "third_place_years": [],
-      "toilet_bowl_years": []
+      "toilet_bowl_years": [],
+      "ranking_points": 7,
+      "toilet_bowl_pct": 0.0,
+      "top_3_pct": 9.1
     }
   },
   "Ryan Milhous": {
@@ -3973,7 +4030,10 @@
       "third_place_years": [
         2023
       ],
-      "toilet_bowl_years": []
+      "toilet_bowl_years": [],
+      "ranking_points": 11,
+      "toilet_bowl_pct": 0.0,
+      "top_3_pct": 50.0
     }
   },
   "Steve Keller": {
@@ -4013,7 +4073,10 @@
       "championship_years": [],
       "second_place_years": [],
       "third_place_years": [],
-      "toilet_bowl_years": []
+      "toilet_bowl_years": [],
+      "ranking_points": 0,
+      "toilet_bowl_pct": 0.0,
+      "top_3_pct": 0.0
     }
   }
 }
