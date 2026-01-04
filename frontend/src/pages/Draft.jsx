@@ -4,19 +4,25 @@ import apiService from '../services/api';
 function Draft() {
   const [draft, setDraft] = useState([]);
   const [bestPicks, setBestPicks] = useState([]);
+  const [worstPicks, setWorstPicks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedYear, setSelectedYear] = useState('all');
+  const [selectedPosition, setSelectedPosition] = useState('all');
   const [selectedRound, setSelectedRound] = useState('all');
+  const [sortColumn, setSortColumn] = useState('bid_amount');
+  const [sortDirection, setSortDirection] = useState('desc');
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [draftResponse, bestPicksResponse] = await Promise.all([
+        const [draftResponse, bestPicksResponse, worstPicksResponse] = await Promise.all([
           apiService.getDraft(),
-          apiService.getBestDraftPicks()
+          apiService.getBestDraftPicks(),
+          apiService.getWorstDraftPicks()
         ]);
         setDraft(draftResponse.data);
         setBestPicks(bestPicksResponse.data);
+        setWorstPicks(worstPicksResponse.data);
       } catch (error) {
         console.error('Error fetching draft data:', error);
       } finally {
@@ -38,12 +44,59 @@ function Draft() {
     );
   }
 
+  const handleSort = (column) => {
+    if (sortColumn === column) {
+      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortColumn(column);
+      setSortDirection('desc');
+    }
+  };
+
+  const getSortIcon = (column) => {
+    if (sortColumn !== column) {
+      return <span className="text-white/30 ml-1">↕</span>;
+    }
+    return sortDirection === 'asc' ? <span className="ml-1">↑</span> : <span className="ml-1">↓</span>;
+  };
+
   const years = ['all', ...new Set(draft.map(d => d.year))].sort((a, b) => b - a);
+  const positions = ['all', ...new Set(draft.map(d => d.position).filter(Boolean))].sort();
 
   const filteredDraft = draft.filter(pick => {
     if (selectedYear !== 'all' && pick.year !== parseInt(selectedYear)) return false;
+    if (selectedPosition !== 'all' && pick.position !== selectedPosition) return false;
     return true;
-  }).sort((a, b) => (b.bid_amount || 0) - (a.bid_amount || 0));
+  }).sort((a, b) => {
+    let aVal, bVal;
+
+    switch(sortColumn) {
+      case 'bid_amount':
+        aVal = a.bid_amount || 0;
+        bVal = b.bid_amount || 0;
+        break;
+      case 'player_name':
+        aVal = a.player_name || '';
+        bVal = b.player_name || '';
+        return sortDirection === 'asc' ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+      case 'position':
+        aVal = a.position || '';
+        bVal = b.position || '';
+        return sortDirection === 'asc' ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+      case 'owner':
+        aVal = a.owner || '';
+        bVal = b.owner || '';
+        return sortDirection === 'asc' ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+      case 'year':
+        aVal = a.year || 0;
+        bVal = b.year || 0;
+        break;
+      default:
+        return 0;
+    }
+
+    return sortDirection === 'asc' ? aVal - bVal : bVal - aVal;
+  });
 
   return (
     <div className="space-y-8">
@@ -86,6 +139,7 @@ function Draft() {
               <span>🌟</span>
               <span>Best Value Picks</span>
             </h2>
+            <p className="text-sm text-white/60 mb-6">Highest points per dollar - only $20+ picks (excludes keepers and cheap fliers)</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {bestPicks.slice(0, 9).map((pick, index) => (
                 <div key={index} className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-yellow-500/10 to-orange-500/10 p-4 border border-white/10 hover:border-yellow-500/30 transition-all duration-300">
@@ -110,18 +164,65 @@ function Draft() {
         </div>
       )}
 
+      {/* Worst Draft Picks Section */}
+      {worstPicks.length > 0 && (
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-red-500/10 via-gray-500/10 to-slate-500/10 p-1">
+          <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-red-400 to-gray-400 bg-clip-text text-transparent mb-6 flex items-center space-x-3">
+              <span>💸</span>
+              <span>Worst Value Picks</span>
+            </h2>
+            <p className="text-sm text-white/60 mb-6">Lowest points per dollar - only $20+ picks with positive points (excludes keepers, injuries, and cheap fliers)</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {worstPicks.slice(0, 9).map((pick, index) => (
+                <div key={index} className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-red-500/10 to-gray-500/10 p-4 border border-white/10 hover:border-red-500/30 transition-all duration-300">
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="text-sm text-red-400/70 font-semibold">
+                      ${pick.auction_cost || 0}
+                    </div>
+                    <div className="text-xs px-2 py-1 rounded-full bg-red-500/20 text-red-400 border border-red-500/30 font-semibold">
+                      {pick.year}
+                    </div>
+                  </div>
+                  <div className="text-lg font-bold text-white mb-1">{pick.player_name}</div>
+                  <div className="text-sm text-white/70 mb-2">{pick.owner}</div>
+                  <div className="flex items-center justify-between text-xs">
+                    <div className="text-orange-400">{pick.total_points.toFixed(1)} pts</div>
+                    <div className="text-gray-400">{pick.value.toFixed(2)} pts/$</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Filters */}
-      <div className="max-w-md">
-        <label className="block text-sm font-medium text-white/70 mb-2">Year</label>
-        <select
-          value={selectedYear}
-          onChange={(e) => setSelectedYear(e.target.value)}
-          className="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-white/10 focus:border-blue-500 focus:outline-none"
-        >
-          {years.map(year => (
-            <option key={year} value={year}>{year === 'all' ? 'All Years' : year}</option>
-          ))}
-        </select>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl">
+        <div>
+          <label className="block text-sm font-medium text-white/70 mb-2">Year</label>
+          <select
+            value={selectedYear}
+            onChange={(e) => setSelectedYear(e.target.value)}
+            className="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-white/10 focus:border-blue-500 focus:outline-none"
+          >
+            {years.map(year => (
+              <option key={year} value={year}>{year === 'all' ? 'All Years' : year}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-white/70 mb-2">Position</label>
+          <select
+            value={selectedPosition}
+            onChange={(e) => setSelectedPosition(e.target.value)}
+            className="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-white/10 focus:border-blue-500 focus:outline-none"
+          >
+            {positions.map(position => (
+              <option key={position} value={position}>{position === 'all' ? 'All Positions' : position}</option>
+            ))}
+          </select>
+        </div>
       </div>
 
       {/* Draft Table */}
@@ -131,10 +232,36 @@ function Draft() {
             <table className="min-w-full">
               <thead>
                 <tr className="border-b border-white/10">
-                  <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Auction $</th>
-                  <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Player</th>
-                  <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Team/Owner</th>
-                  <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Year</th>
+                  <th
+                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                    onClick={() => handleSort('bid_amount')}
+                  >
+                    Auction $ {getSortIcon('bid_amount')}
+                  </th>
+                  <th
+                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                    onClick={() => handleSort('player_name')}
+                  >
+                    Player {getSortIcon('player_name')}
+                  </th>
+                  <th
+                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                    onClick={() => handleSort('position')}
+                  >
+                    Position {getSortIcon('position')}
+                  </th>
+                  <th
+                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                    onClick={() => handleSort('owner')}
+                  >
+                    Team/Owner {getSortIcon('owner')}
+                  </th>
+                  <th
+                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                    onClick={() => handleSort('year')}
+                  >
+                    Year {getSortIcon('year')}
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
@@ -145,6 +272,9 @@ function Draft() {
                     </td>
                     <td className="px-6 py-4">
                       <div className="text-white font-semibold">{pick.player_name}</div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <span className="text-blue-400 font-medium">{pick.position || 'N/A'}</span>
                     </td>
                     <td className="px-6 py-4">
                       <div className="text-white/80">{pick.owner || 'N/A'}</div>

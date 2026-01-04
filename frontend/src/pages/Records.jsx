@@ -24,27 +24,28 @@ function Records() {
     return <div className="text-center py-12">Loading...</div>;
   }
 
-  const RecordCard = ({ title, record, icon, description, dataRange = '2019-2024' }) => (
+  const RecordCard = ({ title, record, icon, description }) => (
     <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
       <div className="flex items-start space-x-4">
         <div className="text-5xl group-hover:scale-110 transition-transform duration-300">{icon}</div>
         <div className="flex-1">
           <div className="flex items-center justify-between mb-2">
             <h3 className="text-lg font-bold text-purple-400 uppercase tracking-wider">{title}</h3>
-            <span className={`text-xs px-2 py-1 rounded-full font-semibold ${
-              dataRange === '2007-2024'
-                ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-                : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-            }`}>
-              {dataRange}
-            </span>
+            {record?.year && (
+              <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                {record.year}
+              </span>
+            )}
           </div>
           {record && (
             <div className="space-y-1">
               <div className="text-3xl font-bold text-white">
                 {record.score || record.points_for || record.wins || 'N/A'}
               </div>
-              <div className="text-sm text-white/80 font-medium">{record.team}</div>
+              <div className="text-sm text-white/80 font-medium">
+                {record.team || record.team_name}
+                {record.owner && <span className="text-white/60"> ({record.owner})</span>}
+              </div>
               {description && <div className="text-xs text-white/60">{description}</div>}
               <div className="text-xs text-white/50">
                 Week {record.week}, {record.year}
@@ -72,11 +73,11 @@ function Records() {
             </p>
             <div className="mt-2 flex flex-wrap gap-3 text-xs">
               <div className="flex items-center space-x-2">
-                <span className="px-2 py-1 rounded-full bg-green-500/20 text-green-400 border border-green-500/30 font-semibold">2007-2024</span>
+                <span className="px-2 py-1 rounded-full bg-green-500/20 text-green-400 border border-green-500/30 font-semibold">2007-2025</span>
                 <span className="text-white/70">Full league history (season stats)</span>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30 font-semibold">2019-2024</span>
+                <span className="px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30 font-semibold">2019-2025</span>
                 <span className="text-white/70">Matchup data only (game-by-game records)</span>
               </div>
             </div>
@@ -101,7 +102,6 @@ function Records() {
                   record={records.highest_score}
                   icon="🔥"
                   description={`vs ${records.highest_score.opponent}`}
-                  dataRange="2019-2024"
                 />
               )}
               {records?.lowest_score && (
@@ -110,7 +110,6 @@ function Records() {
                   record={records.lowest_score}
                   icon="❄️"
                   description={`vs ${records.lowest_score.opponent}`}
-                  dataRange="2019-2024"
                 />
               )}
               {records?.biggest_blowout && (
@@ -120,8 +119,8 @@ function Records() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-lg font-bold text-orange-400 uppercase tracking-wider">Biggest Blowout</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
-                          2019-2024
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.biggest_blowout.year}
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-white">
@@ -147,8 +146,8 @@ function Records() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-lg font-bold text-cyan-400 uppercase tracking-wider">Closest Game</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
-                          2019-2024
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.closest_game.year}
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-white">
@@ -181,8 +180,8 @@ function Records() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-lg font-bold text-green-400 uppercase tracking-wider">Most Points</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-green-500/20 text-green-400 border border-green-500/30">
-                          2007-2024
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.most_points_season.year}
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-white">
@@ -204,8 +203,8 @@ function Records() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-lg font-bold text-yellow-400 uppercase tracking-wider">Most Wins</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-green-500/20 text-green-400 border border-green-500/30">
-                          2007-2024
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.most_wins_season.year}
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-white">
@@ -227,8 +226,8 @@ function Records() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-lg font-bold text-red-400 uppercase tracking-wider">Fewest Wins</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-green-500/20 text-green-400 border border-green-500/30">
-                          2007-2024
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.fewest_wins_season.year}
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-white">
@@ -250,8 +249,8 @@ function Records() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-lg font-bold text-purple-400 uppercase tracking-wider">Most Points Against</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-green-500/20 text-green-400 border border-green-500/30">
-                          2007-2024
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.most_points_against_season.year}
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-white">
@@ -280,8 +279,10 @@ function Records() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-lg font-bold text-green-400 uppercase tracking-wider">Longest Win Streak</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
-                          2019-2024
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.longest_win_streak.start_year === records.longest_win_streak.end_year
+                            ? records.longest_win_streak.start_year
+                            : `${records.longest_win_streak.start_year}-${records.longest_win_streak.end_year}`}
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-white">
@@ -302,8 +303,10 @@ function Records() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-lg font-bold text-gray-400 uppercase tracking-wider">Longest Loss Streak</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
-                          2019-2024
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.longest_loss_streak.start_year === records.longest_loss_streak.end_year
+                            ? records.longest_loss_streak.start_year
+                            : `${records.longest_loss_streak.start_year}-${records.longest_loss_streak.end_year}`}
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-white">
@@ -331,8 +334,8 @@ function Records() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-lg font-bold text-orange-400 uppercase tracking-wider">Highest Scoring Loss</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
-                          2019-2024
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.highest_scoring_loss.year}
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-white">
@@ -355,8 +358,8 @@ function Records() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-lg font-bold text-indigo-400 uppercase tracking-wider">Lowest Scoring Win</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
-                          2019-2024
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.lowest_scoring_win.year}
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-white">
@@ -379,8 +382,8 @@ function Records() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-lg font-bold text-yellow-400 uppercase tracking-wider">Most Combined Points</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
-                          2019-2024
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.most_combined_points.year}
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-white">
@@ -402,8 +405,8 @@ function Records() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-lg font-bold text-gray-400 uppercase tracking-wider">Fewest Points</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-green-500/20 text-green-400 border border-green-500/30">
-                          2007-2024
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.fewest_points_season.year}
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-white">
@@ -414,6 +417,65 @@ function Records() {
                         {records.fewest_points_season.wins}-{records.fewest_points_season.losses} record
                       </div>
                       <div className="text-xs text-white/50 mt-1">{records.fewest_points_season.year} season</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Interesting Results */}
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-white mb-4">Interesting Results</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {records?.best_team_worst_result && (
+                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-orange-500/10 to-red-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">😤</div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-orange-400 uppercase tracking-wider">Best Team, Worst Result</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.best_team_worst_result.year}
+                        </span>
+                      </div>
+                      <div className="text-sm text-white/80 font-medium mb-2">
+                        {records.best_team_worst_result.team_name}
+                        <span className="text-white/60"> ({records.best_team_worst_result.owner})</span>
+                      </div>
+                      <div className="text-sm text-white/70">
+                        <div>{records.best_team_worst_result.wins}-{records.best_team_worst_result.losses} record, {records.best_team_worst_result.points_for.toFixed(2)} points</div>
+                        <div className="mt-1">Ranked <span className="text-green-400 font-semibold">#{records.best_team_worst_result.points_rank}</span> in points</div>
+                        <div className="text-orange-400 font-semibold">Finished <span className="text-red-400">#{records.best_team_worst_result.final_standing}</span> overall</div>
+                        <div className="text-red-400 font-bold mt-1">↓ {records.best_team_worst_result.standing_gap} place gap</div>
+                      </div>
+                      <div className="text-xs text-white/50 mt-2">{records.best_team_worst_result.year} season</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {records?.worst_team_best_result && (
+                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">🍀</div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-lg font-bold text-green-400 uppercase tracking-wider">Worst Champion</h3>
+                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                          {records.worst_team_best_result.year}
+                        </span>
+                      </div>
+                      <div className="text-sm text-white/80 font-medium mb-2">
+                        {records.worst_team_best_result.team_name}
+                        <span className="text-white/60"> ({records.worst_team_best_result.owner})</span>
+                      </div>
+                      <div className="text-sm text-white/70">
+                        <div>{records.worst_team_best_result.wins}-{records.worst_team_best_result.losses} record, {records.worst_team_best_result.points_for.toFixed(2)} points</div>
+                        <div className="mt-1">Ranked <span className="text-orange-400 font-semibold">#{records.worst_team_best_result.points_rank}</span> out of {records.worst_team_best_result.total_teams} in points</div>
+                        <div className="text-green-400 font-bold mt-1">🏆 Won Championship</div>
+                      </div>
+                      <div className="text-xs text-white/50 mt-2">{records.worst_team_best_result.year} season</div>
                     </div>
                   </div>
                 </div>

@@ -189,7 +189,11 @@ class FantasyDataProcessor:
             'playoff_appearances': 0,
             'total_points_for': 0,
             'total_points_against': 0,
-            'years_active': set()
+            'years_active': set(),
+            'championship_years': [],
+            'second_place_years': [],
+            'third_place_years': [],
+            'toilet_bowl_years': []
         })
 
         # First pass: find the last place standing for each year (for toilet bowl calculation)
@@ -234,14 +238,18 @@ class FantasyDataProcessor:
                 # Count championships, 2nd place, 3rd place, and playoff appearances
                 if team['final_standing'] == 1:
                     owner_info['championships'] += 1
+                    owner_info['championship_years'].append(year)
                 elif team['final_standing'] == 2:
                     owner_info['second_place'] += 1
+                    owner_info['second_place_years'].append(year)
                 elif team['final_standing'] == 3:
                     owner_info['third_place'] += 1
+                    owner_info['third_place_years'].append(year)
 
                 # Count toilet bowl (last place in regular season)
                 if team['standing'] == last_place_by_year.get(year):
                     owner_info['toilet_bowl'] += 1
+                    owner_info['toilet_bowl_years'].append(year)
 
                 if team.get('playoff_seed'):
                     owner_info['playoff_appearances'] += 1
@@ -268,7 +276,11 @@ class FantasyDataProcessor:
                     'second_place': info['second_place'],
                     'third_place': info['third_place'],
                     'toilet_bowl': info['toilet_bowl'],
-                    'playoff_appearances': info['playoff_appearances']
+                    'playoff_appearances': info['playoff_appearances'],
+                    'championship_years': sorted(info['championship_years']),
+                    'second_place_years': sorted(info['second_place_years']),
+                    'third_place_years': sorted(info['third_place_years']),
+                    'toilet_bowl_years': sorted(info['toilet_bowl_years'])
                 }
             }
 
@@ -642,6 +654,159 @@ class FantasyDataProcessor:
             if winning_scores:
                 records['lowest_scoring_win'] = min(winning_scores, key=lambda x: x['score'])
 
+        # Best team that didn't win championship (or finish top 3)
+        # Look at teams with best points ranking in their season who finished 4th or worse
+        best_team_worst_result = None
+        if self.processed_data['standings']:
+            # Group standings by year to compare within seasons
+            standings_by_year = {}
+            for standing in self.processed_data['standings']:
+                year = standing['year']
+                if year not in standings_by_year:
+                    standings_by_year[year] = []
+                standings_by_year[year].append(standing)
+
+            # For each year, rank teams by points and find teams that finished 4th+ despite high points ranking
+            best_gap = 0
+            for year, year_standings in standings_by_year.items():
+                # Sort by points to get points ranking
+                sorted_by_points = sorted(year_standings, key=lambda x: x['points_for'], reverse=True)
+
+                # Find teams that finished 4th or worse
+                for standing in year_standings:
+                    final_standing = standing.get('final_standing')
+                    if final_standing and final_standing >= 4:
+                        # Find this team's points ranking
+                        points_rank = next((i+1 for i, s in enumerate(sorted_by_points) if s['team_name'] == standing['team_name']), None)
+
+                        if points_rank:
+                            # Calculate gap between points ranking and final standing
+                            gap = final_standing - points_rank
+                            if gap > best_gap or (gap == best_gap and standing['points_for'] > (best_team_worst_result or {}).get('points_for', 0)):
+                                best_gap = gap
+                                standing_copy = standing.copy()
+                                standing_copy['points_rank'] = points_rank
+                                standing_copy['standing_gap'] = gap
+                                best_team_worst_result = standing_copy
+
+        records['best_team_worst_result'] = best_team_worst_result
+
+        # Worst team that won championship
+        # Look at champions who had worst points ranking relative to their season
+        worst_champion = None
+        if self.processed_data['playoffs']:
+            # Group standings by year
+            standings_by_year = {}
+            for standing in self.processed_data['standings']:
+                year = standing['year']
+                if year not in standings_by_year:
+                    standings_by_year[year] = []
+                standings_by_year[year].append(standing)
+
+            worst_points_rank = 0
+            for playoff in self.processed_data['playoffs']:
+                year = playoff['year']
+                champion_team = playoff.get('champion')
+
+                if champion_team and year in standings_by_year:
+                    # Find this champion's standing
+                    champion_standing = next(
+                        (s for s in standings_by_year[year] if s['team_name'] == champion_team),
+                        None
+                    )
+
+                    if champion_standing:
+                        # Sort teams by points to get ranking
+                        sorted_by_points = sorted(standings_by_year[year], key=lambda x: x['points_for'], reverse=True)
+                        points_rank = next((i+1 for i, s in enumerate(sorted_by_points) if s['team_name'] == champion_team), None)
+
+                        if points_rank and points_rank > worst_points_rank:
+                            worst_points_rank = points_rank
+                            champion_copy = champion_standing.copy()
+                            champion_copy['points_rank'] = points_rank
+                            champion_copy['total_teams'] = len(standings_by_year[year])
+                            worst_champion = champion_copy
+
+        records['worst_team_best_result'] = worst_champion
+
+        # Best champion - champion with biggest gap in regular season points over 2nd place
+        best_champion = None
+        if self.processed_data['playoffs']:
+            standings_by_year = {}
+            for standing in self.processed_data['standings']:
+                year = standing['year']
+                if year not in standings_by_year:
+                    standings_by_year[year] = []
+                standings_by_year[year].append(standing)
+
+            max_gap = 0
+            for playoff in self.processed_data['playoffs']:
+                year = playoff['year']
+                champion_team = playoff.get('champion')
+                champion_owner = playoff.get('champion_owner')
+
+                if champion_team and year in standings_by_year:
+                    # Sort teams by regular season points
+                    sorted_by_points = sorted(standings_by_year[year], key=lambda x: x['points_for'], reverse=True)
+
+                    # Find champion's standing
+                    champion_standing = next(
+                        (s for s in standings_by_year[year] if s['team_name'] == champion_team),
+                        None
+                    )
+
+                    if champion_standing and len(sorted_by_points) >= 2:
+                        # Find champion's rank in points
+                        champion_points_rank = next((i for i, s in enumerate(sorted_by_points) if s['team_name'] == champion_team), None)
+
+                        if champion_points_rank is not None:
+                            # Get the points of the second-place points scorer
+                            if champion_points_rank == 0:
+                                # Champion was #1 in points, compare to #2
+                                second_place_points = sorted_by_points[1]['points_for']
+                                points_gap = champion_standing['points_for'] - second_place_points
+
+                                if points_gap > max_gap:
+                                    max_gap = points_gap
+                                    champion_copy = champion_standing.copy()
+                                    champion_copy['points_gap'] = round(points_gap, 2)
+                                    champion_copy['second_place_points'] = round(second_place_points, 2)
+                                    best_champion = champion_copy
+
+        records['best_champion'] = best_champion
+
+        # Unluckiest regular season winner - team with biggest points gap over 2nd place but didn't win championship
+        unluckiest_reg_season_winner = None
+        if self.processed_data['standings']:
+            standings_by_year = {}
+            for standing in self.processed_data['standings']:
+                year = standing['year']
+                if year not in standings_by_year:
+                    standings_by_year[year] = []
+                standings_by_year[year].append(standing)
+
+            max_gap = 0
+            for year, year_standings in standings_by_year.items():
+                # Sort by points to get top scorer
+                sorted_by_points = sorted(year_standings, key=lambda x: x['points_for'], reverse=True)
+
+                if len(sorted_by_points) >= 2:
+                    top_scorer = sorted_by_points[0]
+                    second_scorer = sorted_by_points[1]
+
+                    # Check if top scorer didn't win championship (final_standing != 1)
+                    if top_scorer.get('final_standing') != 1:
+                        points_gap = top_scorer['points_for'] - second_scorer['points_for']
+
+                        if points_gap > max_gap:
+                            max_gap = points_gap
+                            top_scorer_copy = top_scorer.copy()
+                            top_scorer_copy['points_gap'] = round(points_gap, 2)
+                            top_scorer_copy['second_place_points'] = round(second_scorer['points_for'], 2)
+                            unluckiest_reg_season_winner = top_scorer_copy
+
+        records['unluckiest_reg_season_winner'] = unluckiest_reg_season_winner
+
         self.processed_data['records'] = records
 
         print("Calculated league records")
@@ -656,13 +821,15 @@ class FantasyDataProcessor:
             'first_season': min(years) if years else None,
             'latest_season': max(years) if years else None,
             'total_teams': len(self.processed_data['teams']),
+            'total_owners': len(self.processed_data['owners']),
             'total_matchups': len(self.processed_data['matchups']),
             'processed_at': datetime.now().isoformat(),
             'league_name': list(self.raw_data.values())[0].get('league_name', 'Unknown') if self.raw_data else 'Unknown'
         }
 
         print(f"Added metadata: {self.processed_data['metadata']['total_seasons']} seasons, "
-              f"{self.processed_data['metadata']['total_teams']} teams")
+              f"{self.processed_data['metadata']['total_teams']} teams, "
+              f"{self.processed_data['metadata']['total_owners']} owners")
 
     def process_draft(self):
         """Process draft data across all years"""
@@ -792,39 +959,47 @@ class FantasyDataProcessor:
         return optimal_lineups
 
     def calculate_best_draft_picks(self):
-        """Analyze draft picks to find best value picks (excluding keepers)"""
+        """Analyze draft picks to find best and worst value picks (excluding keepers - $0 or $1)"""
         # Group player stats by year and player
         from collections import defaultdict
-        player_season_stats = defaultdict(lambda: {'total_points': 0, 'games': 0})
+        player_season_stats = defaultdict(lambda: {'total_points': 0, 'games': 0, 'position': None})
 
         for stat in self.processed_data['player_stats']:
             key = (stat['year'], stat.get('player_id') or stat['player_name'])
             player_season_stats[key]['total_points'] += stat.get('points', 0)
             player_season_stats[key]['games'] += 1
+            # Capture position from player stats
+            if not player_season_stats[key]['position']:
+                player_season_stats[key]['position'] = stat.get('position')
 
         # Match draft picks with their season performance
-        # Keepers are already filtered out in process_draft()
-        best_picks = []
+        all_picks = []
 
         for draft_pick in self.processed_data['draft']:
             year = draft_pick['year']
             player_id = draft_pick.get('player_id') or draft_pick['player_name']
+            auction_cost = draft_pick.get('bid_amount', 0)
+
+            # Skip keepers ($0 or $1 picks)
+            if auction_cost <= 1:
+                continue
 
             key = (year, player_id)
             if key in player_season_stats:
                 stats = player_season_stats[key]
                 total_points = stats['total_points']
                 avg_points = total_points / stats['games'] if stats['games'] > 0 else 0
+                position = stats['position']
 
-                auction_cost = draft_pick.get('bid_amount', 0)
                 # Calculate value as points per dollar spent (for auction drafts)
                 value = round(total_points / auction_cost, 2) if auction_cost > 0 else 0
 
-                best_picks.append({
+                all_picks.append({
                     'year': year,
                     'player_name': draft_pick['player_name'],
                     'owner': draft_pick.get('owner'),
                     'team_name': draft_pick.get('team_name'),
+                    'position': position,
                     'auction_cost': auction_cost,
                     'total_points': round(total_points, 2),
                     'avg_points_per_game': round(avg_points, 2),
@@ -832,11 +1007,52 @@ class FantasyDataProcessor:
                     'value': value  # Points per dollar
                 })
 
-        # Sort by value (points per draft position)
-        best_picks.sort(key=lambda x: x['value'], reverse=True)
+        # Sort by value (points per dollar)
+        all_picks.sort(key=lambda x: x['value'], reverse=True)
 
+        # For both best and worst picks, only include picks that cost $20 or more
+        # This focuses on significant investments rather than cheap fliers
+        expensive_picks = [pick for pick in all_picks if pick['auction_cost'] >= 20]
+
+        # For best picks, also exclude QBs from 2019-2021 (league moved to 2-QB format after 2021)
+        best_picks = [
+            pick for pick in expensive_picks
+            if not (pick.get('position') == 'QB' and pick['year'] in [2019, 2020, 2021])
+        ]
         self.processed_data['best_draft_picks'] = best_picks
-        print(f"Analyzed {len(best_picks)} draft picks with performance data")
+
+        # For worst picks, filter out players with 0 or negative points (injuries/DNPs)
+        # Keep QBs from all years for worst picks (bad picks are still bad)
+        worst_picks = [pick for pick in expensive_picks if pick['total_points'] > 0]
+        self.processed_data['worst_draft_picks'] = worst_picks[::-1]  # Reverse for worst first
+
+        print(f"Analyzed {len(all_picks)} draft picks with performance data (keepers excluded)")
+        print(f"  - {len(best_picks)} picks ($20+, excluding QBs from 2019-2021) for best value analysis")
+        print(f"  - {len(worst_picks)} picks ($20+, positive points) for worst value analysis")
+
+    def enrich_draft_with_positions(self):
+        """Add position information to draft picks by matching with player stats"""
+        # Create a mapping of (year, player_id) -> position from player stats
+        player_positions = {}
+        for stat in self.processed_data['player_stats']:
+            key = (stat['year'], stat.get('player_id') or stat['player_name'])
+            if key not in player_positions and stat.get('position'):
+                player_positions[key] = stat['position']
+
+        # Enrich draft picks with position data
+        enriched_count = 0
+        for pick in self.processed_data['draft']:
+            year = pick['year']
+            player_id = pick.get('player_id') or pick['player_name']
+            key = (year, player_id)
+
+            if key in player_positions:
+                pick['position'] = player_positions[key]
+                enriched_count += 1
+            else:
+                pick['position'] = None  # Position unknown
+
+        print(f"Enriched {enriched_count}/{len(self.processed_data['draft'])} draft picks with position data")
 
     def process_all(self):
         """Run all processing steps"""
@@ -852,6 +1068,7 @@ class FantasyDataProcessor:
         self.process_draft()
         self.process_rosters()
         self.process_player_stats()
+        self.enrich_draft_with_positions()  # Add positions to draft picks
         self.calculate_best_draft_picks()
         self.add_metadata()
 
@@ -866,7 +1083,7 @@ class FantasyDataProcessor:
         print(f"✓ Saved complete data to {complete_file}")
 
         # Save individual components for easier API access
-        for key in ['teams', 'owners', 'matchups', 'standings', 'playoffs', 'head_to_head', 'records', 'draft', 'rosters', 'player_stats', 'best_draft_picks', 'optimal_lineups', 'metadata']:
+        for key in ['teams', 'owners', 'matchups', 'standings', 'playoffs', 'head_to_head', 'records', 'draft', 'rosters', 'player_stats', 'best_draft_picks', 'worst_draft_picks', 'optimal_lineups', 'metadata']:
             component_file = PROCESSED_DATA_DIR / f'{key}.json'
             with open(component_file, 'w') as f:
                 json.dump(self.processed_data[key], f, indent=2)

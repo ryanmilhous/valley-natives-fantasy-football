@@ -2,6 +2,36 @@ import { useState, useEffect } from 'react';
 import apiService from '../services/api';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
+// Custom tooltip component for achievement badges
+const AchievementBadge = ({ emoji, count, years, bgColor, textColor, borderColor }) => {
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  if (count === 0) {
+    return <span className="text-white/30">-</span>;
+  }
+
+  return (
+    <div className="relative inline-block">
+      <span
+        className={`inline-flex items-center space-x-1 px-3 py-1 rounded-full ${bgColor} ${textColor} font-bold border ${borderColor} hover:opacity-80 transition-all cursor-pointer`}
+        onMouseEnter={() => setShowTooltip(true)}
+        onMouseLeave={() => setShowTooltip(false)}
+      >
+        <span>{emoji}</span>
+        <span>{count}</span>
+      </span>
+      {showTooltip && years.length > 0 && (
+        <div className="absolute z-10 bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-slate-800 text-white text-sm rounded-lg shadow-lg border border-white/20 whitespace-nowrap">
+          Years: {years.join(', ')}
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
+            <div className="border-4 border-transparent border-t-slate-800"></div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 function Home() {
   const [metadata, setMetadata] = useState(null);
   const [owners, setOwners] = useState([]);
@@ -42,6 +72,7 @@ function Home() {
     .map(owner => ({
       owner: owner.owner,
       championships: owner.all_time.championships,
+      years: owner.all_time.championship_years || [],
     }))
     .filter(o => o.championships > 0)
     .sort((a, b) => b.championships - a.championships);
@@ -131,21 +162,21 @@ function Home() {
   return (
     <div className="space-y-8">
       {/* Hero Section */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 p-1">
-        <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-10">
-          <div className="flex items-center space-x-4 mb-6">
-            <div className="text-6xl animate-bounce">🏆</div>
+      <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 p-1">
+        <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-10">
+          <div className="flex flex-col sm:flex-row items-center sm:space-x-4 mb-6 text-center sm:text-left">
+            <div className="text-4xl sm:text-6xl animate-bounce mb-4 sm:mb-0">🏆</div>
             <div>
-              <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 {metadata?.league_name || 'Fantasy Football League'}
               </h1>
-              <p className="text-xl text-white/70 mt-2">
-                {metadata?.total_seasons} seasons • {metadata?.total_matchups} matchups • {metadata?.total_teams} teams
+              <p className="text-base sm:text-xl text-white/70 mt-2">
+                {metadata?.total_seasons} seasons • {metadata?.total_owners} owners • {metadata?.total_teams} teams
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
             <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 p-6 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-blue-500/10 group-hover:from-blue-500/10 group-hover:to-blue-500/20 transition-all duration-300"></div>
               <div className="relative">
@@ -165,8 +196,8 @@ function Home() {
             <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-600/20 p-6 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-purple-500/10 group-hover:from-purple-500/10 group-hover:to-purple-500/20 transition-all duration-300"></div>
               <div className="relative">
-                <div className="text-4xl font-bold text-purple-400">{metadata?.total_matchups}</div>
-                <div className="text-sm text-purple-300/70 mt-1 font-medium">Total Matchups</div>
+                <div className="text-4xl font-bold text-purple-400">{metadata?.total_owners}</div>
+                <div className="text-sm text-purple-300/70 mt-1 font-medium">Total Owners</div>
               </div>
             </div>
 
@@ -185,13 +216,13 @@ function Home() {
 
       {/* Championships Chart */}
       {championshipData.length > 0 && (
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-red-500/10 p-1">
-          <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-6 flex items-center space-x-3">
+        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-red-500/10 p-1">
+          <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-white/10">
+            <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-6 flex items-center space-x-2 sm:space-x-3">
               <span>🏆</span>
               <span>Championship Winners</span>
             </h2>
-            <ResponsiveContainer width="100%" height={400}>
+            <ResponsiveContainer width="100%" height={300} className="sm:h-[400px]">
               <BarChart data={championshipData} margin={{ bottom: 80, top: 30 }}>
                 <defs>
                   <linearGradient id="colorChampionships" x1="0" y1="0" x2="0" y2="1">
@@ -228,6 +259,23 @@ function Home() {
                     borderRadius: '12px',
                     color: '#fff'
                   }}
+                  content={({ payload }) => {
+                    if (payload && payload.length > 0) {
+                      const data = payload[0].payload;
+                      return (
+                        <div className="bg-slate-800 p-3 rounded-lg border border-white/20">
+                          <div className="font-bold text-white mb-1">{data.owner}</div>
+                          <div className="text-yellow-400">{data.championships} {data.championships === 1 ? 'Championship' : 'Championships'}</div>
+                          {data.years && data.years.length > 0 && (
+                            <div className="text-white/70 text-sm mt-1">
+                              Years: {data.years.join(', ')}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    }
+                    return null;
+                  }}
                 />
                 <Bar dataKey="championships" fill="url(#colorChampionships)" name="Championships" radius={[8, 8, 0, 0]} label={{ position: 'top', fill: '#fbbf24', fontSize: 14, fontWeight: 'bold' }} />
               </BarChart>
@@ -237,13 +285,14 @@ function Home() {
       )}
 
       {/* All-Time Standings */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 p-1">
-        <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-6 flex items-center space-x-3">
+      <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 p-1">
+        <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-white/10">
+          <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 sm:mb-6 flex items-center space-x-2 sm:space-x-3">
             <span>📊</span>
             <span>All-Time Standings</span>
           </h2>
-          <div className="overflow-x-auto rounded-xl">
+          <div className="text-xs sm:text-sm text-white/60 mb-4 lg:hidden">Scroll horizontally to see all columns →</div>
+          <div className="overflow-x-auto rounded-xl -mx-4 sm:mx-0 px-4 sm:px-0">
             <table className="min-w-full">
               <thead>
                 <tr className="border-b border-white/10">
@@ -310,6 +359,13 @@ function Home() {
                     const yearRange = owner.first_season === owner.last_season
                       ? owner.first_season
                       : `${owner.first_season}-${owner.last_season}`;
+
+                    // Get years for each finish type from precomputed arrays
+                    const firstPlaceYears = owner.all_time.championship_years || [];
+                    const secondPlaceYears = owner.all_time.second_place_years || [];
+                    const thirdPlaceYears = owner.all_time.third_place_years || [];
+                    const toiletBowlYears = owner.all_time.toilet_bowl_years || [];
+
                     return (
                       <tr key={owner.owner} className="hover:bg-white/5 transition-colors duration-200 group">
                         <td className="px-6 py-4 whitespace-nowrap">
@@ -339,44 +395,44 @@ function Home() {
                           {winPct}%
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
-                          {owner.all_time.championships > 0 ? (
-                            <span className="inline-flex items-center space-x-1 px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 font-bold border border-yellow-500/30">
-                              <span>🏆</span>
-                              <span>{owner.all_time.championships}</span>
-                            </span>
-                          ) : (
-                            <span className="text-white/30">-</span>
-                          )}
+                          <AchievementBadge
+                            emoji="🏆"
+                            count={owner.all_time.championships}
+                            years={firstPlaceYears}
+                            bgColor="bg-yellow-500/20"
+                            textColor="text-yellow-400"
+                            borderColor="border-yellow-500/30"
+                          />
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
-                          {owner.all_time.second_place > 0 ? (
-                            <span className="inline-flex items-center space-x-1 px-3 py-1 rounded-full bg-gray-400/20 text-gray-300 font-bold border border-gray-400/30">
-                              <span>🥈</span>
-                              <span>{owner.all_time.second_place}</span>
-                            </span>
-                          ) : (
-                            <span className="text-white/30">-</span>
-                          )}
+                          <AchievementBadge
+                            emoji="🥈"
+                            count={owner.all_time.second_place}
+                            years={secondPlaceYears}
+                            bgColor="bg-gray-400/20"
+                            textColor="text-gray-300"
+                            borderColor="border-gray-400/30"
+                          />
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
-                          {owner.all_time.third_place > 0 ? (
-                            <span className="inline-flex items-center space-x-1 px-3 py-1 rounded-full bg-orange-600/20 text-orange-400 font-bold border border-orange-600/30">
-                              <span>🥉</span>
-                              <span>{owner.all_time.third_place}</span>
-                            </span>
-                          ) : (
-                            <span className="text-white/30">-</span>
-                          )}
+                          <AchievementBadge
+                            emoji="🥉"
+                            count={owner.all_time.third_place}
+                            years={thirdPlaceYears}
+                            bgColor="bg-orange-600/20"
+                            textColor="text-orange-400"
+                            borderColor="border-orange-600/30"
+                          />
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
-                          {owner.all_time.toilet_bowl > 0 ? (
-                            <span className="inline-flex items-center space-x-1 px-3 py-1 rounded-full bg-brown-600/20 text-white font-bold border border-brown-600/30">
-                              <span>🚽</span>
-                              <span>{owner.all_time.toilet_bowl}</span>
-                            </span>
-                          ) : (
-                            <span className="text-white/30">-</span>
-                          )}
+                          <AchievementBadge
+                            emoji="🚽"
+                            count={owner.all_time.toilet_bowl}
+                            years={toiletBowlYears}
+                            bgColor="bg-brown-600/20"
+                            textColor="text-white"
+                            borderColor="border-brown-600/30"
+                          />
                         </td>
                       </tr>
                     );

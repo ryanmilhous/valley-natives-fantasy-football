@@ -150,5 +150,35 @@
     "year": 2022,
     "opponent": "Kooter McGavin",
     "opponent_score": 51.26
+  },
+  "best_team_worst_result": {
+    "year": 2025,
+    "team_name": "The Kellen Brothers",
+    "owner": "Kellen Coffis",
+    "wins": 7,
+    "losses": 7,
+    "ties": 0,
+    "points_for": 1635,
+    "points_against": 1565,
+    "standing": 7,
+    "final_standing": 14,
+    "playoff_seed": null,
+    "points_rank": 6,
+    "standing_gap": 8
+  },
+  "worst_team_best_result": {
+    "year": 2013,
+    "team_name": "Felton Sluggers",
+    "owner": "Jeremy Settles",
+    "wins": 9,
+    "losses": 4,
+    "ties": 0,
+    "points_for": 1405.38,
+    "points_against": 1281.86,
+    "standing": 2,
+    "final_standing": 1,
+    "playoff_seed": null,
+    "points_rank": 6,
+    "total_teams": 14
   }
 }

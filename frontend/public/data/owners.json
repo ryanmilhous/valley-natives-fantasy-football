@@ -1,7 +1,7 @@
 {
   "Chris Vitale": {
     "owner": "Chris Vitale",
-    "seasons_played": 18,
+    "seasons_played": 19,
     "years_active": [
       2007,
       2008,
@@ -20,10 +20,11 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "first_season": 2007,
-    "last_season": 2024,
+    "last_season": 2025,
     "seasons": [
       {
         "year": 2007,
@@ -240,25 +241,51 @@
         "standing": 13,
         "final_standing": 14,
         "playoff_seed": null
+      },
+      {
+        "year": 2025,
+        "team_name": "Rich City YungBeevs",
+        "wins": 9,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1737,
+        "points_against": 1619,
+        "standing": 4,
+        "final_standing": 5,
+        "playoff_seed": null
       }
     ],
     "all_time": {
-      "wins": 116,
-      "losses": 117,
+      "wins": 125,
+      "losses": 122,
       "ties": 0,
-      "win_percentage": 49.8,
-      "points_for": 23843.18,
-      "points_against": 23240.46,
+      "win_percentage": 50.6,
+      "points_for": 25580.18,
+      "points_against": 24859.46,
       "championships": 1,
       "second_place": 2,
       "third_place": 1,
       "toilet_bowl": 2,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [
+        2020
+      ],
+      "second_place_years": [
+        2015,
+        2019
+      ],
+      "third_place_years": [
+        2009
+      ],
+      "toilet_bowl_years": [
+        2007,
+        2012
+      ]
     }
   },
   "Kellen Coffis": {
     "owner": "Kellen Coffis",
-    "seasons_played": 18,
+    "seasons_played": 19,
     "years_active": [
       2007,
       2008,
@@ -277,10 +304,11 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "first_season": 2007,
-    "last_season": 2024,
+    "last_season": 2025,
     "seasons": [
       {
         "year": 2007,
@@ -497,25 +525,48 @@
         "standing": 12,
         "final_standing": 8,
         "playoff_seed": null
+      },
+      {
+        "year": 2025,
+        "team_name": "The Kellen Brothers",
+        "wins": 7,
+        "losses": 7,
+        "ties": 0,
+        "points_for": 1635,
+        "points_against": 1565,
+        "standing": 7,
+        "final_standing": 14,
+        "playoff_seed": null
       }
     ],
     "all_time": {
-      "wins": 105,
-      "losses": 128,
+      "wins": 112,
+      "losses": 135,
       "ties": 0,
-      "win_percentage": 45.1,
-      "points_for": 22579.9,
-      "points_against": 23864.85,
+      "win_percentage": 45.3,
+      "points_for": 24214.9,
+      "points_against": 25429.85,
       "championships": 0,
       "second_place": 1,
       "third_place": 2,
       "toilet_bowl": 1,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [],
+      "second_place_years": [
+        2020
+      ],
+      "third_place_years": [
+        2007,
+        2008
+      ],
+      "toilet_bowl_years": [
+        2009
+      ]
     }
   },
   "Jamie Coffis": {
     "owner": "Jamie Coffis",
-    "seasons_played": 18,
+    "seasons_played": 19,
     "years_active": [
       2007,
       2008,
@@ -534,10 +585,11 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "first_season": 2007,
-    "last_season": 2024,
+    "last_season": 2025,
     "seasons": [
       {
         "year": 2007,
@@ -754,25 +806,51 @@
         "standing": 10,
         "final_standing": 10,
         "playoff_seed": null
+      },
+      {
+        "year": 2025,
+        "team_name": "The Drakes",
+        "wins": 10,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 1636,
+        "points_against": 1615,
+        "standing": 3,
+        "final_standing": 6,
+        "playoff_seed": null
       }
     ],
     "all_time": {
-      "wins": 122,
-      "losses": 111,
+      "wins": 132,
+      "losses": 115,
       "ties": 0,
-      "win_percentage": 52.4,
-      "points_for": 24418.98,
-      "points_against": 23474.46,
+      "win_percentage": 53.4,
+      "points_for": 26054.98,
+      "points_against": 25089.46,
       "championships": 2,
       "second_place": 1,
       "third_place": 2,
       "toilet_bowl": 1,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [
+        2012,
+        2017
+      ],
+      "second_place_years": [
+        2009
+      ],
+      "third_place_years": [
+        2010,
+        2020
+      ],
+      "toilet_bowl_years": [
+        2022
+      ]
     }
   },
   "Garrett Ulrich": {
     "owner": "Garrett Ulrich",
-    "seasons_played": 18,
+    "seasons_played": 19,
     "years_active": [
       2007,
       2008,
@@ -791,10 +869,11 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "first_season": 2007,
-    "last_season": 2024,
+    "last_season": 2025,
     "seasons": [
       {
         "year": 2007,
@@ -1011,20 +1090,51 @@
         "standing": 14,
         "final_standing": 13,
         "playoff_seed": null
+      },
+      {
+        "year": 2025,
+        "team_name": "My Penix Will Rise Again",
+        "wins": 4,
+        "losses": 10,
+        "ties": 0,
+        "points_for": 1384,
+        "points_against": 1644,
+        "standing": 13,
+        "final_standing": 11,
+        "playoff_seed": null
       }
     ],
     "all_time": {
-      "wins": 112,
-      "losses": 121,
+      "wins": 116,
+      "losses": 131,
       "ties": 0,
-      "win_percentage": 48.1,
-      "points_for": 23279.52,
-      "points_against": 23680.32,
+      "win_percentage": 47.0,
+      "points_for": 24663.52,
+      "points_against": 25324.32,
       "championships": 3,
       "second_place": 2,
       "third_place": 2,
       "toilet_bowl": 4,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [
+        2009,
+        2014,
+        2015
+      ],
+      "second_place_years": [
+        2007,
+        2018
+      ],
+      "third_place_years": [
+        2012,
+        2017
+      ],
+      "toilet_bowl_years": [
+        2011,
+        2013,
+        2023,
+        2024
+      ]
     }
   },
   "Tanner Clark": {
@@ -1073,12 +1183,16 @@
       "second_place": 0,
       "third_place": 0,
       "toilet_bowl": 0,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [],
+      "second_place_years": [],
+      "third_place_years": [],
+      "toilet_bowl_years": []
     }
   },
   "Jeremy Settles": {
     "owner": "Jeremy Settles",
-    "seasons_played": 18,
+    "seasons_played": 19,
     "years_active": [
       2007,
       2008,
@@ -1097,10 +1211,11 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "first_season": 2007,
-    "last_season": 2024,
+    "last_season": 2025,
     "seasons": [
       {
         "year": 2007,
@@ -1317,25 +1432,54 @@
         "standing": 2,
         "final_standing": 1,
         "playoff_seed": null
+      },
+      {
+        "year": 2025,
+        "team_name": "Felton Sluggers",
+        "wins": 2,
+        "losses": 12,
+        "ties": 0,
+        "points_for": 1348,
+        "points_against": 1667,
+        "standing": 14,
+        "final_standing": 8,
+        "playoff_seed": null
       }
     ],
     "all_time": {
-      "wins": 125,
-      "losses": 108,
+      "wins": 127,
+      "losses": 120,
       "ties": 0,
-      "win_percentage": 53.6,
-      "points_for": 23529.15,
-      "points_against": 23146.83,
+      "win_percentage": 51.4,
+      "points_for": 24877.15,
+      "points_against": 24813.83,
       "championships": 3,
       "second_place": 2,
       "third_place": 1,
-      "toilet_bowl": 2,
-      "playoff_appearances": 0
+      "toilet_bowl": 3,
+      "playoff_appearances": 0,
+      "championship_years": [
+        2007,
+        2013,
+        2024
+      ],
+      "second_place_years": [
+        2008,
+        2016
+      ],
+      "third_place_years": [
+        2011
+      ],
+      "toilet_bowl_years": [
+        2018,
+        2020,
+        2025
+      ]
     }
   },
   "Jacob Luna": {
     "owner": "Jacob Luna",
-    "seasons_played": 18,
+    "seasons_played": 19,
     "years_active": [
       2007,
       2008,
@@ -1354,10 +1498,11 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "first_season": 2007,
-    "last_season": 2024,
+    "last_season": 2025,
     "seasons": [
       {
         "year": 2007,
@@ -1574,20 +1719,45 @@
         "standing": 1,
         "final_standing": 3,
         "playoff_seed": null
+      },
+      {
+        "year": 2025,
+        "team_name": "Tampon Bay Blumpkineers",
+        "wins": 12,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 1833,
+        "points_against": 1420,
+        "standing": 1,
+        "final_standing": 4,
+        "playoff_seed": null
       }
     ],
     "all_time": {
-      "wins": 118,
-      "losses": 115,
+      "wins": 130,
+      "losses": 117,
       "ties": 0,
-      "win_percentage": 50.6,
-      "points_for": 23098.07,
-      "points_against": 23463.5,
+      "win_percentage": 52.6,
+      "points_for": 24931.07,
+      "points_against": 24883.5,
       "championships": 0,
       "second_place": 2,
       "third_place": 2,
       "toilet_bowl": 2,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [],
+      "second_place_years": [
+        2014,
+        2023
+      ],
+      "third_place_years": [
+        2013,
+        2024
+      ],
+      "toilet_bowl_years": [
+        2008,
+        2017
+      ]
     }
   },
   "Peter Kent-Stoll": {
@@ -1623,7 +1793,11 @@
       "second_place": 0,
       "third_place": 0,
       "toilet_bowl": 0,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [],
+      "second_place_years": [],
+      "third_place_years": [],
+      "toilet_bowl_years": []
     }
   },
   "Dylan Andrews": {
@@ -1659,7 +1833,11 @@
       "second_place": 0,
       "third_place": 0,
       "toilet_bowl": 0,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [],
+      "second_place_years": [],
+      "third_place_years": [],
+      "toilet_bowl_years": []
     }
   },
   "Tyler Fullerton": {
@@ -1786,12 +1964,21 @@
       "second_place": 0,
       "third_place": 0,
       "toilet_bowl": 1,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [
+        2008,
+        2010
+      ],
+      "second_place_years": [],
+      "third_place_years": [],
+      "toilet_bowl_years": [
+        2014
+      ]
     }
   },
   "Brendan Romale": {
     "owner": "Brendan Romale",
-    "seasons_played": 18,
+    "seasons_played": 19,
     "years_active": [
       2007,
       2008,
@@ -1810,10 +1997,11 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "first_season": 2007,
-    "last_season": 2024,
+    "last_season": 2025,
     "seasons": [
       {
         "year": 2007,
@@ -2030,20 +2218,44 @@
         "standing": 6,
         "final_standing": 2,
         "playoff_seed": null
+      },
+      {
+        "year": 2025,
+        "team_name": "S.F. Forty-Chiners",
+        "wins": 5,
+        "losses": 9,
+        "ties": 0,
+        "points_for": 1535,
+        "points_against": 1666,
+        "standing": 10,
+        "final_standing": 12,
+        "playoff_seed": null
       }
     ],
     "all_time": {
-      "wins": 109,
-      "losses": 124,
+      "wins": 114,
+      "losses": 133,
       "ties": 0,
-      "win_percentage": 46.8,
-      "points_for": 23626.36,
-      "points_against": 23507.87,
+      "win_percentage": 46.2,
+      "points_for": 25161.36,
+      "points_against": 25173.87,
       "championships": 0,
       "second_place": 2,
       "third_place": 2,
       "toilet_bowl": 1,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [],
+      "second_place_years": [
+        2011,
+        2024
+      ],
+      "third_place_years": [
+        2018,
+        2019
+      ],
+      "toilet_bowl_years": [
+        2016
+      ]
     }
   },
   "Kyle Morris": {
@@ -2235,12 +2447,18 @@
       "second_place": 0,
       "third_place": 0,
       "toilet_bowl": 1,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [],
+      "second_place_years": [],
+      "third_place_years": [],
+      "toilet_bowl_years": [
+        2019
+      ]
     }
   },
   "Nick Smielak": {
     "owner": "Nick Smielak",
-    "seasons_played": 17,
+    "seasons_played": 18,
     "years_active": [
       2008,
       2009,
@@ -2258,10 +2476,11 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "first_season": 2008,
-    "last_season": 2024,
+    "last_season": 2025,
     "seasons": [
       {
         "year": 2008,
@@ -2466,20 +2685,45 @@
         "standing": 5,
         "final_standing": 4,
         "playoff_seed": null
+      },
+      {
+        "year": 2025,
+        "team_name": "Smi Pies",
+        "wins": 8,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1821,
+        "points_against": 1632,
+        "standing": 5,
+        "final_standing": 3,
+        "playoff_seed": null
       }
     ],
     "all_time": {
-      "wins": 127,
-      "losses": 94,
+      "wins": 135,
+      "losses": 100,
       "ties": 0,
-      "win_percentage": 57.5,
-      "points_for": 23751.75,
-      "points_against": 22660.83,
+      "win_percentage": 57.4,
+      "points_for": 25572.75,
+      "points_against": 24292.83,
       "championships": 1,
       "second_place": 3,
-      "third_place": 1,
+      "third_place": 2,
       "toilet_bowl": 0,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [
+        2011
+      ],
+      "second_place_years": [
+        2012,
+        2017,
+        2022
+      ],
+      "third_place_years": [
+        2014,
+        2025
+      ],
+      "toilet_bowl_years": []
     }
   },
   "Brian Vitale": {
@@ -2606,12 +2850,20 @@
       "second_place": 1,
       "third_place": 0,
       "toilet_bowl": 1,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [],
+      "second_place_years": [
+        2013
+      ],
+      "third_place_years": [],
+      "toilet_bowl_years": [
+        2010
+      ]
     }
   },
   "Greg Swenson": {
     "owner": "Greg Swenson",
-    "seasons_played": 16,
+    "seasons_played": 17,
     "years_active": [
       2009,
       2010,
@@ -2628,10 +2880,11 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "first_season": 2009,
-    "last_season": 2024,
+    "last_season": 2025,
     "seasons": [
       {
         "year": 2009,
@@ -2824,20 +3077,46 @@
         "standing": 3,
         "final_standing": 6,
         "playoff_seed": null
+      },
+      {
+        "year": 2025,
+        "team_name": "Prime Time",
+        "wins": 5,
+        "losses": 9,
+        "ties": 0,
+        "points_for": 1455,
+        "points_against": 1573,
+        "standing": 11,
+        "final_standing": 10,
+        "playoff_seed": null
       }
     ],
     "all_time": {
-      "wins": 111,
-      "losses": 98,
+      "wins": 116,
+      "losses": 107,
       "ties": 0,
-      "win_percentage": 53.1,
-      "points_for": 22090.78,
-      "points_against": 21074.33,
+      "win_percentage": 52.0,
+      "points_for": 23545.78,
+      "points_against": 22647.33,
       "championships": 1,
       "second_place": 1,
       "third_place": 3,
       "toilet_bowl": 1,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [
+        2018
+      ],
+      "second_place_years": [
+        2010
+      ],
+      "third_place_years": [
+        2016,
+        2021,
+        2022
+      ],
+      "toilet_bowl_years": [
+        2015
+      ]
     }
   },
   "Ben Beck": {
@@ -3029,12 +3308,20 @@
       "second_place": 0,
       "third_place": 0,
       "toilet_bowl": 0,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [
+        2016,
+        2019,
+        2021
+      ],
+      "second_place_years": [],
+      "third_place_years": [],
+      "toilet_bowl_years": []
     }
   },
   "Kyle Poppen": {
     "owner": "Kyle Poppen",
-    "seasons_played": 13,
+    "seasons_played": 14,
     "years_active": [
       2012,
       2013,
@@ -3048,10 +3335,11 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "first_season": 2012,
-    "last_season": 2024,
+    "last_season": 2025,
     "seasons": [
       {
         "year": 2012,
@@ -3208,25 +3496,45 @@
         "standing": 7,
         "final_standing": 9,
         "playoff_seed": null
+      },
+      {
+        "year": 2025,
+        "team_name": "Cherry Poppen",
+        "wins": 8,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1591,
+        "points_against": 1530,
+        "standing": 6,
+        "final_standing": 2,
+        "playoff_seed": null
       }
     ],
     "all_time": {
-      "wins": 82,
-      "losses": 91,
+      "wins": 90,
+      "losses": 97,
       "ties": 0,
-      "win_percentage": 47.4,
-      "points_for": 17702.94,
-      "points_against": 18466.37,
+      "win_percentage": 48.1,
+      "points_for": 19293.94,
+      "points_against": 19996.37,
       "championships": 0,
-      "second_place": 0,
+      "second_place": 1,
       "third_place": 0,
       "toilet_bowl": 1,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [],
+      "second_place_years": [
+        2025
+      ],
+      "third_place_years": [],
+      "toilet_bowl_years": [
+        2021
+      ]
     }
   },
   "Rory McKee": {
     "owner": "Rory McKee",
-    "seasons_played": 9,
+    "seasons_played": 10,
     "years_active": [
       2015,
       2016,
@@ -3236,10 +3544,11 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "first_season": 2015,
-    "last_season": 2024,
+    "last_season": 2025,
     "seasons": [
       {
         "year": 2015,
@@ -3348,25 +3657,45 @@
         "standing": 4,
         "final_standing": 5,
         "playoff_seed": null
+      },
+      {
+        "year": 2025,
+        "team_name": "PPPWRA",
+        "wins": 11,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 1780,
+        "points_against": 1433,
+        "standing": 2,
+        "final_standing": 1,
+        "playoff_seed": null
       }
     ],
     "all_time": {
-      "wins": 60,
-      "losses": 61,
+      "wins": 71,
+      "losses": 64,
       "ties": 0,
-      "win_percentage": 49.6,
-      "points_for": 12698.01,
-      "points_against": 12672.56,
-      "championships": 0,
+      "win_percentage": 52.6,
+      "points_for": 14478.01,
+      "points_against": 14105.56,
+      "championships": 1,
       "second_place": 0,
       "third_place": 1,
       "toilet_bowl": 0,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [
+        2025
+      ],
+      "second_place_years": [],
+      "third_place_years": [
+        2015
+      ],
+      "toilet_bowl_years": []
     }
   },
   "Bryan Whitaker": {
     "owner": "Bryan Whitaker",
-    "seasons_played": 10,
+    "seasons_played": 11,
     "years_active": [
       2015,
       2016,
@@ -3377,10 +3706,11 @@
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "first_season": 2015,
-    "last_season": 2024,
+    "last_season": 2025,
     "seasons": [
       {
         "year": 2015,
@@ -3501,34 +3831,53 @@
         "standing": 11,
         "final_standing": 11,
         "playoff_seed": null
+      },
+      {
+        "year": 2025,
+        "team_name": "Bryan Whitaker's Team",
+        "wins": 7,
+        "losses": 7,
+        "ties": 0,
+        "points_for": 1596,
+        "points_against": 1611,
+        "standing": 8,
+        "final_standing": 9,
+        "playoff_seed": null
       }
     ],
     "all_time": {
-      "wins": 59,
-      "losses": 75,
+      "wins": 66,
+      "losses": 82,
       "ties": 0,
-      "win_percentage": 44.0,
-      "points_for": 13797.3,
-      "points_against": 13974.08,
+      "win_percentage": 44.6,
+      "points_for": 15393.3,
+      "points_against": 15585.08,
       "championships": 1,
       "second_place": 0,
       "third_place": 0,
       "toilet_bowl": 0,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [
+        2023
+      ],
+      "second_place_years": [],
+      "third_place_years": [],
+      "toilet_bowl_years": []
     }
   },
   "Ryan Milhous": {
     "owner": "Ryan Milhous",
-    "seasons_played": 5,
+    "seasons_played": 6,
     "years_active": [
       2020,
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "first_season": 2020,
-    "last_season": 2024,
+    "last_season": 2025,
     "seasons": [
       {
         "year": 2020,
@@ -3589,20 +3938,82 @@
         "standing": 9,
         "final_standing": 7,
         "playoff_seed": null
+      },
+      {
+        "year": 2025,
+        "team_name": "Ding Dong Doid Brains",
+        "wins": 4,
+        "losses": 10,
+        "ties": 0,
+        "points_for": 1490,
+        "points_against": 1729,
+        "standing": 12,
+        "final_standing": 7,
+        "playoff_seed": null
       }
     ],
     "all_time": {
-      "wins": 41,
-      "losses": 28,
+      "wins": 45,
+      "losses": 38,
       "ties": 0,
-      "win_percentage": 59.4,
-      "points_for": 7729.04,
-      "points_against": 7284.92,
+      "win_percentage": 54.2,
+      "points_for": 9219.04,
+      "points_against": 9013.92,
       "championships": 1,
       "second_place": 1,
       "third_place": 1,
       "toilet_bowl": 0,
-      "playoff_appearances": 0
+      "playoff_appearances": 0,
+      "championship_years": [
+        2022
+      ],
+      "second_place_years": [
+        2021
+      ],
+      "third_place_years": [
+        2023
+      ],
+      "toilet_bowl_years": []
+    }
+  },
+  "Steve Keller": {
+    "owner": "Steve Keller",
+    "seasons_played": 1,
+    "years_active": [
+      2025
+    ],
+    "first_season": 2025,
+    "last_season": 2025,
+    "seasons": [
+      {
+        "year": 2025,
+        "team_name": "Mt. T1GHTMON",
+        "wins": 6,
+        "losses": 8,
+        "ties": 0,
+        "points_for": 1331,
+        "points_against": 1465,
+        "standing": 9,
+        "final_standing": 13,
+        "playoff_seed": null
+      }
+    ],
+    "all_time": {
+      "wins": 6,
+      "losses": 8,
+      "ties": 0,
+      "win_percentage": 42.9,
+      "points_for": 1331,
+      "points_against": 1465,
+      "championships": 0,
+      "second_place": 0,
+      "third_place": 0,
+      "toilet_bowl": 0,
+      "playoff_appearances": 0,
+      "championship_years": [],
+      "second_place_years": [],
+      "third_place_years": [],
+      "toilet_bowl_years": []
     }
   }
 }

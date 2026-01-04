@@ -106,6 +106,10 @@ export const apiService = {
     const data = await fetchJSON('best_draft_picks.json');
     return { data };
   },
+  getWorstDraftPicks: async () => {
+    const data = await fetchJSON('worst_draft_picks.json');
+    return { data };
+  },
 
   // Rosters
   getRosters: async () => {
