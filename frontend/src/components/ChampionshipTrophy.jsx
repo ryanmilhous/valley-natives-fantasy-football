@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const ChampionshipTrophy = ({ championships }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const columns = isMobile ? 2 : 3;
+
   return (
     <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 p-1 shadow-xl">
       <div className="bg-gradient-to-b from-white to-yellow-50/30 rounded-3xl p-8 border-2 border-yellow-200/50">
@@ -19,17 +33,17 @@ const ChampionshipTrophy = ({ championships }) => {
             />
 
             {/* Text overlay on the base */}
-            <div className="absolute bottom-[26%] left-[18%] right-[18%] max-h-[30%]">
+            <div className="absolute bottom-[26%] left-[14%] right-[14%] sm:left-[18%] sm:right-[18%] max-h-[30%]">
               <div
-                className="grid grid-cols-3 gap-x-6 gap-y-0 p-4 auto-rows-min"
-                style={{ gridAutoFlow: 'column', gridTemplateRows: `repeat(${Math.ceil(championships.length / 3)}, minmax(0, 1fr))` }}
+                className="grid grid-cols-2 sm:grid-cols-3 gap-x-2 sm:gap-x-6 gap-y-0 p-2 sm:p-4 auto-rows-min"
+                style={{ gridAutoFlow: 'column', gridTemplateRows: `repeat(${Math.ceil(championships.length / columns)}, minmax(0, 1fr))` }}
               >
                 {championships.map((champ, index) => (
                   <div
                     key={index}
                     className="text-left"
                   >
-                    <span className="text-amber-200 font-bold text-[8px] drop-shadow-lg whitespace-nowrap" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
+                    <span className="text-amber-200 font-bold text-[6px] sm:text-[8px] drop-shadow-lg whitespace-nowrap" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
                       {champ.year} - {champ.owner}
                     </span>
                   </div>

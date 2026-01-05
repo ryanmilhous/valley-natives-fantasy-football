@@ -17,8 +17,9 @@ function HeadToHead() {
           apiService.getOwners(),
         ]);
         setH2hData(h2hResponse.data);
-        // Use all owners, not just those with H2H records
-        const ownerList = ownersResponse.data.map(o => o.owner).sort();
+        // Only include owners who have H2H records (played 2019+)
+        const ownersWithH2H = Object.keys(h2hResponse.data);
+        const ownerList = ownersWithH2H.sort();
         setOwners(ownerList);
         if (ownerList.length >= 2) {
           setSelectedOwner1(ownerList[0]);

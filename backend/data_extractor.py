@@ -182,6 +182,27 @@ class ESPNDataExtractor:
         except Exception as e:
             print(f"  Warning: Error extracting matchups: {e}")
 
+        # Deduplicate playoff matchups (ESPN API bug causes week 17-18 duplicates)
+        print(f"  Deduplicating matchups...")
+        original_count = len(season_data['matchups'])
+        seen_matchups = set()
+        deduplicated_matchups = []
+
+        for matchup in season_data['matchups']:
+            # Create a unique key for each matchup
+            teams = tuple(sorted([matchup['home_team_id'], matchup['away_team_id']]))
+            scores = tuple(sorted([matchup['home_score'], matchup['away_score']]))
+            key = (teams, scores, matchup.get('is_playoff', False))
+
+            if key not in seen_matchups:
+                seen_matchups.add(key)
+                deduplicated_matchups.append(matchup)
+
+        season_data['matchups'] = deduplicated_matchups
+        removed = original_count - len(deduplicated_matchups)
+        if removed > 0:
+            print(f"    ✓ Removed {removed} duplicate matchups")
+
         # Extract draft data
         print(f"  Extracting draft data...")
         try:
@@ -318,11 +339,6 @@ class ESPNDataExtractor:
         failed = []
 
         for year in range(start_year, end_year + 1):
-            # Skip 2025 - no matchup data available
-            if year == 2025:
-                print(f"\n{year}: Skipping (no matchup data)")
-                continue
-
             # Check if already cached
             if not force_refresh and self.load_season_data(year):
                 print(f"\n{year}: Data already cached (use force_refresh=True to re-fetch)")

@@ -100,7 +100,6 @@ function Home() {
   });
   toiletBowlTrophyData.sort((a, b) => a.year - b.year);
 
-
   // Championship chart data (sorted by ranking points)
   const championshipData = owners
     .map(owner => ({
@@ -268,9 +267,9 @@ function Home() {
       </div>
 
       {/* Trophy Case */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-yellow-400 via-amber-300 to-orange-400 p-1 shadow-2xl">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-300/50 via-amber-200/50 to-orange-300/50 animate-pulse opacity-75"></div>
-        <div className="relative bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 rounded-3xl p-8 border-2 border-yellow-300/60 shadow-inner">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-yellow-200 via-amber-100 to-orange-200 p-1 shadow-2xl">
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/40 via-amber-100/40 to-orange-100/40 animate-pulse opacity-60"></div>
+        <div className="relative bg-gradient-to-br from-yellow-100 via-yellow-50 to-orange-100 rounded-3xl p-8 border-2 border-yellow-300/60 shadow-inner">
           {/* Animated Firework Elements */}
           <div className="absolute top-10 left-10 w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
           <div className="absolute top-20 right-20 w-3 h-3 bg-amber-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
