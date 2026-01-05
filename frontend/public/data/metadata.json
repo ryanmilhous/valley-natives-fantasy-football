@@ -1,6 +1,7 @@
 {
-  "total_seasons": 19,
+  "total_seasons": 20,
   "years": [
+    2006,
     2007,
     2008,
     2009,
@@ -21,11 +22,11 @@
     2024,
     2025
   ],
-  "first_season": 2007,
+  "first_season": 2006,
   "latest_season": 2025,
   "total_teams": 14,
   "total_owners": 21,
   "total_matchups": 819,
-  "processed_at": "2026-01-04T10:01:25.990285",
+  "processed_at": "2026-01-04T19:11:02.461800",
   "league_name": "Valley natives"
 }

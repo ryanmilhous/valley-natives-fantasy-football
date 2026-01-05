@@ -1,5 +1,15 @@
 [
   {
+    "year": 2006,
+    "champion": "Kellen's Championship Team",
+    "champion_owner": "Kellen Coffis",
+    "runner_up": "Chris's Team",
+    "runner_up_owner": "Chris Vitale",
+    "third_place": null,
+    "third_place_owner": null,
+    "playoff_teams": []
+  },
+  {
     "year": 2007,
     "champion": "Team Settles",
     "champion_owner": "Jeremy Settles",
