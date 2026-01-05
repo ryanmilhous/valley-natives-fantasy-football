@@ -2638,17 +2638,16 @@
       "championships": 0,
       "second_place": 0,
       "third_place": 0,
-      "toilet_bowl": 2,
+      "toilet_bowl": 1,
       "playoff_appearances": 0,
       "championship_years": [],
       "second_place_years": [],
       "third_place_years": [],
       "toilet_bowl_years": [
-        2006,
         2019
       ],
-      "ranking_points": -2,
-      "toilet_bowl_pct": 14.3,
+      "ranking_points": -1,
+      "toilet_bowl_pct": 7.1,
       "top_3_pct": 0.0
     }
   },

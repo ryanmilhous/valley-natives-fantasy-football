@@ -247,7 +247,8 @@ class FantasyDataProcessor:
                     owner_info['third_place_years'].append(year)
 
                 # Count toilet bowl (last place in regular season)
-                if team['standing'] == last_place_by_year.get(year):
+                # Skip 2006 as we don't have complete data for that year
+                if year != 2006 and team['standing'] == last_place_by_year.get(year):
                     owner_info['toilet_bowl'] += 1
                     owner_info['toilet_bowl_years'].append(year)
 
