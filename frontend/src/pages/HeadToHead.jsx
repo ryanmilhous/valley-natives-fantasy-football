@@ -65,7 +65,7 @@ function HeadToHead() {
           </div>
           <div className="ml-3">
             <p className="text-sm text-blue-700">
-              <strong>Note:</strong> Head-to-head matchup data is only available from 2019-present due to ESPN API limitations. Owners who only played before 2019 will show 0-0 records.
+              <strong>Note:</strong> Head-to-head records include both regular season and playoff matchups from 2019-present. Data before 2019 is unavailable due to ESPN API limitations.
             </p>
           </div>
         </div>

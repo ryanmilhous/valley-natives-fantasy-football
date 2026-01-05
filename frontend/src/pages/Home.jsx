@@ -367,10 +367,11 @@ function Home() {
       {/* All-Time Standings */}
       <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 p-1">
         <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-white/10">
-          <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 sm:mb-6 flex items-center space-x-2 sm:space-x-3">
+          <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2 flex items-center space-x-2 sm:space-x-3">
             <span>📊</span>
             <span>All-Time Standings</span>
           </h2>
+          <p className="text-xs sm:text-sm text-white/50 mb-4 sm:mb-6">Regular season records only (playoffs excluded)</p>
           <div className="overflow-x-auto rounded-xl -mx-4 sm:mx-0 px-4 sm:px-0">
             <table className="min-w-full text-sm">
               <thead>
