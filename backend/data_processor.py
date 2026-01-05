@@ -27,7 +27,8 @@ OWNER_NAME_MAPPING = {
     'RapmasterRordogg': 'Rory McKee',
     'jmluna5020': 'Jacob Luna',
     '17whitaker': 'Bryan Whitaker',
-    'brom66': 'Brendan Romale',
+    'brom66': 'Brendan Romele',
+    'Brendan Romale': 'Brendan Romele',  # Fix typo in raw data
     'Ryan Milhous': 'Ryan Milhous',
     'kweezy31': 'Kyle Morris',  # 2010-2019
     'HIS TIGHTNESS': 'Ben Beck',

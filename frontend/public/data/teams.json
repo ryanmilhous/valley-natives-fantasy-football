@@ -2,9 +2,9 @@
   "1": {
     "team_id": 1,
     "team_names": [
-      "RichCity Yung Beevs",
-      "The Chronic",
       "Rich City YungBeevs",
+      "The Chronic",
+      "RichCity Yung Beevs",
       "Kellen's Championship Team"
     ],
     "current_name": "Kellen's Championship Team",
@@ -289,14 +289,14 @@
   "2": {
     "team_id": 2,
     "team_names": [
-      "Chris's Team",
-      "Tom Brady's New Pus Bus",
       "The Kellen Brothers",
-      "Back to Back Champioships",
+      "Tom Brady's New Pus Bus",
+      "The Tom Brady Pus Bus",
       "My Penix Will Rise Again",
-      "The Tom Brady Pus Bus"
+      "Chris's Team",
+      "Back to Back Champioships"
     ],
-    "current_name": "The Tom Brady Pus Bus",
+    "current_name": "Back to Back Champioships",
     "owners": [
       "Kellen Coffis",
       "Chris Vitale",
@@ -579,31 +579,31 @@
   "3": {
     "team_id": 3,
     "team_names": [
-      "Ben Lomond  Half Baked Co.",
-      "Acoreycy and Prosision",
       "Be Stills My Fart ",
-      "Team 3",
-      "The Replacement Graduates",
-      "The Lucky Lefties",
-      "B-LO Par",
-      "The Graduates",
-      "Mono a Mono",
       "Cherry Poppen",
+      "B-LO Par",
+      "Mono a Mono",
       "The Overflowing Spongies",
+      "The Leftists",
       "The Golden Gods",
-      "The Post Graduates",
-      " The Art Shell  Blueprint",
-      "Stop Jerking My Johnson",
-      "B-LO Bleezos",
       "The Young Lefties",
-      "The Leftists"
+      "Stop Jerking My Johnson",
+      "Acoreycy and Prosision",
+      "The Post Graduates",
+      "Ben Lomond  Half Baked Co.",
+      "The Replacement Graduates",
+      " The Art Shell  Blueprint",
+      "Team 3",
+      "B-LO Bleezos",
+      "The Lucky Lefties",
+      "The Graduates"
     ],
-    "current_name": "The Leftists",
+    "current_name": "The Graduates",
     "owners": [
-      "Jamie Coffis",
-      "Kyle Poppen"
+      "Kyle Poppen",
+      "Jamie Coffis"
     ],
-    "current_owner": "Kyle Poppen",
+    "current_owner": "Jamie Coffis",
     "seasons_active": 20,
     "seasons": [
       {
@@ -880,23 +880,23 @@
   "4": {
     "team_id": 4,
     "team_names": [
-      "What would MichaelVick do?",
-      "Mr. Thomas' Naberhood",
       "Smi Pies",
-      "Hustle Bustle And Man Muscle",
-      "Michael Vick's FreedomFighters",
       "No Starties Even Beats Me",
-      "King of  The Doids",
       "Team 4",
+      "Michael Vick's FreedomFighters",
+      "King of  The Doids",
       "Emancipation of Jim and Vicki",
-      "Nano Bubbles  And  Abstinence"
+      "Mr. Thomas' Naberhood",
+      "Hustle Bustle And Man Muscle",
+      "Nano Bubbles  And  Abstinence",
+      "What would MichaelVick do?"
     ],
-    "current_name": "Nano Bubbles  And  Abstinence",
+    "current_name": "What would MichaelVick do?",
     "owners": [
-      "Nick Smielak",
-      "Garrett Ulrich"
+      "Garrett Ulrich",
+      "Nick Smielak"
     ],
-    "current_owner": "Garrett Ulrich",
+    "current_owner": "Nick Smielak",
     "seasons_active": 20,
     "seasons": [
       {
@@ -1173,13 +1173,13 @@
   "5": {
     "team_id": 5,
     "team_names": [
-      "Out of Time",
+      "Team Clark",
       "Prime Time",
       "Team Ramrod",
       "Team 5",
-      "Team Clark"
+      "Out of Time"
     ],
-    "current_name": "Team Clark",
+    "current_name": "Out of Time",
     "owners": [
       "Tanner Clark",
       "Greg Swenson"
@@ -1461,17 +1461,17 @@
   "6": {
     "team_id": 6,
     "team_names": [
+      "Team Settles",
       "The Drakes",
       "Team 6",
-      "Team Settles",
       "Felton Sluggers"
     ],
     "current_name": "Felton Sluggers",
     "owners": [
-      "Jamie Coffis",
-      "Jeremy Settles"
+      "Jeremy Settles",
+      "Jamie Coffis"
     ],
-    "current_owner": "Jeremy Settles",
+    "current_owner": "Jamie Coffis",
     "seasons_active": 20,
     "seasons": [
       {
@@ -1748,25 +1748,25 @@
   "7": {
     "team_id": 7,
     "team_names": [
-      "The Smi Pies",
+      "Mt. T1GHTMON",
       "Team 7",
-      "Team luna",
       "The Ghosts of Polak Past",
-      "Team Schmeeeelak",
       ". Schmee",
       "RIP Chris",
-      "Mt. T1GHTMON",
-      "B-Rom Baby  Bears",
+      "The Smi Pies",
       "Somewhere over the Dwayne Bowe",
-      "Schmee Squad"
+      "Team luna",
+      "Schmee Squad",
+      "Team Schmeeeelak",
+      "B-Rom Baby  Bears"
     ],
-    "current_name": "Schmee Squad",
+    "current_name": "B-Rom Baby  Bears",
     "owners": [
+      "Jacob Luna",
       "Steve Keller",
-      "Nick Smielak",
-      "Jacob Luna"
+      "Nick Smielak"
     ],
-    "current_owner": "Jacob Luna",
+    "current_owner": "Nick Smielak",
     "seasons_active": 20,
     "seasons": [
       {
@@ -2044,30 +2044,30 @@
     "team_id": 8,
     "team_names": [
       "Scroopy Noopers",
-      "Biggest  Fantasy Flop",
-      "U Koo with Younghoes?",
       "Running Back-Snatch",
+      "U Koo with Younghoes?",
       "Younghoes Have Kooties",
+      "Biggest  Fantasy Flop",
+      "Kooter McGavin",
+      "Ding Dong Doid Brains",
+      "south brookdale regulaters",
+      "Younghoe Bunghole",
       "RichCity Yung Beevs",
       "the creek nut wildphish",
-      "south brookdale regulaters",
       "Blackout or Back Out",
-      "Bros Before Younghoes",
-      "Ding Dong Doid Brains",
       "Protoss'd Salad",
-      "Younghoe Bunghole",
-      "Pantry The Puddn\u00e2\u0080\u0099",
       "Team 8",
-      "Kooter McGavin"
+      "Pantry The Puddn\u00e2\u0080\u0099",
+      "Bros Before Younghoes"
     ],
-    "current_name": "Kooter McGavin",
+    "current_name": "Bros Before Younghoes",
     "owners": [
-      "Rory McKee",
-      "Peter Kent-Stoll",
+      "Ryan Milhous",
       "Brian Vitale",
-      "Ryan Milhous"
+      "Peter Kent-Stoll",
+      "Rory McKee"
     ],
-    "current_owner": "Ryan Milhous",
+    "current_owner": "Rory McKee",
     "seasons_active": 20,
     "seasons": [
       {
@@ -2344,22 +2344,22 @@
   "9": {
     "team_id": 9,
     "team_names": [
-      "Tampon Bay Blumpcaneers",
-      "Less Gore Mo Pus",
-      "More Gore",
+      "S.F. Forty-Chiners",
+      "Team 9",
       "High Hopes",
       "Tampon Bay Chumpkineers",
-      "Team 9",
-      "S.F. Forty-Chiners",
-      "Tampon Bay Blumpkineers"
+      "Less Gore Mo Pus",
+      "Tampon Bay Blumpkineers",
+      "More Gore",
+      "Tampon Bay Blumpcaneers"
     ],
-    "current_name": "Tampon Bay Blumpkineers",
+    "current_name": "Tampon Bay Blumpcaneers",
     "owners": [
-      "Brendan Romale",
-      "Dylan Andrews",
-      "Jacob Luna"
+      "Jacob Luna",
+      "Brendan Romele",
+      "Dylan Andrews"
     ],
-    "current_owner": "Jacob Luna",
+    "current_owner": "Dylan Andrews",
     "seasons_active": 20,
     "seasons": [
       {
@@ -2612,7 +2612,7 @@
       {
         "year": 2025,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 5,
         "losses": 9,
         "ties": 0,
@@ -2636,26 +2636,26 @@
   "10": {
     "team_id": 10,
     "team_names": [
-      "For All The  Haters (Chris)",
-      "The Pierre Necessities",
-      "Nick Dak Paddy Wack",
+      "Tyreek And The Drain Pours",
+      "Foot-Loose and Fancy Free",
+      "Team 10",
       "Lo-Carb Monsters",
       "AB's Face Farts",
-      "Tyreek And The Drain Pours",
+      "Tampon Bay Blumpkineers",
+      "The Pierre Necessities",
+      "For All The  Haters (Chris)",
+      "The Keepy No  Startie's",
       "For Those About To Brock",
       "Purdy Good Timing ",
-      "The Keepy No  Startie's",
-      "Team 10",
-      "Foot-Loose and Fancy Free",
-      "Tampon Bay Blumpkineers"
+      "Nick Dak Paddy Wack"
     ],
-    "current_name": "Tampon Bay Blumpkineers",
+    "current_name": "Nick Dak Paddy Wack",
     "owners": [
-      "Tyler Fullerton",
+      "Jacob Luna",
       "Bryan Whitaker",
-      "Jacob Luna"
+      "Tyler Fullerton"
     ],
-    "current_owner": "Jacob Luna",
+    "current_owner": "Tyler Fullerton",
     "seasons_active": 20,
     "seasons": [
       {
@@ -2932,23 +2932,23 @@
   "11": {
     "team_id": 11,
     "team_names": [
+      "Felton Sluggers",
       "Team Romele",
       "Team 11",
-      "Felton Sluggers",
       "S.F. Forty-Chiners"
     ],
     "current_name": "S.F. Forty-Chiners",
     "owners": [
-      "Brendan Romale",
-      "Jeremy Settles"
+      "Jeremy Settles",
+      "Brendan Romele"
     ],
-    "current_owner": "Jeremy Settles",
+    "current_owner": "Brendan Romele",
     "seasons_active": 20,
     "seasons": [
       {
         "year": 2006,
         "team_name": "Team 11",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 0,
         "losses": 0,
         "ties": 0,
@@ -2961,7 +2961,7 @@
       {
         "year": 2007,
         "team_name": "Team Romele",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 5,
         "losses": 7,
         "ties": 0,
@@ -2974,7 +2974,7 @@
       {
         "year": 2008,
         "team_name": "Team Romele",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 8,
         "losses": 4,
         "ties": 0,
@@ -2987,7 +2987,7 @@
       {
         "year": 2009,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 6,
         "losses": 6,
         "ties": 0,
@@ -3000,7 +3000,7 @@
       {
         "year": 2010,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 3,
         "losses": 9,
         "ties": 0,
@@ -3013,7 +3013,7 @@
       {
         "year": 2011,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 7,
         "losses": 5,
         "ties": 0,
@@ -3026,7 +3026,7 @@
       {
         "year": 2012,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 11,
         "losses": 2,
         "ties": 0,
@@ -3039,7 +3039,7 @@
       {
         "year": 2013,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 6,
         "losses": 7,
         "ties": 0,
@@ -3052,7 +3052,7 @@
       {
         "year": 2014,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 6,
         "losses": 7,
         "ties": 0,
@@ -3065,7 +3065,7 @@
       {
         "year": 2015,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 8,
         "losses": 5,
         "ties": 0,
@@ -3078,7 +3078,7 @@
       {
         "year": 2016,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 0,
         "losses": 13,
         "ties": 0,
@@ -3091,7 +3091,7 @@
       {
         "year": 2017,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 7,
         "losses": 6,
         "ties": 0,
@@ -3104,7 +3104,7 @@
       {
         "year": 2018,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 8,
         "losses": 5,
         "ties": 0,
@@ -3117,7 +3117,7 @@
       {
         "year": 2019,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 9,
         "losses": 4,
         "ties": 0,
@@ -3130,7 +3130,7 @@
       {
         "year": 2020,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 6,
         "losses": 7,
         "ties": 0,
@@ -3143,7 +3143,7 @@
       {
         "year": 2021,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 5,
         "losses": 9,
         "ties": 0,
@@ -3156,7 +3156,7 @@
       {
         "year": 2022,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 3,
         "losses": 11,
         "ties": 0,
@@ -3169,7 +3169,7 @@
       {
         "year": 2023,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 3,
         "losses": 11,
         "ties": 0,
@@ -3182,7 +3182,7 @@
       {
         "year": 2024,
         "team_name": "S.F. Forty-Chiners",
-        "owner": "Brendan Romale",
+        "owner": "Brendan Romele",
         "wins": 8,
         "losses": 6,
         "ties": 0,
@@ -3219,18 +3219,18 @@
   "12": {
     "team_id": 12,
     "team_names": [
-      "the revolting BLOB",
-      "Team 12",
+      "Team Morris",
       "Ding Dong Doid Brains",
       "Corn On The  Kolb",
-      "Team Morris",
+      "Team 12",
       "Bryan Whitaker's Team",
-      "Auto Drafties"
+      "Auto Drafties",
+      "the revolting BLOB"
     ],
-    "current_name": "Auto Drafties",
+    "current_name": "the revolting BLOB",
     "owners": [
-      "Bryan Whitaker",
       "Ryan Milhous",
+      "Bryan Whitaker",
       "Kyle Morris"
     ],
     "current_owner": "Kyle Morris",
@@ -3510,13 +3510,13 @@
   "13": {
     "team_id": 13,
     "team_names": [
-      "PPPWRA",
+      "Youth Movement  !!!!!!!",
       "the new kid  on the block",
-      "Jackson5 \ud83d\udc2c",
+      "PPPWRA",
       "The Pudd'n \ud83d\udc2c",
-      "Youth Movement  !!!!!!!"
+      "Jackson5 \ud83d\udc2c"
     ],
-    "current_name": "Youth Movement  !!!!!!!",
+    "current_name": "Jackson5 \ud83d\udc2c",
     "owners": [
       "Rory McKee",
       "Ben Beck"
@@ -3725,10 +3725,10 @@
     ],
     "current_name": "The Kellen Brothers",
     "owners": [
-      "Kellen Coffis",
-      "Kyle Poppen"
+      "Kyle Poppen",
+      "Kellen Coffis"
     ],
-    "current_owner": "Kyle Poppen",
+    "current_owner": "Kellen Coffis",
     "seasons_active": 14,
     "seasons": [
       {
