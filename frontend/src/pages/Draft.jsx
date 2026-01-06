@@ -8,6 +8,7 @@ function Draft() {
   const [loading, setLoading] = useState(true);
   const [selectedYear, setSelectedYear] = useState('all');
   const [selectedPosition, setSelectedPosition] = useState('all');
+  const [selectedOwner, setSelectedOwner] = useState('all');
   const [selectedRound, setSelectedRound] = useState('all');
   const [sortColumn, setSortColumn] = useState('bid_amount');
   const [sortDirection, setSortDirection] = useState('desc');
@@ -62,10 +63,12 @@ function Draft() {
 
   const years = ['all', ...new Set(draft.map(d => d.year))].sort((a, b) => b - a);
   const positions = ['all', ...new Set(draft.map(d => d.position).filter(Boolean))].sort();
+  const owners = ['all', ...new Set(draft.map(d => d.owner).filter(Boolean))].sort();
 
   const filteredDraft = draft.filter(pick => {
     if (selectedYear !== 'all' && pick.year !== parseInt(selectedYear)) return false;
     if (selectedPosition !== 'all' && pick.position !== selectedPosition) return false;
+    if (selectedOwner !== 'all' && pick.owner !== selectedOwner) return false;
     return true;
   }).sort((a, b) => {
     let aVal, bVal;
@@ -198,7 +201,7 @@ function Draft() {
       )}
 
       {/* Filters */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div>
           <label className="block text-sm font-medium text-white/70 mb-2">Year</label>
           <select
@@ -220,6 +223,18 @@ function Draft() {
           >
             {positions.map(position => (
               <option key={position} value={position}>{position === 'all' ? 'All Positions' : position}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-white/70 mb-2">Owner</label>
+          <select
+            value={selectedOwner}
+            onChange={(e) => setSelectedOwner(e.target.value)}
+            className="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-white/10 focus:border-blue-500 focus:outline-none"
+          >
+            {owners.map(owner => (
+              <option key={owner} value={owner}>{owner === 'all' ? 'All Owners' : owner}</option>
             ))}
           </select>
         </div>

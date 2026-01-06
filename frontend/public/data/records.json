@@ -112,19 +112,19 @@
   },
   "longest_win_streak": {
     "owner": "Ryan Milhous",
-    "streak": 15,
+    "streak": 14,
     "start_year": 2022,
     "end_year": 2023,
     "start_week": 6,
     "end_week": 3
   },
   "longest_loss_streak": {
-    "owner": "Garrett Ulrich",
+    "owner": "Jeremy Settles",
     "streak": 11,
-    "start_year": 2023,
-    "end_year": 2024,
-    "start_week": 8,
-    "end_week": 1
+    "start_year": 2025,
+    "end_year": 2025,
+    "start_week": 6,
+    "end_week": 16
   },
   "highest_scoring_loss": {
     "team": "For Those About To Brock",

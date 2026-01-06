@@ -2,17 +2,17 @@
   "1": {
     "team_id": 1,
     "team_names": [
+      "Kellen's Championship Team",
       "Rich City YungBeevs",
-      "The Chronic",
       "RichCity Yung Beevs",
-      "Kellen's Championship Team"
+      "The Chronic"
     ],
-    "current_name": "Kellen's Championship Team",
+    "current_name": "The Chronic",
     "owners": [
-      "Kellen Coffis",
-      "Chris Vitale"
+      "Chris Vitale",
+      "Kellen Coffis"
     ],
-    "current_owner": "Chris Vitale",
+    "current_owner": "Kellen Coffis",
     "seasons_active": 20,
     "seasons": [
       {
@@ -290,19 +290,19 @@
     "team_id": 2,
     "team_names": [
       "The Kellen Brothers",
-      "Tom Brady's New Pus Bus",
+      "Chris's Team",
       "The Tom Brady Pus Bus",
       "My Penix Will Rise Again",
-      "Chris's Team",
+      "Tom Brady's New Pus Bus",
       "Back to Back Champioships"
     ],
     "current_name": "Back to Back Champioships",
     "owners": [
-      "Kellen Coffis",
+      "Garrett Ulrich",
       "Chris Vitale",
-      "Garrett Ulrich"
+      "Kellen Coffis"
     ],
-    "current_owner": "Garrett Ulrich",
+    "current_owner": "Kellen Coffis",
     "seasons_active": 20,
     "seasons": [
       {
@@ -579,31 +579,31 @@
   "3": {
     "team_id": 3,
     "team_names": [
-      "Be Stills My Fart ",
-      "Cherry Poppen",
-      "B-LO Par",
-      "Mono a Mono",
-      "The Overflowing Spongies",
+      " The Art Shell  Blueprint",
+      "Team 3",
       "The Leftists",
       "The Golden Gods",
       "The Young Lefties",
-      "Stop Jerking My Johnson",
-      "Acoreycy and Prosision",
+      "The Overflowing Spongies",
       "The Post Graduates",
-      "Ben Lomond  Half Baked Co.",
-      "The Replacement Graduates",
-      " The Art Shell  Blueprint",
-      "Team 3",
       "B-LO Bleezos",
+      "The Graduates",
+      "Stop Jerking My Johnson",
+      "Ben Lomond  Half Baked Co.",
+      "B-LO Par",
       "The Lucky Lefties",
-      "The Graduates"
+      "Cherry Poppen",
+      "Acoreycy and Prosision",
+      "The Replacement Graduates",
+      "Be Stills My Fart ",
+      "Mono a Mono"
     ],
-    "current_name": "The Graduates",
+    "current_name": "Mono a Mono",
     "owners": [
-      "Kyle Poppen",
-      "Jamie Coffis"
+      "Jamie Coffis",
+      "Kyle Poppen"
     ],
-    "current_owner": "Jamie Coffis",
+    "current_owner": "Kyle Poppen",
     "seasons_active": 20,
     "seasons": [
       {
@@ -880,15 +880,15 @@
   "4": {
     "team_id": 4,
     "team_names": [
-      "Smi Pies",
       "No Starties Even Beats Me",
-      "Team 4",
-      "Michael Vick's FreedomFighters",
-      "King of  The Doids",
-      "Emancipation of Jim and Vicki",
-      "Mr. Thomas' Naberhood",
       "Hustle Bustle And Man Muscle",
+      "Smi Pies",
       "Nano Bubbles  And  Abstinence",
+      "Michael Vick's FreedomFighters",
+      "Team 4",
+      "King of  The Doids",
+      "Mr. Thomas' Naberhood",
+      "Emancipation of Jim and Vicki",
       "What would MichaelVick do?"
     ],
     "current_name": "What would MichaelVick do?",
@@ -1173,10 +1173,10 @@
   "5": {
     "team_id": 5,
     "team_names": [
-      "Team Clark",
       "Prime Time",
-      "Team Ramrod",
+      "Team Clark",
       "Team 5",
+      "Team Ramrod",
       "Out of Time"
     ],
     "current_name": "Out of Time",
@@ -1458,315 +1458,28 @@
       "playoff_appearances": 0
     }
   },
-  "6": {
-    "team_id": 6,
-    "team_names": [
-      "Team Settles",
-      "The Drakes",
-      "Team 6",
-      "Felton Sluggers"
-    ],
-    "current_name": "Felton Sluggers",
-    "owners": [
-      "Jeremy Settles",
-      "Jamie Coffis"
-    ],
-    "current_owner": "Jamie Coffis",
-    "seasons_active": 20,
-    "seasons": [
-      {
-        "year": 2006,
-        "team_name": "Team 6",
-        "owner": "Jeremy Settles",
-        "wins": 0,
-        "losses": 0,
-        "ties": 0,
-        "points_for": 0.0,
-        "points_against": 0.0,
-        "standing": 6,
-        "final_standing": 0,
-        "playoff_seed": null
-      },
-      {
-        "year": 2007,
-        "team_name": "Team Settles",
-        "owner": "Jeremy Settles",
-        "wins": 7,
-        "losses": 5,
-        "ties": 0,
-        "points_for": 1134.0,
-        "points_against": 988.0,
-        "standing": 3,
-        "final_standing": 1,
-        "playoff_seed": null
-      },
-      {
-        "year": 2008,
-        "team_name": "Team Settles",
-        "owner": "Jeremy Settles",
-        "wins": 7,
-        "losses": 5,
-        "ties": 0,
-        "points_for": 1043.0,
-        "points_against": 986.0,
-        "standing": 4,
-        "final_standing": 2,
-        "playoff_seed": null
-      },
-      {
-        "year": 2009,
-        "team_name": "Team Settles",
-        "owner": "Jeremy Settles",
-        "wins": 6,
-        "losses": 6,
-        "ties": 0,
-        "points_for": 1113.0,
-        "points_against": 1200.0,
-        "standing": 7,
-        "final_standing": 5,
-        "playoff_seed": null
-      },
-      {
-        "year": 2010,
-        "team_name": "Team Settles",
-        "owner": "Jeremy Settles",
-        "wins": 6,
-        "losses": 6,
-        "ties": 0,
-        "points_for": 1131.0,
-        "points_against": 1178.0,
-        "standing": 6,
-        "final_standing": 6,
-        "playoff_seed": null
-      },
-      {
-        "year": 2011,
-        "team_name": "Felton Sluggers",
-        "owner": "Jeremy Settles",
-        "wins": 10,
-        "losses": 2,
-        "ties": 0,
-        "points_for": 1359.4799999999998,
-        "points_against": 1148.82,
-        "standing": 1,
-        "final_standing": 3,
-        "playoff_seed": null
-      },
-      {
-        "year": 2012,
-        "team_name": "Felton Sluggers",
-        "owner": "Jeremy Settles",
-        "wins": 3,
-        "losses": 10,
-        "ties": 0,
-        "points_for": 1238.48,
-        "points_against": 1362.44,
-        "standing": 13,
-        "final_standing": 12,
-        "playoff_seed": null
-      },
-      {
-        "year": 2013,
-        "team_name": "Felton Sluggers",
-        "owner": "Jeremy Settles",
-        "wins": 9,
-        "losses": 4,
-        "ties": 0,
-        "points_for": 1405.3799999999999,
-        "points_against": 1281.86,
-        "standing": 2,
-        "final_standing": 1,
-        "playoff_seed": null
-      },
-      {
-        "year": 2014,
-        "team_name": "Felton Sluggers",
-        "owner": "Jeremy Settles",
-        "wins": 6,
-        "losses": 7,
-        "ties": 0,
-        "points_for": 1211.54,
-        "points_against": 1311.68,
-        "standing": 10,
-        "final_standing": 8,
-        "playoff_seed": null
-      },
-      {
-        "year": 2015,
-        "team_name": "Felton Sluggers",
-        "owner": "Jeremy Settles",
-        "wins": 6,
-        "losses": 7,
-        "ties": 0,
-        "points_for": 1286.0800000000002,
-        "points_against": 1315.48,
-        "standing": 8,
-        "final_standing": 10,
-        "playoff_seed": null
-      },
-      {
-        "year": 2016,
-        "team_name": "Felton Sluggers",
-        "owner": "Jeremy Settles",
-        "wins": 9,
-        "losses": 4,
-        "ties": 0,
-        "points_for": 1422.3899999999999,
-        "points_against": 1257.49,
-        "standing": 4,
-        "final_standing": 2,
-        "playoff_seed": null
-      },
-      {
-        "year": 2017,
-        "team_name": "Felton Sluggers",
-        "owner": "Jeremy Settles",
-        "wins": 10,
-        "losses": 3,
-        "ties": 0,
-        "points_for": 1401.0900000000001,
-        "points_against": 1236.51,
-        "standing": 2,
-        "final_standing": 4,
-        "playoff_seed": null
-      },
-      {
-        "year": 2018,
-        "team_name": "Felton Sluggers",
-        "owner": "Jeremy Settles",
-        "wins": 1,
-        "losses": 12,
-        "ties": 0,
-        "points_for": 1137.98,
-        "points_against": 1380.99,
-        "standing": 14,
-        "final_standing": 12,
-        "playoff_seed": null
-      },
-      {
-        "year": 2019,
-        "team_name": "Felton Sluggers",
-        "owner": "Jeremy Settles",
-        "wins": 7,
-        "losses": 6,
-        "ties": 0,
-        "points_for": 1249.42,
-        "points_against": 1220.78,
-        "standing": 7,
-        "final_standing": 12,
-        "playoff_seed": null
-      },
-      {
-        "year": 2020,
-        "team_name": "Felton Sluggers",
-        "owner": "Jeremy Settles",
-        "wins": 3,
-        "losses": 10,
-        "ties": 0,
-        "points_for": 1096.24,
-        "points_against": 1294.85,
-        "standing": 14,
-        "final_standing": 11,
-        "playoff_seed": null
-      },
-      {
-        "year": 2021,
-        "team_name": "Felton Sluggers",
-        "owner": "Jeremy Settles",
-        "wins": 7,
-        "losses": 7,
-        "ties": 0,
-        "points_for": 1478.1499999999999,
-        "points_against": 1504.64,
-        "standing": 7,
-        "final_standing": 7,
-        "playoff_seed": null
-      },
-      {
-        "year": 2022,
-        "team_name": "Felton Sluggers",
-        "owner": "Jeremy Settles",
-        "wins": 9,
-        "losses": 5,
-        "ties": 0,
-        "points_for": 1547.3600000000004,
-        "points_against": 1459.67,
-        "standing": 3,
-        "final_standing": 5,
-        "playoff_seed": null
-      },
-      {
-        "year": 2023,
-        "team_name": "Felton Sluggers",
-        "owner": "Jeremy Settles",
-        "wins": 9,
-        "losses": 5,
-        "ties": 0,
-        "points_for": 1611.2299999999996,
-        "points_against": 1492.89,
-        "standing": 5,
-        "final_standing": 5,
-        "playoff_seed": null
-      },
-      {
-        "year": 2024,
-        "team_name": "Felton Sluggers",
-        "owner": "Jeremy Settles",
-        "wins": 10,
-        "losses": 4,
-        "ties": 0,
-        "points_for": 1663.33,
-        "points_against": 1526.73,
-        "standing": 2,
-        "final_standing": 1,
-        "playoff_seed": null
-      },
-      {
-        "year": 2025,
-        "team_name": "The Drakes",
-        "owner": "Jamie Coffis",
-        "wins": 10,
-        "losses": 4,
-        "ties": 0,
-        "points_for": 1636,
-        "points_against": 1615,
-        "standing": 3,
-        "final_standing": 6,
-        "playoff_seed": null
-      }
-    ],
-    "all_time": {
-      "wins": 135,
-      "losses": 112,
-      "ties": 0,
-      "points_for": 25165.15,
-      "points_against": 24761.83,
-      "championships": 3,
-      "playoff_appearances": 0
-    }
-  },
   "7": {
     "team_id": 7,
     "team_names": [
-      "Mt. T1GHTMON",
+      "B-Rom Baby  Bears",
       "Team 7",
       "The Ghosts of Polak Past",
+      "Schmee Squad",
+      "Team luna",
       ". Schmee",
+      "Mt. T1GHTMON",
       "RIP Chris",
       "The Smi Pies",
       "Somewhere over the Dwayne Bowe",
-      "Team luna",
-      "Schmee Squad",
-      "Team Schmeeeelak",
-      "B-Rom Baby  Bears"
+      "Team Schmeeeelak"
     ],
-    "current_name": "B-Rom Baby  Bears",
+    "current_name": "Team Schmeeeelak",
     "owners": [
-      "Jacob Luna",
+      "Nick Smielak",
       "Steve Keller",
-      "Nick Smielak"
+      "Jacob Luna"
     ],
-    "current_owner": "Nick Smielak",
+    "current_owner": "Jacob Luna",
     "seasons_active": 20,
     "seasons": [
       {
@@ -2043,31 +1756,31 @@
   "8": {
     "team_id": 8,
     "team_names": [
-      "Scroopy Noopers",
-      "Running Back-Snatch",
       "U Koo with Younghoes?",
-      "Younghoes Have Kooties",
       "Biggest  Fantasy Flop",
-      "Kooter McGavin",
-      "Ding Dong Doid Brains",
-      "south brookdale regulaters",
       "Younghoe Bunghole",
-      "RichCity Yung Beevs",
-      "the creek nut wildphish",
-      "Blackout or Back Out",
-      "Protoss'd Salad",
+      "Younghoes Have Kooties",
       "Team 8",
+      "Protoss'd Salad",
+      "south brookdale regulaters",
+      "Bros Before Younghoes",
+      "Running Back-Snatch",
+      "Scroopy Noopers",
+      "RichCity Yung Beevs",
+      "Blackout or Back Out",
       "Pantry The Puddn\u00e2\u0080\u0099",
-      "Bros Before Younghoes"
+      "the creek nut wildphish",
+      "Kooter McGavin",
+      "Ding Dong Doid Brains"
     ],
-    "current_name": "Bros Before Younghoes",
+    "current_name": "Ding Dong Doid Brains",
     "owners": [
       "Ryan Milhous",
       "Brian Vitale",
-      "Peter Kent-Stoll",
-      "Rory McKee"
+      "Rory McKee",
+      "Peter Kent-Stoll"
     ],
-    "current_owner": "Rory McKee",
+    "current_owner": "Peter Kent-Stoll",
     "seasons_active": 20,
     "seasons": [
       {
@@ -2344,22 +2057,22 @@
   "9": {
     "team_id": 9,
     "team_names": [
-      "S.F. Forty-Chiners",
-      "Team 9",
       "High Hopes",
+      "Team 9",
       "Tampon Bay Chumpkineers",
-      "Less Gore Mo Pus",
-      "Tampon Bay Blumpkineers",
+      "S.F. Forty-Chiners",
+      "Tampon Bay Blumpcaneers",
       "More Gore",
-      "Tampon Bay Blumpcaneers"
+      "Tampon Bay Blumpkineers",
+      "Less Gore Mo Pus"
     ],
-    "current_name": "Tampon Bay Blumpcaneers",
+    "current_name": "Less Gore Mo Pus",
     "owners": [
-      "Jacob Luna",
+      "Dylan Andrews",
       "Brendan Romele",
-      "Dylan Andrews"
+      "Jacob Luna"
     ],
-    "current_owner": "Dylan Andrews",
+    "current_owner": "Jacob Luna",
     "seasons_active": 20,
     "seasons": [
       {
@@ -2636,26 +2349,26 @@
   "10": {
     "team_id": 10,
     "team_names": [
-      "Tyreek And The Drain Pours",
       "Foot-Loose and Fancy Free",
-      "Team 10",
-      "Lo-Carb Monsters",
-      "AB's Face Farts",
-      "Tampon Bay Blumpkineers",
-      "The Pierre Necessities",
-      "For All The  Haters (Chris)",
       "The Keepy No  Startie's",
-      "For Those About To Brock",
+      "Tyreek And The Drain Pours",
+      "Lo-Carb Monsters",
+      "Nick Dak Paddy Wack",
+      "The Pierre Necessities",
       "Purdy Good Timing ",
-      "Nick Dak Paddy Wack"
+      "AB's Face Farts",
+      "Team 10",
+      "Tampon Bay Blumpkineers",
+      "For All The  Haters (Chris)",
+      "For Those About To Brock"
     ],
-    "current_name": "Nick Dak Paddy Wack",
+    "current_name": "For Those About To Brock",
     "owners": [
-      "Jacob Luna",
       "Bryan Whitaker",
-      "Tyler Fullerton"
+      "Tyler Fullerton",
+      "Jacob Luna"
     ],
-    "current_owner": "Tyler Fullerton",
+    "current_owner": "Jacob Luna",
     "seasons_active": 20,
     "seasons": [
       {
@@ -2932,17 +2645,17 @@
   "11": {
     "team_id": 11,
     "team_names": [
-      "Felton Sluggers",
       "Team Romele",
+      "S.F. Forty-Chiners",
       "Team 11",
-      "S.F. Forty-Chiners"
+      "Felton Sluggers"
     ],
-    "current_name": "S.F. Forty-Chiners",
+    "current_name": "Felton Sluggers",
     "owners": [
-      "Jeremy Settles",
-      "Brendan Romele"
+      "Brendan Romele",
+      "Jeremy Settles"
     ],
-    "current_owner": "Brendan Romele",
+    "current_owner": "Jeremy Settles",
     "seasons_active": 20,
     "seasons": [
       {
@@ -3219,15 +2932,15 @@
   "12": {
     "team_id": 12,
     "team_names": [
-      "Team Morris",
-      "Ding Dong Doid Brains",
       "Corn On The  Kolb",
       "Team 12",
-      "Bryan Whitaker's Team",
+      "the revolting BLOB",
       "Auto Drafties",
-      "the revolting BLOB"
+      "Team Morris",
+      "Bryan Whitaker's Team",
+      "Ding Dong Doid Brains"
     ],
-    "current_name": "the revolting BLOB",
+    "current_name": "Ding Dong Doid Brains",
     "owners": [
       "Ryan Milhous",
       "Bryan Whitaker",
@@ -3507,16 +3220,289 @@
       "playoff_appearances": 0
     }
   },
+  "6": {
+    "team_id": 6,
+    "team_names": [
+      "The Drakes",
+      "Team Settles",
+      "Felton Sluggers"
+    ],
+    "current_name": "Felton Sluggers",
+    "owners": [
+      "Jamie Coffis",
+      "Jeremy Settles"
+    ],
+    "current_owner": "Jeremy Settles",
+    "seasons_active": 19,
+    "seasons": [
+      {
+        "year": 2007,
+        "team_name": "Team Settles",
+        "owner": "Jeremy Settles",
+        "wins": 7,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1134.0,
+        "points_against": 988.0,
+        "standing": 3,
+        "final_standing": 1,
+        "playoff_seed": null
+      },
+      {
+        "year": 2008,
+        "team_name": "Team Settles",
+        "owner": "Jeremy Settles",
+        "wins": 7,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1043.0,
+        "points_against": 986.0,
+        "standing": 4,
+        "final_standing": 2,
+        "playoff_seed": null
+      },
+      {
+        "year": 2009,
+        "team_name": "Team Settles",
+        "owner": "Jeremy Settles",
+        "wins": 6,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1113.0,
+        "points_against": 1200.0,
+        "standing": 7,
+        "final_standing": 5,
+        "playoff_seed": null
+      },
+      {
+        "year": 2010,
+        "team_name": "Team Settles",
+        "owner": "Jeremy Settles",
+        "wins": 6,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1131.0,
+        "points_against": 1178.0,
+        "standing": 6,
+        "final_standing": 6,
+        "playoff_seed": null
+      },
+      {
+        "year": 2011,
+        "team_name": "Felton Sluggers",
+        "owner": "Jeremy Settles",
+        "wins": 10,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 1359.4799999999998,
+        "points_against": 1148.82,
+        "standing": 1,
+        "final_standing": 3,
+        "playoff_seed": null
+      },
+      {
+        "year": 2012,
+        "team_name": "Felton Sluggers",
+        "owner": "Jeremy Settles",
+        "wins": 3,
+        "losses": 10,
+        "ties": 0,
+        "points_for": 1238.48,
+        "points_against": 1362.44,
+        "standing": 13,
+        "final_standing": 12,
+        "playoff_seed": null
+      },
+      {
+        "year": 2013,
+        "team_name": "Felton Sluggers",
+        "owner": "Jeremy Settles",
+        "wins": 9,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 1405.3799999999999,
+        "points_against": 1281.86,
+        "standing": 2,
+        "final_standing": 1,
+        "playoff_seed": null
+      },
+      {
+        "year": 2014,
+        "team_name": "Felton Sluggers",
+        "owner": "Jeremy Settles",
+        "wins": 6,
+        "losses": 7,
+        "ties": 0,
+        "points_for": 1211.54,
+        "points_against": 1311.68,
+        "standing": 10,
+        "final_standing": 8,
+        "playoff_seed": null
+      },
+      {
+        "year": 2015,
+        "team_name": "Felton Sluggers",
+        "owner": "Jeremy Settles",
+        "wins": 6,
+        "losses": 7,
+        "ties": 0,
+        "points_for": 1286.0800000000002,
+        "points_against": 1315.48,
+        "standing": 8,
+        "final_standing": 10,
+        "playoff_seed": null
+      },
+      {
+        "year": 2016,
+        "team_name": "Felton Sluggers",
+        "owner": "Jeremy Settles",
+        "wins": 9,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 1422.3899999999999,
+        "points_against": 1257.49,
+        "standing": 4,
+        "final_standing": 2,
+        "playoff_seed": null
+      },
+      {
+        "year": 2017,
+        "team_name": "Felton Sluggers",
+        "owner": "Jeremy Settles",
+        "wins": 10,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 1401.0900000000001,
+        "points_against": 1236.51,
+        "standing": 2,
+        "final_standing": 4,
+        "playoff_seed": null
+      },
+      {
+        "year": 2018,
+        "team_name": "Felton Sluggers",
+        "owner": "Jeremy Settles",
+        "wins": 1,
+        "losses": 12,
+        "ties": 0,
+        "points_for": 1137.98,
+        "points_against": 1380.99,
+        "standing": 14,
+        "final_standing": 12,
+        "playoff_seed": null
+      },
+      {
+        "year": 2019,
+        "team_name": "Felton Sluggers",
+        "owner": "Jeremy Settles",
+        "wins": 7,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1249.42,
+        "points_against": 1220.78,
+        "standing": 7,
+        "final_standing": 12,
+        "playoff_seed": null
+      },
+      {
+        "year": 2020,
+        "team_name": "Felton Sluggers",
+        "owner": "Jeremy Settles",
+        "wins": 3,
+        "losses": 10,
+        "ties": 0,
+        "points_for": 1096.24,
+        "points_against": 1294.85,
+        "standing": 14,
+        "final_standing": 11,
+        "playoff_seed": null
+      },
+      {
+        "year": 2021,
+        "team_name": "Felton Sluggers",
+        "owner": "Jeremy Settles",
+        "wins": 7,
+        "losses": 7,
+        "ties": 0,
+        "points_for": 1478.1499999999999,
+        "points_against": 1504.64,
+        "standing": 7,
+        "final_standing": 7,
+        "playoff_seed": null
+      },
+      {
+        "year": 2022,
+        "team_name": "Felton Sluggers",
+        "owner": "Jeremy Settles",
+        "wins": 9,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1547.3600000000004,
+        "points_against": 1459.67,
+        "standing": 3,
+        "final_standing": 5,
+        "playoff_seed": null
+      },
+      {
+        "year": 2023,
+        "team_name": "Felton Sluggers",
+        "owner": "Jeremy Settles",
+        "wins": 9,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1611.2299999999996,
+        "points_against": 1492.89,
+        "standing": 5,
+        "final_standing": 5,
+        "playoff_seed": null
+      },
+      {
+        "year": 2024,
+        "team_name": "Felton Sluggers",
+        "owner": "Jeremy Settles",
+        "wins": 10,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 1663.33,
+        "points_against": 1526.73,
+        "standing": 2,
+        "final_standing": 1,
+        "playoff_seed": null
+      },
+      {
+        "year": 2025,
+        "team_name": "The Drakes",
+        "owner": "Jamie Coffis",
+        "wins": 10,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 1636,
+        "points_against": 1615,
+        "standing": 3,
+        "final_standing": 6,
+        "playoff_seed": null
+      }
+    ],
+    "all_time": {
+      "wins": 135,
+      "losses": 112,
+      "ties": 0,
+      "points_for": 25165.15,
+      "points_against": 24761.83,
+      "championships": 3,
+      "playoff_appearances": 0
+    }
+  },
   "13": {
     "team_id": 13,
     "team_names": [
-      "Youth Movement  !!!!!!!",
       "the new kid  on the block",
-      "PPPWRA",
+      "Jackson5 \ud83d\udc2c",
       "The Pudd'n \ud83d\udc2c",
-      "Jackson5 \ud83d\udc2c"
+      "Youth Movement  !!!!!!!",
+      "PPPWRA"
     ],
-    "current_name": "Jackson5 \ud83d\udc2c",
+    "current_name": "PPPWRA",
     "owners": [
       "Rory McKee",
       "Ben Beck"

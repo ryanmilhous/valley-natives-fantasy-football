@@ -12945,7 +12945,7 @@
     "overall_pick": 1,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Nick Smielak"
   },
@@ -12959,7 +12959,7 @@
     "overall_pick": 2,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Kyle Poppen"
   },
@@ -12973,7 +12973,7 @@
     "overall_pick": 3,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Nick Smielak"
   },
@@ -12987,7 +12987,7 @@
     "overall_pick": 4,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Nick Smielak"
   },
@@ -13001,7 +13001,7 @@
     "overall_pick": 5,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Nick Smielak"
   },
@@ -13015,7 +13015,7 @@
     "overall_pick": 6,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Nick Smielak"
   },
@@ -13029,7 +13029,7 @@
     "overall_pick": 7,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Rory McKee"
   },
@@ -13043,7 +13043,7 @@
     "overall_pick": 8,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Rory McKee"
   },
@@ -13057,7 +13057,7 @@
     "overall_pick": 9,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Rory McKee"
   },
@@ -13071,7 +13071,7 @@
     "overall_pick": 10,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Rory McKee"
   },
@@ -13085,7 +13085,7 @@
     "overall_pick": 11,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Rory McKee"
   },
@@ -13099,7 +13099,7 @@
     "overall_pick": 12,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Jacob Luna"
   },
@@ -13113,7 +13113,7 @@
     "overall_pick": 13,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Jacob Luna"
   },
@@ -13127,7 +13127,7 @@
     "overall_pick": 14,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jacob Luna"
   },
@@ -13141,7 +13141,7 @@
     "overall_pick": 15,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Jacob Luna"
   },
@@ -13155,7 +13155,7 @@
     "overall_pick": 16,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jacob Luna"
   },
@@ -13169,7 +13169,7 @@
     "overall_pick": 17,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Chris Vitale"
   },
@@ -13183,7 +13183,7 @@
     "overall_pick": 18,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Chris Vitale"
   },
@@ -13197,7 +13197,7 @@
     "overall_pick": 19,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Chris Vitale"
   },
@@ -13211,7 +13211,7 @@
     "overall_pick": 20,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Chris Vitale"
   },
@@ -13225,7 +13225,7 @@
     "overall_pick": 21,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Chris Vitale"
   },
@@ -13239,7 +13239,7 @@
     "overall_pick": 22,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Kellen Coffis"
   },
@@ -13253,7 +13253,7 @@
     "overall_pick": 23,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Kellen Coffis"
   },
@@ -13267,7 +13267,7 @@
     "overall_pick": 24,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Kellen Coffis"
   },
@@ -13281,7 +13281,7 @@
     "overall_pick": 25,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Kellen Coffis"
   },
@@ -13295,7 +13295,7 @@
     "overall_pick": 26,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Kellen Coffis"
   },
@@ -13309,7 +13309,7 @@
     "overall_pick": 27,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jamie Coffis"
   },
@@ -13323,7 +13323,7 @@
     "overall_pick": 28,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Jamie Coffis"
   },
@@ -13337,7 +13337,7 @@
     "overall_pick": 29,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Jamie Coffis"
   },
@@ -13351,7 +13351,7 @@
     "overall_pick": 30,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Jamie Coffis"
   },
@@ -13365,7 +13365,7 @@
     "overall_pick": 31,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Jamie Coffis"
   },
@@ -13379,7 +13379,7 @@
     "overall_pick": 32,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Garrett Ulrich"
   },
@@ -13393,7 +13393,7 @@
     "overall_pick": 33,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Garrett Ulrich"
   },
@@ -13407,7 +13407,7 @@
     "overall_pick": 34,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Garrett Ulrich"
   },
@@ -13421,7 +13421,7 @@
     "overall_pick": 35,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Garrett Ulrich"
   },
@@ -13435,7 +13435,7 @@
     "overall_pick": 36,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Garrett Ulrich"
   },
@@ -13449,7 +13449,7 @@
     "overall_pick": 37,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Greg Swenson"
   },
@@ -13463,7 +13463,7 @@
     "overall_pick": 38,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Greg Swenson"
   },
@@ -13477,7 +13477,7 @@
     "overall_pick": 39,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Greg Swenson"
   },
@@ -13491,7 +13491,7 @@
     "overall_pick": 40,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Greg Swenson"
   },
@@ -13505,7 +13505,7 @@
     "overall_pick": 41,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Greg Swenson"
   },
@@ -13519,7 +13519,7 @@
     "overall_pick": 42,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Jeremy Settles"
   },
@@ -13533,7 +13533,7 @@
     "overall_pick": 43,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Jeremy Settles"
   },
@@ -13547,7 +13547,7 @@
     "overall_pick": 44,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jeremy Settles"
   },
@@ -13561,7 +13561,7 @@
     "overall_pick": 45,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Jeremy Settles"
   },
@@ -13575,7 +13575,7 @@
     "overall_pick": 46,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Jeremy Settles"
   },
@@ -13589,7 +13589,7 @@
     "overall_pick": 47,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Bryan Whitaker"
   },
@@ -13603,7 +13603,7 @@
     "overall_pick": 48,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Bryan Whitaker"
   },
@@ -13617,7 +13617,7 @@
     "overall_pick": 49,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Bryan Whitaker"
   },
@@ -13631,7 +13631,7 @@
     "overall_pick": 50,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Bryan Whitaker"
   },
@@ -13645,7 +13645,7 @@
     "overall_pick": 51,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Bryan Whitaker"
   },
@@ -13659,7 +13659,7 @@
     "overall_pick": 52,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Brendan Romele"
   },
@@ -13673,7 +13673,7 @@
     "overall_pick": 53,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Brendan Romele"
   },
@@ -13687,7 +13687,7 @@
     "overall_pick": 54,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Brendan Romele"
   },
@@ -13701,7 +13701,7 @@
     "overall_pick": 55,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Brendan Romele"
   },
@@ -13715,7 +13715,7 @@
     "overall_pick": 56,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Brendan Romele"
   },
@@ -13729,7 +13729,7 @@
     "overall_pick": 57,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Ryan Milhous"
   },
@@ -13743,7 +13743,7 @@
     "overall_pick": 58,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Ryan Milhous"
   },
@@ -13757,7 +13757,7 @@
     "overall_pick": 59,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Ryan Milhous"
   },
@@ -13771,7 +13771,7 @@
     "overall_pick": 60,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Ryan Milhous"
   },
@@ -13785,7 +13785,7 @@
     "overall_pick": 61,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Ryan Milhous"
   },
@@ -13799,7 +13799,7 @@
     "overall_pick": 62,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Steve Keller"
   },
@@ -13813,7 +13813,7 @@
     "overall_pick": 63,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Steve Keller"
   },
@@ -13827,7 +13827,7 @@
     "overall_pick": 64,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Steve Keller"
   },
@@ -13841,7 +13841,7 @@
     "overall_pick": 65,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Steve Keller"
   },
@@ -13855,7 +13855,7 @@
     "overall_pick": 66,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Steve Keller"
   },
@@ -13869,7 +13869,7 @@
     "overall_pick": 67,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Kyle Poppen"
   },
@@ -13883,7 +13883,7 @@
     "overall_pick": 68,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Kyle Poppen"
   },
@@ -13897,7 +13897,7 @@
     "overall_pick": 69,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Kyle Poppen"
   },
@@ -13911,7 +13911,7 @@
     "overall_pick": 70,
     "bid_amount": 1,
     "keeper_status": false,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Kyle Poppen"
   },
@@ -13925,7 +13925,7 @@
     "overall_pick": 71,
     "bid_amount": 59,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jacob Luna"
   },
@@ -13939,7 +13939,7 @@
     "overall_pick": 72,
     "bid_amount": 107,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Chris Vitale"
   },
@@ -13953,7 +13953,7 @@
     "overall_pick": 73,
     "bid_amount": 99,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Garrett Ulrich"
   },
@@ -13967,7 +13967,7 @@
     "overall_pick": 74,
     "bid_amount": 96,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Greg Swenson"
   },
@@ -13981,7 +13981,7 @@
     "overall_pick": 75,
     "bid_amount": 16,
     "keeper_status": null,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Ryan Milhous"
   },
@@ -13995,7 +13995,7 @@
     "overall_pick": 76,
     "bid_amount": 87,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Brendan Romele"
   },
@@ -14009,7 +14009,7 @@
     "overall_pick": 77,
     "bid_amount": 62,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Bryan Whitaker"
   },
@@ -14023,7 +14023,7 @@
     "overall_pick": 78,
     "bid_amount": 71,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Kyle Poppen"
   },
@@ -14037,7 +14037,7 @@
     "overall_pick": 79,
     "bid_amount": 85,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Jamie Coffis"
   },
@@ -14051,7 +14051,7 @@
     "overall_pick": 80,
     "bid_amount": 43,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Kellen Coffis"
   },
@@ -14065,7 +14065,7 @@
     "overall_pick": 81,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "K",
     "year": 2025,
     "owner": "Garrett Ulrich"
   },
@@ -14079,7 +14079,7 @@
     "overall_pick": 82,
     "bid_amount": 69,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Steve Keller"
   },
@@ -14093,7 +14093,7 @@
     "overall_pick": 83,
     "bid_amount": 4,
     "keeper_status": null,
-    "position": null,
+    "position": "DEF",
     "year": 2025,
     "owner": "Jacob Luna"
   },
@@ -14107,7 +14107,7 @@
     "overall_pick": 84,
     "bid_amount": 51,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Kellen Coffis"
   },
@@ -14121,7 +14121,7 @@
     "overall_pick": 85,
     "bid_amount": 52,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Nick Smielak"
   },
@@ -14135,7 +14135,7 @@
     "overall_pick": 86,
     "bid_amount": 45,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Jeremy Settles"
   },
@@ -14149,7 +14149,7 @@
     "overall_pick": 87,
     "bid_amount": 20,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Jacob Luna"
   },
@@ -14163,7 +14163,7 @@
     "overall_pick": 88,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "DEF",
     "year": 2025,
     "owner": "Kellen Coffis"
   },
@@ -14177,7 +14177,7 @@
     "overall_pick": 89,
     "bid_amount": 45,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Ryan Milhous"
   },
@@ -14191,7 +14191,7 @@
     "overall_pick": 90,
     "bid_amount": 8,
     "keeper_status": null,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Kellen Coffis"
   },
@@ -14205,7 +14205,7 @@
     "overall_pick": 91,
     "bid_amount": 40,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Steve Keller"
   },
@@ -14219,7 +14219,7 @@
     "overall_pick": 92,
     "bid_amount": 8,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Jeremy Settles"
   },
@@ -14233,7 +14233,7 @@
     "overall_pick": 93,
     "bid_amount": 3,
     "keeper_status": null,
-    "position": null,
+    "position": "DEF",
     "year": 2025,
     "owner": "Greg Swenson"
   },
@@ -14247,7 +14247,7 @@
     "overall_pick": 94,
     "bid_amount": 62,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Bryan Whitaker"
   },
@@ -14261,7 +14261,7 @@
     "overall_pick": 95,
     "bid_amount": 32,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Jeremy Settles"
   },
@@ -14275,7 +14275,7 @@
     "overall_pick": 96,
     "bid_amount": 33,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Rory McKee"
   },
@@ -14289,7 +14289,7 @@
     "overall_pick": 97,
     "bid_amount": 8,
     "keeper_status": null,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Greg Swenson"
   },
@@ -14303,7 +14303,7 @@
     "overall_pick": 98,
     "bid_amount": 11,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Garrett Ulrich"
   },
@@ -14317,7 +14317,7 @@
     "overall_pick": 99,
     "bid_amount": 7,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Brendan Romele"
   },
@@ -14331,7 +14331,7 @@
     "overall_pick": 100,
     "bid_amount": 49,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Nick Smielak"
   },
@@ -14345,7 +14345,7 @@
     "overall_pick": 101,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Ryan Milhous"
   },
@@ -14359,7 +14359,7 @@
     "overall_pick": 102,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "DEF",
     "year": 2025,
     "owner": "Rory McKee"
   },
@@ -14373,7 +14373,7 @@
     "overall_pick": 103,
     "bid_amount": 23,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Kyle Poppen"
   },
@@ -14387,7 +14387,7 @@
     "overall_pick": 104,
     "bid_amount": 6,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Rory McKee"
   },
@@ -14401,7 +14401,7 @@
     "overall_pick": 105,
     "bid_amount": 12,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Brendan Romele"
   },
@@ -14415,7 +14415,7 @@
     "overall_pick": 106,
     "bid_amount": 17,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Steve Keller"
   },
@@ -14429,7 +14429,7 @@
     "overall_pick": 107,
     "bid_amount": 28,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Rory McKee"
   },
@@ -14443,7 +14443,7 @@
     "overall_pick": 108,
     "bid_amount": 34,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Rory McKee"
   },
@@ -14457,7 +14457,7 @@
     "overall_pick": 109,
     "bid_amount": 30,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jeremy Settles"
   },
@@ -14471,7 +14471,7 @@
     "overall_pick": 110,
     "bid_amount": 31,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Ryan Milhous"
   },
@@ -14485,7 +14485,7 @@
     "overall_pick": 111,
     "bid_amount": 5,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Kyle Poppen"
   },
@@ -14499,7 +14499,7 @@
     "overall_pick": 112,
     "bid_amount": 22,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Kellen Coffis"
   },
@@ -14513,7 +14513,7 @@
     "overall_pick": 113,
     "bid_amount": 3,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Chris Vitale"
   },
@@ -14527,7 +14527,7 @@
     "overall_pick": 114,
     "bid_amount": 13,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Brendan Romele"
   },
@@ -14541,7 +14541,7 @@
     "overall_pick": 115,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Rory McKee"
   },
@@ -14555,7 +14555,7 @@
     "overall_pick": 116,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "DEF",
     "year": 2025,
     "owner": "Chris Vitale"
   },
@@ -14569,7 +14569,7 @@
     "overall_pick": 117,
     "bid_amount": 6,
     "keeper_status": null,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Garrett Ulrich"
   },
@@ -14583,7 +14583,7 @@
     "overall_pick": 118,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Brendan Romele"
   },
@@ -14597,7 +14597,7 @@
     "overall_pick": 119,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Steve Keller"
   },
@@ -14611,7 +14611,7 @@
     "overall_pick": 120,
     "bid_amount": 14,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Brendan Romele"
   },
@@ -14625,7 +14625,7 @@
     "overall_pick": 121,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "DEF",
     "year": 2025,
     "owner": "Ryan Milhous"
   },
@@ -14639,7 +14639,7 @@
     "overall_pick": 122,
     "bid_amount": 9,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Kellen Coffis"
   },
@@ -14653,7 +14653,7 @@
     "overall_pick": 123,
     "bid_amount": 23,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Rory McKee"
   },
@@ -14667,7 +14667,7 @@
     "overall_pick": 124,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "DEF",
     "year": 2025,
     "owner": "Bryan Whitaker"
   },
@@ -14681,7 +14681,7 @@
     "overall_pick": 125,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "K",
     "year": 2025,
     "owner": "Rory McKee"
   },
@@ -14695,7 +14695,7 @@
     "overall_pick": 126,
     "bid_amount": 4,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jeremy Settles"
   },
@@ -14709,7 +14709,7 @@
     "overall_pick": 127,
     "bid_amount": 7,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Bryan Whitaker"
   },
@@ -14723,7 +14723,7 @@
     "overall_pick": 128,
     "bid_amount": 16,
     "keeper_status": null,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Jeremy Settles"
   },
@@ -14737,7 +14737,7 @@
     "overall_pick": 129,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Steve Keller"
   },
@@ -14751,7 +14751,7 @@
     "overall_pick": 130,
     "bid_amount": 47,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jacob Luna"
   },
@@ -14765,7 +14765,7 @@
     "overall_pick": 131,
     "bid_amount": 18,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Chris Vitale"
   },
@@ -14779,7 +14779,7 @@
     "overall_pick": 132,
     "bid_amount": 6,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Ryan Milhous"
   },
@@ -14793,7 +14793,7 @@
     "overall_pick": 133,
     "bid_amount": 6,
     "keeper_status": null,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Steve Keller"
   },
@@ -14807,7 +14807,7 @@
     "overall_pick": 134,
     "bid_amount": 3,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Nick Smielak"
   },
@@ -14821,7 +14821,7 @@
     "overall_pick": 135,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Brendan Romele"
   },
@@ -14835,7 +14835,7 @@
     "overall_pick": 136,
     "bid_amount": 4,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Ryan Milhous"
   },
@@ -14849,7 +14849,7 @@
     "overall_pick": 137,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Ryan Milhous"
   },
@@ -14863,7 +14863,7 @@
     "overall_pick": 138,
     "bid_amount": 3,
     "keeper_status": null,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Kyle Poppen"
   },
@@ -14877,7 +14877,7 @@
     "overall_pick": 139,
     "bid_amount": 4,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jamie Coffis"
   },
@@ -14891,7 +14891,7 @@
     "overall_pick": 140,
     "bid_amount": 4,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Greg Swenson"
   },
@@ -14905,7 +14905,7 @@
     "overall_pick": 141,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Rory McKee"
   },
@@ -14919,7 +14919,7 @@
     "overall_pick": 142,
     "bid_amount": 17,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jamie Coffis"
   },
@@ -14933,7 +14933,7 @@
     "overall_pick": 143,
     "bid_amount": 26,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Ryan Milhous"
   },
@@ -14947,7 +14947,7 @@
     "overall_pick": 144,
     "bid_amount": 6,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Garrett Ulrich"
   },
@@ -14961,7 +14961,7 @@
     "overall_pick": 145,
     "bid_amount": 5,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Greg Swenson"
   },
@@ -14975,7 +14975,7 @@
     "overall_pick": 146,
     "bid_amount": 12,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Kyle Poppen"
   },
@@ -14989,7 +14989,7 @@
     "overall_pick": 147,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Chris Vitale"
   },
@@ -15003,7 +15003,7 @@
     "overall_pick": 148,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Rory McKee"
   },
@@ -15017,7 +15017,7 @@
     "overall_pick": 149,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "DEF",
     "year": 2025,
     "owner": "Brendan Romele"
   },
@@ -15031,7 +15031,7 @@
     "overall_pick": 150,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Jacob Luna"
   },
@@ -15045,7 +15045,7 @@
     "overall_pick": 151,
     "bid_amount": 10,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Greg Swenson"
   },
@@ -15059,7 +15059,7 @@
     "overall_pick": 152,
     "bid_amount": 9,
     "keeper_status": null,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Garrett Ulrich"
   },
@@ -15073,7 +15073,7 @@
     "overall_pick": 153,
     "bid_amount": 14,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Kyle Poppen"
   },
@@ -15087,7 +15087,7 @@
     "overall_pick": 154,
     "bid_amount": 3,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Ryan Milhous"
   },
@@ -15101,7 +15101,7 @@
     "overall_pick": 155,
     "bid_amount": 10,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Jamie Coffis"
   },
@@ -15115,7 +15115,7 @@
     "overall_pick": 156,
     "bid_amount": 5,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jamie Coffis"
   },
@@ -15129,7 +15129,7 @@
     "overall_pick": 157,
     "bid_amount": 8,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Nick Smielak"
   },
@@ -15143,7 +15143,7 @@
     "overall_pick": 158,
     "bid_amount": 4,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Jamie Coffis"
   },
@@ -15157,7 +15157,7 @@
     "overall_pick": 159,
     "bid_amount": 10,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Jamie Coffis"
   },
@@ -15171,7 +15171,7 @@
     "overall_pick": 160,
     "bid_amount": 6,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Greg Swenson"
   },
@@ -15185,7 +15185,7 @@
     "overall_pick": 161,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Steve Keller"
   },
@@ -15199,7 +15199,7 @@
     "overall_pick": 162,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Ryan Milhous"
   },
@@ -15213,7 +15213,7 @@
     "overall_pick": 163,
     "bid_amount": 9,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Nick Smielak"
   },
@@ -15227,7 +15227,7 @@
     "overall_pick": 164,
     "bid_amount": 4,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Chris Vitale"
   },
@@ -15241,7 +15241,7 @@
     "overall_pick": 165,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jeremy Settles"
   },
@@ -15255,7 +15255,7 @@
     "overall_pick": 166,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Greg Swenson"
   },
@@ -15269,7 +15269,7 @@
     "overall_pick": 167,
     "bid_amount": 7,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Nick Smielak"
   },
@@ -15283,7 +15283,7 @@
     "overall_pick": 168,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Kyle Poppen"
   },
@@ -15297,7 +15297,7 @@
     "overall_pick": 169,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Kyle Poppen"
   },
@@ -15311,7 +15311,7 @@
     "overall_pick": 170,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jacob Luna"
   },
@@ -15325,7 +15325,7 @@
     "overall_pick": 171,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Garrett Ulrich"
   },
@@ -15339,7 +15339,7 @@
     "overall_pick": 172,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Chris Vitale"
   },
@@ -15353,7 +15353,7 @@
     "overall_pick": 173,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Nick Smielak"
   },
@@ -15367,7 +15367,7 @@
     "overall_pick": 174,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Greg Swenson"
   },
@@ -15381,7 +15381,7 @@
     "overall_pick": 175,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Steve Keller"
   },
@@ -15395,7 +15395,7 @@
     "overall_pick": 176,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Greg Swenson"
   },
@@ -15409,7 +15409,7 @@
     "overall_pick": 177,
     "bid_amount": 4,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Kyle Poppen"
   },
@@ -15423,7 +15423,7 @@
     "overall_pick": 178,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jamie Coffis"
   },
@@ -15437,7 +15437,7 @@
     "overall_pick": 179,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Jacob Luna"
   },
@@ -15451,7 +15451,7 @@
     "overall_pick": 180,
     "bid_amount": 3,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Rory McKee"
   },
@@ -15465,7 +15465,7 @@
     "overall_pick": 181,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Kyle Poppen"
   },
@@ -15479,7 +15479,7 @@
     "overall_pick": 182,
     "bid_amount": 3,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Kyle Poppen"
   },
@@ -15493,7 +15493,7 @@
     "overall_pick": 183,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Garrett Ulrich"
   },
@@ -15507,7 +15507,7 @@
     "overall_pick": 184,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Garrett Ulrich"
   },
@@ -15521,7 +15521,7 @@
     "overall_pick": 185,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Chris Vitale"
   },
@@ -15535,7 +15535,7 @@
     "overall_pick": 186,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Nick Smielak"
   },
@@ -15549,7 +15549,7 @@
     "overall_pick": 187,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "K",
     "year": 2025,
     "owner": "Greg Swenson"
   },
@@ -15563,7 +15563,7 @@
     "overall_pick": 188,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Steve Keller"
   },
@@ -15577,7 +15577,7 @@
     "overall_pick": 189,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Nick Smielak"
   },
@@ -15591,7 +15591,7 @@
     "overall_pick": 190,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Jacob Luna"
   },
@@ -15605,7 +15605,7 @@
     "overall_pick": 191,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jeremy Settles"
   },
@@ -15619,7 +15619,7 @@
     "overall_pick": 192,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Bryan Whitaker"
   },
@@ -15633,7 +15633,7 @@
     "overall_pick": 193,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Kellen Coffis"
   },
@@ -15647,7 +15647,7 @@
     "overall_pick": 194,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jamie Coffis"
   },
@@ -15661,7 +15661,7 @@
     "overall_pick": 195,
     "bid_amount": 3,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Nick Smielak"
   },
@@ -15675,7 +15675,7 @@
     "overall_pick": 196,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Chris Vitale"
   },
@@ -15689,7 +15689,7 @@
     "overall_pick": 197,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Nick Smielak"
   },
@@ -15703,7 +15703,7 @@
     "overall_pick": 198,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "DEF",
     "year": 2025,
     "owner": "Steve Keller"
   },
@@ -15717,7 +15717,7 @@
     "overall_pick": 199,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Brendan Romele"
   },
@@ -15731,7 +15731,7 @@
     "overall_pick": 200,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jacob Luna"
   },
@@ -15745,7 +15745,7 @@
     "overall_pick": 201,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Jeremy Settles"
   },
@@ -15759,7 +15759,7 @@
     "overall_pick": 202,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Bryan Whitaker"
   },
@@ -15773,7 +15773,7 @@
     "overall_pick": 203,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Bryan Whitaker"
   },
@@ -15787,7 +15787,7 @@
     "overall_pick": 204,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "QB",
     "year": 2025,
     "owner": "Jamie Coffis"
   },
@@ -15801,7 +15801,7 @@
     "overall_pick": 205,
     "bid_amount": 2,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Garrett Ulrich"
   },
@@ -15815,7 +15815,7 @@
     "overall_pick": 206,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Chris Vitale"
   },
@@ -15829,7 +15829,7 @@
     "overall_pick": 207,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "DEF",
     "year": 2025,
     "owner": "Steve Keller"
   },
@@ -15843,7 +15843,7 @@
     "overall_pick": 208,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Brendan Romele"
   },
@@ -15857,7 +15857,7 @@
     "overall_pick": 209,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Jacob Luna"
   },
@@ -15871,7 +15871,7 @@
     "overall_pick": 210,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "DEF",
     "year": 2025,
     "owner": "Jeremy Settles"
   },
@@ -15885,7 +15885,7 @@
     "overall_pick": 211,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "TE",
     "year": 2025,
     "owner": "Bryan Whitaker"
   },
@@ -15899,7 +15899,7 @@
     "overall_pick": 212,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Kellen Coffis"
   },
@@ -15913,7 +15913,7 @@
     "overall_pick": 213,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Jamie Coffis"
   },
@@ -15927,7 +15927,7 @@
     "overall_pick": 214,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "DEF",
     "year": 2025,
     "owner": "Garrett Ulrich"
   },
@@ -15941,7 +15941,7 @@
     "overall_pick": 215,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Chris Vitale"
   },
@@ -15955,7 +15955,7 @@
     "overall_pick": 216,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Brendan Romele"
   },
@@ -15969,7 +15969,7 @@
     "overall_pick": 217,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "K",
     "year": 2025,
     "owner": "Jacob Luna"
   },
@@ -15983,7 +15983,7 @@
     "overall_pick": 218,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "K",
     "year": 2025,
     "owner": "Jeremy Settles"
   },
@@ -15997,7 +15997,7 @@
     "overall_pick": 219,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "RB",
     "year": 2025,
     "owner": "Bryan Whitaker"
   },
@@ -16011,7 +16011,7 @@
     "overall_pick": 220,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Kellen Coffis"
   },
@@ -16025,7 +16025,7 @@
     "overall_pick": 221,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Bryan Whitaker"
   },
@@ -16039,7 +16039,7 @@
     "overall_pick": 222,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "WR",
     "year": 2025,
     "owner": "Kellen Coffis"
   },
@@ -16053,7 +16053,7 @@
     "overall_pick": 223,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "K",
     "year": 2025,
     "owner": "Bryan Whitaker"
   },
@@ -16067,7 +16067,7 @@
     "overall_pick": 224,
     "bid_amount": 1,
     "keeper_status": null,
-    "position": null,
+    "position": "K",
     "year": 2025,
     "owner": "Kellen Coffis"
   }
