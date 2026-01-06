@@ -5,7 +5,6 @@ import Seasons from './pages/Seasons';
 import Matchups from './pages/Matchups';
 import HeadToHead from './pages/HeadToHead';
 import Teams from './pages/Teams';
-import Playoffs from './pages/Playoffs';
 import Records from './pages/Records';
 import Draft from './pages/Draft';
 import Rosters from './pages/Rosters';
@@ -52,10 +51,9 @@ function App() {
               {/* Desktop Navigation */}
               <div className="hidden lg:flex items-center space-x-2">
                 <NavLink to="/">Home</NavLink>
-                <NavLink to="/playoffs">Playoffs</NavLink>
+                <NavLink to="/seasons">Seasons</NavLink>
                 <NavLink to="/records">Records</NavLink>
                 <NavLink to="/draft">Draft</NavLink>
-                <NavLink to="/seasons">Seasons</NavLink>
                 <NavLink to="/matchups">Matchups</NavLink>
                 <NavLink to="/head-to-head">H2H</NavLink>
                 <NavLink to="/rosters">Rosters</NavLink>
@@ -80,10 +78,9 @@ function App() {
             {mobileMenuOpen && (
               <div className="lg:hidden pb-4 space-y-2">
                 <NavLink to="/" onClick={() => setMobileMenuOpen(false)}>Home</NavLink>
-                <NavLink to="/playoffs" onClick={() => setMobileMenuOpen(false)}>Playoffs</NavLink>
+                <NavLink to="/seasons" onClick={() => setMobileMenuOpen(false)}>Seasons</NavLink>
                 <NavLink to="/records" onClick={() => setMobileMenuOpen(false)}>Records</NavLink>
                 <NavLink to="/draft" onClick={() => setMobileMenuOpen(false)}>Draft</NavLink>
-                <NavLink to="/seasons" onClick={() => setMobileMenuOpen(false)}>Seasons</NavLink>
                 <NavLink to="/matchups" onClick={() => setMobileMenuOpen(false)}>Matchups</NavLink>
                 <NavLink to="/head-to-head" onClick={() => setMobileMenuOpen(false)}>H2H</NavLink>
                 <NavLink to="/rosters" onClick={() => setMobileMenuOpen(false)}>Rosters</NavLink>
@@ -100,7 +97,6 @@ function App() {
             <Route path="/matchups" element={<Matchups />} />
             <Route path="/head-to-head" element={<HeadToHead />} />
             <Route path="/teams" element={<Teams />} />
-            <Route path="/playoffs" element={<Playoffs />} />
             <Route path="/records" element={<Records />} />
             <Route path="/draft" element={<Draft />} />
             <Route path="/rosters" element={<Rosters />} />
