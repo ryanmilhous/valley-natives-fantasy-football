@@ -274,103 +274,6 @@ function Home() {
         </div>
       </div>
 
-      {/* Trophy Case */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-yellow-200 via-amber-100 to-orange-200 p-1 shadow-2xl">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/40 via-amber-100/40 to-orange-100/40 animate-pulse opacity-60"></div>
-        <div className="relative bg-gradient-to-br from-yellow-100 via-yellow-50 to-orange-100 rounded-3xl p-8 border-2 border-yellow-300/60 shadow-inner">
-          {/* Animated Firework Elements */}
-          <div className="absolute top-10 left-10 w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
-          <div className="absolute top-20 right-20 w-3 h-3 bg-amber-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-          <div className="absolute top-32 left-1/4 w-2 h-2 bg-orange-400 rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-24 right-1/4 w-3 h-3 bg-yellow-400 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
-          <div className="absolute bottom-40 left-1/3 w-2 h-2 bg-amber-300 rounded-full animate-ping" style={{ animationDelay: '0.8s' }}></div>
-          <div className="absolute top-1/3 right-10 w-2 h-2 bg-orange-300 rounded-full animate-pulse" style={{ animationDelay: '0.3s' }}></div>
-          <div className="absolute top-1/2 left-16 w-3 h-3 bg-yellow-300 rounded-full animate-ping" style={{ animationDelay: '1.2s' }}></div>
-          <div className="absolute bottom-1/3 right-16 w-2 h-2 bg-amber-400 rounded-full animate-pulse" style={{ animationDelay: '0.7s' }}></div>
-
-          {/* Larger glow effects */}
-          <div className="absolute top-4 left-4 w-20 h-20 bg-yellow-300/20 rounded-full blur-2xl animate-pulse"></div>
-          <div className="absolute bottom-4 right-4 w-32 h-32 bg-orange-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-amber-300/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-
-          <h2 className="relative text-5xl font-bold mb-8 text-center flex items-center justify-center space-x-3 drop-shadow-lg">
-            <span className="text-6xl drop-shadow-lg animate-pulse">🏆</span>
-            <span className="bg-gradient-to-r from-yellow-500 via-amber-400 to-orange-500 bg-clip-text text-transparent" style={{ backgroundSize: '200% auto', animation: 'gradient 3s ease infinite' }}>Trophy Case</span>
-          </h2>
-          <style jsx>{`
-            @keyframes gradient {
-              0%, 100% { background-position: 0% 50%; }
-              50% { background-position: 100% 50%; }
-            }
-          `}</style>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Championship Trophy */}
-            <div>
-              <h3 className="text-2xl font-bold mb-4 text-center flex items-center justify-center space-x-2">
-                <span className="text-3xl">🏆</span>
-                <span className="bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-600 bg-clip-text text-transparent">Championship</span>
-              </h3>
-              <div className="flex flex-col items-center">
-                <div className="relative w-full max-w-2xl">
-                  <img
-                    src="/images/championship-trophy.png"
-                    alt="Championship Trophy"
-                    className="w-full h-auto mt-8"
-                    style={{ mixBlendMode: 'multiply', opacity: 0.95 }}
-                  />
-                  <div className="absolute bottom-[27%] left-[18%] right-[18%] max-h-[30%]">
-                    <div
-                      className="grid grid-cols-3 gap-x-6 gap-y-0 p-4 auto-rows-min"
-                      style={{ gridAutoFlow: 'column', gridTemplateRows: `repeat(${Math.ceil(championshipTrophyData.length / 3)}, minmax(0, 1fr))` }}
-                    >
-                      {championshipTrophyData.map((champ, index) => (
-                        <div key={index} className="text-left">
-                          <span className="text-amber-200 font-bold text-[8px] drop-shadow-lg whitespace-nowrap" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
-                            {champ.year} - {champ.owner}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Toilet Bowl Trophy */}
-            <div>
-              <h3 className="text-2xl font-bold mb-4 text-center flex items-center justify-center space-x-2">
-                <span className="text-3xl">💩</span>
-                <span className="bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600 bg-clip-text text-transparent">Toilet Bowl</span>
-              </h3>
-              <div className="flex flex-col items-center">
-                <div className="relative w-full max-w-2xl">
-                  <img
-                    src="/images/toilet-bowl-trophy.png"
-                    alt="Toilet Bowl Trophy"
-                    className="w-full h-auto"
-                    style={{ mixBlendMode: 'multiply', opacity: 0.95 }}
-                  />
-                  <div className="absolute bottom-[24%] left-[18%] right-[18%] max-h-[30%]">
-                    <div
-                      className="grid grid-cols-3 gap-x-6 gap-y-0 p-4 auto-rows-min"
-                      style={{ gridAutoFlow: 'column', gridTemplateRows: `repeat(${Math.ceil(toiletBowlTrophyData.length / 3)}, minmax(0, 1fr))` }}
-                    >
-                      {toiletBowlTrophyData.map((bowl, index) => (
-                        <div key={index} className="text-left">
-                          <span className="text-amber-200 font-bold text-[8px] drop-shadow-lg whitespace-nowrap" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
-                            {bowl.year} - {bowl.owner}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* All-Time Standings */}
       <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 p-1">
@@ -578,6 +481,7 @@ function Home() {
         </div>
       </div>
 
+
       {/* Ranking Methodology */}
       <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-purple-500/10 to-indigo-500/10 p-1">
         <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-6 border border-white/10">
@@ -595,6 +499,105 @@ function Home() {
           </div>
         </div>
       </div>
+
+      {/* Trophy Case */}
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-yellow-200 via-amber-100 to-orange-200 p-1 shadow-2xl">
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/40 via-amber-100/40 to-orange-100/40 animate-pulse opacity-60"></div>
+        <div className="relative bg-gradient-to-br from-yellow-100 via-yellow-50 to-orange-100 rounded-3xl p-8 border-2 border-yellow-300/60 shadow-inner">
+          {/* Animated Firework Elements */}
+          <div className="absolute top-10 left-10 w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
+          <div className="absolute top-20 right-20 w-3 h-3 bg-amber-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute top-32 left-1/4 w-2 h-2 bg-orange-400 rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-24 right-1/4 w-3 h-3 bg-yellow-400 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+          <div className="absolute bottom-40 left-1/3 w-2 h-2 bg-amber-300 rounded-full animate-ping" style={{ animationDelay: '0.8s' }}></div>
+          <div className="absolute top-1/3 right-10 w-2 h-2 bg-orange-300 rounded-full animate-pulse" style={{ animationDelay: '0.3s' }}></div>
+          <div className="absolute top-1/2 left-16 w-3 h-3 bg-yellow-300 rounded-full animate-ping" style={{ animationDelay: '1.2s' }}></div>
+          <div className="absolute bottom-1/3 right-16 w-2 h-2 bg-amber-400 rounded-full animate-pulse" style={{ animationDelay: '0.7s' }}></div>
+
+          {/* Larger glow effects */}
+          <div className="absolute top-4 left-4 w-20 h-20 bg-yellow-300/20 rounded-full blur-2xl animate-pulse"></div>
+          <div className="absolute bottom-4 right-4 w-32 h-32 bg-orange-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-amber-300/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+
+          <h2 className="relative text-5xl font-bold mb-8 text-center flex items-center justify-center space-x-3 drop-shadow-lg">
+            <span className="text-6xl drop-shadow-lg animate-pulse">🏆</span>
+            <span className="bg-gradient-to-r from-yellow-500 via-amber-400 to-orange-500 bg-clip-text text-transparent" style={{ backgroundSize: '200% auto', animation: 'gradient 3s ease infinite' }}>Trophy Case</span>
+          </h2>
+          <style jsx>{`
+            @keyframes gradient {
+              0%, 100% { background-position: 0% 50%; }
+              50% { background-position: 100% 50%; }
+            }
+          `}</style>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Championship Trophy */}
+            <div>
+              <h3 className="text-2xl font-bold mb-4 text-center flex items-center justify-center space-x-2">
+                <span className="text-3xl">🏆</span>
+                <span className="bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-600 bg-clip-text text-transparent">Championship</span>
+              </h3>
+              <div className="flex flex-col items-center">
+                <div className="relative w-full max-w-2xl">
+                  <img
+                    src="/images/championship-trophy.png"
+                    alt="Championship Trophy"
+                    className="w-full h-auto mt-8"
+                    style={{ mixBlendMode: 'multiply', opacity: 0.95 }}
+                  />
+                  <div className="absolute bottom-[27%] left-[18%] right-[18%] max-h-[30%]">
+                    <div
+                      className="grid grid-cols-3 gap-x-6 gap-y-0 p-4 auto-rows-min"
+                      style={{ gridAutoFlow: 'column', gridTemplateRows: `repeat(${Math.ceil(championshipTrophyData.length / 3)}, minmax(0, 1fr))` }}
+                    >
+                      {championshipTrophyData.map((champ, index) => (
+                        <div key={index} className="text-left">
+                          <span className="text-amber-200 font-bold text-[8px] drop-shadow-lg whitespace-nowrap" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
+                            {champ.year} - {champ.owner}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Toilet Bowl Trophy */}
+            <div>
+              <h3 className="text-2xl font-bold mb-4 text-center flex items-center justify-center space-x-2">
+                <span className="text-3xl">💩</span>
+                <span className="bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600 bg-clip-text text-transparent">Toilet Bowl</span>
+              </h3>
+              <div className="flex flex-col items-center">
+                <div className="relative w-full max-w-2xl">
+                  <img
+                    src="/images/toilet-bowl-trophy.png"
+                    alt="Toilet Bowl Trophy"
+                    className="w-full h-auto"
+                    style={{ mixBlendMode: 'multiply', opacity: 0.95 }}
+                  />
+                  <div className="absolute bottom-[24%] left-[18%] right-[18%] max-h-[30%]">
+                    <div
+                      className="grid grid-cols-3 gap-x-6 gap-y-0 p-4 auto-rows-min"
+                      style={{ gridAutoFlow: 'column', gridTemplateRows: `repeat(${Math.ceil(toiletBowlTrophyData.length / 3)}, minmax(0, 1fr))` }}
+                    >
+                      {toiletBowlTrophyData.map((bowl, index) => (
+                        <div key={index} className="text-left">
+                          <span className="text-amber-200 font-bold text-[8px] drop-shadow-lg whitespace-nowrap" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
+                            {bowl.year} - {bowl.owner}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
