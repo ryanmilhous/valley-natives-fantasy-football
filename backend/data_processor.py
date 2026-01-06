@@ -149,8 +149,9 @@ class FantasyDataProcessor:
                 if team['final_standing'] == 1:
                     team_info['championships'] += 1
 
-                # Check if made playoffs (has playoff_seed)
-                if team.get('playoff_seed'):
+                # Check if made playoffs (top 6 teams in regular season standing)
+                # Skip 2006 as we don't have complete data for that year
+                if year != 2006 and team['standing'] <= 6:
                     team_info['playoff_appearances'] += 1
 
         # Convert to final format
@@ -253,7 +254,9 @@ class FantasyDataProcessor:
                     owner_info['toilet_bowl'] += 1
                     owner_info['toilet_bowl_years'].append(year)
 
-                if team.get('playoff_seed'):
+                # Count playoff appearances (top 6 teams in regular season standing)
+                # Skip 2006 as we don't have complete data for that year
+                if year != 2006 and team['standing'] <= 6:
                     owner_info['playoff_appearances'] += 1
 
         # Convert to final format

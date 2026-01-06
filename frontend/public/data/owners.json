@@ -279,7 +279,7 @@
       "second_place": 1,
       "third_place": 2,
       "toilet_bowl": 1,
-      "playoff_appearances": 0,
+      "playoff_appearances": 4,
       "championship_years": [
         2006
       ],
@@ -296,7 +296,7 @@
       "ranking_points": 11,
       "toilet_bowl_pct": 5.0,
       "top_3_pct": 20.0,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 20.0
     }
   },
   "Chris Vitale": {
@@ -579,7 +579,7 @@
       "second_place": 3,
       "third_place": 1,
       "toilet_bowl": 2,
-      "playoff_appearances": 0,
+      "playoff_appearances": 8,
       "championship_years": [
         2020
       ],
@@ -598,7 +598,7 @@
       "ranking_points": 15,
       "toilet_bowl_pct": 10.0,
       "top_3_pct": 25.0,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 40.0
     }
   },
   "Jamie Coffis": {
@@ -881,7 +881,7 @@
       "second_place": 1,
       "third_place": 2,
       "toilet_bowl": 1,
-      "playoff_appearances": 0,
+      "playoff_appearances": 12,
       "championship_years": [
         2012,
         2017
@@ -899,7 +899,7 @@
       "ranking_points": 18,
       "toilet_bowl_pct": 5.0,
       "top_3_pct": 25.0,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 60.0
     }
   },
   "Garrett Ulrich": {
@@ -1182,7 +1182,7 @@
       "second_place": 2,
       "third_place": 2,
       "toilet_bowl": 4,
-      "playoff_appearances": 0,
+      "playoff_appearances": 10,
       "championship_years": [
         2009,
         2014,
@@ -1205,7 +1205,7 @@
       "ranking_points": 25,
       "toilet_bowl_pct": 20.0,
       "top_3_pct": 35.0,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 50.0
     }
   },
   "Tanner Clark": {
@@ -1558,7 +1558,7 @@
       "second_place": 2,
       "third_place": 2,
       "toilet_bowl": 2,
-      "playoff_appearances": 0,
+      "playoff_appearances": 11,
       "championship_years": [],
       "second_place_years": [
         2014,
@@ -1575,7 +1575,7 @@
       "ranking_points": 6,
       "toilet_bowl_pct": 10.0,
       "top_3_pct": 20.0,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 55.0
     }
   },
   "Peter Kent-Stoll": {
@@ -1624,7 +1624,7 @@
       "second_place": 0,
       "third_place": 0,
       "toilet_bowl": 0,
-      "playoff_appearances": 0,
+      "playoff_appearances": 1,
       "championship_years": [],
       "second_place_years": [],
       "third_place_years": [],
@@ -1632,7 +1632,7 @@
       "ranking_points": 0,
       "toilet_bowl_pct": 0.0,
       "top_3_pct": 0.0,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 50.0
     }
   },
   "Dylan Andrews": {
@@ -1681,7 +1681,7 @@
       "second_place": 0,
       "third_place": 0,
       "toilet_bowl": 0,
-      "playoff_appearances": 0,
+      "playoff_appearances": 1,
       "championship_years": [],
       "second_place_years": [],
       "third_place_years": [],
@@ -1689,7 +1689,7 @@
       "ranking_points": 0,
       "toilet_bowl_pct": 0.0,
       "top_3_pct": 0.0,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 50.0
     }
   },
   "Tyler Fullerton": {
@@ -1829,7 +1829,7 @@
       "second_place": 0,
       "third_place": 0,
       "toilet_bowl": 1,
-      "playoff_appearances": 0,
+      "playoff_appearances": 3,
       "championship_years": [
         2008,
         2010
@@ -1842,7 +1842,7 @@
       "ranking_points": 13,
       "toilet_bowl_pct": 11.1,
       "top_3_pct": 22.2,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 33.3
     }
   },
   "Brendan Romele": {
@@ -2125,7 +2125,7 @@
       "second_place": 2,
       "third_place": 2,
       "toilet_bowl": 1,
-      "playoff_appearances": 0,
+      "playoff_appearances": 9,
       "championship_years": [],
       "second_place_years": [
         2011,
@@ -2141,7 +2141,7 @@
       "ranking_points": 7,
       "toilet_bowl_pct": 5.0,
       "top_3_pct": 20.0,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 45.0
     }
   },
   "Kyle Morris": {
@@ -2346,7 +2346,7 @@
       "second_place": 0,
       "third_place": 0,
       "toilet_bowl": 1,
-      "playoff_appearances": 0,
+      "playoff_appearances": 4,
       "championship_years": [],
       "second_place_years": [],
       "third_place_years": [],
@@ -2356,7 +2356,7 @@
       "ranking_points": -1,
       "toilet_bowl_pct": 7.1,
       "top_3_pct": 0.0,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 28.6
     }
   },
   "Jeremy Settles": {
@@ -2626,7 +2626,7 @@
       "second_place": 2,
       "third_place": 1,
       "toilet_bowl": 3,
-      "playoff_appearances": 0,
+      "playoff_appearances": 10,
       "championship_years": [
         2007,
         2013,
@@ -2647,7 +2647,7 @@
       "ranking_points": 25,
       "toilet_bowl_pct": 15.8,
       "top_3_pct": 31.6,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 52.6
     }
   },
   "Nick Smielak": {
@@ -2904,7 +2904,7 @@
       "second_place": 3,
       "third_place": 2,
       "toilet_bowl": 0,
-      "playoff_appearances": 0,
+      "playoff_appearances": 11,
       "championship_years": [
         2011
       ],
@@ -2921,7 +2921,7 @@
       "ranking_points": 18,
       "toilet_bowl_pct": 0.0,
       "top_3_pct": 33.3,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 61.1
     }
   },
   "Brian Vitale": {
@@ -3048,7 +3048,7 @@
       "second_place": 1,
       "third_place": 0,
       "toilet_bowl": 1,
-      "playoff_appearances": 0,
+      "playoff_appearances": 3,
       "championship_years": [],
       "second_place_years": [
         2013
@@ -3060,7 +3060,7 @@
       "ranking_points": 2,
       "toilet_bowl_pct": 12.5,
       "top_3_pct": 12.5,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 37.5
     }
   },
   "Greg Swenson": {
@@ -3304,7 +3304,7 @@
       "second_place": 1,
       "third_place": 3,
       "toilet_bowl": 1,
-      "playoff_appearances": 0,
+      "playoff_appearances": 10,
       "championship_years": [
         2018
       ],
@@ -3322,7 +3322,7 @@
       "ranking_points": 12,
       "toilet_bowl_pct": 5.9,
       "top_3_pct": 29.4,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 58.8
     }
   },
   "Ben Beck": {
@@ -3514,7 +3514,7 @@
       "second_place": 0,
       "third_place": 0,
       "toilet_bowl": 0,
-      "playoff_appearances": 0,
+      "playoff_appearances": 5,
       "championship_years": [
         2016,
         2019,
@@ -3526,7 +3526,7 @@
       "ranking_points": 21,
       "toilet_bowl_pct": 0.0,
       "top_3_pct": 23.1,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 38.5
     }
   },
   "Kyle Poppen": {
@@ -3731,7 +3731,7 @@
       "second_place": 1,
       "third_place": 0,
       "toilet_bowl": 1,
-      "playoff_appearances": 0,
+      "playoff_appearances": 4,
       "championship_years": [],
       "second_place_years": [
         2025
@@ -3743,7 +3743,7 @@
       "ranking_points": 2,
       "toilet_bowl_pct": 7.1,
       "top_3_pct": 7.1,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 28.6
     }
   },
   "Rory McKee": {
@@ -3896,7 +3896,7 @@
       "second_place": 0,
       "third_place": 1,
       "toilet_bowl": 0,
-      "playoff_appearances": 0,
+      "playoff_appearances": 4,
       "championship_years": [
         2025
       ],
@@ -3908,7 +3908,7 @@
       "ranking_points": 8,
       "toilet_bowl_pct": 0.0,
       "top_3_pct": 20.0,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 40.0
     }
   },
   "Bryan Whitaker": {
@@ -4074,7 +4074,7 @@
       "second_place": 0,
       "third_place": 0,
       "toilet_bowl": 0,
-      "playoff_appearances": 0,
+      "playoff_appearances": 1,
       "championship_years": [
         2023
       ],
@@ -4084,7 +4084,7 @@
       "ranking_points": 7,
       "toilet_bowl_pct": 0.0,
       "top_3_pct": 9.1,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 9.1
     }
   },
   "Ryan Milhous": {
@@ -4185,7 +4185,7 @@
       "second_place": 1,
       "third_place": 1,
       "toilet_bowl": 0,
-      "playoff_appearances": 0,
+      "playoff_appearances": 3,
       "championship_years": [
         2022
       ],
@@ -4199,7 +4199,7 @@
       "ranking_points": 11,
       "toilet_bowl_pct": 0.0,
       "top_3_pct": 50.0,
-      "playoff_appearance_pct": 0.0
+      "playoff_appearance_pct": 50.0
     }
   },
   "Steve Keller": {
