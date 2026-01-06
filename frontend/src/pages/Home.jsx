@@ -15,7 +15,7 @@ const AchievementBadge = ({ emoji, count, years, bgColor, textColor, borderColor
   return (
     <div className="relative inline-block">
       <span
-        className={`inline-flex items-center space-x-1 px-3 py-1 rounded-full ${bgColor} ${textColor} font-bold border ${borderColor} hover:opacity-80 transition-all cursor-pointer`}
+        className={`inline-flex items-center space-x-1 px-2 py-1 rounded-full ${bgColor} ${textColor} font-bold border ${borderColor} hover:opacity-80 transition-all cursor-pointer`}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
       >
@@ -162,6 +162,10 @@ function Home() {
           aValue = a.all_time.third_place;
           bValue = b.all_time.third_place;
           break;
+        case 'playoffAppearances':
+          aValue = a.all_time.playoff_appearances || 0;
+          bValue = b.all_time.playoff_appearances || 0;
+          break;
         case 'toiletBowl':
           aValue = a.all_time.toilet_bowl;
           bValue = b.all_time.toilet_bowl;
@@ -183,6 +187,10 @@ function Home() {
         case 'top3Pct':
           aValue = a.all_time.top_3_pct || 0;
           bValue = b.all_time.top_3_pct || 0;
+          break;
+        case 'playoffAppearancePct':
+          aValue = a.all_time.playoff_appearance_pct || 0;
+          bValue = b.all_time.playoff_appearance_pct || 0;
           break;
         default:
           aValue = a.all_time.ranking_points || 0;
@@ -376,7 +384,7 @@ function Home() {
             <table className="min-w-full text-sm">
               <thead>
                 <tr className="border-b border-white/10">
-                  <th className="px-2 py-3 text-left text-xs font-bold text-purple-400 uppercase">#</th>
+                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase">#</th>
                   <th
                     onClick={() => handleSort('owner')}
                     className="px-2 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
@@ -385,67 +393,79 @@ function Home() {
                   </th>
                   <th
                     onClick={() => handleSort('seasons')}
-                    className="px-2 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
                   >
                     Seas<SortIcon column="seasons" />
                   </th>
                   <th
                     onClick={() => handleSort('wins')}
-                    className="px-2 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
                   >
                     W<SortIcon column="wins" />
                   </th>
                   <th
                     onClick={() => handleSort('losses')}
-                    className="px-2 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
                   >
                     L<SortIcon column="losses" />
                   </th>
                   <th
                     onClick={() => handleSort('winPct')}
-                    className="px-2 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
                   >
                     W%<SortIcon column="winPct" />
                   </th>
                   <th
                     onClick={() => handleSort('championships')}
-                    className="px-2 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
                   >
                     1st<SortIcon column="championships" />
                   </th>
                   <th
                     onClick={() => handleSort('secondPlace')}
-                    className="px-2 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
                   >
                     2nd<SortIcon column="secondPlace" />
                   </th>
                   <th
                     onClick={() => handleSort('thirdPlace')}
-                    className="px-2 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
                   >
                     3rd<SortIcon column="thirdPlace" />
                   </th>
                   <th
+                    onClick={() => handleSort('playoffAppearances')}
+                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                  >
+                    PO<SortIcon column="playoffAppearances" />
+                  </th>
+                  <th
                     onClick={() => handleSort('toiletBowl')}
-                    className="px-2 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
                   >
                     🚽<SortIcon column="toiletBowl" />
                   </th>
                   <th
                     onClick={() => handleSort('toiletBowlPct')}
-                    className="px-2 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
                   >
                     🚽%<SortIcon column="toiletBowlPct" />
                   </th>
                   <th
                     onClick={() => handleSort('top3Pct')}
-                    className="px-2 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
                   >
                     T3%<SortIcon column="top3Pct" />
                   </th>
                   <th
+                    onClick={() => handleSort('playoffAppearancePct')}
+                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                  >
+                    PO%<SortIcon column="playoffAppearancePct" />
+                  </th>
+                  <th
                     onClick={() => handleSort('rankingPoints')}
-                    className="px-2 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
                   >
                     Pts<SortIcon column="rankingPoints" />
                   </th>
@@ -466,7 +486,7 @@ function Home() {
 
                     return (
                       <tr key={owner.owner} className="hover:bg-white/5 transition-colors duration-200 group">
-                        <td className="px-2 py-3 whitespace-nowrap">
+                        <td className="px-1 py-3 whitespace-nowrap">
                           <span className={`text-sm font-bold ${
                             index === 0 ? 'text-yellow-400' :
                             index === 1 ? 'text-gray-300' :
@@ -480,19 +500,19 @@ function Home() {
                           <div className="text-white font-semibold text-sm">{owner.owner}</div>
                           <div className="text-xs text-white/50">{yearRange}</div>
                         </td>
-                        <td className="px-2 py-3 whitespace-nowrap text-purple-400 font-semibold">
+                        <td className="px-1 py-3 whitespace-nowrap text-purple-400 font-semibold">
                           {owner.seasons_played}
                         </td>
-                        <td className="px-2 py-3 whitespace-nowrap text-green-400 font-semibold">
+                        <td className="px-1 py-3 whitespace-nowrap text-green-400 font-semibold">
                           {owner.all_time.wins}
                         </td>
-                        <td className="px-2 py-3 whitespace-nowrap text-red-400 font-semibold">
+                        <td className="px-1 py-3 whitespace-nowrap text-red-400 font-semibold">
                           {owner.all_time.losses}
                         </td>
-                        <td className="px-2 py-3 whitespace-nowrap text-blue-400 font-semibold">
+                        <td className="px-1 py-3 whitespace-nowrap text-blue-400 font-semibold">
                           {winPct}%
                         </td>
-                        <td className="px-2 py-3 whitespace-nowrap">
+                        <td className="px-1 py-3 whitespace-nowrap">
                           <AchievementBadge
                             emoji="🏆"
                             count={owner.all_time.championships}
@@ -502,7 +522,7 @@ function Home() {
                             borderColor="border-yellow-500/30"
                           />
                         </td>
-                        <td className="px-2 py-3 whitespace-nowrap">
+                        <td className="px-1 py-3 whitespace-nowrap">
                           <AchievementBadge
                             emoji="🥈"
                             count={owner.all_time.second_place}
@@ -512,7 +532,7 @@ function Home() {
                             borderColor="border-gray-400/30"
                           />
                         </td>
-                        <td className="px-2 py-3 whitespace-nowrap">
+                        <td className="px-1 py-3 whitespace-nowrap">
                           <AchievementBadge
                             emoji="🥉"
                             count={owner.all_time.third_place}
@@ -522,7 +542,10 @@ function Home() {
                             borderColor="border-orange-600/30"
                           />
                         </td>
-                        <td className="px-2 py-3 whitespace-nowrap">
+                        <td className="px-1 py-3 whitespace-nowrap text-blue-400 font-semibold text-sm">
+                          {owner.all_time.playoff_appearances || 0}
+                        </td>
+                        <td className="px-1 py-3 whitespace-nowrap">
                           <AchievementBadge
                             emoji="🚽"
                             count={owner.all_time.toilet_bowl}
@@ -532,13 +555,16 @@ function Home() {
                             borderColor="border-brown-600/30"
                           />
                         </td>
-                        <td className="px-2 py-3 whitespace-nowrap text-red-400 font-semibold text-sm">
+                        <td className="px-1 py-3 whitespace-nowrap text-red-400 font-semibold text-sm">
                           {owner.all_time.toilet_bowl_pct || 0}%
                         </td>
-                        <td className="px-2 py-3 whitespace-nowrap text-green-400 font-semibold text-sm">
+                        <td className="px-1 py-3 whitespace-nowrap text-green-400 font-semibold text-sm">
                           {owner.all_time.top_3_pct || 0}%
                         </td>
-                        <td className="px-2 py-3 whitespace-nowrap">
+                        <td className="px-1 py-3 whitespace-nowrap text-cyan-400 font-semibold text-sm">
+                          {owner.all_time.playoff_appearance_pct || 0}%
+                        </td>
+                        <td className="px-1 py-3 whitespace-nowrap">
                           <span className="inline-flex items-center px-2 py-1 rounded-full bg-purple-500/20 text-purple-300 font-bold border border-purple-500/30 text-xs">
                             {owner.all_time.ranking_points || 0}
                           </span>

@@ -268,6 +268,7 @@ class FantasyDataProcessor:
             # Calculate percentages
             toilet_bowl_pct = round((info['toilet_bowl'] / seasons_played) * 100, 1) if seasons_played > 0 else 0
             top_3_pct = round(((info['championships'] + info['second_place'] + info['third_place']) / seasons_played) * 100, 1) if seasons_played > 0 else 0
+            playoff_appearance_pct = round((info['playoff_appearances'] / seasons_played) * 100, 1) if seasons_played > 0 else 0
 
             self.processed_data['owners'][owner_name] = {
                 'owner': owner_name,
@@ -294,7 +295,8 @@ class FantasyDataProcessor:
                     'toilet_bowl_years': sorted(info['toilet_bowl_years']),
                     'ranking_points': ranking_points,
                     'toilet_bowl_pct': toilet_bowl_pct,
-                    'top_3_pct': top_3_pct
+                    'top_3_pct': top_3_pct,
+                    'playoff_appearance_pct': playoff_appearance_pct
                 }
             }
 

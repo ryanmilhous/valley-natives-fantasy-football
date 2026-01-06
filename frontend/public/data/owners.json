@@ -295,7 +295,8 @@
       ],
       "ranking_points": 11,
       "toilet_bowl_pct": 5.0,
-      "top_3_pct": 20.0
+      "top_3_pct": 20.0,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Chris Vitale": {
@@ -596,7 +597,8 @@
       ],
       "ranking_points": 15,
       "toilet_bowl_pct": 10.0,
-      "top_3_pct": 25.0
+      "top_3_pct": 25.0,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Jamie Coffis": {
@@ -896,7 +898,8 @@
       ],
       "ranking_points": 18,
       "toilet_bowl_pct": 5.0,
-      "top_3_pct": 25.0
+      "top_3_pct": 25.0,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Garrett Ulrich": {
@@ -1201,7 +1204,8 @@
       ],
       "ranking_points": 25,
       "toilet_bowl_pct": 20.0,
-      "top_3_pct": 35.0
+      "top_3_pct": 35.0,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Tanner Clark": {
@@ -1270,7 +1274,8 @@
       "toilet_bowl_years": [],
       "ranking_points": 0,
       "toilet_bowl_pct": 0.0,
-      "top_3_pct": 0.0
+      "top_3_pct": 0.0,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Jacob Luna": {
@@ -1569,7 +1574,8 @@
       ],
       "ranking_points": 6,
       "toilet_bowl_pct": 10.0,
-      "top_3_pct": 20.0
+      "top_3_pct": 20.0,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Peter Kent-Stoll": {
@@ -1625,7 +1631,8 @@
       "toilet_bowl_years": [],
       "ranking_points": 0,
       "toilet_bowl_pct": 0.0,
-      "top_3_pct": 0.0
+      "top_3_pct": 0.0,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Dylan Andrews": {
@@ -1681,7 +1688,8 @@
       "toilet_bowl_years": [],
       "ranking_points": 0,
       "toilet_bowl_pct": 0.0,
-      "top_3_pct": 0.0
+      "top_3_pct": 0.0,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Tyler Fullerton": {
@@ -1833,7 +1841,8 @@
       ],
       "ranking_points": 13,
       "toilet_bowl_pct": 11.1,
-      "top_3_pct": 22.2
+      "top_3_pct": 22.2,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Brendan Romele": {
@@ -2131,7 +2140,8 @@
       ],
       "ranking_points": 7,
       "toilet_bowl_pct": 5.0,
-      "top_3_pct": 20.0
+      "top_3_pct": 20.0,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Kyle Morris": {
@@ -2345,7 +2355,8 @@
       ],
       "ranking_points": -1,
       "toilet_bowl_pct": 7.1,
-      "top_3_pct": 0.0
+      "top_3_pct": 0.0,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Jeremy Settles": {
@@ -2635,7 +2646,8 @@
       ],
       "ranking_points": 25,
       "toilet_bowl_pct": 15.8,
-      "top_3_pct": 31.6
+      "top_3_pct": 31.6,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Nick Smielak": {
@@ -2908,7 +2920,8 @@
       "toilet_bowl_years": [],
       "ranking_points": 18,
       "toilet_bowl_pct": 0.0,
-      "top_3_pct": 33.3
+      "top_3_pct": 33.3,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Brian Vitale": {
@@ -3046,7 +3059,8 @@
       ],
       "ranking_points": 2,
       "toilet_bowl_pct": 12.5,
-      "top_3_pct": 12.5
+      "top_3_pct": 12.5,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Greg Swenson": {
@@ -3307,7 +3321,8 @@
       ],
       "ranking_points": 12,
       "toilet_bowl_pct": 5.9,
-      "top_3_pct": 29.4
+      "top_3_pct": 29.4,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Ben Beck": {
@@ -3510,7 +3525,8 @@
       "toilet_bowl_years": [],
       "ranking_points": 21,
       "toilet_bowl_pct": 0.0,
-      "top_3_pct": 23.1
+      "top_3_pct": 23.1,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Kyle Poppen": {
@@ -3726,7 +3742,8 @@
       ],
       "ranking_points": 2,
       "toilet_bowl_pct": 7.1,
-      "top_3_pct": 7.1
+      "top_3_pct": 7.1,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Rory McKee": {
@@ -3890,7 +3907,8 @@
       "toilet_bowl_years": [],
       "ranking_points": 8,
       "toilet_bowl_pct": 0.0,
-      "top_3_pct": 20.0
+      "top_3_pct": 20.0,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Bryan Whitaker": {
@@ -4065,7 +4083,8 @@
       "toilet_bowl_years": [],
       "ranking_points": 7,
       "toilet_bowl_pct": 0.0,
-      "top_3_pct": 9.1
+      "top_3_pct": 9.1,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Ryan Milhous": {
@@ -4179,7 +4198,8 @@
       "toilet_bowl_years": [],
       "ranking_points": 11,
       "toilet_bowl_pct": 0.0,
-      "top_3_pct": 50.0
+      "top_3_pct": 50.0,
+      "playoff_appearance_pct": 0.0
     }
   },
   "Steve Keller": {
@@ -4222,7 +4242,8 @@
       "toilet_bowl_years": [],
       "ranking_points": 0,
       "toilet_bowl_pct": 0.0,
-      "top_3_pct": 0.0
+      "top_3_pct": 0.0,
+      "playoff_appearance_pct": 0.0
     }
   }
 }
