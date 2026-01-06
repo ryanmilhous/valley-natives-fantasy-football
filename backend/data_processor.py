@@ -1065,7 +1065,8 @@ class FantasyDataProcessor:
             if key in player_positions:
                 pick['position'] = player_positions[key]
                 enriched_count += 1
-            else:
+            elif 'position' not in pick or not pick.get('position'):
+                # Only set to None if position doesn't already exist
                 pick['position'] = None  # Position unknown
 
         print(f"Enriched {enriched_count}/{len(self.processed_data['draft'])} draft picks with position data")

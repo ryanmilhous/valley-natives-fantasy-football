@@ -246,6 +246,10 @@ class SleeperExtractor:
         draft_picks = []
 
         if drafts:
+            # Fetch players map to get position data
+            print("  Fetching players map for position data...")
+            players_map = self.get_players_map()
+
             draft_id = drafts[0].get('draft_id')
             picks = self.get_draft_picks(draft_id)
 
@@ -253,10 +257,15 @@ class SleeperExtractor:
                 metadata = pick.get('metadata', {})
                 roster_id = pick.get('roster_id')
                 team_info = next((t for t in teams if t['team_id'] == roster_id), {})
+                player_id = pick.get('player_id')
+
+                # Look up player position from players map
+                player_data = players_map.get(player_id, {})
+                position = player_data.get('position', '')
 
                 draft_picks.append({
                     'player_name': f"{metadata.get('first_name', '')} {metadata.get('last_name', '')}".strip(),
-                    'player_id': pick.get('player_id'),
+                    'player_id': player_id,
                     'team_id': roster_id,
                     'team_name': team_info.get('team_name'),
                     'round_num': pick.get('round', 0),
@@ -264,7 +273,7 @@ class SleeperExtractor:
                     'overall_pick': pick.get('pick_no', 0),
                     'bid_amount': int(metadata.get('amount', 0)),
                     'keeper_status': pick.get('is_keeper', False),
-                    'position': metadata.get('position', '')
+                    'position': position
                 })
 
         print(f"  Processed {len(draft_picks)} draft picks")
