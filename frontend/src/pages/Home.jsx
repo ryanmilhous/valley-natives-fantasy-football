@@ -4,6 +4,31 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 import ChampionshipTrophy from '../components/ChampionshipTrophy';
 import ToiletBowlTrophy from '../components/ToiletBowlTrophy';
 
+// Custom tooltip component for table headers
+const HeaderWithTooltip = ({ children, tooltip, onClick, sortColumn }) => {
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  return (
+    <div className="relative inline-block">
+      <div
+        onMouseEnter={() => setShowTooltip(true)}
+        onMouseLeave={() => setShowTooltip(false)}
+        onClick={onClick}
+      >
+        {children}
+      </div>
+      {showTooltip && (
+        <div className="absolute z-50 bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-slate-800 text-white text-xs rounded-lg shadow-lg border border-white/20 whitespace-nowrap pointer-events-none">
+          {tooltip}
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
+            <div className="border-4 border-transparent border-t-slate-800"></div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 // Custom tooltip component for achievement badges
 const AchievementBadge = ({ emoji, count, years, bgColor, textColor, borderColor }) => {
   const [showTooltip, setShowTooltip] = useState(false);
@@ -287,104 +312,78 @@ function Home() {
             <table className="min-w-full text-sm">
               <thead>
                 <tr className="border-b border-white/10">
-                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase" title="Rank">#</th>
-                  <th
-                    onClick={() => handleSort('owner')}
-                    className="px-2 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
-                    title="Owner Name"
-                  >
-                    Owner<SortIcon column="owner" />
+                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase">
+                    <HeaderWithTooltip tooltip="Rank">#</HeaderWithTooltip>
                   </th>
-                  <th
-                    onClick={() => handleSort('seasons')}
-                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
-                    title="Seasons Played"
-                  >
-                    Seas<SortIcon column="seasons" />
+                  <th className="px-2 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+                    <HeaderWithTooltip tooltip="Owner Name" onClick={() => handleSort('owner')}>
+                      Owner<SortIcon column="owner" />
+                    </HeaderWithTooltip>
                   </th>
-                  <th
-                    onClick={() => handleSort('wins')}
-                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
-                    title="Wins (Regular Season)"
-                  >
-                    W<SortIcon column="wins" />
+                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+                    <HeaderWithTooltip tooltip="Seasons Played" onClick={() => handleSort('seasons')}>
+                      Seas<SortIcon column="seasons" />
+                    </HeaderWithTooltip>
                   </th>
-                  <th
-                    onClick={() => handleSort('losses')}
-                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
-                    title="Losses (Regular Season)"
-                  >
-                    L<SortIcon column="losses" />
+                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+                    <HeaderWithTooltip tooltip="Wins (Regular Season)" onClick={() => handleSort('wins')}>
+                      W<SortIcon column="wins" />
+                    </HeaderWithTooltip>
                   </th>
-                  <th
-                    onClick={() => handleSort('winPct')}
-                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
-                    title="Win Percentage (Regular Season)"
-                  >
-                    W%<SortIcon column="winPct" />
+                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+                    <HeaderWithTooltip tooltip="Losses (Regular Season)" onClick={() => handleSort('losses')}>
+                      L<SortIcon column="losses" />
+                    </HeaderWithTooltip>
                   </th>
-                  <th
-                    onClick={() => handleSort('championships')}
-                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
-                    title="Championships (1st Place Finishes)"
-                  >
-                    1st<SortIcon column="championships" />
+                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+                    <HeaderWithTooltip tooltip="Win Percentage (Regular Season)" onClick={() => handleSort('winPct')}>
+                      W%<SortIcon column="winPct" />
+                    </HeaderWithTooltip>
                   </th>
-                  <th
-                    onClick={() => handleSort('secondPlace')}
-                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
-                    title="Second Place Finishes"
-                  >
-                    2nd<SortIcon column="secondPlace" />
+                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+                    <HeaderWithTooltip tooltip="Championships (1st Place Finishes)" onClick={() => handleSort('championships')}>
+                      1st<SortIcon column="championships" />
+                    </HeaderWithTooltip>
                   </th>
-                  <th
-                    onClick={() => handleSort('thirdPlace')}
-                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
-                    title="Third Place Finishes"
-                  >
-                    3rd<SortIcon column="thirdPlace" />
+                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+                    <HeaderWithTooltip tooltip="Second Place Finishes" onClick={() => handleSort('secondPlace')}>
+                      2nd<SortIcon column="secondPlace" />
+                    </HeaderWithTooltip>
                   </th>
-                  <th
-                    onClick={() => handleSort('playoffAppearances')}
-                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
-                    title="Playoff Appearances"
-                  >
-                    PO<SortIcon column="playoffAppearances" />
+                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+                    <HeaderWithTooltip tooltip="Third Place Finishes" onClick={() => handleSort('thirdPlace')}>
+                      3rd<SortIcon column="thirdPlace" />
+                    </HeaderWithTooltip>
                   </th>
-                  <th
-                    onClick={() => handleSort('toiletBowl')}
-                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
-                    title="Toilet Bowl Finishes (Last Place)"
-                  >
-                    🚽<SortIcon column="toiletBowl" />
+                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+                    <HeaderWithTooltip tooltip="Playoff Appearances" onClick={() => handleSort('playoffAppearances')}>
+                      PO<SortIcon column="playoffAppearances" />
+                    </HeaderWithTooltip>
                   </th>
-                  <th
-                    onClick={() => handleSort('toiletBowlPct')}
-                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
-                    title="Toilet Bowl Percentage"
-                  >
-                    🚽%<SortIcon column="toiletBowlPct" />
+                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+                    <HeaderWithTooltip tooltip="Toilet Bowl Finishes (Last Place)" onClick={() => handleSort('toiletBowl')}>
+                      🚽<SortIcon column="toiletBowl" />
+                    </HeaderWithTooltip>
                   </th>
-                  <th
-                    onClick={() => handleSort('top3Pct')}
-                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
-                    title="Top 3 Finish Percentage (1st, 2nd, or 3rd)"
-                  >
-                    T3%<SortIcon column="top3Pct" />
+                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+                    <HeaderWithTooltip tooltip="Toilet Bowl Percentage" onClick={() => handleSort('toiletBowlPct')}>
+                      🚽%<SortIcon column="toiletBowlPct" />
+                    </HeaderWithTooltip>
                   </th>
-                  <th
-                    onClick={() => handleSort('playoffAppearancePct')}
-                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
-                    title="Playoff Appearance Percentage - Excludes 2006 from calculation (except Kellen & Chris who were 1st/2nd)"
-                  >
-                    PO%<SortIcon column="playoffAppearancePct" />
+                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+                    <HeaderWithTooltip tooltip="Top 3 Finish Percentage (1st, 2nd, or 3rd)" onClick={() => handleSort('top3Pct')}>
+                      T3%<SortIcon column="top3Pct" />
+                    </HeaderWithTooltip>
                   </th>
-                  <th
-                    onClick={() => handleSort('rankingPoints')}
-                    className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
-                    title="Ranking Points (+7 for 1st, +3 for 2nd, +1 for 3rd, -1 for Toilet Bowl)"
-                  >
-                    Pts<SortIcon column="rankingPoints" />
+                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+                    <HeaderWithTooltip tooltip="Playoff Appearance Percentage - Excludes 2006 from calculation (except Kellen & Chris who were 1st/2nd)" onClick={() => handleSort('playoffAppearancePct')}>
+                      PO%<SortIcon column="playoffAppearancePct" />
+                    </HeaderWithTooltip>
+                  </th>
+                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+                    <HeaderWithTooltip tooltip="Ranking Points (+7 for 1st, +3 for 2nd, +1 for 3rd, -1 for Toilet Bowl)" onClick={() => handleSort('rankingPoints')}>
+                      Pts<SortIcon column="rankingPoints" />
+                    </HeaderWithTooltip>
                   </th>
                 </tr>
               </thead>
