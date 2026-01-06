@@ -287,88 +287,102 @@ function Home() {
             <table className="min-w-full text-sm">
               <thead>
                 <tr className="border-b border-white/10">
-                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase">#</th>
+                  <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase" title="Rank">#</th>
                   <th
                     onClick={() => handleSort('owner')}
                     className="px-2 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    title="Owner Name"
                   >
                     Owner<SortIcon column="owner" />
                   </th>
                   <th
                     onClick={() => handleSort('seasons')}
                     className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    title="Seasons Played"
                   >
                     Seas<SortIcon column="seasons" />
                   </th>
                   <th
                     onClick={() => handleSort('wins')}
                     className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    title="Wins (Regular Season)"
                   >
                     W<SortIcon column="wins" />
                   </th>
                   <th
                     onClick={() => handleSort('losses')}
                     className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    title="Losses (Regular Season)"
                   >
                     L<SortIcon column="losses" />
                   </th>
                   <th
                     onClick={() => handleSort('winPct')}
                     className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    title="Win Percentage (Regular Season)"
                   >
                     W%<SortIcon column="winPct" />
                   </th>
                   <th
                     onClick={() => handleSort('championships')}
                     className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    title="Championships (1st Place Finishes)"
                   >
                     1st<SortIcon column="championships" />
                   </th>
                   <th
                     onClick={() => handleSort('secondPlace')}
                     className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    title="Second Place Finishes"
                   >
                     2nd<SortIcon column="secondPlace" />
                   </th>
                   <th
                     onClick={() => handleSort('thirdPlace')}
                     className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    title="Third Place Finishes"
                   >
                     3rd<SortIcon column="thirdPlace" />
                   </th>
                   <th
                     onClick={() => handleSort('playoffAppearances')}
                     className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    title="Playoff Appearances"
                   >
                     PO<SortIcon column="playoffAppearances" />
                   </th>
                   <th
                     onClick={() => handleSort('toiletBowl')}
                     className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    title="Toilet Bowl Finishes (Last Place)"
                   >
                     🚽<SortIcon column="toiletBowl" />
                   </th>
                   <th
                     onClick={() => handleSort('toiletBowlPct')}
                     className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    title="Toilet Bowl Percentage"
                   >
                     🚽%<SortIcon column="toiletBowlPct" />
                   </th>
                   <th
                     onClick={() => handleSort('top3Pct')}
                     className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    title="Top 3 Finish Percentage (1st, 2nd, or 3rd)"
                   >
                     T3%<SortIcon column="top3Pct" />
                   </th>
                   <th
                     onClick={() => handleSort('playoffAppearancePct')}
                     className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    title="Playoff Appearance Percentage - Excludes 2006 from calculation (except Kellen & Chris who were 1st/2nd)"
                   >
                     PO%<SortIcon column="playoffAppearancePct" />
                   </th>
                   <th
                     onClick={() => handleSort('rankingPoints')}
                     className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                    title="Ranking Points (+7 for 1st, +3 for 2nd, +1 for 3rd, -1 for Toilet Bowl)"
                   >
                     Pts<SortIcon column="rankingPoints" />
                   </th>

@@ -255,8 +255,12 @@ class FantasyDataProcessor:
                     owner_info['toilet_bowl_years'].append(year)
 
                 # Count playoff appearances (top 6 teams in regular season standing)
-                # Skip 2006 as we don't have complete data for that year
-                if year != 2006 and team['standing'] <= 6:
+                # Special handling for 2006: only count for Kellen Coffis (1st) and Chris Vitale (2nd)
+                if year == 2006:
+                    # Only count 2006 playoffs for 1st and 2nd place (Kellen and Chris)
+                    if team['final_standing'] in [1, 2]:
+                        owner_info['playoff_appearances'] += 1
+                elif team['standing'] <= 6:
                     owner_info['playoff_appearances'] += 1
 
         # Convert to final format
@@ -271,7 +275,13 @@ class FantasyDataProcessor:
             # Calculate percentages
             toilet_bowl_pct = round((info['toilet_bowl'] / seasons_played) * 100, 1) if seasons_played > 0 else 0
             top_3_pct = round(((info['championships'] + info['second_place'] + info['third_place']) / seasons_played) * 100, 1) if seasons_played > 0 else 0
-            playoff_appearance_pct = round((info['playoff_appearances'] / seasons_played) * 100, 1) if seasons_played > 0 else 0
+
+            # For playoff appearance %, exclude 2006 from denominator unless owner is Kellen or Chris
+            playoff_seasons_denominator = seasons_played
+            if 2006 in info['years_active'] and owner_name not in ['Kellen Coffis', 'Chris Vitale']:
+                playoff_seasons_denominator = seasons_played - 1
+
+            playoff_appearance_pct = round((info['playoff_appearances'] / playoff_seasons_denominator) * 100, 1) if playoff_seasons_denominator > 0 else 0
 
             self.processed_data['owners'][owner_name] = {
                 'owner': owner_name,

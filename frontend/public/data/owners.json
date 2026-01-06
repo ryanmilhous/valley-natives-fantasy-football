@@ -279,7 +279,7 @@
       "second_place": 1,
       "third_place": 2,
       "toilet_bowl": 1,
-      "playoff_appearances": 4,
+      "playoff_appearances": 5,
       "championship_years": [
         2006
       ],
@@ -296,7 +296,7 @@
       "ranking_points": 11,
       "toilet_bowl_pct": 5.0,
       "top_3_pct": 20.0,
-      "playoff_appearance_pct": 20.0
+      "playoff_appearance_pct": 25.0
     }
   },
   "Chris Vitale": {
@@ -579,7 +579,7 @@
       "second_place": 3,
       "third_place": 1,
       "toilet_bowl": 2,
-      "playoff_appearances": 8,
+      "playoff_appearances": 9,
       "championship_years": [
         2020
       ],
@@ -598,7 +598,7 @@
       "ranking_points": 15,
       "toilet_bowl_pct": 10.0,
       "top_3_pct": 25.0,
-      "playoff_appearance_pct": 40.0
+      "playoff_appearance_pct": 45.0
     }
   },
   "Jamie Coffis": {
@@ -899,7 +899,7 @@
       "ranking_points": 18,
       "toilet_bowl_pct": 5.0,
       "top_3_pct": 25.0,
-      "playoff_appearance_pct": 60.0
+      "playoff_appearance_pct": 63.2
     }
   },
   "Garrett Ulrich": {
@@ -1205,7 +1205,7 @@
       "ranking_points": 25,
       "toilet_bowl_pct": 20.0,
       "top_3_pct": 35.0,
-      "playoff_appearance_pct": 50.0
+      "playoff_appearance_pct": 52.6
     }
   },
   "Tanner Clark": {
@@ -1575,7 +1575,7 @@
       "ranking_points": 6,
       "toilet_bowl_pct": 10.0,
       "top_3_pct": 20.0,
-      "playoff_appearance_pct": 55.0
+      "playoff_appearance_pct": 57.9
     }
   },
   "Peter Kent-Stoll": {
@@ -1632,7 +1632,7 @@
       "ranking_points": 0,
       "toilet_bowl_pct": 0.0,
       "top_3_pct": 0.0,
-      "playoff_appearance_pct": 50.0
+      "playoff_appearance_pct": 100.0
     }
   },
   "Dylan Andrews": {
@@ -1689,7 +1689,7 @@
       "ranking_points": 0,
       "toilet_bowl_pct": 0.0,
       "top_3_pct": 0.0,
-      "playoff_appearance_pct": 50.0
+      "playoff_appearance_pct": 100.0
     }
   },
   "Tyler Fullerton": {
@@ -1842,7 +1842,7 @@
       "ranking_points": 13,
       "toilet_bowl_pct": 11.1,
       "top_3_pct": 22.2,
-      "playoff_appearance_pct": 33.3
+      "playoff_appearance_pct": 37.5
     }
   },
   "Brendan Romele": {
@@ -2141,7 +2141,7 @@
       "ranking_points": 7,
       "toilet_bowl_pct": 5.0,
       "top_3_pct": 20.0,
-      "playoff_appearance_pct": 45.0
+      "playoff_appearance_pct": 47.4
     }
   },
   "Kyle Morris": {
@@ -2356,7 +2356,7 @@
       "ranking_points": -1,
       "toilet_bowl_pct": 7.1,
       "top_3_pct": 0.0,
-      "playoff_appearance_pct": 28.6
+      "playoff_appearance_pct": 30.8
     }
   },
   "Jeremy Settles": {
