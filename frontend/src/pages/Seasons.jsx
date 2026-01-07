@@ -73,6 +73,11 @@ function Seasons() {
       const data = payload[0].payload;
       const playoffInfo = getPlayoffStatus(data.final_standing);
 
+      // Find the max standing for this year to determine last place
+      const yearStandings = standings.filter(s => s.year === data.year);
+      const lastPlaceStanding = Math.max(...yearStandings.map(s => s.standing));
+      const isToiletBowl = data.standing === lastPlaceStanding;
+
       return (
         <div className="bg-slate-900/95 backdrop-blur-xl border border-white/20 rounded-xl p-4 shadow-2xl">
           <p className="text-white font-bold text-lg mb-2">{data.year} Season</p>
@@ -89,6 +94,7 @@ function Seasons() {
           <div className="border-t border-white/10 pt-2 space-y-1">
             <p className="text-purple-400 text-sm">
               Regular Season: <span className="text-white font-semibold">{getOrdinalSuffix(data.standing)} place</span>
+              {isToiletBowl && <span className="ml-2 text-xl">🚽</span>}
             </p>
 
             <div className="flex items-center space-x-2">
@@ -106,13 +112,20 @@ function Seasons() {
 
   const filteredStandings = standings.filter(s => s.year === selectedYear);
 
-  const renderTrophy = (finalStanding) => {
+  const renderTrophy = (finalStanding, regularStanding, year) => {
+    // Check if this is last place in regular season
+    const yearStandings = standings.filter(s => s.year === year);
+    const lastPlaceStanding = Math.max(...yearStandings.map(s => s.standing));
+    const isToiletBowl = regularStanding === lastPlaceStanding;
+
     if (finalStanding === 1) {
       return <span className="text-2xl" title="Champion">🥇</span>;
     } else if (finalStanding === 2) {
       return <span className="text-2xl" title="Runner-up">🥈</span>;
     } else if (finalStanding === 3) {
       return <span className="text-2xl" title="3rd Place">🥉</span>;
+    } else if (isToiletBowl) {
+      return <span className="text-2xl" title="Toilet Bowl (Last Place)">🚽</span>;
     }
     return <span className="text-white/30">-</span>;
   };
@@ -191,7 +204,7 @@ function Seasons() {
             </div>
 
             {/* Summary Stats */}
-            <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="mt-6 grid grid-cols-2 md:grid-cols-5 gap-4">
               <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 p-4 rounded-xl">
                 <div className="text-2xl font-bold text-blue-400">
                   {selectedOwnerForChart.all_time.wins}
@@ -214,7 +227,13 @@ function Seasons() {
                 <div className="text-2xl font-bold text-green-400">
                   {selectedOwnerForChart.all_time.playoff_appearances}
                 </div>
-                <div className="text-sm text-white/70 mt-1">Playoff Apps</div>
+                <div className="text-sm text-white/70 mt-1">Playoff Appearances</div>
+              </div>
+              <div className="bg-gradient-to-br from-orange-500/20 to-orange-600/20 border border-orange-500/30 p-4 rounded-xl">
+                <div className="text-2xl font-bold text-orange-400">
+                  {selectedOwnerForChart.all_time.toilet_bowl}
+                </div>
+                <div className="text-sm text-white/70 mt-1">Toilet Bowls 🚽</div>
               </div>
             </div>
           </div>
@@ -253,7 +272,7 @@ function Seasons() {
                   <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Record</th>
                   <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Points For</th>
                   <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Points Against</th>
-                  <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Playoff Result</th>
+                  <th className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider">Result</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
@@ -278,7 +297,7 @@ function Seasons() {
                       {team.points_against.toFixed(2)}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-center">
-                      {renderTrophy(team.final_standing)}
+                      {renderTrophy(team.final_standing, team.standing, team.year)}
                     </td>
                   </tr>
                 ))}
