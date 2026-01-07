@@ -212,7 +212,7 @@ function Seasons() {
               </div>
               <div className="bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-500/30 p-4 rounded-xl">
                 <div className="text-2xl font-bold text-green-400">
-                  {selectedOwnerForChart.seasons.filter(s => s.final_standing >= 1 && s.final_standing <= 6).length}
+                  {selectedOwnerForChart.all_time.playoff_appearances}
                 </div>
                 <div className="text-sm text-white/70 mt-1">Playoff Apps</div>
               </div>
