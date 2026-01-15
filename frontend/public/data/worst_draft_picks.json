@@ -24,6 +24,18 @@
     "value": 0.11
   },
   {
+    "year": 2018,
+    "player_name": "Chris Thompson",
+    "owner": "Jamie Coffis",
+    "team_name": "Be Stills My Fart ",
+    "position": "RB",
+    "auction_cost": 55,
+    "total_points": 7.8,
+    "avg_points_per_game": 3.9,
+    "games_played": 2,
+    "value": 0.14
+  },
+  {
     "year": 2022,
     "player_name": "Trey Lance",
     "owner": "Kyle Poppen",
@@ -48,6 +60,18 @@
     "value": 0.29
   },
   {
+    "year": 2018,
+    "player_name": "Jamison Crowder",
+    "owner": "Garrett Ulrich",
+    "team_name": "King of  The Doids",
+    "position": "WR",
+    "auction_cost": 20,
+    "total_points": 6.2,
+    "avg_points_per_game": 6.2,
+    "games_played": 1,
+    "value": 0.31
+  },
+  {
     "year": 2021,
     "player_name": "Trey Sermon",
     "owner": "Ben Beck",
@@ -60,6 +84,18 @@
     "value": 0.34
   },
   {
+    "year": 2018,
+    "player_name": "Delanie Walker",
+    "owner": "Jeremy Settles",
+    "team_name": "Felton Sluggers",
+    "position": "TE",
+    "auction_cost": 25,
+    "total_points": 9.2,
+    "avg_points_per_game": 9.2,
+    "games_played": 1,
+    "value": 0.37
+  },
+  {
     "year": 2020,
     "player_name": "AJ Dillon",
     "owner": "Ben Beck",
@@ -70,6 +106,18 @@
     "avg_points_per_game": 0.91,
     "games_played": 13,
     "value": 0.38
+  },
+  {
+    "year": 2018,
+    "player_name": "Royce Freeman",
+    "owner": "Kyle Poppen",
+    "team_name": "Cherry Poppen",
+    "position": "RB",
+    "auction_cost": 119,
+    "total_points": 48.3,
+    "avg_points_per_game": 8.05,
+    "games_played": 6,
+    "value": 0.41
   },
   {
     "year": 2019,
@@ -117,6 +165,18 @@
     "total_points": 52.9,
     "avg_points_per_game": 3.78,
     "games_played": 14,
+    "value": 0.7
+  },
+  {
+    "year": 2018,
+    "player_name": "Duke Johnson",
+    "owner": "Chris Vitale",
+    "team_name": "The Chronic",
+    "position": "RB",
+    "auction_cost": 44,
+    "total_points": 30.6,
+    "avg_points_per_game": 7.65,
+    "games_played": 4,
     "value": 0.7
   },
   {
@@ -276,6 +336,18 @@
     "value": 1.11
   },
   {
+    "year": 2018,
+    "player_name": "Robbie Chosen",
+    "owner": "Rory McKee",
+    "team_name": "Running Back-Snatch",
+    "position": "WR",
+    "auction_cost": 22,
+    "total_points": 24.4,
+    "avg_points_per_game": 8.13,
+    "games_played": 3,
+    "value": 1.11
+  },
+  {
     "year": 2019,
     "player_name": "David Montgomery",
     "owner": "Kyle Poppen",
@@ -288,6 +360,18 @@
     "value": 1.12
   },
   {
+    "year": 2017,
+    "player_name": "Jordan Howard",
+    "owner": "Garrett Ulrich",
+    "team_name": "No Starties Even Beats Me",
+    "position": "RB",
+    "auction_cost": 150,
+    "total_points": 168.8,
+    "avg_points_per_game": 11.25,
+    "games_played": 15,
+    "value": 1.13
+  },
+  {
     "year": 2019,
     "player_name": "Miles Sanders",
     "owner": "Jamie Coffis",
@@ -298,6 +382,30 @@
     "avg_points_per_game": 9.38,
     "games_played": 13,
     "value": 1.17
+  },
+  {
+    "year": 2018,
+    "player_name": "Dion Lewis",
+    "owner": "Jeremy Settles",
+    "team_name": "Felton Sluggers",
+    "position": "RB",
+    "auction_cost": 74,
+    "total_points": 86.3,
+    "avg_points_per_game": 7.85,
+    "games_played": 11,
+    "value": 1.17
+  },
+  {
+    "year": 2018,
+    "player_name": "Jamaal Williams",
+    "owner": "Ben Beck",
+    "team_name": "Youth Movement  !!!!!!!",
+    "position": "RB",
+    "auction_cost": 41,
+    "total_points": 48.9,
+    "avg_points_per_game": 12.23,
+    "games_played": 4,
+    "value": 1.19
   },
   {
     "year": 2020,
@@ -372,6 +480,42 @@
     "value": 1.31
   },
   {
+    "year": 2018,
+    "player_name": "Marshawn Lynch",
+    "owner": "Kyle Morris",
+    "team_name": "Auto Drafties",
+    "position": "RB",
+    "auction_cost": 60,
+    "total_points": 79.0,
+    "avg_points_per_game": 13.17,
+    "games_played": 6,
+    "value": 1.32
+  },
+  {
+    "year": 2018,
+    "player_name": "Corey Davis",
+    "owner": "Kyle Morris",
+    "team_name": "Auto Drafties",
+    "position": "WR",
+    "auction_cost": 42,
+    "total_points": 56.7,
+    "avg_points_per_game": 11.34,
+    "games_played": 5,
+    "value": 1.35
+  },
+  {
+    "year": 2013,
+    "player_name": "Montee Ball",
+    "owner": "Kellen Coffis",
+    "team_name": "The Kellen Brothers",
+    "position": "RB",
+    "auction_cost": 71,
+    "total_points": 96.0,
+    "avg_points_per_game": 6.0,
+    "games_played": 16,
+    "value": 1.35
+  },
+  {
     "year": 2019,
     "player_name": "Kareem Hunt",
     "owner": "Ben Beck",
@@ -444,6 +588,30 @@
     "value": 1.54
   },
   {
+    "year": 2014,
+    "player_name": "Bishop Sankey",
+    "owner": "Garrett Ulrich",
+    "team_name": "Hustle Bustle And Man Muscle",
+    "position": "RB",
+    "auction_cost": 62,
+    "total_points": 96.4,
+    "avg_points_per_game": 6.02,
+    "games_played": 16,
+    "value": 1.55
+  },
+  {
+    "year": 2017,
+    "player_name": "Christian McCaffrey",
+    "owner": "Kellen Coffis",
+    "team_name": "The Kellen Brothers",
+    "position": "RB",
+    "auction_cost": 140,
+    "total_points": 218.2,
+    "avg_points_per_game": 13.64,
+    "games_played": 16,
+    "value": 1.56
+  },
+  {
     "year": 2022,
     "player_name": "Jameis Winston",
     "owner": "Jamie Coffis",
@@ -466,6 +634,30 @@
     "avg_points_per_game": 10.15,
     "games_played": 14,
     "value": 1.58
+  },
+  {
+    "year": 2016,
+    "player_name": "Michael Floyd",
+    "owner": "Chris Vitale",
+    "team_name": "The Chronic",
+    "position": "WR",
+    "auction_cost": 65,
+    "total_points": 103.2,
+    "avg_points_per_game": 6.45,
+    "games_played": 16,
+    "value": 1.59
+  },
+  {
+    "year": 2013,
+    "player_name": "Le'Veon Bell",
+    "owner": "Ben Beck",
+    "team_name": "the new kid  on the block",
+    "position": "RB",
+    "auction_cost": 126,
+    "total_points": 201.2,
+    "avg_points_per_game": 12.57,
+    "games_played": 16,
+    "value": 1.6
   },
   {
     "year": 2023,
@@ -492,6 +684,42 @@
     "value": 1.62
   },
   {
+    "year": 2013,
+    "player_name": "Danny Amendola",
+    "owner": "Nick Smielak",
+    "team_name": "B-Rom Baby  Bears",
+    "position": "WR",
+    "auction_cost": 78,
+    "total_points": 127.5,
+    "avg_points_per_game": 7.97,
+    "games_played": 16,
+    "value": 1.63
+  },
+  {
+    "year": 2017,
+    "player_name": "Leonard Fournette",
+    "owner": "Kyle Poppen",
+    "team_name": "Cherry Poppen",
+    "position": "RB",
+    "auction_cost": 129,
+    "total_points": 212.6,
+    "avg_points_per_game": 13.29,
+    "games_played": 16,
+    "value": 1.65
+  },
+  {
+    "year": 2015,
+    "player_name": "Todd Gurley",
+    "owner": "Garrett Ulrich",
+    "team_name": "Nano Bubbles  And  Abstinence",
+    "position": "RB",
+    "auction_cost": 109,
+    "total_points": 180.7,
+    "avg_points_per_game": 12.05,
+    "games_played": 15,
+    "value": 1.66
+  },
+  {
     "year": 2019,
     "player_name": "Tony Pollard",
     "owner": "Rory McKee",
@@ -516,6 +744,30 @@
     "value": 1.68
   },
   {
+    "year": 2016,
+    "player_name": "Matt Forte",
+    "owner": "Kyle Morris",
+    "team_name": "Corn On The  Kolb",
+    "position": "RB",
+    "auction_cost": 109,
+    "total_points": 183.6,
+    "avg_points_per_game": 11.48,
+    "games_played": 16,
+    "value": 1.68
+  },
+  {
+    "year": 2015,
+    "player_name": "T.J. Yeldon",
+    "owner": "Nick Smielak",
+    "team_name": "Schmee Squad",
+    "position": "RB",
+    "auction_cost": 91,
+    "total_points": 155.9,
+    "avg_points_per_game": 9.74,
+    "games_played": 16,
+    "value": 1.71
+  },
+  {
     "year": 2020,
     "player_name": "Antonio Gibson",
     "owner": "Kyle Poppen",
@@ -528,6 +780,18 @@
     "value": 1.72
   },
   {
+    "year": 2016,
+    "player_name": "Chris Ivory",
+    "owner": "Chris Vitale",
+    "team_name": "The Chronic",
+    "position": "RB",
+    "auction_cost": 55,
+    "total_points": 94.5,
+    "avg_points_per_game": 5.91,
+    "games_played": 16,
+    "value": 1.72
+  },
+  {
     "year": 2023,
     "player_name": "Jahmyr Gibbs",
     "owner": "Jacob Luna",
@@ -537,6 +801,18 @@
     "total_points": 156.5,
     "avg_points_per_game": 11.18,
     "games_played": 14,
+    "value": 1.74
+  },
+  {
+    "year": 2016,
+    "player_name": "Kelvin Benjamin",
+    "owner": "Ben Beck",
+    "team_name": "Youth Movement  !!!!!!!",
+    "position": "TE",
+    "auction_cost": 100,
+    "total_points": 173.7,
+    "avg_points_per_game": 11.58,
+    "games_played": 15,
     "value": 1.74
   },
   {
@@ -576,6 +852,30 @@
     "value": 1.76
   },
   {
+    "year": 2018,
+    "player_name": "Sony Michel",
+    "owner": "Bryan Whitaker",
+    "team_name": "Tyreek And The Drain Pours",
+    "position": "RB",
+    "auction_cost": 73,
+    "total_points": 129.0,
+    "avg_points_per_game": 11.73,
+    "games_played": 11,
+    "value": 1.77
+  },
+  {
+    "year": 2013,
+    "player_name": "Darren Sproles",
+    "owner": "Nick Smielak",
+    "team_name": "B-Rom Baby  Bears",
+    "position": "RB",
+    "auction_cost": 95,
+    "total_points": 170.5,
+    "avg_points_per_game": 10.66,
+    "games_played": 16,
+    "value": 1.79
+  },
+  {
     "year": 2019,
     "player_name": "Matt Breida",
     "owner": "Jeremy Settles",
@@ -586,6 +886,30 @@
     "avg_points_per_game": 6.55,
     "games_played": 13,
     "value": 1.81
+  },
+  {
+    "year": 2013,
+    "player_name": "Tavon Austin",
+    "owner": "Chris Vitale",
+    "team_name": "The Chronic",
+    "position": "WR",
+    "auction_cost": 71,
+    "total_points": 130.9,
+    "avg_points_per_game": 8.18,
+    "games_played": 16,
+    "value": 1.84
+  },
+  {
+    "year": 2012,
+    "player_name": "Vernon Davis",
+    "owner": "Greg Swenson",
+    "team_name": "Prime Time",
+    "position": "TE",
+    "auction_cost": 68,
+    "total_points": 125.3,
+    "avg_points_per_game": 7.83,
+    "games_played": 16,
+    "value": 1.84
   },
   {
     "year": 2021,
@@ -622,6 +946,18 @@
     "avg_points_per_game": 7.25,
     "games_played": 13,
     "value": 1.96
+  },
+  {
+    "year": 2013,
+    "player_name": "Marques Colston",
+    "owner": "Jeremy Settles",
+    "team_name": "Felton Sluggers",
+    "position": "WR",
+    "auction_cost": 77,
+    "total_points": 153.1,
+    "avg_points_per_game": 10.21,
+    "games_played": 15,
+    "value": 1.99
   },
   {
     "year": 2019,
@@ -720,6 +1056,30 @@
     "value": 2.17
   },
   {
+    "year": 2016,
+    "player_name": "Ezekiel Elliott",
+    "owner": "Nick Smielak",
+    "team_name": "Schmee Squad",
+    "position": "RB",
+    "auction_cost": 150,
+    "total_points": 325.4,
+    "avg_points_per_game": 20.34,
+    "games_played": 16,
+    "value": 2.17
+  },
+  {
+    "year": 2018,
+    "player_name": "Nelson Agholor",
+    "owner": "Rory McKee",
+    "team_name": "Running Back-Snatch",
+    "position": "WR",
+    "auction_cost": 24,
+    "total_points": 52.5,
+    "avg_points_per_game": 7.5,
+    "games_played": 7,
+    "value": 2.19
+  },
+  {
     "year": 2023,
     "player_name": "Kyler Murray",
     "owner": "Brendan Romele",
@@ -792,6 +1152,18 @@
     "value": 2.32
   },
   {
+    "year": 2018,
+    "player_name": "Jarvis Landry",
+    "owner": "Jacob Luna",
+    "team_name": "Tampon Bay Chumpkineers",
+    "position": "WR",
+    "auction_cost": 84,
+    "total_points": 195.92,
+    "avg_points_per_game": 13.06,
+    "games_played": 15,
+    "value": 2.33
+  },
+  {
     "year": 2024,
     "player_name": "Rome Odunze",
     "owner": "Ryan Milhous",
@@ -852,6 +1224,18 @@
     "value": 2.36
   },
   {
+    "year": 2014,
+    "player_name": "DeSean Jackson",
+    "owner": "Jacob Luna",
+    "team_name": "Tampon Bay Blumpkineers",
+    "position": "WR",
+    "auction_cost": 81,
+    "total_points": 193.0,
+    "avg_points_per_game": 12.87,
+    "games_played": 15,
+    "value": 2.38
+  },
+  {
     "year": 2019,
     "player_name": "Mike Williams",
     "owner": "Garrett Ulrich",
@@ -874,6 +1258,18 @@
     "avg_points_per_game": 16.86,
     "games_played": 14,
     "value": 2.43
+  },
+  {
+    "year": 2015,
+    "player_name": "Amari Cooper",
+    "owner": "Jacob Luna",
+    "team_name": "Tampon Bay Blumpkineers",
+    "position": "WR",
+    "auction_cost": 86,
+    "total_points": 209.9,
+    "avg_points_per_game": 13.12,
+    "games_played": 16,
+    "value": 2.44
   },
   {
     "year": 2020,
@@ -912,6 +1308,18 @@
     "value": 2.48
   },
   {
+    "year": 2018,
+    "player_name": "Sammy Watkins",
+    "owner": "Chris Vitale",
+    "team_name": "The Chronic",
+    "position": "WR",
+    "auction_cost": 23,
+    "total_points": 57.2,
+    "avg_points_per_game": 14.3,
+    "games_played": 4,
+    "value": 2.49
+  },
+  {
     "year": 2024,
     "player_name": "Bryce Young",
     "owner": "Kellen Coffis",
@@ -946,6 +1354,18 @@
     "avg_points_per_game": 8.51,
     "games_played": 14,
     "value": 2.53
+  },
+  {
+    "year": 2014,
+    "player_name": "Roddy White",
+    "owner": "Tyler Fullerton",
+    "team_name": "Lo-Carb Monsters",
+    "position": "WR",
+    "auction_cost": 77,
+    "total_points": 195.7,
+    "avg_points_per_game": 12.23,
+    "games_played": 16,
+    "value": 2.54
   },
   {
     "year": 2022,
@@ -996,6 +1416,18 @@
     "value": 2.58
   },
   {
+    "year": 2015,
+    "player_name": "Davante Adams",
+    "owner": "Jamie Coffis",
+    "team_name": "Stop Jerking My Johnson",
+    "position": "WR",
+    "auction_cost": 38,
+    "total_points": 98.1,
+    "avg_points_per_game": 6.13,
+    "games_played": 16,
+    "value": 2.58
+  },
+  {
     "year": 2020,
     "player_name": "Sterling Shepard",
     "owner": "Ben Beck",
@@ -1018,6 +1450,18 @@
     "avg_points_per_game": 5.75,
     "games_played": 14,
     "value": 2.6
+  },
+  {
+    "year": 2012,
+    "player_name": "Philip Rivers",
+    "owner": "Chris Vitale",
+    "team_name": "The Chronic",
+    "position": "QB",
+    "auction_cost": 74,
+    "total_points": 194.5,
+    "avg_points_per_game": 12.16,
+    "games_played": 16,
+    "value": 2.63
   },
   {
     "year": 2019,
@@ -1068,6 +1512,42 @@
     "value": 2.69
   },
   {
+    "year": 2013,
+    "player_name": "Eddie Lacy",
+    "owner": "Greg Swenson",
+    "team_name": "Prime Time",
+    "position": "RB",
+    "auction_cost": 83,
+    "total_points": 226.4,
+    "avg_points_per_game": 14.15,
+    "games_played": 16,
+    "value": 2.73
+  },
+  {
+    "year": 2012,
+    "player_name": "Stevie Johnson",
+    "owner": "Kyle Poppen",
+    "team_name": "Cherry Poppen",
+    "position": "WR",
+    "auction_cost": 68,
+    "total_points": 187.9,
+    "avg_points_per_game": 11.74,
+    "games_played": 16,
+    "value": 2.76
+  },
+  {
+    "year": 2018,
+    "player_name": "Saquon Barkley",
+    "owner": "Brendan Romele",
+    "team_name": "S.F. Forty-Chiners",
+    "position": "RB",
+    "auction_cost": 130,
+    "total_points": 361.6,
+    "avg_points_per_game": 24.11,
+    "games_played": 15,
+    "value": 2.78
+  },
+  {
     "year": 2019,
     "player_name": "Robby Anderson",
     "owner": "Bryan Whitaker",
@@ -1116,6 +1596,18 @@
     "value": 2.81
   },
   {
+    "year": 2018,
+    "player_name": "Marlon Mack",
+    "owner": "Greg Swenson",
+    "team_name": "Prime Time",
+    "position": "RB",
+    "auction_cost": 40,
+    "total_points": 112.5,
+    "avg_points_per_game": 14.06,
+    "games_played": 8,
+    "value": 2.81
+  },
+  {
     "year": 2022,
     "player_name": "Patrick Mahomes",
     "owner": "Kellen Coffis",
@@ -1126,6 +1618,30 @@
     "avg_points_per_game": 22.89,
     "games_played": 14,
     "value": 2.84
+  },
+  {
+    "year": 2012,
+    "player_name": "Stevan Ridley",
+    "owner": "Jamie Coffis",
+    "team_name": "The Replacement Graduates",
+    "position": "RB",
+    "auction_cost": 60,
+    "total_points": 172.8,
+    "avg_points_per_game": 11.52,
+    "games_played": 15,
+    "value": 2.88
+  },
+  {
+    "year": 2016,
+    "player_name": "Jeremy Hill",
+    "owner": "Jeremy Settles",
+    "team_name": "Felton Sluggers",
+    "position": "RB",
+    "auction_cost": 61,
+    "total_points": 176.3,
+    "avg_points_per_game": 11.02,
+    "games_played": 16,
+    "value": 2.89
   },
   {
     "year": 2021,
@@ -1150,6 +1666,78 @@
     "avg_points_per_game": 7.9,
     "games_played": 14,
     "value": 2.91
+  },
+  {
+    "year": 2018,
+    "player_name": "Devin Funchess",
+    "owner": "Bryan Whitaker",
+    "team_name": "Tyreek And The Drain Pours",
+    "position": "TE",
+    "auction_cost": 30,
+    "total_points": 87.4,
+    "avg_points_per_game": 7.95,
+    "games_played": 11,
+    "value": 2.91
+  },
+  {
+    "year": 2017,
+    "player_name": "Samaje Perine",
+    "owner": "Ben Beck",
+    "team_name": "Youth Movement  !!!!!!!",
+    "position": "RB",
+    "auction_cost": 37,
+    "total_points": 108.2,
+    "avg_points_per_game": 6.76,
+    "games_played": 16,
+    "value": 2.92
+  },
+  {
+    "year": 2015,
+    "player_name": "Martavis Bryant",
+    "owner": "Jeremy Settles",
+    "team_name": "Felton Sluggers",
+    "position": "WR",
+    "auction_cost": 58,
+    "total_points": 169.2,
+    "avg_points_per_game": 10.57,
+    "games_played": 16,
+    "value": 2.92
+  },
+  {
+    "year": 2018,
+    "player_name": "Kerryon Johnson",
+    "owner": "Greg Swenson",
+    "team_name": "Prime Time",
+    "position": "RB",
+    "auction_cost": 35,
+    "total_points": 103.3,
+    "avg_points_per_game": 14.76,
+    "games_played": 7,
+    "value": 2.95
+  },
+  {
+    "year": 2016,
+    "player_name": "Sterling Shepard",
+    "owner": "Jamie Coffis",
+    "team_name": "Ben Lomond  Half Baked Co.",
+    "position": "WR",
+    "auction_cost": 60,
+    "total_points": 177.7,
+    "avg_points_per_game": 11.11,
+    "games_played": 16,
+    "value": 2.96
+  },
+  {
+    "year": 2017,
+    "player_name": "Bilal Powell",
+    "owner": "Brendan Romele",
+    "team_name": "S.F. Forty-Chiners",
+    "position": "RB",
+    "auction_cost": 46,
+    "total_points": 138.6,
+    "avg_points_per_game": 8.66,
+    "games_played": 16,
+    "value": 3.01
   },
   {
     "year": 2024,
@@ -1224,6 +1812,18 @@
     "value": 3.13
   },
   {
+    "year": 2013,
+    "player_name": "Giovani Bernard",
+    "owner": "Brian Vitale",
+    "team_name": "south brookdale regulaters",
+    "position": "RB",
+    "auction_cost": 61,
+    "total_points": 191.8,
+    "avg_points_per_game": 12.79,
+    "games_played": 15,
+    "value": 3.14
+  },
+  {
     "year": 2023,
     "player_name": "James Conner",
     "owner": "Jeremy Settles",
@@ -1296,6 +1896,18 @@
     "value": 3.29
   },
   {
+    "year": 2013,
+    "player_name": "Pierre Garcon",
+    "owner": "Tyler Fullerton",
+    "team_name": "Lo-Carb Monsters",
+    "position": "WR",
+    "auction_cost": 78,
+    "total_points": 256.3,
+    "avg_points_per_game": 16.02,
+    "games_played": 16,
+    "value": 3.29
+  },
+  {
     "year": 2023,
     "player_name": "Dallas Goedert",
     "owner": "Garrett Ulrich",
@@ -1308,6 +1920,18 @@
     "value": 3.35
   },
   {
+    "year": 2013,
+    "player_name": "Eric Decker",
+    "owner": "Jacob Luna",
+    "team_name": "Tampon Bay Blumpcaneers",
+    "position": "WR",
+    "auction_cost": 79,
+    "total_points": 267.1,
+    "avg_points_per_game": 16.69,
+    "games_played": 16,
+    "value": 3.38
+  },
+  {
     "year": 2022,
     "player_name": "Russell Wilson",
     "owner": "Chris Vitale",
@@ -1317,6 +1941,18 @@
     "total_points": 170.3,
     "avg_points_per_game": 12.16,
     "games_played": 14,
+    "value": 3.41
+  },
+  {
+    "year": 2013,
+    "player_name": "DeSean Jackson",
+    "owner": "Brian Vitale",
+    "team_name": "south brookdale regulaters",
+    "position": "WR",
+    "auction_cost": 73,
+    "total_points": 248.7,
+    "avg_points_per_game": 16.58,
+    "games_played": 15,
     "value": 3.41
   },
   {
@@ -1368,6 +2004,18 @@
     "value": 3.53
   },
   {
+    "year": 2017,
+    "player_name": "Frank Gore",
+    "owner": "Kyle Morris",
+    "team_name": "Corn On The  Kolb",
+    "position": "RB",
+    "auction_cost": 45,
+    "total_points": 159.5,
+    "avg_points_per_game": 9.97,
+    "games_played": 16,
+    "value": 3.54
+  },
+  {
     "year": 2023,
     "player_name": "Isiah Pacheco",
     "owner": "Ben Beck",
@@ -1404,6 +2052,18 @@
     "value": 3.68
   },
   {
+    "year": 2018,
+    "player_name": "Peyton Barber",
+    "owner": "Jacob Luna",
+    "team_name": "Tampon Bay Chumpkineers",
+    "position": "RB",
+    "auction_cost": 32,
+    "total_points": 117.9,
+    "avg_points_per_game": 9.07,
+    "games_played": 13,
+    "value": 3.68
+  },
+  {
     "year": 2023,
     "player_name": "DeAndre Hopkins",
     "owner": "Kellen Coffis",
@@ -1428,6 +2088,18 @@
     "value": 3.75
   },
   {
+    "year": 2018,
+    "player_name": "Emmanuel Sanders",
+    "owner": "Garrett Ulrich",
+    "team_name": "King of  The Doids",
+    "position": "WR",
+    "auction_cost": 45,
+    "total_points": 168.72,
+    "avg_points_per_game": 15.34,
+    "games_played": 11,
+    "value": 3.75
+  },
+  {
     "year": 2020,
     "player_name": "Jerry Jeudy",
     "owner": "Jamie Coffis",
@@ -1437,6 +2109,18 @@
     "total_points": 90.4,
     "avg_points_per_game": 6.95,
     "games_played": 13,
+    "value": 3.77
+  },
+  {
+    "year": 2015,
+    "player_name": "Brandon LaFell",
+    "owner": "Bryan Whitaker",
+    "team_name": "For All The  Haters (Chris)",
+    "position": "WR",
+    "auction_cost": 23,
+    "total_points": 86.7,
+    "avg_points_per_game": 5.42,
+    "games_played": 16,
     "value": 3.77
   },
   {
@@ -1450,6 +2134,18 @@
     "avg_points_per_game": 10.27,
     "games_played": 14,
     "value": 3.78
+  },
+  {
+    "year": 2016,
+    "player_name": "DeSean Jackson",
+    "owner": "Brendan Romele",
+    "team_name": "S.F. Forty-Chiners",
+    "position": "WR",
+    "auction_cost": 46,
+    "total_points": 175.1,
+    "avg_points_per_game": 10.94,
+    "games_played": 16,
+    "value": 3.81
   },
   {
     "year": 2023,
@@ -1488,6 +2184,18 @@
     "value": 3.88
   },
   {
+    "year": 2012,
+    "player_name": "Trent Richardson",
+    "owner": "Garrett Ulrich",
+    "team_name": "What would MichaelVick do?",
+    "position": "RB",
+    "auction_cost": 65,
+    "total_points": 254.7,
+    "avg_points_per_game": 15.92,
+    "games_played": 16,
+    "value": 3.92
+  },
+  {
     "year": 2022,
     "player_name": "Adam Thielen",
     "owner": "Jeremy Settles",
@@ -1500,6 +2208,18 @@
     "value": 3.94
   },
   {
+    "year": 2012,
+    "player_name": "DeAngelo Williams",
+    "owner": "Ben Beck",
+    "team_name": "the new kid  on the block",
+    "position": "RB",
+    "auction_cost": 28,
+    "total_points": 111.5,
+    "avg_points_per_game": 6.97,
+    "games_played": 16,
+    "value": 3.98
+  },
+  {
     "year": 2020,
     "player_name": "DK Metcalf",
     "owner": "Jacob Luna",
@@ -1510,6 +2230,18 @@
     "avg_points_per_game": 15.03,
     "games_played": 13,
     "value": 3.99
+  },
+  {
+    "year": 2012,
+    "player_name": "Eli Manning",
+    "owner": "Nick Smielak",
+    "team_name": "B-Rom Baby  Bears",
+    "position": "QB",
+    "auction_cost": 51,
+    "total_points": 204.6,
+    "avg_points_per_game": 12.79,
+    "games_played": 16,
+    "value": 4.01
   },
   {
     "year": 2023,
@@ -1548,6 +2280,54 @@
     "value": 4.07
   },
   {
+    "year": 2014,
+    "player_name": "Kelvin Benjamin",
+    "owner": "Brian Vitale",
+    "team_name": "south brookdale regulaters",
+    "position": "TE",
+    "auction_cost": 55,
+    "total_points": 223.9,
+    "avg_points_per_game": 13.99,
+    "games_played": 16,
+    "value": 4.07
+  },
+  {
+    "year": 2012,
+    "player_name": "Torrey Smith",
+    "owner": "Kellen Coffis",
+    "team_name": "The Kellen Brothers",
+    "position": "WR",
+    "auction_cost": 45,
+    "total_points": 183.8,
+    "avg_points_per_game": 11.49,
+    "games_played": 16,
+    "value": 4.08
+  },
+  {
+    "year": 2014,
+    "player_name": "Sammy Watkins",
+    "owner": "Greg Swenson",
+    "team_name": "Prime Time",
+    "position": "WR",
+    "auction_cost": 46,
+    "total_points": 188.8,
+    "avg_points_per_game": 11.8,
+    "games_played": 16,
+    "value": 4.1
+  },
+  {
+    "year": 2012,
+    "player_name": "Doug Martin",
+    "owner": "Kyle Poppen",
+    "team_name": "Cherry Poppen",
+    "position": "RB",
+    "auction_cost": 69,
+    "total_points": 285.6,
+    "avg_points_per_game": 17.85,
+    "games_played": 16,
+    "value": 4.14
+  },
+  {
     "year": 2020,
     "player_name": "Brandin Cooks",
     "owner": "Nick Smielak",
@@ -1557,6 +2337,30 @@
     "total_points": 124.9,
     "avg_points_per_game": 9.61,
     "games_played": 13,
+    "value": 4.16
+  },
+  {
+    "year": 2016,
+    "player_name": "Isaiah Crowell",
+    "owner": "Rory McKee",
+    "team_name": "Blackout or Back Out",
+    "position": "RB",
+    "auction_cost": 45,
+    "total_points": 187.3,
+    "avg_points_per_game": 11.71,
+    "games_played": 16,
+    "value": 4.16
+  },
+  {
+    "year": 2014,
+    "player_name": "Eric Decker",
+    "owner": "Kellen Coffis",
+    "team_name": "The Kellen Brothers",
+    "position": "WR",
+    "auction_cost": 39,
+    "total_points": 162.1,
+    "avg_points_per_game": 10.13,
+    "games_played": 16,
     "value": 4.16
   },
   {
@@ -1608,6 +2412,30 @@
     "value": 4.27
   },
   {
+    "year": 2018,
+    "player_name": "Matt Breida",
+    "owner": "Greg Swenson",
+    "team_name": "Prime Time",
+    "position": "RB",
+    "auction_cost": 37,
+    "total_points": 158.3,
+    "avg_points_per_game": 12.18,
+    "games_played": 13,
+    "value": 4.28
+  },
+  {
+    "year": 2013,
+    "player_name": "Jason Witten",
+    "owner": "Ben Beck",
+    "team_name": "the new kid  on the block",
+    "position": "TE",
+    "auction_cost": 42,
+    "total_points": 180.6,
+    "avg_points_per_game": 11.29,
+    "games_played": 16,
+    "value": 4.3
+  },
+  {
     "year": 2022,
     "player_name": "Jalen Hurts",
     "owner": "Ben Beck",
@@ -1618,6 +2446,30 @@
     "avg_points_per_game": 23.92,
     "games_played": 14,
     "value": 4.35
+  },
+  {
+    "year": 2016,
+    "player_name": "Stefon Diggs",
+    "owner": "Jamie Coffis",
+    "team_name": "Ben Lomond  Half Baked Co.",
+    "position": "WR",
+    "auction_cost": 44,
+    "total_points": 193.3,
+    "avg_points_per_game": 12.08,
+    "games_played": 16,
+    "value": 4.39
+  },
+  {
+    "year": 2014,
+    "player_name": "Darren Sproles",
+    "owner": "Chris Vitale",
+    "team_name": "The Chronic",
+    "position": "RB",
+    "auction_cost": 33,
+    "total_points": 151.8,
+    "avg_points_per_game": 9.49,
+    "games_played": 16,
+    "value": 4.6
   },
   {
     "year": 2022,
@@ -1632,6 +2484,18 @@
     "value": 4.61
   },
   {
+    "year": 2018,
+    "player_name": "Tarik Cohen",
+    "owner": "Kellen Coffis",
+    "team_name": "The Kellen Brothers",
+    "position": "RB",
+    "auction_cost": 46,
+    "total_points": 212.14,
+    "avg_points_per_game": 16.32,
+    "games_played": 13,
+    "value": 4.61
+  },
+  {
     "year": 2024,
     "player_name": "Rhamondre Stevenson",
     "owner": "Rory McKee",
@@ -1642,6 +2506,18 @@
     "avg_points_per_game": 9.89,
     "games_played": 14,
     "value": 4.62
+  },
+  {
+    "year": 2017,
+    "player_name": "Jeremy Maclin",
+    "owner": "Jacob Luna",
+    "team_name": "Tampon Bay Chumpkineers",
+    "position": "WR",
+    "auction_cost": 22,
+    "total_points": 102.0,
+    "avg_points_per_game": 6.38,
+    "games_played": 16,
+    "value": 4.64
   },
   {
     "year": 2022,
@@ -1680,6 +2556,42 @@
     "value": 4.72
   },
   {
+    "year": 2018,
+    "player_name": "Robert Woods",
+    "owner": "Garrett Ulrich",
+    "team_name": "King of  The Doids",
+    "position": "WR",
+    "auction_cost": 36,
+    "total_points": 171.8,
+    "avg_points_per_game": 17.18,
+    "games_played": 10,
+    "value": 4.77
+  },
+  {
+    "year": 2017,
+    "player_name": "Larry Fitzgerald",
+    "owner": "Jeremy Settles",
+    "team_name": "Felton Sluggers",
+    "position": "WR",
+    "auction_cost": 50,
+    "total_points": 238.54,
+    "avg_points_per_game": 15.9,
+    "games_played": 15,
+    "value": 4.77
+  },
+  {
+    "year": 2014,
+    "player_name": "T.Y. Hilton",
+    "owner": "Nick Smielak",
+    "team_name": "Schmee Squad",
+    "position": "WR",
+    "auction_cost": 51,
+    "total_points": 245.3,
+    "avg_points_per_game": 15.33,
+    "games_played": 16,
+    "value": 4.81
+  },
+  {
     "year": 2023,
     "player_name": "Mac Jones",
     "owner": "Chris Vitale",
@@ -1704,6 +2616,30 @@
     "value": 4.84
   },
   {
+    "year": 2018,
+    "player_name": "Sterling Shepard",
+    "owner": "Rory McKee",
+    "team_name": "Running Back-Snatch",
+    "position": "WR",
+    "auction_cost": 28,
+    "total_points": 135.7,
+    "avg_points_per_game": 11.31,
+    "games_played": 12,
+    "value": 4.85
+  },
+  {
+    "year": 2014,
+    "player_name": "Reggie Wayne",
+    "owner": "Tyler Fullerton",
+    "team_name": "Lo-Carb Monsters",
+    "position": "WR",
+    "auction_cost": 29,
+    "total_points": 140.8,
+    "avg_points_per_game": 8.8,
+    "games_played": 16,
+    "value": 4.86
+  },
+  {
     "year": 2023,
     "player_name": "Tyler Lockett",
     "owner": "Jeremy Settles",
@@ -1725,6 +2661,18 @@
     "total_points": 104.64,
     "avg_points_per_game": 7.47,
     "games_played": 14,
+    "value": 4.98
+  },
+  {
+    "year": 2012,
+    "player_name": "Pierre Garcon",
+    "owner": "Kyle Morris",
+    "team_name": "Corn On The  Kolb",
+    "position": "WR",
+    "auction_cost": 25,
+    "total_points": 124.6,
+    "avg_points_per_game": 7.79,
+    "games_played": 16,
     "value": 4.98
   },
   {
@@ -1752,6 +2700,18 @@
     "value": 5.03
   },
   {
+    "year": 2012,
+    "player_name": "Matt Schaub",
+    "owner": "Jeremy Settles",
+    "team_name": "Felton Sluggers",
+    "position": "QB",
+    "auction_cost": 43,
+    "total_points": 216.92,
+    "avg_points_per_game": 13.56,
+    "games_played": 16,
+    "value": 5.04
+  },
+  {
     "year": 2022,
     "player_name": "Aaron Rodgers",
     "owner": "Garrett Ulrich",
@@ -1774,6 +2734,30 @@
     "avg_points_per_game": 8.58,
     "games_played": 13,
     "value": 5.07
+  },
+  {
+    "year": 2018,
+    "player_name": "Julian Edelman",
+    "owner": "Chris Vitale",
+    "team_name": "The Chronic",
+    "position": "WR",
+    "auction_cost": 28,
+    "total_points": 142.44,
+    "avg_points_per_game": 17.8,
+    "games_played": 8,
+    "value": 5.09
+  },
+  {
+    "year": 2012,
+    "player_name": "Dez Bryant",
+    "owner": "Garrett Ulrich",
+    "team_name": "What would MichaelVick do?",
+    "position": "WR",
+    "auction_cost": 56,
+    "total_points": 290.6,
+    "avg_points_per_game": 18.16,
+    "games_played": 16,
+    "value": 5.19
   },
   {
     "year": 2022,
@@ -1800,6 +2784,30 @@
     "value": 5.23
   },
   {
+    "year": 2012,
+    "player_name": "C.J. Spiller",
+    "owner": "Jacob Luna",
+    "team_name": "High Hopes",
+    "position": "RB",
+    "auction_cost": 45,
+    "total_points": 236.2,
+    "avg_points_per_game": 14.76,
+    "games_played": 16,
+    "value": 5.25
+  },
+  {
+    "year": 2014,
+    "player_name": "Emmanuel Sanders",
+    "owner": "Kyle Poppen",
+    "team_name": "Cherry Poppen",
+    "position": "WR",
+    "auction_cost": 54,
+    "total_points": 288.5,
+    "avg_points_per_game": 18.03,
+    "games_played": 16,
+    "value": 5.34
+  },
+  {
     "year": 2020,
     "player_name": "Tyler Boyd",
     "owner": "Garrett Ulrich",
@@ -1809,6 +2817,18 @@
     "total_points": 144.64,
     "avg_points_per_game": 11.13,
     "games_played": 13,
+    "value": 5.36
+  },
+  {
+    "year": 2013,
+    "player_name": "Fred Jackson",
+    "owner": "Kyle Morris",
+    "team_name": "Corn On The  Kolb",
+    "position": "RB",
+    "auction_cost": 40,
+    "total_points": 214.4,
+    "avg_points_per_game": 13.4,
+    "games_played": 16,
     "value": 5.36
   },
   {
@@ -1848,6 +2868,18 @@
     "value": 5.4
   },
   {
+    "year": 2016,
+    "player_name": "Terrance West",
+    "owner": "Greg Swenson",
+    "team_name": "Prime Time",
+    "position": "RB",
+    "auction_cost": 30,
+    "total_points": 163.5,
+    "avg_points_per_game": 10.22,
+    "games_played": 16,
+    "value": 5.45
+  },
+  {
     "year": 2020,
     "player_name": "Chase Edmonds",
     "owner": "Rory McKee",
@@ -1872,6 +2904,18 @@
     "value": 5.49
   },
   {
+    "year": 2015,
+    "player_name": "Doug Martin",
+    "owner": "Brendan Romele",
+    "team_name": "S.F. Forty-Chiners",
+    "position": "RB",
+    "auction_cost": 39,
+    "total_points": 214.5,
+    "avg_points_per_game": 13.41,
+    "games_played": 16,
+    "value": 5.5
+  },
+  {
     "year": 2023,
     "player_name": "Christian Kirk",
     "owner": "Greg Swenson",
@@ -1882,6 +2926,42 @@
     "avg_points_per_game": 8.7,
     "games_played": 14,
     "value": 5.53
+  },
+  {
+    "year": 2017,
+    "player_name": "Delanie Walker",
+    "owner": "Jeremy Settles",
+    "team_name": "Felton Sluggers",
+    "position": "TE",
+    "auction_cost": 29,
+    "total_points": 160.4,
+    "avg_points_per_game": 10.69,
+    "games_played": 15,
+    "value": 5.53
+  },
+  {
+    "year": 2012,
+    "player_name": "Michael Crabtree",
+    "owner": "Kellen Coffis",
+    "team_name": "The Kellen Brothers",
+    "position": "WR",
+    "auction_cost": 38,
+    "total_points": 213.1,
+    "avg_points_per_game": 13.32,
+    "games_played": 16,
+    "value": 5.61
+  },
+  {
+    "year": 2012,
+    "player_name": "Justin Blackmon",
+    "owner": "Tyler Fullerton",
+    "team_name": "Lo-Carb Monsters",
+    "position": "WR",
+    "auction_cost": 29,
+    "total_points": 163.8,
+    "avg_points_per_game": 10.24,
+    "games_played": 16,
+    "value": 5.65
   },
   {
     "year": 2024,
@@ -1896,6 +2976,42 @@
     "value": 5.7
   },
   {
+    "year": 2016,
+    "player_name": "DeMarco Murray",
+    "owner": "Kyle Poppen",
+    "team_name": "Cherry Poppen",
+    "position": "RB",
+    "auction_cost": 48,
+    "total_points": 275.7,
+    "avg_points_per_game": 18.38,
+    "games_played": 15,
+    "value": 5.74
+  },
+  {
+    "year": 2012,
+    "player_name": "Andrew Luck",
+    "owner": "Garrett Ulrich",
+    "team_name": "What would MichaelVick do?",
+    "position": "QB",
+    "auction_cost": 45,
+    "total_points": 260.72,
+    "avg_points_per_game": 16.29,
+    "games_played": 16,
+    "value": 5.79
+  },
+  {
+    "year": 2015,
+    "player_name": "John Brown",
+    "owner": "Jamie Coffis",
+    "team_name": "Stop Jerking My Johnson",
+    "position": "WR",
+    "auction_cost": 34,
+    "total_points": 199.0,
+    "avg_points_per_game": 12.44,
+    "games_played": 16,
+    "value": 5.85
+  },
+  {
     "year": 2023,
     "player_name": "Jordan Love",
     "owner": "Rory McKee",
@@ -1906,6 +3022,54 @@
     "avg_points_per_game": 16.48,
     "games_played": 14,
     "value": 5.91
+  },
+  {
+    "year": 2016,
+    "player_name": "Greg Olsen",
+    "owner": "Ben Beck",
+    "team_name": "Youth Movement  !!!!!!!",
+    "position": "TE",
+    "auction_cost": 32,
+    "total_points": 189.4,
+    "avg_points_per_game": 12.63,
+    "games_played": 15,
+    "value": 5.92
+  },
+  {
+    "year": 2012,
+    "player_name": "Denarius Moore",
+    "owner": "Brendan Romele",
+    "team_name": "S.F. Forty-Chiners",
+    "position": "WR",
+    "auction_cost": 24,
+    "total_points": 142.2,
+    "avg_points_per_game": 9.48,
+    "games_played": 15,
+    "value": 5.92
+  },
+  {
+    "year": 2012,
+    "player_name": "Tony Romo",
+    "owner": "Brian Vitale",
+    "team_name": "south brookdale regulaters",
+    "position": "QB",
+    "auction_cost": 45,
+    "total_points": 267.2,
+    "avg_points_per_game": 16.7,
+    "games_played": 16,
+    "value": 5.94
+  },
+  {
+    "year": 2017,
+    "player_name": "Jamison Crowder",
+    "owner": "Bryan Whitaker",
+    "team_name": "The Pierre Necessities",
+    "position": "WR",
+    "auction_cost": 27,
+    "total_points": 160.9,
+    "avg_points_per_game": 10.06,
+    "games_played": 16,
+    "value": 5.96
   },
   {
     "year": 2024,
@@ -1920,6 +3084,18 @@
     "value": 6.0
   },
   {
+    "year": 2017,
+    "player_name": "Matt Forte",
+    "owner": "Bryan Whitaker",
+    "team_name": "The Pierre Necessities",
+    "position": "RB",
+    "auction_cost": 20,
+    "total_points": 120.4,
+    "avg_points_per_game": 7.53,
+    "games_played": 16,
+    "value": 6.02
+  },
+  {
     "year": 2022,
     "player_name": "Dameon Pierce",
     "owner": "Greg Swenson",
@@ -1930,6 +3106,18 @@
     "avg_points_per_game": 10.81,
     "games_played": 14,
     "value": 6.06
+  },
+  {
+    "year": 2015,
+    "player_name": "David Johnson",
+    "owner": "Jamie Coffis",
+    "team_name": "Stop Jerking My Johnson",
+    "position": "RB",
+    "auction_cost": 34,
+    "total_points": 208.9,
+    "avg_points_per_game": 13.06,
+    "games_played": 16,
+    "value": 6.14
   },
   {
     "year": 2024,
@@ -1956,6 +3144,30 @@
     "value": 6.3
   },
   {
+    "year": 2014,
+    "player_name": "Andrew Luck",
+    "owner": "Ben Beck",
+    "team_name": "Youth Movement  !!!!!!!",
+    "position": "QB",
+    "auction_cost": 50,
+    "total_points": 315.02,
+    "avg_points_per_game": 21.0,
+    "games_played": 15,
+    "value": 6.3
+  },
+  {
+    "year": 2017,
+    "player_name": "Duke Johnson",
+    "owner": "Kyle Morris",
+    "team_name": "Corn On The  Kolb",
+    "position": "RB",
+    "auction_cost": 31,
+    "total_points": 196.6,
+    "avg_points_per_game": 12.29,
+    "games_played": 16,
+    "value": 6.34
+  },
+  {
     "year": 2024,
     "player_name": "Terry McLaurin",
     "owner": "Rory McKee",
@@ -1968,6 +3180,30 @@
     "value": 6.38
   },
   {
+    "year": 2012,
+    "player_name": "Antonio Gates",
+    "owner": "Nick Smielak",
+    "team_name": "B-Rom Baby  Bears",
+    "position": "TE",
+    "auction_cost": 21,
+    "total_points": 135.3,
+    "avg_points_per_game": 8.46,
+    "games_played": 16,
+    "value": 6.44
+  },
+  {
+    "year": 2015,
+    "player_name": "Drew Brees",
+    "owner": "Kyle Morris",
+    "team_name": "Corn On The  Kolb",
+    "position": "QB",
+    "auction_cost": 41,
+    "total_points": 267.3,
+    "avg_points_per_game": 17.82,
+    "games_played": 15,
+    "value": 6.52
+  },
+  {
     "year": 2021,
     "player_name": "Kyler Murray",
     "owner": "Nick Smielak",
@@ -1978,6 +3214,90 @@
     "avg_points_per_game": 16.14,
     "games_played": 14,
     "value": 6.65
+  },
+  {
+    "year": 2015,
+    "player_name": "Jason Witten",
+    "owner": "Greg Swenson",
+    "team_name": "Out of Time",
+    "position": "TE",
+    "auction_cost": 22,
+    "total_points": 146.5,
+    "avg_points_per_game": 9.16,
+    "games_played": 16,
+    "value": 6.66
+  },
+  {
+    "year": 2012,
+    "player_name": "Jason Witten",
+    "owner": "Jacob Luna",
+    "team_name": "High Hopes",
+    "position": "TE",
+    "auction_cost": 32,
+    "total_points": 213.3,
+    "avg_points_per_game": 13.33,
+    "games_played": 16,
+    "value": 6.67
+  },
+  {
+    "year": 2016,
+    "player_name": "Larry Fitzgerald",
+    "owner": "Kyle Morris",
+    "team_name": "Corn On The  Kolb",
+    "position": "WR",
+    "auction_cost": 34,
+    "total_points": 228.5,
+    "avg_points_per_game": 14.28,
+    "games_played": 16,
+    "value": 6.72
+  },
+  {
+    "year": 2014,
+    "player_name": "Mike Evans",
+    "owner": "Ben Beck",
+    "team_name": "Youth Movement  !!!!!!!",
+    "position": "WR",
+    "auction_cost": 31,
+    "total_points": 208.2,
+    "avg_points_per_game": 13.88,
+    "games_played": 15,
+    "value": 6.72
+  },
+  {
+    "year": 2012,
+    "player_name": "Anquan Boldin",
+    "owner": "Kyle Morris",
+    "team_name": "Corn On The  Kolb",
+    "position": "WR",
+    "auction_cost": 27,
+    "total_points": 183.4,
+    "avg_points_per_game": 11.46,
+    "games_played": 16,
+    "value": 6.79
+  },
+  {
+    "year": 2014,
+    "player_name": "Jeremy Hill",
+    "owner": "Jamie Coffis",
+    "team_name": "The Golden Gods",
+    "position": "RB",
+    "auction_cost": 29,
+    "total_points": 197.9,
+    "avg_points_per_game": 12.37,
+    "games_played": 16,
+    "value": 6.82
+  },
+  {
+    "year": 2012,
+    "player_name": "Reggie Wayne",
+    "owner": "Ben Beck",
+    "team_name": "the new kid  on the block",
+    "position": "WR",
+    "auction_cost": 38,
+    "total_points": 261.0,
+    "avg_points_per_game": 16.31,
+    "games_played": 16,
+    "value": 6.87
   },
   {
     "year": 2023,
@@ -2004,6 +3324,18 @@
     "value": 7.23
   },
   {
+    "year": 2016,
+    "player_name": "Jay Ajayi",
+    "owner": "Kellen Coffis",
+    "team_name": "The Kellen Brothers",
+    "position": "RB",
+    "auction_cost": 28,
+    "total_points": 204.4,
+    "avg_points_per_game": 12.78,
+    "games_played": 16,
+    "value": 7.3
+  },
+  {
     "year": 2024,
     "player_name": "Geno Smith",
     "owner": "Kellen Coffis",
@@ -2014,6 +3346,42 @@
     "avg_points_per_game": 14.68,
     "games_played": 14,
     "value": 7.34
+  },
+  {
+    "year": 2013,
+    "player_name": "Josh Gordon",
+    "owner": "Jamie Coffis",
+    "team_name": "The Post Graduates",
+    "position": "WR",
+    "auction_cost": 40,
+    "total_points": 299.2,
+    "avg_points_per_game": 18.7,
+    "games_played": 16,
+    "value": 7.48
+  },
+  {
+    "year": 2015,
+    "player_name": "Devonta Freeman",
+    "owner": "Bryan Whitaker",
+    "team_name": "For All The  Haters (Chris)",
+    "position": "RB",
+    "auction_cost": 40,
+    "total_points": 301.0,
+    "avg_points_per_game": 18.81,
+    "games_played": 16,
+    "value": 7.53
+  },
+  {
+    "year": 2015,
+    "player_name": "Ben Roethlisberger",
+    "owner": "Kellen Coffis",
+    "team_name": "The Kellen Brothers",
+    "position": "QB",
+    "auction_cost": 27,
+    "total_points": 204.66,
+    "avg_points_per_game": 12.79,
+    "games_played": 16,
+    "value": 7.58
   },
   {
     "year": 2023,
@@ -2040,6 +3408,30 @@
     "value": 7.81
   },
   {
+    "year": 2016,
+    "player_name": "Spencer Ware",
+    "owner": "Rory McKee",
+    "team_name": "Blackout or Back Out",
+    "position": "RB",
+    "auction_cost": 25,
+    "total_points": 195.8,
+    "avg_points_per_game": 12.24,
+    "games_played": 16,
+    "value": 7.83
+  },
+  {
+    "year": 2012,
+    "player_name": "Malcom Floyd",
+    "owner": "Brian Vitale",
+    "team_name": "south brookdale regulaters",
+    "position": "WR",
+    "auction_cost": 20,
+    "total_points": 158.7,
+    "avg_points_per_game": 9.92,
+    "games_played": 16,
+    "value": 7.93
+  },
+  {
     "year": 2023,
     "player_name": "Mike Evans",
     "owner": "Ryan Milhous",
@@ -2050,6 +3442,30 @@
     "avg_points_per_game": 13.79,
     "games_played": 14,
     "value": 8.04
+  },
+  {
+    "year": 2012,
+    "player_name": "Lance Moore",
+    "owner": "Ben Beck",
+    "team_name": "the new kid  on the block",
+    "position": "WR",
+    "auction_cost": 23,
+    "total_points": 189.0,
+    "avg_points_per_game": 11.81,
+    "games_played": 16,
+    "value": 8.22
+  },
+  {
+    "year": 2014,
+    "player_name": "Colin Kaepernick",
+    "owner": "Kellen Coffis",
+    "team_name": "The Kellen Brothers",
+    "position": "QB",
+    "auction_cost": 27,
+    "total_points": 228.2,
+    "avg_points_per_game": 14.26,
+    "games_played": 16,
+    "value": 8.45
   },
   {
     "year": 2022,
@@ -2088,6 +3504,30 @@
     "value": 8.64
   },
   {
+    "year": 2014,
+    "player_name": "DeAndre Hopkins",
+    "owner": "Kyle Morris",
+    "team_name": "Corn On The  Kolb",
+    "position": "WR",
+    "auction_cost": 26,
+    "total_points": 228.5,
+    "avg_points_per_game": 14.28,
+    "games_played": 16,
+    "value": 8.79
+  },
+  {
+    "year": 2016,
+    "player_name": "Tevin Coleman",
+    "owner": "Bryan Whitaker",
+    "team_name": "The Keepy No  Startie's",
+    "position": "RB",
+    "auction_cost": 20,
+    "total_points": 176.2,
+    "avg_points_per_game": 11.01,
+    "games_played": 16,
+    "value": 8.81
+  },
+  {
     "year": 2022,
     "player_name": "Miles Sanders",
     "owner": "Brendan Romele",
@@ -2100,6 +3540,18 @@
     "value": 9.06
   },
   {
+    "year": 2014,
+    "player_name": "Lamar Miller",
+    "owner": "Chris Vitale",
+    "team_name": "The Chronic",
+    "position": "RB",
+    "auction_cost": 22,
+    "total_points": 199.6,
+    "avg_points_per_game": 12.47,
+    "games_played": 16,
+    "value": 9.07
+  },
+  {
     "year": 2021,
     "player_name": "Lamar Jackson",
     "owner": "Chris Vitale",
@@ -2110,6 +3562,18 @@
     "avg_points_per_game": 17.14,
     "games_played": 14,
     "value": 9.23
+  },
+  {
+    "year": 2016,
+    "player_name": "LeGarrette Blount",
+    "owner": "Rory McKee",
+    "team_name": "Blackout or Back Out",
+    "position": "RB",
+    "auction_cost": 24,
+    "total_points": 221.8,
+    "avg_points_per_game": 13.86,
+    "games_played": 16,
+    "value": 9.24
   },
   {
     "year": 2019,
@@ -2148,6 +3612,54 @@
     "value": 9.7
   },
   {
+    "year": 2013,
+    "player_name": "Kendall Wright",
+    "owner": "Brendan Romele",
+    "team_name": "S.F. Forty-Chiners",
+    "position": "WR",
+    "auction_cost": 21,
+    "total_points": 203.9,
+    "avg_points_per_game": 12.74,
+    "games_played": 16,
+    "value": 9.71
+  },
+  {
+    "year": 2015,
+    "player_name": "Greg Olsen",
+    "owner": "Brendan Romele",
+    "team_name": "S.F. Forty-Chiners",
+    "position": "TE",
+    "auction_cost": 23,
+    "total_points": 223.8,
+    "avg_points_per_game": 13.99,
+    "games_played": 16,
+    "value": 9.73
+  },
+  {
+    "year": 2012,
+    "player_name": "Matt Ryan",
+    "owner": "Ben Beck",
+    "team_name": "the new kid  on the block",
+    "position": "QB",
+    "auction_cost": 26,
+    "total_points": 290.24,
+    "avg_points_per_game": 18.14,
+    "games_played": 16,
+    "value": 11.16
+  },
+  {
+    "year": 2014,
+    "player_name": "Jeremy Maclin",
+    "owner": "Kyle Morris",
+    "team_name": "Corn On The  Kolb",
+    "position": "WR",
+    "auction_cost": 22,
+    "total_points": 252.3,
+    "avg_points_per_game": 15.77,
+    "games_played": 16,
+    "value": 11.47
+  },
+  {
     "year": 2022,
     "player_name": "Trevor Lawrence",
     "owner": "Nick Smielak",
@@ -2158,5 +3670,29 @@
     "avg_points_per_game": 16.85,
     "games_played": 14,
     "value": 11.79
+  },
+  {
+    "year": 2015,
+    "player_name": "Larry Fitzgerald",
+    "owner": "Kyle Morris",
+    "team_name": "Corn On The  Kolb",
+    "position": "WR",
+    "auction_cost": 21,
+    "total_points": 263.0,
+    "avg_points_per_game": 16.44,
+    "games_played": 16,
+    "value": 12.52
+  },
+  {
+    "year": 2013,
+    "player_name": "Alshon Jeffery",
+    "owner": "Tyler Fullerton",
+    "team_name": "Lo-Carb Monsters",
+    "position": "WR",
+    "auction_cost": 21,
+    "total_points": 274.6,
+    "avg_points_per_game": 17.16,
+    "games_played": 16,
+    "value": 13.08
   }
 ]

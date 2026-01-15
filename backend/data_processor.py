@@ -1018,33 +1018,58 @@ class FantasyDataProcessor:
 
     def calculate_best_draft_picks(self):
         """Analyze draft picks to find best and worst value picks (excluding keepers - $0 or $1)"""
-        # Group player stats by year and player
+        # Group player stats by year and player - create multiple lookup keys
         from collections import defaultdict
-        player_season_stats = defaultdict(lambda: {'total_points': 0, 'games': 0, 'position': None})
+        player_season_stats_by_id = defaultdict(lambda: {'total_points': 0, 'games': 0, 'position': None})
+        player_season_stats_by_name = defaultdict(lambda: {'total_points': 0, 'games': 0, 'position': None})
 
         for stat in self.processed_data['player_stats']:
-            key = (stat['year'], stat.get('player_id') or stat['player_name'])
-            player_season_stats[key]['total_points'] += stat.get('points', 0)
-            player_season_stats[key]['games'] += 1
-            # Capture position from player stats
-            if not player_season_stats[key]['position']:
-                player_season_stats[key]['position'] = stat.get('position')
+            year = stat['year']
+            player_id = stat.get('player_id')
+            player_name = stat.get('player_name', '').strip().lower()
+
+            # Accumulate by player_id if available
+            if player_id:
+                key = (year, player_id)
+                player_season_stats_by_id[key]['total_points'] += stat.get('points', 0)
+                player_season_stats_by_id[key]['games'] += 1
+                if not player_season_stats_by_id[key]['position']:
+                    player_season_stats_by_id[key]['position'] = stat.get('position')
+
+            # Also accumulate by player_name for matching draft picks without player_id
+            if player_name:
+                key = (year, player_name)
+                player_season_stats_by_name[key]['total_points'] += stat.get('points', 0)
+                player_season_stats_by_name[key]['games'] += 1
+                if not player_season_stats_by_name[key]['position']:
+                    player_season_stats_by_name[key]['position'] = stat.get('position')
 
         # Match draft picks with their season performance
         all_picks = []
 
         for draft_pick in self.processed_data['draft']:
             year = draft_pick['year']
-            player_id = draft_pick.get('player_id') or draft_pick['player_name']
+            player_id = draft_pick.get('player_id')
+            player_name = draft_pick.get('player_name', '').strip().lower()
             auction_cost = draft_pick.get('bid_amount', 0)
 
             # Skip keepers ($0 or $1 picks)
             if auction_cost <= 1:
                 continue
 
-            key = (year, player_id)
-            if key in player_season_stats:
-                stats = player_season_stats[key]
+            # Try to find stats - first by player_id, then by name
+            stats = None
+            if player_id:
+                key = (year, player_id)
+                if key in player_season_stats_by_id:
+                    stats = player_season_stats_by_id[key]
+
+            if not stats and player_name:
+                key = (year, player_name)
+                if key in player_season_stats_by_name:
+                    stats = player_season_stats_by_name[key]
+
+            if stats:
                 total_points = stats['total_points']
                 avg_points = total_points / stats['games'] if stats['games'] > 0 else 0
                 position = stats['position']
