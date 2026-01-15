@@ -12,6 +12,7 @@ from datetime import datetime
 BASE_DIR = Path(__file__).parent.parent
 RAW_DATA_DIR = BASE_DIR / 'data' / 'raw'
 PROCESSED_DATA_DIR = BASE_DIR / 'data' / 'processed'
+PLAYER_ID_MAPPING_FILE = BASE_DIR / 'data' / 'exports' / 'player_id_mapping.json'
 PROCESSED_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 # Owner display name to actual name mapping
@@ -50,6 +51,7 @@ class FantasyDataProcessor:
 
     def __init__(self):
         self.raw_data = {}
+        self.player_id_mapping = {}
         self.processed_data = {
             'teams': {},
             'owners': {},
@@ -65,6 +67,15 @@ class FantasyDataProcessor:
             'optimal_lineups': [],
             'metadata': {}
         }
+
+    def load_player_id_mapping(self):
+        """Load player ID to name/position mapping from exports"""
+        if PLAYER_ID_MAPPING_FILE.exists():
+            with open(PLAYER_ID_MAPPING_FILE, 'r') as f:
+                self.player_id_mapping = json.load(f)
+            print(f"Loaded {len(self.player_id_mapping)} player ID mappings")
+        else:
+            print("Warning: player_id_mapping.json not found")
 
     @staticmethod
     def normalize_owner_name(display_name, year=None):
@@ -890,6 +901,7 @@ class FantasyDataProcessor:
     def process_rosters(self):
         """Process roster data across all years"""
         all_rosters = []
+        enriched_count = 0
 
         for year, season_data in self.raw_data.items():
             rosters_by_team = season_data.get('rosters', {})
@@ -900,17 +912,32 @@ class FantasyDataProcessor:
                 roster = rosters_by_team.get(str(team_id), [])
 
                 if roster:
+                    # Enrich roster entries with player names from mapping
+                    enriched_roster = []
+                    for player in roster:
+                        player_copy = player.copy()
+                        player_id = str(player.get('player_id', ''))
+
+                        # If name is empty and we have a mapping, fill it in
+                        if not player_copy.get('name') and player_id in self.player_id_mapping:
+                            player_info = self.player_id_mapping[player_id]
+                            player_copy['name'] = player_info.get('name', '')
+                            enriched_count += 1
+
+                        enriched_roster.append(player_copy)
+
                     roster_entry = {
                         'year': year,
                         'team_id': team_id,
                         'team_name': team['team_name'],
                         'owner': self.normalize_owner_name(team['owner'], year),
-                        'roster': roster
+                        'roster': enriched_roster
                     }
                     all_rosters.append(roster_entry)
 
         self.processed_data['rosters'] = all_rosters
         print(f"Processed rosters for {len(all_rosters)} team-seasons")
+        print(f"  - Enriched {enriched_count} player names from ID mapping")
 
     def process_player_stats(self):
         """Process player performance data and calculate optimal lineups"""
@@ -1062,7 +1089,7 @@ class FantasyDataProcessor:
         print(f"  - {len(worst_picks)} picks ($20+, positive points) for worst value analysis")
 
     def enrich_draft_with_positions(self):
-        """Add position information to draft picks by matching with player stats"""
+        """Add position information to draft picks by matching with player stats or ID mapping"""
         # Create a mapping of (year, player_id) -> position from player stats
         player_positions = {}
         for stat in self.processed_data['player_stats']:
@@ -1070,8 +1097,19 @@ class FantasyDataProcessor:
             if key not in player_positions and stat.get('position'):
                 player_positions[key] = stat['position']
 
+        # Create a name -> position mapping from player_id_mapping for fallback
+        name_to_position = {}
+        for player_id, info in self.player_id_mapping.items():
+            name = info.get('name', '').strip()
+            position = info.get('position')
+            if name and position:
+                # Store with lowercase for case-insensitive matching
+                name_to_position[name.lower()] = position
+
         # Enrich draft picks with position data
-        enriched_count = 0
+        enriched_from_stats = 0
+        enriched_from_mapping = 0
+        enriched_from_name = 0
         for pick in self.processed_data['draft']:
             year = pick['year']
             player_id = pick.get('player_id') or pick['player_name']
@@ -1079,16 +1117,35 @@ class FantasyDataProcessor:
 
             if key in player_positions:
                 pick['position'] = player_positions[key]
-                enriched_count += 1
-            elif 'position' not in pick or not pick.get('position'):
-                # Only set to None if position doesn't already exist
-                pick['position'] = None  # Position unknown
+                enriched_from_stats += 1
+            elif not pick.get('position'):
+                # Try to get position from player_id_mapping by ID
+                player_id_str = str(pick.get('player_id', ''))
+                if player_id_str and player_id_str != 'None' and player_id_str in self.player_id_mapping:
+                    position = self.player_id_mapping[player_id_str].get('position')
+                    if position:
+                        pick['position'] = position
+                        enriched_from_mapping += 1
+                        continue
 
-        print(f"Enriched {enriched_count}/{len(self.processed_data['draft'])} draft picks with position data")
+                # Try to match by player name
+                player_name = pick.get('player_name', '').strip().lower()
+                if player_name and player_name in name_to_position:
+                    pick['position'] = name_to_position[player_name]
+                    enriched_from_name += 1
+                else:
+                    pick['position'] = None  # Position unknown
+
+        total_enriched = enriched_from_stats + enriched_from_mapping + enriched_from_name
+        print(f"Enriched {total_enriched}/{len(self.processed_data['draft'])} draft picks with position data")
+        print(f"  - {enriched_from_stats} from player stats, {enriched_from_mapping} from ID mapping, {enriched_from_name} from name matching")
 
     def process_all(self):
         """Run all processing steps"""
         print("\n=== Processing Fantasy Football Data ===\n")
+
+        # Load player ID mapping for enriching roster/draft data
+        self.load_player_id_mapping()
 
         self.process_teams()
         self.process_owners()
