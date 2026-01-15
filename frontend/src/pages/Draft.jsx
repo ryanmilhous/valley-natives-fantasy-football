@@ -65,6 +65,13 @@ function Draft() {
   const positions = ['all', ...new Set(draft.map(d => d.position).filter(Boolean))].sort();
   const owners = ['all', ...new Set(draft.map(d => d.owner).filter(Boolean))].sort();
 
+  // Determine if we're viewing snake draft years (2007-2011)
+  const SNAKE_DRAFT_YEARS = [2007, 2008, 2009, 2010, 2011];
+  const isSnakeDraftYear = (year) => SNAKE_DRAFT_YEARS.includes(year);
+  const selectedYearInt = selectedYear === 'all' ? null : parseInt(selectedYear);
+  const showingOnlySnakeDraft = selectedYearInt && isSnakeDraftYear(selectedYearInt);
+  const showingOnlyAuctionDraft = selectedYearInt && !isSnakeDraftYear(selectedYearInt);
+
   const filteredDraft = draft.filter(pick => {
     if (selectedYear !== 'all' && pick.year !== parseInt(selectedYear)) return false;
     if (selectedPosition !== 'all' && pick.position !== selectedPosition) return false;
@@ -119,16 +126,16 @@ function Draft() {
       </div>
 
       {/* Data Availability Notice */}
-      <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border-l-4 border-green-500 p-4 rounded-lg backdrop-blur-sm">
+      <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border-l-4 border-blue-500 p-4 rounded-lg backdrop-blur-sm">
         <div className="flex items-start space-x-3">
           <div className="flex-shrink-0">
-            <svg className="h-5 w-5 text-green-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            <svg className="h-5 w-5 text-blue-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
             </svg>
           </div>
           <div className="flex-1">
-            <p className="text-sm text-green-300 font-medium">
-              <strong>Full Draft History:</strong> Draft data available from 2007-2025. Note: 2007-2018 shows round/pick info only (auction values available 2019+).
+            <p className="text-sm text-blue-300 font-medium">
+              <strong>Draft Format History:</strong> Snake draft 2007-2011 (round/pick shown) | Auction draft 2012-present (bid amounts shown)
             </p>
           </div>
         </div>
@@ -251,7 +258,7 @@ function Draft() {
                     className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
                     onClick={() => handleSort('bid_amount')}
                   >
-                    Auction $ {getSortIcon('bid_amount')}
+                    {showingOnlySnakeDraft ? 'Round/Pick' : 'Auction $'} {getSortIcon('bid_amount')}
                   </th>
                   <th
                     className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
@@ -283,7 +290,13 @@ function Draft() {
                 {filteredDraft.map((pick, index) => (
                   <tr key={index} className="hover:bg-white/5 transition-colors duration-200">
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="text-green-400 font-bold text-lg">${pick.bid_amount || 0}</span>
+                      {isSnakeDraftYear(pick.year) ? (
+                        <span className="text-purple-400 font-bold">
+                          Rd {pick.round_num || '?'}, Pick {pick.round_pick || pick.overall_pick || '?'}
+                        </span>
+                      ) : (
+                        <span className="text-green-400 font-bold text-lg">${pick.bid_amount || 0}</span>
+                      )}
                     </td>
                     <td className="px-6 py-4">
                       <div className="text-white font-semibold">{pick.player_name}</div>
