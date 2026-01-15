@@ -1,33 +1,33 @@
 {
   "highest_score": {
-    "team": "Ding Dong Doid Brains",
-    "score": 188.01,
-    "week": 3,
-    "year": 2023,
-    "opponent": "The Pudd'n \ud83d\udc2c"
+    "team": "Lo-Carb Monsters",
+    "score": 293.0,
+    "week": 13,
+    "year": 2008,
+    "opponent": "The Tom Brady Pus Bus"
   },
   "lowest_score": {
-    "team": "Foot-Loose and Fancy Free",
-    "score": 38.13,
-    "week": 13,
-    "year": 2019,
-    "opponent": "S.F. Forty-Chiners"
+    "team": "Schmee Squad",
+    "score": 14.7,
+    "week": 15,
+    "year": 2015,
+    "opponent": "Youth Movement  !!!!!!!"
   },
   "biggest_blowout": {
-    "year": 2024,
-    "week": 11,
-    "is_playoff": false,
-    "home_team": "Cherry Poppen",
-    "home_team_id": 14,
-    "home_score": 170.66,
-    "away_team": "RichCity Yung Beevs",
-    "away_team_id": 1,
-    "away_score": 71.48,
-    "winner": "Cherry Poppen",
-    "point_differential": 99.18,
-    "loser": "RichCity Yung Beevs",
-    "winner_score": 170.66,
-    "loser_score": 71.48
+    "year": 2009,
+    "week": 13,
+    "is_playoff": true,
+    "home_team": "the creek nut wildphish",
+    "home_team_id": 475133,
+    "home_score": 251.0,
+    "away_team": "Somewhere over the Dwayne Bowe",
+    "away_team_id": 475132,
+    "away_score": 133.0,
+    "winner": "the creek nut wildphish",
+    "point_differential": 118.0,
+    "loser": "Somewhere over the Dwayne Bowe",
+    "winner_score": 251.0,
+    "loser_score": 133.0
   },
   "closest_game": {
     "year": 2021,
@@ -119,37 +119,37 @@
     "end_week": 3
   },
   "longest_loss_streak": {
-    "owner": "Jeremy Settles",
-    "streak": 11,
-    "start_year": 2025,
-    "end_year": 2025,
-    "start_week": 6,
-    "end_week": 16
+    "owner": "Brendan Romele",
+    "streak": 15,
+    "start_year": 2015,
+    "end_year": 2016,
+    "start_week": 15,
+    "end_week": 13
   },
   "highest_scoring_loss": {
-    "team": "For Those About To Brock",
-    "score": 161.39,
-    "week": 14,
-    "year": 2024,
-    "opponent": "The Smi Pies",
-    "opponent_score": 165.12
+    "team": "Lo-Carb Monsters",
+    "score": 254.08,
+    "week": 13,
+    "year": 2011,
+    "opponent": "south brookdale regulaters",
+    "opponent_score": 268.38
   },
   "most_combined_points": {
-    "year": 2024,
-    "week": 14,
-    "home_team": "For Those About To Brock",
-    "away_team": "The Smi Pies",
-    "home_score": 161.39,
-    "away_score": 165.12,
-    "combined_points": 326.51
+    "year": 2011,
+    "week": 13,
+    "home_team": "south brookdale regulaters",
+    "away_team": "Lo-Carb Monsters",
+    "home_score": 268.38,
+    "away_score": 254.08,
+    "combined_points": 522.46
   },
   "lowest_scoring_win": {
-    "team": "The Lucky Lefties",
-    "score": 56.36,
-    "week": 17,
-    "year": 2022,
-    "opponent": "Kooter McGavin",
-    "opponent_score": 51.26
+    "team": "Team Clark",
+    "score": 49.0,
+    "week": 7,
+    "year": 2008,
+    "opponent": "Michael Vick's FreedomFighters",
+    "opponent_score": 44.0
   },
   "best_team_worst_result": {
     "year": 2024,
