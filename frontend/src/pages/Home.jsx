@@ -273,51 +273,15 @@ function Home() {
       {/* Hero Section */}
       <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 p-1">
         <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-10">
-          <div className="flex flex-col sm:flex-row items-center sm:space-x-4 mb-6 text-center sm:text-left">
+          <div className="flex flex-col sm:flex-row items-center sm:space-x-4 text-center sm:text-left">
             <div className="text-4xl sm:text-6xl animate-bounce mb-4 sm:mb-0">🏆</div>
             <div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 {metadata?.league_name || 'Fantasy Football League'}
               </h1>
               <p className="text-base sm:text-xl text-white/70 mt-2">
-                {metadata?.total_seasons} seasons • {metadata?.total_owners} owners • {metadata?.total_teams} teams
+                {metadata?.first_season}-{metadata?.latest_season} • {metadata?.total_seasons} seasons • {metadata?.total_owners} owners
               </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 p-6 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 hover:scale-105">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-blue-500/10 group-hover:from-blue-500/10 group-hover:to-blue-500/20 transition-all duration-300"></div>
-              <div className="relative">
-                <div className="text-4xl font-bold text-blue-400">{metadata?.total_seasons}</div>
-                <div className="text-sm text-blue-300/70 mt-1 font-medium">Seasons Played</div>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-500/20 to-green-600/20 p-6 border border-green-500/30 hover:border-green-400/50 transition-all duration-300 hover:scale-105">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/10 group-hover:from-green-500/10 group-hover:to-green-500/20 transition-all duration-300"></div>
-              <div className="relative">
-                <div className="text-4xl font-bold text-green-400">{metadata?.total_teams}</div>
-                <div className="text-sm text-green-300/70 mt-1 font-medium">Active Teams</div>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-600/20 p-6 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 hover:scale-105">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-purple-500/10 group-hover:from-purple-500/10 group-hover:to-purple-500/20 transition-all duration-300"></div>
-              <div className="relative">
-                <div className="text-4xl font-bold text-purple-400">{metadata?.total_owners}</div>
-                <div className="text-sm text-purple-300/70 mt-1 font-medium">Total Owners</div>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-600/20 p-6 border border-orange-500/30 hover:border-orange-400/50 transition-all duration-300 hover:scale-105">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/0 to-orange-500/10 group-hover:from-orange-500/10 group-hover:to-orange-500/20 transition-all duration-300"></div>
-              <div className="relative">
-                <div className="text-3xl font-bold text-orange-400">
-                  {metadata?.first_season}-{metadata?.latest_season}
-                </div>
-                <div className="text-sm text-orange-300/70 mt-1 font-medium">Year Range</div>
-              </div>
             </div>
           </div>
         </div>

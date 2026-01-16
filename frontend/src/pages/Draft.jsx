@@ -11,7 +11,6 @@ function Draft() {
   const [selectedYear, setSelectedYear] = useState('all');
   const [selectedPosition, setSelectedPosition] = useState('all');
   const [selectedOwner, setSelectedOwner] = useState('all');
-  const [selectedRound, setSelectedRound] = useState('all');
   const [sortColumn, setSortColumn] = useState('bid_amount');
   const [sortDirection, setSortDirection] = useState('desc');
 
@@ -76,7 +75,6 @@ function Draft() {
   const isSnakeDraftYear = (year) => SNAKE_DRAFT_YEARS.includes(year);
   const selectedYearInt = selectedYear === 'all' ? null : parseInt(selectedYear);
   const showingOnlySnakeDraft = selectedYearInt && isSnakeDraftYear(selectedYearInt);
-  const showingOnlyAuctionDraft = selectedYearInt && !isSnakeDraftYear(selectedYearInt);
 
   // Filter value picks by selected year
   const filteredBestPicks = selectedYear === 'all'
@@ -132,280 +130,255 @@ function Draft() {
     return sortDirection === 'asc' ? aVal - bVal : bVal - aVal;
   });
 
+  // Value pick card component for reuse
+  const ValuePickCard = ({ pick, type }) => {
+    const isSnake = type === 'bestSnake' || type === 'worstSnake';
+    const isBest = type === 'best' || type === 'bestSnake';
+
+    const colors = {
+      best: { bg: 'from-yellow-500/10 to-orange-500/10', border: 'border-yellow-500/30', text: 'text-yellow-400', badge: 'bg-yellow-500/20' },
+      worst: { bg: 'from-red-500/10 to-gray-500/10', border: 'border-red-500/30', text: 'text-red-400', badge: 'bg-red-500/20' },
+      bestSnake: { bg: 'from-emerald-500/10 to-teal-500/10', border: 'border-emerald-500/30', text: 'text-emerald-400', badge: 'bg-emerald-500/20' },
+      worstSnake: { bg: 'from-rose-500/10 to-pink-500/10', border: 'border-rose-500/30', text: 'text-rose-400', badge: 'bg-rose-500/20' }
+    };
+    const c = colors[type];
+
+    return (
+      <div className={`rounded-lg bg-gradient-to-br ${c.bg} p-3 border ${c.border} hover:opacity-80 transition-all`}>
+        <div className="flex items-start justify-between mb-1">
+          <div className={`text-xs ${c.text} font-semibold`}>
+            {isSnake ? `Rd ${pick.round_num}` : `$${pick.auction_cost || 0}`}
+          </div>
+          <div className={`text-[10px] px-1.5 py-0.5 rounded-full ${c.badge} ${c.text} border ${c.border} font-semibold`}>
+            {pick.year}
+          </div>
+        </div>
+        <div className="text-sm font-bold text-white truncate">{pick.player_name}</div>
+        <div className="text-xs text-white/60 truncate">{pick.owner}</div>
+        <div className="flex items-center justify-between text-[10px] mt-1">
+          <div className="text-green-400">{pick.total_points.toFixed(0)} pts</div>
+          <div className={isSnake ? (isBest ? 'text-cyan-400' : 'text-rose-400') : (isBest ? 'text-blue-400' : 'text-gray-400')}>
+            {isSnake ? `${pick.value >= 0 ? '+' : ''}${pick.value.toFixed(0)} vs exp` : `${pick.value.toFixed(1)} pts/$`}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       {/* Page Header */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 p-1">
-        <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 p-1">
+        <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-6">
           <div className="flex items-center space-x-4">
-            <div className="text-6xl">📋</div>
+            <div className="text-5xl">📋</div>
             <div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Draft History
               </h1>
-              <p className="text-white/70 mt-2">{draft.length} total picks across all years</p>
+              <p className="text-white/70 mt-1 text-sm">
+                {draft.length} picks • Snake 2007-2011 • Auction 2012-present
+              </p>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Data Availability Notice */}
-      <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border-l-4 border-blue-500 p-4 rounded-lg backdrop-blur-sm">
-        <div className="flex items-start space-x-3">
-          <div className="flex-shrink-0">
-            <svg className="h-5 w-5 text-blue-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-            </svg>
-          </div>
-          <div className="flex-1">
-            <p className="text-sm text-blue-300 font-medium">
-              <strong>Draft Format History:</strong> Snake draft 2007-2011 (round/pick shown) | Auction draft 2012-present (bid amounts shown)
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Best Auction Draft Picks Section */}
-      {showAuctionValuePicks && filteredBestPicks.length > 0 && (
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-red-500/10 p-1">
-          <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-6 flex items-center space-x-3">
-              <span>🌟</span>
-              <span>Best Value Picks {selectedYear !== 'all' && `(${selectedYear})`}</span>
-            </h2>
-            <p className="text-sm text-white/60 mb-6">Highest points per dollar - only $20+ auction picks (excludes keepers and cheap fliers)</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {filteredBestPicks.slice(0, 9).map((pick, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-yellow-500/10 to-orange-500/10 p-4 border border-white/10 hover:border-yellow-500/30 transition-all duration-300">
-                  <div className="flex items-start justify-between mb-2">
-                    <div className="text-sm text-yellow-400/70 font-semibold">
-                      ${pick.auction_cost || 0}
-                    </div>
-                    <div className="text-xs px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 font-semibold">
-                      {pick.year}
-                    </div>
-                  </div>
-                  <div className="text-lg font-bold text-white mb-1">{pick.player_name}</div>
-                  <div className="text-sm text-white/70 mb-2">{pick.owner}</div>
-                  <div className="flex items-center justify-between text-xs">
-                    <div className="text-green-400">{pick.total_points.toFixed(1)} pts</div>
-                    <div className="text-blue-400">{pick.value.toFixed(2)} pts/$</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Best Snake Draft Picks Section */}
-      {showSnakeValuePicks && filteredBestSnakePicks.length > 0 && (
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-500/10 via-teal-500/10 to-cyan-500/10 p-1">
-          <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-6 flex items-center space-x-3">
-              <span>🐍</span>
-              <span>Best Snake Draft Steals {selectedYear !== 'all' && `(${selectedYear})`}</span>
-            </h2>
-            <p className="text-sm text-white/60 mb-6">Players who outperformed their draft position (2007-2011 snake draft era)</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {filteredBestSnakePicks.slice(0, 9).map((pick, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 p-4 border border-white/10 hover:border-emerald-500/30 transition-all duration-300">
-                  <div className="flex items-start justify-between mb-2">
-                    <div className="text-sm text-emerald-400/70 font-semibold">
-                      Rd {pick.round_num}, Pick {pick.round_pick}
-                    </div>
-                    <div className="text-xs px-2 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-semibold">
-                      {pick.year}
-                    </div>
-                  </div>
-                  <div className="text-lg font-bold text-white mb-1">{pick.player_name}</div>
-                  <div className="text-sm text-white/70 mb-2">{pick.owner}</div>
-                  <div className="flex items-center justify-between text-xs">
-                    <div className="text-green-400">{pick.total_points.toFixed(1)} pts</div>
-                    <div className="text-cyan-400">+{pick.value.toFixed(0)} vs expected</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Worst Auction Draft Picks Section */}
-      {showAuctionValuePicks && filteredWorstPicks.length > 0 && (
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-red-500/10 via-gray-500/10 to-slate-500/10 p-1">
-          <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-red-400 to-gray-400 bg-clip-text text-transparent mb-6 flex items-center space-x-3">
-              <span>💸</span>
-              <span>Worst Value Picks {selectedYear !== 'all' && `(${selectedYear})`}</span>
-            </h2>
-            <p className="text-sm text-white/60 mb-6">Lowest points per dollar - only $20+ auction picks with positive points (excludes keepers, injuries, and cheap fliers)</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {filteredWorstPicks.slice(0, 9).map((pick, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-red-500/10 to-gray-500/10 p-4 border border-white/10 hover:border-red-500/30 transition-all duration-300">
-                  <div className="flex items-start justify-between mb-2">
-                    <div className="text-sm text-red-400/70 font-semibold">
-                      ${pick.auction_cost || 0}
-                    </div>
-                    <div className="text-xs px-2 py-1 rounded-full bg-red-500/20 text-red-400 border border-red-500/30 font-semibold">
-                      {pick.year}
-                    </div>
-                  </div>
-                  <div className="text-lg font-bold text-white mb-1">{pick.player_name}</div>
-                  <div className="text-sm text-white/70 mb-2">{pick.owner}</div>
-                  <div className="flex items-center justify-between text-xs">
-                    <div className="text-orange-400">{pick.total_points.toFixed(1)} pts</div>
-                    <div className="text-gray-400">{pick.value.toFixed(2)} pts/$</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Worst Snake Draft Picks Section */}
-      {showSnakeValuePicks && filteredWorstSnakePicks.length > 0 && (
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-rose-500/10 via-pink-500/10 to-fuchsia-500/10 p-1">
-          <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent mb-6 flex items-center space-x-3">
-              <span>🐍</span>
-              <span>Worst Snake Draft Busts {selectedYear !== 'all' && `(${selectedYear})`}</span>
-            </h2>
-            <p className="text-sm text-white/60 mb-6">Players who underperformed their draft position (2007-2011 snake draft era)</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {filteredWorstSnakePicks.slice(0, 9).map((pick, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-rose-500/10 to-pink-500/10 p-4 border border-white/10 hover:border-rose-500/30 transition-all duration-300">
-                  <div className="flex items-start justify-between mb-2">
-                    <div className="text-sm text-rose-400/70 font-semibold">
-                      Rd {pick.round_num}, Pick {pick.round_pick}
-                    </div>
-                    <div className="text-xs px-2 py-1 rounded-full bg-rose-500/20 text-rose-400 border border-rose-500/30 font-semibold">
-                      {pick.year}
-                    </div>
-                  </div>
-                  <div className="text-lg font-bold text-white mb-1">{pick.player_name}</div>
-                  <div className="text-sm text-white/70 mb-2">{pick.owner}</div>
-                  <div className="flex items-center justify-between text-xs">
-                    <div className="text-orange-400">{pick.total_points.toFixed(1)} pts</div>
-                    <div className="text-rose-400">{pick.value.toFixed(0)} vs expected</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Filters */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          <label className="block text-sm font-medium text-white/70 mb-2">Year</label>
-          <select
-            value={selectedYear}
-            onChange={(e) => setSelectedYear(e.target.value)}
-            className="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-white/10 focus:border-blue-500 focus:outline-none"
-          >
-            {years.map(year => (
-              <option key={year} value={year}>{year === 'all' ? 'All Years' : year}</option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-white/70 mb-2">Position</label>
-          <select
-            value={selectedPosition}
-            onChange={(e) => setSelectedPosition(e.target.value)}
-            className="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-white/10 focus:border-blue-500 focus:outline-none"
-          >
-            {positions.map(position => (
-              <option key={position} value={position}>{position === 'all' ? 'All Positions' : position}</option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-white/70 mb-2">Owner</label>
-          <select
-            value={selectedOwner}
-            onChange={(e) => setSelectedOwner(e.target.value)}
-            className="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-white/10 focus:border-blue-500 focus:outline-none"
-          >
-            {owners.map(owner => (
-              <option key={owner} value={owner}>{owner === 'all' ? 'All Owners' : owner}</option>
-            ))}
-          </select>
+      <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 p-1">
+        <div className="bg-slate-900/90 backdrop-blur-xl rounded-xl p-4 border border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label className="block text-xs font-medium text-white/70 mb-1">Year</label>
+              <select
+                value={selectedYear}
+                onChange={(e) => setSelectedYear(e.target.value)}
+                className="w-full px-3 py-2 rounded-lg bg-slate-800 text-white text-sm border border-white/10 focus:border-blue-500 focus:outline-none"
+              >
+                {years.map(year => (
+                  <option key={year} value={year}>{year === 'all' ? 'All Years' : year}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-white/70 mb-1">Position</label>
+              <select
+                value={selectedPosition}
+                onChange={(e) => setSelectedPosition(e.target.value)}
+                className="w-full px-3 py-2 rounded-lg bg-slate-800 text-white text-sm border border-white/10 focus:border-blue-500 focus:outline-none"
+              >
+                {positions.map(position => (
+                  <option key={position} value={position}>{position === 'all' ? 'All Positions' : position}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-white/70 mb-1">Owner</label>
+              <select
+                value={selectedOwner}
+                onChange={(e) => setSelectedOwner(e.target.value)}
+                className="w-full px-3 py-2 rounded-lg bg-slate-800 text-white text-sm border border-white/10 focus:border-blue-500 focus:outline-none"
+              >
+                {owners.map(owner => (
+                  <option key={owner} value={owner}>{owner === 'all' ? 'All Owners' : owner}</option>
+                ))}
+              </select>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Draft Table */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 p-1">
-        <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/10">
-          <div className="overflow-x-auto">
-            <table className="min-w-full">
-              <thead>
-                <tr className="border-b border-white/10">
-                  <th
-                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
-                    onClick={() => handleSort('bid_amount')}
-                  >
-                    {showingOnlySnakeDraft ? 'Round/Pick' : 'Auction $'} {getSortIcon('bid_amount')}
-                  </th>
-                  <th
-                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
-                    onClick={() => handleSort('player_name')}
-                  >
-                    Player {getSortIcon('player_name')}
-                  </th>
-                  <th
-                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
-                    onClick={() => handleSort('position')}
-                  >
-                    Position {getSortIcon('position')}
-                  </th>
-                  <th
-                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
-                    onClick={() => handleSort('owner')}
-                  >
-                    Team/Owner {getSortIcon('owner')}
-                  </th>
-                  <th
-                    className="px-6 py-4 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
-                    onClick={() => handleSort('year')}
-                  >
-                    Year {getSortIcon('year')}
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-white/5">
-                {filteredDraft.map((pick, index) => (
-                  <tr key={index} className="hover:bg-white/5 transition-colors duration-200">
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      {isSnakeDraftYear(pick.year) ? (
-                        <span className="text-purple-400 font-bold">
-                          Rd {pick.round_num || '?'}, Pick {pick.round_pick || pick.overall_pick || '?'}
-                        </span>
-                      ) : (
-                        <span className="text-green-400 font-bold text-lg">${pick.bid_amount || 0}</span>
-                      )}
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="text-white font-semibold">{pick.player_name}</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="text-blue-400 font-medium">{pick.position || 'N/A'}</span>
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="text-white/80">{pick.owner || 'N/A'}</div>
-                      <div className="text-xs text-white/50">{pick.team_name}</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="text-white/70">{pick.year}</span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+      {/* Main Content: Draft Table + Value Picks Sidebar */}
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+        {/* Draft Table - Takes 2 columns on xl */}
+        <div className="xl:col-span-2">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 p-1">
+            <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/10">
+              <div className="overflow-x-auto max-h-[700px] overflow-y-auto">
+                <table className="min-w-full">
+                  <thead className="sticky top-0 bg-slate-900/95 backdrop-blur-xl">
+                    <tr className="border-b border-white/10">
+                      <th
+                        className="px-4 py-3 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                        onClick={() => handleSort('bid_amount')}
+                      >
+                        {showingOnlySnakeDraft ? 'Round' : 'Cost'} {getSortIcon('bid_amount')}
+                      </th>
+                      <th
+                        className="px-4 py-3 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                        onClick={() => handleSort('player_name')}
+                      >
+                        Player {getSortIcon('player_name')}
+                      </th>
+                      <th
+                        className="px-4 py-3 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                        onClick={() => handleSort('position')}
+                      >
+                        Pos {getSortIcon('position')}
+                      </th>
+                      <th
+                        className="px-4 py-3 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                        onClick={() => handleSort('owner')}
+                      >
+                        Owner {getSortIcon('owner')}
+                      </th>
+                      <th
+                        className="px-4 py-3 text-left text-xs font-bold text-purple-400 uppercase tracking-wider cursor-pointer hover:text-purple-300 transition-colors"
+                        onClick={() => handleSort('year')}
+                      >
+                        Year {getSortIcon('year')}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/5">
+                    {filteredDraft.map((pick, index) => (
+                      <tr key={index} className="hover:bg-white/5 transition-colors duration-200">
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          {isSnakeDraftYear(pick.year) ? (
+                            <span className="text-purple-400 font-bold text-sm">
+                              Rd {pick.round_num || '?'}, #{pick.round_pick || '?'}
+                            </span>
+                          ) : (
+                            <span className="text-green-400 font-bold">${pick.bid_amount || 0}</span>
+                          )}
+                        </td>
+                        <td className="px-4 py-3">
+                          <div className="text-white font-semibold text-sm">{pick.player_name}</div>
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          <span className="text-blue-400 font-medium text-sm">{pick.position || '-'}</span>
+                        </td>
+                        <td className="px-4 py-3">
+                          <div className="text-white/80 text-sm">{pick.owner || '-'}</div>
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          <span className="text-white/70 text-sm">{pick.year}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="px-4 py-2 border-t border-white/10 text-xs text-white/50">
+                Showing {filteredDraft.length} picks
+              </div>
+            </div>
           </div>
+        </div>
+
+        {/* Value Picks Sidebar */}
+        <div className="space-y-4">
+          {/* Best Auction Picks */}
+          {showAuctionValuePicks && filteredBestPicks.length > 0 && (
+            <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-red-500/10 p-1">
+              <div className="bg-slate-900/90 backdrop-blur-xl rounded-xl p-4 border border-white/10">
+                <h3 className="text-lg font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-1 flex items-center space-x-2">
+                  <span>🌟</span>
+                  <span>Best Value {selectedYear !== 'all' && `(${selectedYear})`}</span>
+                </h3>
+                <p className="text-[10px] text-white/50 mb-3">$20+ picks, pts per dollar</p>
+                <div className="space-y-2">
+                  {filteredBestPicks.slice(0, 5).map((pick, index) => (
+                    <ValuePickCard key={index} pick={pick} type="best" />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Best Snake Picks */}
+          {showSnakeValuePicks && filteredBestSnakePicks.length > 0 && (
+            <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-emerald-500/10 via-teal-500/10 to-cyan-500/10 p-1">
+              <div className="bg-slate-900/90 backdrop-blur-xl rounded-xl p-4 border border-white/10">
+                <h3 className="text-lg font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-1 flex items-center space-x-2">
+                  <span>🐍</span>
+                  <span>Snake Steals {selectedYear !== 'all' && `(${selectedYear})`}</span>
+                </h3>
+                <p className="text-[10px] text-white/50 mb-3">Outperformed draft position</p>
+                <div className="space-y-2">
+                  {filteredBestSnakePicks.slice(0, 5).map((pick, index) => (
+                    <ValuePickCard key={index} pick={pick} type="bestSnake" />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Worst Auction Picks */}
+          {showAuctionValuePicks && filteredWorstPicks.length > 0 && (
+            <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-red-500/10 via-gray-500/10 to-slate-500/10 p-1">
+              <div className="bg-slate-900/90 backdrop-blur-xl rounded-xl p-4 border border-white/10">
+                <h3 className="text-lg font-bold bg-gradient-to-r from-red-400 to-gray-400 bg-clip-text text-transparent mb-1 flex items-center space-x-2">
+                  <span>💸</span>
+                  <span>Worst Value {selectedYear !== 'all' && `(${selectedYear})`}</span>
+                </h3>
+                <p className="text-[10px] text-white/50 mb-3">$20+ picks, lowest pts per dollar</p>
+                <div className="space-y-2">
+                  {filteredWorstPicks.slice(0, 5).map((pick, index) => (
+                    <ValuePickCard key={index} pick={pick} type="worst" />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Worst Snake Picks */}
+          {showSnakeValuePicks && filteredWorstSnakePicks.length > 0 && (
+            <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-rose-500/10 via-pink-500/10 to-fuchsia-500/10 p-1">
+              <div className="bg-slate-900/90 backdrop-blur-xl rounded-xl p-4 border border-white/10">
+                <h3 className="text-lg font-bold bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent mb-1 flex items-center space-x-2">
+                  <span>🐍</span>
+                  <span>Snake Busts {selectedYear !== 'all' && `(${selectedYear})`}</span>
+                </h3>
+                <p className="text-[10px] text-white/50 mb-3">Underperformed draft position</p>
+                <div className="space-y-2">
+                  {filteredWorstSnakePicks.slice(0, 5).map((pick, index) => (
+                    <ValuePickCard key={index} pick={pick} type="worstSnake" />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
