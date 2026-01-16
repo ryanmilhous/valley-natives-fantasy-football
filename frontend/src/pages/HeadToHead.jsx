@@ -48,124 +48,148 @@ function HeadToHead() {
   }, [selectedOwner1, selectedOwner2, h2hData]);
 
   if (loading) {
-    return <div className="text-center py-12">Loading...</div>;
+    return (
+      <div className="flex items-center justify-center py-20">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-purple-500 mx-auto"></div>
+          <p className="text-white/70 mt-4 font-medium">Loading head-to-head records...</p>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div className="space-y-6">
-      <h1 className="text-3xl font-bold text-gray-800">Head-to-Head Records</h1>
-
-      {/* Data Availability Notice */}
-      <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
-        <div className="flex items-start">
-          <div className="flex-shrink-0">
-            <svg className="h-5 w-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-            </svg>
-          </div>
-          <div className="ml-3">
-            <p className="text-sm text-green-700">
-              <strong>Full Historical Data:</strong> Head-to-head records include all regular season and playoff matchups from 2007-2025 (19 seasons).
-            </p>
+    <div className="space-y-8">
+      {/* Page Header */}
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-600 via-pink-600 to-red-600 p-1">
+        <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8">
+          <div className="flex items-center space-x-4">
+            <div className="text-6xl">🥊</div>
+            <div>
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Head-to-Head Records
+              </h1>
+              <p className="text-white/70 mt-2">All-time rivalry matchups from 2007-2025</p>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Owner Selectors */}
-      <div className="bg-white rounded-lg shadow p-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Select Owner 1</label>
-            <select
-              value={selectedOwner1}
-              onChange={(e) => setSelectedOwner1(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-            >
-              {owners.map(owner => (
-                <option key={owner} value={owner}>{owner}</option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Select Owner 2</label>
-            <select
-              value={selectedOwner2}
-              onChange={(e) => setSelectedOwner2(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-            >
-              {owners.map(owner => (
-                <option key={owner} value={owner}>{owner}</option>
-              ))}
-            </select>
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-red-500/10 p-1">
+        <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-6 border border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-medium text-white/70 mb-2">Select Owner 1</label>
+              <select
+                value={selectedOwner1}
+                onChange={(e) => setSelectedOwner1(e.target.value)}
+                className="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-white/10 focus:border-purple-500 focus:outline-none"
+              >
+                {owners.map(owner => (
+                  <option key={owner} value={owner}>{owner}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-white/70 mb-2">Select Owner 2</label>
+              <select
+                value={selectedOwner2}
+                onChange={(e) => setSelectedOwner2(e.target.value)}
+                className="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-white/10 focus:border-purple-500 focus:outline-none"
+              >
+                {owners.map(owner => (
+                  <option key={owner} value={owner}>{owner}</option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
       </div>
 
       {/* H2H Result */}
       {record && (
-        <div className="bg-white rounded-lg shadow p-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-            {selectedOwner1} vs {selectedOwner2}
-          </h2>
-          <div className="flex justify-center items-center space-x-12">
-            <div className="text-center">
-              <div className="text-5xl font-bold text-blue-600">{record.wins}</div>
-              <div className="text-sm text-gray-600 mt-2">{selectedOwner1} Wins</div>
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-red-500/10 p-1">
+          <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
+            <h2 className="text-2xl font-bold text-center mb-8">
+              <span className="text-purple-400">{selectedOwner1}</span>
+              <span className="text-white/50 mx-4">vs</span>
+              <span className="text-pink-400">{selectedOwner2}</span>
+            </h2>
+            <div className="flex justify-center items-center space-x-8 md:space-x-16">
+              <div className="text-center">
+                <div className="text-5xl md:text-6xl font-bold text-green-400">{record.wins}</div>
+                <div className="text-sm text-white/60 mt-2">{selectedOwner1} Wins</div>
+              </div>
+              <div className="text-4xl font-bold text-white/30">-</div>
+              <div className="text-center">
+                <div className="text-5xl md:text-6xl font-bold text-red-400">{record.losses}</div>
+                <div className="text-sm text-white/60 mt-2">{selectedOwner2} Wins</div>
+              </div>
+              {record.ties > 0 && (
+                <>
+                  <div className="text-4xl font-bold text-white/30">-</div>
+                  <div className="text-center">
+                    <div className="text-5xl md:text-6xl font-bold text-white/50">{record.ties}</div>
+                    <div className="text-sm text-white/60 mt-2">Ties</div>
+                  </div>
+                </>
+              )}
             </div>
-            <div className="text-4xl font-bold text-gray-400">-</div>
-            <div className="text-center">
-              <div className="text-5xl font-bold text-red-600">{record.losses}</div>
-              <div className="text-sm text-gray-600 mt-2">{selectedOwner2} Wins</div>
-            </div>
-            {record.ties > 0 && (
-              <>
-                <div className="text-4xl font-bold text-gray-400">-</div>
-                <div className="text-center">
-                  <div className="text-5xl font-bold text-gray-600">{record.ties}</div>
-                  <div className="text-sm text-gray-600 mt-2">Ties</div>
-                </div>
-              </>
-            )}
           </div>
         </div>
       )}
 
       {/* H2H Matrix */}
-      <div className="bg-white rounded-lg shadow p-6">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">Complete Head-to-Head Matrix</h2>
-        <div className="overflow-x-auto">
-          <table className="min-w-full text-sm">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500">Owner</th>
-                {owners.map(owner => (
-                  <th key={owner} className="px-3 py-2 text-center text-xs font-medium text-gray-500">
-                    {owner.substring(0, 10)}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
-              {owners.map(owner1 => (
-                <tr key={owner1} className="hover:bg-gray-50">
-                  <td className="px-3 py-2 whitespace-nowrap text-xs font-medium text-gray-900">
-                    {owner1}
-                  </td>
-                  {owners.map(owner2 => {
-                    if (owner1 === owner2) {
-                      return <td key={owner2} className="px-3 py-2 text-center text-gray-400">-</td>;
-                    }
-                    const rec = h2hData[owner1]?.[owner2] || { wins: 0, losses: 0 };
-                    return (
-                      <td key={owner2} className="px-3 py-2 text-center text-xs">
-                        {rec.wins}-{rec.losses}
-                      </td>
-                    );
-                  })}
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-red-500/10 p-1">
+        <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-6 border border-white/10">
+          <h2 className="text-xl font-bold text-white mb-4">Complete Head-to-Head Matrix</h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full text-sm">
+              <thead className="border-b border-white/10">
+                <tr>
+                  <th className="px-3 py-3 text-left text-xs font-bold text-purple-400 uppercase">Owner</th>
+                  {owners.map(owner => (
+                    <th key={owner} className="px-3 py-3 text-center text-xs font-bold text-purple-400">
+                      {owner.split(' ')[0]}
+                    </th>
+                  ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="divide-y divide-white/5">
+                {owners.map(owner1 => (
+                  <tr key={owner1} className="hover:bg-white/5 transition-colors">
+                    <td className="px-3 py-3 whitespace-nowrap text-xs font-medium text-white/90">
+                      {owner1}
+                    </td>
+                    {owners.map(owner2 => {
+                      if (owner1 === owner2) {
+                        return (
+                          <td key={owner2} className="px-3 py-3 text-center text-white/20">
+                            —
+                          </td>
+                        );
+                      }
+                      const rec = h2hData[owner1]?.[owner2] || { wins: 0, losses: 0 };
+                      const isWinning = rec.wins > rec.losses;
+                      const isLosing = rec.losses > rec.wins;
+                      return (
+                        <td key={owner2} className="px-3 py-3 text-center text-xs">
+                          <span className={`px-2 py-1 rounded ${
+                            isWinning ? 'bg-green-500/20 text-green-400' :
+                            isLosing ? 'bg-red-500/20 text-red-400' :
+                            'text-white/60'
+                          }`}>
+                            {rec.wins}-{rec.losses}
+                          </span>
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

@@ -1113,6 +1113,119 @@ class FantasyDataProcessor:
         print(f"  - {len(best_picks)} picks ($20+, excluding QBs from 2019-2021) for best value analysis")
         print(f"  - {len(worst_picks)} picks ($20+, positive points) for worst value analysis")
 
+        # Calculate snake draft value (2007-2011)
+        self.calculate_snake_draft_value(player_season_stats_by_id, player_season_stats_by_name)
+
+    def calculate_snake_draft_value(self, player_season_stats_by_id, player_season_stats_by_name):
+        """Calculate value for snake draft picks (2007-2011) using Points vs Expected"""
+        SNAKE_DRAFT_YEARS = [2007, 2008, 2009, 2010, 2011]
+
+        # First pass: calculate average points per round across all snake draft years
+        from collections import defaultdict
+        round_points = defaultdict(list)  # round_num -> list of total_points
+
+        for draft_pick in self.processed_data['draft']:
+            year = draft_pick['year']
+            if year not in SNAKE_DRAFT_YEARS:
+                continue
+
+            round_num = draft_pick.get('round_num')
+            if not round_num:
+                continue
+
+            player_id = draft_pick.get('player_id')
+            player_name = draft_pick.get('player_name', '').strip().lower()
+
+            # Find stats for this player
+            stats = None
+            if player_id:
+                key = (year, player_id)
+                if key in player_season_stats_by_id:
+                    stats = player_season_stats_by_id[key]
+
+            if not stats and player_name:
+                key = (year, player_name)
+                if key in player_season_stats_by_name:
+                    stats = player_season_stats_by_name[key]
+
+            if stats:
+                round_points[round_num].append(stats['total_points'])
+
+        # Calculate average points per round
+        round_averages = {}
+        for round_num, points_list in round_points.items():
+            if points_list:
+                round_averages[round_num] = sum(points_list) / len(points_list)
+
+        print(f"\nSnake draft round averages (2007-2011):")
+        for round_num in sorted(round_averages.keys()):
+            print(f"  Round {round_num}: {round_averages[round_num]:.1f} avg points")
+
+        # Second pass: calculate value as actual - expected for each pick
+        all_snake_picks = []
+
+        for draft_pick in self.processed_data['draft']:
+            year = draft_pick['year']
+            if year not in SNAKE_DRAFT_YEARS:
+                continue
+
+            round_num = draft_pick.get('round_num')
+            round_pick = draft_pick.get('round_pick')
+            overall_pick = draft_pick.get('overall_pick')
+
+            if not round_num or round_num not in round_averages:
+                continue
+
+            player_id = draft_pick.get('player_id')
+            player_name = draft_pick.get('player_name', '').strip().lower()
+
+            # Find stats for this player
+            stats = None
+            if player_id:
+                key = (year, player_id)
+                if key in player_season_stats_by_id:
+                    stats = player_season_stats_by_id[key]
+
+            if not stats and player_name:
+                key = (year, player_name)
+                if key in player_season_stats_by_name:
+                    stats = player_season_stats_by_name[key]
+
+            if stats:
+                total_points = stats['total_points']
+                expected_points = round_averages[round_num]
+                # Value = how much they exceeded (or missed) expectations
+                value = round(total_points - expected_points, 2)
+
+                all_snake_picks.append({
+                    'year': year,
+                    'player_name': draft_pick['player_name'],
+                    'owner': draft_pick.get('owner'),
+                    'team_name': draft_pick.get('team_name'),
+                    'position': stats.get('position'),
+                    'round_num': round_num,
+                    'round_pick': round_pick,
+                    'overall_pick': overall_pick,
+                    'total_points': round(total_points, 2),
+                    'expected_points': round(expected_points, 2),
+                    'value': value,  # Points vs expected (positive = outperformed)
+                    'games_played': stats['games']
+                })
+
+        # Sort by value (highest overperformance first)
+        all_snake_picks.sort(key=lambda x: x['value'], reverse=True)
+
+        # Best snake picks: top overperformers
+        self.processed_data['best_snake_picks'] = all_snake_picks[:50]
+
+        # Worst snake picks: biggest underperformers (but filter out DNPs with 0 points)
+        valid_snake_picks = [p for p in all_snake_picks if p['total_points'] > 0]
+        self.processed_data['worst_snake_picks'] = valid_snake_picks[-50:][::-1]  # Reverse for worst first
+
+        print(f"\nAnalyzed {len(all_snake_picks)} snake draft picks (2007-2011)")
+        print(f"  - {len(self.processed_data['best_snake_picks'])} best value picks (overperformed expectations)")
+        print(f"  - {len(self.processed_data['worst_snake_picks'])} worst value picks (underperformed expectations)")
+
     def enrich_draft_with_positions(self):
         """Add position information to draft picks by matching with player stats or ID mapping"""
         # Create a mapping of (year, player_id) -> position from player stats
@@ -1197,7 +1310,7 @@ class FantasyDataProcessor:
         print(f"✓ Saved complete data to {complete_file}")
 
         # Save individual components for easier API access
-        for key in ['teams', 'owners', 'matchups', 'standings', 'playoffs', 'head_to_head', 'records', 'draft', 'rosters', 'player_stats', 'best_draft_picks', 'worst_draft_picks', 'optimal_lineups', 'metadata']:
+        for key in ['teams', 'owners', 'matchups', 'standings', 'playoffs', 'head_to_head', 'records', 'draft', 'rosters', 'player_stats', 'best_draft_picks', 'worst_draft_picks', 'best_snake_picks', 'worst_snake_picks', 'optimal_lineups', 'metadata']:
             component_file = PROCESSED_DATA_DIR / f'{key}.json'
             with open(component_file, 'w') as f:
                 json.dump(self.processed_data[key], f, indent=2)

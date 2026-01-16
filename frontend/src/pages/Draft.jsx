@@ -5,6 +5,8 @@ function Draft() {
   const [draft, setDraft] = useState([]);
   const [bestPicks, setBestPicks] = useState([]);
   const [worstPicks, setWorstPicks] = useState([]);
+  const [bestSnakePicks, setBestSnakePicks] = useState([]);
+  const [worstSnakePicks, setWorstSnakePicks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedYear, setSelectedYear] = useState('all');
   const [selectedPosition, setSelectedPosition] = useState('all');
@@ -16,14 +18,18 @@ function Draft() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [draftResponse, bestPicksResponse, worstPicksResponse] = await Promise.all([
+        const [draftResponse, bestPicksResponse, worstPicksResponse, bestSnakeResponse, worstSnakeResponse] = await Promise.all([
           apiService.getDraft(),
           apiService.getBestDraftPicks(),
-          apiService.getWorstDraftPicks()
+          apiService.getWorstDraftPicks(),
+          apiService.getBestSnakePicks(),
+          apiService.getWorstSnakePicks()
         ]);
         setDraft(draftResponse.data);
         setBestPicks(bestPicksResponse.data);
         setWorstPicks(worstPicksResponse.data);
+        setBestSnakePicks(bestSnakeResponse.data);
+        setWorstSnakePicks(worstSnakeResponse.data);
       } catch (error) {
         console.error('Error fetching draft data:', error);
       } finally {
@@ -71,6 +77,24 @@ function Draft() {
   const selectedYearInt = selectedYear === 'all' ? null : parseInt(selectedYear);
   const showingOnlySnakeDraft = selectedYearInt && isSnakeDraftYear(selectedYearInt);
   const showingOnlyAuctionDraft = selectedYearInt && !isSnakeDraftYear(selectedYearInt);
+
+  // Filter value picks by selected year
+  const filteredBestPicks = selectedYear === 'all'
+    ? bestPicks
+    : bestPicks.filter(p => p.year === selectedYearInt);
+  const filteredWorstPicks = selectedYear === 'all'
+    ? worstPicks
+    : worstPicks.filter(p => p.year === selectedYearInt);
+  const filteredBestSnakePicks = selectedYear === 'all'
+    ? bestSnakePicks
+    : bestSnakePicks.filter(p => p.year === selectedYearInt);
+  const filteredWorstSnakePicks = selectedYear === 'all'
+    ? worstSnakePicks
+    : worstSnakePicks.filter(p => p.year === selectedYearInt);
+
+  // Decide which value picks to show based on selected year
+  const showAuctionValuePicks = selectedYear === 'all' || !showingOnlySnakeDraft;
+  const showSnakeValuePicks = selectedYear === 'all' || showingOnlySnakeDraft;
 
   const filteredDraft = draft.filter(pick => {
     if (selectedYear !== 'all' && pick.year !== parseInt(selectedYear)) return false;
@@ -141,17 +165,17 @@ function Draft() {
         </div>
       </div>
 
-      {/* Best Draft Picks Section */}
-      {bestPicks.length > 0 && (
+      {/* Best Auction Draft Picks Section */}
+      {showAuctionValuePicks && filteredBestPicks.length > 0 && (
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-red-500/10 p-1">
           <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
             <h2 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-6 flex items-center space-x-3">
               <span>🌟</span>
-              <span>Best Value Picks</span>
+              <span>Best Value Picks {selectedYear !== 'all' && `(${selectedYear})`}</span>
             </h2>
-            <p className="text-sm text-white/60 mb-6">Highest points per dollar - only $20+ picks (excludes keepers and cheap fliers)</p>
+            <p className="text-sm text-white/60 mb-6">Highest points per dollar - only $20+ auction picks (excludes keepers and cheap fliers)</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {bestPicks.slice(0, 9).map((pick, index) => (
+              {filteredBestPicks.slice(0, 9).map((pick, index) => (
                 <div key={index} className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-yellow-500/10 to-orange-500/10 p-4 border border-white/10 hover:border-yellow-500/30 transition-all duration-300">
                   <div className="flex items-start justify-between mb-2">
                     <div className="text-sm text-yellow-400/70 font-semibold">
@@ -174,17 +198,50 @@ function Draft() {
         </div>
       )}
 
-      {/* Worst Draft Picks Section */}
-      {worstPicks.length > 0 && (
+      {/* Best Snake Draft Picks Section */}
+      {showSnakeValuePicks && filteredBestSnakePicks.length > 0 && (
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-500/10 via-teal-500/10 to-cyan-500/10 p-1">
+          <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-6 flex items-center space-x-3">
+              <span>🐍</span>
+              <span>Best Snake Draft Steals {selectedYear !== 'all' && `(${selectedYear})`}</span>
+            </h2>
+            <p className="text-sm text-white/60 mb-6">Players who outperformed their draft position (2007-2011 snake draft era)</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {filteredBestSnakePicks.slice(0, 9).map((pick, index) => (
+                <div key={index} className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 p-4 border border-white/10 hover:border-emerald-500/30 transition-all duration-300">
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="text-sm text-emerald-400/70 font-semibold">
+                      Rd {pick.round_num}, Pick {pick.round_pick}
+                    </div>
+                    <div className="text-xs px-2 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-semibold">
+                      {pick.year}
+                    </div>
+                  </div>
+                  <div className="text-lg font-bold text-white mb-1">{pick.player_name}</div>
+                  <div className="text-sm text-white/70 mb-2">{pick.owner}</div>
+                  <div className="flex items-center justify-between text-xs">
+                    <div className="text-green-400">{pick.total_points.toFixed(1)} pts</div>
+                    <div className="text-cyan-400">+{pick.value.toFixed(0)} vs expected</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Worst Auction Draft Picks Section */}
+      {showAuctionValuePicks && filteredWorstPicks.length > 0 && (
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-red-500/10 via-gray-500/10 to-slate-500/10 p-1">
           <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
             <h2 className="text-2xl font-bold bg-gradient-to-r from-red-400 to-gray-400 bg-clip-text text-transparent mb-6 flex items-center space-x-3">
               <span>💸</span>
-              <span>Worst Value Picks</span>
+              <span>Worst Value Picks {selectedYear !== 'all' && `(${selectedYear})`}</span>
             </h2>
-            <p className="text-sm text-white/60 mb-6">Lowest points per dollar - only $20+ picks with positive points (excludes keepers, injuries, and cheap fliers)</p>
+            <p className="text-sm text-white/60 mb-6">Lowest points per dollar - only $20+ auction picks with positive points (excludes keepers, injuries, and cheap fliers)</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {worstPicks.slice(0, 9).map((pick, index) => (
+              {filteredWorstPicks.slice(0, 9).map((pick, index) => (
                 <div key={index} className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-red-500/10 to-gray-500/10 p-4 border border-white/10 hover:border-red-500/30 transition-all duration-300">
                   <div className="flex items-start justify-between mb-2">
                     <div className="text-sm text-red-400/70 font-semibold">
@@ -199,6 +256,39 @@ function Draft() {
                   <div className="flex items-center justify-between text-xs">
                     <div className="text-orange-400">{pick.total_points.toFixed(1)} pts</div>
                     <div className="text-gray-400">{pick.value.toFixed(2)} pts/$</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Worst Snake Draft Picks Section */}
+      {showSnakeValuePicks && filteredWorstSnakePicks.length > 0 && (
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-rose-500/10 via-pink-500/10 to-fuchsia-500/10 p-1">
+          <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent mb-6 flex items-center space-x-3">
+              <span>🐍</span>
+              <span>Worst Snake Draft Busts {selectedYear !== 'all' && `(${selectedYear})`}</span>
+            </h2>
+            <p className="text-sm text-white/60 mb-6">Players who underperformed their draft position (2007-2011 snake draft era)</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {filteredWorstSnakePicks.slice(0, 9).map((pick, index) => (
+                <div key={index} className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-rose-500/10 to-pink-500/10 p-4 border border-white/10 hover:border-rose-500/30 transition-all duration-300">
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="text-sm text-rose-400/70 font-semibold">
+                      Rd {pick.round_num}, Pick {pick.round_pick}
+                    </div>
+                    <div className="text-xs px-2 py-1 rounded-full bg-rose-500/20 text-rose-400 border border-rose-500/30 font-semibold">
+                      {pick.year}
+                    </div>
+                  </div>
+                  <div className="text-lg font-bold text-white mb-1">{pick.player_name}</div>
+                  <div className="text-sm text-white/70 mb-2">{pick.owner}</div>
+                  <div className="flex items-center justify-between text-xs">
+                    <div className="text-orange-400">{pick.total_points.toFixed(1)} pts</div>
+                    <div className="text-rose-400">{pick.value.toFixed(0)} vs expected</div>
                   </div>
                 </div>
               ))}

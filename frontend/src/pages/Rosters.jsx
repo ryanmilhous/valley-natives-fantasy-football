@@ -105,22 +105,6 @@ function Rosters() {
         </div>
       </div>
 
-      {/* Data Availability Notice */}
-      <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border-l-4 border-green-500 p-4 rounded-lg backdrop-blur-sm">
-        <div className="flex items-start space-x-3">
-          <div className="flex-shrink-0">
-            <svg className="h-5 w-5 text-green-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-            </svg>
-          </div>
-          <div className="flex-1">
-            <p className="text-sm text-green-300 font-medium">
-              <strong>Full Roster History:</strong> Roster data available from 2007-2025. Note: Some player names may be missing for older seasons.
-            </p>
-          </div>
-        </div>
-      </div>
-
       {/* Rosters Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {filteredRosters.map((rosterEntry, index) => (
@@ -155,11 +139,6 @@ function Rosters() {
                           <div className="text-xs text-white/50">{player.pro_team}</div>
                         </div>
                       </div>
-                      {player.total_points > 0 && (
-                        <div className="text-xs text-green-400 font-semibold ml-2">
-                          {player.total_points.toFixed(1)} pts
-                        </div>
-                      )}
                     </div>
                   ))}
               </div>

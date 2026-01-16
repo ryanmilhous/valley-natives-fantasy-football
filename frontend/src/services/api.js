@@ -110,6 +110,14 @@ export const apiService = {
     const data = await fetchJSON('worst_draft_picks.json');
     return { data };
   },
+  getBestSnakePicks: async () => {
+    const data = await fetchJSON('best_snake_picks.json');
+    return { data };
+  },
+  getWorstSnakePicks: async () => {
+    const data = await fetchJSON('worst_snake_picks.json');
+    return { data };
+  },
 
   // Rosters
   getRosters: async () => {
