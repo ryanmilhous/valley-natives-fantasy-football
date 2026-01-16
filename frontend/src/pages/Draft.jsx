@@ -130,36 +130,35 @@ function Draft() {
     return sortDirection === 'asc' ? aVal - bVal : bVal - aVal;
   });
 
-  // Value pick card component for reuse
+  // Value pick card component for reuse - compact version
   const ValuePickCard = ({ pick, type }) => {
     const isSnake = type === 'bestSnake' || type === 'worstSnake';
     const isBest = type === 'best' || type === 'bestSnake';
 
     const colors = {
-      best: { bg: 'from-yellow-500/10 to-orange-500/10', border: 'border-yellow-500/30', text: 'text-yellow-400', badge: 'bg-yellow-500/20' },
-      worst: { bg: 'from-red-500/10 to-gray-500/10', border: 'border-red-500/30', text: 'text-red-400', badge: 'bg-red-500/20' },
-      bestSnake: { bg: 'from-emerald-500/10 to-teal-500/10', border: 'border-emerald-500/30', text: 'text-emerald-400', badge: 'bg-emerald-500/20' },
-      worstSnake: { bg: 'from-rose-500/10 to-pink-500/10', border: 'border-rose-500/30', text: 'text-rose-400', badge: 'bg-rose-500/20' }
+      best: { bg: 'from-yellow-500/10 to-orange-500/10', border: 'border-yellow-500/20', text: 'text-yellow-400' },
+      worst: { bg: 'from-red-500/10 to-gray-500/10', border: 'border-red-500/20', text: 'text-red-400' },
+      bestSnake: { bg: 'from-emerald-500/10 to-teal-500/10', border: 'border-emerald-500/20', text: 'text-emerald-400' },
+      worstSnake: { bg: 'from-rose-500/10 to-pink-500/10', border: 'border-rose-500/20', text: 'text-rose-400' }
     };
     const c = colors[type];
 
     return (
-      <div className={`rounded-lg bg-gradient-to-br ${c.bg} p-3 border ${c.border} hover:opacity-80 transition-all`}>
-        <div className="flex items-start justify-between mb-1">
-          <div className={`text-xs ${c.text} font-semibold`}>
-            {isSnake ? `Rd ${pick.round_num}` : `$${pick.auction_cost || 0}`}
+      <div className={`rounded bg-gradient-to-br ${c.bg} px-2 py-1.5 border ${c.border}`}>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-2 min-w-0">
+            <span className={`text-[10px] ${c.text} font-semibold shrink-0`}>
+              {isSnake ? `Rd${pick.round_num}` : `$${pick.auction_cost || 0}`}
+            </span>
+            <span className="text-xs font-semibold text-white truncate">{pick.player_name}</span>
           </div>
-          <div className={`text-[10px] px-1.5 py-0.5 rounded-full ${c.badge} ${c.text} border ${c.border} font-semibold`}>
-            {pick.year}
-          </div>
+          <span className="text-[10px] text-white/50 shrink-0 ml-1">{pick.year}</span>
         </div>
-        <div className="text-sm font-bold text-white truncate">{pick.player_name}</div>
-        <div className="text-xs text-white/60 truncate">{pick.owner}</div>
-        <div className="flex items-center justify-between text-[10px] mt-1">
-          <div className="text-green-400">{pick.total_points.toFixed(0)} pts</div>
-          <div className={isSnake ? (isBest ? 'text-cyan-400' : 'text-rose-400') : (isBest ? 'text-blue-400' : 'text-gray-400')}>
-            {isSnake ? `${pick.value >= 0 ? '+' : ''}${pick.value.toFixed(0)} vs exp` : `${pick.value.toFixed(1)} pts/$`}
-          </div>
+        <div className="flex items-center justify-between text-[10px] mt-0.5">
+          <span className="text-white/50 truncate">{pick.owner}</span>
+          <span className={isSnake ? (isBest ? 'text-cyan-400' : 'text-rose-400') : (isBest ? 'text-blue-400' : 'text-gray-400')}>
+            {pick.total_points.toFixed(0)}pts • {isSnake ? `${pick.value >= 0 ? '+' : ''}${pick.value.toFixed(0)}` : `${pick.value.toFixed(1)}/$`}
+          </span>
         </div>
       </div>
     );
@@ -306,19 +305,18 @@ function Draft() {
           </div>
         </div>
 
-        {/* Value Picks Sidebar */}
-        <div className="space-y-4">
+        {/* Value Picks Sidebar - 2x2 Grid */}
+        <div className="grid grid-cols-1 gap-3">
           {/* Best Auction Picks */}
           {showAuctionValuePicks && filteredBestPicks.length > 0 && (
-            <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-red-500/10 p-1">
-              <div className="bg-slate-900/90 backdrop-blur-xl rounded-xl p-4 border border-white/10">
-                <h3 className="text-lg font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-1 flex items-center space-x-2">
+            <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-red-500/10 p-0.5">
+              <div className="bg-slate-900/90 backdrop-blur-xl rounded-lg p-3 border border-white/10">
+                <h3 className="text-sm font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-2 flex items-center space-x-1">
                   <span>🌟</span>
                   <span>Best Value {selectedYear !== 'all' && `(${selectedYear})`}</span>
                 </h3>
-                <p className="text-[10px] text-white/50 mb-3">$20+ picks, pts per dollar</p>
-                <div className="space-y-2">
-                  {filteredBestPicks.slice(0, 5).map((pick, index) => (
+                <div className="space-y-1.5">
+                  {filteredBestPicks.slice(0, 3).map((pick, index) => (
                     <ValuePickCard key={index} pick={pick} type="best" />
                   ))}
                 </div>
@@ -328,15 +326,14 @@ function Draft() {
 
           {/* Best Snake Picks */}
           {showSnakeValuePicks && filteredBestSnakePicks.length > 0 && (
-            <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-emerald-500/10 via-teal-500/10 to-cyan-500/10 p-1">
-              <div className="bg-slate-900/90 backdrop-blur-xl rounded-xl p-4 border border-white/10">
-                <h3 className="text-lg font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-1 flex items-center space-x-2">
+            <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-emerald-500/10 via-teal-500/10 to-cyan-500/10 p-0.5">
+              <div className="bg-slate-900/90 backdrop-blur-xl rounded-lg p-3 border border-white/10">
+                <h3 className="text-sm font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2 flex items-center space-x-1">
                   <span>🐍</span>
                   <span>Snake Steals {selectedYear !== 'all' && `(${selectedYear})`}</span>
                 </h3>
-                <p className="text-[10px] text-white/50 mb-3">Outperformed draft position</p>
-                <div className="space-y-2">
-                  {filteredBestSnakePicks.slice(0, 5).map((pick, index) => (
+                <div className="space-y-1.5">
+                  {filteredBestSnakePicks.slice(0, 3).map((pick, index) => (
                     <ValuePickCard key={index} pick={pick} type="bestSnake" />
                   ))}
                 </div>
@@ -346,15 +343,14 @@ function Draft() {
 
           {/* Worst Auction Picks */}
           {showAuctionValuePicks && filteredWorstPicks.length > 0 && (
-            <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-red-500/10 via-gray-500/10 to-slate-500/10 p-1">
-              <div className="bg-slate-900/90 backdrop-blur-xl rounded-xl p-4 border border-white/10">
-                <h3 className="text-lg font-bold bg-gradient-to-r from-red-400 to-gray-400 bg-clip-text text-transparent mb-1 flex items-center space-x-2">
+            <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-red-500/10 via-gray-500/10 to-slate-500/10 p-0.5">
+              <div className="bg-slate-900/90 backdrop-blur-xl rounded-lg p-3 border border-white/10">
+                <h3 className="text-sm font-bold bg-gradient-to-r from-red-400 to-gray-400 bg-clip-text text-transparent mb-2 flex items-center space-x-1">
                   <span>💸</span>
                   <span>Worst Value {selectedYear !== 'all' && `(${selectedYear})`}</span>
                 </h3>
-                <p className="text-[10px] text-white/50 mb-3">$20+ picks, lowest pts per dollar</p>
-                <div className="space-y-2">
-                  {filteredWorstPicks.slice(0, 5).map((pick, index) => (
+                <div className="space-y-1.5">
+                  {filteredWorstPicks.slice(0, 3).map((pick, index) => (
                     <ValuePickCard key={index} pick={pick} type="worst" />
                   ))}
                 </div>
@@ -364,15 +360,14 @@ function Draft() {
 
           {/* Worst Snake Picks */}
           {showSnakeValuePicks && filteredWorstSnakePicks.length > 0 && (
-            <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-rose-500/10 via-pink-500/10 to-fuchsia-500/10 p-1">
-              <div className="bg-slate-900/90 backdrop-blur-xl rounded-xl p-4 border border-white/10">
-                <h3 className="text-lg font-bold bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent mb-1 flex items-center space-x-2">
+            <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-rose-500/10 via-pink-500/10 to-fuchsia-500/10 p-0.5">
+              <div className="bg-slate-900/90 backdrop-blur-xl rounded-lg p-3 border border-white/10">
+                <h3 className="text-sm font-bold bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent mb-2 flex items-center space-x-1">
                   <span>🐍</span>
                   <span>Snake Busts {selectedYear !== 'all' && `(${selectedYear})`}</span>
                 </h3>
-                <p className="text-[10px] text-white/50 mb-3">Underperformed draft position</p>
-                <div className="space-y-2">
-                  {filteredWorstSnakePicks.slice(0, 5).map((pick, index) => (
+                <div className="space-y-1.5">
+                  {filteredWorstSnakePicks.slice(0, 3).map((pick, index) => (
                     <ValuePickCard key={index} pick={pick} type="worstSnake" />
                   ))}
                 </div>

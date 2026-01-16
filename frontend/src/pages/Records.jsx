@@ -288,7 +288,10 @@ function Records() {
                       <div className="text-3xl font-bold text-white">
                         {records.most_points_season.points_for.toFixed(2)}
                       </div>
-                      <div className="text-sm text-white/80 font-medium">{records.most_points_season.team_name}</div>
+                      <div className="text-sm text-white/80 font-medium">
+                        {records.most_points_season.team_name}
+                        <span className="text-white/60"> ({records.most_points_season.owner})</span>
+                      </div>
                       <div className="text-sm text-green-400/80">
                         {records.most_points_season.wins}-{records.most_points_season.losses} record
                       </div>
@@ -311,7 +314,10 @@ function Records() {
                       <div className="text-3xl font-bold text-white">
                         {records.most_wins_season.wins} wins
                       </div>
-                      <div className="text-sm text-white/80 font-medium">{records.most_wins_season.team_name}</div>
+                      <div className="text-sm text-white/80 font-medium">
+                        {records.most_wins_season.team_name}
+                        <span className="text-white/60"> ({records.most_wins_season.owner})</span>
+                      </div>
                       <div className="text-sm text-yellow-400/80">
                         {records.most_wins_season.points_for.toFixed(2)} points for
                       </div>
@@ -334,7 +340,10 @@ function Records() {
                       <div className="text-3xl font-bold text-white">
                         {records.fewest_wins_season.wins} wins
                       </div>
-                      <div className="text-sm text-white/80 font-medium">{records.fewest_wins_season.team_name}</div>
+                      <div className="text-sm text-white/80 font-medium">
+                        {records.fewest_wins_season.team_name}
+                        <span className="text-white/60"> ({records.fewest_wins_season.owner})</span>
+                      </div>
                       <div className="text-sm text-red-400/80">
                         {records.fewest_wins_season.wins}-{records.fewest_wins_season.losses} record
                       </div>
@@ -357,7 +366,10 @@ function Records() {
                       <div className="text-3xl font-bold text-white">
                         {records.most_points_against_season.points_against.toFixed(2)}
                       </div>
-                      <div className="text-sm text-white/80 font-medium">{records.most_points_against_season.team_name}</div>
+                      <div className="text-sm text-white/80 font-medium">
+                        {records.most_points_against_season.team_name}
+                        <span className="text-white/60"> ({records.most_points_against_season.owner})</span>
+                      </div>
                       <div className="text-sm text-purple-400/80">
                         Unluckiest team - {records.most_points_against_season.wins}-{records.most_points_against_season.losses} record
                       </div>
@@ -513,7 +525,10 @@ function Records() {
                       <div className="text-3xl font-bold text-white">
                         {records.fewest_points_season.points_for.toFixed(2)}
                       </div>
-                      <div className="text-sm text-white/80 font-medium">{records.fewest_points_season.team_name}</div>
+                      <div className="text-sm text-white/80 font-medium">
+                        {records.fewest_points_season.team_name}
+                        <span className="text-white/60"> ({records.fewest_points_season.owner})</span>
+                      </div>
                       <div className="text-sm text-gray-400/80">
                         {records.fewest_points_season.wins}-{records.fewest_points_season.losses} record
                       </div>
