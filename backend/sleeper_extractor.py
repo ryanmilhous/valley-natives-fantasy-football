@@ -240,6 +240,58 @@ class SleeperExtractor:
 
         print(f"  Processed {len(matchups)} matchups")
 
+        # Extract player stats from matchup data
+        print("  Aggregating player stats from matchups...")
+        player_stats_agg = {}  # player_id -> {total_points, games, weeks_played, roster_id}
+
+        for week, week_matchups in all_matchups_by_week.items():
+            for m in week_matchups:
+                roster_id = m.get('roster_id')
+                players_points = m.get('players_points', {})
+                starters = m.get('starters', [])
+
+                for player_id, points in players_points.items():
+                    if player_id not in player_stats_agg:
+                        player_stats_agg[player_id] = {
+                            'total_points': 0,
+                            'games': 0,
+                            'roster_id': roster_id,
+                            'weeks': []
+                        }
+                    if points and points > 0:
+                        player_stats_agg[player_id]['total_points'] += points
+                        player_stats_agg[player_id]['games'] += 1
+                        player_stats_agg[player_id]['weeks'].append(week)
+
+        # Fetch players map to get player names and positions
+        print("  Fetching players map for player details...")
+        players_map = self.get_players_map()
+
+        # Build player_stats list
+        player_stats = []
+        for player_id, stats in player_stats_agg.items():
+            player_data = players_map.get(player_id, {})
+            player_name = f"{player_data.get('first_name', '')} {player_data.get('last_name', '')}".strip()
+            if not player_name:
+                player_name = player_data.get('full_name', f'Player {player_id}')
+
+            # Get team info for this player's roster
+            team_info = next((t for t in teams if t['team_id'] == stats['roster_id']), {})
+
+            player_stats.append({
+                'player_id': player_id,
+                'player_name': player_name,
+                'position': player_data.get('position', ''),
+                'nfl_team': player_data.get('team', ''),
+                'total_points': round(stats['total_points'], 2),
+                'games': stats['games'],
+                'team_id': stats['roster_id'],
+                'team_name': team_info.get('team_name'),
+                'owner': team_info.get('owner')
+            })
+
+        print(f"  Processed {len(player_stats)} player stat entries")
+
         # Get draft data
         print("  Fetching draft...")
         drafts = self.get_drafts()
@@ -285,8 +337,8 @@ class SleeperExtractor:
             'teams': teams,
             'matchups': matchups,
             'draft': draft_picks,
-            'rosters': {},  # TODO: Add roster details if needed
-            'player_stats': [],  # TODO: Add player stats if needed
+            'rosters': [],  # Roster details not needed for now
+            'player_stats': player_stats,
             'settings': league_info.get('settings', {}),
             'extracted_at': datetime.now().isoformat(),
             'source': 'sleeper'

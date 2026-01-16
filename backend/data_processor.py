@@ -904,7 +904,9 @@ class FantasyDataProcessor:
         enriched_count = 0
 
         for year, season_data in self.raw_data.items():
-            rosters_by_team = season_data.get('rosters', {})
+            rosters_data = season_data.get('rosters', {})
+            # Handle both dict and list formats (Sleeper returns empty list)
+            rosters_by_team = rosters_data if isinstance(rosters_data, dict) else {}
             teams = season_data.get('teams', [])
 
             for team in teams:
@@ -960,8 +962,9 @@ class FantasyDataProcessor:
 
                 all_player_stats.append(stat_data)
 
-            # Calculate optimal lineups (only for years with player stats)
-            if player_stats:
+            # Calculate optimal lineups (only for years with weekly player stats)
+            # Skip for aggregated data (like Sleeper) that doesn't have 'week' field
+            if player_stats and player_stats[0].get('week') is not None:
                 optimal_lineups.extend(self.calculate_optimal_lineups(year, player_stats))
 
         self.processed_data['player_stats'] = all_player_stats
@@ -1028,19 +1031,33 @@ class FantasyDataProcessor:
             player_id = stat.get('player_id')
             player_name = stat.get('player_name', '').strip().lower()
 
+            # Handle both weekly data ('points') and aggregated data ('total_points')
+            # For weekly data, we accumulate; for aggregated, we use the total directly
+            points = stat.get('points', 0) or stat.get('total_points', 0)
+            games = stat.get('games', 1)  # Aggregated data has 'games', weekly has 1 per entry
+
             # Accumulate by player_id if available
             if player_id:
                 key = (year, player_id)
-                player_season_stats_by_id[key]['total_points'] += stat.get('points', 0)
-                player_season_stats_by_id[key]['games'] += 1
+                # For aggregated data (has 'total_points'), set directly; for weekly, accumulate
+                if 'total_points' in stat and stat.get('total_points'):
+                    player_season_stats_by_id[key]['total_points'] = stat['total_points']
+                    player_season_stats_by_id[key]['games'] = games
+                else:
+                    player_season_stats_by_id[key]['total_points'] += points
+                    player_season_stats_by_id[key]['games'] += 1
                 if not player_season_stats_by_id[key]['position']:
                     player_season_stats_by_id[key]['position'] = stat.get('position')
 
             # Also accumulate by player_name for matching draft picks without player_id
             if player_name:
                 key = (year, player_name)
-                player_season_stats_by_name[key]['total_points'] += stat.get('points', 0)
-                player_season_stats_by_name[key]['games'] += 1
+                if 'total_points' in stat and stat.get('total_points'):
+                    player_season_stats_by_name[key]['total_points'] = stat['total_points']
+                    player_season_stats_by_name[key]['games'] = games
+                else:
+                    player_season_stats_by_name[key]['total_points'] += points
+                    player_season_stats_by_name[key]['games'] += 1
                 if not player_season_stats_by_name[key]['position']:
                     player_season_stats_by_name[key]['position'] = stat.get('position')
 
