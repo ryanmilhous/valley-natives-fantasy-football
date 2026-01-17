@@ -76,23 +76,34 @@ function Draft() {
   const selectedYearInt = selectedYear === 'all' ? null : parseInt(selectedYear);
   const showingOnlySnakeDraft = selectedYearInt && isSnakeDraftYear(selectedYearInt);
 
-  // Filter value picks by selected year
-  const filteredBestPicks = selectedYear === 'all'
-    ? bestPicks
-    : bestPicks.filter(p => p.year === selectedYearInt);
-  const filteredWorstPicks = selectedYear === 'all'
-    ? worstPicks
-    : worstPicks.filter(p => p.year === selectedYearInt);
-  const filteredBestSnakePicks = selectedYear === 'all'
-    ? bestSnakePicks
-    : bestSnakePicks.filter(p => p.year === selectedYearInt);
-  const filteredWorstSnakePicks = selectedYear === 'all'
-    ? worstSnakePicks
-    : worstSnakePicks.filter(p => p.year === selectedYearInt);
+  // Filter value picks by selected year, owner, and position
+  const filterValuePicks = (picks) => {
+    return picks.filter(p => {
+      if (selectedYear !== 'all' && p.year !== selectedYearInt) return false;
+      if (selectedOwner !== 'all' && p.owner !== selectedOwner) return false;
+      if (selectedPosition !== 'all' && p.position !== selectedPosition) return false;
+      return true;
+    });
+  };
+
+  const filteredBestPicks = filterValuePicks(bestPicks);
+  const filteredWorstPicks = filterValuePicks(worstPicks);
+  const filteredBestSnakePicks = filterValuePicks(bestSnakePicks);
+  const filteredWorstSnakePicks = filterValuePicks(worstSnakePicks);
 
   // Decide which value picks to show based on selected year
   const showAuctionValuePicks = selectedYear === 'all' || !showingOnlySnakeDraft;
   const showSnakeValuePicks = selectedYear === 'all' || showingOnlySnakeDraft;
+
+  // Build filter description for value picks header
+  const getFilterLabel = () => {
+    const parts = [];
+    if (selectedYear !== 'all') parts.push(selectedYear);
+    if (selectedOwner !== 'all') parts.push(selectedOwner.split(' ')[0]);
+    if (selectedPosition !== 'all') parts.push(selectedPosition);
+    return parts.length > 0 ? `(${parts.join(', ')})` : '';
+  };
+  const filterLabel = getFilterLabel();
 
   const filteredDraft = draft.filter(pick => {
     if (selectedYear !== 'all' && pick.year !== parseInt(selectedYear)) return false;
@@ -305,18 +316,18 @@ function Draft() {
           </div>
         </div>
 
-        {/* Value Picks Sidebar - 2x2 Grid */}
-        <div className="grid grid-cols-1 gap-3">
+        {/* Value Picks Sidebar - Flex layout to avoid gaps */}
+        <div className="flex flex-col gap-3">
           {/* Best Auction Picks */}
           {showAuctionValuePicks && filteredBestPicks.length > 0 && (
             <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-red-500/10 p-0.5">
               <div className="bg-slate-900/90 backdrop-blur-xl rounded-lg p-3 border border-white/10">
                 <h3 className="text-sm font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-2 flex items-center space-x-1">
                   <span>🌟</span>
-                  <span>Best Value {selectedYear !== 'all' && `(${selectedYear})`}</span>
+                  <span>Best Value {filterLabel}</span>
                 </h3>
                 <div className="space-y-1.5">
-                  {filteredBestPicks.slice(0, 3).map((pick, index) => (
+                  {filteredBestPicks.slice(0, 5).map((pick, index) => (
                     <ValuePickCard key={index} pick={pick} type="best" />
                   ))}
                 </div>
@@ -330,10 +341,10 @@ function Draft() {
               <div className="bg-slate-900/90 backdrop-blur-xl rounded-lg p-3 border border-white/10">
                 <h3 className="text-sm font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2 flex items-center space-x-1">
                   <span>🐍</span>
-                  <span>Snake Steals {selectedYear !== 'all' && `(${selectedYear})`}</span>
+                  <span>Snake Steals {filterLabel}</span>
                 </h3>
                 <div className="space-y-1.5">
-                  {filteredBestSnakePicks.slice(0, 3).map((pick, index) => (
+                  {filteredBestSnakePicks.slice(0, 5).map((pick, index) => (
                     <ValuePickCard key={index} pick={pick} type="bestSnake" />
                   ))}
                 </div>
@@ -347,10 +358,10 @@ function Draft() {
               <div className="bg-slate-900/90 backdrop-blur-xl rounded-lg p-3 border border-white/10">
                 <h3 className="text-sm font-bold bg-gradient-to-r from-red-400 to-gray-400 bg-clip-text text-transparent mb-2 flex items-center space-x-1">
                   <span>💸</span>
-                  <span>Worst Value {selectedYear !== 'all' && `(${selectedYear})`}</span>
+                  <span>Worst Value {filterLabel}</span>
                 </h3>
                 <div className="space-y-1.5">
-                  {filteredWorstPicks.slice(0, 3).map((pick, index) => (
+                  {filteredWorstPicks.slice(0, 5).map((pick, index) => (
                     <ValuePickCard key={index} pick={pick} type="worst" />
                   ))}
                 </div>
@@ -364,10 +375,10 @@ function Draft() {
               <div className="bg-slate-900/90 backdrop-blur-xl rounded-lg p-3 border border-white/10">
                 <h3 className="text-sm font-bold bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent mb-2 flex items-center space-x-1">
                   <span>🐍</span>
-                  <span>Snake Busts {selectedYear !== 'all' && `(${selectedYear})`}</span>
+                  <span>Snake Busts {filterLabel}</span>
                 </h3>
                 <div className="space-y-1.5">
-                  {filteredWorstSnakePicks.slice(0, 3).map((pick, index) => (
+                  {filteredWorstSnakePicks.slice(0, 5).map((pick, index) => (
                     <ValuePickCard key={index} pick={pick} type="worstSnake" />
                   ))}
                 </div>

@@ -482,56 +482,79 @@ class FantasyDataProcessor:
             'lowest_scoring_win': None
         }
 
+        # Build mapping of team_name -> owner for each year (needed for owner lookups on matchup records)
+        team_to_owner = {}
+        for year, season_data in self.raw_data.items():
+            for team in season_data.get('teams', []):
+                key = (year, team['team_name'])
+                team_to_owner[key] = self.normalize_owner_name(team['owner'], year)
+
+        # Helper function to get owner from team and year
+        def get_owner(team_name, year):
+            return team_to_owner.get((year, team_name), None)
+
         # Highest and lowest scores
         all_scores = []
         for matchup in self.processed_data['matchups']:
             all_scores.append({
                 'team': matchup['home_team'],
+                'owner': get_owner(matchup['home_team'], matchup['year']),
                 'score': matchup['home_score'],
                 'week': matchup['week'],
                 'year': matchup['year'],
-                'opponent': matchup['away_team']
+                'opponent': matchup['away_team'],
+                'opponent_owner': get_owner(matchup['away_team'], matchup['year'])
             })
             all_scores.append({
                 'team': matchup['away_team'],
+                'owner': get_owner(matchup['away_team'], matchup['year']),
                 'score': matchup['away_score'],
                 'week': matchup['week'],
                 'year': matchup['year'],
-                'opponent': matchup['home_team']
+                'opponent': matchup['home_team'],
+                'opponent_owner': get_owner(matchup['home_team'], matchup['year'])
             })
 
         if all_scores:
             records['highest_score'] = max(all_scores, key=lambda x: x['score'])
             records['lowest_score'] = min(all_scores, key=lambda x: x['score'])
 
-        # Biggest blowout and closest game - add loser info
+        # Biggest blowout and closest game - add loser info and owner names
         if self.processed_data['matchups']:
             blowout = max(self.processed_data['matchups'], key=lambda x: x['point_differential'])
-            # Add loser information
+            # Add loser information and owner names
             blowout_copy = blowout.copy()
             if blowout['winner'] == blowout['home_team']:
                 blowout_copy['loser'] = blowout['away_team']
                 blowout_copy['winner_score'] = blowout['home_score']
                 blowout_copy['loser_score'] = blowout['away_score']
+                blowout_copy['winner_owner'] = get_owner(blowout['home_team'], blowout['year'])
+                blowout_copy['loser_owner'] = get_owner(blowout['away_team'], blowout['year'])
             else:
                 blowout_copy['loser'] = blowout['home_team']
                 blowout_copy['winner_score'] = blowout['away_score']
                 blowout_copy['loser_score'] = blowout['home_score']
+                blowout_copy['winner_owner'] = get_owner(blowout['away_team'], blowout['year'])
+                blowout_copy['loser_owner'] = get_owner(blowout['home_team'], blowout['year'])
             records['biggest_blowout'] = blowout_copy
 
             non_ties = [m for m in self.processed_data['matchups'] if m['winner'] != 'TIE']
             if non_ties:
                 closest = min(non_ties, key=lambda x: x['point_differential'])
-                # Add loser information
+                # Add loser information and owner names
                 closest_copy = closest.copy()
                 if closest['winner'] == closest['home_team']:
                     closest_copy['loser'] = closest['away_team']
                     closest_copy['winner_score'] = closest['home_score']
                     closest_copy['loser_score'] = closest['away_score']
+                    closest_copy['winner_owner'] = get_owner(closest['home_team'], closest['year'])
+                    closest_copy['loser_owner'] = get_owner(closest['away_team'], closest['year'])
                 else:
                     closest_copy['loser'] = closest['home_team']
                     closest_copy['winner_score'] = closest['away_score']
                     closest_copy['loser_score'] = closest['home_score']
+                    closest_copy['winner_owner'] = get_owner(closest['away_team'], closest['year'])
+                    closest_copy['loser_owner'] = get_owner(closest['home_team'], closest['year'])
                 records['closest_game'] = closest_copy
 
         # Season records
@@ -545,15 +568,7 @@ class FantasyDataProcessor:
                 records['fewest_wins_season'] = min(full_season_teams, key=lambda x: x['wins'])
                 records['fewest_points_season'] = min(full_season_teams, key=lambda x: x['points_for'])
 
-        # Calculate win/loss streaks
-        # Build mapping of team_name -> owner for each year
-        team_to_owner = {}
-        for year, season_data in self.raw_data.items():
-            for team in season_data.get('teams', []):
-                key = (year, team['team_name'])
-                team_to_owner[key] = self.normalize_owner_name(team['owner'], year)
-
-        # Calculate streaks by owner across all matchups chronologically
+        # Calculate win/loss streaks by owner across all matchups chronologically
         from collections import defaultdict
         owner_results = defaultdict(list)  # owner -> [(year, week, result)]
 
@@ -634,19 +649,23 @@ class FantasyDataProcessor:
                 if matchup['winner'] == matchup['home_team']:
                     losing_scores.append({
                         'team': matchup['away_team'],
+                        'owner': get_owner(matchup['away_team'], matchup['year']),
                         'score': matchup['away_score'],
                         'week': matchup['week'],
                         'year': matchup['year'],
                         'opponent': matchup['home_team'],
+                        'opponent_owner': get_owner(matchup['home_team'], matchup['year']),
                         'opponent_score': matchup['home_score']
                     })
                 elif matchup['winner'] == matchup['away_team']:
                     losing_scores.append({
                         'team': matchup['home_team'],
+                        'owner': get_owner(matchup['home_team'], matchup['year']),
                         'score': matchup['home_score'],
                         'week': matchup['week'],
                         'year': matchup['year'],
                         'opponent': matchup['away_team'],
+                        'opponent_owner': get_owner(matchup['away_team'], matchup['year']),
                         'opponent_score': matchup['away_score']
                     })
 
@@ -660,7 +679,9 @@ class FantasyDataProcessor:
                     'year': matchup['year'],
                     'week': matchup['week'],
                     'home_team': matchup['home_team'],
+                    'home_owner': get_owner(matchup['home_team'], matchup['year']),
                     'away_team': matchup['away_team'],
+                    'away_owner': get_owner(matchup['away_team'], matchup['year']),
                     'home_score': matchup['home_score'],
                     'away_score': matchup['away_score'],
                     'combined_points': matchup['home_score'] + matchup['away_score']
@@ -675,19 +696,23 @@ class FantasyDataProcessor:
                 if matchup['winner'] == matchup['home_team']:
                     winning_scores.append({
                         'team': matchup['home_team'],
+                        'owner': get_owner(matchup['home_team'], matchup['year']),
                         'score': matchup['home_score'],
                         'week': matchup['week'],
                         'year': matchup['year'],
                         'opponent': matchup['away_team'],
+                        'opponent_owner': get_owner(matchup['away_team'], matchup['year']),
                         'opponent_score': matchup['away_score']
                     })
                 elif matchup['winner'] == matchup['away_team']:
                     winning_scores.append({
                         'team': matchup['away_team'],
+                        'owner': get_owner(matchup['away_team'], matchup['year']),
                         'score': matchup['away_score'],
                         'week': matchup['week'],
                         'year': matchup['year'],
                         'opponent': matchup['home_team'],
+                        'opponent_owner': get_owner(matchup['home_team'], matchup['year']),
                         'opponent_score': matchup['home_score']
                     })
 

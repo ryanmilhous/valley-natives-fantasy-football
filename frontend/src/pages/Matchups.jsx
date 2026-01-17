@@ -5,7 +5,6 @@ function Matchups() {
   const [matchups, setMatchups] = useState([]);
   const [standings, setStandings] = useState([]);
   const [filteredMatchups, setFilteredMatchups] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
   const [selectedYear, setSelectedYear] = useState('all');
   const [selectedOwner, setSelectedOwner] = useState('all');
   const [loading, setLoading] = useState(true);
@@ -39,20 +38,6 @@ function Matchups() {
   useEffect(() => {
     let filtered = matchups;
 
-    if (searchTerm) {
-      filtered = filtered.filter(m => {
-        const homeOwner = getOwnerForTeam(m.home_team, m.year) || '';
-        const awayOwner = getOwnerForTeam(m.away_team, m.year) || '';
-        const search = searchTerm.toLowerCase();
-        return (
-          m.home_team.toLowerCase().includes(search) ||
-          m.away_team.toLowerCase().includes(search) ||
-          homeOwner.toLowerCase().includes(search) ||
-          awayOwner.toLowerCase().includes(search)
-        );
-      });
-    }
-
     if (selectedYear !== 'all') {
       filtered = filtered.filter(m => m.year === parseInt(selectedYear));
     }
@@ -66,7 +51,7 @@ function Matchups() {
     }
 
     setFilteredMatchups(filtered);
-  }, [searchTerm, selectedYear, selectedOwner, matchups, standings]);
+  }, [selectedYear, selectedOwner, matchups, standings]);
 
   if (loading) {
     return (
@@ -102,17 +87,7 @@ function Matchups() {
       {/* Filters */}
       <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 p-1">
         <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-6 border border-white/10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-white/70 mb-2">Search</label>
-              <input
-                type="text"
-                placeholder="Search by team or owner..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-white/10 focus:border-purple-500 focus:outline-none placeholder-white/30"
-              />
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-white/70 mb-2">Year</label>
               <select

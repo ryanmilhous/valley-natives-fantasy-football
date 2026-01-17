@@ -330,6 +330,40 @@ class SleeperExtractor:
 
         print(f"  Processed {len(draft_picks)} draft picks")
 
+        # Build roster data from Sleeper rosters API
+        print("  Building roster data...")
+        rosters_dict = {}
+        for roster in rosters:
+            roster_id = roster['roster_id']
+            player_ids = roster.get('players', []) or []
+
+            roster_players = []
+            for player_id in player_ids:
+                player_data = players_map.get(str(player_id), {})
+                player_name = f"{player_data.get('first_name', '')} {player_data.get('last_name', '')}".strip()
+                if not player_name:
+                    player_name = player_data.get('full_name', f'Player {player_id}')
+
+                # Get player stats for this player if available
+                player_stat = next((p for p in player_stats if str(p.get('player_id')) == str(player_id)), None)
+                total_points = player_stat.get('total_points', 0) if player_stat else 0
+                games = player_stat.get('games', 0) if player_stat else 0
+
+                roster_players.append({
+                    'name': player_name,
+                    'player_id': player_id,
+                    'position': player_data.get('position', ''),
+                    'pro_team': player_data.get('team', ''),
+                    'injured': player_data.get('injury_status') not in [None, 'ACTIVE', ''],
+                    'injury_status': player_data.get('injury_status') or 'ACTIVE',
+                    'avg_points': round(total_points / games, 2) if games > 0 else 0,
+                    'total_points': round(total_points, 2)
+                })
+
+            rosters_dict[str(roster_id)] = roster_players
+
+        print(f"  Built rosters for {len(rosters_dict)} teams")
+
         # Build season data structure
         season_data = {
             'year': year,
@@ -337,7 +371,7 @@ class SleeperExtractor:
             'teams': teams,
             'matchups': matchups,
             'draft': draft_picks,
-            'rosters': [],  # Roster details not needed for now
+            'rosters': rosters_dict,
             'player_stats': player_stats,
             'settings': league_info.get('settings', {}),
             'extracted_at': datetime.now().isoformat(),

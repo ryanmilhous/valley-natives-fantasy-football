@@ -228,10 +228,14 @@ function Records() {
                         {records.biggest_blowout.point_differential.toFixed(2)} points
                       </div>
                       <div className="text-sm text-white/80 font-medium">
-                        {records.biggest_blowout.winner} ({records.biggest_blowout.winner_score})
+                        {records.biggest_blowout.winner}
+                        {records.biggest_blowout.winner_owner && <span className="text-white/60"> ({records.biggest_blowout.winner_owner})</span>}
+                        <span className="text-white/50"> - {records.biggest_blowout.winner_score}</span>
                       </div>
                       <div className="text-sm text-red-400/80">
-                        defeated {records.biggest_blowout.loser} ({records.biggest_blowout.loser_score})
+                        defeated {records.biggest_blowout.loser}
+                        {records.biggest_blowout.loser_owner && <span className="text-red-300/60"> ({records.biggest_blowout.loser_owner})</span>}
+                        <span className="text-red-300/50"> - {records.biggest_blowout.loser_score}</span>
                       </div>
                       <div className="text-xs text-white/50 mt-1">
                         Week {records.biggest_blowout.week}, {records.biggest_blowout.year}
@@ -255,10 +259,14 @@ function Records() {
                         {records.closest_game.point_differential.toFixed(2)} points
                       </div>
                       <div className="text-sm text-white/80 font-medium">
-                        {records.closest_game.winner} ({records.closest_game.winner_score})
+                        {records.closest_game.winner}
+                        {records.closest_game.winner_owner && <span className="text-white/60"> ({records.closest_game.winner_owner})</span>}
+                        <span className="text-white/50"> - {records.closest_game.winner_score}</span>
                       </div>
                       <div className="text-sm text-cyan-400/80">
-                        edged out {records.closest_game.loser} ({records.closest_game.loser_score})
+                        edged out {records.closest_game.loser}
+                        {records.closest_game.loser_owner && <span className="text-cyan-300/60"> ({records.closest_game.loser_owner})</span>}
+                        <span className="text-cyan-300/50"> - {records.closest_game.loser_score}</span>
                       </div>
                       <div className="text-xs text-white/50 mt-1">
                         Week {records.closest_game.week}, {records.closest_game.year}
@@ -454,9 +462,14 @@ function Records() {
                       <div className="text-3xl font-bold text-white">
                         {records.highest_scoring_loss.score.toFixed(2)}
                       </div>
-                      <div className="text-sm text-white/80 font-medium">{records.highest_scoring_loss.team}</div>
+                      <div className="text-sm text-white/80 font-medium">
+                        {records.highest_scoring_loss.team}
+                        {records.highest_scoring_loss.owner && <span className="text-white/60"> ({records.highest_scoring_loss.owner})</span>}
+                      </div>
                       <div className="text-sm text-orange-400/80">
-                        Lost to {records.highest_scoring_loss.opponent} ({records.highest_scoring_loss.opponent_score.toFixed(2)})
+                        Lost to {records.highest_scoring_loss.opponent}
+                        {records.highest_scoring_loss.opponent_owner && <span className="text-orange-300/60"> ({records.highest_scoring_loss.opponent_owner})</span>}
+                        <span className="text-orange-300/50"> - {records.highest_scoring_loss.opponent_score.toFixed(2)}</span>
                       </div>
                       <div className="text-xs text-white/50 mt-1">Week {records.highest_scoring_loss.week}, {records.highest_scoring_loss.year}</div>
                     </div>
@@ -478,9 +491,14 @@ function Records() {
                       <div className="text-3xl font-bold text-white">
                         {records.lowest_scoring_win.score.toFixed(2)}
                       </div>
-                      <div className="text-sm text-white/80 font-medium">{records.lowest_scoring_win.team}</div>
+                      <div className="text-sm text-white/80 font-medium">
+                        {records.lowest_scoring_win.team}
+                        {records.lowest_scoring_win.owner && <span className="text-white/60"> ({records.lowest_scoring_win.owner})</span>}
+                      </div>
                       <div className="text-sm text-indigo-400/80">
-                        Beat {records.lowest_scoring_win.opponent} ({records.lowest_scoring_win.opponent_score.toFixed(2)})
+                        Beat {records.lowest_scoring_win.opponent}
+                        {records.lowest_scoring_win.opponent_owner && <span className="text-indigo-300/60"> ({records.lowest_scoring_win.opponent_owner})</span>}
+                        <span className="text-indigo-300/50"> - {records.lowest_scoring_win.opponent_score.toFixed(2)}</span>
                       </div>
                       <div className="text-xs text-white/50 mt-1">Week {records.lowest_scoring_win.week}, {records.lowest_scoring_win.year}</div>
                     </div>
@@ -503,7 +521,14 @@ function Records() {
                         {records.most_combined_points.combined_points.toFixed(2)}
                       </div>
                       <div className="text-sm text-white/80 font-medium">
-                        {records.most_combined_points.home_team} ({records.most_combined_points.home_score.toFixed(2)}) vs {records.most_combined_points.away_team} ({records.most_combined_points.away_score.toFixed(2)})
+                        {records.most_combined_points.home_team}
+                        {records.most_combined_points.home_owner && <span className="text-white/60"> ({records.most_combined_points.home_owner})</span>}
+                        <span className="text-white/50"> - {records.most_combined_points.home_score.toFixed(2)}</span>
+                      </div>
+                      <div className="text-sm text-yellow-400/80">
+                        vs {records.most_combined_points.away_team}
+                        {records.most_combined_points.away_owner && <span className="text-yellow-300/60"> ({records.most_combined_points.away_owner})</span>}
+                        <span className="text-yellow-300/50"> - {records.most_combined_points.away_score.toFixed(2)}</span>
                       </div>
                       <div className="text-xs text-white/50 mt-1">Week {records.most_combined_points.week}, {records.most_combined_points.year}</div>
                     </div>

@@ -1,17 +1,21 @@
 {
   "highest_score": {
     "team": "Lo-Carb Monsters",
+    "owner": "Tyler Fullerton",
     "score": 293.0,
     "week": 13,
     "year": 2008,
-    "opponent": "The Tom Brady Pus Bus"
+    "opponent": "The Tom Brady Pus Bus",
+    "opponent_owner": "Kellen Coffis"
   },
   "lowest_score": {
     "team": "Schmee Squad",
+    "owner": "Nick Smielak",
     "score": 14.7,
     "week": 15,
     "year": 2015,
-    "opponent": "Youth Movement  !!!!!!!"
+    "opponent": "Youth Movement  !!!!!!!",
+    "opponent_owner": "Ben Beck"
   },
   "biggest_blowout": {
     "year": 2009,
@@ -27,7 +31,9 @@
     "point_differential": 118.0,
     "loser": "Somewhere over the Dwayne Bowe",
     "winner_score": 251.0,
-    "loser_score": 133.0
+    "loser_score": 133.0,
+    "winner_owner": "Brian Vitale",
+    "loser_owner": "Nick Smielak"
   },
   "closest_game": {
     "year": 2021,
@@ -43,7 +49,9 @@
     "point_differential": 0.03,
     "loser": "RichCity Yung Beevs",
     "winner_score": 134.88,
-    "loser_score": 134.85
+    "loser_score": 134.85,
+    "winner_owner": "Greg Swenson",
+    "loser_owner": "Chris Vitale"
   },
   "most_points_season": {
     "year": 2024,
@@ -128,27 +136,33 @@
   },
   "highest_scoring_loss": {
     "team": "Lo-Carb Monsters",
+    "owner": "Tyler Fullerton",
     "score": 254.08,
     "week": 13,
     "year": 2011,
     "opponent": "south brookdale regulaters",
+    "opponent_owner": "Brian Vitale",
     "opponent_score": 268.38
   },
   "most_combined_points": {
     "year": 2011,
     "week": 13,
     "home_team": "south brookdale regulaters",
+    "home_owner": "Brian Vitale",
     "away_team": "Lo-Carb Monsters",
+    "away_owner": "Tyler Fullerton",
     "home_score": 268.38,
     "away_score": 254.08,
     "combined_points": 522.46
   },
   "lowest_scoring_win": {
     "team": "Team Clark",
+    "owner": "Tanner Clark",
     "score": 49.0,
     "week": 7,
     "year": 2008,
     "opponent": "Michael Vick's FreedomFighters",
+    "opponent_owner": "Garrett Ulrich",
     "opponent_score": 44.0
   },
   "best_team_worst_result": {
