@@ -42402,8 +42402,8 @@
         "player_id": "9753",
         "position": "RB",
         "pro_team": "SEA",
-        "injured": false,
-        "injury_status": "ACTIVE",
+        "injured": true,
+        "injury_status": "Questionable",
         "avg_points": 10.71,
         "total_points": 171.4
       },
@@ -42670,7 +42670,7 @@
         "pro_team": "NE",
         "injured": true,
         "injury_status": "IR",
-        "avg_points": 6.08,
+        "avg_points": 6.07,
         "total_points": 24.3
       },
       {
@@ -43478,8 +43478,8 @@
         "player_id": "11627",
         "position": "WR",
         "pro_team": "DEN",
-        "injured": false,
-        "injury_status": "ACTIVE",
+        "injured": true,
+        "injury_status": "Questionable",
         "avg_points": 8.44,
         "total_points": 118.2
       },
@@ -43488,8 +43488,8 @@
         "player_id": "11638",
         "position": "WR",
         "pro_team": "SF",
-        "injured": true,
-        "injury_status": "Questionable",
+        "injured": false,
+        "injury_status": "ACTIVE",
         "avg_points": 7.84,
         "total_points": 70.6
       },
@@ -43736,8 +43736,8 @@
         "player_id": "4943",
         "position": "QB",
         "pro_team": "SEA",
-        "injured": true,
-        "injury_status": "Questionable",
+        "injured": false,
+        "injury_status": "ACTIVE",
         "avg_points": 13.85,
         "total_points": 235.42
       },
@@ -44002,8 +44002,8 @@
         "player_id": "11563",
         "position": "QB",
         "pro_team": "DEN",
-        "injured": false,
-        "injury_status": "ACTIVE",
+        "injured": true,
+        "injury_status": "Out",
         "avg_points": 17.93,
         "total_points": 304.84
       },

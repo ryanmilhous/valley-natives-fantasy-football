@@ -260,9 +260,16 @@ class SleeperExtractor:
 
         print(f"  Processed {len(matchups)} matchups")
 
-        # Extract player stats from matchup data
-        print("  Aggregating player stats from matchups...")
-        player_stats_agg = {}  # player_id -> {total_points, games, weeks_played, roster_id}
+        # Extract player stats from matchup data (weekly breakdown)
+        print("  Extracting weekly player stats from matchups...")
+
+        # Fetch players map to get player names and positions
+        print("  Fetching players map for player details...")
+        players_map = self.get_players_map()
+
+        # Build player_stats list with weekly entries
+        player_stats = []
+        player_roster_map = {}  # Track which roster each player was on
 
         for week, week_matchups in all_matchups_by_week.items():
             for m in week_matchups:
@@ -270,47 +277,41 @@ class SleeperExtractor:
                 players_points = m.get('players_points', {})
                 starters = m.get('starters', [])
 
+                # Get team info for this roster
+                team_info = next((t for t in teams if t['team_id'] == roster_id), {})
+
                 for player_id, points in players_points.items():
-                    if player_id not in player_stats_agg:
-                        player_stats_agg[player_id] = {
-                            'total_points': 0,
-                            'games': 0,
-                            'roster_id': roster_id,
-                            'weeks': []
-                        }
-                    if points and points > 0:
-                        player_stats_agg[player_id]['total_points'] += points
-                        player_stats_agg[player_id]['games'] += 1
-                        player_stats_agg[player_id]['weeks'].append(week)
+                    if points is None:
+                        points = 0
 
-        # Fetch players map to get player names and positions
-        print("  Fetching players map for player details...")
-        players_map = self.get_players_map()
+                    player_data = players_map.get(player_id, {})
+                    player_name = f"{player_data.get('first_name', '')} {player_data.get('last_name', '')}".strip()
+                    if not player_name:
+                        player_name = player_data.get('full_name', f'Player {player_id}')
 
-        # Build player_stats list
-        player_stats = []
-        for player_id, stats in player_stats_agg.items():
-            player_data = players_map.get(player_id, {})
-            player_name = f"{player_data.get('first_name', '')} {player_data.get('last_name', '')}".strip()
-            if not player_name:
-                player_name = player_data.get('full_name', f'Player {player_id}')
+                    # Track roster for this player
+                    player_roster_map[player_id] = roster_id
 
-            # Get team info for this player's roster
-            team_info = next((t for t in teams if t['team_id'] == stats['roster_id']), {})
+                    # Determine slot (starter or bench)
+                    slot = 'BN'
+                    if starters and player_id in starters:
+                        slot = player_data.get('position', 'FLEX')
 
-            player_stats.append({
-                'player_id': player_id,
-                'player_name': player_name,
-                'position': player_data.get('position', ''),
-                'nfl_team': player_data.get('team', ''),
-                'total_points': round(stats['total_points'], 2),
-                'games': stats['games'],
-                'team_id': stats['roster_id'],
-                'team_name': team_info.get('team_name'),
-                'owner': team_info.get('owner')
-            })
+                    player_stats.append({
+                        'week': week,
+                        'player_id': player_id,
+                        'player_name': player_name,
+                        'position': player_data.get('position', ''),
+                        'slot': slot,
+                        'points': round(points, 2),
+                        'projected_points': 0,  # Sleeper doesn't provide this in matchups
+                        'pro_team': player_data.get('team', ''),
+                        'team_id': roster_id,
+                        'team_name': team_info.get('team_name'),
+                        'owner': team_info.get('owner')
+                    })
 
-        print(f"  Processed {len(player_stats)} player stat entries")
+        print(f"  Processed {len(player_stats)} weekly player stat entries")
 
         # Get draft data
         print("  Fetching draft...")
@@ -352,6 +353,18 @@ class SleeperExtractor:
 
         # Build roster data from Sleeper rosters API
         print("  Building roster data...")
+
+        # First aggregate player stats for roster view
+        player_totals = {}  # player_id -> {total_points, games}
+        for stat in player_stats:
+            pid = str(stat.get('player_id'))
+            if pid not in player_totals:
+                player_totals[pid] = {'total_points': 0, 'games': 0}
+            points = stat.get('points', 0) or 0
+            if points > 0:
+                player_totals[pid]['total_points'] += points
+                player_totals[pid]['games'] += 1
+
         rosters_dict = {}
         for roster in rosters:
             roster_id = roster['roster_id']
@@ -364,10 +377,10 @@ class SleeperExtractor:
                 if not player_name:
                     player_name = player_data.get('full_name', f'Player {player_id}')
 
-                # Get player stats for this player if available
-                player_stat = next((p for p in player_stats if str(p.get('player_id')) == str(player_id)), None)
-                total_points = player_stat.get('total_points', 0) if player_stat else 0
-                games = player_stat.get('games', 0) if player_stat else 0
+                # Get aggregated player stats
+                player_agg = player_totals.get(str(player_id), {})
+                total_points = player_agg.get('total_points', 0)
+                games = player_agg.get('games', 0)
 
                 roster_players.append({
                     'name': player_name,

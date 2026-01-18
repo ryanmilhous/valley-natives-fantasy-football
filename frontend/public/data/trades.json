@@ -52,8 +52,24 @@
       ],
       "faab_received": 0,
       "faab_sent": 0,
-      "total_points": 0,
-      "players_with_stats": []
+      "total_points": 147.14,
+      "players_with_stats": [
+        {
+          "name": "Kimani Vidal",
+          "position": "RB",
+          "points": 39.0
+        },
+        {
+          "name": "Justin Herbert",
+          "position": "QB",
+          "points": 80.74
+        },
+        {
+          "name": "Sean Tucker",
+          "position": "RB",
+          "points": 27.4
+        }
+      ]
     },
     "side2": {
       "owner": "Jacob Luna",
@@ -103,14 +119,35 @@
       ],
       "faab_received": 0,
       "faab_sent": 0,
-      "total_points": 0,
-      "players_with_stats": []
+      "total_points": 299.6,
+      "players_with_stats": [
+        {
+          "name": "Davante Adams",
+          "position": "WR",
+          "points": 54.5
+        },
+        {
+          "name": "Dak Prescott",
+          "position": "QB",
+          "points": 120.6
+        },
+        {
+          "name": "David Montgomery",
+          "position": "RB",
+          "points": 52.4
+        },
+        {
+          "name": "Javonte Williams",
+          "position": "RB",
+          "points": 72.1
+        }
+      ]
     },
     "summary": "Ryan Milhous receives Kimani Vidal, Justin Herbert, Garrett Wilson, Sean Tucker; Jacob Luna receives Davante Adams, Dak Prescott, David Montgomery, Javonte Williams",
     "trade_timing": "Week 12",
-    "winner": "tie",
-    "winner_owner": null,
-    "point_differential": 0
+    "winner": "side2",
+    "winner_owner": "Jacob Luna",
+    "point_differential": 152.46
   },
   {
     "year": 2025,
@@ -145,8 +182,24 @@
       ],
       "faab_received": 0,
       "faab_sent": 0,
-      "total_points": 0,
-      "players_with_stats": []
+      "total_points": 249.32,
+      "players_with_stats": [
+        {
+          "name": "Michael Pittman",
+          "position": "WR",
+          "points": 39.4
+        },
+        {
+          "name": "Travis Etienne",
+          "position": "RB",
+          "points": 122.8
+        },
+        {
+          "name": "Seattle Seahawks",
+          "position": "DEF",
+          "points": 87.12
+        }
+      ]
     },
     "side2": {
       "owner": "Garrett Ulrich",
@@ -176,14 +229,20 @@
       ],
       "faab_received": 0,
       "faab_sent": 0,
-      "total_points": 0,
-      "players_with_stats": []
+      "total_points": 106.2,
+      "players_with_stats": [
+        {
+          "name": "Zay Flowers",
+          "position": "WR",
+          "points": 106.2
+        }
+      ]
     },
     "summary": "Chris Vitale receives Michael Pittman, Travis Etienne, Seattle Seahawks; Garrett Ulrich receives Zay Flowers",
     "trade_timing": "Week 11",
-    "winner": "tie",
-    "winner_owner": null,
-    "point_differential": 0
+    "winner": "side1",
+    "winner_owner": "Chris Vitale",
+    "point_differential": 143.12
   },
   {
     "year": 2025,
@@ -218,8 +277,14 @@
       ],
       "faab_received": 0,
       "faab_sent": 0,
-      "total_points": 0,
-      "players_with_stats": []
+      "total_points": 124.3,
+      "players_with_stats": [
+        {
+          "name": "Colston Loveland",
+          "position": "TE",
+          "points": 124.3
+        }
+      ]
     },
     "side2": {
       "owner": "Kyle Poppen",
@@ -249,14 +314,30 @@
       ],
       "faab_received": 0,
       "faab_sent": 0,
-      "total_points": 0,
-      "players_with_stats": []
+      "total_points": 241.92,
+      "players_with_stats": [
+        {
+          "name": "Brandon Aubrey",
+          "position": "K",
+          "points": 93.6
+        },
+        {
+          "name": "Tyler Huntley",
+          "position": "QB",
+          "points": 31.02
+        },
+        {
+          "name": "Kyle Pitts",
+          "position": "TE",
+          "points": 117.3
+        }
+      ]
     },
     "summary": "Garrett Ulrich receives Colston Loveland; Kyle Poppen receives Brandon Aubrey, Tyler Huntley, Kyle Pitts",
     "trade_timing": "Week 8",
-    "winner": "tie",
-    "winner_owner": null,
-    "point_differential": 0
+    "winner": "side2",
+    "winner_owner": "Kyle Poppen",
+    "point_differential": 117.62
   },
   {
     "year": 2025,
@@ -281,8 +362,14 @@
       ],
       "faab_received": 0,
       "faab_sent": 0,
-      "total_points": 0,
-      "players_with_stats": []
+      "total_points": 90.9,
+      "players_with_stats": [
+        {
+          "name": "Jakobi Meyers",
+          "position": "WR",
+          "points": 90.9
+        }
+      ]
     },
     "side2": {
       "owner": "Greg Swenson",
@@ -302,14 +389,20 @@
       ],
       "faab_received": 0,
       "faab_sent": 0,
-      "total_points": 0,
-      "players_with_stats": []
+      "total_points": 40.8,
+      "players_with_stats": [
+        {
+          "name": "Isiah Pacheco",
+          "position": "RB",
+          "points": 40.8
+        }
+      ]
     },
     "summary": "Garrett Ulrich receives Jakobi Meyers; Greg Swenson receives Isiah Pacheco",
     "trade_timing": "Week 7",
-    "winner": "tie",
-    "winner_owner": null,
-    "point_differential": 0
+    "winner": "side1",
+    "winner_owner": "Garrett Ulrich",
+    "point_differential": 50.1
   },
   {
     "year": 2025,
@@ -334,8 +427,14 @@
       ],
       "faab_received": 0,
       "faab_sent": 1,
-      "total_points": 0,
-      "players_with_stats": []
+      "total_points": 59.4,
+      "players_with_stats": [
+        {
+          "name": "Dylan Sampson",
+          "position": "RB",
+          "points": 59.4
+        }
+      ]
     },
     "side2": {
       "owner": "Nick Smielak",
@@ -355,14 +454,20 @@
       ],
       "faab_received": 1,
       "faab_sent": 0,
-      "total_points": 0,
-      "players_with_stats": []
+      "total_points": 106.6,
+      "players_with_stats": [
+        {
+          "name": "Dalton Kincaid",
+          "position": "TE",
+          "points": 106.6
+        }
+      ]
     },
     "summary": "Garrett Ulrich receives Dylan Sampson; Nick Smielak receives Dalton Kincaid + $1 FAAB",
     "trade_timing": "Week 1",
-    "winner": "tie",
-    "winner_owner": null,
-    "point_differential": 0
+    "winner": "side2",
+    "winner_owner": "Nick Smielak",
+    "point_differential": 47.2
   },
   {
     "year": 2024,
