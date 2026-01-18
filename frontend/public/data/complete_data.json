@@ -3,17 +3,17 @@
     "1": {
       "team_id": 1,
       "team_names": [
-        "Kellen's Championship Team",
-        "RichCity Yung Beevs",
         "The Chronic",
-        "Rich City YungBeevs"
+        "Rich City YungBeevs",
+        "RichCity Yung Beevs",
+        "Kellen's Championship Team"
       ],
-      "current_name": "Rich City YungBeevs",
+      "current_name": "Kellen's Championship Team",
       "owners": [
-        "Kellen Coffis",
-        "Chris Vitale"
+        "Chris Vitale",
+        "Kellen Coffis"
       ],
-      "current_owner": "Chris Vitale",
+      "current_owner": "Kellen Coffis",
       "seasons_active": 20,
       "seasons": [
         {
@@ -290,20 +290,20 @@
     "2": {
       "team_id": 2,
       "team_names": [
-        "The Tom Brady Pus Bus",
+        "Tom Brady's New Pus Bus",
         "My Penix Will Rise Again",
-        "Back to Back Champioships",
-        "The Kellen Brothers",
         "Chris's Team",
-        "Tom Brady's New Pus Bus"
+        "The Tom Brady Pus Bus",
+        "The Kellen Brothers",
+        "Back to Back Champioships"
       ],
-      "current_name": "Tom Brady's New Pus Bus",
+      "current_name": "Back to Back Champioships",
       "owners": [
         "Kellen Coffis",
-        "Chris Vitale",
-        "Garrett Ulrich"
+        "Garrett Ulrich",
+        "Chris Vitale"
       ],
-      "current_owner": "Garrett Ulrich",
+      "current_owner": "Chris Vitale",
       "seasons_active": 20,
       "seasons": [
         {
@@ -580,31 +580,31 @@
     "3": {
       "team_id": 3,
       "team_names": [
-        "Ben Lomond  Half Baked Co.",
         " The Art Shell  Blueprint",
         "The Graduates",
-        "Stop Jerking My Johnson",
         "Acoreycy and Prosision",
-        "The Lucky Lefties",
         "Team 3",
-        "The Golden Gods",
-        "The Replacement Graduates",
-        "The Post Graduates",
-        "Be Stills My Fart ",
-        "B-LO Par",
-        "Mono a Mono",
-        "B-LO Bleezos",
         "The Leftists",
-        "The Overflowing Spongies",
+        "The Lucky Lefties",
         "Cherry Poppen",
-        "The Young Lefties"
+        "The Overflowing Spongies",
+        "B-LO Par",
+        "The Replacement Graduates",
+        "Stop Jerking My Johnson",
+        "Ben Lomond  Half Baked Co.",
+        "B-LO Bleezos",
+        "The Young Lefties",
+        "Mono a Mono",
+        "The Golden Gods",
+        "The Post Graduates",
+        "Be Stills My Fart "
       ],
-      "current_name": "The Young Lefties",
+      "current_name": "Be Stills My Fart ",
       "owners": [
-        "Jamie Coffis",
-        "Kyle Poppen"
+        "Kyle Poppen",
+        "Jamie Coffis"
       ],
-      "current_owner": "Kyle Poppen",
+      "current_owner": "Jamie Coffis",
       "seasons_active": 20,
       "seasons": [
         {
@@ -881,18 +881,18 @@
     "4": {
       "team_id": 4,
       "team_names": [
-        "Nano Bubbles  And  Abstinence",
+        "Hustle Bustle And Man Muscle",
+        "What would MichaelVick do?",
+        "Smi Pies",
         "King of  The Doids",
+        "Nano Bubbles  And  Abstinence",
+        "Emancipation of Jim and Vicki",
         "Mr. Thomas' Naberhood",
         "No Starties Even Beats Me",
-        "Hustle Bustle And Man Muscle",
-        "Team 4",
-        "Smi Pies",
-        "What would MichaelVick do?",
-        "Emancipation of Jim and Vicki",
-        "Michael Vick's FreedomFighters"
+        "Michael Vick's FreedomFighters",
+        "Team 4"
       ],
-      "current_name": "Michael Vick's FreedomFighters",
+      "current_name": "Team 4",
       "owners": [
         "Nick Smielak",
         "Garrett Ulrich"
@@ -1174,13 +1174,13 @@
     "5": {
       "team_id": 5,
       "team_names": [
-        "Team Clark",
         "Team 5",
+        "Team Clark",
         "Team Ramrod",
-        "Out of Time",
-        "Prime Time"
+        "Prime Time",
+        "Out of Time"
       ],
-      "current_name": "Prime Time",
+      "current_name": "Out of Time",
       "owners": [
         "Greg Swenson",
         "Tanner Clark"
@@ -1462,22 +1462,22 @@
     "7": {
       "team_id": 7,
       "team_names": [
-        ". Schmee",
-        "Schmee Squad",
-        "Team luna",
-        "Somewhere over the Dwayne Bowe",
-        "The Smi Pies",
-        "Team 7",
-        "B-Rom Baby  Bears",
+        "The Ghosts of Polak Past",
         "Mt. T1GHTMON",
         "Team Schmeeeelak",
         "RIP Chris",
-        "The Ghosts of Polak Past"
+        "Team 7",
+        ". Schmee",
+        "The Smi Pies",
+        "Schmee Squad",
+        "Team luna",
+        "Somewhere over the Dwayne Bowe",
+        "B-Rom Baby  Bears"
       ],
-      "current_name": "The Ghosts of Polak Past",
+      "current_name": "B-Rom Baby  Bears",
       "owners": [
-        "Nick Smielak",
         "Steve Keller",
+        "Nick Smielak",
         "Jacob Luna"
       ],
       "current_owner": "Jacob Luna",
@@ -1757,28 +1757,28 @@
     "8": {
       "team_id": 8,
       "team_names": [
-        "south brookdale regulaters",
-        "Bros Before Younghoes",
-        "Younghoes Have Kooties",
-        "Pantry The Puddn\u00e2\u0080\u0099",
-        "the creek nut wildphish",
-        "Kooter McGavin",
-        "Scroopy Noopers",
-        "Running Back-Snatch",
-        "Ding Dong Doid Brains",
-        "Team 8",
-        "U Koo with Younghoes?",
-        "Younghoe Bunghole",
         "Protoss'd Salad",
-        "RichCity Yung Beevs",
+        "south brookdale regulaters",
+        "Ding Dong Doid Brains",
+        "Pantry The Puddn\u00e2\u0080\u0099",
+        "Kooter McGavin",
+        "Biggest  Fantasy Flop",
+        "U Koo with Younghoes?",
+        "Running Back-Snatch",
+        "Younghoe Bunghole",
+        "Scroopy Noopers",
+        "Younghoes Have Kooties",
+        "Bros Before Younghoes",
+        "the creek nut wildphish",
         "Blackout or Back Out",
-        "Biggest  Fantasy Flop"
+        "RichCity Yung Beevs",
+        "Team 8"
       ],
-      "current_name": "Biggest  Fantasy Flop",
+      "current_name": "Team 8",
       "owners": [
         "Brian Vitale",
-        "Ryan Milhous",
         "Rory McKee",
+        "Ryan Milhous",
         "Peter Kent-Stoll"
       ],
       "current_owner": "Peter Kent-Stoll",
@@ -2058,19 +2058,19 @@
     "9": {
       "team_id": 9,
       "team_names": [
-        "Tampon Bay Blumpcaneers",
-        "Team 9",
-        "Tampon Bay Chumpkineers",
         "S.F. Forty-Chiners",
-        "Less Gore Mo Pus",
+        "Tampon Bay Chumpkineers",
+        "More Gore",
         "Tampon Bay Blumpkineers",
+        "Tampon Bay Blumpcaneers",
         "High Hopes",
-        "More Gore"
+        "Team 9",
+        "Less Gore Mo Pus"
       ],
-      "current_name": "More Gore",
+      "current_name": "Less Gore Mo Pus",
       "owners": [
-        "Dylan Andrews",
         "Brendan Romele",
+        "Dylan Andrews",
         "Jacob Luna"
       ],
       "current_owner": "Jacob Luna",
@@ -2351,22 +2351,22 @@
       "team_id": 10,
       "team_names": [
         "Team 10",
-        "AB's Face Farts",
+        "Purdy Good Timing ",
         "Lo-Carb Monsters",
-        "For Those About To Brock",
-        "For All The  Haters (Chris)",
+        "The Keepy No  Startie's",
+        "The Pierre Necessities",
+        "AB's Face Farts",
         "Foot-Loose and Fancy Free",
+        "Tyreek And The Drain Pours",
+        "For Those About To Brock",
         "Nick Dak Paddy Wack",
         "Tampon Bay Blumpkineers",
-        "Purdy Good Timing ",
-        "The Keepy No  Startie's",
-        "Tyreek And The Drain Pours",
-        "The Pierre Necessities"
+        "For All The  Haters (Chris)"
       ],
-      "current_name": "The Pierre Necessities",
+      "current_name": "For All The  Haters (Chris)",
       "owners": [
-        "Bryan Whitaker",
         "Tyler Fullerton",
+        "Bryan Whitaker",
         "Jacob Luna"
       ],
       "current_owner": "Jacob Luna",
@@ -2646,12 +2646,12 @@
     "11": {
       "team_id": 11,
       "team_names": [
+        "Team Romele",
         "S.F. Forty-Chiners",
-        "Team 11",
         "Felton Sluggers",
-        "Team Romele"
+        "Team 11"
       ],
-      "current_name": "Team Romele",
+      "current_name": "Team 11",
       "owners": [
         "Brendan Romele",
         "Jeremy Settles"
@@ -2933,21 +2933,21 @@
     "12": {
       "team_id": 12,
       "team_names": [
+        "Team Morris",
+        "Ding Dong Doid Brains",
+        "Team 12",
+        "Corn On The  Kolb",
         "Auto Drafties",
         "the revolting BLOB",
-        "Bryan Whitaker's Team",
-        "Corn On The  Kolb",
-        "Team 12",
-        "Team Morris",
-        "Ding Dong Doid Brains"
+        "Bryan Whitaker's Team"
       ],
-      "current_name": "Ding Dong Doid Brains",
+      "current_name": "Bryan Whitaker's Team",
       "owners": [
-        "Bryan Whitaker",
+        "Kyle Morris",
         "Ryan Milhous",
-        "Kyle Morris"
+        "Bryan Whitaker"
       ],
-      "current_owner": "Kyle Morris",
+      "current_owner": "Bryan Whitaker",
       "seasons_active": 20,
       "seasons": [
         {
@@ -3225,10 +3225,10 @@
       "team_id": 6,
       "team_names": [
         "Team Settles",
-        "Felton Sluggers",
-        "The Drakes"
+        "The Drakes",
+        "Felton Sluggers"
       ],
-      "current_name": "The Drakes",
+      "current_name": "Felton Sluggers",
       "owners": [
         "Jeremy Settles",
         "Jamie Coffis"
@@ -3497,18 +3497,18 @@
     "13": {
       "team_id": 13,
       "team_names": [
-        "Youth Movement  !!!!!!!",
-        "the new kid  on the block",
-        "PPPWRA",
         "The Pudd'n \ud83d\udc2c",
-        "Jackson5 \ud83d\udc2c"
+        "PPPWRA",
+        "Youth Movement  !!!!!!!",
+        "Jackson5 \ud83d\udc2c",
+        "the new kid  on the block"
       ],
-      "current_name": "Jackson5 \ud83d\udc2c",
+      "current_name": "the new kid  on the block",
       "owners": [
-        "Ben Beck",
-        "Rory McKee"
+        "Rory McKee",
+        "Ben Beck"
       ],
-      "current_owner": "Rory McKee",
+      "current_owner": "Ben Beck",
       "seasons_active": 14,
       "seasons": [
         {
@@ -3707,10 +3707,10 @@
     "14": {
       "team_id": 14,
       "team_names": [
-        "Cherry Poppen",
-        "The Kellen Brothers"
+        "The Kellen Brothers",
+        "Cherry Poppen"
       ],
-      "current_name": "The Kellen Brothers",
+      "current_name": "Cherry Poppen",
       "owners": [
         "Kellen Coffis",
         "Kyle Poppen"
@@ -702696,29 +702696,8 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 549.38,
-        "players_with_stats": [
-          {
-            "name": "Kimani Vidal",
-            "position": "RB",
-            "points": 107.5
-          },
-          {
-            "name": "Justin Herbert",
-            "position": "QB",
-            "points": 286.88
-          },
-          {
-            "name": "Garrett Wilson",
-            "position": "WR",
-            "points": 81.5
-          },
-          {
-            "name": "Sean Tucker",
-            "position": "RB",
-            "points": 73.5
-          }
-        ]
+        "total_points": 0,
+        "players_with_stats": []
       },
       "side2": {
         "owner": "Jacob Luna",
@@ -702768,34 +702747,14 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 886.9,
-        "players_with_stats": [
-          {
-            "name": "Davante Adams",
-            "position": "WR",
-            "points": 192.9
-          },
-          {
-            "name": "Dak Prescott",
-            "position": "QB",
-            "points": 313.78
-          },
-          {
-            "name": "David Montgomery",
-            "position": "RB",
-            "points": 154.92
-          },
-          {
-            "name": "Javonte Williams",
-            "position": "RB",
-            "points": 225.3
-          }
-        ]
+        "total_points": 0,
+        "players_with_stats": []
       },
       "summary": "Ryan Milhous receives Kimani Vidal, Justin Herbert, Garrett Wilson, Sean Tucker; Jacob Luna receives Davante Adams, Dak Prescott, David Montgomery, Javonte Williams",
-      "winner": "side2",
-      "winner_owner": "Jacob Luna",
-      "point_differential": 337.52
+      "trade_timing": "Week 12",
+      "winner": "tie",
+      "winner_owner": null,
+      "point_differential": 0
     },
     {
       "year": 2025,
@@ -702830,24 +702789,8 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 587.99,
-        "players_with_stats": [
-          {
-            "name": "Michael Pittman",
-            "position": "WR",
-            "points": 162.4
-          },
-          {
-            "name": "Travis Etienne",
-            "position": "RB",
-            "points": 235.9
-          },
-          {
-            "name": "Seattle Seahawks",
-            "position": "DEF",
-            "points": 189.69
-          }
-        ]
+        "total_points": 0,
+        "players_with_stats": []
       },
       "side2": {
         "owner": "Garrett Ulrich",
@@ -702877,19 +702820,14 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 200.7,
-        "players_with_stats": [
-          {
-            "name": "Zay Flowers",
-            "position": "WR",
-            "points": 200.7
-          }
-        ]
+        "total_points": 0,
+        "players_with_stats": []
       },
       "summary": "Chris Vitale receives Michael Pittman, Travis Etienne, Seattle Seahawks; Garrett Ulrich receives Zay Flowers",
-      "winner": "side1",
-      "winner_owner": "Chris Vitale",
-      "point_differential": 387.29
+      "trade_timing": "Week 11",
+      "winner": "tie",
+      "winner_owner": null,
+      "point_differential": 0
     },
     {
       "year": 2025,
@@ -702924,14 +702862,8 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 134.0,
-        "players_with_stats": [
-          {
-            "name": "Colston Loveland",
-            "position": "TE",
-            "points": 134.0
-          }
-        ]
+        "total_points": 0,
+        "players_with_stats": []
       },
       "side2": {
         "owner": "Kyle Poppen",
@@ -702961,29 +702893,14 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 342.02,
-        "players_with_stats": [
-          {
-            "name": "Brandon Aubrey",
-            "position": "K",
-            "points": 165.6
-          },
-          {
-            "name": "Tyler Huntley",
-            "position": "QB",
-            "points": 31.02
-          },
-          {
-            "name": "Kyle Pitts",
-            "position": "TE",
-            "points": 145.4
-          }
-        ]
+        "total_points": 0,
+        "players_with_stats": []
       },
       "summary": "Garrett Ulrich receives Colston Loveland; Kyle Poppen receives Brandon Aubrey, Tyler Huntley, Kyle Pitts",
-      "winner": "side2",
-      "winner_owner": "Kyle Poppen",
-      "point_differential": 208.02
+      "trade_timing": "Week 8",
+      "winner": "tie",
+      "winner_owner": null,
+      "point_differential": 0
     },
     {
       "year": 2025,
@@ -703008,14 +702925,8 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 138.3,
-        "players_with_stats": [
-          {
-            "name": "Jakobi Meyers",
-            "position": "WR",
-            "points": 138.3
-          }
-        ]
+        "total_points": 0,
+        "players_with_stats": []
       },
       "side2": {
         "owner": "Greg Swenson",
@@ -703035,19 +702946,14 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 77.8,
-        "players_with_stats": [
-          {
-            "name": "Isiah Pacheco",
-            "position": "RB",
-            "points": 77.8
-          }
-        ]
+        "total_points": 0,
+        "players_with_stats": []
       },
       "summary": "Garrett Ulrich receives Jakobi Meyers; Greg Swenson receives Isiah Pacheco",
-      "winner": "side1",
-      "winner_owner": "Garrett Ulrich",
-      "point_differential": 60.5
+      "trade_timing": "Week 7",
+      "winner": "tie",
+      "winner_owner": null,
+      "point_differential": 0
     },
     {
       "year": 2025,
@@ -703072,14 +702978,8 @@
         ],
         "faab_received": 0,
         "faab_sent": 1,
-        "total_points": 59.6,
-        "players_with_stats": [
-          {
-            "name": "Dylan Sampson",
-            "position": "RB",
-            "points": 59.6
-          }
-        ]
+        "total_points": 0,
+        "players_with_stats": []
       },
       "side2": {
         "owner": "Nick Smielak",
@@ -703099,19 +702999,14 @@
         ],
         "faab_received": 1,
         "faab_sent": 0,
-        "total_points": 106.6,
-        "players_with_stats": [
-          {
-            "name": "Dalton Kincaid",
-            "position": "TE",
-            "points": 106.6
-          }
-        ]
+        "total_points": 0,
+        "players_with_stats": []
       },
       "summary": "Garrett Ulrich receives Dylan Sampson; Nick Smielak receives Dalton Kincaid + $1 FAAB",
-      "winner": "side2",
-      "winner_owner": "Nick Smielak",
-      "point_differential": 47.0
+      "trade_timing": "Week 1",
+      "winner": "tie",
+      "winner_owner": null,
+      "point_differential": 0
     },
     {
       "year": 2024,
@@ -703119,7 +703014,7 @@
       "transaction_id": "13185223",
       "timestamp": "2024-10-31 11:44:47",
       "side1": {
-        "owner": "Bryan Whitaker",
+        "owner": "Ben Beck",
         "received": [
           {
             "player_id": "00-0031503",
@@ -703136,12 +703031,12 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 131.5,
+        "total_points": 98.42,
         "players_with_stats": [
           {
             "name": "Jameis Winston",
             "position": "QB",
-            "points": 131.5
+            "points": 98.42
           }
         ]
       },
@@ -703163,19 +703058,20 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 70.4,
+        "total_points": 1.1,
         "players_with_stats": [
           {
             "name": "Diontae Johnson",
             "position": "WR",
-            "points": 70.4
+            "points": 1.1
           }
         ]
       },
-      "summary": "Bryan Whitaker receives Jameis Winston; Jeremy Settles receives Diontae Johnson",
+      "summary": "Ben Beck receives Jameis Winston; Jeremy Settles receives Diontae Johnson",
+      "trade_timing": "Week 9",
       "winner": "side1",
-      "winner_owner": "Bryan Whitaker",
-      "point_differential": 61.1
+      "winner_owner": "Ben Beck",
+      "point_differential": 97.32
     },
     {
       "year": 2024,
@@ -703183,7 +703079,7 @@
       "transaction_id": "13185111",
       "timestamp": "2024-10-03 17:45:06",
       "side1": {
-        "owner": "Bryan Whitaker",
+        "owner": "Ben Beck",
         "received": [
           {
             "player_id": "00-0033923",
@@ -703210,17 +703106,17 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 181.7,
+        "total_points": 139.8,
         "players_with_stats": [
           {
             "name": "Kareem Hunt",
             "position": "RB",
-            "points": 115.6
+            "points": 106.1
           },
           {
             "name": "Dontayvion Wicks",
             "position": "WR",
-            "points": 66.1
+            "points": 33.7
           }
         ]
       },
@@ -703252,24 +703148,25 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 267.8,
+        "total_points": 182.76,
         "players_with_stats": [
           {
             "name": "Gardner Minshew",
             "position": "QB",
-            "points": 97.96
+            "points": 55.28
           },
           {
             "name": "Kirk Cousins",
             "position": "QB",
-            "points": 169.84
+            "points": 127.48
           }
         ]
       },
-      "summary": "Bryan Whitaker receives Kareem Hunt, Dontayvion Wicks; Garrett Ulrich receives Gardner Minshew, Kirk Cousins",
+      "summary": "Ben Beck receives Kareem Hunt, Dontayvion Wicks; Garrett Ulrich receives Gardner Minshew, Kirk Cousins",
+      "trade_timing": "Week 5",
       "winner": "side2",
       "winner_owner": "Garrett Ulrich",
-      "point_differential": 86.1
+      "point_differential": 42.96
     },
     {
       "year": 2024,
@@ -703277,7 +703174,7 @@
       "transaction_id": "13185302",
       "timestamp": "2024-09-26 18:53:10",
       "side1": {
-        "owner": "Jamie Coffis",
+        "owner": "Greg Swenson",
         "received": [
           {
             "player_id": "00-0036139",
@@ -703299,22 +703196,22 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 244.68,
+        "total_points": 194.22,
         "players_with_stats": [
           {
             "name": "Rico Dowdle",
             "position": "RB",
-            "points": 132.1
+            "points": 113.4
           },
           {
             "name": "Will Levis",
             "position": "QB",
-            "points": 112.58
+            "points": 80.82
           }
         ]
       },
       "side2": {
-        "owner": "Greg Swenson",
+        "owner": "Jamie Coffis",
         "received": [
           {
             "player_id": "00-0031280",
@@ -703336,19 +703233,20 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 150.9,
+        "total_points": 99.8,
         "players_with_stats": [
           {
             "name": "Derek Carr",
             "position": "QB",
-            "points": 150.9
+            "points": 99.8
           }
         ]
       },
-      "summary": "Jamie Coffis receives Rico Dowdle, Will Levis; Greg Swenson receives Derek Carr",
+      "summary": "Greg Swenson receives Rico Dowdle, Will Levis; Jamie Coffis receives Derek Carr",
+      "trade_timing": "Week 4",
       "winner": "side1",
-      "winner_owner": "Jamie Coffis",
-      "point_differential": 93.78
+      "winner_owner": "Greg Swenson",
+      "point_differential": 94.42
     },
     {
       "year": 2024,
@@ -703373,12 +703271,12 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 50.8,
+        "total_points": 25.8,
         "players_with_stats": [
           {
             "name": "Isaac Guerendo",
             "position": "RB",
-            "points": 50.8
+            "points": 25.8
           }
         ]
       },
@@ -703400,19 +703298,20 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 41.8,
+        "total_points": 2.4,
         "players_with_stats": [
           {
             "name": "Trey Benson",
             "position": "RB",
-            "points": 41.8
+            "points": 2.4
           }
         ]
       },
       "summary": "Nick Smielak receives Isaac Guerendo; Kellen Coffis receives Trey Benson",
+      "trade_timing": "Week 14",
       "winner": "side1",
       "winner_owner": "Nick Smielak",
-      "point_differential": 9.0
+      "point_differential": 23.4
     },
     {
       "year": 2024,
@@ -703442,12 +703341,12 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 97.7,
+        "total_points": 12.7,
         "players_with_stats": [
           {
             "name": "Tank Bigsby",
             "position": "RB",
-            "points": 97.7
+            "points": 12.7
           }
         ]
       },
@@ -703474,24 +703373,25 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 258.84,
+        "total_points": 21.36,
         "players_with_stats": [
           {
             "name": "Kirk Cousins",
             "position": "QB",
-            "points": 169.84
+            "points": 9.76
           },
           {
             "name": "Tucker Kraft",
             "position": "TE",
-            "points": 89.0
+            "points": 11.6
           }
         ]
       },
       "summary": "Garrett Ulrich receives Tank Bigsby; Nick Smielak receives Kirk Cousins, Tucker Kraft",
+      "trade_timing": "Week 14",
       "winner": "side2",
       "winner_owner": "Nick Smielak",
-      "point_differential": 161.14
+      "point_differential": 8.66
     },
     {
       "year": 2024,
@@ -703531,27 +703431,27 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 423.02,
+        "total_points": 143.6,
         "players_with_stats": [
           {
             "name": "Sam LaPorta",
             "position": "TE",
-            "points": 92.5
+            "points": 25.4
           },
           {
             "name": "Zach Charbonnet",
             "position": "RB",
-            "points": 132.3
+            "points": 49.6
           },
           {
             "name": "David Montgomery",
             "position": "RB",
-            "points": 198.22
+            "points": 68.6
           }
         ]
       },
       "side2": {
-        "owner": "Ryan Milhous",
+        "owner": "Chris Vitale",
         "received": [
           {
             "player_id": "00-0037744",
@@ -703583,12 +703483,12 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 143.3,
+        "total_points": 51.4,
         "players_with_stats": [
           {
             "name": "Trey McBride",
             "position": "TE",
-            "points": 137.3
+            "points": 45.4
           },
           {
             "name": "Jonathon Brooks",
@@ -703597,10 +703497,11 @@
           }
         ]
       },
-      "summary": "Kyle Poppen receives Sam LaPorta, Zach Charbonnet, David Montgomery; Ryan Milhous receives Trey McBride, Jonathon Brooks",
+      "summary": "Kyle Poppen receives Sam LaPorta, Zach Charbonnet, David Montgomery; Chris Vitale receives Trey McBride, Jonathon Brooks",
+      "trade_timing": "Week 11",
       "winner": "side1",
       "winner_owner": "Kyle Poppen",
-      "point_differential": 279.72
+      "point_differential": 92.2
     },
     {
       "year": 2024,
@@ -703608,7 +703509,7 @@
       "transaction_id": "13185161",
       "timestamp": "2024-08-25 01:22:45",
       "side1": {
-        "owner": "Bryan Whitaker",
+        "owner": "Ben Beck",
         "received": [
           {
             "player_id": "00-0034837",
@@ -703691,9 +703592,10 @@
           }
         ]
       },
-      "summary": "Bryan Whitaker receives Calvin Ridley, Joe Mixon, James Cook; Rory McKee receives Puka Nacua",
+      "summary": "Ben Beck receives Calvin Ridley, Joe Mixon, James Cook; Rory McKee receives Puka Nacua",
+      "trade_timing": "Offseason",
       "winner": "side1",
-      "winner_owner": "Bryan Whitaker",
+      "winner_owner": "Ben Beck",
       "point_differential": 376.0
     },
     {
@@ -703702,7 +703604,7 @@
       "transaction_id": "13185339",
       "timestamp": "2024-08-20 15:10:20",
       "side1": {
-        "owner": "Jamie Coffis",
+        "owner": "Ryan Milhous",
         "received": [
           {
             "player_id": "00-0036442",
@@ -703780,9 +703682,10 @@
           }
         ]
       },
-      "summary": "Jamie Coffis receives Joe Burrow; Garrett Ulrich receives D'Andre Swift, Mike Evans, Michael Pittman",
+      "summary": "Ryan Milhous receives Joe Burrow; Garrett Ulrich receives D'Andre Swift, Mike Evans, Michael Pittman",
+      "trade_timing": "Offseason",
       "winner": "side1",
-      "winner_owner": "Jamie Coffis",
+      "winner_owner": "Ryan Milhous",
       "point_differential": 6.84
     },
     {
@@ -703860,6 +703763,7 @@
         ]
       },
       "summary": "Rory McKee receives A.J. Brown, Derrick Henry; Jacob Luna receives Lamar Jackson",
+      "trade_timing": "Offseason",
       "winner": "side1",
       "winner_owner": "Rory McKee",
       "point_differential": 57.9
@@ -703870,7 +703774,7 @@
       "transaction_id": "13185324",
       "timestamp": "2023-09-22 00:49:51",
       "side1": {
-        "owner": "Ryan Milhous",
+        "owner": "Chris Vitale",
         "received": [
           {
             "player_id": "00-0036370",
@@ -703887,12 +703791,12 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 30.6,
+        "total_points": 11.6,
         "players_with_stats": [
           {
             "name": "Joshua Kelley",
             "position": "RB",
-            "points": 30.6
+            "points": 11.6
           }
         ]
       },
@@ -703914,19 +703818,20 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 17.6,
+        "total_points": 4.8,
         "players_with_stats": [
           {
             "name": "Treylon Burks",
             "position": "WR",
-            "points": 17.6
+            "points": 4.8
           }
         ]
       },
-      "summary": "Ryan Milhous receives Joshua Kelley; Nick Smielak receives Treylon Burks",
+      "summary": "Chris Vitale receives Joshua Kelley; Nick Smielak receives Treylon Burks",
+      "trade_timing": "Week 3",
       "winner": "side1",
-      "winner_owner": "Ryan Milhous",
-      "point_differential": 13.0
+      "winner_owner": "Chris Vitale",
+      "point_differential": 6.8
     },
     {
       "year": 2023,
@@ -703934,7 +703839,7 @@
       "transaction_id": "13185269",
       "timestamp": "2023-12-09 02:55:27",
       "side1": {
-        "owner": "Ryan Milhous",
+        "owner": "Chris Vitale",
         "received": [
           {
             "player_id": "00-0039064",
@@ -703961,12 +703866,12 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 130.9,
+        "total_points": 17.0,
         "players_with_stats": [
           {
             "name": "Zay Flowers",
             "position": "WR",
-            "points": 130.9
+            "points": 17.0
           }
         ]
       },
@@ -703998,29 +703903,25 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 482.88,
+        "total_points": 15.62,
         "players_with_stats": [
           {
             "name": "Joshua Dobbs",
             "position": "QB",
-            "points": 200.66
+            "points": 4.62
           },
           {
             "name": "Justin Tucker",
             "position": "K",
-            "points": 110.0
-          },
-          {
-            "name": "Geno Smith",
-            "position": "QB",
-            "points": 172.22
+            "points": 11.0
           }
         ]
       },
-      "summary": "Ryan Milhous receives Zay Flowers; Jacob Luna receives Joshua Dobbs, Justin Tucker, Geno Smith",
-      "winner": "side2",
-      "winner_owner": "Jacob Luna",
-      "point_differential": 351.98
+      "summary": "Chris Vitale receives Zay Flowers; Jacob Luna receives Joshua Dobbs, Justin Tucker, Geno Smith",
+      "trade_timing": "Week 14",
+      "winner": "tie",
+      "winner_owner": null,
+      "point_differential": 1.38
     },
     {
       "year": 2023,
@@ -704045,12 +703946,12 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 127.22,
+        "total_points": 47.42,
         "players_with_stats": [
           {
             "name": "Gardner Minshew",
             "position": "QB",
-            "points": 127.22
+            "points": 47.42
           }
         ]
       },
@@ -704072,19 +703973,20 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 46.3,
+        "total_points": 16.0,
         "players_with_stats": [
           {
             "name": "Jameson Williams",
             "position": "WR",
-            "points": 46.3
+            "points": 16.0
           }
         ]
       },
       "summary": "Kyle Poppen receives Gardner Minshew; Garrett Ulrich receives Jameson Williams",
+      "trade_timing": "Week 12",
       "winner": "side1",
       "winner_owner": "Kyle Poppen",
-      "point_differential": 80.92
+      "point_differential": 31.42
     },
     {
       "year": 2023,
@@ -704092,7 +703994,7 @@
       "transaction_id": "13185258",
       "timestamp": "2023-11-08 22:58:46",
       "side1": {
-        "owner": "Chris Vitale",
+        "owner": "Bryan Whitaker",
         "received": [
           {
             "player_id": "00-0026498",
@@ -704109,12 +704011,12 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 191.28,
+        "total_points": 79.68,
         "players_with_stats": [
           {
             "name": "Matthew Stafford",
             "position": "QB",
-            "points": 191.28
+            "points": 79.68
           }
         ]
       },
@@ -704136,19 +704038,14 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 21.1,
-        "players_with_stats": [
-          {
-            "name": "Nick Chubb",
-            "position": "RB",
-            "points": 21.1
-          }
-        ]
+        "total_points": 0.0,
+        "players_with_stats": []
       },
-      "summary": "Chris Vitale receives Matthew Stafford; Brendan Romele receives Nick Chubb",
+      "summary": "Bryan Whitaker receives Matthew Stafford; Brendan Romele receives Nick Chubb",
+      "trade_timing": "Week 10",
       "winner": "side1",
-      "winner_owner": "Chris Vitale",
-      "point_differential": 170.18
+      "winner_owner": "Bryan Whitaker",
+      "point_differential": 79.68
     },
     {
       "year": 2022,
@@ -704173,17 +704070,17 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 203.8,
+        "total_points": 138.3,
         "players_with_stats": [
           {
             "name": "Tony Pollard",
             "position": "RB",
-            "points": 203.8
+            "points": 138.3
           }
         ]
       },
       "side2": {
-        "owner": "Jamie Coffis",
+        "owner": "Ryan Milhous",
         "received": [
           {
             "player_id": "00-0038102",
@@ -704200,19 +704097,20 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 112.38,
+        "total_points": 69.44,
         "players_with_stats": [
           {
             "name": "Kenny Pickett",
             "position": "QB",
-            "points": 112.38
+            "points": 69.44
           }
         ]
       },
-      "summary": "Nick Smielak receives Tony Pollard; Jamie Coffis receives Kenny Pickett",
+      "summary": "Nick Smielak receives Tony Pollard; Ryan Milhous receives Kenny Pickett",
+      "trade_timing": "Week 8",
       "winner": "side1",
       "winner_owner": "Nick Smielak",
-      "point_differential": 91.42
+      "point_differential": 68.86
     },
     {
       "year": 2022,
@@ -704237,12 +704135,12 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 164.78,
+        "total_points": 148.12,
         "players_with_stats": [
           {
             "name": "Jimmy Garoppolo",
             "position": "QB",
-            "points": 164.78
+            "points": 148.12
           }
         ]
       },
@@ -704264,19 +704162,20 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 46.0,
+        "total_points": 14.3,
         "players_with_stats": [
           {
             "name": "Rashod Bateman",
             "position": "WR",
-            "points": 46.0
+            "points": 14.3
           }
         ]
       },
       "summary": "Kyle Poppen receives Jimmy Garoppolo; Nick Smielak receives Rashod Bateman",
+      "trade_timing": "Week 3",
       "winner": "side1",
       "winner_owner": "Kyle Poppen",
-      "point_differential": 118.78
+      "point_differential": 133.82
     },
     {
       "year": 2022,
@@ -704284,7 +704183,7 @@
       "transaction_id": "13185678",
       "timestamp": "2022-08-29 23:01:37",
       "side1": {
-        "owner": "Bryan Whitaker",
+        "owner": "Ben Beck",
         "received": [
           {
             "player_id": "00-0035657",
@@ -704352,9 +704251,10 @@
           }
         ]
       },
-      "summary": "Bryan Whitaker receives Damien Harris; Garrett Ulrich receives Hunter Renfrow, Elijah Mitchell",
+      "summary": "Ben Beck receives Damien Harris; Garrett Ulrich receives Hunter Renfrow, Elijah Mitchell",
+      "trade_timing": "Offseason",
       "winner": "side1",
-      "winner_owner": "Bryan Whitaker",
+      "winner_owner": "Ben Beck",
       "point_differential": 22.1
     },
     {
@@ -704390,17 +704290,17 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 337.08,
+        "total_points": 168.04,
         "players_with_stats": [
           {
             "name": "Robert Tonyan",
             "position": "TE",
-            "points": 41.4
+            "points": 6.4
           },
           {
             "name": "Justin Herbert",
             "position": "QB",
-            "points": 295.68
+            "points": 161.64
           }
         ]
       },
@@ -704432,24 +704332,25 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 186.8,
+        "total_points": 70.8,
         "players_with_stats": [
           {
             "name": "Mike Gesicki",
             "position": "TE",
-            "points": 94.1
+            "points": 34.5
           },
           {
             "name": "Chuba Hubbard",
             "position": "RB",
-            "points": 92.7
+            "points": 36.3
           }
         ]
       },
       "summary": "Kyle Poppen receives Robert Tonyan, Justin Herbert; Kellen Coffis receives Mike Gesicki, Chuba Hubbard",
+      "trade_timing": "Week 8",
       "winner": "side1",
       "winner_owner": "Kyle Poppen",
-      "point_differential": 150.28
+      "point_differential": 97.24
     },
     {
       "year": 2021,
@@ -704457,7 +704358,7 @@
       "transaction_id": "13254942",
       "timestamp": "2021-08-27 22:32:40",
       "side1": {
-        "owner": "Bryan Whitaker",
+        "owner": "Ben Beck",
         "received": [
           {
             "player_id": "00-0035831",
@@ -704509,7 +704410,7 @@
         ]
       },
       "side2": {
-        "owner": "Ryan Milhous",
+        "owner": "Chris Vitale",
         "received": [
           {
             "player_id": "00-0033293",
@@ -704555,9 +704456,10 @@
           }
         ]
       },
-      "summary": "Bryan Whitaker receives James Robinson, Cooper Kupp, Patrick Mahomes; Ryan Milhous receives Aaron Jones, Lamar Jackson",
+      "summary": "Ben Beck receives James Robinson, Cooper Kupp, Patrick Mahomes; Chris Vitale receives Aaron Jones, Lamar Jackson",
+      "trade_timing": "Offseason",
       "winner": "side1",
-      "winner_owner": "Bryan Whitaker",
+      "winner_owner": "Ben Beck",
       "point_differential": 278.0
     },
     {
@@ -704588,17 +704490,17 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 41.9,
+        "total_points": 25.9,
         "players_with_stats": [
           {
             "name": "Zach Ertz",
             "position": "TE",
-            "points": 41.9
+            "points": 25.9
           }
         ]
       },
       "side2": {
-        "owner": "Chris Vitale",
+        "owner": "Bryan Whitaker",
         "received": [
           {
             "player_id": "00-0036336",
@@ -704620,19 +704522,20 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 130.6,
+        "total_points": 105.9,
         "players_with_stats": [
           {
             "name": "Corey Davis",
             "position": "WR",
-            "points": 130.6
+            "points": 105.9
           }
         ]
       },
-      "summary": "Kyle Poppen receives Zach Ertz; Chris Vitale receives Anthony McFarland, Corey Davis",
+      "summary": "Kyle Poppen receives Zach Ertz; Bryan Whitaker receives Anthony McFarland, Corey Davis",
+      "trade_timing": "Week 3",
       "winner": "side2",
-      "winner_owner": "Chris Vitale",
-      "point_differential": 88.7
+      "winner_owner": "Bryan Whitaker",
+      "point_differential": 80.0
     },
     {
       "year": 2020,
@@ -704667,12 +704570,12 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 175.1,
+        "total_points": 156.3,
         "players_with_stats": [
           {
             "name": "Jared Cook",
             "position": "TE",
-            "points": 49.3
+            "points": 30.5
           },
           {
             "name": "Mike Davis",
@@ -704709,24 +704612,25 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 296.86,
+        "total_points": 225.96,
         "players_with_stats": [
           {
             "name": "Russell Wilson",
             "position": "QB",
-            "points": 287.56
+            "points": 222.36
           },
           {
             "name": "Chris Herndon",
             "position": "TE",
-            "points": 9.3
+            "points": 3.6
           }
         ]
       },
       "summary": "Kellen Coffis receives Jared Cook, Mike Davis; Nick Smielak receives Russell Wilson, Chris Herndon",
+      "trade_timing": "Week 3",
       "winner": "side2",
       "winner_owner": "Nick Smielak",
-      "point_differential": 121.76
+      "point_differential": 69.66
     },
     {
       "year": 2020,
@@ -704776,6 +704680,7 @@
         "players_with_stats": []
       },
       "summary": "Kellen Coffis receives Melvin Gordon; Kyle Poppen receives Will Fuller",
+      "trade_timing": "Week 13",
       "winner": "tie",
       "winner_owner": null,
       "point_differential": 0
@@ -704843,7 +704748,7 @@
         ]
       },
       "side2": {
-        "owner": "Greg Swenson",
+        "owner": "Jamie Coffis",
         "received": [
           {
             "player_id": "00-0033932",
@@ -704899,7 +704804,8 @@
           }
         ]
       },
-      "summary": "Jeremy Settles receives Deebo Samuel, Stefon Diggs, David Johnson; Greg Swenson receives Kenny Golladay, Josh Lambo, Zane Gonzalez",
+      "summary": "Jeremy Settles receives Deebo Samuel, Stefon Diggs, David Johnson; Jamie Coffis receives Kenny Golladay, Josh Lambo, Zane Gonzalez",
+      "trade_timing": "Offseason",
       "winner": "side1",
       "winner_owner": "Jeremy Settles",
       "point_differential": 249.5
@@ -704937,22 +704843,22 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 171.54,
+        "total_points": 141.16,
         "players_with_stats": [
           {
             "name": "Kyle Allen",
             "position": "QB",
-            "points": 61.14
+            "points": 57.86
           },
           {
             "name": "Sony Michel",
             "position": "RB",
-            "points": 110.4
+            "points": 83.3
           }
         ]
       },
       "side2": {
-        "owner": "Chris Vitale",
+        "owner": "Bryan Whitaker",
         "received": [
           {
             "player_id": "00-0027793",
@@ -704979,24 +704885,20 @@
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 27.8,
+        "total_points": 12.0,
         "players_with_stats": [
-          {
-            "name": "Antonio Brown",
-            "position": "WR",
-            "points": 14.1
-          },
           {
             "name": "Darwin Thompson",
             "position": "RB",
-            "points": 13.7
+            "points": 12.0
           }
         ]
       },
-      "summary": "Kellen Coffis receives Kyle Allen, Sony Michel; Chris Vitale receives Antonio Brown, Darwin Thompson",
+      "summary": "Kellen Coffis receives Kyle Allen, Sony Michel; Bryan Whitaker receives Antonio Brown, Darwin Thompson",
+      "trade_timing": "Week 5",
       "winner": "side1",
       "winner_owner": "Kellen Coffis",
-      "point_differential": 143.74
+      "point_differential": 129.16
     },
     {
       "year": 2019,
@@ -705051,7 +704953,7 @@
         ]
       },
       "side2": {
-        "owner": "Ryan Milhous",
+        "owner": "Chris Vitale",
         "received": [
           {
             "player_id": "00-0033873",
@@ -705087,7 +704989,8 @@
           }
         ]
       },
-      "summary": "Jacob Luna receives Duke Johnson, Derrick Henry, Cooper Kupp; Ryan Milhous receives Patrick Mahomes",
+      "summary": "Jacob Luna receives Duke Johnson, Derrick Henry, Cooper Kupp; Chris Vitale receives Patrick Mahomes",
+      "trade_timing": "Offseason",
       "winner": "side1",
       "winner_owner": "Jacob Luna",
       "point_differential": 274.88
@@ -705152,6 +705055,7 @@
         ]
       },
       "summary": "Rory McKee receives Chris Carson; Jacob Luna receives Patrick Mahomes",
+      "trade_timing": "Offseason",
       "winner": "side2",
       "winner_owner": "Jacob Luna",
       "point_differential": 43.12
@@ -705159,106 +705063,12 @@
   ],
   "best_trades": [
     {
-      "year": 2025,
-      "week": 11,
-      "transaction_id": "1296660829122347008",
-      "timestamp": 1763510541758,
-      "side1": {
-        "owner": "Chris Vitale",
-        "received": [
-          {
-            "player_id": "6819",
-            "player_name": "Michael Pittman",
-            "position": "WR"
-          },
-          {
-            "player_id": "7543",
-            "player_name": "Travis Etienne",
-            "position": "RB"
-          },
-          {
-            "player_id": "SEA",
-            "player_name": "Seattle Seahawks",
-            "position": "DEF"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "9997",
-            "player_name": "Zay Flowers",
-            "position": "WR"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 587.99,
-        "players_with_stats": [
-          {
-            "name": "Michael Pittman",
-            "position": "WR",
-            "points": 162.4
-          },
-          {
-            "name": "Travis Etienne",
-            "position": "RB",
-            "points": 235.9
-          },
-          {
-            "name": "Seattle Seahawks",
-            "position": "DEF",
-            "points": 189.69
-          }
-        ]
-      },
-      "side2": {
-        "owner": "Garrett Ulrich",
-        "received": [
-          {
-            "player_id": "9997",
-            "player_name": "Zay Flowers",
-            "position": "WR"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "6819",
-            "player_name": "Michael Pittman",
-            "position": "WR"
-          },
-          {
-            "player_id": "7543",
-            "player_name": "Travis Etienne",
-            "position": "RB"
-          },
-          {
-            "player_id": "SEA",
-            "player_name": "Seattle Seahawks",
-            "position": "DEF"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 200.7,
-        "players_with_stats": [
-          {
-            "name": "Zay Flowers",
-            "position": "WR",
-            "points": 200.7
-          }
-        ]
-      },
-      "summary": "Chris Vitale receives Michael Pittman, Travis Etienne, Seattle Seahawks; Garrett Ulrich receives Zay Flowers",
-      "winner": "side1",
-      "winner_owner": "Chris Vitale",
-      "point_differential": 387.29
-    },
-    {
       "year": 2024,
       "week": "0",
       "transaction_id": "13185161",
       "timestamp": "2024-08-25 01:22:45",
       "side1": {
-        "owner": "Bryan Whitaker",
+        "owner": "Ben Beck",
         "received": [
           {
             "player_id": "00-0034837",
@@ -705341,367 +705151,11 @@
           }
         ]
       },
-      "summary": "Bryan Whitaker receives Calvin Ridley, Joe Mixon, James Cook; Rory McKee receives Puka Nacua",
+      "summary": "Ben Beck receives Calvin Ridley, Joe Mixon, James Cook; Rory McKee receives Puka Nacua",
+      "trade_timing": "Offseason",
       "winner": "side1",
-      "winner_owner": "Bryan Whitaker",
+      "winner_owner": "Ben Beck",
       "point_differential": 376.0
-    },
-    {
-      "year": 2023,
-      "week": "14",
-      "transaction_id": "13185269",
-      "timestamp": "2023-12-09 02:55:27",
-      "side1": {
-        "owner": "Ryan Milhous",
-        "received": [
-          {
-            "player_id": "00-0039064",
-            "player_name": "Zay Flowers",
-            "position": "WR"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "00-0033949",
-            "player_name": "Joshua Dobbs",
-            "position": "QB"
-          },
-          {
-            "player_id": "00-0029597",
-            "player_name": "Justin Tucker",
-            "position": "K"
-          },
-          {
-            "player_id": "00-0030565",
-            "player_name": "Geno Smith",
-            "position": "QB"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 130.9,
-        "players_with_stats": [
-          {
-            "name": "Zay Flowers",
-            "position": "WR",
-            "points": 130.9
-          }
-        ]
-      },
-      "side2": {
-        "owner": "Jacob Luna",
-        "received": [
-          {
-            "player_id": "00-0033949",
-            "player_name": "Joshua Dobbs",
-            "position": "QB"
-          },
-          {
-            "player_id": "00-0029597",
-            "player_name": "Justin Tucker",
-            "position": "K"
-          },
-          {
-            "player_id": "00-0030565",
-            "player_name": "Geno Smith",
-            "position": "QB"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "00-0039064",
-            "player_name": "Zay Flowers",
-            "position": "WR"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 482.88,
-        "players_with_stats": [
-          {
-            "name": "Joshua Dobbs",
-            "position": "QB",
-            "points": 200.66
-          },
-          {
-            "name": "Justin Tucker",
-            "position": "K",
-            "points": 110.0
-          },
-          {
-            "name": "Geno Smith",
-            "position": "QB",
-            "points": 172.22
-          }
-        ]
-      },
-      "summary": "Ryan Milhous receives Zay Flowers; Jacob Luna receives Joshua Dobbs, Justin Tucker, Geno Smith",
-      "winner": "side2",
-      "winner_owner": "Jacob Luna",
-      "point_differential": 351.98
-    },
-    {
-      "year": 2025,
-      "week": 12,
-      "transaction_id": "1296974562126204928",
-      "timestamp": 1763585341534,
-      "side1": {
-        "owner": "Ryan Milhous",
-        "received": [
-          {
-            "player_id": "11647",
-            "player_name": "Kimani Vidal",
-            "position": "RB"
-          },
-          {
-            "player_id": "6797",
-            "player_name": "Justin Herbert",
-            "position": "QB"
-          },
-          {
-            "player_id": "8146",
-            "player_name": "Garrett Wilson",
-            "position": "WR"
-          },
-          {
-            "player_id": "9506",
-            "player_name": "Sean Tucker",
-            "position": "RB"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "2133",
-            "player_name": "Davante Adams",
-            "position": "WR"
-          },
-          {
-            "player_id": "3294",
-            "player_name": "Dak Prescott",
-            "position": "QB"
-          },
-          {
-            "player_id": "5892",
-            "player_name": "David Montgomery",
-            "position": "RB"
-          },
-          {
-            "player_id": "7588",
-            "player_name": "Javonte Williams",
-            "position": "RB"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 549.38,
-        "players_with_stats": [
-          {
-            "name": "Kimani Vidal",
-            "position": "RB",
-            "points": 107.5
-          },
-          {
-            "name": "Justin Herbert",
-            "position": "QB",
-            "points": 286.88
-          },
-          {
-            "name": "Garrett Wilson",
-            "position": "WR",
-            "points": 81.5
-          },
-          {
-            "name": "Sean Tucker",
-            "position": "RB",
-            "points": 73.5
-          }
-        ]
-      },
-      "side2": {
-        "owner": "Jacob Luna",
-        "received": [
-          {
-            "player_id": "2133",
-            "player_name": "Davante Adams",
-            "position": "WR"
-          },
-          {
-            "player_id": "3294",
-            "player_name": "Dak Prescott",
-            "position": "QB"
-          },
-          {
-            "player_id": "5892",
-            "player_name": "David Montgomery",
-            "position": "RB"
-          },
-          {
-            "player_id": "7588",
-            "player_name": "Javonte Williams",
-            "position": "RB"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "11647",
-            "player_name": "Kimani Vidal",
-            "position": "RB"
-          },
-          {
-            "player_id": "6797",
-            "player_name": "Justin Herbert",
-            "position": "QB"
-          },
-          {
-            "player_id": "8146",
-            "player_name": "Garrett Wilson",
-            "position": "WR"
-          },
-          {
-            "player_id": "9506",
-            "player_name": "Sean Tucker",
-            "position": "RB"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 886.9,
-        "players_with_stats": [
-          {
-            "name": "Davante Adams",
-            "position": "WR",
-            "points": 192.9
-          },
-          {
-            "name": "Dak Prescott",
-            "position": "QB",
-            "points": 313.78
-          },
-          {
-            "name": "David Montgomery",
-            "position": "RB",
-            "points": 154.92
-          },
-          {
-            "name": "Javonte Williams",
-            "position": "RB",
-            "points": 225.3
-          }
-        ]
-      },
-      "summary": "Ryan Milhous receives Kimani Vidal, Justin Herbert, Garrett Wilson, Sean Tucker; Jacob Luna receives Davante Adams, Dak Prescott, David Montgomery, Javonte Williams",
-      "winner": "side2",
-      "winner_owner": "Jacob Luna",
-      "point_differential": 337.52
-    },
-    {
-      "year": 2024,
-      "week": "11",
-      "transaction_id": "13185190",
-      "timestamp": "2024-11-12 21:01:16",
-      "side1": {
-        "owner": "Kyle Poppen",
-        "received": [
-          {
-            "player_id": "00-0039065",
-            "player_name": "Sam LaPorta",
-            "position": "TE"
-          },
-          {
-            "player_id": "00-0039165",
-            "player_name": "Zach Charbonnet",
-            "position": "RB"
-          },
-          {
-            "player_id": "00-0035685",
-            "player_name": "David Montgomery",
-            "position": "RB"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "00-0037744",
-            "player_name": "Trey McBride",
-            "position": "TE"
-          },
-          {
-            "player_id": "00-0039344",
-            "player_name": "Jonathon Brooks",
-            "position": "RB"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 423.02,
-        "players_with_stats": [
-          {
-            "name": "Sam LaPorta",
-            "position": "TE",
-            "points": 92.5
-          },
-          {
-            "name": "Zach Charbonnet",
-            "position": "RB",
-            "points": 132.3
-          },
-          {
-            "name": "David Montgomery",
-            "position": "RB",
-            "points": 198.22
-          }
-        ]
-      },
-      "side2": {
-        "owner": "Ryan Milhous",
-        "received": [
-          {
-            "player_id": "00-0037744",
-            "player_name": "Trey McBride",
-            "position": "TE"
-          },
-          {
-            "player_id": "00-0039344",
-            "player_name": "Jonathon Brooks",
-            "position": "RB"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "00-0039065",
-            "player_name": "Sam LaPorta",
-            "position": "TE"
-          },
-          {
-            "player_id": "00-0039165",
-            "player_name": "Zach Charbonnet",
-            "position": "RB"
-          },
-          {
-            "player_id": "00-0035685",
-            "player_name": "David Montgomery",
-            "position": "RB"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 143.3,
-        "players_with_stats": [
-          {
-            "name": "Trey McBride",
-            "position": "TE",
-            "points": 137.3
-          },
-          {
-            "name": "Jonathon Brooks",
-            "position": "RB",
-            "points": 6.0
-          }
-        ]
-      },
-      "summary": "Kyle Poppen receives Sam LaPorta, Zach Charbonnet, David Montgomery; Ryan Milhous receives Trey McBride, Jonathon Brooks",
-      "winner": "side1",
-      "winner_owner": "Kyle Poppen",
-      "point_differential": 279.72
     },
     {
       "year": 2021,
@@ -705709,7 +705163,7 @@
       "transaction_id": "13254942",
       "timestamp": "2021-08-27 22:32:40",
       "side1": {
-        "owner": "Bryan Whitaker",
+        "owner": "Ben Beck",
         "received": [
           {
             "player_id": "00-0035831",
@@ -705761,7 +705215,7 @@
         ]
       },
       "side2": {
-        "owner": "Ryan Milhous",
+        "owner": "Chris Vitale",
         "received": [
           {
             "player_id": "00-0033293",
@@ -705807,9 +705261,10 @@
           }
         ]
       },
-      "summary": "Bryan Whitaker receives James Robinson, Cooper Kupp, Patrick Mahomes; Ryan Milhous receives Aaron Jones, Lamar Jackson",
+      "summary": "Ben Beck receives James Robinson, Cooper Kupp, Patrick Mahomes; Chris Vitale receives Aaron Jones, Lamar Jackson",
+      "trade_timing": "Offseason",
       "winner": "side1",
-      "winner_owner": "Bryan Whitaker",
+      "winner_owner": "Ben Beck",
       "point_differential": 278.0
     },
     {
@@ -705865,7 +705320,7 @@
         ]
       },
       "side2": {
-        "owner": "Ryan Milhous",
+        "owner": "Chris Vitale",
         "received": [
           {
             "player_id": "00-0033873",
@@ -705901,7 +705356,8 @@
           }
         ]
       },
-      "summary": "Jacob Luna receives Duke Johnson, Derrick Henry, Cooper Kupp; Ryan Milhous receives Patrick Mahomes",
+      "summary": "Jacob Luna receives Duke Johnson, Derrick Henry, Cooper Kupp; Chris Vitale receives Patrick Mahomes",
+      "trade_timing": "Offseason",
       "winner": "side1",
       "winner_owner": "Jacob Luna",
       "point_differential": 274.88
@@ -705969,7 +705425,7 @@
         ]
       },
       "side2": {
-        "owner": "Greg Swenson",
+        "owner": "Jamie Coffis",
         "received": [
           {
             "player_id": "00-0033932",
@@ -706025,236 +705481,584 @@
           }
         ]
       },
-      "summary": "Jeremy Settles receives Deebo Samuel, Stefon Diggs, David Johnson; Greg Swenson receives Kenny Golladay, Josh Lambo, Zane Gonzalez",
+      "summary": "Jeremy Settles receives Deebo Samuel, Stefon Diggs, David Johnson; Jamie Coffis receives Kenny Golladay, Josh Lambo, Zane Gonzalez",
+      "trade_timing": "Offseason",
       "winner": "side1",
       "winner_owner": "Jeremy Settles",
       "point_differential": 249.5
     },
     {
-      "year": 2025,
-      "week": 8,
-      "transaction_id": "1288158918421282816",
-      "timestamp": 1761483528288,
+      "year": 2022,
+      "week": "3",
+      "transaction_id": "13185667",
+      "timestamp": "2022-09-21 04:14:14",
       "side1": {
-        "owner": "Garrett Ulrich",
-        "received": [
-          {
-            "player_id": "12517",
-            "player_name": "Colston Loveland",
-            "position": "TE"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "11533",
-            "player_name": "Brandon Aubrey",
-            "position": "K"
-          },
-          {
-            "player_id": "7083",
-            "player_name": "Tyler Huntley",
-            "position": "QB"
-          },
-          {
-            "player_id": "7553",
-            "player_name": "Kyle Pitts",
-            "position": "TE"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 134.0,
-        "players_with_stats": [
-          {
-            "name": "Colston Loveland",
-            "position": "TE",
-            "points": 134.0
-          }
-        ]
-      },
-      "side2": {
         "owner": "Kyle Poppen",
         "received": [
           {
-            "player_id": "11533",
-            "player_name": "Brandon Aubrey",
-            "position": "K"
-          },
-          {
-            "player_id": "7083",
-            "player_name": "Tyler Huntley",
-            "position": "QB"
-          },
-          {
-            "player_id": "7553",
-            "player_name": "Kyle Pitts",
-            "position": "TE"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "12517",
-            "player_name": "Colston Loveland",
-            "position": "TE"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 342.02,
-        "players_with_stats": [
-          {
-            "name": "Brandon Aubrey",
-            "position": "K",
-            "points": 165.6
-          },
-          {
-            "name": "Tyler Huntley",
-            "position": "QB",
-            "points": 31.02
-          },
-          {
-            "name": "Kyle Pitts",
-            "position": "TE",
-            "points": 145.4
-          }
-        ]
-      },
-      "summary": "Garrett Ulrich receives Colston Loveland; Kyle Poppen receives Brandon Aubrey, Tyler Huntley, Kyle Pitts",
-      "winner": "side2",
-      "winner_owner": "Kyle Poppen",
-      "point_differential": 208.02
-    },
-    {
-      "year": 2023,
-      "week": "10",
-      "transaction_id": "13185258",
-      "timestamp": "2023-11-08 22:58:46",
-      "side1": {
-        "owner": "Chris Vitale",
-        "received": [
-          {
-            "player_id": "00-0026498",
-            "player_name": "Matthew Stafford",
+            "player_id": "00-0031345",
+            "player_name": "Jimmy Garoppolo",
             "position": "QB"
           }
         ],
         "sent": [
           {
-            "player_id": "00-0034791",
-            "player_name": "Nick Chubb",
-            "position": "RB"
+            "player_id": "00-0036550",
+            "player_name": "Rashod Bateman",
+            "position": "WR"
           }
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 191.28,
+        "total_points": 148.12,
         "players_with_stats": [
           {
-            "name": "Matthew Stafford",
+            "name": "Jimmy Garoppolo",
             "position": "QB",
-            "points": 191.28
+            "points": 148.12
           }
         ]
       },
       "side2": {
-        "owner": "Brendan Romele",
+        "owner": "Nick Smielak",
         "received": [
           {
-            "player_id": "00-0034791",
-            "player_name": "Nick Chubb",
-            "position": "RB"
+            "player_id": "00-0036550",
+            "player_name": "Rashod Bateman",
+            "position": "WR"
           }
         ],
         "sent": [
           {
-            "player_id": "00-0026498",
-            "player_name": "Matthew Stafford",
+            "player_id": "00-0031345",
+            "player_name": "Jimmy Garoppolo",
             "position": "QB"
           }
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 21.1,
+        "total_points": 14.3,
         "players_with_stats": [
           {
-            "name": "Nick Chubb",
-            "position": "RB",
-            "points": 21.1
+            "name": "Rashod Bateman",
+            "position": "WR",
+            "points": 14.3
           }
         ]
       },
-      "summary": "Chris Vitale receives Matthew Stafford; Brendan Romele receives Nick Chubb",
+      "summary": "Kyle Poppen receives Jimmy Garoppolo; Nick Smielak receives Rashod Bateman",
+      "trade_timing": "Week 3",
       "winner": "side1",
-      "winner_owner": "Chris Vitale",
-      "point_differential": 170.18
+      "winner_owner": "Kyle Poppen",
+      "point_differential": 133.82
+    },
+    {
+      "year": 2019,
+      "week": "5",
+      "transaction_id": "13253859",
+      "timestamp": "2019-10-02 17:49:51",
+      "side1": {
+        "owner": "Kellen Coffis",
+        "received": [
+          {
+            "player_id": "00-0034577",
+            "player_name": "Kyle Allen",
+            "position": "QB"
+          },
+          {
+            "player_id": "00-0034845",
+            "player_name": "Sony Michel",
+            "position": "RB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0027793",
+            "player_name": "Antonio Brown",
+            "position": "WR"
+          },
+          {
+            "player_id": "00-0035148",
+            "player_name": "Darwin Thompson",
+            "position": "RB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 141.16,
+        "players_with_stats": [
+          {
+            "name": "Kyle Allen",
+            "position": "QB",
+            "points": 57.86
+          },
+          {
+            "name": "Sony Michel",
+            "position": "RB",
+            "points": 83.3
+          }
+        ]
+      },
+      "side2": {
+        "owner": "Bryan Whitaker",
+        "received": [
+          {
+            "player_id": "00-0027793",
+            "player_name": "Antonio Brown",
+            "position": "WR"
+          },
+          {
+            "player_id": "00-0035148",
+            "player_name": "Darwin Thompson",
+            "position": "RB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0034577",
+            "player_name": "Kyle Allen",
+            "position": "QB"
+          },
+          {
+            "player_id": "00-0034845",
+            "player_name": "Sony Michel",
+            "position": "RB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 12.0,
+        "players_with_stats": [
+          {
+            "name": "Darwin Thompson",
+            "position": "RB",
+            "points": 12.0
+          }
+        ]
+      },
+      "summary": "Kellen Coffis receives Kyle Allen, Sony Michel; Bryan Whitaker receives Antonio Brown, Darwin Thompson",
+      "trade_timing": "Week 5",
+      "winner": "side1",
+      "winner_owner": "Kellen Coffis",
+      "point_differential": 129.16
+    },
+    {
+      "year": 2024,
+      "week": "9",
+      "transaction_id": "13185223",
+      "timestamp": "2024-10-31 11:44:47",
+      "side1": {
+        "owner": "Ben Beck",
+        "received": [
+          {
+            "player_id": "00-0031503",
+            "player_name": "Jameis Winston",
+            "position": "QB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0035216",
+            "player_name": "Diontae Johnson",
+            "position": "WR"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 98.42,
+        "players_with_stats": [
+          {
+            "name": "Jameis Winston",
+            "position": "QB",
+            "points": 98.42
+          }
+        ]
+      },
+      "side2": {
+        "owner": "Jeremy Settles",
+        "received": [
+          {
+            "player_id": "00-0035216",
+            "player_name": "Diontae Johnson",
+            "position": "WR"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0031503",
+            "player_name": "Jameis Winston",
+            "position": "QB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 1.1,
+        "players_with_stats": [
+          {
+            "name": "Diontae Johnson",
+            "position": "WR",
+            "points": 1.1
+          }
+        ]
+      },
+      "summary": "Ben Beck receives Jameis Winston; Jeremy Settles receives Diontae Johnson",
+      "trade_timing": "Week 9",
+      "winner": "side1",
+      "winner_owner": "Ben Beck",
+      "point_differential": 97.32
+    },
+    {
+      "year": 2021,
+      "week": "8",
+      "transaction_id": "13255002",
+      "timestamp": "2021-10-27 17:07:13",
+      "side1": {
+        "owner": "Kyle Poppen",
+        "received": [
+          {
+            "player_id": "00-0033757",
+            "player_name": "Robert Tonyan",
+            "position": "TE"
+          },
+          {
+            "player_id": "00-0036355",
+            "player_name": "Justin Herbert",
+            "position": "QB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0034829",
+            "player_name": "Mike Gesicki",
+            "position": "TE"
+          },
+          {
+            "player_id": "00-0036555",
+            "player_name": "Chuba Hubbard",
+            "position": "RB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 168.04,
+        "players_with_stats": [
+          {
+            "name": "Robert Tonyan",
+            "position": "TE",
+            "points": 6.4
+          },
+          {
+            "name": "Justin Herbert",
+            "position": "QB",
+            "points": 161.64
+          }
+        ]
+      },
+      "side2": {
+        "owner": "Kellen Coffis",
+        "received": [
+          {
+            "player_id": "00-0034829",
+            "player_name": "Mike Gesicki",
+            "position": "TE"
+          },
+          {
+            "player_id": "00-0036555",
+            "player_name": "Chuba Hubbard",
+            "position": "RB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0033757",
+            "player_name": "Robert Tonyan",
+            "position": "TE"
+          },
+          {
+            "player_id": "00-0036355",
+            "player_name": "Justin Herbert",
+            "position": "QB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 70.8,
+        "players_with_stats": [
+          {
+            "name": "Mike Gesicki",
+            "position": "TE",
+            "points": 34.5
+          },
+          {
+            "name": "Chuba Hubbard",
+            "position": "RB",
+            "points": 36.3
+          }
+        ]
+      },
+      "summary": "Kyle Poppen receives Robert Tonyan, Justin Herbert; Kellen Coffis receives Mike Gesicki, Chuba Hubbard",
+      "trade_timing": "Week 8",
+      "winner": "side1",
+      "winner_owner": "Kyle Poppen",
+      "point_differential": 97.24
+    },
+    {
+      "year": 2024,
+      "week": "4",
+      "transaction_id": "13185302",
+      "timestamp": "2024-09-26 18:53:10",
+      "side1": {
+        "owner": "Greg Swenson",
+        "received": [
+          {
+            "player_id": "00-0036139",
+            "player_name": "Rico Dowdle",
+            "position": "RB"
+          },
+          {
+            "player_id": "00-0039152",
+            "player_name": "Will Levis",
+            "position": "QB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0031280",
+            "player_name": "Derek Carr",
+            "position": "QB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 194.22,
+        "players_with_stats": [
+          {
+            "name": "Rico Dowdle",
+            "position": "RB",
+            "points": 113.4
+          },
+          {
+            "name": "Will Levis",
+            "position": "QB",
+            "points": 80.82
+          }
+        ]
+      },
+      "side2": {
+        "owner": "Jamie Coffis",
+        "received": [
+          {
+            "player_id": "00-0031280",
+            "player_name": "Derek Carr",
+            "position": "QB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0036139",
+            "player_name": "Rico Dowdle",
+            "position": "RB"
+          },
+          {
+            "player_id": "00-0039152",
+            "player_name": "Will Levis",
+            "position": "QB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 99.8,
+        "players_with_stats": [
+          {
+            "name": "Derek Carr",
+            "position": "QB",
+            "points": 99.8
+          }
+        ]
+      },
+      "summary": "Greg Swenson receives Rico Dowdle, Will Levis; Jamie Coffis receives Derek Carr",
+      "trade_timing": "Week 4",
+      "winner": "side1",
+      "winner_owner": "Greg Swenson",
+      "point_differential": 94.42
+    },
+    {
+      "year": 2024,
+      "week": "11",
+      "transaction_id": "13185190",
+      "timestamp": "2024-11-12 21:01:16",
+      "side1": {
+        "owner": "Kyle Poppen",
+        "received": [
+          {
+            "player_id": "00-0039065",
+            "player_name": "Sam LaPorta",
+            "position": "TE"
+          },
+          {
+            "player_id": "00-0039165",
+            "player_name": "Zach Charbonnet",
+            "position": "RB"
+          },
+          {
+            "player_id": "00-0035685",
+            "player_name": "David Montgomery",
+            "position": "RB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0037744",
+            "player_name": "Trey McBride",
+            "position": "TE"
+          },
+          {
+            "player_id": "00-0039344",
+            "player_name": "Jonathon Brooks",
+            "position": "RB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 143.6,
+        "players_with_stats": [
+          {
+            "name": "Sam LaPorta",
+            "position": "TE",
+            "points": 25.4
+          },
+          {
+            "name": "Zach Charbonnet",
+            "position": "RB",
+            "points": 49.6
+          },
+          {
+            "name": "David Montgomery",
+            "position": "RB",
+            "points": 68.6
+          }
+        ]
+      },
+      "side2": {
+        "owner": "Chris Vitale",
+        "received": [
+          {
+            "player_id": "00-0037744",
+            "player_name": "Trey McBride",
+            "position": "TE"
+          },
+          {
+            "player_id": "00-0039344",
+            "player_name": "Jonathon Brooks",
+            "position": "RB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0039065",
+            "player_name": "Sam LaPorta",
+            "position": "TE"
+          },
+          {
+            "player_id": "00-0039165",
+            "player_name": "Zach Charbonnet",
+            "position": "RB"
+          },
+          {
+            "player_id": "00-0035685",
+            "player_name": "David Montgomery",
+            "position": "RB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 51.4,
+        "players_with_stats": [
+          {
+            "name": "Trey McBride",
+            "position": "TE",
+            "points": 45.4
+          },
+          {
+            "name": "Jonathon Brooks",
+            "position": "RB",
+            "points": 6.0
+          }
+        ]
+      },
+      "summary": "Kyle Poppen receives Sam LaPorta, Zach Charbonnet, David Montgomery; Chris Vitale receives Trey McBride, Jonathon Brooks",
+      "trade_timing": "Week 11",
+      "winner": "side1",
+      "winner_owner": "Kyle Poppen",
+      "point_differential": 92.2
     }
   ],
   "trade_records": {
-    "Jacob Luna": {
-      "wins": 4,
-      "losses": 1,
-      "ties": 0,
-      "net_points": 949.6
-    },
     "Ryan Milhous": {
       "wins": 1,
-      "losses": 5,
-      "ties": 0,
-      "net_points": -1509.1
-    },
-    "Chris Vitale": {
-      "wins": 3,
-      "losses": 1,
-      "ties": 0,
-      "net_points": 502.43000000000006
-    },
-    "Garrett Ulrich": {
-      "wins": 2,
-      "losses": 7,
-      "ties": 0,
-      "net_points": -766.71
-    },
-    "Kyle Poppen": {
-      "wins": 5,
       "losses": 1,
       "ties": 1,
-      "net_points": 749.0199999999999
+      "net_points": -62.019999999999996
+    },
+    "Jacob Luna": {
+      "wins": 2,
+      "losses": 1,
+      "ties": 2,
+      "net_points": 260.09999999999997
+    },
+    "Chris Vitale": {
+      "wins": 1,
+      "losses": 3,
+      "ties": 2,
+      "net_points": -638.28
+    },
+    "Garrett Ulrich": {
+      "wins": 1,
+      "losses": 4,
+      "ties": 4,
+      "net_points": -26.060000000000006
+    },
+    "Kyle Poppen": {
+      "wins": 4,
+      "losses": 1,
+      "ties": 2,
+      "net_points": 274.68
     },
     "Greg Swenson": {
-      "wins": 0,
-      "losses": 3,
-      "ties": 0,
-      "net_points": -403.78
+      "wins": 1,
+      "losses": 0,
+      "ties": 1,
+      "net_points": 94.42
     },
     "Nick Smielak": {
-      "wins": 5,
+      "wins": 4,
       "losses": 2,
-      "ties": 0,
-      "net_points": 298.54
+      "ties": 1,
+      "net_points": 29.960000000000008
     },
-    "Bryan Whitaker": {
+    "Ben Beck": {
       "wins": 4,
       "losses": 1,
       "ties": 0,
-      "net_points": 651.1
+      "net_points": 730.46
     },
     "Jeremy Settles": {
       "wins": 1,
       "losses": 1,
       "ties": 0,
-      "net_points": 188.4
+      "net_points": 152.18
     },
     "Jamie Coffis": {
-      "wins": 2,
-      "losses": 1,
+      "wins": 0,
+      "losses": 2,
       "ties": 0,
-      "net_points": 9.200000000000003
+      "net_points": -343.92
     },
     "Kellen Coffis": {
       "wins": 1,
       "losses": 3,
       "ties": 1,
-      "net_points": -137.3
+      "net_points": -61.139999999999986
     },
     "Rory McKee": {
       "wins": 1,
@@ -706262,11 +706066,17 @@
       "ties": 0,
       "net_points": -361.22
     },
+    "Bryan Whitaker": {
+      "wins": 2,
+      "losses": 1,
+      "ties": 0,
+      "net_points": 30.52000000000001
+    },
     "Brendan Romele": {
       "wins": 0,
       "losses": 1,
       "ties": 0,
-      "net_points": -170.18
+      "net_points": -79.68
     }
   },
   "metadata": {
@@ -706298,7 +706108,7 @@
     "total_teams": 14,
     "total_owners": 21,
     "total_matchups": 1981,
-    "processed_at": "2026-01-17T20:30:26.960180",
+    "processed_at": "2026-01-18T07:45:21.506813",
     "league_name": "Valley natives"
   },
   "worst_draft_picks": [
@@ -712764,106 +712574,12 @@
   ],
   "worst_trades": [
     {
-      "year": 2025,
-      "week": 11,
-      "transaction_id": "1296660829122347008",
-      "timestamp": 1763510541758,
-      "side1": {
-        "owner": "Chris Vitale",
-        "received": [
-          {
-            "player_id": "6819",
-            "player_name": "Michael Pittman",
-            "position": "WR"
-          },
-          {
-            "player_id": "7543",
-            "player_name": "Travis Etienne",
-            "position": "RB"
-          },
-          {
-            "player_id": "SEA",
-            "player_name": "Seattle Seahawks",
-            "position": "DEF"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "9997",
-            "player_name": "Zay Flowers",
-            "position": "WR"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 587.99,
-        "players_with_stats": [
-          {
-            "name": "Michael Pittman",
-            "position": "WR",
-            "points": 162.4
-          },
-          {
-            "name": "Travis Etienne",
-            "position": "RB",
-            "points": 235.9
-          },
-          {
-            "name": "Seattle Seahawks",
-            "position": "DEF",
-            "points": 189.69
-          }
-        ]
-      },
-      "side2": {
-        "owner": "Garrett Ulrich",
-        "received": [
-          {
-            "player_id": "9997",
-            "player_name": "Zay Flowers",
-            "position": "WR"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "6819",
-            "player_name": "Michael Pittman",
-            "position": "WR"
-          },
-          {
-            "player_id": "7543",
-            "player_name": "Travis Etienne",
-            "position": "RB"
-          },
-          {
-            "player_id": "SEA",
-            "player_name": "Seattle Seahawks",
-            "position": "DEF"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 200.7,
-        "players_with_stats": [
-          {
-            "name": "Zay Flowers",
-            "position": "WR",
-            "points": 200.7
-          }
-        ]
-      },
-      "summary": "Chris Vitale receives Michael Pittman, Travis Etienne, Seattle Seahawks; Garrett Ulrich receives Zay Flowers",
-      "winner": "side1",
-      "winner_owner": "Chris Vitale",
-      "point_differential": 387.29
-    },
-    {
       "year": 2024,
       "week": "0",
       "transaction_id": "13185161",
       "timestamp": "2024-08-25 01:22:45",
       "side1": {
-        "owner": "Bryan Whitaker",
+        "owner": "Ben Beck",
         "received": [
           {
             "player_id": "00-0034837",
@@ -712946,367 +712662,11 @@
           }
         ]
       },
-      "summary": "Bryan Whitaker receives Calvin Ridley, Joe Mixon, James Cook; Rory McKee receives Puka Nacua",
+      "summary": "Ben Beck receives Calvin Ridley, Joe Mixon, James Cook; Rory McKee receives Puka Nacua",
+      "trade_timing": "Offseason",
       "winner": "side1",
-      "winner_owner": "Bryan Whitaker",
+      "winner_owner": "Ben Beck",
       "point_differential": 376.0
-    },
-    {
-      "year": 2023,
-      "week": "14",
-      "transaction_id": "13185269",
-      "timestamp": "2023-12-09 02:55:27",
-      "side1": {
-        "owner": "Ryan Milhous",
-        "received": [
-          {
-            "player_id": "00-0039064",
-            "player_name": "Zay Flowers",
-            "position": "WR"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "00-0033949",
-            "player_name": "Joshua Dobbs",
-            "position": "QB"
-          },
-          {
-            "player_id": "00-0029597",
-            "player_name": "Justin Tucker",
-            "position": "K"
-          },
-          {
-            "player_id": "00-0030565",
-            "player_name": "Geno Smith",
-            "position": "QB"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 130.9,
-        "players_with_stats": [
-          {
-            "name": "Zay Flowers",
-            "position": "WR",
-            "points": 130.9
-          }
-        ]
-      },
-      "side2": {
-        "owner": "Jacob Luna",
-        "received": [
-          {
-            "player_id": "00-0033949",
-            "player_name": "Joshua Dobbs",
-            "position": "QB"
-          },
-          {
-            "player_id": "00-0029597",
-            "player_name": "Justin Tucker",
-            "position": "K"
-          },
-          {
-            "player_id": "00-0030565",
-            "player_name": "Geno Smith",
-            "position": "QB"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "00-0039064",
-            "player_name": "Zay Flowers",
-            "position": "WR"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 482.88,
-        "players_with_stats": [
-          {
-            "name": "Joshua Dobbs",
-            "position": "QB",
-            "points": 200.66
-          },
-          {
-            "name": "Justin Tucker",
-            "position": "K",
-            "points": 110.0
-          },
-          {
-            "name": "Geno Smith",
-            "position": "QB",
-            "points": 172.22
-          }
-        ]
-      },
-      "summary": "Ryan Milhous receives Zay Flowers; Jacob Luna receives Joshua Dobbs, Justin Tucker, Geno Smith",
-      "winner": "side2",
-      "winner_owner": "Jacob Luna",
-      "point_differential": 351.98
-    },
-    {
-      "year": 2025,
-      "week": 12,
-      "transaction_id": "1296974562126204928",
-      "timestamp": 1763585341534,
-      "side1": {
-        "owner": "Ryan Milhous",
-        "received": [
-          {
-            "player_id": "11647",
-            "player_name": "Kimani Vidal",
-            "position": "RB"
-          },
-          {
-            "player_id": "6797",
-            "player_name": "Justin Herbert",
-            "position": "QB"
-          },
-          {
-            "player_id": "8146",
-            "player_name": "Garrett Wilson",
-            "position": "WR"
-          },
-          {
-            "player_id": "9506",
-            "player_name": "Sean Tucker",
-            "position": "RB"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "2133",
-            "player_name": "Davante Adams",
-            "position": "WR"
-          },
-          {
-            "player_id": "3294",
-            "player_name": "Dak Prescott",
-            "position": "QB"
-          },
-          {
-            "player_id": "5892",
-            "player_name": "David Montgomery",
-            "position": "RB"
-          },
-          {
-            "player_id": "7588",
-            "player_name": "Javonte Williams",
-            "position": "RB"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 549.38,
-        "players_with_stats": [
-          {
-            "name": "Kimani Vidal",
-            "position": "RB",
-            "points": 107.5
-          },
-          {
-            "name": "Justin Herbert",
-            "position": "QB",
-            "points": 286.88
-          },
-          {
-            "name": "Garrett Wilson",
-            "position": "WR",
-            "points": 81.5
-          },
-          {
-            "name": "Sean Tucker",
-            "position": "RB",
-            "points": 73.5
-          }
-        ]
-      },
-      "side2": {
-        "owner": "Jacob Luna",
-        "received": [
-          {
-            "player_id": "2133",
-            "player_name": "Davante Adams",
-            "position": "WR"
-          },
-          {
-            "player_id": "3294",
-            "player_name": "Dak Prescott",
-            "position": "QB"
-          },
-          {
-            "player_id": "5892",
-            "player_name": "David Montgomery",
-            "position": "RB"
-          },
-          {
-            "player_id": "7588",
-            "player_name": "Javonte Williams",
-            "position": "RB"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "11647",
-            "player_name": "Kimani Vidal",
-            "position": "RB"
-          },
-          {
-            "player_id": "6797",
-            "player_name": "Justin Herbert",
-            "position": "QB"
-          },
-          {
-            "player_id": "8146",
-            "player_name": "Garrett Wilson",
-            "position": "WR"
-          },
-          {
-            "player_id": "9506",
-            "player_name": "Sean Tucker",
-            "position": "RB"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 886.9,
-        "players_with_stats": [
-          {
-            "name": "Davante Adams",
-            "position": "WR",
-            "points": 192.9
-          },
-          {
-            "name": "Dak Prescott",
-            "position": "QB",
-            "points": 313.78
-          },
-          {
-            "name": "David Montgomery",
-            "position": "RB",
-            "points": 154.92
-          },
-          {
-            "name": "Javonte Williams",
-            "position": "RB",
-            "points": 225.3
-          }
-        ]
-      },
-      "summary": "Ryan Milhous receives Kimani Vidal, Justin Herbert, Garrett Wilson, Sean Tucker; Jacob Luna receives Davante Adams, Dak Prescott, David Montgomery, Javonte Williams",
-      "winner": "side2",
-      "winner_owner": "Jacob Luna",
-      "point_differential": 337.52
-    },
-    {
-      "year": 2024,
-      "week": "11",
-      "transaction_id": "13185190",
-      "timestamp": "2024-11-12 21:01:16",
-      "side1": {
-        "owner": "Kyle Poppen",
-        "received": [
-          {
-            "player_id": "00-0039065",
-            "player_name": "Sam LaPorta",
-            "position": "TE"
-          },
-          {
-            "player_id": "00-0039165",
-            "player_name": "Zach Charbonnet",
-            "position": "RB"
-          },
-          {
-            "player_id": "00-0035685",
-            "player_name": "David Montgomery",
-            "position": "RB"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "00-0037744",
-            "player_name": "Trey McBride",
-            "position": "TE"
-          },
-          {
-            "player_id": "00-0039344",
-            "player_name": "Jonathon Brooks",
-            "position": "RB"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 423.02,
-        "players_with_stats": [
-          {
-            "name": "Sam LaPorta",
-            "position": "TE",
-            "points": 92.5
-          },
-          {
-            "name": "Zach Charbonnet",
-            "position": "RB",
-            "points": 132.3
-          },
-          {
-            "name": "David Montgomery",
-            "position": "RB",
-            "points": 198.22
-          }
-        ]
-      },
-      "side2": {
-        "owner": "Ryan Milhous",
-        "received": [
-          {
-            "player_id": "00-0037744",
-            "player_name": "Trey McBride",
-            "position": "TE"
-          },
-          {
-            "player_id": "00-0039344",
-            "player_name": "Jonathon Brooks",
-            "position": "RB"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "00-0039065",
-            "player_name": "Sam LaPorta",
-            "position": "TE"
-          },
-          {
-            "player_id": "00-0039165",
-            "player_name": "Zach Charbonnet",
-            "position": "RB"
-          },
-          {
-            "player_id": "00-0035685",
-            "player_name": "David Montgomery",
-            "position": "RB"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 143.3,
-        "players_with_stats": [
-          {
-            "name": "Trey McBride",
-            "position": "TE",
-            "points": 137.3
-          },
-          {
-            "name": "Jonathon Brooks",
-            "position": "RB",
-            "points": 6.0
-          }
-        ]
-      },
-      "summary": "Kyle Poppen receives Sam LaPorta, Zach Charbonnet, David Montgomery; Ryan Milhous receives Trey McBride, Jonathon Brooks",
-      "winner": "side1",
-      "winner_owner": "Kyle Poppen",
-      "point_differential": 279.72
     },
     {
       "year": 2021,
@@ -713314,7 +712674,7 @@
       "transaction_id": "13254942",
       "timestamp": "2021-08-27 22:32:40",
       "side1": {
-        "owner": "Bryan Whitaker",
+        "owner": "Ben Beck",
         "received": [
           {
             "player_id": "00-0035831",
@@ -713366,7 +712726,7 @@
         ]
       },
       "side2": {
-        "owner": "Ryan Milhous",
+        "owner": "Chris Vitale",
         "received": [
           {
             "player_id": "00-0033293",
@@ -713412,9 +712772,10 @@
           }
         ]
       },
-      "summary": "Bryan Whitaker receives James Robinson, Cooper Kupp, Patrick Mahomes; Ryan Milhous receives Aaron Jones, Lamar Jackson",
+      "summary": "Ben Beck receives James Robinson, Cooper Kupp, Patrick Mahomes; Chris Vitale receives Aaron Jones, Lamar Jackson",
+      "trade_timing": "Offseason",
       "winner": "side1",
-      "winner_owner": "Bryan Whitaker",
+      "winner_owner": "Ben Beck",
       "point_differential": 278.0
     },
     {
@@ -713470,7 +712831,7 @@
         ]
       },
       "side2": {
-        "owner": "Ryan Milhous",
+        "owner": "Chris Vitale",
         "received": [
           {
             "player_id": "00-0033873",
@@ -713506,7 +712867,8 @@
           }
         ]
       },
-      "summary": "Jacob Luna receives Duke Johnson, Derrick Henry, Cooper Kupp; Ryan Milhous receives Patrick Mahomes",
+      "summary": "Jacob Luna receives Duke Johnson, Derrick Henry, Cooper Kupp; Chris Vitale receives Patrick Mahomes",
+      "trade_timing": "Offseason",
       "winner": "side1",
       "winner_owner": "Jacob Luna",
       "point_differential": 274.88
@@ -713574,7 +712936,7 @@
         ]
       },
       "side2": {
-        "owner": "Greg Swenson",
+        "owner": "Jamie Coffis",
         "received": [
           {
             "player_id": "00-0033932",
@@ -713630,168 +712992,516 @@
           }
         ]
       },
-      "summary": "Jeremy Settles receives Deebo Samuel, Stefon Diggs, David Johnson; Greg Swenson receives Kenny Golladay, Josh Lambo, Zane Gonzalez",
+      "summary": "Jeremy Settles receives Deebo Samuel, Stefon Diggs, David Johnson; Jamie Coffis receives Kenny Golladay, Josh Lambo, Zane Gonzalez",
+      "trade_timing": "Offseason",
       "winner": "side1",
       "winner_owner": "Jeremy Settles",
       "point_differential": 249.5
     },
     {
-      "year": 2025,
-      "week": 8,
-      "transaction_id": "1288158918421282816",
-      "timestamp": 1761483528288,
+      "year": 2022,
+      "week": "3",
+      "transaction_id": "13185667",
+      "timestamp": "2022-09-21 04:14:14",
       "side1": {
-        "owner": "Garrett Ulrich",
-        "received": [
-          {
-            "player_id": "12517",
-            "player_name": "Colston Loveland",
-            "position": "TE"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "11533",
-            "player_name": "Brandon Aubrey",
-            "position": "K"
-          },
-          {
-            "player_id": "7083",
-            "player_name": "Tyler Huntley",
-            "position": "QB"
-          },
-          {
-            "player_id": "7553",
-            "player_name": "Kyle Pitts",
-            "position": "TE"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 134.0,
-        "players_with_stats": [
-          {
-            "name": "Colston Loveland",
-            "position": "TE",
-            "points": 134.0
-          }
-        ]
-      },
-      "side2": {
         "owner": "Kyle Poppen",
         "received": [
           {
-            "player_id": "11533",
-            "player_name": "Brandon Aubrey",
-            "position": "K"
-          },
-          {
-            "player_id": "7083",
-            "player_name": "Tyler Huntley",
-            "position": "QB"
-          },
-          {
-            "player_id": "7553",
-            "player_name": "Kyle Pitts",
-            "position": "TE"
-          }
-        ],
-        "sent": [
-          {
-            "player_id": "12517",
-            "player_name": "Colston Loveland",
-            "position": "TE"
-          }
-        ],
-        "faab_received": 0,
-        "faab_sent": 0,
-        "total_points": 342.02,
-        "players_with_stats": [
-          {
-            "name": "Brandon Aubrey",
-            "position": "K",
-            "points": 165.6
-          },
-          {
-            "name": "Tyler Huntley",
-            "position": "QB",
-            "points": 31.02
-          },
-          {
-            "name": "Kyle Pitts",
-            "position": "TE",
-            "points": 145.4
-          }
-        ]
-      },
-      "summary": "Garrett Ulrich receives Colston Loveland; Kyle Poppen receives Brandon Aubrey, Tyler Huntley, Kyle Pitts",
-      "winner": "side2",
-      "winner_owner": "Kyle Poppen",
-      "point_differential": 208.02
-    },
-    {
-      "year": 2023,
-      "week": "10",
-      "transaction_id": "13185258",
-      "timestamp": "2023-11-08 22:58:46",
-      "side1": {
-        "owner": "Chris Vitale",
-        "received": [
-          {
-            "player_id": "00-0026498",
-            "player_name": "Matthew Stafford",
+            "player_id": "00-0031345",
+            "player_name": "Jimmy Garoppolo",
             "position": "QB"
           }
         ],
         "sent": [
           {
-            "player_id": "00-0034791",
-            "player_name": "Nick Chubb",
-            "position": "RB"
+            "player_id": "00-0036550",
+            "player_name": "Rashod Bateman",
+            "position": "WR"
           }
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 191.28,
+        "total_points": 148.12,
         "players_with_stats": [
           {
-            "name": "Matthew Stafford",
+            "name": "Jimmy Garoppolo",
             "position": "QB",
-            "points": 191.28
+            "points": 148.12
           }
         ]
       },
       "side2": {
-        "owner": "Brendan Romele",
+        "owner": "Nick Smielak",
         "received": [
           {
-            "player_id": "00-0034791",
-            "player_name": "Nick Chubb",
-            "position": "RB"
+            "player_id": "00-0036550",
+            "player_name": "Rashod Bateman",
+            "position": "WR"
           }
         ],
         "sent": [
           {
-            "player_id": "00-0026498",
-            "player_name": "Matthew Stafford",
+            "player_id": "00-0031345",
+            "player_name": "Jimmy Garoppolo",
             "position": "QB"
           }
         ],
         "faab_received": 0,
         "faab_sent": 0,
-        "total_points": 21.1,
+        "total_points": 14.3,
         "players_with_stats": [
           {
-            "name": "Nick Chubb",
-            "position": "RB",
-            "points": 21.1
+            "name": "Rashod Bateman",
+            "position": "WR",
+            "points": 14.3
           }
         ]
       },
-      "summary": "Chris Vitale receives Matthew Stafford; Brendan Romele receives Nick Chubb",
+      "summary": "Kyle Poppen receives Jimmy Garoppolo; Nick Smielak receives Rashod Bateman",
+      "trade_timing": "Week 3",
       "winner": "side1",
-      "winner_owner": "Chris Vitale",
-      "point_differential": 170.18
+      "winner_owner": "Kyle Poppen",
+      "point_differential": 133.82
+    },
+    {
+      "year": 2019,
+      "week": "5",
+      "transaction_id": "13253859",
+      "timestamp": "2019-10-02 17:49:51",
+      "side1": {
+        "owner": "Kellen Coffis",
+        "received": [
+          {
+            "player_id": "00-0034577",
+            "player_name": "Kyle Allen",
+            "position": "QB"
+          },
+          {
+            "player_id": "00-0034845",
+            "player_name": "Sony Michel",
+            "position": "RB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0027793",
+            "player_name": "Antonio Brown",
+            "position": "WR"
+          },
+          {
+            "player_id": "00-0035148",
+            "player_name": "Darwin Thompson",
+            "position": "RB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 141.16,
+        "players_with_stats": [
+          {
+            "name": "Kyle Allen",
+            "position": "QB",
+            "points": 57.86
+          },
+          {
+            "name": "Sony Michel",
+            "position": "RB",
+            "points": 83.3
+          }
+        ]
+      },
+      "side2": {
+        "owner": "Bryan Whitaker",
+        "received": [
+          {
+            "player_id": "00-0027793",
+            "player_name": "Antonio Brown",
+            "position": "WR"
+          },
+          {
+            "player_id": "00-0035148",
+            "player_name": "Darwin Thompson",
+            "position": "RB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0034577",
+            "player_name": "Kyle Allen",
+            "position": "QB"
+          },
+          {
+            "player_id": "00-0034845",
+            "player_name": "Sony Michel",
+            "position": "RB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 12.0,
+        "players_with_stats": [
+          {
+            "name": "Darwin Thompson",
+            "position": "RB",
+            "points": 12.0
+          }
+        ]
+      },
+      "summary": "Kellen Coffis receives Kyle Allen, Sony Michel; Bryan Whitaker receives Antonio Brown, Darwin Thompson",
+      "trade_timing": "Week 5",
+      "winner": "side1",
+      "winner_owner": "Kellen Coffis",
+      "point_differential": 129.16
+    },
+    {
+      "year": 2024,
+      "week": "9",
+      "transaction_id": "13185223",
+      "timestamp": "2024-10-31 11:44:47",
+      "side1": {
+        "owner": "Ben Beck",
+        "received": [
+          {
+            "player_id": "00-0031503",
+            "player_name": "Jameis Winston",
+            "position": "QB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0035216",
+            "player_name": "Diontae Johnson",
+            "position": "WR"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 98.42,
+        "players_with_stats": [
+          {
+            "name": "Jameis Winston",
+            "position": "QB",
+            "points": 98.42
+          }
+        ]
+      },
+      "side2": {
+        "owner": "Jeremy Settles",
+        "received": [
+          {
+            "player_id": "00-0035216",
+            "player_name": "Diontae Johnson",
+            "position": "WR"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0031503",
+            "player_name": "Jameis Winston",
+            "position": "QB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 1.1,
+        "players_with_stats": [
+          {
+            "name": "Diontae Johnson",
+            "position": "WR",
+            "points": 1.1
+          }
+        ]
+      },
+      "summary": "Ben Beck receives Jameis Winston; Jeremy Settles receives Diontae Johnson",
+      "trade_timing": "Week 9",
+      "winner": "side1",
+      "winner_owner": "Ben Beck",
+      "point_differential": 97.32
+    },
+    {
+      "year": 2021,
+      "week": "8",
+      "transaction_id": "13255002",
+      "timestamp": "2021-10-27 17:07:13",
+      "side1": {
+        "owner": "Kyle Poppen",
+        "received": [
+          {
+            "player_id": "00-0033757",
+            "player_name": "Robert Tonyan",
+            "position": "TE"
+          },
+          {
+            "player_id": "00-0036355",
+            "player_name": "Justin Herbert",
+            "position": "QB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0034829",
+            "player_name": "Mike Gesicki",
+            "position": "TE"
+          },
+          {
+            "player_id": "00-0036555",
+            "player_name": "Chuba Hubbard",
+            "position": "RB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 168.04,
+        "players_with_stats": [
+          {
+            "name": "Robert Tonyan",
+            "position": "TE",
+            "points": 6.4
+          },
+          {
+            "name": "Justin Herbert",
+            "position": "QB",
+            "points": 161.64
+          }
+        ]
+      },
+      "side2": {
+        "owner": "Kellen Coffis",
+        "received": [
+          {
+            "player_id": "00-0034829",
+            "player_name": "Mike Gesicki",
+            "position": "TE"
+          },
+          {
+            "player_id": "00-0036555",
+            "player_name": "Chuba Hubbard",
+            "position": "RB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0033757",
+            "player_name": "Robert Tonyan",
+            "position": "TE"
+          },
+          {
+            "player_id": "00-0036355",
+            "player_name": "Justin Herbert",
+            "position": "QB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 70.8,
+        "players_with_stats": [
+          {
+            "name": "Mike Gesicki",
+            "position": "TE",
+            "points": 34.5
+          },
+          {
+            "name": "Chuba Hubbard",
+            "position": "RB",
+            "points": 36.3
+          }
+        ]
+      },
+      "summary": "Kyle Poppen receives Robert Tonyan, Justin Herbert; Kellen Coffis receives Mike Gesicki, Chuba Hubbard",
+      "trade_timing": "Week 8",
+      "winner": "side1",
+      "winner_owner": "Kyle Poppen",
+      "point_differential": 97.24
+    },
+    {
+      "year": 2024,
+      "week": "4",
+      "transaction_id": "13185302",
+      "timestamp": "2024-09-26 18:53:10",
+      "side1": {
+        "owner": "Greg Swenson",
+        "received": [
+          {
+            "player_id": "00-0036139",
+            "player_name": "Rico Dowdle",
+            "position": "RB"
+          },
+          {
+            "player_id": "00-0039152",
+            "player_name": "Will Levis",
+            "position": "QB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0031280",
+            "player_name": "Derek Carr",
+            "position": "QB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 194.22,
+        "players_with_stats": [
+          {
+            "name": "Rico Dowdle",
+            "position": "RB",
+            "points": 113.4
+          },
+          {
+            "name": "Will Levis",
+            "position": "QB",
+            "points": 80.82
+          }
+        ]
+      },
+      "side2": {
+        "owner": "Jamie Coffis",
+        "received": [
+          {
+            "player_id": "00-0031280",
+            "player_name": "Derek Carr",
+            "position": "QB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0036139",
+            "player_name": "Rico Dowdle",
+            "position": "RB"
+          },
+          {
+            "player_id": "00-0039152",
+            "player_name": "Will Levis",
+            "position": "QB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 99.8,
+        "players_with_stats": [
+          {
+            "name": "Derek Carr",
+            "position": "QB",
+            "points": 99.8
+          }
+        ]
+      },
+      "summary": "Greg Swenson receives Rico Dowdle, Will Levis; Jamie Coffis receives Derek Carr",
+      "trade_timing": "Week 4",
+      "winner": "side1",
+      "winner_owner": "Greg Swenson",
+      "point_differential": 94.42
+    },
+    {
+      "year": 2024,
+      "week": "11",
+      "transaction_id": "13185190",
+      "timestamp": "2024-11-12 21:01:16",
+      "side1": {
+        "owner": "Kyle Poppen",
+        "received": [
+          {
+            "player_id": "00-0039065",
+            "player_name": "Sam LaPorta",
+            "position": "TE"
+          },
+          {
+            "player_id": "00-0039165",
+            "player_name": "Zach Charbonnet",
+            "position": "RB"
+          },
+          {
+            "player_id": "00-0035685",
+            "player_name": "David Montgomery",
+            "position": "RB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0037744",
+            "player_name": "Trey McBride",
+            "position": "TE"
+          },
+          {
+            "player_id": "00-0039344",
+            "player_name": "Jonathon Brooks",
+            "position": "RB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 143.6,
+        "players_with_stats": [
+          {
+            "name": "Sam LaPorta",
+            "position": "TE",
+            "points": 25.4
+          },
+          {
+            "name": "Zach Charbonnet",
+            "position": "RB",
+            "points": 49.6
+          },
+          {
+            "name": "David Montgomery",
+            "position": "RB",
+            "points": 68.6
+          }
+        ]
+      },
+      "side2": {
+        "owner": "Chris Vitale",
+        "received": [
+          {
+            "player_id": "00-0037744",
+            "player_name": "Trey McBride",
+            "position": "TE"
+          },
+          {
+            "player_id": "00-0039344",
+            "player_name": "Jonathon Brooks",
+            "position": "RB"
+          }
+        ],
+        "sent": [
+          {
+            "player_id": "00-0039065",
+            "player_name": "Sam LaPorta",
+            "position": "TE"
+          },
+          {
+            "player_id": "00-0039165",
+            "player_name": "Zach Charbonnet",
+            "position": "RB"
+          },
+          {
+            "player_id": "00-0035685",
+            "player_name": "David Montgomery",
+            "position": "RB"
+          }
+        ],
+        "faab_received": 0,
+        "faab_sent": 0,
+        "total_points": 51.4,
+        "players_with_stats": [
+          {
+            "name": "Trey McBride",
+            "position": "TE",
+            "points": 45.4
+          },
+          {
+            "name": "Jonathon Brooks",
+            "position": "RB",
+            "points": 6.0
+          }
+        ]
+      },
+      "summary": "Kyle Poppen receives Sam LaPorta, Zach Charbonnet, David Montgomery; Chris Vitale receives Trey McBride, Jonathon Brooks",
+      "trade_timing": "Week 11",
+      "winner": "side1",
+      "winner_owner": "Kyle Poppen",
+      "point_differential": 92.2
     }
   ]
 }

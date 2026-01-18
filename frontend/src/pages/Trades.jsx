@@ -153,9 +153,9 @@ function Trades() {
                       <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-semibold border border-emerald-500/30">
                         {trade.year}
                       </span>
-                      {trade.week && (
-                        <span className="text-white/50 text-sm">Week {trade.week}</span>
-                      )}
+                      <span className="text-white/50 text-sm">
+                        {trade.trade_timing || (trade.week ? `Week ${trade.week}` : 'Offseason')}
+                      </span>
                     </div>
                     {/* Winner Badge */}
                     {trade.winner && trade.winner !== 'tie' && trade.point_differential > 0 && (
@@ -267,7 +267,9 @@ function Trades() {
                   return (
                     <div key={idx} className="bg-slate-800/50 rounded-lg p-3">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-amber-400 font-semibold text-sm">{trade.year}</span>
+                        <span className="text-amber-400 font-semibold text-sm">
+                          {trade.year} {trade.trade_timing || (trade.week ? `Week ${trade.week}` : 'Offseason')}
+                        </span>
                         <span className="text-xs text-green-400 font-medium">+{trade.point_differential.toFixed(0)} pts</span>
                       </div>
                       {/* Winner's haul */}

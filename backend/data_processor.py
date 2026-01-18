@@ -1379,28 +1379,56 @@ class FantasyDataProcessor:
         """Calculate trade winners based on player performance after the trade"""
         from collections import defaultdict
 
-        # Build player season stats lookup: (year, player_name_lower) -> total_points
-        player_season_points = defaultdict(float)
+        # Build player weekly stats lookup: (year, player_name_lower, week) -> points
+        player_weekly_points = defaultdict(float)
 
         for stat in self.processed_data['player_stats']:
             year = stat['year']
+            week = stat.get('week', 0) or 0
             player_name = stat.get('player_name', '').strip().lower()
-            # Handle both weekly ('points') and aggregated ('total_points') data
-            points = stat.get('total_points') or stat.get('points', 0) or 0
-            player_season_points[(year, player_name)] += points
+            points = stat.get('points', 0) or 0
+            player_weekly_points[(year, player_name, week)] += points
+
+        def get_points_from_week(year, player_name, from_week):
+            """Sum points for a player from a specific week onward"""
+            player_name_lower = player_name.strip().lower()
+            total = 0
+            # Sum weeks from from_week through week 18 (max NFL regular season)
+            for week in range(from_week, 19):
+                total += player_weekly_points.get((year, player_name_lower, week), 0)
+            return total
 
         # Calculate value for each trade
         trades_with_value = []
 
         for trade in self.processed_data['trades']:
             year = trade['year']
+            trade_week = trade.get('week')
 
-            # Calculate points for side 1's received players
+            # Parse trade week - could be int, string, or None
+            try:
+                trade_week_int = int(trade_week) if trade_week else 0
+            except (ValueError, TypeError):
+                trade_week_int = 0
+
+            # Determine if this is an offseason trade (week 0 or None)
+            is_offseason = trade_week_int == 0 or trade_week_int is None
+
+            # For offseason trades, count from week 1; otherwise count from trade week
+            count_from_week = 1 if is_offseason else trade_week_int
+
+            # Set trade timing display
+            if is_offseason:
+                trade['trade_timing'] = 'Offseason'
+            else:
+                trade['trade_timing'] = f'Week {trade_week_int}'
+
+            # Calculate points for side 1's received players (from trade week onward)
             side1_points = 0
             side1_players_with_stats = []
             for player in trade['side1'].get('received', []):
-                player_name = player.get('player_name', '').strip().lower()
-                points = player_season_points.get((year, player_name), 0)
+                player_name = player.get('player_name', '')
+                points = get_points_from_week(year, player_name, count_from_week)
                 side1_points += points
                 if points > 0:
                     side1_players_with_stats.append({
@@ -1409,12 +1437,12 @@ class FantasyDataProcessor:
                         'points': round(points, 2)
                     })
 
-            # Calculate points for side 2's received players
+            # Calculate points for side 2's received players (from trade week onward)
             side2_points = 0
             side2_players_with_stats = []
             for player in trade['side2'].get('received', []):
-                player_name = player.get('player_name', '').strip().lower()
-                points = player_season_points.get((year, player_name), 0)
+                player_name = player.get('player_name', '')
+                points = get_points_from_week(year, player_name, count_from_week)
                 side2_points += points
                 if points > 0:
                     side2_players_with_stats.append({

@@ -12,22 +12,22 @@ BASE_DIR = Path(__file__).parent.parent
 EXPORTS_DIR = BASE_DIR / 'data' / 'exports'
 RAW_DIR = BASE_DIR / 'data' / 'raw'
 
-# League Member ID to Owner Name mapping
+# League Member ID to Owner Name mapping (verified against team names in standings)
 MEMBER_TO_OWNER = {
-    140840: 'Ryan Milhous',
-    140841: 'Kellen Coffis',
-    140842: 'Greg Swenson',  # Art Shell Blueprint / B-LO Bleezos
-    140843: 'Garrett Ulrich',
-    140844: 'Jamie Coffis',  # Team Ramrod
-    140845: 'Jeremy Settles',  # Felton Sluggers
-    140846: 'Nick Smielak',
-    140848: 'Rory McKee',
-    140849: 'Jacob Luna',
-    140850: 'Chris Vitale',
-    140851: 'Brendan Romele',
-    140852: 'Jamie Coffis',  # Additional mapping
-    140853: 'Bryan Whitaker',
-    140854: 'Kyle Poppen',
+    140840: 'Chris Vitale',      # RichCity Yung Beevs, The Chronic
+    140841: 'Kellen Coffis',     # The Kellen Brothers
+    140842: 'Jamie Coffis',      # B-LO Bleezos, The Leftists
+    140843: 'Garrett Ulrich',    # Emancipation of Jim and Vicki, Mr. Thomas' Naberhood
+    140844: 'Greg Swenson',      # Prime Time
+    140845: 'Jeremy Settles',    # Felton Sluggers
+    140846: 'Nick Smielak',      # . Schmee, The Smi Pies
+    140848: 'Rory McKee',        # Younghoe Bunghole, Protoss'd Salad
+    140849: 'Jacob Luna',        # Tampon Bay Blumpkineers
+    140850: 'Bryan Whitaker',    # AB's Face Farts, For Those About To Brock
+    140851: 'Brendan Romele',    # S.F. Forty-Chiners
+    140852: 'Ryan Milhous',      # Ding Dong Doid Brains
+    140853: 'Ben Beck',          # The Pudd'n
+    140854: 'Kyle Poppen',       # Cherry Poppen
     151662: 'Kyle Morris',
     151663: 'Ben Beck',
     151664: 'Brian Vitale',
