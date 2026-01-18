@@ -8,6 +8,7 @@ import Teams from './pages/Teams';
 import Records from './pages/Records';
 import Draft from './pages/Draft';
 import Rosters from './pages/Rosters';
+import Trades from './pages/Trades';
 
 function NavLink({ to, children, onClick }) {
   const location = useLocation();
@@ -57,6 +58,7 @@ function App() {
                 <NavLink to="/matchups">Matchups</NavLink>
                 <NavLink to="/head-to-head">H2H</NavLink>
                 <NavLink to="/rosters">Rosters</NavLink>
+                <NavLink to="/trades">Trades</NavLink>
               </div>
 
               {/* Mobile Menu Button */}
@@ -84,6 +86,7 @@ function App() {
                 <NavLink to="/matchups" onClick={() => setMobileMenuOpen(false)}>Matchups</NavLink>
                 <NavLink to="/head-to-head" onClick={() => setMobileMenuOpen(false)}>H2H</NavLink>
                 <NavLink to="/rosters" onClick={() => setMobileMenuOpen(false)}>Rosters</NavLink>
+                <NavLink to="/trades" onClick={() => setMobileMenuOpen(false)}>Trades</NavLink>
               </div>
             )}
           </div>
@@ -100,6 +103,7 @@ function App() {
             <Route path="/records" element={<Records />} />
             <Route path="/draft" element={<Draft />} />
             <Route path="/rosters" element={<Rosters />} />
+            <Route path="/trades" element={<Trades />} />
           </Routes>
         </main>
 
@@ -107,7 +111,7 @@ function App() {
         <footer className="bg-slate-900/50 backdrop-blur-lg border-t border-white/10 py-8 mt-20">
           <div className="container mx-auto px-6 text-center">
             <p className="text-white/80 font-medium">Valley Natives Fantasy Football</p>
-            <p className="text-sm text-white/50 mt-2">Historical Data Explorer • 2007-2024</p>
+            <p className="text-sm text-white/50 mt-2">Historical Data Explorer • 2007-2025</p>
           </div>
         </footer>
       </div>

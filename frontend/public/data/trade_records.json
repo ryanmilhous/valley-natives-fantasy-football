@@ -1,0 +1,80 @@
+{
+  "Jacob Luna": {
+    "wins": 4,
+    "losses": 1,
+    "ties": 0,
+    "net_points": 949.6
+  },
+  "Ryan Milhous": {
+    "wins": 1,
+    "losses": 5,
+    "ties": 0,
+    "net_points": -1509.1
+  },
+  "Chris Vitale": {
+    "wins": 3,
+    "losses": 1,
+    "ties": 0,
+    "net_points": 502.43000000000006
+  },
+  "Garrett Ulrich": {
+    "wins": 2,
+    "losses": 7,
+    "ties": 0,
+    "net_points": -766.71
+  },
+  "Kyle Poppen": {
+    "wins": 5,
+    "losses": 1,
+    "ties": 1,
+    "net_points": 749.0199999999999
+  },
+  "Greg Swenson": {
+    "wins": 0,
+    "losses": 3,
+    "ties": 0,
+    "net_points": -403.78
+  },
+  "Nick Smielak": {
+    "wins": 5,
+    "losses": 2,
+    "ties": 0,
+    "net_points": 298.54
+  },
+  "Bryan Whitaker": {
+    "wins": 4,
+    "losses": 1,
+    "ties": 0,
+    "net_points": 651.1
+  },
+  "Jeremy Settles": {
+    "wins": 1,
+    "losses": 1,
+    "ties": 0,
+    "net_points": 188.4
+  },
+  "Jamie Coffis": {
+    "wins": 2,
+    "losses": 1,
+    "ties": 0,
+    "net_points": 9.200000000000003
+  },
+  "Kellen Coffis": {
+    "wins": 1,
+    "losses": 3,
+    "ties": 1,
+    "net_points": -137.3
+  },
+  "Rory McKee": {
+    "wins": 1,
+    "losses": 2,
+    "ties": 0,
+    "net_points": -361.22
+  },
+  "Brendan Romele": {
+    "wins": 0,
+    "losses": 1,
+    "ties": 0,
+    "net_points": -170.18
+  }
+}

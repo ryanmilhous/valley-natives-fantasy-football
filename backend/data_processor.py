@@ -65,6 +65,9 @@ class FantasyDataProcessor:
             'player_stats': [],
             'best_draft_picks': [],
             'optimal_lineups': [],
+            'trades': [],
+            'best_trades': [],
+            'trade_records': {},
             'metadata': {}
         }
 
@@ -87,6 +90,26 @@ class FantasyDataProcessor:
             year: Optional year for year-specific mappings
         """
         return OWNER_NAME_MAPPING.get(display_name, display_name)
+
+    @staticmethod
+    def normalize_position(position):
+        """
+        Normalize position names to standard values
+
+        Mappings:
+            PK -> K (Punter/Kicker to Kicker)
+            FB -> RB (Fullback to Running Back)
+            D/ST -> DEF (Defense/Special Teams to Defense)
+        """
+        if not position:
+            return position
+        position = position.upper().strip()
+        POSITION_MAPPING = {
+            'PK': 'K',
+            'FB': 'RB',
+            'D/ST': 'DEF',
+        }
+        return POSITION_MAPPING.get(position, position)
 
     def load_raw_data(self, years=None):
         """Load raw data for specified years"""
@@ -1117,7 +1140,7 @@ class FantasyDataProcessor:
                 position = stats['position']
 
                 # Calculate value as points per dollar spent (for auction drafts)
-                value = round(total_points / auction_cost, 2) if auction_cost > 0 else 0
+                pts_per_dollar = round(total_points / auction_cost, 2) if auction_cost > 0 else 0
 
                 all_picks.append({
                     'year': year,
@@ -1129,11 +1152,40 @@ class FantasyDataProcessor:
                     'total_points': round(total_points, 2),
                     'avg_points_per_game': round(avg_points, 2),
                     'games_played': stats['games'],
-                    'value': value  # Points per dollar
+                    'pts_per_dollar': pts_per_dollar
                 })
 
-        # Sort by value (points per dollar)
-        all_picks.sort(key=lambda x: x['value'], reverse=True)
+        # Calculate position averages (pts/$ for each position)
+        position_totals = defaultdict(lambda: {'total_pts': 0, 'total_cost': 0, 'count': 0})
+        for pick in all_picks:
+            pos = pick.get('position')
+            if pos and pick['total_points'] > 0:
+                position_totals[pos]['total_pts'] += pick['total_points']
+                position_totals[pos]['total_cost'] += pick['auction_cost']
+                position_totals[pos]['count'] += 1
+
+        position_avg_pts_per_dollar = {}
+        for pos, data in position_totals.items():
+            if data['total_cost'] > 0:
+                position_avg_pts_per_dollar[pos] = data['total_pts'] / data['total_cost']
+
+        print(f"\nPosition average pts/$ (auction drafts):")
+        for pos in ['QB', 'RB', 'WR', 'TE', 'K', 'DEF']:
+            if pos in position_avg_pts_per_dollar:
+                print(f"  {pos}: {position_avg_pts_per_dollar[pos]:.2f} pts/$")
+
+        # Calculate value vs position average
+        for pick in all_picks:
+            pos = pick.get('position')
+            pos_avg = position_avg_pts_per_dollar.get(pos, 0)
+            # Value = how much better/worse than position average
+            pick['position_avg_pts_per_dollar'] = round(pos_avg, 2)
+            pick['value_vs_position'] = round(pick['pts_per_dollar'] - pos_avg, 2)
+            # Keep raw value for backward compatibility
+            pick['value'] = pick['pts_per_dollar']
+
+        # Sort by value vs position (how much better than position average)
+        all_picks.sort(key=lambda x: x['value_vs_position'], reverse=True)
 
         # For both best and worst picks, only include picks that cost $20 or more
         # This focuses on significant investments rather than cheap fliers
@@ -1147,9 +1199,10 @@ class FantasyDataProcessor:
         self.processed_data['best_draft_picks'] = best_picks
 
         # For worst picks, filter out players with 0 or negative points (injuries/DNPs)
-        # Keep QBs from all years for worst picks (bad picks are still bad)
+        # Sort by value_vs_position ascending for worst picks
         worst_picks = [pick for pick in expensive_picks if pick['total_points'] > 0]
-        self.processed_data['worst_draft_picks'] = worst_picks[::-1]  # Reverse for worst first
+        worst_picks.sort(key=lambda x: x['value_vs_position'])
+        self.processed_data['worst_draft_picks'] = worst_picks
 
         print(f"Analyzed {len(all_picks)} draft picks with performance data (keepers excluded)")
         print(f"  - {len(best_picks)} picks ($20+, excluding QBs from 2019-2021) for best value analysis")
@@ -1268,6 +1321,166 @@ class FantasyDataProcessor:
         print(f"  - {len(self.processed_data['best_snake_picks'])} best value picks (overperformed expectations)")
         print(f"  - {len(self.processed_data['worst_snake_picks'])} worst value picks (underperformed expectations)")
 
+    def process_trades(self):
+        """Process trade data across all years"""
+        all_trades = []
+
+        for year, season_data in self.raw_data.items():
+            trades = season_data.get('trades', [])
+
+            for trade in trades:
+                # Process each trade into a cleaner format
+                sides = trade.get('sides', [])
+                if len(sides) != 2:
+                    continue  # Skip malformed trades
+
+                # Build a simplified trade record
+                trade_record = {
+                    'year': year,
+                    'week': trade.get('week'),
+                    'transaction_id': trade.get('transaction_id'),
+                    'timestamp': trade.get('timestamp'),
+                    'side1': {
+                        'owner': self.normalize_owner_name(sides[0].get('owner', ''), year),
+                        'received': sides[0].get('received', []),
+                        'sent': sides[0].get('sent', []),
+                        'faab_received': sides[0].get('faab_received', 0),
+                        'faab_sent': sides[0].get('faab_sent', 0)
+                    },
+                    'side2': {
+                        'owner': self.normalize_owner_name(sides[1].get('owner', ''), year),
+                        'received': sides[1].get('received', []),
+                        'sent': sides[1].get('sent', []),
+                        'faab_received': sides[1].get('faab_received', 0),
+                        'faab_sent': sides[1].get('faab_sent', 0)
+                    }
+                }
+
+                # Create a human-readable summary
+                side1_gets = ', '.join([p['player_name'] for p in sides[0].get('received', [])])
+                side2_gets = ', '.join([p['player_name'] for p in sides[1].get('received', [])])
+
+                if sides[0].get('faab_received', 0) > 0:
+                    side1_gets += f" + ${sides[0]['faab_received']} FAAB" if side1_gets else f"${sides[0]['faab_received']} FAAB"
+                if sides[1].get('faab_received', 0) > 0:
+                    side2_gets += f" + ${sides[1]['faab_received']} FAAB" if side2_gets else f"${sides[1]['faab_received']} FAAB"
+
+                trade_record['summary'] = f"{trade_record['side1']['owner']} receives {side1_gets}; {trade_record['side2']['owner']} receives {side2_gets}"
+
+                all_trades.append(trade_record)
+
+        # Sort by year descending, then by week descending
+        all_trades.sort(key=lambda x: (x['year'], x.get('week', 0) or 0), reverse=True)
+
+        self.processed_data['trades'] = all_trades
+        print(f"Processed {len(all_trades)} trades across all years")
+
+    def calculate_trade_values(self):
+        """Calculate trade winners based on player performance after the trade"""
+        from collections import defaultdict
+
+        # Build player season stats lookup: (year, player_name_lower) -> total_points
+        player_season_points = defaultdict(float)
+
+        for stat in self.processed_data['player_stats']:
+            year = stat['year']
+            player_name = stat.get('player_name', '').strip().lower()
+            # Handle both weekly ('points') and aggregated ('total_points') data
+            points = stat.get('total_points') or stat.get('points', 0) or 0
+            player_season_points[(year, player_name)] += points
+
+        # Calculate value for each trade
+        trades_with_value = []
+
+        for trade in self.processed_data['trades']:
+            year = trade['year']
+
+            # Calculate points for side 1's received players
+            side1_points = 0
+            side1_players_with_stats = []
+            for player in trade['side1'].get('received', []):
+                player_name = player.get('player_name', '').strip().lower()
+                points = player_season_points.get((year, player_name), 0)
+                side1_points += points
+                if points > 0:
+                    side1_players_with_stats.append({
+                        'name': player.get('player_name'),
+                        'position': player.get('position'),
+                        'points': round(points, 2)
+                    })
+
+            # Calculate points for side 2's received players
+            side2_points = 0
+            side2_players_with_stats = []
+            for player in trade['side2'].get('received', []):
+                player_name = player.get('player_name', '').strip().lower()
+                points = player_season_points.get((year, player_name), 0)
+                side2_points += points
+                if points > 0:
+                    side2_players_with_stats.append({
+                        'name': player.get('player_name'),
+                        'position': player.get('position'),
+                        'points': round(points, 2)
+                    })
+
+            # Determine winner
+            point_diff = side1_points - side2_points
+            if abs(point_diff) < 5:  # Within 5 points = tie
+                winner = 'tie'
+                winner_owner = None
+            elif point_diff > 0:
+                winner = 'side1'
+                winner_owner = trade['side1']['owner']
+            else:
+                winner = 'side2'
+                winner_owner = trade['side2']['owner']
+
+            # Add value info to trade
+            trade_with_value = trade.copy()
+            trade_with_value['side1']['total_points'] = round(side1_points, 2)
+            trade_with_value['side1']['players_with_stats'] = side1_players_with_stats
+            trade_with_value['side2']['total_points'] = round(side2_points, 2)
+            trade_with_value['side2']['players_with_stats'] = side2_players_with_stats
+            trade_with_value['winner'] = winner
+            trade_with_value['winner_owner'] = winner_owner
+            trade_with_value['point_differential'] = round(abs(point_diff), 2)
+
+            trades_with_value.append(trade_with_value)
+
+        # Sort by point differential to find best/worst trades
+        trades_with_winners = [t for t in trades_with_value if t['winner'] != 'tie']
+        trades_with_winners.sort(key=lambda x: x['point_differential'], reverse=True)
+
+        # Identify best and worst trades (by point differential)
+        self.processed_data['trades'] = trades_with_value
+        self.processed_data['best_trades'] = trades_with_winners[:10]  # Top 10 lopsided trades
+        self.processed_data['worst_trades'] = trades_with_winners[:10]  # Same list, shown from loser's perspective
+
+        # Count wins/losses by owner
+        trade_record = defaultdict(lambda: {'wins': 0, 'losses': 0, 'ties': 0, 'net_points': 0})
+        for trade in trades_with_value:
+            side1_owner = trade['side1']['owner']
+            side2_owner = trade['side2']['owner']
+
+            if trade['winner'] == 'side1':
+                trade_record[side1_owner]['wins'] += 1
+                trade_record[side1_owner]['net_points'] += trade['point_differential']
+                trade_record[side2_owner]['losses'] += 1
+                trade_record[side2_owner]['net_points'] -= trade['point_differential']
+            elif trade['winner'] == 'side2':
+                trade_record[side2_owner]['wins'] += 1
+                trade_record[side2_owner]['net_points'] += trade['point_differential']
+                trade_record[side1_owner]['losses'] += 1
+                trade_record[side1_owner]['net_points'] -= trade['point_differential']
+            else:
+                trade_record[side1_owner]['ties'] += 1
+                trade_record[side2_owner]['ties'] += 1
+
+        self.processed_data['trade_records'] = dict(trade_record)
+
+        trades_analyzed = len([t for t in trades_with_value if t['side1'].get('total_points', 0) > 0 or t['side2'].get('total_points', 0) > 0])
+        print(f"Calculated trade values for {trades_analyzed} trades with player stats")
+
     def enrich_draft_with_positions(self):
         """Add position information to draft picks by matching with player stats or ID mapping"""
         # Create a mapping of (year, player_id) -> position from player stats
@@ -1320,6 +1533,11 @@ class FantasyDataProcessor:
         print(f"Enriched {total_enriched}/{len(self.processed_data['draft'])} draft picks with position data")
         print(f"  - {enriched_from_stats} from player stats, {enriched_from_mapping} from ID mapping, {enriched_from_name} from name matching")
 
+        # Normalize all positions (PK -> K, FB -> RB, D/ST -> DEF)
+        for pick in self.processed_data['draft']:
+            if pick.get('position'):
+                pick['position'] = self.normalize_position(pick['position'])
+
     def process_all(self):
         """Run all processing steps"""
         print("\n=== Processing Fantasy Football Data ===\n")
@@ -1339,6 +1557,8 @@ class FantasyDataProcessor:
         self.process_player_stats()
         self.enrich_draft_with_positions()  # Add positions to draft picks
         self.calculate_best_draft_picks()
+        self.process_trades()
+        self.calculate_trade_values()
         self.add_metadata()
 
         print("\n✓ All processing complete!\n")
@@ -1352,7 +1572,7 @@ class FantasyDataProcessor:
         print(f"✓ Saved complete data to {complete_file}")
 
         # Save individual components for easier API access
-        for key in ['teams', 'owners', 'matchups', 'standings', 'playoffs', 'head_to_head', 'records', 'draft', 'rosters', 'player_stats', 'best_draft_picks', 'worst_draft_picks', 'best_snake_picks', 'worst_snake_picks', 'optimal_lineups', 'metadata']:
+        for key in ['teams', 'owners', 'matchups', 'standings', 'playoffs', 'head_to_head', 'records', 'draft', 'rosters', 'player_stats', 'best_draft_picks', 'worst_draft_picks', 'best_snake_picks', 'worst_snake_picks', 'optimal_lineups', 'trades', 'best_trades', 'trade_records', 'metadata']:
             component_file = PROCESSED_DATA_DIR / f'{key}.json'
             with open(component_file, 'w') as f:
                 json.dump(self.processed_data[key], f, indent=2)

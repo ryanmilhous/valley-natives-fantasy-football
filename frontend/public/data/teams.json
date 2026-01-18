@@ -2,17 +2,17 @@
   "1": {
     "team_id": 1,
     "team_names": [
-      "Rich City YungBeevs",
-      "The Chronic",
+      "Kellen's Championship Team",
       "RichCity Yung Beevs",
-      "Kellen's Championship Team"
+      "The Chronic",
+      "Rich City YungBeevs"
     ],
-    "current_name": "Kellen's Championship Team",
+    "current_name": "Rich City YungBeevs",
     "owners": [
-      "Chris Vitale",
-      "Kellen Coffis"
+      "Kellen Coffis",
+      "Chris Vitale"
     ],
-    "current_owner": "Kellen Coffis",
+    "current_owner": "Chris Vitale",
     "seasons_active": 20,
     "seasons": [
       {
@@ -289,20 +289,20 @@
   "2": {
     "team_id": 2,
     "team_names": [
-      "Tom Brady's New Pus Bus",
       "The Tom Brady Pus Bus",
       "My Penix Will Rise Again",
+      "Back to Back Champioships",
       "The Kellen Brothers",
       "Chris's Team",
-      "Back to Back Champioships"
+      "Tom Brady's New Pus Bus"
     ],
-    "current_name": "Back to Back Champioships",
+    "current_name": "Tom Brady's New Pus Bus",
     "owners": [
-      "Garrett Ulrich",
+      "Kellen Coffis",
       "Chris Vitale",
-      "Kellen Coffis"
+      "Garrett Ulrich"
     ],
-    "current_owner": "Kellen Coffis",
+    "current_owner": "Garrett Ulrich",
     "seasons_active": 20,
     "seasons": [
       {
@@ -579,26 +579,26 @@
   "3": {
     "team_id": 3,
     "team_names": [
-      "Team 3",
-      "The Replacement Graduates",
-      "B-LO Par",
-      "The Young Lefties",
-      "Stop Jerking My Johnson",
-      "The Overflowing Spongies",
-      "The Golden Gods",
-      "Cherry Poppen",
-      "The Post Graduates",
       "Ben Lomond  Half Baked Co.",
-      "Acoreycy and Prosision",
       " The Art Shell  Blueprint",
       "The Graduates",
-      "The Leftists",
+      "Stop Jerking My Johnson",
+      "Acoreycy and Prosision",
       "The Lucky Lefties",
-      "B-LO Bleezos",
+      "Team 3",
+      "The Golden Gods",
+      "The Replacement Graduates",
+      "The Post Graduates",
       "Be Stills My Fart ",
-      "Mono a Mono"
+      "B-LO Par",
+      "Mono a Mono",
+      "B-LO Bleezos",
+      "The Leftists",
+      "The Overflowing Spongies",
+      "Cherry Poppen",
+      "The Young Lefties"
     ],
-    "current_name": "Mono a Mono",
+    "current_name": "The Young Lefties",
     "owners": [
       "Jamie Coffis",
       "Kyle Poppen"
@@ -881,17 +881,17 @@
     "team_id": 4,
     "team_names": [
       "Nano Bubbles  And  Abstinence",
-      "Hustle Bustle And Man Muscle",
-      "Mr. Thomas' Naberhood",
-      "Michael Vick's FreedomFighters",
       "King of  The Doids",
-      "Emancipation of Jim and Vicki",
-      "What would MichaelVick do?",
+      "Mr. Thomas' Naberhood",
+      "No Starties Even Beats Me",
+      "Hustle Bustle And Man Muscle",
       "Team 4",
       "Smi Pies",
-      "No Starties Even Beats Me"
+      "What would MichaelVick do?",
+      "Emancipation of Jim and Vicki",
+      "Michael Vick's FreedomFighters"
     ],
-    "current_name": "No Starties Even Beats Me",
+    "current_name": "Michael Vick's FreedomFighters",
     "owners": [
       "Nick Smielak",
       "Garrett Ulrich"
@@ -1173,18 +1173,18 @@
   "5": {
     "team_id": 5,
     "team_names": [
-      "Team Ramrod",
-      "Prime Time",
+      "Team Clark",
       "Team 5",
+      "Team Ramrod",
       "Out of Time",
-      "Team Clark"
+      "Prime Time"
     ],
-    "current_name": "Team Clark",
+    "current_name": "Prime Time",
     "owners": [
-      "Tanner Clark",
-      "Greg Swenson"
+      "Greg Swenson",
+      "Tanner Clark"
     ],
-    "current_owner": "Greg Swenson",
+    "current_owner": "Tanner Clark",
     "seasons_active": 20,
     "seasons": [
       {
@@ -1461,19 +1461,19 @@
   "7": {
     "team_id": 7,
     "team_names": [
-      "The Smi Pies",
-      "Schmee Squad",
-      "Team Schmeeeelak",
-      "Team 7",
-      "RIP Chris",
-      "The Ghosts of Polak Past",
-      "Mt. T1GHTMON",
       ". Schmee",
+      "Schmee Squad",
       "Team luna",
       "Somewhere over the Dwayne Bowe",
-      "B-Rom Baby  Bears"
+      "The Smi Pies",
+      "Team 7",
+      "B-Rom Baby  Bears",
+      "Mt. T1GHTMON",
+      "Team Schmeeeelak",
+      "RIP Chris",
+      "The Ghosts of Polak Past"
     ],
-    "current_name": "B-Rom Baby  Bears",
+    "current_name": "The Ghosts of Polak Past",
     "owners": [
       "Nick Smielak",
       "Steve Keller",
@@ -1756,28 +1756,28 @@
   "8": {
     "team_id": 8,
     "team_names": [
-      "the creek nut wildphish",
-      "Biggest  Fantasy Flop",
-      "Running Back-Snatch",
-      "U Koo with Younghoes?",
-      "Ding Dong Doid Brains",
-      "Pantry The Puddn\u00e2\u0080\u0099",
-      "Scroopy Noopers",
-      "Kooter McGavin",
-      "Younghoes Have Kooties",
-      "RichCity Yung Beevs",
-      "Team 8",
-      "Blackout or Back Out",
-      "Younghoe Bunghole",
       "south brookdale regulaters",
       "Bros Before Younghoes",
-      "Protoss'd Salad"
+      "Younghoes Have Kooties",
+      "Pantry The Puddn\u00e2\u0080\u0099",
+      "the creek nut wildphish",
+      "Kooter McGavin",
+      "Scroopy Noopers",
+      "Running Back-Snatch",
+      "Ding Dong Doid Brains",
+      "Team 8",
+      "U Koo with Younghoes?",
+      "Younghoe Bunghole",
+      "Protoss'd Salad",
+      "RichCity Yung Beevs",
+      "Blackout or Back Out",
+      "Biggest  Fantasy Flop"
     ],
-    "current_name": "Protoss'd Salad",
+    "current_name": "Biggest  Fantasy Flop",
     "owners": [
-      "Rory McKee",
-      "Ryan Milhous",
       "Brian Vitale",
+      "Ryan Milhous",
+      "Rory McKee",
       "Peter Kent-Stoll"
     ],
     "current_owner": "Peter Kent-Stoll",
@@ -2057,22 +2057,22 @@
   "9": {
     "team_id": 9,
     "team_names": [
+      "Tampon Bay Blumpcaneers",
       "Team 9",
-      "High Hopes",
-      "Less Gore Mo Pus",
-      "Tampon Bay Blumpkineers",
       "Tampon Bay Chumpkineers",
       "S.F. Forty-Chiners",
-      "Tampon Bay Blumpcaneers",
+      "Less Gore Mo Pus",
+      "Tampon Bay Blumpkineers",
+      "High Hopes",
       "More Gore"
     ],
     "current_name": "More Gore",
     "owners": [
+      "Dylan Andrews",
       "Brendan Romele",
-      "Jacob Luna",
-      "Dylan Andrews"
+      "Jacob Luna"
     ],
-    "current_owner": "Dylan Andrews",
+    "current_owner": "Jacob Luna",
     "seasons_active": 20,
     "seasons": [
       {
@@ -2349,20 +2349,20 @@
   "10": {
     "team_id": 10,
     "team_names": [
-      "Tyreek And The Drain Pours",
       "Team 10",
-      "Nick Dak Paddy Wack",
-      "The Pierre Necessities",
-      "Tampon Bay Blumpkineers",
-      "Lo-Carb Monsters",
-      "The Keepy No  Startie's",
-      "Foot-Loose and Fancy Free",
-      "For All The  Haters (Chris)",
       "AB's Face Farts",
+      "Lo-Carb Monsters",
+      "For Those About To Brock",
+      "For All The  Haters (Chris)",
+      "Foot-Loose and Fancy Free",
+      "Nick Dak Paddy Wack",
+      "Tampon Bay Blumpkineers",
       "Purdy Good Timing ",
-      "For Those About To Brock"
+      "The Keepy No  Startie's",
+      "Tyreek And The Drain Pours",
+      "The Pierre Necessities"
     ],
-    "current_name": "For Those About To Brock",
+    "current_name": "The Pierre Necessities",
     "owners": [
       "Bryan Whitaker",
       "Tyler Fullerton",
@@ -2645,9 +2645,9 @@
   "11": {
     "team_id": 11,
     "team_names": [
-      "Felton Sluggers",
       "S.F. Forty-Chiners",
       "Team 11",
+      "Felton Sluggers",
       "Team Romele"
     ],
     "current_name": "Team Romele",
@@ -2932,15 +2932,15 @@
   "12": {
     "team_id": 12,
     "team_names": [
-      "Team Morris",
-      "the revolting BLOB",
-      "Ding Dong Doid Brains",
       "Auto Drafties",
+      "the revolting BLOB",
       "Bryan Whitaker's Team",
+      "Corn On The  Kolb",
       "Team 12",
-      "Corn On The  Kolb"
+      "Team Morris",
+      "Ding Dong Doid Brains"
     ],
-    "current_name": "Corn On The  Kolb",
+    "current_name": "Ding Dong Doid Brains",
     "owners": [
       "Bryan Whitaker",
       "Ryan Milhous",
@@ -3223,16 +3223,16 @@
   "6": {
     "team_id": 6,
     "team_names": [
-      "Felton Sluggers",
       "Team Settles",
+      "Felton Sluggers",
       "The Drakes"
     ],
     "current_name": "The Drakes",
     "owners": [
-      "Jamie Coffis",
-      "Jeremy Settles"
+      "Jeremy Settles",
+      "Jamie Coffis"
     ],
-    "current_owner": "Jeremy Settles",
+    "current_owner": "Jamie Coffis",
     "seasons_active": 19,
     "seasons": [
       {
@@ -3497,17 +3497,17 @@
     "team_id": 13,
     "team_names": [
       "Youth Movement  !!!!!!!",
-      "The Pudd'n \ud83d\udc2c",
+      "the new kid  on the block",
       "PPPWRA",
-      "Jackson5 \ud83d\udc2c",
-      "the new kid  on the block"
+      "The Pudd'n \ud83d\udc2c",
+      "Jackson5 \ud83d\udc2c"
     ],
-    "current_name": "the new kid  on the block",
+    "current_name": "Jackson5 \ud83d\udc2c",
     "owners": [
-      "Rory McKee",
-      "Ben Beck"
+      "Ben Beck",
+      "Rory McKee"
     ],
-    "current_owner": "Ben Beck",
+    "current_owner": "Rory McKee",
     "seasons_active": 14,
     "seasons": [
       {
@@ -3706,15 +3706,15 @@
   "14": {
     "team_id": 14,
     "team_names": [
-      "The Kellen Brothers",
-      "Cherry Poppen"
+      "Cherry Poppen",
+      "The Kellen Brothers"
     ],
-    "current_name": "Cherry Poppen",
+    "current_name": "The Kellen Brothers",
     "owners": [
-      "Kyle Poppen",
-      "Kellen Coffis"
+      "Kellen Coffis",
+      "Kyle Poppen"
     ],
-    "current_owner": "Kellen Coffis",
+    "current_owner": "Kyle Poppen",
     "seasons_active": 14,
     "seasons": [
       {

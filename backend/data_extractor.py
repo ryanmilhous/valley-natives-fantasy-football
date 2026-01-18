@@ -67,6 +67,7 @@ class ESPNDataExtractor:
             'draft': [],
             'rosters': {},
             'player_stats': [],
+            'trades': [],
             'settings': {},
             'extracted_at': datetime.now().isoformat()
         }
@@ -291,6 +292,87 @@ class ESPNDataExtractor:
             print(f"    ✓ Extracted {len(season_data['player_stats'])} player performances")
         except Exception as e:
             print(f"    Warning: Error extracting player stats: {e}")
+
+        # Extract trade data
+        print(f"  Extracting trade data...")
+        try:
+            # Build team_id -> owner mapping
+            team_to_owner = {}
+            for team in league.teams:
+                owner = 'Unknown'
+                if hasattr(team, 'owners') and team.owners:
+                    owners_list = team.owners
+                    if isinstance(owners_list, list) and len(owners_list) > 0:
+                        first_owner = owners_list[0]
+                        if isinstance(first_owner, dict):
+                            owner = first_owner.get('displayName') or \
+                                    f"{first_owner.get('firstName', '')} {first_owner.get('lastName', '')}".strip()
+                        elif isinstance(first_owner, str):
+                            owner = first_owner
+                team_to_owner[team.team_id] = owner.strip() if owner else 'Unknown'
+
+            # Get all activity for the season (trades are in recent_activity)
+            activities = league.recent_activity(size=500)  # Get up to 500 activities
+
+            for activity in activities:
+                # Check if this is a trade (has actions with TRADED type)
+                if not hasattr(activity, 'actions') or not activity.actions:
+                    continue
+
+                # Trade activities have multiple actions with 'TRADED' type
+                trade_actions = [a for a in activity.actions if len(a) >= 2 and a[1] == 'TRADED']
+
+                if len(trade_actions) >= 2:  # A trade needs at least 2 parties
+                    # Group actions by team
+                    team_actions = {}
+                    for action in trade_actions:
+                        team_id = action[0].team_id if hasattr(action[0], 'team_id') else None
+                        if team_id:
+                            if team_id not in team_actions:
+                                team_actions[team_id] = {'received': [], 'sent': []}
+
+                            # action[2] is the player, action[1] is the action type
+                            player = action[2] if len(action) > 2 else None
+                            if player and hasattr(player, 'name'):
+                                player_data = {
+                                    'player_id': str(player.playerId) if hasattr(player, 'playerId') else None,
+                                    'player_name': player.name,
+                                    'position': player.position if hasattr(player, 'position') else None
+                                }
+                                # Determine if received or sent based on the full activity context
+                                # In ESPN API, TRADED means the team received the player
+                                team_actions[team_id]['received'].append(player_data)
+
+                    # Build trade record if we have at least 2 teams involved
+                    if len(team_actions) >= 2:
+                        team_ids = list(team_actions.keys())
+
+                        # Cross-reference: what team A received is what team B sent
+                        sides = []
+                        for i, team_id in enumerate(team_ids[:2]):  # Handle 2-team trades
+                            other_team_id = team_ids[1] if i == 0 else team_ids[0]
+                            sides.append({
+                                'roster_id': team_id,
+                                'owner': team_to_owner.get(team_id, 'Unknown'),
+                                'received': team_actions[team_id]['received'],
+                                'sent': team_actions.get(other_team_id, {}).get('received', []),
+                                'faab_received': 0,
+                                'faab_sent': 0
+                            })
+
+                        trade_record = {
+                            'transaction_id': str(activity.date) if hasattr(activity, 'date') else None,
+                            'timestamp': activity.date if hasattr(activity, 'date') else None,
+                            'week': None,  # ESPN doesn't easily provide week number
+                            'sides': sides
+                        }
+                        season_data['trades'].append(trade_record)
+
+            print(f"    ✓ Extracted {len(season_data['trades'])} trades")
+        except Exception as e:
+            print(f"    Warning: Error extracting trade data: {e}")
+            import traceback
+            traceback.print_exc()
 
         print(f"  ✓ Extracted {len(season_data['teams'])} teams, {len(season_data['matchups'])} matchups, {len(season_data['draft'])} draft picks")
 

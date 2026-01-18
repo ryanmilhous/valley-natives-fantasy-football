@@ -125,6 +125,20 @@ export const apiService = {
     return { data };
   },
 
+  // Trades
+  getTrades: async () => {
+    const data = await fetchJSON('trades.json');
+    return { data };
+  },
+  getBestTrades: async () => {
+    const data = await fetchJSON('best_trades.json');
+    return { data };
+  },
+  getTradeRecords: async () => {
+    const data = await fetchJSON('trade_records.json');
+    return { data };
+  },
+
   // Player Stats
   getPlayerStats: async () => {
     const data = await fetchJSON('player_stats.json');

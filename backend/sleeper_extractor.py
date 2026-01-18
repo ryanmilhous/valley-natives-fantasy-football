@@ -108,6 +108,26 @@ class SleeperExtractor:
         response.raise_for_status()
         return response.json()
 
+    def get_transactions(self, week: int) -> List[Dict[str, Any]]:
+        """Get all transactions for a specific week"""
+        response = requests.get(f"{self.base_url}/league/{self.league_id}/transactions/{week}")
+        response.raise_for_status()
+        return response.json()
+
+    def get_all_trades(self, num_weeks: int = 18) -> List[Dict[str, Any]]:
+        """Get all trades across all weeks"""
+        all_trades = []
+        for week in range(1, num_weeks + 1):
+            try:
+                transactions = self.get_transactions(week)
+                trades = [t for t in transactions if t.get('type') == 'trade']
+                for trade in trades:
+                    trade['week'] = week
+                all_trades.extend(trades)
+            except Exception as e:
+                print(f"Warning: Could not get transactions for week {week}: {e}")
+        return all_trades
+
     def decode_playoff_standings(self, winners_bracket: List[Dict], losers_bracket: List[Dict]) -> Dict[int, int]:
         """Decode playoff brackets to determine final standings
         Returns a dict mapping roster_id -> final_standing (1-14)
@@ -364,6 +384,85 @@ class SleeperExtractor:
 
         print(f"  Built rosters for {len(rosters_dict)} teams")
 
+        # Extract trades
+        print("  Fetching trades...")
+        raw_trades = self.get_all_trades(num_weeks=18)
+
+        # Build roster_id to owner mapping
+        roster_to_owner = {}
+        for roster in rosters:
+            roster_id = roster['roster_id']
+            owner_id = roster.get('owner_id')
+            user = user_lookup.get(owner_id, {})
+            display_name = user.get('display_name', 'Unknown')
+            roster_to_owner[roster_id] = self.normalize_owner_name(display_name)
+
+        # Format trades with player names and owner names
+        trades = []
+        for trade in raw_trades:
+            adds = trade.get('adds', {}) or {}
+            drops = trade.get('drops', {}) or {}
+            roster_ids = trade.get('roster_ids', [])
+            waiver_budget = trade.get('waiver_budget', []) or []
+
+            # Build trade sides
+            trade_sides = []
+            for roster_id in roster_ids:
+                owner = roster_to_owner.get(roster_id, f'Team {roster_id}')
+                received = []
+                sent = []
+
+                for player_id, rid in adds.items():
+                    if rid == roster_id:
+                        player_data = players_map.get(str(player_id), {})
+                        player_name = f"{player_data.get('first_name', '')} {player_data.get('last_name', '')}".strip()
+                        if not player_name:
+                            player_name = player_data.get('full_name', f'Player {player_id}')
+                        received.append({
+                            'player_id': player_id,
+                            'player_name': player_name,
+                            'position': player_data.get('position', '')
+                        })
+
+                for player_id, rid in drops.items():
+                    if rid == roster_id:
+                        player_data = players_map.get(str(player_id), {})
+                        player_name = f"{player_data.get('first_name', '')} {player_data.get('last_name', '')}".strip()
+                        if not player_name:
+                            player_name = player_data.get('full_name', f'Player {player_id}')
+                        sent.append({
+                            'player_id': player_id,
+                            'player_name': player_name,
+                            'position': player_data.get('position', '')
+                        })
+
+                # Check for FAAB in trade
+                faab_received = 0
+                faab_sent = 0
+                for f in waiver_budget:
+                    if f.get('receiver') == roster_id:
+                        faab_received += f.get('amount', 0)
+                    if f.get('sender') == roster_id:
+                        faab_sent += f.get('amount', 0)
+
+                trade_sides.append({
+                    'roster_id': roster_id,
+                    'owner': owner,
+                    'received': received,
+                    'sent': sent,
+                    'faab_received': faab_received,
+                    'faab_sent': faab_sent
+                })
+
+            trades.append({
+                'week': trade['week'],
+                'transaction_id': trade.get('transaction_id'),
+                'sides': trade_sides,
+                'timestamp': trade.get('created')
+            })
+
+        print(f"  Processed {len(trades)} trades")
+
         # Build season data structure
         season_data = {
             'year': year,
@@ -373,6 +472,7 @@ class SleeperExtractor:
             'draft': draft_picks,
             'rosters': rosters_dict,
             'player_stats': player_stats,
+            'trades': trades,
             'settings': league_info.get('settings', {}),
             'extracted_at': datetime.now().isoformat(),
             'source': 'sleeper'

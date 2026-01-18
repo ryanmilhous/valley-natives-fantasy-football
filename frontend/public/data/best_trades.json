@@ -1,0 +1,1032 @@
+[
+  {
+    "year": 2025,
+    "week": 11,
+    "transaction_id": "1296660829122347008",
+    "timestamp": 1763510541758,
+    "side1": {
+      "owner": "Chris Vitale",
+      "received": [
+        {
+          "player_id": "6819",
+          "player_name": "Michael Pittman",
+          "position": "WR"
+        },
+        {
+          "player_id": "7543",
+          "player_name": "Travis Etienne",
+          "position": "RB"
+        },
+        {
+          "player_id": "SEA",
+          "player_name": "Seattle Seahawks",
+          "position": "DEF"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "9997",
+          "player_name": "Zay Flowers",
+          "position": "WR"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 587.99,
+      "players_with_stats": [
+        {
+          "name": "Michael Pittman",
+          "position": "WR",
+          "points": 162.4
+        },
+        {
+          "name": "Travis Etienne",
+          "position": "RB",
+          "points": 235.9
+        },
+        {
+          "name": "Seattle Seahawks",
+          "position": "DEF",
+          "points": 189.69
+        }
+      ]
+    },
+    "side2": {
+      "owner": "Garrett Ulrich",
+      "received": [
+        {
+          "player_id": "9997",
+          "player_name": "Zay Flowers",
+          "position": "WR"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "6819",
+          "player_name": "Michael Pittman",
+          "position": "WR"
+        },
+        {
+          "player_id": "7543",
+          "player_name": "Travis Etienne",
+          "position": "RB"
+        },
+        {
+          "player_id": "SEA",
+          "player_name": "Seattle Seahawks",
+          "position": "DEF"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 200.7,
+      "players_with_stats": [
+        {
+          "name": "Zay Flowers",
+          "position": "WR",
+          "points": 200.7
+        }
+      ]
+    },
+    "summary": "Chris Vitale receives Michael Pittman, Travis Etienne, Seattle Seahawks; Garrett Ulrich receives Zay Flowers",
+    "winner": "side1",
+    "winner_owner": "Chris Vitale",
+    "point_differential": 387.29
+  },
+  {
+    "year": 2024,
+    "week": "0",
+    "transaction_id": "13185161",
+    "timestamp": "2024-08-25 01:22:45",
+    "side1": {
+      "owner": "Bryan Whitaker",
+      "received": [
+        {
+          "player_id": "00-0034837",
+          "player_name": "Calvin Ridley",
+          "position": "WR"
+        },
+        {
+          "player_id": "00-0033897",
+          "player_name": "Joe Mixon",
+          "position": "RB"
+        },
+        {
+          "player_id": "00-0037248",
+          "player_name": "James Cook",
+          "position": "RB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0039075",
+          "player_name": "Puka Nacua",
+          "position": "WR"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 501.3,
+      "players_with_stats": [
+        {
+          "name": "Calvin Ridley",
+          "position": "WR",
+          "points": 124.0
+        },
+        {
+          "name": "Joe Mixon",
+          "position": "RB",
+          "points": 198.6
+        },
+        {
+          "name": "James Cook",
+          "position": "RB",
+          "points": 178.7
+        }
+      ]
+    },
+    "side2": {
+      "owner": "Rory McKee",
+      "received": [
+        {
+          "player_id": "00-0039075",
+          "player_name": "Puka Nacua",
+          "position": "WR"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0034837",
+          "player_name": "Calvin Ridley",
+          "position": "WR"
+        },
+        {
+          "player_id": "00-0033897",
+          "player_name": "Joe Mixon",
+          "position": "RB"
+        },
+        {
+          "player_id": "00-0037248",
+          "player_name": "James Cook",
+          "position": "RB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 125.3,
+      "players_with_stats": [
+        {
+          "name": "Puka Nacua",
+          "position": "WR",
+          "points": 125.3
+        }
+      ]
+    },
+    "summary": "Bryan Whitaker receives Calvin Ridley, Joe Mixon, James Cook; Rory McKee receives Puka Nacua",
+    "winner": "side1",
+    "winner_owner": "Bryan Whitaker",
+    "point_differential": 376.0
+  },
+  {
+    "year": 2023,
+    "week": "14",
+    "transaction_id": "13185269",
+    "timestamp": "2023-12-09 02:55:27",
+    "side1": {
+      "owner": "Ryan Milhous",
+      "received": [
+        {
+          "player_id": "00-0039064",
+          "player_name": "Zay Flowers",
+          "position": "WR"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0033949",
+          "player_name": "Joshua Dobbs",
+          "position": "QB"
+        },
+        {
+          "player_id": "00-0029597",
+          "player_name": "Justin Tucker",
+          "position": "K"
+        },
+        {
+          "player_id": "00-0030565",
+          "player_name": "Geno Smith",
+          "position": "QB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 130.9,
+      "players_with_stats": [
+        {
+          "name": "Zay Flowers",
+          "position": "WR",
+          "points": 130.9
+        }
+      ]
+    },
+    "side2": {
+      "owner": "Jacob Luna",
+      "received": [
+        {
+          "player_id": "00-0033949",
+          "player_name": "Joshua Dobbs",
+          "position": "QB"
+        },
+        {
+          "player_id": "00-0029597",
+          "player_name": "Justin Tucker",
+          "position": "K"
+        },
+        {
+          "player_id": "00-0030565",
+          "player_name": "Geno Smith",
+          "position": "QB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0039064",
+          "player_name": "Zay Flowers",
+          "position": "WR"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 482.88,
+      "players_with_stats": [
+        {
+          "name": "Joshua Dobbs",
+          "position": "QB",
+          "points": 200.66
+        },
+        {
+          "name": "Justin Tucker",
+          "position": "K",
+          "points": 110.0
+        },
+        {
+          "name": "Geno Smith",
+          "position": "QB",
+          "points": 172.22
+        }
+      ]
+    },
+    "summary": "Ryan Milhous receives Zay Flowers; Jacob Luna receives Joshua Dobbs, Justin Tucker, Geno Smith",
+    "winner": "side2",
+    "winner_owner": "Jacob Luna",
+    "point_differential": 351.98
+  },
+  {
+    "year": 2025,
+    "week": 12,
+    "transaction_id": "1296974562126204928",
+    "timestamp": 1763585341534,
+    "side1": {
+      "owner": "Ryan Milhous",
+      "received": [
+        {
+          "player_id": "11647",
+          "player_name": "Kimani Vidal",
+          "position": "RB"
+        },
+        {
+          "player_id": "6797",
+          "player_name": "Justin Herbert",
+          "position": "QB"
+        },
+        {
+          "player_id": "8146",
+          "player_name": "Garrett Wilson",
+          "position": "WR"
+        },
+        {
+          "player_id": "9506",
+          "player_name": "Sean Tucker",
+          "position": "RB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "2133",
+          "player_name": "Davante Adams",
+          "position": "WR"
+        },
+        {
+          "player_id": "3294",
+          "player_name": "Dak Prescott",
+          "position": "QB"
+        },
+        {
+          "player_id": "5892",
+          "player_name": "David Montgomery",
+          "position": "RB"
+        },
+        {
+          "player_id": "7588",
+          "player_name": "Javonte Williams",
+          "position": "RB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 549.38,
+      "players_with_stats": [
+        {
+          "name": "Kimani Vidal",
+          "position": "RB",
+          "points": 107.5
+        },
+        {
+          "name": "Justin Herbert",
+          "position": "QB",
+          "points": 286.88
+        },
+        {
+          "name": "Garrett Wilson",
+          "position": "WR",
+          "points": 81.5
+        },
+        {
+          "name": "Sean Tucker",
+          "position": "RB",
+          "points": 73.5
+        }
+      ]
+    },
+    "side2": {
+      "owner": "Jacob Luna",
+      "received": [
+        {
+          "player_id": "2133",
+          "player_name": "Davante Adams",
+          "position": "WR"
+        },
+        {
+          "player_id": "3294",
+          "player_name": "Dak Prescott",
+          "position": "QB"
+        },
+        {
+          "player_id": "5892",
+          "player_name": "David Montgomery",
+          "position": "RB"
+        },
+        {
+          "player_id": "7588",
+          "player_name": "Javonte Williams",
+          "position": "RB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "11647",
+          "player_name": "Kimani Vidal",
+          "position": "RB"
+        },
+        {
+          "player_id": "6797",
+          "player_name": "Justin Herbert",
+          "position": "QB"
+        },
+        {
+          "player_id": "8146",
+          "player_name": "Garrett Wilson",
+          "position": "WR"
+        },
+        {
+          "player_id": "9506",
+          "player_name": "Sean Tucker",
+          "position": "RB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 886.9,
+      "players_with_stats": [
+        {
+          "name": "Davante Adams",
+          "position": "WR",
+          "points": 192.9
+        },
+        {
+          "name": "Dak Prescott",
+          "position": "QB",
+          "points": 313.78
+        },
+        {
+          "name": "David Montgomery",
+          "position": "RB",
+          "points": 154.92
+        },
+        {
+          "name": "Javonte Williams",
+          "position": "RB",
+          "points": 225.3
+        }
+      ]
+    },
+    "summary": "Ryan Milhous receives Kimani Vidal, Justin Herbert, Garrett Wilson, Sean Tucker; Jacob Luna receives Davante Adams, Dak Prescott, David Montgomery, Javonte Williams",
+    "winner": "side2",
+    "winner_owner": "Jacob Luna",
+    "point_differential": 337.52
+  },
+  {
+    "year": 2024,
+    "week": "11",
+    "transaction_id": "13185190",
+    "timestamp": "2024-11-12 21:01:16",
+    "side1": {
+      "owner": "Kyle Poppen",
+      "received": [
+        {
+          "player_id": "00-0039065",
+          "player_name": "Sam LaPorta",
+          "position": "TE"
+        },
+        {
+          "player_id": "00-0039165",
+          "player_name": "Zach Charbonnet",
+          "position": "RB"
+        },
+        {
+          "player_id": "00-0035685",
+          "player_name": "David Montgomery",
+          "position": "RB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0037744",
+          "player_name": "Trey McBride",
+          "position": "TE"
+        },
+        {
+          "player_id": "00-0039344",
+          "player_name": "Jonathon Brooks",
+          "position": "RB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 423.02,
+      "players_with_stats": [
+        {
+          "name": "Sam LaPorta",
+          "position": "TE",
+          "points": 92.5
+        },
+        {
+          "name": "Zach Charbonnet",
+          "position": "RB",
+          "points": 132.3
+        },
+        {
+          "name": "David Montgomery",
+          "position": "RB",
+          "points": 198.22
+        }
+      ]
+    },
+    "side2": {
+      "owner": "Ryan Milhous",
+      "received": [
+        {
+          "player_id": "00-0037744",
+          "player_name": "Trey McBride",
+          "position": "TE"
+        },
+        {
+          "player_id": "00-0039344",
+          "player_name": "Jonathon Brooks",
+          "position": "RB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0039065",
+          "player_name": "Sam LaPorta",
+          "position": "TE"
+        },
+        {
+          "player_id": "00-0039165",
+          "player_name": "Zach Charbonnet",
+          "position": "RB"
+        },
+        {
+          "player_id": "00-0035685",
+          "player_name": "David Montgomery",
+          "position": "RB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 143.3,
+      "players_with_stats": [
+        {
+          "name": "Trey McBride",
+          "position": "TE",
+          "points": 137.3
+        },
+        {
+          "name": "Jonathon Brooks",
+          "position": "RB",
+          "points": 6.0
+        }
+      ]
+    },
+    "summary": "Kyle Poppen receives Sam LaPorta, Zach Charbonnet, David Montgomery; Ryan Milhous receives Trey McBride, Jonathon Brooks",
+    "winner": "side1",
+    "winner_owner": "Kyle Poppen",
+    "point_differential": 279.72
+  },
+  {
+    "year": 2021,
+    "week": "0",
+    "transaction_id": "13254942",
+    "timestamp": "2021-08-27 22:32:40",
+    "side1": {
+      "owner": "Bryan Whitaker",
+      "received": [
+        {
+          "player_id": "00-0035831",
+          "player_name": "James Robinson",
+          "position": "RB"
+        },
+        {
+          "player_id": "00-0033908",
+          "player_name": "Cooper Kupp",
+          "position": "WR"
+        },
+        {
+          "player_id": "00-0033873",
+          "player_name": "Patrick Mahomes",
+          "position": "QB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0033293",
+          "player_name": "Aaron Jones",
+          "position": "RB"
+        },
+        {
+          "player_id": "00-0034796",
+          "player_name": "Lamar Jackson",
+          "position": "QB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 682.68,
+      "players_with_stats": [
+        {
+          "name": "James Robinson",
+          "position": "RB",
+          "points": 141.1
+        },
+        {
+          "name": "Cooper Kupp",
+          "position": "WR",
+          "points": 278.9
+        },
+        {
+          "name": "Patrick Mahomes",
+          "position": "QB",
+          "points": 262.68
+        }
+      ]
+    },
+    "side2": {
+      "owner": "Ryan Milhous",
+      "received": [
+        {
+          "player_id": "00-0033293",
+          "player_name": "Aaron Jones",
+          "position": "RB"
+        },
+        {
+          "player_id": "00-0034796",
+          "player_name": "Lamar Jackson",
+          "position": "QB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0035831",
+          "player_name": "James Robinson",
+          "position": "RB"
+        },
+        {
+          "player_id": "00-0033908",
+          "player_name": "Cooper Kupp",
+          "position": "WR"
+        },
+        {
+          "player_id": "00-0033873",
+          "player_name": "Patrick Mahomes",
+          "position": "QB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 404.68,
+      "players_with_stats": [
+        {
+          "name": "Aaron Jones",
+          "position": "RB",
+          "points": 164.7
+        },
+        {
+          "name": "Lamar Jackson",
+          "position": "QB",
+          "points": 239.98
+        }
+      ]
+    },
+    "summary": "Bryan Whitaker receives James Robinson, Cooper Kupp, Patrick Mahomes; Ryan Milhous receives Aaron Jones, Lamar Jackson",
+    "winner": "side1",
+    "winner_owner": "Bryan Whitaker",
+    "point_differential": 278.0
+  },
+  {
+    "year": 2019,
+    "week": "0",
+    "transaction_id": "13253871",
+    "timestamp": "2019-08-28 02:48:42",
+    "side1": {
+      "owner": "Jacob Luna",
+      "received": [
+        {
+          "player_id": "00-0032257",
+          "player_name": "Duke Johnson",
+          "position": "RB"
+        },
+        {
+          "player_id": "00-0032764",
+          "player_name": "Derrick Henry",
+          "position": "RB"
+        },
+        {
+          "player_id": "00-0033908",
+          "player_name": "Cooper Kupp",
+          "position": "WR"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0033873",
+          "player_name": "Patrick Mahomes",
+          "position": "QB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 488.8,
+      "players_with_stats": [
+        {
+          "name": "Duke Johnson",
+          "position": "RB",
+          "points": 106.9
+        },
+        {
+          "name": "Derrick Henry",
+          "position": "RB",
+          "points": 214.5
+        },
+        {
+          "name": "Cooper Kupp",
+          "position": "WR",
+          "points": 167.4
+        }
+      ]
+    },
+    "side2": {
+      "owner": "Ryan Milhous",
+      "received": [
+        {
+          "player_id": "00-0033873",
+          "player_name": "Patrick Mahomes",
+          "position": "QB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0032257",
+          "player_name": "Duke Johnson",
+          "position": "RB"
+        },
+        {
+          "player_id": "00-0032764",
+          "player_name": "Derrick Henry",
+          "position": "RB"
+        },
+        {
+          "player_id": "00-0033908",
+          "player_name": "Cooper Kupp",
+          "position": "WR"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 213.92,
+      "players_with_stats": [
+        {
+          "name": "Patrick Mahomes",
+          "position": "QB",
+          "points": 213.92
+        }
+      ]
+    },
+    "summary": "Jacob Luna receives Duke Johnson, Derrick Henry, Cooper Kupp; Ryan Milhous receives Patrick Mahomes",
+    "winner": "side1",
+    "winner_owner": "Jacob Luna",
+    "point_differential": 274.88
+  },
+  {
+    "year": 2020,
+    "week": "0",
+    "transaction_id": "13254198",
+    "timestamp": "2020-09-05 03:59:02",
+    "side1": {
+      "owner": "Jeremy Settles",
+      "received": [
+        {
+          "player_id": "00-0035719",
+          "player_name": "Deebo Samuel",
+          "position": "WR"
+        },
+        {
+          "player_id": "00-0031588",
+          "player_name": "Stefon Diggs",
+          "position": "WR"
+        },
+        {
+          "player_id": "00-0032187",
+          "player_name": "David Johnson",
+          "position": "RB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0033932",
+          "player_name": "Kenny Golladay",
+          "position": "WR"
+        },
+        {
+          "player_id": "00-0032087",
+          "player_name": "Josh Lambo",
+          "position": "K"
+        },
+        {
+          "player_id": "00-0033862",
+          "player_name": "Zane Gonzalez",
+          "position": "K"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 333.3,
+      "players_with_stats": [
+        {
+          "name": "Deebo Samuel",
+          "position": "WR",
+          "points": 63.3
+        },
+        {
+          "name": "Stefon Diggs",
+          "position": "WR",
+          "points": 172.7
+        },
+        {
+          "name": "David Johnson",
+          "position": "RB",
+          "points": 97.3
+        }
+      ]
+    },
+    "side2": {
+      "owner": "Greg Swenson",
+      "received": [
+        {
+          "player_id": "00-0033932",
+          "player_name": "Kenny Golladay",
+          "position": "WR"
+        },
+        {
+          "player_id": "00-0032087",
+          "player_name": "Josh Lambo",
+          "position": "K"
+        },
+        {
+          "player_id": "00-0033862",
+          "player_name": "Zane Gonzalez",
+          "position": "K"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0035719",
+          "player_name": "Deebo Samuel",
+          "position": "WR"
+        },
+        {
+          "player_id": "00-0031588",
+          "player_name": "Stefon Diggs",
+          "position": "WR"
+        },
+        {
+          "player_id": "00-0032187",
+          "player_name": "David Johnson",
+          "position": "RB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 83.8,
+      "players_with_stats": [
+        {
+          "name": "Kenny Golladay",
+          "position": "WR",
+          "points": 55.8
+        },
+        {
+          "name": "Josh Lambo",
+          "position": "K",
+          "points": 6.0
+        },
+        {
+          "name": "Zane Gonzalez",
+          "position": "K",
+          "points": 22.0
+        }
+      ]
+    },
+    "summary": "Jeremy Settles receives Deebo Samuel, Stefon Diggs, David Johnson; Greg Swenson receives Kenny Golladay, Josh Lambo, Zane Gonzalez",
+    "winner": "side1",
+    "winner_owner": "Jeremy Settles",
+    "point_differential": 249.5
+  },
+  {
+    "year": 2025,
+    "week": 8,
+    "transaction_id": "1288158918421282816",
+    "timestamp": 1761483528288,
+    "side1": {
+      "owner": "Garrett Ulrich",
+      "received": [
+        {
+          "player_id": "12517",
+          "player_name": "Colston Loveland",
+          "position": "TE"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "11533",
+          "player_name": "Brandon Aubrey",
+          "position": "K"
+        },
+        {
+          "player_id": "7083",
+          "player_name": "Tyler Huntley",
+          "position": "QB"
+        },
+        {
+          "player_id": "7553",
+          "player_name": "Kyle Pitts",
+          "position": "TE"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 134.0,
+      "players_with_stats": [
+        {
+          "name": "Colston Loveland",
+          "position": "TE",
+          "points": 134.0
+        }
+      ]
+    },
+    "side2": {
+      "owner": "Kyle Poppen",
+      "received": [
+        {
+          "player_id": "11533",
+          "player_name": "Brandon Aubrey",
+          "position": "K"
+        },
+        {
+          "player_id": "7083",
+          "player_name": "Tyler Huntley",
+          "position": "QB"
+        },
+        {
+          "player_id": "7553",
+          "player_name": "Kyle Pitts",
+          "position": "TE"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "12517",
+          "player_name": "Colston Loveland",
+          "position": "TE"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 342.02,
+      "players_with_stats": [
+        {
+          "name": "Brandon Aubrey",
+          "position": "K",
+          "points": 165.6
+        },
+        {
+          "name": "Tyler Huntley",
+          "position": "QB",
+          "points": 31.02
+        },
+        {
+          "name": "Kyle Pitts",
+          "position": "TE",
+          "points": 145.4
+        }
+      ]
+    },
+    "summary": "Garrett Ulrich receives Colston Loveland; Kyle Poppen receives Brandon Aubrey, Tyler Huntley, Kyle Pitts",
+    "winner": "side2",
+    "winner_owner": "Kyle Poppen",
+    "point_differential": 208.02
+  },
+  {
+    "year": 2023,
+    "week": "10",
+    "transaction_id": "13185258",
+    "timestamp": "2023-11-08 22:58:46",
+    "side1": {
+      "owner": "Chris Vitale",
+      "received": [
+        {
+          "player_id": "00-0026498",
+          "player_name": "Matthew Stafford",
+          "position": "QB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0034791",
+          "player_name": "Nick Chubb",
+          "position": "RB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 191.28,
+      "players_with_stats": [
+        {
+          "name": "Matthew Stafford",
+          "position": "QB",
+          "points": 191.28
+        }
+      ]
+    },
+    "side2": {
+      "owner": "Brendan Romele",
+      "received": [
+        {
+          "player_id": "00-0034791",
+          "player_name": "Nick Chubb",
+          "position": "RB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0026498",
+          "player_name": "Matthew Stafford",
+          "position": "QB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 21.1,
+      "players_with_stats": [
+        {
+          "name": "Nick Chubb",
+          "position": "RB",
+          "points": 21.1
+        }
+      ]
+    },
+    "summary": "Chris Vitale receives Matthew Stafford; Brendan Romele receives Nick Chubb",
+    "winner": "side1",
+    "winner_owner": "Chris Vitale",
+    "point_differential": 170.18
+  }
+]
