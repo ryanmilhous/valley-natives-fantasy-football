@@ -293,7 +293,14 @@ function Draft() {
                           )}
                         </td>
                         <td className="px-4 py-3">
-                          <div className="text-white font-semibold text-sm">{pick.player_name}</div>
+                          <div className="flex items-center space-x-2">
+                            <span className="text-white font-semibold text-sm">{pick.player_name}</span>
+                            {pick.is_keeper && (
+                              <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                                K
+                              </span>
+                            )}
+                          </div>
                         </td>
                         <td className="px-4 py-3 whitespace-nowrap">
                           <span className="text-blue-400 font-medium text-sm">{pick.position || '-'}</span>

@@ -52,13 +52,13 @@ function App() {
               {/* Desktop Navigation */}
               <div className="hidden lg:flex items-center space-x-2">
                 <NavLink to="/">Home</NavLink>
-                <NavLink to="/seasons">Seasons</NavLink>
                 <NavLink to="/records">Records</NavLink>
+                <NavLink to="/seasons">Seasons</NavLink>
                 <NavLink to="/draft">Draft</NavLink>
-                <NavLink to="/matchups">Matchups</NavLink>
-                <NavLink to="/head-to-head">H2H</NavLink>
-                <NavLink to="/rosters">Rosters</NavLink>
                 <NavLink to="/trades">Trades</NavLink>
+                <NavLink to="/head-to-head">H2H</NavLink>
+                <NavLink to="/matchups">Matchups</NavLink>
+                <NavLink to="/rosters">Rosters</NavLink>
               </div>
 
               {/* Mobile Menu Button */}
@@ -80,13 +80,13 @@ function App() {
             {mobileMenuOpen && (
               <div className="lg:hidden pb-4 space-y-2">
                 <NavLink to="/" onClick={() => setMobileMenuOpen(false)}>Home</NavLink>
-                <NavLink to="/seasons" onClick={() => setMobileMenuOpen(false)}>Seasons</NavLink>
                 <NavLink to="/records" onClick={() => setMobileMenuOpen(false)}>Records</NavLink>
+                <NavLink to="/seasons" onClick={() => setMobileMenuOpen(false)}>Seasons</NavLink>
                 <NavLink to="/draft" onClick={() => setMobileMenuOpen(false)}>Draft</NavLink>
-                <NavLink to="/matchups" onClick={() => setMobileMenuOpen(false)}>Matchups</NavLink>
-                <NavLink to="/head-to-head" onClick={() => setMobileMenuOpen(false)}>H2H</NavLink>
-                <NavLink to="/rosters" onClick={() => setMobileMenuOpen(false)}>Rosters</NavLink>
                 <NavLink to="/trades" onClick={() => setMobileMenuOpen(false)}>Trades</NavLink>
+                <NavLink to="/head-to-head" onClick={() => setMobileMenuOpen(false)}>H2H</NavLink>
+                <NavLink to="/matchups" onClick={() => setMobileMenuOpen(false)}>Matchups</NavLink>
+                <NavLink to="/rosters" onClick={() => setMobileMenuOpen(false)}>Rosters</NavLink>
               </div>
             )}
           </div>

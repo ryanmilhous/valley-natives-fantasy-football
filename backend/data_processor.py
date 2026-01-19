@@ -925,26 +925,34 @@ class FantasyDataProcessor:
         """Process draft data across all years"""
         all_drafts = []
 
+        keeper_count = 0
         for year, season_data in self.raw_data.items():
             draft_picks = season_data.get('draft', [])
             for pick in draft_picks:
-                # Skip keepers - only include actual draft picks
-                if pick.get('keeper_status', False):
-                    continue
-
                 # Add year and normalized owner name
                 pick_data = pick.copy()
                 pick_data['year'] = year
+
+                # Track if this is a keeper
+                is_keeper = pick.get('keeper_status', False) or pick.get('is_keeper', False)
+                pick_data['is_keeper'] = is_keeper
+                if is_keeper:
+                    keeper_count += 1
+
                 if pick.get('team_name'):
                     # Find owner for this team
                     for team in season_data.get('teams', []):
                         if team['team_id'] == pick.get('team_id'):
                             pick_data['owner'] = self.normalize_owner_name(team['owner'], year)
                             break
+                # Also try to get owner from the pick directly (snake draft imports)
+                if not pick_data.get('owner') and pick.get('owner'):
+                    pick_data['owner'] = pick.get('owner')
+
                 all_drafts.append(pick_data)
 
         self.processed_data['draft'] = all_drafts
-        print(f"Processed {len(all_drafts)} draft picks across all years (keepers excluded)")
+        print(f"Processed {len(all_drafts)} draft picks across all years ({keeper_count} keepers)")
 
     def process_rosters(self):
         """Process roster data across all years"""
