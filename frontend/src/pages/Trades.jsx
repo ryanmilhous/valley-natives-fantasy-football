@@ -309,11 +309,34 @@ function Trades() {
                           </span>
                         </div>
                         {/* Long-term winner */}
-                        <div className="mb-2">
+                        <div className="mb-3">
                           <div className="text-xs text-purple-400 font-medium mb-1">
-                            {trade.longterm_winner_owner}
+                            {trade.longterm_winner_owner} received:
                           </div>
-                          <div className="space-y-0.5 text-xs">
+                          <div className="space-y-0.5 mb-2">
+                            {ltWinnerSide.received.map((player, pIdx) => (
+                              <div key={pIdx} className="text-xs text-white/80 pl-2">
+                                • {player.player_name}
+                              </div>
+                            ))}
+                          </div>
+                          {/* Keeper player breakdown */}
+                          {ltWinnerSide.players_with_stats?.some(p => p.keeper_years?.length > 0) && (
+                            <div className="space-y-1 mb-2">
+                              <div className="text-[10px] text-purple-300 uppercase tracking-wide">Keeper Value:</div>
+                              {ltWinnerSide.players_with_stats
+                                ?.filter(p => p.keeper_years && p.keeper_years.length > 0)
+                                .map((player, pIdx) => (
+                                  <div key={pIdx} className="bg-purple-500/10 rounded px-2 py-1">
+                                    <div className="text-white/90 text-xs font-medium">{player.name}</div>
+                                    <div className="text-purple-300 text-[10px]">
+                                      {player.keeper_years.map(ky => `${ky.year}: ${ky.points.toFixed(0)} pts`).join(' → ')}
+                                    </div>
+                                  </div>
+                                ))}
+                            </div>
+                          )}
+                          <div className="space-y-0.5 text-xs bg-slate-800/50 rounded p-2">
                             <div className="text-red-400/80">Season: {ltWinnerSide.total_points.toFixed(0)} pts</div>
                             <div className="text-green-400">+Keeper: {ltWinnerSide.keeper_points.toFixed(0)} pts</div>
                             <div className="text-purple-300 font-medium">Total: {ltWinnerSide.total_value.toFixed(0)} pts</div>
@@ -322,10 +345,17 @@ function Trades() {
                         {/* Immediate winner (long-term loser) */}
                         <div className="border-t border-white/10 pt-2 mt-2">
                           <div className="text-xs text-white/50 mb-1">
-                            {trade.winner_owner} (won season)
+                            {trade.winner_owner} received:
                           </div>
-                          <div className="text-xs text-white/40">
-                            Total: {ltLoserSide.total_value.toFixed(0)} pts
+                          <div className="space-y-0.5 mb-2">
+                            {ltLoserSide.received.map((player, pIdx) => (
+                              <div key={pIdx} className="text-xs text-white/50 pl-2">
+                                • {player.player_name}
+                              </div>
+                            ))}
+                          </div>
+                          <div className="text-xs text-white/40 bg-slate-800/30 rounded p-2">
+                            Season: {ltLoserSide.total_points.toFixed(0)} pts | Total: {ltLoserSide.total_value.toFixed(0)} pts
                           </div>
                         </div>
                       </div>
