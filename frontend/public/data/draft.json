@@ -2125,7 +2125,7 @@
     "overall_pick": 142,
     "bid_amount": 0,
     "keeper_status": false,
-    "position": "WR",
+    "position": "RB",
     "year": 2007,
     "is_keeper": false
   },
@@ -14065,7 +14065,7 @@
     "overall_pick": 170,
     "bid_amount": 0,
     "keeper_status": false,
-    "position": "DL",
+    "position": "WR",
     "year": 2011,
     "is_keeper": false
   },
@@ -23067,7 +23067,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Jamie Coffis",
-    "position": "TE"
+    "position": "WR"
   },
   {
     "player_name": "Justin Tucker",
@@ -24972,7 +24972,7 @@
     "year": 2015,
     "is_keeper": true,
     "owner": "Greg Swenson",
-    "position": "TE"
+    "position": "WR"
   },
   {
     "player_name": "Julian Edelman",
@@ -25587,7 +25587,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Greg Swenson",
-    "position": "TE"
+    "position": "WR"
   },
   {
     "player_name": "Adam Vinatieri",
@@ -28512,7 +28512,7 @@
     "year": 2016,
     "is_keeper": true,
     "owner": "Greg Swenson",
-    "position": "TE"
+    "position": "WR"
   },
   {
     "player_name": "Delanie Walker",
@@ -28962,7 +28962,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Jeremy Settles",
-    "position": "TE"
+    "position": "WR"
   },
   {
     "player_name": "Torrey Smith",
@@ -32952,7 +32952,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Ben Beck",
-    "position": "TE"
+    "position": "WR"
   },
   {
     "player_name": "Ben Roethlisberger",
@@ -34122,7 +34122,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Brian Vitale",
-    "position": "TE"
+    "position": "WR"
   },
   {
     "player_name": "Julius Thomas",
@@ -35307,7 +35307,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Bryan Whitaker",
-    "position": "TE"
+    "position": "WR"
   },
   {
     "player_name": "Saquon Barkley",

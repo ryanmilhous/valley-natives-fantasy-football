@@ -1715,7 +1715,8 @@ class FantasyDataProcessor:
 
         # Historical player position lookup for players missing from stats
         HISTORICAL_PLAYER_POSITIONS = {
-            # 2012-2013 players
+            # 2011-2013 players
+            'greg little': 'WR',
             'mark ingram': 'RB',
             'michael vick': 'QB',
             'roy helu': 'RB',
@@ -1920,7 +1921,13 @@ class FantasyDataProcessor:
             key = (year, player_id)
             player_name = pick.get('player_name', '').strip().lower()
 
-            # First check if it's a team defense
+            # First check historical lookup to fix known incorrect positions
+            if player_name and player_name in HISTORICAL_PLAYER_POSITIONS:
+                pick['position'] = HISTORICAL_PLAYER_POSITIONS[player_name]
+                enriched_from_historical += 1
+                continue
+
+            # Check if it's a team defense
             if player_name and not pick.get('position'):
                 is_defense = any(team in player_name for team in NFL_TEAMS)
                 # Also check for D/ST suffix patterns
@@ -1946,10 +1953,6 @@ class FantasyDataProcessor:
                 if player_name and player_name in name_to_position:
                     pick['position'] = name_to_position[player_name]
                     enriched_from_name += 1
-                # Try historical player lookup
-                elif player_name and player_name in HISTORICAL_PLAYER_POSITIONS:
-                    pick['position'] = HISTORICAL_PLAYER_POSITIONS[player_name]
-                    enriched_from_historical += 1
                 else:
                     pick['position'] = None  # Position unknown
 
