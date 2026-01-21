@@ -1715,6 +1715,12 @@ class FantasyDataProcessor:
 
         # Historical player position lookup for players missing from stats
         HISTORICAL_PLAYER_POSITIONS = {
+            # Players with city names (to prevent false DEF matches)
+            'dallas goedert': 'TE',
+            'deejay dallas': 'RB',
+            'james washington': 'WR',
+            'nate washington': 'WR',
+            'deandre washington': 'RB',
             # 2011-2013 players
             'greg little': 'WR',
             'mark ingram': 'RB',

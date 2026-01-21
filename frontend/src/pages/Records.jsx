@@ -59,22 +59,6 @@ function Records() {
 
   return (
     <div className="space-y-8">
-      {/* Data Availability Notice */}
-      <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border-l-4 border-green-500 p-4 rounded-lg backdrop-blur-sm">
-        <div className="flex items-start space-x-3">
-          <div className="flex-shrink-0">
-            <svg className="h-5 w-5 text-green-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-            </svg>
-          </div>
-          <div className="flex-1">
-            <p className="text-sm text-green-300 font-medium">
-              <strong>Full Historical Data:</strong> All records include complete matchup and season data from 2007-2025 (19 seasons).
-            </p>
-          </div>
-        </div>
-      </div>
-
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-red-500/10 p-1">
         <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-8 flex items-center space-x-3">
