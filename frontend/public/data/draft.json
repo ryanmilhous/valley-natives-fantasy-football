@@ -14952,7 +14952,7 @@
     "year": 2012,
     "is_keeper": true,
     "owner": "Jacob Luna",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Darren McFadden",
@@ -15057,7 +15057,7 @@
     "year": 2012,
     "is_keeper": true,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "QB"
   },
   {
     "player_name": "Darren Sproles",
@@ -15087,7 +15087,7 @@
     "year": 2012,
     "is_keeper": true,
     "owner": "Garrett Ulrich",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Matthew Stafford",
@@ -15597,7 +15597,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Kyle Morris",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Anquan Boldin",
@@ -15867,7 +15867,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Ben Beck",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Torrey Smith",
@@ -15942,7 +15942,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Greg Swenson",
-    "position": "WR"
+    "position": "DEF"
   },
   {
     "player_name": "Chicago Bears",
@@ -15957,7 +15957,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Greg Swenson",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Toby Gerhart",
@@ -16422,7 +16422,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Kyle Morris",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Joe Flacco",
@@ -16452,7 +16452,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Coby Fleener",
@@ -16542,7 +16542,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Brian Vitale",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Danny Amendola",
@@ -16662,7 +16662,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Pittsburgh Steelers",
@@ -16677,7 +16677,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Garrett Ulrich",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "James Starks",
@@ -16827,7 +16827,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Brendan Romele",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "David Akers",
@@ -16887,7 +16887,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Chris Vitale",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Jake Locker",
@@ -16902,7 +16902,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Chris Vitale",
-    "position": null
+    "position": "QB"
   },
   {
     "player_name": "Dan Bailey",
@@ -16932,7 +16932,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Garrett Ulrich",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Kendall Hunter",
@@ -17007,7 +17007,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Brian Vitale",
-    "position": null
+    "position": "QB"
   },
   {
     "player_name": "Matt Cassel",
@@ -17052,7 +17052,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Jacob Luna",
-    "position": null
+    "position": "K"
   },
   {
     "player_name": "Atlanta Falcons",
@@ -17067,7 +17067,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Kyle Morris",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Jahvid Best",
@@ -17112,7 +17112,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Randall Cobb",
@@ -17157,7 +17157,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Jeremy Settles",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Matt Bryant",
@@ -17202,7 +17202,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Jacob Luna",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Rob Bironas",
@@ -17277,7 +17277,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Chris Vitale",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Ed Dickson",
@@ -17397,7 +17397,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Nick Smielak",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Minnesota Vikings",
@@ -17412,7 +17412,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Nick Smielak",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Jason Snelling",
@@ -17442,7 +17442,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Tyler Fullerton",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Robert Turbin",
@@ -17502,7 +17502,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Jamie Coffis",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Shayne Graham",
@@ -17577,7 +17577,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Nick Smielak",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Michael Floyd",
@@ -17622,7 +17622,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Tyler Fullerton",
-    "position": null
+    "position": "QB"
   },
   {
     "player_name": "Stephen Hill",
@@ -17637,7 +17637,7 @@
     "year": 2012,
     "is_keeper": false,
     "owner": "Tyler Fullerton",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Lamar Miller",
@@ -17922,7 +17922,7 @@
     "year": 2013,
     "is_keeper": true,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "QB"
   },
   {
     "player_name": "Calvin Johnson",
@@ -18747,7 +18747,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Garrett Ulrich",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Eddie Lacy",
@@ -18987,7 +18987,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Garrett Ulrich",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Ahmad Bradshaw",
@@ -19047,7 +19047,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Tyler Fullerton",
-    "position": null
+    "position": "TE"
   },
   {
     "player_name": "Pierre Garcon",
@@ -19092,7 +19092,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Ben Beck",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Le'Veon Bell",
@@ -19212,7 +19212,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Brian Vitale",
-    "position": null
+    "position": "TE"
   },
   {
     "player_name": "Michael Floyd",
@@ -19242,7 +19242,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Jacob Luna",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Johnathan Franklin",
@@ -19257,7 +19257,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Jacob Luna",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Denarius Moore",
@@ -19317,7 +19317,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Ben Beck",
-    "position": null
+    "position": "TE"
   },
   {
     "player_name": "James Jones",
@@ -19362,7 +19362,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Jamie Coffis",
-    "position": null
+    "position": "TE"
   },
   {
     "player_name": "Ryan Broyles",
@@ -19467,7 +19467,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Brian Vitale",
-    "position": null
+    "position": "TE"
   },
   {
     "player_name": "Mike Williams",
@@ -19497,7 +19497,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Brendan Romele",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Roy Helu",
@@ -19512,7 +19512,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Kyle Morris",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Fred Jackson",
@@ -19617,7 +19617,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Greg Swenson",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Justin Blackmon",
@@ -19647,7 +19647,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Jeremy Settles",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Joe Flacco",
@@ -19737,7 +19737,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Kyle Morris",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Bryce Brown",
@@ -19782,7 +19782,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Jamie Coffis",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Phil Dawson",
@@ -19842,7 +19842,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Nick Smielak",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Brian Hartline",
@@ -19932,7 +19932,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Kyle Morris",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Joseph Morgan",
@@ -19947,7 +19947,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Kyle Morris",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Jared Cook",
@@ -20037,7 +20037,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Jeremy Settles",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Miami Dolphins",
@@ -20052,7 +20052,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Brian Vitale",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Donnie Avery",
@@ -20097,7 +20097,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Tyler Fullerton",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Knowshon Moreno",
@@ -20142,7 +20142,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Kyle Morris",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Matt Bryant",
@@ -20247,7 +20247,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Nick Smielak",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Daniel Thomas",
@@ -20352,7 +20352,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Tyler Eifert",
@@ -20412,7 +20412,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Garrett Ulrich",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Jeremy Kerley",
@@ -20502,7 +20502,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Brendan Romele",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Sebastian Janikowski",
@@ -20562,7 +20562,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Chris Vitale",
-    "position": null
+    "position": "QB"
   },
   {
     "player_name": "Garrett Hartley",
@@ -20592,7 +20592,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Jordan Cameron",
@@ -20637,7 +20637,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Nick Smielak",
-    "position": null
+    "position": "QB"
   },
   {
     "player_name": "Scott Chandler",
@@ -20757,7 +20757,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Chris Vitale",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Brandon Jackson",
@@ -20802,7 +20802,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Aaron Dobson",
@@ -20817,7 +20817,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Jamie Coffis",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Alex Smith",
@@ -20877,7 +20877,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Jamie Coffis",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Fred Davis",
@@ -20922,7 +20922,7 @@
     "year": 2013,
     "is_keeper": false,
     "owner": "Nick Smielak",
-    "position": null
+    "position": "K"
   },
   {
     "player_name": "Josh Brown",
@@ -22047,7 +22047,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Greg Swenson",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Ray Rice",
@@ -22422,7 +22422,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Jamie Coffis",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Jeremy Hill",
@@ -22467,7 +22467,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Greg Swenson",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Tony Romo",
@@ -22677,7 +22677,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Brian Vitale",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Hakeem Nicks",
@@ -22707,7 +22707,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Jacob Luna",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Anquan Boldin",
@@ -22977,7 +22977,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Tyler Fullerton",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Devonta Freeman",
@@ -23037,7 +23037,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Alfred Blue",
@@ -23127,7 +23127,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Brian Vitale",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Tre Mason",
@@ -23187,7 +23187,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Kyle Morris",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "James Jones",
@@ -23217,7 +23217,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Ben Beck",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Denver Broncos",
@@ -23232,7 +23232,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Andy Dalton",
@@ -23262,7 +23262,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Ladarius Green",
@@ -23442,7 +23442,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Ben Beck",
-    "position": null
+    "position": "K"
   },
   {
     "player_name": "Mason Crosby",
@@ -23607,7 +23607,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Ben Beck",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Eli Manning",
@@ -23637,7 +23637,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Travis Kelce",
@@ -23667,7 +23667,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Chris Vitale",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Stevie Johnson",
@@ -23757,7 +23757,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Nick Smielak",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Charles Clay",
@@ -23802,7 +23802,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Tyler Fullerton",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Delanie Walker",
@@ -23907,7 +23907,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Jamie Coffis",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Cody Parkey",
@@ -23937,7 +23937,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Garrett Ulrich",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Mike Williams",
@@ -24042,7 +24042,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Brendan Romele",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "James White",
@@ -24072,7 +24072,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Chris Vitale",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Jerricho Cotchery",
@@ -24132,7 +24132,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Jeremy Settles",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Philadelphia Eagles",
@@ -24147,7 +24147,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Nick Smielak",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Stepfan Taylor",
@@ -24162,7 +24162,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Nick Smielak",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Mike Nugent",
@@ -24267,7 +24267,7 @@
     "year": 2014,
     "is_keeper": false,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Matt Forte",
@@ -24732,7 +24732,7 @@
     "year": 2015,
     "is_keeper": true,
     "owner": "Jamie Coffis",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Chris Ivory",
@@ -25107,7 +25107,7 @@
     "year": 2015,
     "is_keeper": true,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "DeAndre Hopkins",
@@ -25527,7 +25527,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Darren McFadden",
@@ -25647,7 +25647,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Jacob Luna",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Devonta Freeman",
@@ -25722,7 +25722,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Kyle Morris",
-    "position": null
+    "position": "K"
   },
   {
     "player_name": "Tevin Coleman",
@@ -25842,7 +25842,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Greg Swenson",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Connor Barth",
@@ -26067,7 +26067,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Bryan Whitaker",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Tony Romo",
@@ -26142,7 +26142,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Ben Beck",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Antonio Gates",
@@ -26262,7 +26262,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Jeremy Settles",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Jameis Winston",
@@ -26322,7 +26322,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Kyle Morris",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "DeVante Parker",
@@ -26397,7 +26397,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Jamie Coffis",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "New England Patriots",
@@ -26412,7 +26412,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Garrett Ulrich",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Colin Kaepernick",
@@ -26442,7 +26442,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Rory McKee",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Jay Ajayi",
@@ -26622,7 +26622,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Nick Smielak",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Denard Robinson",
@@ -26712,7 +26712,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Brendan Romele",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Theo Riddick",
@@ -26802,7 +26802,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Stevie Johnson",
@@ -26832,7 +26832,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Jamie Coffis",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Cody Latimer",
@@ -26847,7 +26847,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Garrett Ulrich",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Matt Jones",
@@ -26892,7 +26892,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Jacob Luna",
-    "position": null
+    "position": "TE"
   },
   {
     "player_name": "Carson Palmer",
@@ -26937,7 +26937,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Brendan Romele",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Dan Bailey",
@@ -26997,7 +26997,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Chris Vitale",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Cecil Shorts",
@@ -27012,7 +27012,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Chris Vitale",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Delanie Walker",
@@ -27057,7 +27057,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Jamie Coffis",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Kelvin Benjamin",
@@ -27192,7 +27192,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Nick Novak",
@@ -27222,7 +27222,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Chris Vitale",
-    "position": null
+    "position": "TE"
   },
   {
     "player_name": "Blair Walsh",
@@ -27357,7 +27357,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Rory McKee",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Eli Manning",
@@ -27492,7 +27492,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Nick Smielak",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Terrance Williams",
@@ -27537,7 +27537,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Rory McKee",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Sammie Coates",
@@ -27567,7 +27567,7 @@
     "year": 2015,
     "is_keeper": false,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Christine Michael",
@@ -27807,7 +27807,7 @@
     "year": 2016,
     "is_keeper": true,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Lamar Miller",
@@ -27852,7 +27852,7 @@
     "year": 2016,
     "is_keeper": true,
     "owner": "Jamie Coffis",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Todd Gurley",
@@ -28227,7 +28227,7 @@
     "year": 2016,
     "is_keeper": true,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Brandin Cooks",
@@ -28662,7 +28662,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Garrett Ulrich",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Ameer Abdullah",
@@ -28692,7 +28692,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Greg Swenson",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Jeremy Hill",
@@ -28767,7 +28767,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Brendan Romele",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Matt Forte",
@@ -28932,7 +28932,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Garrett Ulrich",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Carson Palmer",
@@ -29022,7 +29022,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Jacob Luna",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "DeMarco Murray",
@@ -29082,7 +29082,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Chris Vitale",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Vincent Jackson",
@@ -29127,7 +29127,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Jeremy Settles",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Giovani Bernard",
@@ -29172,7 +29172,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Bryan Whitaker",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Coby Fleener",
@@ -29232,7 +29232,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Kyle Morris",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Josh Gordon",
@@ -29292,7 +29292,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Terrance West",
@@ -29382,7 +29382,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Rory McKee",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Theo Riddick",
@@ -29472,7 +29472,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Chris Vitale",
-    "position": "RB"
+    "position": "DEF"
   },
   {
     "player_name": "Chris Hogan",
@@ -29697,7 +29697,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Greg Swenson",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Darren Sproles",
@@ -29907,7 +29907,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Kenneth Dixon",
@@ -29997,7 +29997,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Kyle Morris",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Chandler Catanzaro",
@@ -30192,7 +30192,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Jacob Luna",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Terrelle Pryor",
@@ -30237,7 +30237,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Kyle Morris",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Blair Walsh",
@@ -30402,7 +30402,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Bryan Whitaker",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Chris Johnson",
@@ -30657,7 +30657,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Paul Perkins",
@@ -30687,7 +30687,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Jamie Coffis",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Justin Forsett",
@@ -30807,7 +30807,7 @@
     "year": 2016,
     "is_keeper": false,
     "owner": "Nick Smielak",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Nick Novak",
@@ -31092,7 +31092,7 @@
     "year": 2017,
     "is_keeper": true,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "DeAndre Hopkins",
@@ -31137,7 +31137,7 @@
     "year": 2017,
     "is_keeper": true,
     "owner": "Jamie Coffis",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Dez Bryant",
@@ -31302,7 +31302,7 @@
     "year": 2017,
     "is_keeper": true,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Brandin Cooks",
@@ -31542,7 +31542,7 @@
     "year": 2017,
     "is_keeper": true,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "C.J. Prosise",
@@ -32157,7 +32157,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Greg Swenson",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Matthew Stafford",
@@ -32292,7 +32292,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Kyle Morris",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Spencer Ware",
@@ -32367,7 +32367,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Greg Swenson",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Donte Moncrief",
@@ -32532,7 +32532,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Ben Beck",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Mike Wallace",
@@ -32847,7 +32847,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Brian Vitale",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Jonathan Stewart",
@@ -32907,7 +32907,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Brendan Romele",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Jameis Winston",
@@ -33117,7 +33117,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Bryan Whitaker",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Ted Ginn Jr.",
@@ -33237,7 +33237,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Garrett Ulrich",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Rex Burkhead",
@@ -33297,7 +33297,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Jacob Luna",
-    "position": "RB"
+    "position": "DEF"
   },
   {
     "player_name": "Dustin Hopkins",
@@ -33372,7 +33372,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Chris Vitale",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Devontae Booker",
@@ -33417,7 +33417,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Carson Palmer",
@@ -33612,7 +33612,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Jamie Coffis",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Marqise Lee",
@@ -33642,7 +33642,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Jeremy Settles",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Torrey Smith",
@@ -33672,7 +33672,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Nick Smielak",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Wil Lutz",
@@ -33822,7 +33822,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Nick Folk",
@@ -34002,7 +34002,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Garrett Ulrich",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Joe Flacco",
@@ -34047,7 +34047,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Garrett Ulrich",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Tavon Austin",
@@ -34167,7 +34167,7 @@
     "year": 2017,
     "is_keeper": false,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "DeAndre Hopkins",
@@ -34377,7 +34377,7 @@
     "year": 2018,
     "is_keeper": true,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Dalvin Cook",
@@ -34797,7 +34797,7 @@
     "year": 2018,
     "is_keeper": true,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Lamar Miller",
@@ -35037,7 +35037,7 @@
     "year": 2018,
     "is_keeper": true,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Aaron Rodgers",
@@ -35232,7 +35232,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "WR"
   },
   {
     "player_name": "Delanie Walker",
@@ -35277,7 +35277,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Nick Smielak",
-    "position": null
+    "position": "RB"
   },
   {
     "player_name": "Jarvis Landry",
@@ -35562,7 +35562,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Rory McKee",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Sony Michel",
@@ -35592,7 +35592,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Kyle Morris",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Greg Zuerlein",
@@ -35652,7 +35652,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Chris Vitale",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Julian Edelman",
@@ -35817,7 +35817,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Ben Beck",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Jimmy Graham",
@@ -35907,7 +35907,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Greg Swenson",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Chris Boswell",
@@ -35997,7 +35997,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Brendan Romele",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Jamaal Williams",
@@ -36117,7 +36117,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Jeremy Settles",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "David Njoku",
@@ -36237,7 +36237,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Kyle Poppen",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Kenny Golladay",
@@ -36417,7 +36417,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Bryan Whitaker",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Aaron Jones",
@@ -36702,7 +36702,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Jamie Coffis",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Robbie Gould",
@@ -36897,7 +36897,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Kellen Coffis",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Denver Broncos",
@@ -36912,7 +36912,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Garrett Ulrich",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Daniel Carlson",
@@ -37122,7 +37122,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Nick Smielak",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Carolina Panthers",
@@ -37137,7 +37137,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Jacob Luna",
-    "position": null
+    "position": "DEF"
   },
   {
     "player_name": "Frank Gore",
@@ -37242,7 +37242,7 @@
     "year": 2018,
     "is_keeper": false,
     "owner": "Kyle Poppen",
-    "position": "WR"
+    "position": "DEF"
   },
   {
     "player_name": "John Kelly",
@@ -39282,7 +39282,7 @@
     "year": 2019,
     "is_keeper": false,
     "owner": "Jacob Luna",
-    "position": "WR"
+    "position": "DEF"
   },
   {
     "player_name": "Stephen Gostkowski",
@@ -43662,7 +43662,7 @@
     "year": 2020,
     "is_keeper": false,
     "owner": "Garrett Ulrich",
-    "position": "TE"
+    "position": "DEF"
   },
   {
     "player_name": "Adrian Peterson",
@@ -43917,7 +43917,7 @@
     "year": 2020,
     "is_keeper": false,
     "owner": "Kyle Poppen",
-    "position": "RB"
+    "position": "DEF"
   },
   {
     "player_name": "Ameer Abdullah",
@@ -46227,7 +46227,7 @@
     "year": 2021,
     "is_keeper": false,
     "owner": "Chris Vitale",
-    "position": "TE"
+    "position": "DEF"
   },
   {
     "player_name": "Joe Burrow",
@@ -49317,7 +49317,7 @@
     "year": 2022,
     "is_keeper": false,
     "owner": "Ben Beck",
-    "position": "TE"
+    "position": "DEF"
   },
   {
     "player_name": "Matt Ryan",
@@ -52482,7 +52482,7 @@
     "year": 2023,
     "is_keeper": false,
     "owner": "Garrett Ulrich",
-    "position": "TE"
+    "position": "DEF"
   },
   {
     "player_name": "Christian Kirk",
@@ -56457,7 +56457,7 @@
     "year": 2024,
     "is_keeper": false,
     "owner": "Rory McKee",
-    "position": "TE"
+    "position": "DEF"
   },
   {
     "player_name": "Dalton Schultz",

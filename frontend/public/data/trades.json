@@ -53,6 +53,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 147.14,
+      "keeper_points": 0,
+      "total_value": 147.14,
       "players_with_stats": [
         {
           "name": "Kimani Vidal",
@@ -120,6 +122,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 299.6,
+      "keeper_points": 0,
+      "total_value": 299.6,
       "players_with_stats": [
         {
           "name": "Davante Adams",
@@ -147,7 +151,11 @@
     "trade_timing": "Week 12",
     "winner": "side2",
     "winner_owner": "Jacob Luna",
-    "point_differential": 152.46
+    "point_differential": 152.46,
+    "longterm_winner": "side2",
+    "longterm_winner_owner": "Jacob Luna",
+    "longterm_differential": 152.46,
+    "keeper_flip": false
   },
   {
     "year": 2025,
@@ -183,6 +191,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 249.32,
+      "keeper_points": 0,
+      "total_value": 249.32,
       "players_with_stats": [
         {
           "name": "Michael Pittman",
@@ -230,6 +240,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 106.2,
+      "keeper_points": 0,
+      "total_value": 106.2,
       "players_with_stats": [
         {
           "name": "Zay Flowers",
@@ -242,7 +254,11 @@
     "trade_timing": "Week 11",
     "winner": "side1",
     "winner_owner": "Chris Vitale",
-    "point_differential": 143.12
+    "point_differential": 143.12,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Chris Vitale",
+    "longterm_differential": 143.12,
+    "keeper_flip": false
   },
   {
     "year": 2025,
@@ -278,6 +294,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 124.3,
+      "keeper_points": 0,
+      "total_value": 124.3,
       "players_with_stats": [
         {
           "name": "Colston Loveland",
@@ -315,6 +333,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 241.92,
+      "keeper_points": 0,
+      "total_value": 241.92,
       "players_with_stats": [
         {
           "name": "Brandon Aubrey",
@@ -337,7 +357,11 @@
     "trade_timing": "Week 8",
     "winner": "side2",
     "winner_owner": "Kyle Poppen",
-    "point_differential": 117.62
+    "point_differential": 117.62,
+    "longterm_winner": "side2",
+    "longterm_winner_owner": "Kyle Poppen",
+    "longterm_differential": 117.62,
+    "keeper_flip": false
   },
   {
     "year": 2025,
@@ -363,6 +387,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 90.9,
+      "keeper_points": 0,
+      "total_value": 90.9,
       "players_with_stats": [
         {
           "name": "Jakobi Meyers",
@@ -390,6 +416,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 40.8,
+      "keeper_points": 0,
+      "total_value": 40.8,
       "players_with_stats": [
         {
           "name": "Isiah Pacheco",
@@ -402,7 +430,11 @@
     "trade_timing": "Week 7",
     "winner": "side1",
     "winner_owner": "Garrett Ulrich",
-    "point_differential": 50.1
+    "point_differential": 50.1,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Garrett Ulrich",
+    "longterm_differential": 50.1,
+    "keeper_flip": false
   },
   {
     "year": 2025,
@@ -428,6 +460,8 @@
       "faab_received": 0,
       "faab_sent": 1,
       "total_points": 59.4,
+      "keeper_points": 0,
+      "total_value": 59.4,
       "players_with_stats": [
         {
           "name": "Dylan Sampson",
@@ -455,6 +489,8 @@
       "faab_received": 1,
       "faab_sent": 0,
       "total_points": 106.6,
+      "keeper_points": 0,
+      "total_value": 106.6,
       "players_with_stats": [
         {
           "name": "Dalton Kincaid",
@@ -467,7 +503,11 @@
     "trade_timing": "Week 1",
     "winner": "side2",
     "winner_owner": "Nick Smielak",
-    "point_differential": 47.2
+    "point_differential": 47.2,
+    "longterm_winner": "side2",
+    "longterm_winner_owner": "Nick Smielak",
+    "longterm_differential": 47.2,
+    "keeper_flip": false
   },
   {
     "year": 2024,
@@ -493,6 +533,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 98.42,
+      "keeper_points": 0,
+      "total_value": 98.42,
       "players_with_stats": [
         {
           "name": "Jameis Winston",
@@ -520,6 +562,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 1.1,
+      "keeper_points": 0,
+      "total_value": 1.1,
       "players_with_stats": [
         {
           "name": "Diontae Johnson",
@@ -532,7 +576,11 @@
     "trade_timing": "Week 9",
     "winner": "side1",
     "winner_owner": "Ben Beck",
-    "point_differential": 97.32
+    "point_differential": 97.32,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Ben Beck",
+    "longterm_differential": 97.32,
+    "keeper_flip": false
   },
   {
     "year": 2024,
@@ -568,6 +616,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 139.8,
+      "keeper_points": 0,
+      "total_value": 139.8,
       "players_with_stats": [
         {
           "name": "Kareem Hunt",
@@ -610,6 +660,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 182.76,
+      "keeper_points": 0,
+      "total_value": 182.76,
       "players_with_stats": [
         {
           "name": "Gardner Minshew",
@@ -627,7 +679,11 @@
     "trade_timing": "Week 5",
     "winner": "side2",
     "winner_owner": "Garrett Ulrich",
-    "point_differential": 42.96
+    "point_differential": 42.96,
+    "longterm_winner": "side2",
+    "longterm_winner_owner": "Garrett Ulrich",
+    "longterm_differential": 42.96,
+    "keeper_flip": false
   },
   {
     "year": 2024,
@@ -658,6 +714,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 194.22,
+      "keeper_points": 0,
+      "total_value": 194.22,
       "players_with_stats": [
         {
           "name": "Rico Dowdle",
@@ -695,6 +753,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 99.8,
+      "keeper_points": 0,
+      "total_value": 99.8,
       "players_with_stats": [
         {
           "name": "Derek Carr",
@@ -707,7 +767,11 @@
     "trade_timing": "Week 4",
     "winner": "side1",
     "winner_owner": "Greg Swenson",
-    "point_differential": 94.42
+    "point_differential": 94.42,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Greg Swenson",
+    "longterm_differential": 94.42,
+    "keeper_flip": false
   },
   {
     "year": 2024,
@@ -733,6 +797,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 25.8,
+      "keeper_points": 0,
+      "total_value": 25.8,
       "players_with_stats": [
         {
           "name": "Isaac Guerendo",
@@ -760,6 +826,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 2.4,
+      "keeper_points": 0,
+      "total_value": 2.4,
       "players_with_stats": [
         {
           "name": "Trey Benson",
@@ -772,7 +840,11 @@
     "trade_timing": "Week 14",
     "winner": "side1",
     "winner_owner": "Nick Smielak",
-    "point_differential": 23.4
+    "point_differential": 23.4,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Nick Smielak",
+    "longterm_differential": 23.4,
+    "keeper_flip": false
   },
   {
     "year": 2024,
@@ -803,6 +875,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 12.7,
+      "keeper_points": 0,
+      "total_value": 12.7,
       "players_with_stats": [
         {
           "name": "Tank Bigsby",
@@ -835,6 +909,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 21.36,
+      "keeper_points": 0,
+      "total_value": 21.36,
       "players_with_stats": [
         {
           "name": "Kirk Cousins",
@@ -852,7 +928,11 @@
     "trade_timing": "Week 14",
     "winner": "side2",
     "winner_owner": "Nick Smielak",
-    "point_differential": 8.66
+    "point_differential": 8.66,
+    "longterm_winner": "side2",
+    "longterm_winner_owner": "Nick Smielak",
+    "longterm_differential": 8.66,
+    "keeper_flip": false
   },
   {
     "year": 2024,
@@ -893,6 +973,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 143.6,
+      "keeper_points": 0,
+      "total_value": 143.6,
       "players_with_stats": [
         {
           "name": "Sam LaPorta",
@@ -945,11 +1027,20 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 51.4,
+      "keeper_points": 252.9,
+      "total_value": 304.3,
       "players_with_stats": [
         {
           "name": "Trey McBride",
           "position": "TE",
-          "points": 45.4
+          "points": 45.4,
+          "keeper_years": [
+            {
+              "year": 2025,
+              "points": 252.9
+            }
+          ],
+          "keeper_points": 252.9
         },
         {
           "name": "Jonathon Brooks",
@@ -962,7 +1053,11 @@
     "trade_timing": "Week 11",
     "winner": "side1",
     "winner_owner": "Kyle Poppen",
-    "point_differential": 92.2
+    "point_differential": 92.2,
+    "longterm_winner": "side2",
+    "longterm_winner_owner": "Chris Vitale",
+    "longterm_differential": 160.7,
+    "keeper_flip": true
   },
   {
     "year": 2024,
@@ -998,6 +1093,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 501.3,
+      "keeper_points": 0,
+      "total_value": 501.3,
       "players_with_stats": [
         {
           "name": "Calvin Ridley",
@@ -1045,11 +1142,20 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 125.3,
+      "keeper_points": 310.5,
+      "total_value": 435.8,
       "players_with_stats": [
         {
           "name": "Puka Nacua",
           "position": "WR",
-          "points": 125.3
+          "points": 125.3,
+          "keeper_years": [
+            {
+              "year": 2025,
+              "points": 310.5
+            }
+          ],
+          "keeper_points": 310.5
         }
       ]
     },
@@ -1057,7 +1163,11 @@
     "trade_timing": "Offseason",
     "winner": "side1",
     "winner_owner": "Ben Beck",
-    "point_differential": 376.0
+    "point_differential": 376.0,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Ben Beck",
+    "longterm_differential": 65.5,
+    "keeper_flip": false
   },
   {
     "year": 2024,
@@ -1093,11 +1203,20 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 284.04,
+      "keeper_points": 134.46,
+      "total_value": 418.5,
       "players_with_stats": [
         {
           "name": "Joe Burrow",
           "position": "QB",
-          "points": 284.04
+          "points": 284.04,
+          "keeper_years": [
+            {
+              "year": 2025,
+              "points": 134.46
+            }
+          ],
+          "keeper_points": 134.46
         }
       ]
     },
@@ -1130,6 +1249,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 277.2,
+      "keeper_points": 162.4,
+      "total_value": 439.6,
       "players_with_stats": [
         {
           "name": "D'Andre Swift",
@@ -1140,6 +1261,18 @@
           "name": "Mike Evans",
           "position": "WR",
           "points": 122.5
+        },
+        {
+          "name": "Michael Pittman",
+          "position": "WR",
+          "points": 0,
+          "keeper_years": [
+            {
+              "year": 2025,
+              "points": 162.4
+            }
+          ],
+          "keeper_points": 162.4
         }
       ]
     },
@@ -1147,7 +1280,11 @@
     "trade_timing": "Offseason",
     "winner": "side1",
     "winner_owner": "Ryan Milhous",
-    "point_differential": 6.84
+    "point_differential": 6.84,
+    "longterm_winner": "side2",
+    "longterm_winner_owner": "Garrett Ulrich",
+    "longterm_differential": 21.1,
+    "keeper_flip": true
   },
   {
     "year": 2024,
@@ -1178,16 +1315,32 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 379.3,
+      "keeper_points": 453.3,
+      "total_value": 832.6,
       "players_with_stats": [
         {
           "name": "A.J. Brown",
           "position": "WR",
-          "points": 131.6
+          "points": 131.6,
+          "keeper_years": [
+            {
+              "year": 2025,
+              "points": 181.3
+            }
+          ],
+          "keeper_points": 181.3
         },
         {
           "name": "Derrick Henry",
           "position": "RB",
-          "points": 247.7
+          "points": 247.7,
+          "keeper_years": [
+            {
+              "year": 2025,
+              "points": 272.0
+            }
+          ],
+          "keeper_points": 272.0
         }
       ]
     },
@@ -1215,11 +1368,20 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 321.4,
+      "keeper_points": 214.86,
+      "total_value": 536.26,
       "players_with_stats": [
         {
           "name": "Lamar Jackson",
           "position": "QB",
-          "points": 321.4
+          "points": 321.4,
+          "keeper_years": [
+            {
+              "year": 2025,
+              "points": 214.86
+            }
+          ],
+          "keeper_points": 214.86
         }
       ]
     },
@@ -1227,7 +1389,11 @@
     "trade_timing": "Offseason",
     "winner": "side1",
     "winner_owner": "Rory McKee",
-    "point_differential": 57.9
+    "point_differential": 57.9,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Rory McKee",
+    "longterm_differential": 296.34,
+    "keeper_flip": false
   },
   {
     "year": 2023,
@@ -1253,6 +1419,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 11.6,
+      "keeper_points": 0,
+      "total_value": 11.6,
       "players_with_stats": [
         {
           "name": "Joshua Kelley",
@@ -1280,6 +1448,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 4.8,
+      "keeper_points": 0,
+      "total_value": 4.8,
       "players_with_stats": [
         {
           "name": "Treylon Burks",
@@ -1292,7 +1462,11 @@
     "trade_timing": "Week 3",
     "winner": "side1",
     "winner_owner": "Chris Vitale",
-    "point_differential": 6.8
+    "point_differential": 6.8,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Chris Vitale",
+    "longterm_differential": 6.8,
+    "keeper_flip": false
   },
   {
     "year": 2023,
@@ -1328,11 +1502,24 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 17.0,
+      "keeper_points": 345.0,
+      "total_value": 362.0,
       "players_with_stats": [
         {
           "name": "Zay Flowers",
           "position": "WR",
-          "points": 17.0
+          "points": 17.0,
+          "keeper_years": [
+            {
+              "year": 2024,
+              "points": 144.7
+            },
+            {
+              "year": 2025,
+              "points": 200.3
+            }
+          ],
+          "keeper_points": 345.0
         }
       ]
     },
@@ -1365,6 +1552,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 15.62,
+      "keeper_points": 0,
+      "total_value": 15.62,
       "players_with_stats": [
         {
           "name": "Joshua Dobbs",
@@ -1382,7 +1571,11 @@
     "trade_timing": "Week 14",
     "winner": "tie",
     "winner_owner": null,
-    "point_differential": 1.38
+    "point_differential": 1.38,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Chris Vitale",
+    "longterm_differential": 346.38,
+    "keeper_flip": false
   },
   {
     "year": 2023,
@@ -1408,6 +1601,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 47.42,
+      "keeper_points": 0,
+      "total_value": 47.42,
       "players_with_stats": [
         {
           "name": "Gardner Minshew",
@@ -1435,11 +1630,24 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 16.0,
+      "keeper_points": 307.5,
+      "total_value": 323.5,
       "players_with_stats": [
         {
           "name": "Jameson Williams",
           "position": "WR",
-          "points": 16.0
+          "points": 16.0,
+          "keeper_years": [
+            {
+              "year": 2024,
+              "points": 120.1
+            },
+            {
+              "year": 2025,
+              "points": 187.4
+            }
+          ],
+          "keeper_points": 307.5
         }
       ]
     },
@@ -1447,7 +1655,11 @@
     "trade_timing": "Week 12",
     "winner": "side1",
     "winner_owner": "Kyle Poppen",
-    "point_differential": 31.42
+    "point_differential": 31.42,
+    "longterm_winner": "side2",
+    "longterm_winner_owner": "Garrett Ulrich",
+    "longterm_differential": 276.08,
+    "keeper_flip": true
   },
   {
     "year": 2023,
@@ -1473,11 +1685,24 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 79.68,
+      "keeper_points": 541.6,
+      "total_value": 621.28,
       "players_with_stats": [
         {
           "name": "Matthew Stafford",
           "position": "QB",
-          "points": 79.68
+          "points": 79.68,
+          "keeper_years": [
+            {
+              "year": 2024,
+              "points": 191.22
+            },
+            {
+              "year": 2025,
+              "points": 350.38
+            }
+          ],
+          "keeper_points": 541.6
         }
       ]
     },
@@ -1500,13 +1725,32 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 0.0,
-      "players_with_stats": []
+      "keeper_points": 58.7,
+      "total_value": 58.7,
+      "players_with_stats": [
+        {
+          "name": "Nick Chubb",
+          "position": "RB",
+          "points": 0.0,
+          "keeper_years": [
+            {
+              "year": 2024,
+              "points": 58.7
+            }
+          ],
+          "keeper_points": 58.7
+        }
+      ]
     },
     "summary": "Bryan Whitaker receives Matthew Stafford; Brendan Romele receives Nick Chubb",
     "trade_timing": "Week 10",
     "winner": "side1",
     "winner_owner": "Bryan Whitaker",
-    "point_differential": 79.68
+    "point_differential": 79.68,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Bryan Whitaker",
+    "longterm_differential": 562.58,
+    "keeper_flip": false
   },
   {
     "year": 2022,
@@ -1532,11 +1776,20 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 138.3,
+      "keeper_points": 162.6,
+      "total_value": 300.9,
       "players_with_stats": [
         {
           "name": "Tony Pollard",
           "position": "RB",
-          "points": 138.3
+          "points": 138.3,
+          "keeper_years": [
+            {
+              "year": 2023,
+              "points": 162.6
+            }
+          ],
+          "keeper_points": 162.6
         }
       ]
     },
@@ -1559,11 +1812,20 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 69.44,
+      "keeper_points": 110.2,
+      "total_value": 179.64,
       "players_with_stats": [
         {
           "name": "Kenny Pickett",
           "position": "QB",
-          "points": 69.44
+          "points": 69.44,
+          "keeper_years": [
+            {
+              "year": 2023,
+              "points": 110.2
+            }
+          ],
+          "keeper_points": 110.2
         }
       ]
     },
@@ -1571,7 +1833,11 @@
     "trade_timing": "Week 8",
     "winner": "side1",
     "winner_owner": "Nick Smielak",
-    "point_differential": 68.86
+    "point_differential": 68.86,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Nick Smielak",
+    "longterm_differential": 121.26,
+    "keeper_flip": false
   },
   {
     "year": 2022,
@@ -1597,6 +1863,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 148.12,
+      "keeper_points": 0,
+      "total_value": 148.12,
       "players_with_stats": [
         {
           "name": "Jimmy Garoppolo",
@@ -1624,6 +1892,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 14.3,
+      "keeper_points": 0,
+      "total_value": 14.3,
       "players_with_stats": [
         {
           "name": "Rashod Bateman",
@@ -1636,7 +1906,11 @@
     "trade_timing": "Week 3",
     "winner": "side1",
     "winner_owner": "Kyle Poppen",
-    "point_differential": 133.82
+    "point_differential": 133.82,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Kyle Poppen",
+    "longterm_differential": 133.82,
+    "keeper_flip": false
   },
   {
     "year": 2022,
@@ -1667,6 +1941,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 70.3,
+      "keeper_points": 0,
+      "total_value": 70.3,
       "players_with_stats": [
         {
           "name": "Damien Harris",
@@ -1699,6 +1975,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 48.2,
+      "keeper_points": 0,
+      "total_value": 48.2,
       "players_with_stats": [
         {
           "name": "Hunter Renfrow",
@@ -1716,7 +1994,11 @@
     "trade_timing": "Offseason",
     "winner": "side1",
     "winner_owner": "Ben Beck",
-    "point_differential": 22.1
+    "point_differential": 22.1,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Ben Beck",
+    "longterm_differential": 22.1,
+    "keeper_flip": false
   },
   {
     "year": 2021,
@@ -1752,6 +2034,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 168.04,
+      "keeper_points": 0,
+      "total_value": 168.04,
       "players_with_stats": [
         {
           "name": "Robert Tonyan",
@@ -1794,11 +2078,20 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 70.8,
+      "keeper_points": 62.9,
+      "total_value": 133.7,
       "players_with_stats": [
         {
           "name": "Mike Gesicki",
           "position": "TE",
-          "points": 34.5
+          "points": 34.5,
+          "keeper_years": [
+            {
+              "year": 2022,
+              "points": 62.9
+            }
+          ],
+          "keeper_points": 62.9
         },
         {
           "name": "Chuba Hubbard",
@@ -1811,7 +2104,11 @@
     "trade_timing": "Week 8",
     "winner": "side1",
     "winner_owner": "Kyle Poppen",
-    "point_differential": 97.24
+    "point_differential": 97.24,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Kyle Poppen",
+    "longterm_differential": 34.34,
+    "keeper_flip": false
   },
   {
     "year": 2021,
@@ -1852,6 +2149,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 682.68,
+      "keeper_points": 259.1,
+      "total_value": 941.78,
       "players_with_stats": [
         {
           "name": "James Robinson",
@@ -1861,7 +2160,18 @@
         {
           "name": "Cooper Kupp",
           "position": "WR",
-          "points": 278.9
+          "points": 278.9,
+          "keeper_years": [
+            {
+              "year": 2022,
+              "points": 163.9
+            },
+            {
+              "year": 2023,
+              "points": 95.2
+            }
+          ],
+          "keeper_points": 259.1
         },
         {
           "name": "Patrick Mahomes",
@@ -1904,11 +2214,24 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 404.68,
+      "keeper_points": 244.4,
+      "total_value": 649.08,
       "players_with_stats": [
         {
           "name": "Aaron Jones",
           "position": "RB",
-          "points": 164.7
+          "points": 164.7,
+          "keeper_years": [
+            {
+              "year": 2022,
+              "points": 177.5
+            },
+            {
+              "year": 2023,
+              "points": 66.9
+            }
+          ],
+          "keeper_points": 244.4
         },
         {
           "name": "Lamar Jackson",
@@ -1921,7 +2244,11 @@
     "trade_timing": "Offseason",
     "winner": "side1",
     "winner_owner": "Ben Beck",
-    "point_differential": 278.0
+    "point_differential": 278.0,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Ben Beck",
+    "longterm_differential": 292.7,
+    "keeper_flip": false
   },
   {
     "year": 2020,
@@ -1952,6 +2279,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 25.9,
+      "keeper_points": 0,
+      "total_value": 25.9,
       "players_with_stats": [
         {
           "name": "Zach Ertz",
@@ -1984,6 +2313,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 105.9,
+      "keeper_points": 0,
+      "total_value": 105.9,
       "players_with_stats": [
         {
           "name": "Corey Davis",
@@ -1996,7 +2327,11 @@
     "trade_timing": "Week 3",
     "winner": "side2",
     "winner_owner": "Bryan Whitaker",
-    "point_differential": 80.0
+    "point_differential": 80.0,
+    "longterm_winner": "side2",
+    "longterm_winner_owner": "Bryan Whitaker",
+    "longterm_differential": 80.0,
+    "keeper_flip": false
   },
   {
     "year": 2020,
@@ -2032,6 +2367,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 156.3,
+      "keeper_points": 97.6,
+      "total_value": 253.9,
       "players_with_stats": [
         {
           "name": "Jared Cook",
@@ -2041,7 +2378,14 @@
         {
           "name": "Mike Davis",
           "position": "RB",
-          "points": 125.8
+          "points": 125.8,
+          "keeper_years": [
+            {
+              "year": 2021,
+              "points": 97.6
+            }
+          ],
+          "keeper_points": 97.6
         }
       ]
     },
@@ -2074,6 +2418,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 225.96,
+      "keeper_points": 0,
+      "total_value": 225.96,
       "players_with_stats": [
         {
           "name": "Russell Wilson",
@@ -2091,7 +2437,11 @@
     "trade_timing": "Week 3",
     "winner": "side2",
     "winner_owner": "Nick Smielak",
-    "point_differential": 69.66
+    "point_differential": 69.66,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Kellen Coffis",
+    "longterm_differential": 27.94,
+    "keeper_flip": true
   },
   {
     "year": 2020,
@@ -2117,6 +2467,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 0,
+      "keeper_points": 0,
+      "total_value": 0,
       "players_with_stats": []
     },
     "side2": {
@@ -2138,13 +2490,19 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 0,
+      "keeper_points": 0,
+      "total_value": 0,
       "players_with_stats": []
     },
     "summary": "Kellen Coffis receives Melvin Gordon; Kyle Poppen receives Will Fuller",
     "trade_timing": "Week 13",
     "winner": "tie",
     "winner_owner": null,
-    "point_differential": 0
+    "point_differential": 0,
+    "longterm_winner": "tie",
+    "longterm_winner_owner": null,
+    "longterm_differential": 0,
+    "keeper_flip": false
   },
   {
     "year": 2020,
@@ -2190,21 +2548,60 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 333.3,
+      "keeper_points": 1177.7,
+      "total_value": 1511.0,
       "players_with_stats": [
         {
           "name": "Deebo Samuel",
           "position": "WR",
-          "points": 63.3
+          "points": 63.3,
+          "keeper_years": [
+            {
+              "year": 2021,
+              "points": 217.3
+            },
+            {
+              "year": 2022,
+              "points": 137.0
+            },
+            {
+              "year": 2023,
+              "points": 166.5
+            }
+          ],
+          "keeper_points": 520.8
         },
         {
           "name": "Stefon Diggs",
           "position": "WR",
-          "points": 172.7
+          "points": 172.7,
+          "keeper_years": [
+            {
+              "year": 2021,
+              "points": 178.2
+            },
+            {
+              "year": 2022,
+              "points": 230.9
+            },
+            {
+              "year": 2023,
+              "points": 190.8
+            }
+          ],
+          "keeper_points": 599.9
         },
         {
           "name": "David Johnson",
           "position": "RB",
-          "points": 97.3
+          "points": 97.3,
+          "keeper_years": [
+            {
+              "year": 2021,
+              "points": 57.0
+            }
+          ],
+          "keeper_points": 57.0
         }
       ]
     },
@@ -2247,6 +2644,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 83.8,
+      "keeper_points": 0,
+      "total_value": 83.8,
       "players_with_stats": [
         {
           "name": "Kenny Golladay",
@@ -2269,7 +2668,11 @@
     "trade_timing": "Offseason",
     "winner": "side1",
     "winner_owner": "Jeremy Settles",
-    "point_differential": 249.5
+    "point_differential": 249.5,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Jeremy Settles",
+    "longterm_differential": 1427.2,
+    "keeper_flip": false
   },
   {
     "year": 2019,
@@ -2305,6 +2708,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 141.16,
+      "keeper_points": 32.9,
+      "total_value": 174.06,
       "players_with_stats": [
         {
           "name": "Kyle Allen",
@@ -2314,7 +2719,14 @@
         {
           "name": "Sony Michel",
           "position": "RB",
-          "points": 83.3
+          "points": 83.3,
+          "keeper_years": [
+            {
+              "year": 2020,
+              "points": 32.9
+            }
+          ],
+          "keeper_points": 32.9
         }
       ]
     },
@@ -2347,7 +2759,21 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 12.0,
+      "keeper_points": 26.6,
+      "total_value": 38.6,
       "players_with_stats": [
+        {
+          "name": "Antonio Brown",
+          "position": "WR",
+          "points": 0.0,
+          "keeper_years": [
+            {
+              "year": 2020,
+              "points": 26.6
+            }
+          ],
+          "keeper_points": 26.6
+        },
         {
           "name": "Darwin Thompson",
           "position": "RB",
@@ -2359,7 +2785,11 @@
     "trade_timing": "Week 5",
     "winner": "side1",
     "winner_owner": "Kellen Coffis",
-    "point_differential": 129.16
+    "point_differential": 129.16,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Kellen Coffis",
+    "longterm_differential": 135.46,
+    "keeper_flip": false
   },
   {
     "year": 2019,
@@ -2395,6 +2825,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 488.8,
+      "keeper_points": 768.66,
+      "total_value": 1257.46,
       "players_with_stats": [
         {
           "name": "Duke Johnson",
@@ -2404,12 +2836,34 @@
         {
           "name": "Derrick Henry",
           "position": "RB",
-          "points": 214.5
+          "points": 214.5,
+          "keeper_years": [
+            {
+              "year": 2020,
+              "points": 219.4
+            },
+            {
+              "year": 2021,
+              "points": 184.3
+            },
+            {
+              "year": 2022,
+              "points": 231.06
+            }
+          ],
+          "keeper_points": 634.76
         },
         {
           "name": "Cooper Kupp",
           "position": "WR",
-          "points": 167.4
+          "points": 167.4,
+          "keeper_years": [
+            {
+              "year": 2020,
+              "points": 133.9
+            }
+          ],
+          "keeper_points": 133.9
         }
       ]
     },
@@ -2442,11 +2896,20 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 213.92,
+      "keeper_points": 310.7,
+      "total_value": 524.62,
       "players_with_stats": [
         {
           "name": "Patrick Mahomes",
           "position": "QB",
-          "points": 213.92
+          "points": 213.92,
+          "keeper_years": [
+            {
+              "year": 2020,
+              "points": 310.7
+            }
+          ],
+          "keeper_points": 310.7
         }
       ]
     },
@@ -2454,7 +2917,11 @@
     "trade_timing": "Offseason",
     "winner": "side1",
     "winner_owner": "Jacob Luna",
-    "point_differential": 274.88
+    "point_differential": 274.88,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Jacob Luna",
+    "longterm_differential": 732.84,
+    "keeper_flip": false
   },
   {
     "year": 2019,
@@ -2480,11 +2947,24 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 170.8,
+      "keeper_points": 170.5,
+      "total_value": 341.3,
       "players_with_stats": [
         {
           "name": "Chris Carson",
           "position": "RB",
-          "points": 170.8
+          "points": 170.8,
+          "keeper_years": [
+            {
+              "year": 2020,
+              "points": 125.4
+            },
+            {
+              "year": 2021,
+              "points": 45.1
+            }
+          ],
+          "keeper_points": 170.5
         }
       ]
     },
@@ -2507,6 +2987,8 @@
       "faab_received": 0,
       "faab_sent": 0,
       "total_points": 213.92,
+      "keeper_points": 0,
+      "total_value": 213.92,
       "players_with_stats": [
         {
           "name": "Patrick Mahomes",
@@ -2519,6 +3001,10 @@
     "trade_timing": "Offseason",
     "winner": "side2",
     "winner_owner": "Jacob Luna",
-    "point_differential": 43.12
+    "point_differential": 43.12,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Rory McKee",
+    "longterm_differential": 127.38,
+    "keeper_flip": true
   }
 ]

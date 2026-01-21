@@ -3,8 +3,10 @@ import apiService from '../services/api';
 
 function Draft() {
   const [draft, setDraft] = useState([]);
-  const [bestPicks, setBestPicks] = useState([]);
-  const [worstPicks, setWorstPicks] = useState([]);
+  const [bestSteals, setBestSteals] = useState([]);
+  const [bestInvestments, setBestInvestments] = useState([]);
+  const [biggestBusts, setBiggestBusts] = useState([]);
+  const [bestOverallValue, setBestOverallValue] = useState([]);
   const [bestSnakePicks, setBestSnakePicks] = useState([]);
   const [worstSnakePicks, setWorstSnakePicks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,16 +19,20 @@ function Draft() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [draftResponse, bestPicksResponse, worstPicksResponse, bestSnakeResponse, worstSnakeResponse] = await Promise.all([
+        const [draftResponse, stealsResponse, investmentsResponse, bustsResponse, overallResponse, bestSnakeResponse, worstSnakeResponse] = await Promise.all([
           apiService.getDraft(),
-          apiService.getBestDraftPicks(),
-          apiService.getWorstDraftPicks(),
+          apiService.getBestSteals(),
+          apiService.getBestInvestments(),
+          apiService.getBiggestBusts(),
+          apiService.getBestOverallValue(),
           apiService.getBestSnakePicks(),
           apiService.getWorstSnakePicks()
         ]);
         setDraft(draftResponse.data);
-        setBestPicks(bestPicksResponse.data);
-        setWorstPicks(worstPicksResponse.data);
+        setBestSteals(stealsResponse.data);
+        setBestInvestments(investmentsResponse.data);
+        setBiggestBusts(bustsResponse.data);
+        setBestOverallValue(overallResponse.data);
         setBestSnakePicks(bestSnakeResponse.data);
         setWorstSnakePicks(worstSnakeResponse.data);
       } catch (error) {
@@ -86,8 +92,10 @@ function Draft() {
     });
   };
 
-  const filteredBestPicks = filterValuePicks(bestPicks);
-  const filteredWorstPicks = filterValuePicks(worstPicks);
+  const filteredBestSteals = filterValuePicks(bestSteals);
+  const filteredBestInvestments = filterValuePicks(bestInvestments);
+  const filteredBiggestBusts = filterValuePicks(biggestBusts);
+  const filteredBestOverallValue = filterValuePicks(bestOverallValue);
   const filteredBestSnakePicks = filterValuePicks(bestSnakePicks);
   const filteredWorstSnakePicks = filterValuePicks(worstSnakePicks);
 
@@ -144,15 +152,28 @@ function Draft() {
   // Value pick card component for reuse - compact version
   const ValuePickCard = ({ pick, type }) => {
     const isSnake = type === 'bestSnake' || type === 'worstSnake';
-    const isBest = type === 'best' || type === 'bestSnake';
 
     const colors = {
-      best: { bg: 'from-yellow-500/10 to-orange-500/10', border: 'border-yellow-500/20', text: 'text-yellow-400' },
-      worst: { bg: 'from-red-500/10 to-gray-500/10', border: 'border-red-500/20', text: 'text-red-400' },
-      bestSnake: { bg: 'from-emerald-500/10 to-teal-500/10', border: 'border-emerald-500/20', text: 'text-emerald-400' },
-      worstSnake: { bg: 'from-rose-500/10 to-pink-500/10', border: 'border-rose-500/20', text: 'text-rose-400' }
+      steals: { bg: 'from-emerald-500/10 to-green-500/10', border: 'border-emerald-500/20', text: 'text-emerald-400', metric: 'text-emerald-300' },
+      investments: { bg: 'from-yellow-500/10 to-orange-500/10', border: 'border-yellow-500/20', text: 'text-yellow-400', metric: 'text-yellow-300' },
+      busts: { bg: 'from-red-500/10 to-rose-500/10', border: 'border-red-500/20', text: 'text-red-400', metric: 'text-red-300' },
+      overall: { bg: 'from-blue-500/10 to-indigo-500/10', border: 'border-blue-500/20', text: 'text-blue-400', metric: 'text-blue-300' },
+      bestSnake: { bg: 'from-teal-500/10 to-cyan-500/10', border: 'border-teal-500/20', text: 'text-teal-400', metric: 'text-cyan-300' },
+      worstSnake: { bg: 'from-rose-500/10 to-pink-500/10', border: 'border-rose-500/20', text: 'text-rose-400', metric: 'text-rose-300' }
     };
     const c = colors[type];
+
+    // Calculate metric display based on type
+    const getMetricDisplay = () => {
+      if (isSnake) {
+        return `${pick.value >= 0 ? '+' : ''}${pick.value.toFixed(0)} vs exp`;
+      }
+      if (type === 'busts') {
+        const pct = pick.position_avg_points > 0 ? ((pick.total_points / pick.position_avg_points) * 100).toFixed(0) : 0;
+        return `${pct}% of avg`;
+      }
+      return `${pick.pts_per_dollar?.toFixed(1) || pick.value?.toFixed(1)}/$`;
+    };
 
     return (
       <div className={`rounded bg-gradient-to-br ${c.bg} px-2 py-1.5 border ${c.border}`}>
@@ -167,8 +188,8 @@ function Draft() {
         </div>
         <div className="flex items-center justify-between text-[10px] mt-0.5">
           <span className="text-white/50 truncate">{pick.owner}</span>
-          <span className={isSnake ? (isBest ? 'text-cyan-400' : 'text-rose-400') : (isBest ? 'text-blue-400' : 'text-gray-400')}>
-            {pick.total_points.toFixed(0)}pts • {isSnake ? `${pick.value >= 0 ? '+' : ''}${pick.value.toFixed(0)}` : `${pick.value.toFixed(1)}/$`}
+          <span className={c.metric}>
+            {pick.total_points?.toFixed(0)}pts • {getMetricDisplay()}
           </span>
         </div>
       </div>
@@ -325,17 +346,72 @@ function Draft() {
 
         {/* Value Picks Sidebar - Flex layout to avoid gaps */}
         <div className="flex flex-col gap-3">
-          {/* Best Auction Picks */}
-          {showAuctionValuePicks && filteredBestPicks.length > 0 && (
-            <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-red-500/10 p-0.5">
+          {/* Best Steals - Cheap picks that returned huge value */}
+          {showAuctionValuePicks && filteredBestSteals.length > 0 && (
+            <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-emerald-500/10 via-green-500/10 to-teal-500/10 p-0.5">
+              <div className="bg-slate-900/90 backdrop-blur-xl rounded-lg p-3 border border-white/10">
+                <h3 className="text-sm font-bold bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent mb-2 flex items-center space-x-1">
+                  <span>💎</span>
+                  <span>Best Steals {filterLabel}</span>
+                </h3>
+                <p className="text-[10px] text-white/40 mb-2">$2-15 picks with 100+ points</p>
+                <div className="space-y-1.5">
+                  {filteredBestSteals.slice(0, 5).map((pick, index) => (
+                    <ValuePickCard key={index} pick={pick} type="steals" />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Best Investments - Expensive picks that paid off */}
+          {showAuctionValuePicks && filteredBestInvestments.length > 0 && (
+            <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-amber-500/10 p-0.5">
               <div className="bg-slate-900/90 backdrop-blur-xl rounded-lg p-3 border border-white/10">
                 <h3 className="text-sm font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-2 flex items-center space-x-1">
-                  <span>🌟</span>
-                  <span>Best Value {filterLabel}</span>
+                  <span>🏆</span>
+                  <span>Best Investments {filterLabel}</span>
                 </h3>
+                <p className="text-[10px] text-white/40 mb-2">$30+ picks exceeding position avg</p>
                 <div className="space-y-1.5">
-                  {filteredBestPicks.slice(0, 5).map((pick, index) => (
-                    <ValuePickCard key={index} pick={pick} type="best" />
+                  {filteredBestInvestments.slice(0, 5).map((pick, index) => (
+                    <ValuePickCard key={index} pick={pick} type="investments" />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Biggest Busts - Expensive picks that flopped */}
+          {showAuctionValuePicks && filteredBiggestBusts.length > 0 && (
+            <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-red-500/10 via-rose-500/10 to-pink-500/10 p-0.5">
+              <div className="bg-slate-900/90 backdrop-blur-xl rounded-lg p-3 border border-white/10">
+                <h3 className="text-sm font-bold bg-gradient-to-r from-red-400 to-rose-400 bg-clip-text text-transparent mb-2 flex items-center space-x-1">
+                  <span>💸</span>
+                  <span>Biggest Busts {filterLabel}</span>
+                </h3>
+                <p className="text-[10px] text-white/40 mb-2">$25+ picks under 60% of position avg</p>
+                <div className="space-y-1.5">
+                  {filteredBiggestBusts.slice(0, 5).map((pick, index) => (
+                    <ValuePickCard key={index} pick={pick} type="busts" />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Best Overall Value - Top pts/$ */}
+          {showAuctionValuePicks && filteredBestOverallValue.length > 0 && (
+            <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-violet-500/10 p-0.5">
+              <div className="bg-slate-900/90 backdrop-blur-xl rounded-lg p-3 border border-white/10">
+                <h3 className="text-sm font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-2 flex items-center space-x-1">
+                  <span>⭐</span>
+                  <span>Best Overall Value {filterLabel}</span>
+                </h3>
+                <p className="text-[10px] text-white/40 mb-2">Highest points per dollar</p>
+                <div className="space-y-1.5">
+                  {filteredBestOverallValue.slice(0, 5).map((pick, index) => (
+                    <ValuePickCard key={index} pick={pick} type="overall" />
                   ))}
                 </div>
               </div>
@@ -344,32 +420,16 @@ function Draft() {
 
           {/* Best Snake Picks */}
           {showSnakeValuePicks && filteredBestSnakePicks.length > 0 && (
-            <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-emerald-500/10 via-teal-500/10 to-cyan-500/10 p-0.5">
+            <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-teal-500/10 via-cyan-500/10 to-sky-500/10 p-0.5">
               <div className="bg-slate-900/90 backdrop-blur-xl rounded-lg p-3 border border-white/10">
-                <h3 className="text-sm font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2 flex items-center space-x-1">
+                <h3 className="text-sm font-bold bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent mb-2 flex items-center space-x-1">
                   <span>🐍</span>
                   <span>Snake Steals {filterLabel}</span>
                 </h3>
+                <p className="text-[10px] text-white/40 mb-2">Outperformed draft position</p>
                 <div className="space-y-1.5">
                   {filteredBestSnakePicks.slice(0, 5).map((pick, index) => (
                     <ValuePickCard key={index} pick={pick} type="bestSnake" />
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Worst Auction Picks */}
-          {showAuctionValuePicks && filteredWorstPicks.length > 0 && (
-            <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-red-500/10 via-gray-500/10 to-slate-500/10 p-0.5">
-              <div className="bg-slate-900/90 backdrop-blur-xl rounded-lg p-3 border border-white/10">
-                <h3 className="text-sm font-bold bg-gradient-to-r from-red-400 to-gray-400 bg-clip-text text-transparent mb-2 flex items-center space-x-1">
-                  <span>💸</span>
-                  <span>Worst Value {filterLabel}</span>
-                </h3>
-                <div className="space-y-1.5">
-                  {filteredWorstPicks.slice(0, 5).map((pick, index) => (
-                    <ValuePickCard key={index} pick={pick} type="worst" />
                   ))}
                 </div>
               </div>
@@ -384,6 +444,7 @@ function Draft() {
                   <span>🐍</span>
                   <span>Snake Busts {filterLabel}</span>
                 </h3>
+                <p className="text-[10px] text-white/40 mb-2">Underperformed draft position</p>
                 <div className="space-y-1.5">
                   {filteredWorstSnakePicks.slice(0, 5).map((pick, index) => (
                     <ValuePickCard key={index} pick={pick} type="worstSnake" />

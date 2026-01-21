@@ -118,6 +118,22 @@ export const apiService = {
     const data = await fetchJSON('worst_snake_picks.json');
     return { data };
   },
+  getBestSteals: async () => {
+    const data = await fetchJSON('best_steals.json');
+    return { data };
+  },
+  getBestInvestments: async () => {
+    const data = await fetchJSON('best_investments.json');
+    return { data };
+  },
+  getBiggestBusts: async () => {
+    const data = await fetchJSON('biggest_busts.json');
+    return { data };
+  },
+  getBestOverallValue: async () => {
+    const data = await fetchJSON('best_overall_value.json');
+    return { data };
+  },
 
   // Rosters
   getRosters: async () => {
@@ -132,6 +148,10 @@ export const apiService = {
   },
   getBestTrades: async () => {
     const data = await fetchJSON('best_trades.json');
+    return { data };
+  },
+  getKeeperFlipTrades: async () => {
+    const data = await fetchJSON('keeper_flip_trades.json');
     return { data };
   },
   getTradeRecords: async () => {

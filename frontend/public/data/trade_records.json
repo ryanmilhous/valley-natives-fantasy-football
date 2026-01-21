@@ -3,84 +3,168 @@
     "wins": 3,
     "losses": 1,
     "ties": 1,
-    "net_points": 412.56
+    "net_points": 412.56,
+    "longterm_wins": 2,
+    "longterm_losses": 3,
+    "longterm_ties": 0,
+    "longterm_net_points": 115.20000000000005,
+    "keeper_flips_won": 0,
+    "keeper_flips_lost": 1
   },
   "Ryan Milhous": {
     "wins": 1,
     "losses": 2,
     "ties": 0,
-    "net_points": -214.48000000000002
+    "net_points": -214.48000000000002,
+    "longterm_wins": 0,
+    "longterm_losses": 3,
+    "longterm_ties": 0,
+    "longterm_net_points": -294.82,
+    "keeper_flips_won": 0,
+    "keeper_flips_lost": 1
   },
   "Chris Vitale": {
     "wins": 2,
     "losses": 3,
     "ties": 1,
-    "net_points": -495.15999999999997
+    "net_points": -495.15999999999997,
+    "longterm_wins": 4,
+    "longterm_losses": 2,
+    "longterm_ties": 0,
+    "longterm_net_points": -368.54,
+    "keeper_flips_won": 1,
+    "keeper_flips_lost": 0
   },
   "Garrett Ulrich": {
     "wins": 2,
     "losses": 7,
     "ties": 0,
-    "net_points": -283.90000000000003
+    "net_points": -283.90000000000003,
+    "longterm_wins": 4,
+    "longterm_losses": 5,
+    "longterm_ties": 0,
+    "longterm_net_points": 51.53999999999996,
+    "keeper_flips_won": 2,
+    "keeper_flips_lost": 0
   },
   "Kyle Poppen": {
     "wins": 5,
     "losses": 1,
     "ties": 1,
-    "net_points": 392.3
+    "net_points": 392.3,
+    "longterm_wins": 3,
+    "longterm_losses": 3,
+    "longterm_ties": 1,
+    "longterm_net_points": -230.99999999999997,
+    "keeper_flips_won": 0,
+    "keeper_flips_lost": 2
   },
   "Greg Swenson": {
     "wins": 1,
     "losses": 1,
     "ties": 0,
-    "net_points": 44.32
+    "net_points": 44.32,
+    "longterm_wins": 1,
+    "longterm_losses": 1,
+    "longterm_ties": 0,
+    "longterm_net_points": 44.32,
+    "keeper_flips_won": 0,
+    "keeper_flips_lost": 0
   },
   "Nick Smielak": {
     "wins": 5,
     "losses": 2,
     "ties": 0,
-    "net_points": 77.16
+    "net_points": 77.16,
+    "longterm_wins": 4,
+    "longterm_losses": 3,
+    "longterm_ties": 0,
+    "longterm_net_points": 31.960000000000004,
+    "keeper_flips_won": 0,
+    "keeper_flips_lost": 1
   },
   "Ben Beck": {
     "wins": 4,
     "losses": 1,
     "ties": 0,
-    "net_points": 730.46
+    "net_points": 730.46,
+    "longterm_wins": 4,
+    "longterm_losses": 1,
+    "longterm_ties": 0,
+    "longterm_net_points": 434.65999999999997,
+    "keeper_flips_won": 0,
+    "keeper_flips_lost": 0
   },
   "Jeremy Settles": {
     "wins": 1,
     "losses": 1,
     "ties": 0,
-    "net_points": 152.18
+    "net_points": 152.18,
+    "longterm_wins": 1,
+    "longterm_losses": 1,
+    "longterm_ties": 0,
+    "longterm_net_points": 1329.88,
+    "keeper_flips_won": 0,
+    "keeper_flips_lost": 0
   },
   "Jamie Coffis": {
     "wins": 0,
     "losses": 2,
     "ties": 0,
-    "net_points": -343.92
+    "net_points": -343.92,
+    "longterm_wins": 0,
+    "longterm_losses": 2,
+    "longterm_ties": 0,
+    "longterm_net_points": -1521.6200000000001,
+    "keeper_flips_won": 0,
+    "keeper_flips_lost": 0
   },
   "Kellen Coffis": {
     "wins": 1,
     "losses": 3,
     "ties": 1,
-    "net_points": -61.139999999999986
+    "net_points": -61.139999999999986,
+    "longterm_wins": 2,
+    "longterm_losses": 2,
+    "longterm_ties": 1,
+    "longterm_net_points": 105.66000000000001,
+    "keeper_flips_won": 1,
+    "keeper_flips_lost": 0
   },
   "Rory McKee": {
     "wins": 1,
     "losses": 2,
     "ties": 0,
-    "net_points": -361.22
+    "net_points": -361.22,
+    "longterm_wins": 2,
+    "longterm_losses": 1,
+    "longterm_ties": 0,
+    "longterm_net_points": 358.21999999999997,
+    "keeper_flips_won": 1,
+    "keeper_flips_lost": 0
   },
   "Bryan Whitaker": {
     "wins": 2,
     "losses": 1,
     "ties": 0,
-    "net_points": 30.52000000000001
+    "net_points": 30.52000000000001,
+    "longterm_wins": 2,
+    "longterm_losses": 1,
+    "longterm_ties": 0,
+    "longterm_net_points": 507.12,
+    "keeper_flips_won": 0,
+    "keeper_flips_lost": 0
   },
   "Brendan Romele": {
     "wins": 0,
     "losses": 1,
     "ties": 0,
-    "net_points": -79.68
+    "net_points": -79.68,
+    "longterm_wins": 0,
+    "longterm_losses": 1,
+    "longterm_ties": 0,
+    "longterm_net_points": -562.58,
+    "keeper_flips_won": 0,
+    "keeper_flips_lost": 0
   }
 }

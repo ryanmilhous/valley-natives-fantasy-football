@@ -4,6 +4,7 @@ import apiService from '../services/api';
 function Trades() {
   const [trades, setTrades] = useState([]);
   const [bestTrades, setBestTrades] = useState([]);
+  const [keeperFlipTrades, setKeeperFlipTrades] = useState([]);
   const [filteredTrades, setFilteredTrades] = useState([]);
   const [selectedYear, setSelectedYear] = useState('all');
   const [selectedOwner, setSelectedOwner] = useState('all');
@@ -12,12 +13,14 @@ function Trades() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [tradesResponse, bestResponse] = await Promise.all([
+        const [tradesResponse, bestResponse, keeperFlipResponse] = await Promise.all([
           apiService.getTrades(),
-          apiService.getBestTrades()
+          apiService.getBestTrades(),
+          apiService.getKeeperFlipTrades()
         ]);
         setTrades(tradesResponse.data);
         setBestTrades(bestResponse.data);
+        setKeeperFlipTrades(keeperFlipResponse.data);
         setFilteredTrades(tradesResponse.data);
       } catch (error) {
         console.error('Error fetching trades:', error);
@@ -148,7 +151,7 @@ function Trades() {
               <div key={trade.transaction_id || index} className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500/10 via-teal-500/10 to-cyan-500/10 p-1">
                 <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-6 border border-white/10">
                   {/* Trade Header */}
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
                     <div className="flex items-center space-x-3">
                       <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-semibold border border-emerald-500/30">
                         {trade.year}
@@ -156,39 +159,62 @@ function Trades() {
                       <span className="text-white/50 text-sm">
                         {trade.trade_timing || (trade.week ? `Week ${trade.week}` : 'Offseason')}
                       </span>
-                    </div>
-                    {/* Winner Badge */}
-                    {trade.winner && trade.winner !== 'tie' && trade.point_differential > 0 && (
-                      <div className="flex items-center space-x-2">
-                        <span className="text-xs text-white/50">Winner:</span>
-                        <span className="px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-sm font-semibold border border-yellow-500/30">
-                          {trade.winner_owner} (+{trade.point_differential.toFixed(0)} pts)
+                      {trade.keeper_flip && (
+                        <span className="px-2 py-1 rounded-full bg-purple-500/20 text-purple-400 text-xs font-semibold border border-purple-500/30">
+                          🔄 Keeper Flip
                         </span>
-                      </div>
-                    )}
-                    {trade.winner === 'tie' && (
-                      <span className="px-3 py-1 rounded-full bg-white/10 text-white/60 text-sm font-semibold border border-white/20">
-                        Even Trade
-                      </span>
-                    )}
+                      )}
+                    </div>
+                    {/* Winner Badges */}
+                    <div className="flex items-center space-x-2 flex-wrap gap-2">
+                      {trade.winner && trade.winner !== 'tie' && trade.point_differential > 0 && (
+                        <div className="flex items-center space-x-2">
+                          <span className="text-xs text-white/50">Season:</span>
+                          <span className="px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-sm font-semibold border border-yellow-500/30">
+                            {trade.winner_owner} (+{trade.point_differential.toFixed(0)})
+                          </span>
+                        </div>
+                      )}
+                      {trade.longterm_winner && trade.longterm_winner !== 'tie' && trade.longterm_differential > 0 && (trade.side1?.keeper_points > 0 || trade.side2?.keeper_points > 0) && (
+                        <div className="flex items-center space-x-2">
+                          <span className="text-xs text-white/50">Long-term:</span>
+                          <span className={`px-3 py-1 rounded-full text-sm font-semibold border ${trade.keeper_flip ? 'bg-purple-500/20 text-purple-400 border-purple-500/30' : 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30'}`}>
+                            {trade.longterm_winner_owner} (+{trade.longterm_differential.toFixed(0)})
+                          </span>
+                        </div>
+                      )}
+                      {trade.winner === 'tie' && !trade.keeper_flip && (
+                        <span className="px-3 py-1 rounded-full bg-white/10 text-white/60 text-sm font-semibold border border-white/20">
+                          Even Trade
+                        </span>
+                      )}
+                    </div>
                   </div>
 
                   {/* Trade Details */}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Side 1 */}
-                    <div className={`space-y-3 p-4 rounded-xl ${trade.winner === 'side1' ? 'bg-green-500/5 border border-green-500/20' : 'bg-slate-800/30'}`}>
+                    <div className={`space-y-3 p-4 rounded-xl ${trade.winner === 'side1' ? 'bg-green-500/5 border border-green-500/20' : trade.longterm_winner === 'side1' && trade.keeper_flip ? 'bg-purple-500/5 border border-purple-500/20' : 'bg-slate-800/30'}`}>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-2">
-                          <span className={`text-lg font-bold ${trade.winner === 'side1' ? 'text-green-400' : 'text-emerald-400'}`}>
+                          <span className={`text-lg font-bold ${trade.winner === 'side1' ? 'text-green-400' : trade.longterm_winner === 'side1' && trade.keeper_flip ? 'text-purple-400' : 'text-emerald-400'}`}>
                             {trade.side1.owner}
                           </span>
                           {trade.winner === 'side1' && (
                             <span className="text-green-400 text-sm">✓</span>
                           )}
+                          {trade.longterm_winner === 'side1' && trade.keeper_flip && (
+                            <span className="text-purple-400 text-sm">🔄</span>
+                          )}
                         </div>
-                        {trade.side1.total_points > 0 && (
-                          <span className="text-sm text-white/50">{trade.side1.total_points.toFixed(1)} pts</span>
-                        )}
+                        <div className="text-right">
+                          {trade.side1.total_points > 0 && (
+                            <div className="text-sm text-white/50">{trade.side1.total_points.toFixed(1)} pts</div>
+                          )}
+                          {trade.side1.keeper_points > 0 && (
+                            <div className="text-xs text-purple-400">+{trade.side1.keeper_points.toFixed(0)} keeper</div>
+                          )}
+                        </div>
                       </div>
                       <div className="text-xs text-white/50 mb-2">receives</div>
                       <div className="space-y-2">
@@ -212,19 +238,27 @@ function Trades() {
                     </div>
 
                     {/* Side 2 */}
-                    <div className={`space-y-3 p-4 rounded-xl ${trade.winner === 'side2' ? 'bg-green-500/5 border border-green-500/20' : 'bg-slate-800/30'}`}>
+                    <div className={`space-y-3 p-4 rounded-xl ${trade.winner === 'side2' ? 'bg-green-500/5 border border-green-500/20' : trade.longterm_winner === 'side2' && trade.keeper_flip ? 'bg-purple-500/5 border border-purple-500/20' : 'bg-slate-800/30'}`}>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-2">
-                          <span className={`text-lg font-bold ${trade.winner === 'side2' ? 'text-green-400' : 'text-cyan-400'}`}>
+                          <span className={`text-lg font-bold ${trade.winner === 'side2' ? 'text-green-400' : trade.longterm_winner === 'side2' && trade.keeper_flip ? 'text-purple-400' : 'text-cyan-400'}`}>
                             {trade.side2.owner}
                           </span>
                           {trade.winner === 'side2' && (
                             <span className="text-green-400 text-sm">✓</span>
                           )}
+                          {trade.longterm_winner === 'side2' && trade.keeper_flip && (
+                            <span className="text-purple-400 text-sm">🔄</span>
+                          )}
                         </div>
-                        {trade.side2.total_points > 0 && (
-                          <span className="text-sm text-white/50">{trade.side2.total_points.toFixed(1)} pts</span>
-                        )}
+                        <div className="text-right">
+                          {trade.side2.total_points > 0 && (
+                            <div className="text-sm text-white/50">{trade.side2.total_points.toFixed(1)} pts</div>
+                          )}
+                          {trade.side2.keeper_points > 0 && (
+                            <div className="text-xs text-purple-400">+{trade.side2.keeper_points.toFixed(0)} keeper</div>
+                          )}
+                        </div>
                       </div>
                       <div className="text-xs text-white/50 mb-2">receives</div>
                       <div className="space-y-2">
@@ -253,8 +287,56 @@ function Trades() {
           </div>
         </div>
 
-        {/* Sidebar - Most Lopsided Trades */}
+        {/* Sidebar - Most Lopsided Trades & Keeper Flips */}
         <div className="space-y-6">
+          {/* Keeper Flip Trades */}
+          {keeperFlipTrades.length > 0 && (
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/10 via-violet-500/10 to-fuchsia-500/10 p-1">
+              <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-4 border border-white/10">
+                <h3 className="text-lg font-bold text-purple-400 mb-2 flex items-center">
+                  <span className="mr-2">🔄</span> Keeper Payoffs
+                </h3>
+                <p className="text-xs text-white/50 mb-4">Lost the season, won long-term</p>
+                <div className="space-y-4">
+                  {keeperFlipTrades.slice(0, 5).map((trade, idx) => {
+                    const ltWinnerSide = trade.longterm_winner === 'side1' ? trade.side1 : trade.side2;
+                    const ltLoserSide = trade.longterm_winner === 'side1' ? trade.side2 : trade.side1;
+                    return (
+                      <div key={idx} className="bg-slate-800/50 rounded-lg p-3">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-purple-400 font-semibold text-sm">
+                            {trade.year} {trade.trade_timing || (trade.week ? `Week ${trade.week}` : 'Offseason')}
+                          </span>
+                        </div>
+                        {/* Long-term winner */}
+                        <div className="mb-2">
+                          <div className="text-xs text-purple-400 font-medium mb-1">
+                            {trade.longterm_winner_owner}
+                          </div>
+                          <div className="space-y-0.5 text-xs">
+                            <div className="text-red-400/80">Season: {ltWinnerSide.total_points.toFixed(0)} pts</div>
+                            <div className="text-green-400">+Keeper: {ltWinnerSide.keeper_points.toFixed(0)} pts</div>
+                            <div className="text-purple-300 font-medium">Total: {ltWinnerSide.total_value.toFixed(0)} pts</div>
+                          </div>
+                        </div>
+                        {/* Immediate winner (long-term loser) */}
+                        <div className="border-t border-white/10 pt-2 mt-2">
+                          <div className="text-xs text-white/50 mb-1">
+                            {trade.winner_owner} (won season)
+                          </div>
+                          <div className="text-xs text-white/40">
+                            Total: {ltLoserSide.total_value.toFixed(0)} pts
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Most Lopsided Trades */}
           <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-amber-500/10 via-orange-500/10 to-red-500/10 p-1">
             <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-4 border border-white/10">
               <h3 className="text-lg font-bold text-amber-400 mb-4 flex items-center">

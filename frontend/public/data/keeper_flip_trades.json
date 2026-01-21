@@ -1,0 +1,522 @@
+[
+  {
+    "year": 2023,
+    "week": "12",
+    "transaction_id": "13185247",
+    "timestamp": "2023-11-23 00:55:50",
+    "side1": {
+      "owner": "Kyle Poppen",
+      "received": [
+        {
+          "player_id": "00-0035289",
+          "player_name": "Gardner Minshew",
+          "position": "QB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0037240",
+          "player_name": "Jameson Williams",
+          "position": "WR"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 47.42,
+      "keeper_points": 0,
+      "total_value": 47.42,
+      "players_with_stats": [
+        {
+          "name": "Gardner Minshew",
+          "position": "QB",
+          "points": 47.42
+        }
+      ]
+    },
+    "side2": {
+      "owner": "Garrett Ulrich",
+      "received": [
+        {
+          "player_id": "00-0037240",
+          "player_name": "Jameson Williams",
+          "position": "WR"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0035289",
+          "player_name": "Gardner Minshew",
+          "position": "QB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 16.0,
+      "keeper_points": 307.5,
+      "total_value": 323.5,
+      "players_with_stats": [
+        {
+          "name": "Jameson Williams",
+          "position": "WR",
+          "points": 16.0,
+          "keeper_years": [
+            {
+              "year": 2024,
+              "points": 120.1
+            },
+            {
+              "year": 2025,
+              "points": 187.4
+            }
+          ],
+          "keeper_points": 307.5
+        }
+      ]
+    },
+    "summary": "Kyle Poppen receives Gardner Minshew; Garrett Ulrich receives Jameson Williams",
+    "trade_timing": "Week 12",
+    "winner": "side1",
+    "winner_owner": "Kyle Poppen",
+    "point_differential": 31.42,
+    "longterm_winner": "side2",
+    "longterm_winner_owner": "Garrett Ulrich",
+    "longterm_differential": 276.08,
+    "keeper_flip": true
+  },
+  {
+    "year": 2024,
+    "week": "11",
+    "transaction_id": "13185190",
+    "timestamp": "2024-11-12 21:01:16",
+    "side1": {
+      "owner": "Kyle Poppen",
+      "received": [
+        {
+          "player_id": "00-0039065",
+          "player_name": "Sam LaPorta",
+          "position": "TE"
+        },
+        {
+          "player_id": "00-0039165",
+          "player_name": "Zach Charbonnet",
+          "position": "RB"
+        },
+        {
+          "player_id": "00-0035685",
+          "player_name": "David Montgomery",
+          "position": "RB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0037744",
+          "player_name": "Trey McBride",
+          "position": "TE"
+        },
+        {
+          "player_id": "00-0039344",
+          "player_name": "Jonathon Brooks",
+          "position": "RB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 143.6,
+      "keeper_points": 0,
+      "total_value": 143.6,
+      "players_with_stats": [
+        {
+          "name": "Sam LaPorta",
+          "position": "TE",
+          "points": 25.4
+        },
+        {
+          "name": "Zach Charbonnet",
+          "position": "RB",
+          "points": 49.6
+        },
+        {
+          "name": "David Montgomery",
+          "position": "RB",
+          "points": 68.6
+        }
+      ]
+    },
+    "side2": {
+      "owner": "Chris Vitale",
+      "received": [
+        {
+          "player_id": "00-0037744",
+          "player_name": "Trey McBride",
+          "position": "TE"
+        },
+        {
+          "player_id": "00-0039344",
+          "player_name": "Jonathon Brooks",
+          "position": "RB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0039065",
+          "player_name": "Sam LaPorta",
+          "position": "TE"
+        },
+        {
+          "player_id": "00-0039165",
+          "player_name": "Zach Charbonnet",
+          "position": "RB"
+        },
+        {
+          "player_id": "00-0035685",
+          "player_name": "David Montgomery",
+          "position": "RB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 51.4,
+      "keeper_points": 252.9,
+      "total_value": 304.3,
+      "players_with_stats": [
+        {
+          "name": "Trey McBride",
+          "position": "TE",
+          "points": 45.4,
+          "keeper_years": [
+            {
+              "year": 2025,
+              "points": 252.9
+            }
+          ],
+          "keeper_points": 252.9
+        },
+        {
+          "name": "Jonathon Brooks",
+          "position": "RB",
+          "points": 6.0
+        }
+      ]
+    },
+    "summary": "Kyle Poppen receives Sam LaPorta, Zach Charbonnet, David Montgomery; Chris Vitale receives Trey McBride, Jonathon Brooks",
+    "trade_timing": "Week 11",
+    "winner": "side1",
+    "winner_owner": "Kyle Poppen",
+    "point_differential": 92.2,
+    "longterm_winner": "side2",
+    "longterm_winner_owner": "Chris Vitale",
+    "longterm_differential": 160.7,
+    "keeper_flip": true
+  },
+  {
+    "year": 2019,
+    "week": "0",
+    "transaction_id": "13253788",
+    "timestamp": "2019-08-18 16:18:28",
+    "side1": {
+      "owner": "Rory McKee",
+      "received": [
+        {
+          "player_id": "00-0033594",
+          "player_name": "Chris Carson",
+          "position": "RB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0033873",
+          "player_name": "Patrick Mahomes",
+          "position": "QB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 170.8,
+      "keeper_points": 170.5,
+      "total_value": 341.3,
+      "players_with_stats": [
+        {
+          "name": "Chris Carson",
+          "position": "RB",
+          "points": 170.8,
+          "keeper_years": [
+            {
+              "year": 2020,
+              "points": 125.4
+            },
+            {
+              "year": 2021,
+              "points": 45.1
+            }
+          ],
+          "keeper_points": 170.5
+        }
+      ]
+    },
+    "side2": {
+      "owner": "Jacob Luna",
+      "received": [
+        {
+          "player_id": "00-0033873",
+          "player_name": "Patrick Mahomes",
+          "position": "QB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0033594",
+          "player_name": "Chris Carson",
+          "position": "RB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 213.92,
+      "keeper_points": 0,
+      "total_value": 213.92,
+      "players_with_stats": [
+        {
+          "name": "Patrick Mahomes",
+          "position": "QB",
+          "points": 213.92
+        }
+      ]
+    },
+    "summary": "Rory McKee receives Chris Carson; Jacob Luna receives Patrick Mahomes",
+    "trade_timing": "Offseason",
+    "winner": "side2",
+    "winner_owner": "Jacob Luna",
+    "point_differential": 43.12,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Rory McKee",
+    "longterm_differential": 127.38,
+    "keeper_flip": true
+  },
+  {
+    "year": 2020,
+    "week": "3",
+    "transaction_id": "13254189",
+    "timestamp": "2020-09-25 21:54:02",
+    "side1": {
+      "owner": "Kellen Coffis",
+      "received": [
+        {
+          "player_id": "00-0027061",
+          "player_name": "Jared Cook",
+          "position": "TE"
+        },
+        {
+          "player_id": "00-0032063",
+          "player_name": "Mike Davis",
+          "position": "RB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0029263",
+          "player_name": "Russell Wilson",
+          "position": "QB"
+        },
+        {
+          "player_id": "00-0034766",
+          "player_name": "Chris Herndon",
+          "position": "TE"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 156.3,
+      "keeper_points": 97.6,
+      "total_value": 253.9,
+      "players_with_stats": [
+        {
+          "name": "Jared Cook",
+          "position": "TE",
+          "points": 30.5
+        },
+        {
+          "name": "Mike Davis",
+          "position": "RB",
+          "points": 125.8,
+          "keeper_years": [
+            {
+              "year": 2021,
+              "points": 97.6
+            }
+          ],
+          "keeper_points": 97.6
+        }
+      ]
+    },
+    "side2": {
+      "owner": "Nick Smielak",
+      "received": [
+        {
+          "player_id": "00-0029263",
+          "player_name": "Russell Wilson",
+          "position": "QB"
+        },
+        {
+          "player_id": "00-0034766",
+          "player_name": "Chris Herndon",
+          "position": "TE"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0027061",
+          "player_name": "Jared Cook",
+          "position": "TE"
+        },
+        {
+          "player_id": "00-0032063",
+          "player_name": "Mike Davis",
+          "position": "RB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 225.96,
+      "keeper_points": 0,
+      "total_value": 225.96,
+      "players_with_stats": [
+        {
+          "name": "Russell Wilson",
+          "position": "QB",
+          "points": 222.36
+        },
+        {
+          "name": "Chris Herndon",
+          "position": "TE",
+          "points": 3.6
+        }
+      ]
+    },
+    "summary": "Kellen Coffis receives Jared Cook, Mike Davis; Nick Smielak receives Russell Wilson, Chris Herndon",
+    "trade_timing": "Week 3",
+    "winner": "side2",
+    "winner_owner": "Nick Smielak",
+    "point_differential": 69.66,
+    "longterm_winner": "side1",
+    "longterm_winner_owner": "Kellen Coffis",
+    "longterm_differential": 27.94,
+    "keeper_flip": true
+  },
+  {
+    "year": 2024,
+    "week": "0",
+    "transaction_id": "13185339",
+    "timestamp": "2024-08-20 15:10:20",
+    "side1": {
+      "owner": "Ryan Milhous",
+      "received": [
+        {
+          "player_id": "00-0036442",
+          "player_name": "Joe Burrow",
+          "position": "QB"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0036275",
+          "player_name": "D'Andre Swift",
+          "position": "RB"
+        },
+        {
+          "player_id": "00-0031408",
+          "player_name": "Mike Evans",
+          "position": "WR"
+        },
+        {
+          "player_id": "00-0036252",
+          "player_name": "Michael Pittman",
+          "position": "WR"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 284.04,
+      "keeper_points": 134.46,
+      "total_value": 418.5,
+      "players_with_stats": [
+        {
+          "name": "Joe Burrow",
+          "position": "QB",
+          "points": 284.04,
+          "keeper_years": [
+            {
+              "year": 2025,
+              "points": 134.46
+            }
+          ],
+          "keeper_points": 134.46
+        }
+      ]
+    },
+    "side2": {
+      "owner": "Garrett Ulrich",
+      "received": [
+        {
+          "player_id": "00-0036275",
+          "player_name": "D'Andre Swift",
+          "position": "RB"
+        },
+        {
+          "player_id": "00-0031408",
+          "player_name": "Mike Evans",
+          "position": "WR"
+        },
+        {
+          "player_id": "00-0036252",
+          "player_name": "Michael Pittman",
+          "position": "WR"
+        }
+      ],
+      "sent": [
+        {
+          "player_id": "00-0036442",
+          "player_name": "Joe Burrow",
+          "position": "QB"
+        }
+      ],
+      "faab_received": 0,
+      "faab_sent": 0,
+      "total_points": 277.2,
+      "keeper_points": 162.4,
+      "total_value": 439.6,
+      "players_with_stats": [
+        {
+          "name": "D'Andre Swift",
+          "position": "RB",
+          "points": 154.7
+        },
+        {
+          "name": "Mike Evans",
+          "position": "WR",
+          "points": 122.5
+        },
+        {
+          "name": "Michael Pittman",
+          "position": "WR",
+          "points": 0,
+          "keeper_years": [
+            {
+              "year": 2025,
+              "points": 162.4
+            }
+          ],
+          "keeper_points": 162.4
+        }
+      ]
+    },
+    "summary": "Ryan Milhous receives Joe Burrow; Garrett Ulrich receives D'Andre Swift, Mike Evans, Michael Pittman",
+    "trade_timing": "Offseason",
+    "winner": "side1",
+    "winner_owner": "Ryan Milhous",
+    "point_differential": 6.84,
+    "longterm_winner": "side2",
+    "longterm_winner_owner": "Garrett Ulrich",
+    "longterm_differential": 21.1,
+    "keeper_flip": true
+  }
+]

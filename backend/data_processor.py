@@ -64,9 +64,17 @@ class FantasyDataProcessor:
             'rosters': [],
             'player_stats': [],
             'best_draft_picks': [],
+            'worst_draft_picks': [],
+            'best_steals': [],
+            'best_investments': [],
+            'biggest_busts': [],
+            'best_overall_value': [],
+            'best_snake_picks': [],
+            'worst_snake_picks': [],
             'optimal_lineups': [],
             'trades': [],
             'best_trades': [],
+            'keeper_flip_trades': [],
             'trade_records': {},
             'metadata': {}
         }
@@ -1192,29 +1200,71 @@ class FantasyDataProcessor:
             # Keep raw value for backward compatibility
             pick['value'] = pick['pts_per_dollar']
 
-        # Sort by value vs position (how much better than position average)
-        all_picks.sort(key=lambda x: x['value_vs_position'], reverse=True)
+        # Calculate position average points for comparison
+        position_avg_points = {}
+        for pos, data in position_totals.items():
+            if data['count'] > 0:
+                position_avg_points[pos] = data['total_pts'] / data['count']
 
-        # For both best and worst picks, only include picks that cost $20 or more
-        # This focuses on significant investments rather than cheap fliers
-        expensive_picks = [pick for pick in all_picks if pick['auction_cost'] >= 20]
+        # Add position average points to each pick for comparison
+        for pick in all_picks:
+            pos = pick.get('position')
+            pick['position_avg_points'] = round(position_avg_points.get(pos, 0), 2)
 
-        # For best picks, also exclude QBs from 2019-2021 (league moved to 2-QB format after 2021)
-        best_picks = [
-            pick for pick in expensive_picks
-            if not (pick.get('position') == 'QB' and pick['year'] in [2019, 2020, 2021])
+        # === CATEGORY 1: Best Steals ===
+        # Cheap picks ($2-15) that returned great value (100+ points)
+        steals = [
+            pick for pick in all_picks
+            if 2 <= pick['auction_cost'] <= 15
+            and pick['total_points'] >= 100
+            and pick['total_points'] > 0
         ]
-        self.processed_data['best_draft_picks'] = best_picks
+        steals.sort(key=lambda x: x['pts_per_dollar'], reverse=True)
+        self.processed_data['best_steals'] = steals[:50]
 
-        # For worst picks, filter out players with 0 or negative points (injuries/DNPs)
-        # Sort by value_vs_position ascending for worst picks
-        worst_picks = [pick for pick in expensive_picks if pick['total_points'] > 0]
-        worst_picks.sort(key=lambda x: x['value_vs_position'])
-        self.processed_data['worst_draft_picks'] = worst_picks
+        # === CATEGORY 2: Best Investments ===
+        # Expensive picks ($30+) that exceeded position average points by 25%+
+        investments = [
+            pick for pick in all_picks
+            if pick['auction_cost'] >= 30
+            and pick['total_points'] > 0
+            and pick['position_avg_points'] > 0
+            and pick['total_points'] >= pick['position_avg_points'] * 1.25
+        ]
+        investments.sort(key=lambda x: x['total_points'] - x['position_avg_points'], reverse=True)
+        self.processed_data['best_investments'] = investments[:50]
+
+        # === CATEGORY 3: Biggest Busts ===
+        # Expensive picks ($25+) that scored under 60% of position average (excluding injuries/0 pts)
+        busts = [
+            pick for pick in all_picks
+            if pick['auction_cost'] >= 25
+            and pick['total_points'] > 0
+            and pick['position_avg_points'] > 0
+            and pick['total_points'] < pick['position_avg_points'] * 0.6
+        ]
+        busts.sort(key=lambda x: x['total_points'] / x['position_avg_points'] if x['position_avg_points'] > 0 else 1)
+        self.processed_data['biggest_busts'] = busts[:50]
+
+        # === CATEGORY 4: Best Overall Value ===
+        # Top pts/$ across all picks (minimum $2, minimum 50 points to exclude flukes)
+        overall = [
+            pick for pick in all_picks
+            if pick['auction_cost'] >= 2
+            and pick['total_points'] >= 50
+        ]
+        overall.sort(key=lambda x: x['pts_per_dollar'], reverse=True)
+        self.processed_data['best_overall_value'] = overall[:50]
+
+        # Keep old format for backward compatibility
+        self.processed_data['best_draft_picks'] = self.processed_data['best_overall_value']
+        self.processed_data['worst_draft_picks'] = self.processed_data['biggest_busts']
 
         print(f"Analyzed {len(all_picks)} draft picks with performance data (keepers excluded)")
-        print(f"  - {len(best_picks)} picks ($20+, excluding QBs from 2019-2021) for best value analysis")
-        print(f"  - {len(worst_picks)} picks ($20+, positive points) for worst value analysis")
+        print(f"  - Best Steals ($2-15, 100+ pts): {len(self.processed_data['best_steals'])} picks")
+        print(f"  - Best Investments ($30+, 125%+ of avg): {len(self.processed_data['best_investments'])} picks")
+        print(f"  - Biggest Busts ($25+, <60% of avg): {len(self.processed_data['biggest_busts'])} picks")
+        print(f"  - Best Overall Value (top pts/$): {len(self.processed_data['best_overall_value'])} picks")
 
         # Calculate snake draft value (2007-2011)
         self.calculate_snake_draft_value(player_season_stats_by_id, player_season_stats_by_name)
@@ -1389,6 +1439,8 @@ class FantasyDataProcessor:
 
         # Build player weekly stats lookup: (year, player_name_lower, week) -> points
         player_weekly_points = defaultdict(float)
+        # Build player season totals: (year, player_name_lower) -> total_points
+        player_season_totals = defaultdict(float)
 
         for stat in self.processed_data['player_stats']:
             year = stat['year']
@@ -1396,6 +1448,17 @@ class FantasyDataProcessor:
             player_name = stat.get('player_name', '').strip().lower()
             points = stat.get('points', 0) or 0
             player_weekly_points[(year, player_name, week)] += points
+            player_season_totals[(year, player_name)] += points
+
+        # Build keeper lookup: (year, owner, player_name_lower) -> True if player was kept
+        keeper_lookup = set()
+        for pick in self.processed_data['draft']:
+            if pick.get('is_keeper'):
+                owner = pick.get('owner', '').strip()
+                player_name = pick.get('player_name', '').strip().lower()
+                year = pick.get('year')
+                if owner and player_name and year:
+                    keeper_lookup.add((year, owner, player_name))
 
         def get_points_from_week(year, player_name, from_week):
             """Sum points for a player from a specific week onward"""
@@ -1405,6 +1468,27 @@ class FantasyDataProcessor:
             for week in range(from_week, 19):
                 total += player_weekly_points.get((year, player_name_lower, week), 0)
             return total
+
+        def get_keeper_value(trade_year, owner, player_name, max_years=3):
+            """Calculate total points scored by player in subsequent keeper years for this owner"""
+            player_name_lower = player_name.strip().lower()
+            keeper_years = []
+            total_keeper_points = 0
+
+            for future_year in range(trade_year + 1, trade_year + max_years + 1):
+                if (future_year, owner, player_name_lower) in keeper_lookup:
+                    season_points = player_season_totals.get((future_year, player_name_lower), 0)
+                    if season_points > 0:
+                        keeper_years.append({
+                            'year': future_year,
+                            'points': round(season_points, 2)
+                        })
+                        total_keeper_points += season_points
+                else:
+                    # Stop tracking once they're no longer kept
+                    break
+
+            return keeper_years, round(total_keeper_points, 2)
 
         # Calculate value for each trade
         trades_with_value = []
@@ -1433,53 +1517,111 @@ class FantasyDataProcessor:
 
             # Calculate points for side 1's received players (from trade week onward)
             side1_points = 0
+            side1_keeper_points = 0
             side1_players_with_stats = []
+            side1_owner = trade['side1']['owner']
             for player in trade['side1'].get('received', []):
                 player_name = player.get('player_name', '')
                 points = get_points_from_week(year, player_name, count_from_week)
                 side1_points += points
-                if points > 0:
-                    side1_players_with_stats.append({
-                        'name': player.get('player_name'),
-                        'position': player.get('position'),
-                        'points': round(points, 2)
-                    })
+
+                # Calculate keeper value
+                keeper_years, keeper_total = get_keeper_value(year, side1_owner, player_name)
+                side1_keeper_points += keeper_total
+
+                player_stat = {
+                    'name': player.get('player_name'),
+                    'position': player.get('position'),
+                    'points': round(points, 2)
+                }
+                if keeper_years:
+                    player_stat['keeper_years'] = keeper_years
+                    player_stat['keeper_points'] = keeper_total
+
+                if points > 0 or keeper_total > 0:
+                    side1_players_with_stats.append(player_stat)
 
             # Calculate points for side 2's received players (from trade week onward)
             side2_points = 0
+            side2_keeper_points = 0
             side2_players_with_stats = []
+            side2_owner = trade['side2']['owner']
             for player in trade['side2'].get('received', []):
                 player_name = player.get('player_name', '')
                 points = get_points_from_week(year, player_name, count_from_week)
                 side2_points += points
-                if points > 0:
-                    side2_players_with_stats.append({
-                        'name': player.get('player_name'),
-                        'position': player.get('position'),
-                        'points': round(points, 2)
-                    })
 
-            # Determine winner
+                # Calculate keeper value
+                keeper_years, keeper_total = get_keeper_value(year, side2_owner, player_name)
+                side2_keeper_points += keeper_total
+
+                player_stat = {
+                    'name': player.get('player_name'),
+                    'position': player.get('position'),
+                    'points': round(points, 2)
+                }
+                if keeper_years:
+                    player_stat['keeper_years'] = keeper_years
+                    player_stat['keeper_points'] = keeper_total
+
+                if points > 0 or keeper_total > 0:
+                    side2_players_with_stats.append(player_stat)
+
+            # Determine immediate winner (same season)
             point_diff = side1_points - side2_points
             if abs(point_diff) < 5:  # Within 5 points = tie
-                winner = 'tie'
-                winner_owner = None
+                immediate_winner = 'tie'
+                immediate_winner_owner = None
             elif point_diff > 0:
-                winner = 'side1'
-                winner_owner = trade['side1']['owner']
+                immediate_winner = 'side1'
+                immediate_winner_owner = trade['side1']['owner']
             else:
-                winner = 'side2'
-                winner_owner = trade['side2']['owner']
+                immediate_winner = 'side2'
+                immediate_winner_owner = trade['side2']['owner']
+
+            # Determine long-term winner (including keeper years)
+            side1_total_value = side1_points + side1_keeper_points
+            side2_total_value = side2_points + side2_keeper_points
+            longterm_diff = side1_total_value - side2_total_value
+
+            if abs(longterm_diff) < 5:  # Within 5 points = tie
+                longterm_winner = 'tie'
+                longterm_winner_owner = None
+            elif longterm_diff > 0:
+                longterm_winner = 'side1'
+                longterm_winner_owner = trade['side1']['owner']
+            else:
+                longterm_winner = 'side2'
+                longterm_winner_owner = trade['side2']['owner']
+
+            # Check if there was a "keeper flip" - short-term loser became long-term winner
+            keeper_flip = (
+                immediate_winner != 'tie' and
+                longterm_winner != 'tie' and
+                immediate_winner != longterm_winner
+            )
 
             # Add value info to trade
             trade_with_value = trade.copy()
             trade_with_value['side1']['total_points'] = round(side1_points, 2)
+            trade_with_value['side1']['keeper_points'] = round(side1_keeper_points, 2)
+            trade_with_value['side1']['total_value'] = round(side1_total_value, 2)
             trade_with_value['side1']['players_with_stats'] = side1_players_with_stats
             trade_with_value['side2']['total_points'] = round(side2_points, 2)
+            trade_with_value['side2']['keeper_points'] = round(side2_keeper_points, 2)
+            trade_with_value['side2']['total_value'] = round(side2_total_value, 2)
             trade_with_value['side2']['players_with_stats'] = side2_players_with_stats
-            trade_with_value['winner'] = winner
-            trade_with_value['winner_owner'] = winner_owner
+
+            # Immediate (same-season) winner
+            trade_with_value['winner'] = immediate_winner
+            trade_with_value['winner_owner'] = immediate_winner_owner
             trade_with_value['point_differential'] = round(abs(point_diff), 2)
+
+            # Long-term winner (including keeper value)
+            trade_with_value['longterm_winner'] = longterm_winner
+            trade_with_value['longterm_winner_owner'] = longterm_winner_owner
+            trade_with_value['longterm_differential'] = round(abs(longterm_diff), 2)
+            trade_with_value['keeper_flip'] = keeper_flip
 
             trades_with_value.append(trade_with_value)
 
@@ -1492,12 +1634,23 @@ class FantasyDataProcessor:
         self.processed_data['best_trades'] = trades_with_winners[:10]  # Top 10 lopsided trades
         self.processed_data['worst_trades'] = trades_with_winners[:10]  # Same list, shown from loser's perspective
 
-        # Count wins/losses by owner
-        trade_record = defaultdict(lambda: {'wins': 0, 'losses': 0, 'ties': 0, 'net_points': 0})
+        # Identify keeper flip trades (short-term loser became long-term winner)
+        keeper_flip_trades = [t for t in trades_with_value if t.get('keeper_flip')]
+        keeper_flip_trades.sort(key=lambda x: x['longterm_differential'], reverse=True)
+        self.processed_data['keeper_flip_trades'] = keeper_flip_trades
+
+        # Count wins/losses by owner (both immediate and long-term)
+        trade_record = defaultdict(lambda: {
+            'wins': 0, 'losses': 0, 'ties': 0, 'net_points': 0,
+            'longterm_wins': 0, 'longterm_losses': 0, 'longterm_ties': 0, 'longterm_net_points': 0,
+            'keeper_flips_won': 0, 'keeper_flips_lost': 0
+        })
+
         for trade in trades_with_value:
             side1_owner = trade['side1']['owner']
             side2_owner = trade['side2']['owner']
 
+            # Immediate record
             if trade['winner'] == 'side1':
                 trade_record[side1_owner]['wins'] += 1
                 trade_record[side1_owner]['net_points'] += trade['point_differential']
@@ -1512,13 +1665,232 @@ class FantasyDataProcessor:
                 trade_record[side1_owner]['ties'] += 1
                 trade_record[side2_owner]['ties'] += 1
 
+            # Long-term record
+            if trade['longterm_winner'] == 'side1':
+                trade_record[side1_owner]['longterm_wins'] += 1
+                trade_record[side1_owner]['longterm_net_points'] += trade['longterm_differential']
+                trade_record[side2_owner]['longterm_losses'] += 1
+                trade_record[side2_owner]['longterm_net_points'] -= trade['longterm_differential']
+            elif trade['longterm_winner'] == 'side2':
+                trade_record[side2_owner]['longterm_wins'] += 1
+                trade_record[side2_owner]['longterm_net_points'] += trade['longterm_differential']
+                trade_record[side1_owner]['longterm_losses'] += 1
+                trade_record[side1_owner]['longterm_net_points'] -= trade['longterm_differential']
+            else:
+                trade_record[side1_owner]['longterm_ties'] += 1
+                trade_record[side2_owner]['longterm_ties'] += 1
+
+            # Keeper flip tracking
+            if trade.get('keeper_flip'):
+                if trade['longterm_winner'] == 'side1':
+                    trade_record[side1_owner]['keeper_flips_won'] += 1
+                    trade_record[side2_owner]['keeper_flips_lost'] += 1
+                elif trade['longterm_winner'] == 'side2':
+                    trade_record[side2_owner]['keeper_flips_won'] += 1
+                    trade_record[side1_owner]['keeper_flips_lost'] += 1
+
         self.processed_data['trade_records'] = dict(trade_record)
 
         trades_analyzed = len([t for t in trades_with_value if t['side1'].get('total_points', 0) > 0 or t['side2'].get('total_points', 0) > 0])
+        keeper_flips_count = len(keeper_flip_trades)
         print(f"Calculated trade values for {trades_analyzed} trades with player stats")
+        print(f"  - Found {keeper_flips_count} keeper flip trades (short-term loser became long-term winner)")
 
     def enrich_draft_with_positions(self):
         """Add position information to draft picks by matching with player stats or ID mapping"""
+        # NFL team names for detecting defenses
+        NFL_TEAMS = {
+            '49ers', 'bears', 'bengals', 'bills', 'broncos', 'browns', 'buccaneers',
+            'cardinals', 'chargers', 'chiefs', 'colts', 'commanders', 'cowboys',
+            'dolphins', 'eagles', 'falcons', 'giants', 'jaguars', 'jets', 'lions',
+            'packers', 'panthers', 'patriots', 'raiders', 'rams', 'ravens', 'redskins',
+            'saints', 'seahawks', 'steelers', 'texans', 'titans', 'vikings',
+            'san francisco', 'chicago', 'cincinnati', 'buffalo', 'denver', 'cleveland',
+            'tampa bay', 'arizona', 'los angeles', 'kansas city', 'indianapolis',
+            'washington', 'dallas', 'miami', 'philadelphia', 'atlanta', 'new york',
+            'jacksonville', 'detroit', 'green bay', 'carolina', 'new england',
+            'las vegas', 'baltimore', 'new orleans', 'seattle', 'pittsburgh',
+            'houston', 'tennessee', 'minnesota'
+        }
+
+        # Historical player position lookup for players missing from stats
+        HISTORICAL_PLAYER_POSITIONS = {
+            # 2012-2013 players
+            'mark ingram': 'RB',
+            'michael vick': 'QB',
+            'roy helu': 'RB',
+            'jon baldwin': 'WR',
+            'lamichael james': 'RB',
+            'jake locker': 'QB',
+            'isaiah pead': 'RB',
+            'blaine gabbert': 'QB',
+            'alex henery': 'K',
+            'delone carter': 'RB',
+            'taiwan jones': 'RB',
+            'brian quick': 'WR',
+            'john skelton': 'QB',
+            'stephen hill': 'WR',
+            'cecil shorts': 'WR',
+            'ryan otten': 'TE',
+            'dion sims': 'TE',
+            'johnathan franklin': 'RB',
+            'chris gragg': 'TE',
+            'virgil green': 'TE',
+            'evan rodriguez': 'TE',
+            'denarius moore': 'WR',
+            'daryl richardson': 'RB',
+            'kendall wright': 'WR',
+            'danny amendola': 'WR',
+            'david wilson': 'RB',
+            'ronnie hillman': 'RB',
+            'bernard pierce': 'RB',
+            'chris ivory': 'RB',
+            'lamar miller': 'RB',
+            'justin blackmon': 'WR',
+            'ryan broyles': 'WR',
+            't.y. hilton': 'WR',
+            'alshon jeffery': 'WR',
+            'robert griffin iii': 'QB',
+            'robert griffin': 'QB',
+            'rg3': 'QB',
+            'rgiii': 'QB',
+            'ryan tannehill': 'QB',
+            'andrew luck': 'QB',
+            'russell wilson': 'QB',
+            'nick foles': 'QB',
+            'josh gordon': 'WR',
+            'keenan allen': 'WR',
+            'eddie lacy': 'RB',
+            'zac stacy': 'RB',
+            'knowshon moreno': 'RB',
+            'andre ellington': 'RB',
+            'joique bell': 'RB',
+            'mike james': 'RB',
+            'bryce brown': 'RB',
+            'dexter mccluster': 'RB',
+            'marcel reece': 'RB',
+            'jacquizz rodgers': 'RB',
+            'mike tolbert': 'RB',
+            'vick ballard': 'RB',
+            'monte ball': 'RB',
+            'christine michael': 'RB',
+            'joseph randle': 'RB',
+            'carlos hyde': 'RB',
+            'terrance west': 'RB',
+            'jeremy hill': 'RB',
+            'tre mason': 'RB',
+            'bishop sankey': 'RB',
+            'devonta freeman': 'RB',
+            'isaiah crowell': 'RB',
+            'james white': 'RB',
+            'jerick mckinnon': 'RB',
+            'lorenzo taliaferro': 'RB',
+            'ka\'deem carey': 'RB',
+            'de\'anthony thomas': 'RB',
+            'charles sims': 'RB',
+            'alfred blue': 'RB',
+            # More historical players
+            'odell beckham': 'WR',
+            'melvin gordon': 'RB',
+            'marvin jones': 'WR',
+            'willie snead': 'WR',
+            'will fuller': 'WR',
+            'phillip dorsett': 'WR',
+            'cody latimer': 'WR',
+            'maxx williams': 'TE',
+            'steven hauschka': 'K',
+            'e.j. manuel': 'QB',
+            'stepfan taylor': 'RB',
+            'aaron dobson': 'WR',
+            'joseph morgan': 'WR',
+            'andre roberts': 'WR',
+            'bobby rainey': 'RB',
+            'jonathan grimes': 'RB',
+            'dan herron': 'RB',
+            'josh hill': 'TE',
+            'marquess wilson': 'WR',
+            'brandon coleman': 'WR',
+            'tyler lockett': 'WR',
+            'nelson agholor': 'WR',
+            'devin funchess': 'WR',
+            'sammie coates': 'WR',
+            'dorial green-beckham': 'WR',
+            'kevin white': 'WR',
+            'breshad perriman': 'WR',
+            'jamison crowder': 'WR',
+            'tyler boyd': 'WR',
+            'michael thomas': 'WR',
+            'sterling shepard': 'WR',
+            'corey coleman': 'WR',
+            'josh doctson': 'WR',
+            'laquon treadwell': 'WR',
+            'braxton miller': 'WR',
+            'tajae sharpe': 'WR',
+            'chris hogan': 'WR',
+            'quincy enunwa': 'WR',
+            'tyrell williams': 'WR',
+            'chris conley': 'WR',
+            'devin smith': 'WR',
+            'kenny stills': 'WR',
+            'rishard matthews': 'WR',
+            'stefon diggs': 'WR',
+            'travis benjamin': 'WR',
+            'cameron meredith': 'WR',
+            # RBs
+            'todd gurley': 'RB',
+            'david johnson': 'RB',
+            'matt jones': 'RB',
+            'jay ajayi': 'RB',
+            'karlos williams': 'RB',
+            'tevin coleman': 'RB',
+            'ameer abdullah': 'RB',
+            't.j. yeldon': 'RB',
+            'duke johnson': 'RB',
+            'thomas rawls': 'RB',
+            'charcandrick west': 'RB',
+            'spencer ware': 'RB',
+            'bilal powell': 'RB',
+            'james starks': 'RB',
+            'cameron artis-payne': 'RB',
+            'buck allen': 'RB',
+            # QBs
+            'marcus mariota': 'QB',
+            'jameis winston': 'QB',
+            'teddy bridgewater': 'QB',
+            'derek carr': 'QB',
+            'blake bortles': 'QB',
+            'tyrod taylor': 'QB',
+            'carson wentz': 'QB',
+            'dak prescott': 'QB',
+            'jared goff': 'QB',
+            'paxton lynch': 'QB',
+            'jacoby brissett': 'QB',
+            # TEs
+            'tyler eifert': 'TE',
+            'austin seferian-jenkins': 'TE',
+            'clive walford': 'TE',
+            'maxx williams': 'TE',
+            'jesse james': 'TE',
+            'hunter henry': 'TE',
+            'eric ebron': 'TE',
+            'o.j. howard': 'TE',
+            # More common names
+            'brandin cooks': 'WR',
+            'mike evans': 'WR',
+            'kelvin benjamin': 'WR',
+            'sammy watkins': 'WR',
+            'allen robinson': 'WR',
+            'davante adams': 'WR',
+            'jarvis landry': 'WR',
+            'jordan matthews': 'WR',
+            'john brown': 'WR',
+            'martavis bryant': 'WR',
+            'allen hurns': 'WR',
+            'deandre smelter': 'WR',
+            'jaelen strong': 'WR',
+            'chris conley': 'WR',
+        }
+
         # Create a mapping of (year, player_id) -> position from player stats
         player_positions = {}
         for stat in self.processed_data['player_stats']:
@@ -1539,10 +1911,23 @@ class FantasyDataProcessor:
         enriched_from_stats = 0
         enriched_from_mapping = 0
         enriched_from_name = 0
+        enriched_from_historical = 0
+        enriched_as_defense = 0
+
         for pick in self.processed_data['draft']:
             year = pick['year']
             player_id = pick.get('player_id') or pick['player_name']
             key = (year, player_id)
+            player_name = pick.get('player_name', '').strip().lower()
+
+            # First check if it's a team defense
+            if player_name and not pick.get('position'):
+                is_defense = any(team in player_name for team in NFL_TEAMS)
+                # Also check for D/ST suffix patterns
+                if is_defense or player_name.endswith(' d/st') or player_name.endswith(' dst'):
+                    pick['position'] = 'DEF'
+                    enriched_as_defense += 1
+                    continue
 
             if key in player_positions:
                 pick['position'] = player_positions[key]
@@ -1557,17 +1942,21 @@ class FantasyDataProcessor:
                         enriched_from_mapping += 1
                         continue
 
-                # Try to match by player name
-                player_name = pick.get('player_name', '').strip().lower()
+                # Try to match by player name in player_id_mapping
                 if player_name and player_name in name_to_position:
                     pick['position'] = name_to_position[player_name]
                     enriched_from_name += 1
+                # Try historical player lookup
+                elif player_name and player_name in HISTORICAL_PLAYER_POSITIONS:
+                    pick['position'] = HISTORICAL_PLAYER_POSITIONS[player_name]
+                    enriched_from_historical += 1
                 else:
                     pick['position'] = None  # Position unknown
 
-        total_enriched = enriched_from_stats + enriched_from_mapping + enriched_from_name
+        total_enriched = enriched_from_stats + enriched_from_mapping + enriched_from_name + enriched_from_historical + enriched_as_defense
         print(f"Enriched {total_enriched}/{len(self.processed_data['draft'])} draft picks with position data")
         print(f"  - {enriched_from_stats} from player stats, {enriched_from_mapping} from ID mapping, {enriched_from_name} from name matching")
+        print(f"  - {enriched_from_historical} from historical lookup, {enriched_as_defense} as team defenses")
 
         # Normalize all positions (PK -> K, FB -> RB, D/ST -> DEF)
         for pick in self.processed_data['draft']:
@@ -1608,7 +1997,7 @@ class FantasyDataProcessor:
         print(f"✓ Saved complete data to {complete_file}")
 
         # Save individual components for easier API access
-        for key in ['teams', 'owners', 'matchups', 'standings', 'playoffs', 'head_to_head', 'records', 'draft', 'rosters', 'player_stats', 'best_draft_picks', 'worst_draft_picks', 'best_snake_picks', 'worst_snake_picks', 'optimal_lineups', 'trades', 'best_trades', 'trade_records', 'metadata']:
+        for key in ['teams', 'owners', 'matchups', 'standings', 'playoffs', 'head_to_head', 'records', 'draft', 'rosters', 'player_stats', 'best_draft_picks', 'worst_draft_picks', 'best_steals', 'best_investments', 'biggest_busts', 'best_overall_value', 'best_snake_picks', 'worst_snake_picks', 'optimal_lineups', 'trades', 'best_trades', 'keeper_flip_trades', 'trade_records', 'metadata']:
             component_file = PROCESSED_DATA_DIR / f'{key}.json'
             with open(component_file, 'w') as f:
                 json.dump(self.processed_data[key], f, indent=2)
