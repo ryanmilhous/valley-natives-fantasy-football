@@ -2,11 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --vn-bg-900: #0A1310;
+  --vn-bg-800: #10221B;
+  --vn-surface-700: #183127;
+  --vn-redwood-600: #4A2F24;
+  --vn-text-primary: #EFE6D2;
+  --vn-text-secondary: #CFC4AA;
+  --vn-gold-500: #C8A55A;
+  --vn-teal-500: #23B8B0;
+  --vn-coral-500: #FF6F61;
+  --vn-rose-500: #E07AAE;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  background: radial-gradient(circle at 20% 10%, var(--vn-bg-800), var(--vn-bg-900));
+  color: var(--vn-text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
