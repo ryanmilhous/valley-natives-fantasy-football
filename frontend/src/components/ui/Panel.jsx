@@ -1,11 +1,13 @@
-function Panel({
-  as: Component = 'section',
-  title,
-  subtitle,
-  actions,
-  children,
-  className = '',
-}) {
+function Panel(props) {
+  const {
+    as: Component = 'section',
+    title,
+    subtitle,
+    actions,
+    children,
+    className = '',
+  } = props
+
   return (
     <Component className={`vn-panel ${className}`.trim()}>
       {(title || subtitle || actions) && (
