@@ -50,3 +50,6 @@ htmlcov/
 # Production
 /frontend/dist
 /frontend/build
+
+# Local git worktrees
+.worktrees/
