@@ -1,557 +1,360 @@
-import { useState, useEffect } from 'react';
-import apiService from '../services/api';
+import { useEffect, useMemo, useState } from 'react'
+import PageHero from '../components/ui/PageHero'
+import Panel from '../components/ui/Panel'
+import DataTableShell from '../components/ui/DataTableShell'
+import StatBadge from '../components/ui/StatBadge'
+import apiService from '../services/api'
 
 function Records() {
-  const [records, setRecords] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [records, setRecords] = useState(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await apiService.getRecords();
-        setRecords(response.data);
+        const response = await apiService.getRecords()
+        setRecords(response.data)
       } catch (error) {
-        console.error('Error fetching records:', error);
+        console.error('Error fetching records:', error)
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
+    }
 
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
+
+  const sectionCounts = useMemo(() => {
+    if (!records) {
+      return { interesting: 0, singleGame: 0, season: 0, streak: 0, wild: 0 }
+    }
+
+    return {
+      interesting: [
+        records.best_champion,
+        records.worst_team_best_result,
+        records.unluckiest_reg_season_winner,
+        records.best_team_worst_result,
+      ].filter(Boolean).length,
+      singleGame: [
+        records.highest_score,
+        records.lowest_score,
+        records.biggest_blowout,
+        records.closest_game,
+      ].filter(Boolean).length,
+      season: [
+        records.most_points_season,
+        records.most_wins_season,
+        records.fewest_wins_season,
+        records.most_points_against_season,
+      ].filter(Boolean).length,
+      streak: [records.longest_win_streak, records.longest_loss_streak].filter(Boolean).length,
+      wild: [
+        records.highest_scoring_loss,
+        records.lowest_scoring_win,
+        records.most_combined_points,
+        records.fewest_points_season,
+      ].filter(Boolean).length,
+    }
+  }, [records])
 
   if (loading) {
-    return <div className="text-center py-12">Loading...</div>;
+    return <div className="text-center py-12">Loading...</div>
   }
 
-  const RecordCard = ({ title, record, icon, description }) => (
-    <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-      <div className="flex items-start space-x-4">
-        <div className="text-5xl group-hover:scale-110 transition-transform duration-300">{icon}</div>
-        <div className="flex-1">
-          <div className="flex items-center justify-between mb-2">
-            <h3 className="text-lg font-bold text-purple-400 uppercase tracking-wider">{title}</h3>
-            {record?.year && (
-              <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                {record.year}
-              </span>
-            )}
-          </div>
-          {record && (
-            <div className="space-y-1">
-              <div className="text-3xl font-bold text-white">
-                {record.score || record.points_for || record.wins || 'N/A'}
-              </div>
-              <div className="text-sm text-white/80 font-medium">
-                {record.team || record.team_name}
-                {record.owner && <span className="text-white/60"> ({record.owner})</span>}
-              </div>
-              {description && <div className="text-xs text-white/60">{description}</div>}
-              <div className="text-xs text-white/50">
-                Week {record.week}, {record.year}
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
+  const toFixed2 = (value) => Number(value).toFixed(2)
+  const seasonSpanLabel = (record) => {
+    if (!record) {
+      return 'Archive'
+    }
+
+    return record.start_year === record.end_year
+      ? `${record.start_year}`
+      : `${record.start_year}-${record.end_year}`
+  }
+
+  const interestingResults = [
+    records?.best_champion
+      ? {
+          key: 'best-champion',
+          title: 'Best Champion',
+          tone: 'champion',
+          record: records.best_champion,
+          summary: `${records.best_champion.wins}-${records.best_champion.losses} record, ${toFixed2(records.best_champion.points_for)} points`,
+          note: `${toFixed2(records.best_champion.points_gap)} point gap over 2nd place in points`,
+          outcome: 'Won Championship',
+        }
+      : null,
+    records?.worst_team_best_result
+      ? {
+          key: 'worst-champion',
+          title: 'Worst Champion',
+          tone: 'warning',
+          record: records.worst_team_best_result,
+          summary: `${records.worst_team_best_result.wins}-${records.worst_team_best_result.losses} record, ${toFixed2(records.worst_team_best_result.points_for)} points`,
+          note: `Ranked #${records.worst_team_best_result.points_rank} out of ${records.worst_team_best_result.total_teams} in points`,
+          outcome: 'Won Championship',
+        }
+      : null,
+    records?.unluckiest_reg_season_winner
+      ? {
+          key: 'unluckiest-winner',
+          title: 'Unluckiest Regular Season Winner',
+          tone: 'rivalry',
+          record: records.unluckiest_reg_season_winner,
+          summary: `${records.unluckiest_reg_season_winner.wins}-${records.unluckiest_reg_season_winner.losses} record, ${toFixed2(records.unluckiest_reg_season_winner.points_for)} points`,
+          note: `${toFixed2(records.unluckiest_reg_season_winner.points_gap)} point gap over 2nd place`,
+          outcome: `Finished #${records.unluckiest_reg_season_winner.final_standing} - No Championship`,
+        }
+      : null,
+    records?.best_team_worst_result
+      ? {
+          key: 'best-team-worst-result',
+          title: 'Best Team, Worst Result',
+          tone: 'top',
+          record: records.best_team_worst_result,
+          summary: `${records.best_team_worst_result.wins}-${records.best_team_worst_result.losses} record, ${toFixed2(records.best_team_worst_result.points_for)} points`,
+          note: `Ranked #${records.best_team_worst_result.points_rank} in points`,
+          outcome: `Finished #${records.best_team_worst_result.final_standing} overall (↓ ${records.best_team_worst_result.standing_gap} place gap)`,
+        }
+      : null,
+  ].filter(Boolean)
+
+  const singleGameRecords = [
+    records?.highest_score
+      ? {
+          key: 'highest-score',
+          record: 'Highest Score',
+          value: records.highest_score.score,
+          entry: `${records.highest_score.team}${records.highest_score.owner ? ` (${records.highest_score.owner})` : ''}`,
+          detail: `vs ${records.highest_score.opponent}`,
+          context: `Week ${records.highest_score.week}, ${records.highest_score.year}`,
+        }
+      : null,
+    records?.lowest_score
+      ? {
+          key: 'lowest-score',
+          record: 'Lowest Score',
+          value: records.lowest_score.score,
+          entry: `${records.lowest_score.team}${records.lowest_score.owner ? ` (${records.lowest_score.owner})` : ''}`,
+          detail: `vs ${records.lowest_score.opponent}`,
+          context: `Week ${records.lowest_score.week}, ${records.lowest_score.year}`,
+        }
+      : null,
+    records?.biggest_blowout
+      ? {
+          key: 'biggest-blowout',
+          record: 'Biggest Blowout',
+          value: `${toFixed2(records.biggest_blowout.point_differential)} points`,
+          entry: `${records.biggest_blowout.winner}${records.biggest_blowout.winner_owner ? ` (${records.biggest_blowout.winner_owner})` : ''} - ${records.biggest_blowout.winner_score}`,
+          detail: `defeated ${records.biggest_blowout.loser}${records.biggest_blowout.loser_owner ? ` (${records.biggest_blowout.loser_owner})` : ''} - ${records.biggest_blowout.loser_score}`,
+          context: `Week ${records.biggest_blowout.week}, ${records.biggest_blowout.year}`,
+        }
+      : null,
+    records?.closest_game
+      ? {
+          key: 'closest-game',
+          record: 'Closest Game',
+          value: `${toFixed2(records.closest_game.point_differential)} points`,
+          entry: `${records.closest_game.winner}${records.closest_game.winner_owner ? ` (${records.closest_game.winner_owner})` : ''} - ${records.closest_game.winner_score}`,
+          detail: `edged out ${records.closest_game.loser}${records.closest_game.loser_owner ? ` (${records.closest_game.loser_owner})` : ''} - ${records.closest_game.loser_score}`,
+          context: `Week ${records.closest_game.week}, ${records.closest_game.year}`,
+        }
+      : null,
+  ].filter(Boolean)
+
+  const seasonRecords = [
+    records?.most_points_season
+      ? {
+          key: 'most-points-season',
+          record: 'Most Points',
+          value: toFixed2(records.most_points_season.points_for),
+          entry: `${records.most_points_season.team_name} (${records.most_points_season.owner})`,
+          detail: `${records.most_points_season.wins}-${records.most_points_season.losses} record`,
+          context: `${records.most_points_season.year} season`,
+        }
+      : null,
+    records?.most_wins_season
+      ? {
+          key: 'most-wins-season',
+          record: 'Most Wins',
+          value: `${records.most_wins_season.wins} wins`,
+          entry: `${records.most_wins_season.team_name} (${records.most_wins_season.owner})`,
+          detail: `${toFixed2(records.most_wins_season.points_for)} points for`,
+          context: `${records.most_wins_season.year} season`,
+        }
+      : null,
+    records?.fewest_wins_season
+      ? {
+          key: 'fewest-wins-season',
+          record: 'Fewest Wins',
+          value: `${records.fewest_wins_season.wins} wins`,
+          entry: `${records.fewest_wins_season.team_name} (${records.fewest_wins_season.owner})`,
+          detail: `${records.fewest_wins_season.wins}-${records.fewest_wins_season.losses} record`,
+          context: `${records.fewest_wins_season.year} season`,
+        }
+      : null,
+    records?.most_points_against_season
+      ? {
+          key: 'most-points-against-season',
+          record: 'Most Points Against',
+          value: toFixed2(records.most_points_against_season.points_against),
+          entry: `${records.most_points_against_season.team_name} (${records.most_points_against_season.owner})`,
+          detail: `Unluckiest team - ${records.most_points_against_season.wins}-${records.most_points_against_season.losses} record`,
+          context: `${records.most_points_against_season.year} season`,
+        }
+      : null,
+  ].filter(Boolean)
+
+  const streakRecords = [
+    records?.longest_win_streak
+      ? {
+          key: 'longest-win-streak',
+          record: 'Longest Win Streak',
+          value: `${records.longest_win_streak.streak} wins`,
+          entry: records.longest_win_streak.owner,
+          detail: `Week ${records.longest_win_streak.start_week} ${records.longest_win_streak.start_year} → Week ${records.longest_win_streak.end_week} ${records.longest_win_streak.end_year}`,
+          context: seasonSpanLabel(records.longest_win_streak),
+        }
+      : null,
+    records?.longest_loss_streak
+      ? {
+          key: 'longest-loss-streak',
+          record: 'Longest Loss Streak',
+          value: `${records.longest_loss_streak.streak} losses`,
+          entry: records.longest_loss_streak.owner,
+          detail: `Week ${records.longest_loss_streak.start_week} ${records.longest_loss_streak.start_year} → Week ${records.longest_loss_streak.end_week} ${records.longest_loss_streak.end_year}`,
+          context: seasonSpanLabel(records.longest_loss_streak),
+        }
+      : null,
+  ].filter(Boolean)
+
+  const wildRecords = [
+    records?.highest_scoring_loss
+      ? {
+          key: 'highest-scoring-loss',
+          record: 'Highest Scoring Loss',
+          value: toFixed2(records.highest_scoring_loss.score),
+          entry: `${records.highest_scoring_loss.team}${records.highest_scoring_loss.owner ? ` (${records.highest_scoring_loss.owner})` : ''}`,
+          detail: `Lost to ${records.highest_scoring_loss.opponent}${records.highest_scoring_loss.opponent_owner ? ` (${records.highest_scoring_loss.opponent_owner})` : ''} - ${toFixed2(records.highest_scoring_loss.opponent_score)}`,
+          context: `Week ${records.highest_scoring_loss.week}, ${records.highest_scoring_loss.year}`,
+        }
+      : null,
+    records?.lowest_scoring_win
+      ? {
+          key: 'lowest-scoring-win',
+          record: 'Lowest Scoring Win',
+          value: toFixed2(records.lowest_scoring_win.score),
+          entry: `${records.lowest_scoring_win.team}${records.lowest_scoring_win.owner ? ` (${records.lowest_scoring_win.owner})` : ''}`,
+          detail: `Beat ${records.lowest_scoring_win.opponent}${records.lowest_scoring_win.opponent_owner ? ` (${records.lowest_scoring_win.opponent_owner})` : ''} - ${toFixed2(records.lowest_scoring_win.opponent_score)}`,
+          context: `Week ${records.lowest_scoring_win.week}, ${records.lowest_scoring_win.year}`,
+        }
+      : null,
+    records?.most_combined_points
+      ? {
+          key: 'most-combined-points',
+          record: 'Most Combined Points',
+          value: toFixed2(records.most_combined_points.combined_points),
+          entry: `${records.most_combined_points.home_team}${records.most_combined_points.home_owner ? ` (${records.most_combined_points.home_owner})` : ''} - ${toFixed2(records.most_combined_points.home_score)}`,
+          detail: `vs ${records.most_combined_points.away_team}${records.most_combined_points.away_owner ? ` (${records.most_combined_points.away_owner})` : ''} - ${toFixed2(records.most_combined_points.away_score)}`,
+          context: `Week ${records.most_combined_points.week}, ${records.most_combined_points.year}`,
+        }
+      : null,
+    records?.fewest_points_season
+      ? {
+          key: 'fewest-points-season',
+          record: 'Fewest Points',
+          value: toFixed2(records.fewest_points_season.points_for),
+          entry: `${records.fewest_points_season.team_name} (${records.fewest_points_season.owner})`,
+          detail: `${records.fewest_points_season.wins}-${records.fewest_points_season.losses} record`,
+          context: `${records.fewest_points_season.year} season`,
+        }
+      : null,
+  ].filter(Boolean)
+
+  const renderTable = (rows) => (
+    <DataTableShell empty={!rows.length} emptyMessage="No records available yet.">
+      <table className="min-w-full text-sm">
+        <thead>
+          <tr className="border-b border-white/10 text-left text-white/60 uppercase tracking-wide text-xs">
+            <th className="px-3 py-2">Record</th>
+            <th className="px-3 py-2">Value</th>
+            <th className="px-3 py-2">Entry</th>
+            <th className="px-3 py-2">Context</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr key={row.key} className="border-b border-white/5 align-top">
+              <td className="px-3 py-3 font-semibold text-white">{row.record}</td>
+              <td className="px-3 py-3 text-yellow-300 font-semibold">{row.value}</td>
+              <td className="px-3 py-3 text-white/80">
+                <div>{row.entry}</div>
+                <div className="text-white/60 text-xs mt-1">{row.detail}</div>
+              </td>
+              <td className="px-3 py-3 text-white/60 text-xs">{row.context}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </DataTableShell>
+  )
 
   return (
-    <div className="space-y-8">
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-red-500/10 p-1">
-        <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-8 flex items-center space-x-3">
-            <span>🏆</span>
-            <span>League Records & Milestones</span>
-          </h1>
-
-          {/* Interesting Results */}
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-white mb-4">Interesting Results</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {records?.best_champion && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-yellow-500/10 to-amber-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">👑</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-yellow-400 uppercase tracking-wider">Best Champion</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.best_champion.year}
-                        </span>
-                      </div>
-                      <div className="text-sm text-white/80 font-medium mb-2">
-                        {records.best_champion.team_name}
-                        <span className="text-white/60"> ({records.best_champion.owner})</span>
-                      </div>
-                      <div className="text-sm text-white/70">
-                        <div>{records.best_champion.wins}-{records.best_champion.losses} record, {records.best_champion.points_for.toFixed(2)} points</div>
-                        <div className="mt-1"><span className="text-yellow-400 font-semibold">{records.best_champion.points_gap.toFixed(2)} point gap</span> over 2nd place in points</div>
-                        <div className="text-green-400 font-bold mt-1">🏆 Won Championship</div>
-                      </div>
-                      <div className="text-xs text-white/50 mt-2">{records.best_champion.year} season</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {records?.worst_team_best_result && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">🍀</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-green-400 uppercase tracking-wider">Worst Champion</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.worst_team_best_result.year}
-                        </span>
-                      </div>
-                      <div className="text-sm text-white/80 font-medium mb-2">
-                        {records.worst_team_best_result.team_name}
-                        <span className="text-white/60"> ({records.worst_team_best_result.owner})</span>
-                      </div>
-                      <div className="text-sm text-white/70">
-                        <div>{records.worst_team_best_result.wins}-{records.worst_team_best_result.losses} record, {records.worst_team_best_result.points_for.toFixed(2)} points</div>
-                        <div className="mt-1">Ranked <span className="text-orange-400 font-semibold">#{records.worst_team_best_result.points_rank}</span> out of {records.worst_team_best_result.total_teams} in points</div>
-                        <div className="text-green-400 font-bold mt-1">🏆 Won Championship</div>
-                      </div>
-                      <div className="text-xs text-white/50 mt-2">{records.worst_team_best_result.year} season</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {records?.unluckiest_reg_season_winner && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/10 to-indigo-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">💔</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-purple-400 uppercase tracking-wider">Unluckiest Regular Season Winner</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.unluckiest_reg_season_winner.year}
-                        </span>
-                      </div>
-                      <div className="text-sm text-white/80 font-medium mb-2">
-                        {records.unluckiest_reg_season_winner.team_name}
-                        <span className="text-white/60"> ({records.unluckiest_reg_season_winner.owner})</span>
-                      </div>
-                      <div className="text-sm text-white/70">
-                        <div>{records.unluckiest_reg_season_winner.wins}-{records.unluckiest_reg_season_winner.losses} record, {records.unluckiest_reg_season_winner.points_for.toFixed(2)} points</div>
-                        <div className="mt-1"><span className="text-purple-400 font-semibold">{records.unluckiest_reg_season_winner.points_gap.toFixed(2)} point gap</span> over 2nd place</div>
-                        <div className="text-red-400 font-bold mt-1">Finished #{records.unluckiest_reg_season_winner.final_standing} - No Championship 💔</div>
-                      </div>
-                      <div className="text-xs text-white/50 mt-2">{records.unluckiest_reg_season_winner.year} season</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {records?.best_team_worst_result && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-orange-500/10 to-red-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">😤</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-orange-400 uppercase tracking-wider">Best Team, Worst Result</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.best_team_worst_result.year}
-                        </span>
-                      </div>
-                      <div className="text-sm text-white/80 font-medium mb-2">
-                        {records.best_team_worst_result.team_name}
-                        <span className="text-white/60"> ({records.best_team_worst_result.owner})</span>
-                      </div>
-                      <div className="text-sm text-white/70">
-                        <div>{records.best_team_worst_result.wins}-{records.best_team_worst_result.losses} record, {records.best_team_worst_result.points_for.toFixed(2)} points</div>
-                        <div className="mt-1">Ranked <span className="text-green-400 font-semibold">#{records.best_team_worst_result.points_rank}</span> in points</div>
-                        <div className="text-orange-400 font-semibold">Finished <span className="text-red-400">#{records.best_team_worst_result.final_standing}</span> overall</div>
-                        <div className="text-red-400 font-bold mt-1">↓ {records.best_team_worst_result.standing_gap} place gap</div>
-                      </div>
-                      <div className="text-xs text-white/50 mt-2">{records.best_team_worst_result.year} season</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+    <div className="space-y-6">
+      <PageHero
+        eyebrow="Valley Natives Archive"
+        title="League Records & Milestones"
+        subtitle="An archival hierarchy of single-game feats, seasonal landmarks, and historical outliers."
+        actions={
+          <div className="flex flex-wrap items-center justify-end gap-2">
+            <StatBadge tone="champion" label={`${sectionCounts.interesting} interesting`} />
+            <StatBadge tone="top" label={`${sectionCounts.singleGame} single-game`} />
+            <StatBadge tone="rivalry" label={`${sectionCounts.season} season`} />
+            <StatBadge tone="warning" label={`${sectionCounts.streak} streak`} />
+            <StatBadge tone="neutral" label={`${sectionCounts.wild} wild`} />
           </div>
+        }
+      />
 
-          {/* Single Game Records */}
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-white mb-4">Single Game Records</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {records?.highest_score && (
-                <RecordCard
-                  title="Highest Score"
-                  record={records.highest_score}
-                  icon="🔥"
-                  description={`vs ${records.highest_score.opponent}`}
-                />
-              )}
-              {records?.lowest_score && (
-                <RecordCard
-                  title="Lowest Score"
-                  record={records.lowest_score}
-                  icon="❄️"
-                  description={`vs ${records.lowest_score.opponent}`}
-                />
-              )}
-              {records?.biggest_blowout && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-red-500/10 to-orange-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">💥</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-orange-400 uppercase tracking-wider">Biggest Blowout</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.biggest_blowout.year}
-                        </span>
-                      </div>
-                      <div className="text-3xl font-bold text-white">
-                        {records.biggest_blowout.point_differential.toFixed(2)} points
-                      </div>
-                      <div className="text-sm text-white/80 font-medium">
-                        {records.biggest_blowout.winner}
-                        {records.biggest_blowout.winner_owner && <span className="text-white/60"> ({records.biggest_blowout.winner_owner})</span>}
-                        <span className="text-white/50"> - {records.biggest_blowout.winner_score}</span>
-                      </div>
-                      <div className="text-sm text-red-400/80">
-                        defeated {records.biggest_blowout.loser}
-                        {records.biggest_blowout.loser_owner && <span className="text-red-300/60"> ({records.biggest_blowout.loser_owner})</span>}
-                        <span className="text-red-300/50"> - {records.biggest_blowout.loser_score}</span>
-                      </div>
-                      <div className="text-xs text-white/50 mt-1">
-                        Week {records.biggest_blowout.week}, {records.biggest_blowout.year}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {records?.closest_game && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">⚖️</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-cyan-400 uppercase tracking-wider">Closest Game</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.closest_game.year}
-                        </span>
-                      </div>
-                      <div className="text-3xl font-bold text-white">
-                        {records.closest_game.point_differential.toFixed(2)} points
-                      </div>
-                      <div className="text-sm text-white/80 font-medium">
-                        {records.closest_game.winner}
-                        {records.closest_game.winner_owner && <span className="text-white/60"> ({records.closest_game.winner_owner})</span>}
-                        <span className="text-white/50"> - {records.closest_game.winner_score}</span>
-                      </div>
-                      <div className="text-sm text-cyan-400/80">
-                        edged out {records.closest_game.loser}
-                        {records.closest_game.loser_owner && <span className="text-cyan-300/60"> ({records.closest_game.loser_owner})</span>}
-                        <span className="text-cyan-300/50"> - {records.closest_game.loser_score}</span>
-                      </div>
-                      <div className="text-xs text-white/50 mt-1">
-                        Week {records.closest_game.week}, {records.closest_game.year}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Season Records */}
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-white mb-4">Season Records</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {records?.most_points_season && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">📈</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-green-400 uppercase tracking-wider">Most Points</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.most_points_season.year}
-                        </span>
-                      </div>
-                      <div className="text-3xl font-bold text-white">
-                        {records.most_points_season.points_for.toFixed(2)}
-                      </div>
-                      <div className="text-sm text-white/80 font-medium">
-                        {records.most_points_season.team_name}
-                        <span className="text-white/60"> ({records.most_points_season.owner})</span>
-                      </div>
-                      <div className="text-sm text-green-400/80">
-                        {records.most_points_season.wins}-{records.most_points_season.losses} record
-                      </div>
-                      <div className="text-xs text-white/50 mt-1">{records.most_points_season.year} season</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {records?.most_wins_season && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-yellow-500/10 to-amber-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">🏅</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-yellow-400 uppercase tracking-wider">Most Wins</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.most_wins_season.year}
-                        </span>
-                      </div>
-                      <div className="text-3xl font-bold text-white">
-                        {records.most_wins_season.wins} wins
-                      </div>
-                      <div className="text-sm text-white/80 font-medium">
-                        {records.most_wins_season.team_name}
-                        <span className="text-white/60"> ({records.most_wins_season.owner})</span>
-                      </div>
-                      <div className="text-sm text-yellow-400/80">
-                        {records.most_wins_season.points_for.toFixed(2)} points for
-                      </div>
-                      <div className="text-xs text-white/50 mt-1">{records.most_wins_season.year} season</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {records?.fewest_wins_season && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-red-500/10 to-pink-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">😬</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-red-400 uppercase tracking-wider">Fewest Wins</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.fewest_wins_season.year}
-                        </span>
-                      </div>
-                      <div className="text-3xl font-bold text-white">
-                        {records.fewest_wins_season.wins} wins
-                      </div>
-                      <div className="text-sm text-white/80 font-medium">
-                        {records.fewest_wins_season.team_name}
-                        <span className="text-white/60"> ({records.fewest_wins_season.owner})</span>
-                      </div>
-                      <div className="text-sm text-red-400/80">
-                        {records.fewest_wins_season.wins}-{records.fewest_wins_season.losses} record
-                      </div>
-                      <div className="text-xs text-white/50 mt-1">{records.fewest_wins_season.year} season</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {records?.most_points_against_season && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">🎯</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-purple-400 uppercase tracking-wider">Most Points Against</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.most_points_against_season.year}
-                        </span>
-                      </div>
-                      <div className="text-3xl font-bold text-white">
-                        {records.most_points_against_season.points_against.toFixed(2)}
-                      </div>
-                      <div className="text-sm text-white/80 font-medium">
-                        {records.most_points_against_season.team_name}
-                        <span className="text-white/60"> ({records.most_points_against_season.owner})</span>
-                      </div>
-                      <div className="text-sm text-purple-400/80">
-                        Unluckiest team - {records.most_points_against_season.wins}-{records.most_points_against_season.losses} record
-                      </div>
-                      <div className="text-xs text-white/50 mt-1">{records.most_points_against_season.year} season</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Streak Records */}
-          <div>
-            <h2 className="text-2xl font-bold text-white mb-4">Streak Records</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {records?.longest_win_streak && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-500/10 to-lime-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">🔥</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-green-400 uppercase tracking-wider">Longest Win Streak</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.longest_win_streak.start_year === records.longest_win_streak.end_year
-                            ? records.longest_win_streak.start_year
-                            : `${records.longest_win_streak.start_year}-${records.longest_win_streak.end_year}`}
-                        </span>
-                      </div>
-                      <div className="text-3xl font-bold text-white">
-                        {records.longest_win_streak.streak} wins
-                      </div>
-                      <div className="text-sm text-white/80 font-medium">{records.longest_win_streak.owner}</div>
-                      <div className="text-sm text-green-400/80">
-                        Week {records.longest_win_streak.start_week} {records.longest_win_streak.start_year} → Week {records.longest_win_streak.end_week} {records.longest_win_streak.end_year}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {records?.longest_loss_streak && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-500/10 to-gray-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">💀</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-gray-400 uppercase tracking-wider">Longest Loss Streak</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.longest_loss_streak.start_year === records.longest_loss_streak.end_year
-                            ? records.longest_loss_streak.start_year
-                            : `${records.longest_loss_streak.start_year}-${records.longest_loss_streak.end_year}`}
-                        </span>
-                      </div>
-                      <div className="text-3xl font-bold text-white">
-                        {records.longest_loss_streak.streak} losses
-                      </div>
-                      <div className="text-sm text-white/80 font-medium">{records.longest_loss_streak.owner}</div>
-                      <div className="text-sm text-gray-400/80">
-                        Week {records.longest_loss_streak.start_week} {records.longest_loss_streak.start_year} → Week {records.longest_loss_streak.end_week} {records.longest_loss_streak.end_year}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Fun Facts */}
-          <div className="mt-8">
-            <h2 className="text-2xl font-bold text-white mb-4">Wild Records</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {records?.highest_scoring_loss && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-orange-500/10 to-red-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">😤</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-orange-400 uppercase tracking-wider">Highest Scoring Loss</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.highest_scoring_loss.year}
-                        </span>
-                      </div>
-                      <div className="text-3xl font-bold text-white">
-                        {records.highest_scoring_loss.score.toFixed(2)}
-                      </div>
-                      <div className="text-sm text-white/80 font-medium">
-                        {records.highest_scoring_loss.team}
-                        {records.highest_scoring_loss.owner && <span className="text-white/60"> ({records.highest_scoring_loss.owner})</span>}
-                      </div>
-                      <div className="text-sm text-orange-400/80">
-                        Lost to {records.highest_scoring_loss.opponent}
-                        {records.highest_scoring_loss.opponent_owner && <span className="text-orange-300/60"> ({records.highest_scoring_loss.opponent_owner})</span>}
-                        <span className="text-orange-300/50"> - {records.highest_scoring_loss.opponent_score.toFixed(2)}</span>
-                      </div>
-                      <div className="text-xs text-white/50 mt-1">Week {records.highest_scoring_loss.week}, {records.highest_scoring_loss.year}</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {records?.lowest_scoring_win && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">🍀</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-indigo-400 uppercase tracking-wider">Lowest Scoring Win</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.lowest_scoring_win.year}
-                        </span>
-                      </div>
-                      <div className="text-3xl font-bold text-white">
-                        {records.lowest_scoring_win.score.toFixed(2)}
-                      </div>
-                      <div className="text-sm text-white/80 font-medium">
-                        {records.lowest_scoring_win.team}
-                        {records.lowest_scoring_win.owner && <span className="text-white/60"> ({records.lowest_scoring_win.owner})</span>}
-                      </div>
-                      <div className="text-sm text-indigo-400/80">
-                        Beat {records.lowest_scoring_win.opponent}
-                        {records.lowest_scoring_win.opponent_owner && <span className="text-indigo-300/60"> ({records.lowest_scoring_win.opponent_owner})</span>}
-                        <span className="text-indigo-300/50"> - {records.lowest_scoring_win.opponent_score.toFixed(2)}</span>
-                      </div>
-                      <div className="text-xs text-white/50 mt-1">Week {records.lowest_scoring_win.week}, {records.lowest_scoring_win.year}</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {records?.most_combined_points && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-yellow-500/10 to-red-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">🌟</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-yellow-400 uppercase tracking-wider">Most Combined Points</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.most_combined_points.year}
-                        </span>
-                      </div>
-                      <div className="text-3xl font-bold text-white">
-                        {records.most_combined_points.combined_points.toFixed(2)}
-                      </div>
-                      <div className="text-sm text-white/80 font-medium">
-                        {records.most_combined_points.home_team}
-                        {records.most_combined_points.home_owner && <span className="text-white/60"> ({records.most_combined_points.home_owner})</span>}
-                        <span className="text-white/50"> - {records.most_combined_points.home_score.toFixed(2)}</span>
-                      </div>
-                      <div className="text-sm text-yellow-400/80">
-                        vs {records.most_combined_points.away_team}
-                        {records.most_combined_points.away_owner && <span className="text-yellow-300/60"> ({records.most_combined_points.away_owner})</span>}
-                        <span className="text-yellow-300/50"> - {records.most_combined_points.away_score.toFixed(2)}</span>
-                      </div>
-                      <div className="text-xs text-white/50 mt-1">Week {records.most_combined_points.week}, {records.most_combined_points.year}</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {records?.fewest_points_season && (
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-500/10 to-slate-500/10 p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">📉</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-lg font-bold text-gray-400 uppercase tracking-wider">Fewest Points</h3>
-                        <span className="text-xs px-2 py-1 rounded-full font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                          {records.fewest_points_season.year}
-                        </span>
-                      </div>
-                      <div className="text-3xl font-bold text-white">
-                        {records.fewest_points_season.points_for.toFixed(2)}
-                      </div>
-                      <div className="text-sm text-white/80 font-medium">
-                        {records.fewest_points_season.team_name}
-                        <span className="text-white/60"> ({records.fewest_points_season.owner})</span>
-                      </div>
-                      <div className="text-sm text-gray-400/80">
-                        {records.fewest_points_season.wins}-{records.fewest_points_season.losses} record
-                      </div>
-                      <div className="text-xs text-white/50 mt-1">{records.fewest_points_season.year} season</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
+      <Panel title="Interesting Results" subtitle="Championship outcomes that defied expectations.">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {interestingResults.map((item) => (
+            <article key={item.key} className="rounded-xl border border-white/10 bg-black/20 p-4 space-y-2">
+              <div className="flex items-center justify-between gap-2">
+                <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                <StatBadge tone={item.tone} label={`${item.record.year}`} />
+              </div>
+              <p className="text-sm text-white/80">
+                {item.record.team_name}
+                {item.record.owner ? <span className="text-white/60"> ({item.record.owner})</span> : null}
+              </p>
+              <p className="text-sm text-white/70">{item.summary}</p>
+              <p className="text-sm text-white/60">{item.note}</p>
+              <p className="text-sm text-yellow-300 font-medium">{item.outcome}</p>
+              <p className="text-xs text-white/50">{item.record.year} season</p>
+            </article>
+          ))}
         </div>
-      </div>
+      </Panel>
+
+      <Panel title="Single Game Records" subtitle="Weekly extremes across the full archive.">
+        {renderTable(singleGameRecords)}
+      </Panel>
+
+      <Panel title="Season Records" subtitle="Best and worst full-season outcomes.">
+        {renderTable(seasonRecords)}
+      </Panel>
+
+      <Panel title="Streak Records" subtitle="Longest sustained runs across seasons.">
+        {renderTable(streakRecords)}
+      </Panel>
+
+      <Panel title="Wild Records" subtitle="Outlier events that still define league history.">
+        {renderTable(wildRecords)}
+      </Panel>
     </div>
-  );
+  )
 }
 
-export default Records;
+export default Records
