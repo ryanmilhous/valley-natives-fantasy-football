@@ -345,7 +345,10 @@ function Home() {
                   <SortIcon column="owner" />
                 </HeaderWithTooltip>
               </th>
-              <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+              <th
+                className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                aria-sort={getAriaSort('seasons')}
+              >
                 <HeaderWithTooltip
                   tooltip="Seasons Played"
                   onClick={() => handleSort('seasons')}
@@ -355,7 +358,10 @@ function Home() {
                   <SortIcon column="seasons" />
                 </HeaderWithTooltip>
               </th>
-              <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+              <th
+                className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                aria-sort={getAriaSort('wins')}
+              >
                 <HeaderWithTooltip
                   tooltip="Wins (Regular Season)"
                   onClick={() => handleSort('wins')}
@@ -365,7 +371,10 @@ function Home() {
                   <SortIcon column="wins" />
                 </HeaderWithTooltip>
               </th>
-              <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+              <th
+                className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                aria-sort={getAriaSort('losses')}
+              >
                 <HeaderWithTooltip
                   tooltip="Losses (Regular Season)"
                   onClick={() => handleSort('losses')}
@@ -375,7 +384,10 @@ function Home() {
                   <SortIcon column="losses" />
                 </HeaderWithTooltip>
               </th>
-              <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+              <th
+                className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                aria-sort={getAriaSort('winPct')}
+              >
                 <HeaderWithTooltip
                   tooltip="Win Percentage (Regular Season)"
                   onClick={() => handleSort('winPct')}
@@ -385,7 +397,10 @@ function Home() {
                   <SortIcon column="winPct" />
                 </HeaderWithTooltip>
               </th>
-              <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+              <th
+                className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                aria-sort={getAriaSort('championships')}
+              >
                 <HeaderWithTooltip
                   tooltip="Championships (1st Place Finishes)"
                   onClick={() => handleSort('championships')}
@@ -395,7 +410,10 @@ function Home() {
                   <SortIcon column="championships" />
                 </HeaderWithTooltip>
               </th>
-              <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+              <th
+                className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                aria-sort={getAriaSort('secondPlace')}
+              >
                 <HeaderWithTooltip
                   tooltip="Second Place Finishes"
                   onClick={() => handleSort('secondPlace')}
@@ -405,7 +423,10 @@ function Home() {
                   <SortIcon column="secondPlace" />
                 </HeaderWithTooltip>
               </th>
-              <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+              <th
+                className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                aria-sort={getAriaSort('thirdPlace')}
+              >
                 <HeaderWithTooltip
                   tooltip="Third Place Finishes"
                   onClick={() => handleSort('thirdPlace')}
@@ -415,7 +436,10 @@ function Home() {
                   <SortIcon column="thirdPlace" />
                 </HeaderWithTooltip>
               </th>
-              <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+              <th
+                className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                aria-sort={getAriaSort('playoffAppearances')}
+              >
                 <HeaderWithTooltip
                   tooltip="Playoff Appearances"
                   onClick={() => handleSort('playoffAppearances')}
@@ -425,7 +449,10 @@ function Home() {
                   <SortIcon column="playoffAppearances" />
                 </HeaderWithTooltip>
               </th>
-              <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+              <th
+                className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                aria-sort={getAriaSort('toiletBowl')}
+              >
                 <HeaderWithTooltip
                   tooltip="Toilet Bowl Finishes (Last Place)"
                   onClick={() => handleSort('toiletBowl')}
@@ -435,7 +462,10 @@ function Home() {
                   <SortIcon column="toiletBowl" />
                 </HeaderWithTooltip>
               </th>
-              <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+              <th
+                className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                aria-sort={getAriaSort('toiletBowlPct')}
+              >
                 <HeaderWithTooltip
                   tooltip="Toilet Bowl Percentage"
                   onClick={() => handleSort('toiletBowlPct')}
@@ -445,7 +475,10 @@ function Home() {
                   <SortIcon column="toiletBowlPct" />
                 </HeaderWithTooltip>
               </th>
-              <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+              <th
+                className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                aria-sort={getAriaSort('top3Pct')}
+              >
                 <HeaderWithTooltip
                   tooltip="Top 3 Finish Percentage (1st, 2nd, or 3rd)"
                   onClick={() => handleSort('top3Pct')}
@@ -455,7 +488,10 @@ function Home() {
                   <SortIcon column="top3Pct" />
                 </HeaderWithTooltip>
               </th>
-              <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+              <th
+                className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                aria-sort={getAriaSort('playoffAppearancePct')}
+              >
                 <HeaderWithTooltip
                   tooltip="Playoff Appearance Percentage - Excludes 2006 from calculation (except Kellen & Chris who were 1st/2nd)"
                   onClick={() => handleSort('playoffAppearancePct')}
@@ -465,7 +501,10 @@ function Home() {
                   <SortIcon column="playoffAppearancePct" />
                 </HeaderWithTooltip>
               </th>
-              <th className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors">
+              <th
+                className="px-1 py-3 text-left text-xs font-bold text-purple-400 uppercase cursor-pointer hover:text-purple-300 transition-colors"
+                aria-sort={getAriaSort('rankingPoints')}
+              >
                 <HeaderWithTooltip
                   tooltip="Ranking Points (+7 for 1st, +3 for 2nd, +1 for 3rd, -1 for Toilet Bowl)"
                   onClick={() => handleSort('rankingPoints')}

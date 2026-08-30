@@ -123,4 +123,37 @@ describe('Home', () => {
     expect(within(rowsAfterDesc[0]).getByText('Zane')).toBeInTheDocument()
     expect(within(rowsAfterDesc[1]).getByText('Alex')).toBeInTheDocument()
   })
+
+  it('applies aria-sort semantics across sortable headers', async () => {
+    const { container } = render(<Home />)
+
+    await waitFor(() => {
+      expect(apiService.getMetadata).toHaveBeenCalledTimes(1)
+      expect(apiService.getOwners).toHaveBeenCalledTimes(1)
+    })
+
+    const sortButtons = within(container).getAllByRole('button', { name: /sort by/i })
+    const sortStateByButtonName = {
+      'Sort by owner': 'none',
+      'Sort by seasons played': 'none',
+      'Sort by wins': 'none',
+      'Sort by losses': 'none',
+      'Sort by win percentage': 'none',
+      'Sort by championships': 'none',
+      'Sort by second-place finishes': 'none',
+      'Sort by third-place finishes': 'none',
+      'Sort by playoff appearances': 'none',
+      'Sort by toilet bowl finishes': 'none',
+      'Sort by toilet bowl percentage': 'none',
+      'Sort by top three percentage': 'none',
+      'Sort by playoff appearance percentage': 'none',
+      'Sort by ranking points': 'descending',
+    }
+
+    sortButtons.forEach((button) => {
+      const name = button.getAttribute('aria-label')
+      const header = button.closest('th')
+      expect(header).toHaveAttribute('aria-sort', sortStateByButtonName[name])
+    })
+  })
 })

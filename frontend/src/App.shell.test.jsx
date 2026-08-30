@@ -19,6 +19,7 @@ describe('App shell', () => {
     const { container } = render(<App />)
 
     expect(screen.getByText('Valley Natives')).toBeTruthy()
+    expect(screen.getByRole('navigation', { name: 'Primary navigation' })).toBeTruthy()
     expect(container.querySelector('.vn-shell')).toBeTruthy()
     expect(container.querySelector('.vn-nav')).toBeTruthy()
     expect(container.querySelector('.vn-footer')).toBeTruthy()
