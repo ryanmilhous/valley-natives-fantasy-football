@@ -34,17 +34,51 @@ describe('PageHero', () => {
 })
 
 describe('PageHero retro slots', () => {
-  it('renders optional crest and ticker rail graphics', () => {
+  it('renders ticker rail and title plate decorative assets with expected attributes', () => {
+    const tickerRailSrc = 'https://assets.valleynatives.net/retro/ticker-records.png'
+    const titlePlateSrc = 'https://assets.valleynatives.net/retro/title-plate-records.png'
+
+    const { container } = render(
+      <PageHero title="League Records" tickerRailSrc={tickerRailSrc} titlePlateSrc={titlePlateSrc} />,
+    )
+
+    const tickerRail = container.querySelector('.vn-page-hero__ticker-rail')
+    const titlePlate = container.querySelector('.vn-page-hero__title-plate')
+
+    expect(tickerRail).toBeTruthy()
+    expect(tickerRail).toHaveAttribute('src', tickerRailSrc)
+    expect(tickerRail).toHaveAttribute('alt', '')
+    expect(tickerRail).toHaveAttribute('aria-hidden', 'true')
+    expect(titlePlate).toBeTruthy()
+    expect(titlePlate).toHaveAttribute('src', titlePlateSrc)
+    expect(titlePlate).toHaveAttribute('alt', '')
+    expect(titlePlate).toHaveAttribute('aria-hidden', 'true')
+  })
+
+  it('renders optional crest asset with expected image attributes', () => {
+    const crestSrc = 'https://assets.valleynatives.net/retro/crest-records-primary.png'
+
     const { container } = render(
       <PageHero
         title="League Records"
         imageSrc="https://upload.wikimedia.org/example.jpg"
-        crestSrc="https://assets.valleynatives.net/retro/crest-records-primary.png"
-        tickerRailSrc="https://assets.valleynatives.net/retro/ticker-records.png"
+        crestSrc={crestSrc}
       />,
     )
 
-    expect(container.querySelector('.vn-page-hero__crest')).toBeTruthy()
-    expect(container.querySelector('.vn-page-hero__ticker-rail')).toBeTruthy()
+    const crest = container.querySelector('.vn-page-hero__crest')
+    expect(crest).toBeTruthy()
+    expect(crest).toHaveAttribute('src', crestSrc)
+    expect(crest).toHaveAttribute('alt', '')
+    expect(crest).toHaveAttribute('loading', 'lazy')
+    expect(crest).toHaveAttribute('decoding', 'async')
+  })
+
+  it('does not render retro chrome slots when corresponding props are absent', () => {
+    const { container } = render(<PageHero title="League Records" />)
+
+    expect(container.querySelector('.vn-page-hero__ticker-rail')).toBeNull()
+    expect(container.querySelector('.vn-page-hero__title-plate')).toBeNull()
+    expect(container.querySelector('.vn-page-hero__crest')).toBeNull()
   })
 })
