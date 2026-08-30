@@ -17,6 +17,9 @@ function PageHero({
   className = '',
 }) {
   const [hasImageError, setHasImageError] = useState(false)
+  const [hasCrestError, setHasCrestError] = useState(false)
+  const [hasTickerRailError, setHasTickerRailError] = useState(false)
+  const [hasTitlePlateError, setHasTitlePlateError] = useState(false)
   const hasImage = Boolean(imageSrc) && !hasImageError
 
   return (
@@ -36,14 +39,33 @@ function PageHero({
       ) : null}
       <div className="vn-page-hero__overlay" />
       <div className="vn-page-hero__accent-stripe" />
-      {tickerRailSrc ? (
-        <img src={tickerRailSrc} alt="" aria-hidden="true" className="vn-page-hero__ticker-rail" />
+      {tickerRailSrc && !hasTickerRailError ? (
+        <img
+          src={tickerRailSrc}
+          alt=""
+          aria-hidden="true"
+          className="vn-page-hero__ticker-rail"
+          onError={() => setHasTickerRailError(true)}
+        />
       ) : null}
-      {titlePlateSrc ? (
-        <img src={titlePlateSrc} alt="" aria-hidden="true" className="vn-page-hero__title-plate" />
+      {titlePlateSrc && !hasTitlePlateError ? (
+        <img
+          src={titlePlateSrc}
+          alt=""
+          aria-hidden="true"
+          className="vn-page-hero__title-plate"
+          onError={() => setHasTitlePlateError(true)}
+        />
       ) : null}
-      {crestSrc ? (
-        <img src={crestSrc} alt={crestAlt} className="vn-page-hero__crest" loading="lazy" decoding="async" />
+      {crestSrc && !hasCrestError ? (
+        <img
+          src={crestSrc}
+          alt={crestAlt}
+          className="vn-page-hero__crest"
+          loading="lazy"
+          decoding="async"
+          onError={() => setHasCrestError(true)}
+        />
       ) : null}
       <div className="vn-page-hero__content">
         {eyebrow ? <p className="vn-page-hero__eyebrow">{eyebrow}</p> : null}

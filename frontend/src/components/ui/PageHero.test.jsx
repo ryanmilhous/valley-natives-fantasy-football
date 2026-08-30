@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import PageHero from './PageHero'
 
 describe('PageHero', () => {
@@ -80,5 +80,32 @@ describe('PageHero retro slots', () => {
     expect(container.querySelector('.vn-page-hero__ticker-rail')).toBeNull()
     expect(container.querySelector('.vn-page-hero__title-plate')).toBeNull()
     expect(container.querySelector('.vn-page-hero__crest')).toBeNull()
+  })
+
+  it('removes decorative slots when their images fail to load', () => {
+    const { container } = render(
+      <PageHero
+        title="League Records"
+        crestSrc="https://assets.valleynatives.net/retro/crest-records-primary.png"
+        tickerRailSrc="https://assets.valleynatives.net/retro/ticker-records.png"
+        titlePlateSrc="https://assets.valleynatives.net/retro/title-records.png"
+      />,
+    )
+
+    const crest = container.querySelector('.vn-page-hero__crest')
+    const tickerRail = container.querySelector('.vn-page-hero__ticker-rail')
+    const titlePlate = container.querySelector('.vn-page-hero__title-plate')
+
+    expect(crest).toBeTruthy()
+    expect(tickerRail).toBeTruthy()
+    expect(titlePlate).toBeTruthy()
+
+    fireEvent.error(crest)
+    fireEvent.error(tickerRail)
+    fireEvent.error(titlePlate)
+
+    expect(container.querySelector('.vn-page-hero__crest')).toBeNull()
+    expect(container.querySelector('.vn-page-hero__ticker-rail')).toBeNull()
+    expect(container.querySelector('.vn-page-hero__title-plate')).toBeNull()
   })
 })
