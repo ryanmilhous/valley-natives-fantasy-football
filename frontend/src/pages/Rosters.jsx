@@ -4,6 +4,7 @@ import PageHero from '../components/ui/PageHero';
 import FilterBar from '../components/ui/FilterBar';
 import StatBadge from '../components/ui/StatBadge';
 import { heroBanners } from '../theme/heroBanners';
+import { retroAssets } from '../theme/retroAssets';
 
 function Rosters() {
   const [rosters, setRosters] = useState([]);
@@ -65,6 +66,10 @@ function Rosters() {
     <div className="space-y-8">
       <PageHero
         {...heroBanners.rosters}
+        crestSrc={retroAssets[heroBanners.rosters.assetKey]?.crest.primary}
+        crestAlt="Team rosters crest"
+        tickerRailSrc={retroAssets[heroBanners.rosters.assetKey]?.chrome.tickerRail}
+        titlePlateSrc={retroAssets[heroBanners.rosters.assetKey]?.chrome.titlePlate}
         eyebrow="Depth Chart Archive"
         title="Team Rosters"
         subtitle="Historical team compositions by season and owner"

@@ -5,6 +5,7 @@ import FilterBar from '../components/ui/FilterBar';
 import DataTableShell from '../components/ui/DataTableShell';
 import StatBadge from '../components/ui/StatBadge';
 import { heroBanners } from '../theme/heroBanners';
+import { retroAssets } from '../theme/retroAssets';
 
 function Draft() {
   const [draft, setDraft] = useState([]);
@@ -205,6 +206,10 @@ function Draft() {
     <div className="space-y-6">
       <PageHero
         {...heroBanners.draft}
+        crestSrc={retroAssets[heroBanners.draft.assetKey]?.crest.primary}
+        crestAlt="Draft history crest"
+        tickerRailSrc={retroAssets[heroBanners.draft.assetKey]?.chrome.tickerRail}
+        titlePlateSrc={retroAssets[heroBanners.draft.assetKey]?.chrome.titlePlate}
         eyebrow="Highway 9 Draft Archive"
         title="Draft History"
         subtitle="Snake era and auction era in one record book"

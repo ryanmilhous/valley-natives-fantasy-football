@@ -5,6 +5,7 @@ import DataTableShell from '../components/ui/DataTableShell'
 import StatBadge from '../components/ui/StatBadge'
 import apiService from '../services/api'
 import { heroBanners } from '../theme/heroBanners'
+import { retroAssets } from '../theme/retroAssets'
 
 function Records() {
   const [records, setRecords] = useState(null)
@@ -307,6 +308,10 @@ function Records() {
     <div className="space-y-6">
       <PageHero
         {...heroBanners.records}
+        crestSrc={retroAssets[heroBanners.records.assetKey]?.crest.primary}
+        crestAlt="Records archive crest"
+        tickerRailSrc={retroAssets[heroBanners.records.assetKey]?.chrome.tickerRail}
+        titlePlateSrc={retroAssets[heroBanners.records.assetKey]?.chrome.titlePlate}
         eyebrow="Valley Natives Archive"
         title="League Records & Milestones"
         subtitle="An archival hierarchy of single-game feats, seasonal landmarks, and historical outliers."

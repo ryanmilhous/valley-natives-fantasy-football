@@ -5,6 +5,7 @@ import FilterBar from '../components/ui/FilterBar';
 import Panel from '../components/ui/Panel';
 import DataTableShell from '../components/ui/DataTableShell';
 import { heroBanners } from '../theme/heroBanners';
+import { retroAssets } from '../theme/retroAssets';
 
 function HeadToHead() {
   const [h2hData, setH2hData] = useState({});
@@ -67,6 +68,10 @@ function HeadToHead() {
     <div className="space-y-8">
       <PageHero
         {...heroBanners.headToHead}
+        crestSrc={retroAssets[heroBanners.headToHead.assetKey]?.crest.primary}
+        crestAlt="Head-to-head crest"
+        tickerRailSrc={retroAssets[heroBanners.headToHead.assetKey]?.chrome.tickerRail}
+        titlePlateSrc={retroAssets[heroBanners.headToHead.assetKey]?.chrome.titlePlate}
         eyebrow="Rivalry Ledger"
         title="Head-to-Head Records"
         subtitle="All-time matchup records from 2007-2025"

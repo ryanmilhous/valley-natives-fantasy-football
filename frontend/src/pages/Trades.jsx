@@ -4,6 +4,7 @@ import PageHero from '../components/ui/PageHero';
 import FilterBar from '../components/ui/FilterBar';
 import StatBadge from '../components/ui/StatBadge';
 import { heroBanners } from '../theme/heroBanners';
+import { retroAssets } from '../theme/retroAssets';
 
 function Trades() {
   const [trades, setTrades] = useState([]);
@@ -85,6 +86,10 @@ function Trades() {
     <div className="space-y-8">
       <PageHero
         {...heroBanners.trades}
+        crestSrc={retroAssets[heroBanners.trades.assetKey]?.crest.primary}
+        crestAlt="Trade history crest"
+        tickerRailSrc={retroAssets[heroBanners.trades.assetKey]?.chrome.tickerRail}
+        titlePlateSrc={retroAssets[heroBanners.trades.assetKey]?.chrome.titlePlate}
         eyebrow="San Lorenzo Deal Log"
         title="Trade History"
         subtitle="Every move, every gamble, every keeper swing"

@@ -4,6 +4,7 @@ import PageHero from '../components/ui/PageHero';
 import FilterBar from '../components/ui/FilterBar';
 import DataTableShell from '../components/ui/DataTableShell';
 import { heroBanners } from '../theme/heroBanners';
+import { retroAssets } from '../theme/retroAssets';
 
 function Matchups() {
   const [matchups, setMatchups] = useState([]);
@@ -75,6 +76,10 @@ function Matchups() {
     <div className="space-y-8">
       <PageHero
         {...heroBanners.matchups}
+        crestSrc={retroAssets[heroBanners.matchups.assetKey]?.crest.primary}
+        crestAlt="Matchup history crest"
+        tickerRailSrc={retroAssets[heroBanners.matchups.assetKey]?.chrome.tickerRail}
+        titlePlateSrc={retroAssets[heroBanners.matchups.assetKey]?.chrome.titlePlate}
         eyebrow="Redwood Rivalry Ledger"
         title="Matchup History"
         subtitle={`${matchups.length} total matchups across all seasons`}

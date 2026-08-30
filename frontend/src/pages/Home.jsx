@@ -8,6 +8,7 @@ import PageHero from '../components/ui/PageHero'
 import Panel from '../components/ui/Panel'
 import StatBadge from '../components/ui/StatBadge'
 import { heroBanners } from '../theme/heroBanners'
+import { retroAssets } from '../theme/retroAssets'
 
 const HeaderWithTooltip = ({ children, tooltip, onClick, buttonLabel }) => {
   const [showTooltip, setShowTooltip] = useState(false)
@@ -322,6 +323,10 @@ function Home() {
     <div className="space-y-6">
       <PageHero
         {...heroBanners.home}
+        crestSrc={retroAssets[heroBanners.home.assetKey]?.crest.primary}
+        crestAlt="Valley Natives crest"
+        tickerRailSrc={retroAssets[heroBanners.home.assetKey]?.chrome.tickerRail}
+        titlePlateSrc={retroAssets[heroBanners.home.assetKey]?.chrome.titlePlate}
         eyebrow="League history"
         title={metadata?.league_name || 'Fantasy Football League'}
         subtitle={`${metadata?.first_season}-${metadata?.latest_season} • ${metadata?.total_seasons} seasons • ${metadata?.total_owners} owners`}

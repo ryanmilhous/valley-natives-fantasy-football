@@ -4,6 +4,7 @@ import PageHero from '../components/ui/PageHero';
 import DataTableShell from '../components/ui/DataTableShell';
 import StatBadge from '../components/ui/StatBadge';
 import { heroBanners } from '../theme/heroBanners';
+import { retroAssets } from '../theme/retroAssets';
 
 function Playoffs() {
   const [playoffs, setPlayoffs] = useState([]);
@@ -39,6 +40,10 @@ function Playoffs() {
     <div className="space-y-8">
       <PageHero
         {...heroBanners.playoffs}
+        crestSrc={retroAssets[heroBanners.playoffs.assetKey]?.crest.primary}
+        crestAlt="Championship history crest"
+        tickerRailSrc={retroAssets[heroBanners.playoffs.assetKey]?.chrome.tickerRail}
+        titlePlateSrc={retroAssets[heroBanners.playoffs.assetKey]?.chrome.titlePlate}
         eyebrow="Hall of Champions"
         title="Championship History"
         subtitle={`${playoffs.length} seasons of glory`}

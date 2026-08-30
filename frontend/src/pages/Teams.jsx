@@ -6,6 +6,7 @@ import Panel from '../components/ui/Panel';
 import FilterBar from '../components/ui/FilterBar';
 import StatBadge from '../components/ui/StatBadge';
 import { heroBanners } from '../theme/heroBanners';
+import { retroAssets } from '../theme/retroAssets';
 
 function Teams() {
   const [owners, setOwners] = useState([]);
@@ -40,6 +41,10 @@ function Teams() {
     <div className="space-y-6">
       <PageHero
         {...heroBanners.teams}
+        crestSrc={retroAssets[heroBanners.teams.assetKey]?.crest.primary}
+        crestAlt="Owner profiles crest"
+        tickerRailSrc={retroAssets[heroBanners.teams.assetKey]?.chrome.tickerRail}
+        titlePlateSrc={retroAssets[heroBanners.teams.assetKey]?.chrome.titlePlate}
         eyebrow="Owner Almanac"
         title="Owner Profiles"
         subtitle="Career snapshots, trends, and seasonal history"

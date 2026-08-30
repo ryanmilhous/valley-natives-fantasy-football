@@ -2,6 +2,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { render, screen, waitFor } from '@testing-library/react'
 import Records from './Records'
 import apiService from '../services/api'
+import { heroBanners } from '../theme/heroBanners'
+import { retroAssets } from '../theme/retroAssets'
 
 const recordsFixture = {
   highest_score: {
@@ -201,6 +203,10 @@ describe('Records', () => {
     expect(screen.getByRole('table', { name: 'Wild records table' })).toBeInTheDocument()
 
     expect(container.querySelector('.vn-page-hero')).toBeTruthy()
+    const recordsRetro = retroAssets[heroBanners.records.assetKey]
+    expect(container.querySelector('.vn-page-hero__crest')).toHaveAttribute('src', recordsRetro.crest.primary)
+    expect(container.querySelector('.vn-page-hero__ticker-rail')).toHaveAttribute('src', recordsRetro.chrome.tickerRail)
+    expect(container.querySelector('.vn-page-hero__title-plate')).toHaveAttribute('src', recordsRetro.chrome.titlePlate)
     expect(container.querySelector('.vn-panel')).toBeTruthy()
     expect(container.querySelector('.vn-data-table-shell')).toBeTruthy()
     expect(container.querySelector('.vn-stat-badge')).toBeTruthy()

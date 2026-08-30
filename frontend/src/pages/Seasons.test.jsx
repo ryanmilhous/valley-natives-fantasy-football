@@ -3,6 +3,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import Seasons from './Seasons'
 import apiService from '../services/api'
+import { heroBanners } from '../theme/heroBanners'
+import { retroAssets } from '../theme/retroAssets'
 
 vi.mock('recharts', () => {
   return {
@@ -187,6 +189,10 @@ describe('Seasons', () => {
     expect(screen.getByLabelText('Championship timeline table scroll container')).toBeInTheDocument()
 
     expect(container.querySelector('.vn-page-hero')).toBeTruthy()
+    const seasonsRetro = retroAssets[heroBanners.seasons.assetKey]
+    expect(container.querySelector('.vn-page-hero__crest')).toHaveAttribute('src', seasonsRetro.crest.primary)
+    expect(container.querySelector('.vn-page-hero__ticker-rail')).toHaveAttribute('src', seasonsRetro.chrome.tickerRail)
+    expect(container.querySelector('.vn-page-hero__title-plate')).toHaveAttribute('src', seasonsRetro.chrome.titlePlate)
     expect(container.querySelector('.vn-panel')).toBeTruthy()
     expect(container.querySelector('.vn-data-table-shell')).toBeTruthy()
     expect(container.querySelector('.vn-filter-bar')).toBeTruthy()

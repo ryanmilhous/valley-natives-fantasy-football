@@ -2,6 +2,8 @@ import { describe, expect, it, vi, beforeEach } from 'vitest'
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import Home from './Home'
 import apiService from '../services/api'
+import { heroBanners } from '../theme/heroBanners'
+import { retroAssets } from '../theme/retroAssets'
 
 const metadataFixture = {
   league_name: 'Valley Natives League',
@@ -90,6 +92,10 @@ describe('Home', () => {
     expect(screen.getByText('2006-2025 • 20 seasons • 2 owners')).toBeInTheDocument()
 
     expect(container.querySelector('.vn-page-hero')).toBeTruthy()
+    const homeRetro = retroAssets[heroBanners.home.assetKey]
+    expect(container.querySelector('.vn-page-hero__crest')).toHaveAttribute('src', homeRetro.crest.primary)
+    expect(container.querySelector('.vn-page-hero__ticker-rail')).toHaveAttribute('src', homeRetro.chrome.tickerRail)
+    expect(container.querySelector('.vn-page-hero__title-plate')).toHaveAttribute('src', homeRetro.chrome.titlePlate)
     expect(container.querySelector('.vn-data-table-shell')).toBeTruthy()
     expect(container.querySelector('.vn-panel')).toBeTruthy()
     expect(container.querySelector('.vn-filter-bar')).toBeTruthy()

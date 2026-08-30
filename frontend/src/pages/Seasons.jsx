@@ -16,6 +16,7 @@ import FilterBar from '../components/ui/FilterBar'
 import StatBadge from '../components/ui/StatBadge'
 import apiService from '../services/api'
 import { heroBanners } from '../theme/heroBanners'
+import { retroAssets } from '../theme/retroAssets'
 
 function Seasons() {
   const [standings, setStandings] = useState([])
@@ -193,6 +194,10 @@ function Seasons() {
     <div className="space-y-6">
       <PageHero
         {...heroBanners.seasons}
+        crestSrc={retroAssets[heroBanners.seasons.assetKey]?.crest.primary}
+        crestAlt="Season archive crest"
+        tickerRailSrc={retroAssets[heroBanners.seasons.assetKey]?.chrome.tickerRail}
+        titlePlateSrc={retroAssets[heroBanners.seasons.assetKey]?.chrome.titlePlate}
         eyebrow="Valley Natives Archive"
         title="Season Archive"
         subtitle="League-wide standings and playoff outcomes with cleaner navigation through every year."
