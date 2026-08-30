@@ -9,6 +9,9 @@ import Records from './pages/Records';
 import Draft from './pages/Draft';
 import Rosters from './pages/Rosters';
 import Trades from './pages/Trades';
+import Playoffs from './pages/Playoffs';
+import BrandWordmark from './components/brand/BrandWordmark';
+import ValleyGlyph from './components/brand/ValleyGlyph';
 
 function NavLink({ to, children, onClick }) {
   const location = useLocation();
@@ -43,13 +46,8 @@ function App() {
           <div className="container mx-auto px-4 sm:px-6">
             <div className="flex items-center justify-between h-16 sm:h-20">
               <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
-                <div className="text-2xl sm:text-3xl group-hover:scale-110 transition-transform duration-200">🏈</div>
-                <div>
-                  <div className="text-base sm:text-xl font-bold text-[var(--vn-text-primary)] tracking-tight">
-                    Valley Natives
-                  </div>
-                  <div className="text-xs text-[var(--vn-text-secondary)] font-medium hidden sm:block">Fantasy Football</div>
-                </div>
+                <ValleyGlyph className="h-9 w-9 sm:h-11 sm:w-11 transition-transform duration-200 group-hover:scale-105" accent="gold" />
+                <BrandWordmark />
               </Link>
 
               {/* Desktop Navigation */}
@@ -57,8 +55,10 @@ function App() {
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/records">Records</NavLink>
                 <NavLink to="/seasons">Seasons</NavLink>
+                <NavLink to="/playoffs">Champions</NavLink>
                 <NavLink to="/draft">Draft</NavLink>
                 <NavLink to="/trades">Trades</NavLink>
+                <NavLink to="/teams">Owners</NavLink>
                 <NavLink to="/head-to-head">H2H</NavLink>
                 <NavLink to="/matchups">Matchups</NavLink>
                 <NavLink to="/rosters">Rosters</NavLink>
@@ -88,8 +88,10 @@ function App() {
                 <NavLink to="/" onClick={() => setMobileMenuOpen(false)}>Home</NavLink>
                 <NavLink to="/records" onClick={() => setMobileMenuOpen(false)}>Records</NavLink>
                 <NavLink to="/seasons" onClick={() => setMobileMenuOpen(false)}>Seasons</NavLink>
+                <NavLink to="/playoffs" onClick={() => setMobileMenuOpen(false)}>Champions</NavLink>
                 <NavLink to="/draft" onClick={() => setMobileMenuOpen(false)}>Draft</NavLink>
                 <NavLink to="/trades" onClick={() => setMobileMenuOpen(false)}>Trades</NavLink>
+                <NavLink to="/teams" onClick={() => setMobileMenuOpen(false)}>Owners</NavLink>
                 <NavLink to="/head-to-head" onClick={() => setMobileMenuOpen(false)}>H2H</NavLink>
                 <NavLink to="/matchups" onClick={() => setMobileMenuOpen(false)}>Matchups</NavLink>
                 <NavLink to="/rosters" onClick={() => setMobileMenuOpen(false)}>Rosters</NavLink>
@@ -107,6 +109,7 @@ function App() {
             <Route path="/head-to-head" element={<HeadToHead />} />
             <Route path="/teams" element={<Teams />} />
             <Route path="/records" element={<Records />} />
+            <Route path="/playoffs" element={<Playoffs />} />
             <Route path="/draft" element={<Draft />} />
             <Route path="/rosters" element={<Rosters />} />
             <Route path="/trades" element={<Trades />} />

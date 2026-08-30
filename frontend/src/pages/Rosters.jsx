@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import apiService from '../services/api';
+import PageHero from '../components/ui/PageHero';
+import FilterBar from '../components/ui/FilterBar';
+import StatBadge from '../components/ui/StatBadge';
+import ValleyGlyph from '../components/brand/ValleyGlyph';
 
 function Rosters() {
   const [rosters, setRosters] = useState([]);
@@ -59,51 +63,45 @@ function Rosters() {
 
   return (
     <div className="space-y-8">
-      {/* Page Header */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-green-600 via-emerald-600 to-teal-600 p-1">
-        <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8">
-          <div className="flex items-center space-x-4">
-            <div className="text-6xl">👥</div>
-            <div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent">
-                Team Rosters
-              </h1>
-              <p className="text-white/70 mt-2">Historical team compositions</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        eyebrow="Depth Chart Archive"
+        title="Team Rosters"
+        subtitle="Historical team compositions by season and owner"
+        actions={<StatBadge tone="top" label={`${filteredRosters.length} roster cards`} />}
+      >
+        <ValleyGlyph accent="teal" className="h-16 w-16 opacity-90" />
+      </PageHero>
 
       {/* Filters */}
-      <div className="flex items-center space-x-4">
-        <div className="flex-1">
-          <label className="block text-sm font-medium text-white/70 mb-2">Year</label>
+      <FilterBar className="grid grid-cols-1 md:grid-cols-2">
+        <div>
+          <label className="vn-input-label">Year</label>
           <select
             value={selectedYear || ''}
             onChange={(e) => {
               setSelectedYear(parseInt(e.target.value));
               setSelectedOwner('all');
             }}
-            className="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-white/10 focus:border-green-500 focus:outline-none"
+            className="vn-select"
           >
             {years.map(year => (
               <option key={year} value={year}>{year}</option>
             ))}
           </select>
         </div>
-        <div className="flex-1">
-          <label className="block text-sm font-medium text-white/70 mb-2">Owner</label>
+        <div>
+          <label className="vn-input-label">Owner</label>
           <select
             value={selectedOwner}
             onChange={(e) => setSelectedOwner(e.target.value)}
-            className="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-white/10 focus:border-green-500 focus:outline-none"
+            className="vn-select"
           >
             {owners.map(owner => (
               <option key={owner} value={owner}>{owner === 'all' ? 'All Owners' : owner}</option>
             ))}
           </select>
         </div>
-      </div>
+      </FilterBar>
 
       {/* Rosters Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

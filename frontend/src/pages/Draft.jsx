@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react';
 import apiService from '../services/api';
+import PageHero from '../components/ui/PageHero';
+import FilterBar from '../components/ui/FilterBar';
+import DataTableShell from '../components/ui/DataTableShell';
+import StatBadge from '../components/ui/StatBadge';
+import ValleyGlyph from '../components/brand/ValleyGlyph';
 
 function Draft() {
   const [draft, setDraft] = useState([]);
@@ -198,74 +203,67 @@ function Draft() {
 
   return (
     <div className="space-y-6">
-      {/* Page Header */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 p-1">
-        <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-6">
-          <div className="flex items-center space-x-4">
-            <div className="text-5xl">📋</div>
-            <div>
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Draft History
-              </h1>
-              <p className="text-white/70 mt-1 text-sm">
-                {draft.length} picks • Snake 2007-2011 • Auction 2012-present
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        eyebrow="Highway 9 Draft Archive"
+        title="Draft History"
+        subtitle="Snake era and auction era in one record book"
+        actions={(
+          <>
+            <span className="vn-hero-metric">{draft.length} picks</span>
+            <StatBadge tone="top" label="Snake 2007-2011" />
+            <StatBadge tone="champion" label="Auction 2012-present" />
+          </>
+        )}
+      >
+        <ValleyGlyph accent="teal" className="h-16 w-16 opacity-90" />
+      </PageHero>
 
       {/* Filters */}
-      <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 p-1">
-        <div className="bg-slate-900/90 backdrop-blur-xl rounded-xl p-4 border border-white/10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-              <label className="block text-xs font-medium text-white/70 mb-1">Year</label>
-              <select
-                value={selectedYear}
-                onChange={(e) => setSelectedYear(e.target.value)}
-                className="w-full px-3 py-2 rounded-lg bg-slate-800 text-white text-sm border border-white/10 focus:border-blue-500 focus:outline-none"
-              >
-                {years.map(year => (
-                  <option key={year} value={year}>{year === 'all' ? 'All Years' : year}</option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="block text-xs font-medium text-white/70 mb-1">Position</label>
-              <select
-                value={selectedPosition}
-                onChange={(e) => setSelectedPosition(e.target.value)}
-                className="w-full px-3 py-2 rounded-lg bg-slate-800 text-white text-sm border border-white/10 focus:border-blue-500 focus:outline-none"
-              >
-                {positions.map(position => (
-                  <option key={position} value={position}>{position === 'all' ? 'All Positions' : position}</option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="block text-xs font-medium text-white/70 mb-1">Owner</label>
-              <select
-                value={selectedOwner}
-                onChange={(e) => setSelectedOwner(e.target.value)}
-                className="w-full px-3 py-2 rounded-lg bg-slate-800 text-white text-sm border border-white/10 focus:border-blue-500 focus:outline-none"
-              >
-                {owners.map(owner => (
-                  <option key={owner} value={owner}>{owner === 'all' ? 'All Owners' : owner}</option>
-                ))}
-              </select>
-            </div>
-          </div>
+      <FilterBar className="grid grid-cols-1 md:grid-cols-3">
+        <div>
+          <label className="vn-input-label">Year</label>
+          <select
+            value={selectedYear}
+            onChange={(e) => setSelectedYear(e.target.value)}
+            className="vn-select"
+          >
+            {years.map(year => (
+              <option key={year} value={year}>{year === 'all' ? 'All Years' : year}</option>
+            ))}
+          </select>
         </div>
-      </div>
+        <div>
+          <label className="vn-input-label">Position</label>
+          <select
+            value={selectedPosition}
+            onChange={(e) => setSelectedPosition(e.target.value)}
+            className="vn-select"
+          >
+            {positions.map(position => (
+              <option key={position} value={position}>{position === 'all' ? 'All Positions' : position}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className="vn-input-label">Owner</label>
+          <select
+            value={selectedOwner}
+            onChange={(e) => setSelectedOwner(e.target.value)}
+            className="vn-select"
+          >
+            {owners.map(owner => (
+              <option key={owner} value={owner}>{owner === 'all' ? 'All Owners' : owner}</option>
+            ))}
+          </select>
+        </div>
+      </FilterBar>
 
       {/* Main Content: Draft Table + Value Picks Sidebar */}
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
         {/* Draft Table - Takes 2 columns on xl */}
         <div className="xl:col-span-2">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 p-1">
-            <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/10">
-              <div className="overflow-x-auto max-h-[700px] overflow-y-auto">
+          <DataTableShell title="Draft Ledger" subtitle={`Showing ${filteredDraft.length} picks`}>
+            <div className="overflow-x-auto max-h-[700px] overflow-y-auto vn-table-scroll" role="region" aria-label="Draft history table">
                 <table className="min-w-full">
                   <thead className="sticky top-0 bg-slate-900/95 backdrop-blur-xl">
                     <tr className="border-b border-white/10">
@@ -337,11 +335,7 @@ function Draft() {
                   </tbody>
                 </table>
               </div>
-              <div className="px-4 py-2 border-t border-white/10 text-xs text-white/50">
-                Showing {filteredDraft.length} picks
-              </div>
-            </div>
-          </div>
+          </DataTableShell>
         </div>
 
         {/* Value Picks Sidebar - Flex layout to avoid gaps */}
