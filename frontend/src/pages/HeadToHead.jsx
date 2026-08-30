@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react';
 import apiService from '../services/api';
+import PageHero from '../components/ui/PageHero';
+import FilterBar from '../components/ui/FilterBar';
+import Panel from '../components/ui/Panel';
+import DataTableShell from '../components/ui/DataTableShell';
+import ValleyGlyph from '../components/brand/ValleyGlyph';
 
 function HeadToHead() {
   const [h2hData, setH2hData] = useState({});
@@ -12,7 +17,7 @@ function HeadToHead() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [h2hResponse, ownersResponse] = await Promise.all([
+        const [h2hResponse] = await Promise.all([
           apiService.getAllHeadToHead(),
           apiService.getOwners(),
         ]);
@@ -60,57 +65,46 @@ function HeadToHead() {
 
   return (
     <div className="space-y-8">
-      {/* Page Header */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-600 via-pink-600 to-red-600 p-1">
-        <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8">
-          <div className="flex items-center space-x-4">
-            <div className="text-6xl">🥊</div>
-            <div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Head-to-Head Records
-              </h1>
-              <p className="text-white/70 mt-2">All-time rivalry matchups from 2007-2025</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        eyebrow="Rivalry Ledger"
+        title="Head-to-Head Records"
+        subtitle="All-time matchup records from 2007-2025"
+      >
+        <ValleyGlyph accent="rose" className="h-16 w-16 opacity-90" />
+      </PageHero>
 
       {/* Owner Selectors */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-red-500/10 p-1">
-        <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-6 border border-white/10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-medium text-white/70 mb-2">Select Owner 1</label>
-              <select
-                value={selectedOwner1}
-                onChange={(e) => setSelectedOwner1(e.target.value)}
-                className="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-white/10 focus:border-purple-500 focus:outline-none"
-              >
-                {owners.map(owner => (
-                  <option key={owner} value={owner}>{owner}</option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-white/70 mb-2">Select Owner 2</label>
-              <select
-                value={selectedOwner2}
-                onChange={(e) => setSelectedOwner2(e.target.value)}
-                className="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-white/10 focus:border-purple-500 focus:outline-none"
-              >
-                {owners.map(owner => (
-                  <option key={owner} value={owner}>{owner}</option>
-                ))}
-              </select>
-            </div>
-          </div>
+      <FilterBar className="grid grid-cols-1 md:grid-cols-2">
+        <div>
+          <label className="vn-input-label">Select Owner 1</label>
+          <select
+            value={selectedOwner1}
+            onChange={(e) => setSelectedOwner1(e.target.value)}
+            className="vn-select"
+          >
+            {owners.map(owner => (
+              <option key={owner} value={owner}>{owner}</option>
+            ))}
+          </select>
         </div>
-      </div>
+        <div>
+          <label className="vn-input-label">Select Owner 2</label>
+          <select
+            value={selectedOwner2}
+            onChange={(e) => setSelectedOwner2(e.target.value)}
+            className="vn-select"
+          >
+            {owners.map(owner => (
+              <option key={owner} value={owner}>{owner}</option>
+            ))}
+          </select>
+        </div>
+      </FilterBar>
 
       {/* H2H Result */}
       {record && (
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-red-500/10 p-1">
-          <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
+        <Panel className="p-2">
+          <div className="p-4 sm:p-8">
             <h2 className="text-2xl font-bold text-center mb-8">
               <span className="text-purple-400">{selectedOwner1}</span>
               <span className="text-white/50 mx-4">vs</span>
@@ -137,24 +131,22 @@ function HeadToHead() {
               )}
             </div>
           </div>
-        </div>
+        </Panel>
       )}
 
       {/* H2H Matrix */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-red-500/10 p-1">
-        <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-4 border border-white/10">
-          <h2 className="text-xl font-bold text-white mb-3">Complete Head-to-Head Matrix</h2>
-          <div className="overflow-x-auto">
+      <DataTableShell title="Complete Head-to-Head Matrix">
+          <div className="overflow-x-auto vn-table-scroll" role="region" aria-label="Head-to-head matrix">
             <table className="w-full text-xs">
               <thead className="border-b border-white/10">
                 <tr>
-                  <th className="px-2 py-2 text-left text-[11px] font-bold text-purple-400 uppercase sticky left-0 bg-slate-900/95 z-10">Owner</th>
+                  <th className="px-2 sm:px-3 py-2 text-left text-[11px] font-bold text-purple-400 uppercase sticky left-0 bg-slate-900/95 z-10">Owner</th>
                   {owners.map(owner => {
                     // Get first name + last initial (e.g., "Ryan Milhous" -> "Ryan M.")
                     const parts = owner.split(' ');
                     const shortName = parts.length > 1 ? `${parts[0]} ${parts[1][0]}.` : parts[0];
                     return (
-                      <th key={owner} className="px-1 py-2 text-center text-[10px] font-bold text-purple-400 whitespace-nowrap" title={owner}>
+                      <th key={owner} className="px-1 sm:px-2 py-2 text-center text-[10px] font-bold text-purple-400 whitespace-nowrap" title={owner}>
                         {shortName}
                       </th>
                     );
@@ -167,13 +159,13 @@ function HeadToHead() {
                   const shortName1 = parts1.length > 1 ? `${parts1[0]} ${parts1[1][0]}.` : parts1[0];
                   return (
                     <tr key={owner1} className="hover:bg-white/5 transition-colors">
-                      <td className="px-2 py-1.5 whitespace-nowrap text-[11px] font-medium text-white/90 sticky left-0 bg-slate-900/95 z-10" title={owner1}>
+                      <td className="px-2 sm:px-3 py-1.5 whitespace-nowrap text-[11px] font-medium text-white/90 sticky left-0 bg-slate-900/95 z-10" title={owner1}>
                         {shortName1}
                       </td>
                       {owners.map(owner2 => {
                         if (owner1 === owner2) {
                           return (
-                            <td key={owner2} className="px-1 py-1.5 text-center text-white/20 text-[10px]">
+                            <td key={owner2} className="px-1 sm:px-2 py-1.5 text-center text-white/20 text-[10px]">
                               —
                             </td>
                           );
@@ -182,7 +174,7 @@ function HeadToHead() {
                         const isWinning = rec.wins > rec.losses;
                         const isLosing = rec.losses > rec.wins;
                         return (
-                          <td key={owner2} className="px-1 py-1.5 text-center text-[10px]">
+                          <td key={owner2} className="px-1 sm:px-2 py-1.5 text-center text-[10px]">
                             <span className={`px-1 py-0.5 rounded ${
                               isWinning ? 'bg-green-500/20 text-green-400' :
                               isLosing ? 'bg-red-500/20 text-red-400' :
@@ -199,8 +191,7 @@ function HeadToHead() {
               </tbody>
             </table>
           </div>
-        </div>
-      </div>
+      </DataTableShell>
     </div>
   );
 }

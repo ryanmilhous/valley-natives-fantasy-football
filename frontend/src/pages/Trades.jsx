@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import apiService from '../services/api';
+import PageHero from '../components/ui/PageHero';
+import FilterBar from '../components/ui/FilterBar';
+import StatBadge from '../components/ui/StatBadge';
+import ValleyGlyph from '../components/brand/ValleyGlyph';
 
 function Trades() {
   const [trades, setTrades] = useState([]);
@@ -79,60 +83,54 @@ function Trades() {
 
   return (
     <div className="space-y-8">
-      {/* Page Header */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 p-1">
-        <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8">
-          <div className="flex items-center space-x-4">
-            <div className="text-6xl">🤝</div>
-            <div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                Trade History
-              </h1>
-              <p className="text-white/70 mt-2">{trades.length} trades on record (2019-present)</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        eyebrow="San Lorenzo Deal Log"
+        title="Trade History"
+        subtitle="Every move, every gamble, every keeper swing"
+        actions={(
+          <>
+            <span className="vn-hero-metric">{trades.length} trades</span>
+            <StatBadge tone="rivalry" label="2019-present" />
+          </>
+        )}
+      >
+        <ValleyGlyph accent="coral" className="h-16 w-16 opacity-90" />
+      </PageHero>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Main Content */}
         <div className="lg:col-span-3 space-y-6">
-          {/* Filters */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500/10 via-teal-500/10 to-cyan-500/10 p-1">
-            <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-6 border border-white/10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-white/70 mb-2">Year</label>
-                  <select
-                    value={selectedYear}
-                    onChange={(e) => setSelectedYear(e.target.value)}
-                    className="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-white/10 focus:border-emerald-500 focus:outline-none"
-                  >
-                    <option value="all">All Years</option>
-                    {years.map(year => (
-                      <option key={year} value={year}>{year}</option>
-                    ))}
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-white/70 mb-2">Owner</label>
-                  <select
-                    value={selectedOwner}
-                    onChange={(e) => setSelectedOwner(e.target.value)}
-                    className="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-white/10 focus:border-emerald-500 focus:outline-none"
-                  >
-                    <option value="all">All Owners</option>
-                    {owners.map(owner => (
-                      <option key={owner} value={owner}>{owner}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              <div className="mt-4 text-sm text-white/50">
-                Showing {filteredTrades.length} of {trades.length} trades
-              </div>
+          <FilterBar className="grid grid-cols-1 md:grid-cols-2">
+            <div>
+              <label className="vn-input-label">Year</label>
+              <select
+                value={selectedYear}
+                onChange={(e) => setSelectedYear(e.target.value)}
+                className="vn-select"
+              >
+                <option value="all">All Years</option>
+                {years.map(year => (
+                  <option key={year} value={year}>{year}</option>
+                ))}
+              </select>
             </div>
-          </div>
+            <div>
+              <label className="vn-input-label">Owner</label>
+              <select
+                value={selectedOwner}
+                onChange={(e) => setSelectedOwner(e.target.value)}
+                className="vn-select"
+              >
+                <option value="all">All Owners</option>
+                {owners.map(owner => (
+                  <option key={owner} value={owner}>{owner}</option>
+                ))}
+              </select>
+            </div>
+            <div className="text-xs text-[var(--vn-text-secondary)] md:col-span-2">
+              Showing {filteredTrades.length} of {trades.length} trades
+            </div>
+          </FilterBar>
 
           {/* No Trades Message */}
           {filteredTrades.length === 0 && (
