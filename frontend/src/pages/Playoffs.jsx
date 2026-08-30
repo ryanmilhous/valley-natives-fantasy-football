@@ -3,7 +3,8 @@ import apiService from '../services/api';
 import PageHero from '../components/ui/PageHero';
 import DataTableShell from '../components/ui/DataTableShell';
 import StatBadge from '../components/ui/StatBadge';
-import ValleyGlyph from '../components/brand/ValleyGlyph';
+import ValleyPhotoBadge from '../components/brand/ValleyPhotoBadge';
+import { valleyPhotos } from '../theme/valleyPhotos';
 
 function Playoffs() {
   const [playoffs, setPlayoffs] = useState([]);
@@ -43,7 +44,11 @@ function Playoffs() {
         subtitle={`${playoffs.length} seasons of glory`}
         actions={<StatBadge tone="champion" label="Legacy Records" />}
       >
-        <ValleyGlyph accent="gold" className="h-16 w-16 opacity-90" />
+        <ValleyPhotoBadge
+          src={valleyPhotos.redwoods.src}
+          alt={valleyPhotos.redwoods.alt}
+          label="SLV Champions Ground"
+        />
       </PageHero>
 
       {/* Trophy Case Grid */}

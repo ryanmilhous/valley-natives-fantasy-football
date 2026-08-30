@@ -3,7 +3,8 @@ import apiService from '../services/api';
 import PageHero from '../components/ui/PageHero';
 import FilterBar from '../components/ui/FilterBar';
 import StatBadge from '../components/ui/StatBadge';
-import ValleyGlyph from '../components/brand/ValleyGlyph';
+import ValleyPhotoBadge from '../components/brand/ValleyPhotoBadge';
+import { valleyPhotos } from '../theme/valleyPhotos';
 
 function Rosters() {
   const [rosters, setRosters] = useState([]);
@@ -69,7 +70,11 @@ function Rosters() {
         subtitle="Historical team compositions by season and owner"
         actions={<StatBadge tone="top" label={`${filteredRosters.length} roster cards`} />}
       >
-        <ValleyGlyph accent="teal" className="h-16 w-16 opacity-90" />
+        <ValleyPhotoBadge
+          src={valleyPhotos.roaringCamp.src}
+          alt={valleyPhotos.roaringCamp.alt}
+          label="Redwood Country"
+        />
       </PageHero>
 
       {/* Filters */}

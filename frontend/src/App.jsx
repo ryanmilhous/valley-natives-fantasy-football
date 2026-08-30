@@ -11,7 +11,8 @@ import Rosters from './pages/Rosters';
 import Trades from './pages/Trades';
 import Playoffs from './pages/Playoffs';
 import BrandWordmark from './components/brand/BrandWordmark';
-import ValleyGlyph from './components/brand/ValleyGlyph';
+import ValleyPhotoBadge from './components/brand/ValleyPhotoBadge';
+import { valleyPhotos } from './theme/valleyPhotos';
 
 function NavLink({ to, children, onClick }) {
   const location = useLocation();
@@ -46,7 +47,12 @@ function App() {
           <div className="container mx-auto px-4 sm:px-6">
             <div className="flex items-center justify-between h-16 sm:h-20">
               <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
-                <ValleyGlyph className="h-9 w-9 sm:h-11 sm:w-11 transition-transform duration-200 group-hover:scale-105" accent="gold" />
+                <ValleyPhotoBadge
+                  src={valleyPhotos.redwoods.src}
+                  alt={valleyPhotos.redwoods.alt}
+                  compact
+                  className="h-9 w-9 sm:h-11 sm:w-11 transition-transform duration-200 group-hover:scale-105"
+                />
                 <BrandWordmark />
               </Link>
 
@@ -121,6 +127,7 @@ function App() {
           <div className="container mx-auto px-6 text-center">
             <p className="font-medium text-[var(--vn-text-primary)]">Valley Natives Fantasy Football</p>
             <p className="mt-2 text-sm text-[var(--vn-text-secondary)]">Historical Data Explorer • 2007-2025</p>
+            <p className="mt-2 text-xs text-[var(--vn-text-secondary)]/70">Photography: Wikimedia Commons (Henry Cowell, Downtown Felton, Roaring Camp)</p>
           </div>
         </footer>
       </div>
