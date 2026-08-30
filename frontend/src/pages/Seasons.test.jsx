@@ -1,11 +1,10 @@
+import React from 'react'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import Seasons from './Seasons'
 import apiService from '../services/api'
 
 vi.mock('recharts', () => {
-  const React = require('react')
-
   return {
     ResponsiveContainer: ({ children }) => <div data-testid="responsive-container">{children}</div>,
     LineChart: ({ children }) => <div data-testid="line-chart">{children}</div>,
