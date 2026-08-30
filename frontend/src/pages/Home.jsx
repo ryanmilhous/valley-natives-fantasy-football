@@ -7,6 +7,7 @@ import FilterBar from '../components/ui/FilterBar'
 import PageHero from '../components/ui/PageHero'
 import Panel from '../components/ui/Panel'
 import StatBadge from '../components/ui/StatBadge'
+import { heroBanners } from '../theme/heroBanners'
 
 const HeaderWithTooltip = ({ children, tooltip, onClick, buttonLabel }) => {
   const [showTooltip, setShowTooltip] = useState(false)
@@ -320,7 +321,7 @@ function Home() {
   return (
     <div className="space-y-6">
       <PageHero
-        className="border border-white/10 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20"
+        {...heroBanners.home}
         eyebrow="League history"
         title={metadata?.league_name || 'Fantasy Football League'}
         subtitle={`${metadata?.first_season}-${metadata?.latest_season} • ${metadata?.total_seasons} seasons • ${metadata?.total_owners} owners`}

@@ -4,6 +4,7 @@ import Panel from '../components/ui/Panel'
 import DataTableShell from '../components/ui/DataTableShell'
 import StatBadge from '../components/ui/StatBadge'
 import apiService from '../services/api'
+import { heroBanners } from '../theme/heroBanners'
 
 function Records() {
   const [records, setRecords] = useState(null)
@@ -305,6 +306,7 @@ function Records() {
   return (
     <div className="space-y-6">
       <PageHero
+        {...heroBanners.records}
         eyebrow="Valley Natives Archive"
         title="League Records & Milestones"
         subtitle="An archival hierarchy of single-game feats, seasonal landmarks, and historical outliers."

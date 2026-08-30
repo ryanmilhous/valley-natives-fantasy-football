@@ -4,8 +4,7 @@ import PageHero from '../components/ui/PageHero';
 import FilterBar from '../components/ui/FilterBar';
 import DataTableShell from '../components/ui/DataTableShell';
 import StatBadge from '../components/ui/StatBadge';
-import ValleyPhotoBadge from '../components/brand/ValleyPhotoBadge';
-import { valleyPhotos } from '../theme/valleyPhotos';
+import { heroBanners } from '../theme/heroBanners';
 
 function Draft() {
   const [draft, setDraft] = useState([]);
@@ -205,6 +204,7 @@ function Draft() {
   return (
     <div className="space-y-6">
       <PageHero
+        {...heroBanners.draft}
         eyebrow="Highway 9 Draft Archive"
         title="Draft History"
         subtitle="Snake era and auction era in one record book"
@@ -215,13 +215,7 @@ function Draft() {
             <StatBadge tone="champion" label="Auction 2012-present" />
           </>
         )}
-      >
-        <ValleyPhotoBadge
-          src={valleyPhotos.roaringCamp.src}
-          alt={valleyPhotos.roaringCamp.alt}
-          label="Roaring Camp"
-        />
-      </PageHero>
+      />
 
       {/* Filters */}
       <FilterBar className="grid grid-cols-1 md:grid-cols-3">

@@ -15,6 +15,7 @@ import DataTableShell from '../components/ui/DataTableShell'
 import FilterBar from '../components/ui/FilterBar'
 import StatBadge from '../components/ui/StatBadge'
 import apiService from '../services/api'
+import { heroBanners } from '../theme/heroBanners'
 
 function Seasons() {
   const [standings, setStandings] = useState([])
@@ -191,6 +192,7 @@ function Seasons() {
   return (
     <div className="space-y-6">
       <PageHero
+        {...heroBanners.seasons}
         eyebrow="Valley Natives Archive"
         title="Season Archive"
         subtitle="League-wide standings and playoff outcomes with cleaner navigation through every year."

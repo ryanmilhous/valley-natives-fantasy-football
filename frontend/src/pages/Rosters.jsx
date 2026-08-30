@@ -3,8 +3,7 @@ import apiService from '../services/api';
 import PageHero from '../components/ui/PageHero';
 import FilterBar from '../components/ui/FilterBar';
 import StatBadge from '../components/ui/StatBadge';
-import ValleyPhotoBadge from '../components/brand/ValleyPhotoBadge';
-import { valleyPhotos } from '../theme/valleyPhotos';
+import { heroBanners } from '../theme/heroBanners';
 
 function Rosters() {
   const [rosters, setRosters] = useState([]);
@@ -65,17 +64,12 @@ function Rosters() {
   return (
     <div className="space-y-8">
       <PageHero
+        {...heroBanners.rosters}
         eyebrow="Depth Chart Archive"
         title="Team Rosters"
         subtitle="Historical team compositions by season and owner"
         actions={<StatBadge tone="top" label={`${filteredRosters.length} roster cards`} />}
-      >
-        <ValleyPhotoBadge
-          src={valleyPhotos.roaringCamp.src}
-          alt={valleyPhotos.roaringCamp.alt}
-          label="Redwood Country"
-        />
-      </PageHero>
+      />
 
       {/* Filters */}
       <FilterBar className="grid grid-cols-1 md:grid-cols-2">
