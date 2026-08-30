@@ -18,10 +18,10 @@ function NavLink({ to, children, onClick }) {
     <Link
       to={to}
       onClick={onClick}
-      className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+      className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 motion-reduce:transition-none focus-visible:ring-2 focus-visible:ring-[var(--vn-gold-500)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--vn-bg-800)] ${
         isActive
-          ? 'bg-white/20 text-white shadow-lg'
-          : 'text-white/80 hover:text-white hover:bg-white/10'
+          ? 'bg-[var(--vn-gold-500)]/20 text-[var(--vn-text-primary)] shadow-lg'
+          : 'text-[var(--vn-text-secondary)] hover:text-[var(--vn-text-primary)] hover:bg-[var(--vn-surface-700)]/70'
       }`}
     >
       {children}
@@ -34,18 +34,21 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <div className="vn-shell min-h-screen bg-gradient-to-br from-[var(--vn-bg-900)] via-[var(--vn-bg-800)] to-[var(--vn-bg-900)] text-[var(--vn-text-primary)]">
         {/* Navigation */}
-        <nav className="bg-gradient-to-r from-blue-600/90 to-purple-600/90 backdrop-blur-lg shadow-2xl sticky top-0 z-50 border-b border-white/10">
+        <nav
+          aria-label="Primary navigation"
+          className="vn-nav sticky top-0 z-50 border-b border-[var(--vn-gold-500)]/20 bg-gradient-to-r from-[var(--vn-surface-700)]/95 via-[var(--vn-redwood-600)]/85 to-[var(--vn-surface-700)]/95 backdrop-blur-lg shadow-2xl"
+        >
           <div className="container mx-auto px-4 sm:px-6">
             <div className="flex items-center justify-between h-16 sm:h-20">
               <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
                 <div className="text-2xl sm:text-3xl group-hover:scale-110 transition-transform duration-200">🏈</div>
                 <div>
-                  <div className="text-base sm:text-xl font-bold text-white tracking-tight">
+                  <div className="text-base sm:text-xl font-bold text-[var(--vn-text-primary)] tracking-tight">
                     Valley Natives
                   </div>
-                  <div className="text-xs text-white/70 font-medium hidden sm:block">Fantasy Football</div>
+                  <div className="text-xs text-[var(--vn-text-secondary)] font-medium hidden sm:block">Fantasy Football</div>
                 </div>
               </Link>
 
@@ -64,7 +67,10 @@ function App() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
+                aria-expanded={mobileMenuOpen}
+                aria-controls="mobile-nav-menu"
+                aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+                className="lg:hidden p-2 rounded-lg text-[var(--vn-text-primary)] hover:bg-[var(--vn-surface-700)]/70 transition-colors motion-reduce:transition-none focus-visible:ring-2 focus-visible:ring-[var(--vn-gold-500)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--vn-bg-800)]"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   {mobileMenuOpen ? (
@@ -78,7 +84,7 @@ function App() {
 
             {/* Mobile Navigation Menu */}
             {mobileMenuOpen && (
-              <div className="lg:hidden pb-4 space-y-2">
+              <div id="mobile-nav-menu" className="lg:hidden pb-4 space-y-2">
                 <NavLink to="/" onClick={() => setMobileMenuOpen(false)}>Home</NavLink>
                 <NavLink to="/records" onClick={() => setMobileMenuOpen(false)}>Records</NavLink>
                 <NavLink to="/seasons" onClick={() => setMobileMenuOpen(false)}>Seasons</NavLink>
@@ -108,10 +114,10 @@ function App() {
         </main>
 
         {/* Footer */}
-        <footer className="bg-slate-900/50 backdrop-blur-lg border-t border-white/10 py-8 mt-20">
+        <footer className="vn-footer mt-20 border-t border-[var(--vn-gold-500)]/20 bg-[var(--vn-bg-800)]/75 backdrop-blur-lg py-8">
           <div className="container mx-auto px-6 text-center">
-            <p className="text-white/80 font-medium">Valley Natives Fantasy Football</p>
-            <p className="text-sm text-white/50 mt-2">Historical Data Explorer • 2007-2025</p>
+            <p className="font-medium text-[var(--vn-text-primary)]">Valley Natives Fantasy Football</p>
+            <p className="mt-2 text-sm text-[var(--vn-text-secondary)]">Historical Data Explorer • 2007-2025</p>
           </div>
         </footer>
       </div>
