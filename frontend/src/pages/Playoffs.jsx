@@ -3,8 +3,7 @@ import apiService from '../services/api';
 import PageHero from '../components/ui/PageHero';
 import DataTableShell from '../components/ui/DataTableShell';
 import StatBadge from '../components/ui/StatBadge';
-import ValleyPhotoBadge from '../components/brand/ValleyPhotoBadge';
-import { valleyPhotos } from '../theme/valleyPhotos';
+import { heroBanners } from '../theme/heroBanners';
 
 function Playoffs() {
   const [playoffs, setPlayoffs] = useState([]);
@@ -39,17 +38,12 @@ function Playoffs() {
   return (
     <div className="space-y-8">
       <PageHero
+        {...heroBanners.playoffs}
         eyebrow="Hall of Champions"
         title="Championship History"
         subtitle={`${playoffs.length} seasons of glory`}
         actions={<StatBadge tone="champion" label="Legacy Records" />}
-      >
-        <ValleyPhotoBadge
-          src={valleyPhotos.redwoods.src}
-          alt={valleyPhotos.redwoods.alt}
-          label="SLV Champions Ground"
-        />
-      </PageHero>
+      />
 
       {/* Trophy Case Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

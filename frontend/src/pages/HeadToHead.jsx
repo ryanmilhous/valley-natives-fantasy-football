@@ -4,8 +4,7 @@ import PageHero from '../components/ui/PageHero';
 import FilterBar from '../components/ui/FilterBar';
 import Panel from '../components/ui/Panel';
 import DataTableShell from '../components/ui/DataTableShell';
-import ValleyPhotoBadge from '../components/brand/ValleyPhotoBadge';
-import { valleyPhotos } from '../theme/valleyPhotos';
+import { heroBanners } from '../theme/heroBanners';
 
 function HeadToHead() {
   const [h2hData, setH2hData] = useState({});
@@ -67,16 +66,11 @@ function HeadToHead() {
   return (
     <div className="space-y-8">
       <PageHero
+        {...heroBanners.headToHead}
         eyebrow="Rivalry Ledger"
         title="Head-to-Head Records"
         subtitle="All-time matchup records from 2007-2025"
-      >
-        <ValleyPhotoBadge
-          src={valleyPhotos.felton.src}
-          alt={valleyPhotos.felton.alt}
-          label="San Lorenzo Valley"
-        />
-      </PageHero>
+      />
 
       {/* Owner Selectors */}
       <FilterBar className="grid grid-cols-1 md:grid-cols-2">

@@ -3,8 +3,7 @@ import apiService from '../services/api';
 import PageHero from '../components/ui/PageHero';
 import FilterBar from '../components/ui/FilterBar';
 import DataTableShell from '../components/ui/DataTableShell';
-import ValleyPhotoBadge from '../components/brand/ValleyPhotoBadge';
-import { valleyPhotos } from '../theme/valleyPhotos';
+import { heroBanners } from '../theme/heroBanners';
 
 function Matchups() {
   const [matchups, setMatchups] = useState([]);
@@ -75,16 +74,11 @@ function Matchups() {
   return (
     <div className="space-y-8">
       <PageHero
+        {...heroBanners.matchups}
         eyebrow="Redwood Rivalry Ledger"
         title="Matchup History"
         subtitle={`${matchups.length} total matchups across all seasons`}
-      >
-        <ValleyPhotoBadge
-          src={valleyPhotos.redwoods.src}
-          alt={valleyPhotos.redwoods.alt}
-          label="Henry Cowell Redwoods"
-        />
-      </PageHero>
+      />
 
       {/* Filters */}
       <FilterBar className="grid grid-cols-1 md:grid-cols-2">

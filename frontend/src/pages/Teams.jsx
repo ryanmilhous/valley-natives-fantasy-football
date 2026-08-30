@@ -5,8 +5,7 @@ import PageHero from '../components/ui/PageHero';
 import Panel from '../components/ui/Panel';
 import FilterBar from '../components/ui/FilterBar';
 import StatBadge from '../components/ui/StatBadge';
-import ValleyPhotoBadge from '../components/brand/ValleyPhotoBadge';
-import { valleyPhotos } from '../theme/valleyPhotos';
+import { heroBanners } from '../theme/heroBanners';
 
 function Teams() {
   const [owners, setOwners] = useState([]);
@@ -40,16 +39,11 @@ function Teams() {
   return (
     <div className="space-y-6">
       <PageHero
+        {...heroBanners.teams}
         eyebrow="Owner Almanac"
         title="Owner Profiles"
         subtitle="Career snapshots, trends, and seasonal history"
-      >
-        <ValleyPhotoBadge
-          src={valleyPhotos.felton.src}
-          alt={valleyPhotos.felton.alt}
-          label="Felton"
-        />
-      </PageHero>
+      />
 
       {/* Owner Selector */}
       <FilterBar>

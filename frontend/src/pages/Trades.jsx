@@ -3,8 +3,7 @@ import apiService from '../services/api';
 import PageHero from '../components/ui/PageHero';
 import FilterBar from '../components/ui/FilterBar';
 import StatBadge from '../components/ui/StatBadge';
-import ValleyPhotoBadge from '../components/brand/ValleyPhotoBadge';
-import { valleyPhotos } from '../theme/valleyPhotos';
+import { heroBanners } from '../theme/heroBanners';
 
 function Trades() {
   const [trades, setTrades] = useState([]);
@@ -85,6 +84,7 @@ function Trades() {
   return (
     <div className="space-y-8">
       <PageHero
+        {...heroBanners.trades}
         eyebrow="San Lorenzo Deal Log"
         title="Trade History"
         subtitle="Every move, every gamble, every keeper swing"
@@ -94,13 +94,7 @@ function Trades() {
             <StatBadge tone="rivalry" label="2019-present" />
           </>
         )}
-      >
-        <ValleyPhotoBadge
-          src={valleyPhotos.felton.src}
-          alt={valleyPhotos.felton.alt}
-          label="Downtown Felton"
-        />
-      </PageHero>
+      />
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Main Content */}
