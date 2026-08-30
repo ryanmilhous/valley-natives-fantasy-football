@@ -32,3 +32,19 @@ describe('PageHero', () => {
     expect(container.querySelector('.vn-page-hero__body')).toBeTruthy()
   })
 })
+
+describe('PageHero retro slots', () => {
+  it('renders optional crest and ticker rail graphics', () => {
+    const { container } = render(
+      <PageHero
+        title="League Records"
+        imageSrc="https://upload.wikimedia.org/example.jpg"
+        crestSrc="https://assets.valleynatives.net/retro/crest-records-primary.png"
+        tickerRailSrc="https://assets.valleynatives.net/retro/ticker-records.png"
+      />,
+    )
+
+    expect(container.querySelector('.vn-page-hero__crest')).toBeTruthy()
+    expect(container.querySelector('.vn-page-hero__ticker-rail')).toBeTruthy()
+  })
+})
