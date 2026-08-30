@@ -73,33 +73,57 @@ const HeaderWithTooltip = ({ children, tooltip, onClick, buttonLabel }) => {
 
 const AchievementBadge = ({ emoji, count, years, bgColor, textColor, borderColor }) => {
   const [showTooltip, setShowTooltip] = useState(false)
+  const [position, setPosition] = useState({ top: 0, left: 0 })
+  const triggerRef = useRef(null)
+
+  const showBadgeTooltip = () => {
+    if (triggerRef.current) {
+      const rect = triggerRef.current.getBoundingClientRect()
+      setPosition({
+        top: rect.top - 8,
+        left: rect.left + rect.width / 2,
+      })
+    }
+    setShowTooltip(true)
+  }
 
   if (count === 0) {
     return <span className="text-white/30">-</span>
   }
 
   return (
-    <div className="relative inline-block">
+    <div className="inline-block">
       <button
+        ref={triggerRef}
         type="button"
         aria-label={`${count} achievements${years.length ? ` in ${years.join(', ')}` : ''}`}
         className={`inline-flex items-center space-x-1 px-2 py-1 rounded-full ${bgColor} ${textColor} font-bold border ${borderColor} hover:opacity-80 transition-all cursor-pointer`}
-        onMouseEnter={() => setShowTooltip(true)}
+        onMouseEnter={showBadgeTooltip}
         onMouseLeave={() => setShowTooltip(false)}
-        onFocus={() => setShowTooltip(true)}
+        onFocus={showBadgeTooltip}
         onBlur={() => setShowTooltip(false)}
       >
         <span>{emoji}</span>
         <span>{count}</span>
       </button>
-      {showTooltip && years.length > 0 && (
-        <div className="absolute z-10 bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-slate-800 text-white text-sm rounded-lg shadow-lg border border-white/20 whitespace-nowrap">
-          Years: {years.join(', ')}
-          <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
-            <div className="border-4 border-transparent border-t-slate-800"></div>
-          </div>
-        </div>
-      )}
+      {showTooltip &&
+        years.length > 0 &&
+        createPortal(
+          <div
+            className="fixed z-[9999] px-3 py-2 bg-slate-800 text-white text-sm rounded-lg shadow-lg border border-white/20 whitespace-nowrap pointer-events-none"
+            style={{
+              top: `${position.top}px`,
+              left: `${position.left}px`,
+              transform: 'translate(-50%, -100%)',
+            }}
+          >
+            Years: {years.join(', ')}
+            <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1">
+              <div className="border-4 border-transparent border-t-slate-800"></div>
+            </div>
+          </div>,
+          document.body,
+        )}
     </div>
   )
 }
@@ -598,9 +622,9 @@ function Home() {
                       emoji="🚽"
                       count={owner.all_time.toilet_bowl}
                       years={toiletBowlYears}
-                      bgColor="bg-brown-600/20"
+                      bgColor="bg-[var(--vn-redwood-600)]/20"
                       textColor="text-white"
-                      borderColor="border-brown-600/30"
+                      borderColor="border-[var(--vn-redwood-600)]/30"
                     />
                   </td>
                   <td className="px-1 py-3 whitespace-nowrap text-red-400 font-semibold text-sm">

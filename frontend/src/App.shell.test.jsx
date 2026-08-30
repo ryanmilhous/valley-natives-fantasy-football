@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, within } from '@testing-library/react'
 import App from './App'
 
 import { vi } from 'vitest'
@@ -23,5 +23,40 @@ describe('App shell', () => {
     expect(container.querySelector('.vn-shell')).toBeTruthy()
     expect(container.querySelector('.vn-nav')).toBeTruthy()
     expect(container.querySelector('.vn-footer')).toBeTruthy()
+  })
+
+  it('opens the mobile menu and toggles expanded state', () => {
+    const { container } = render(<App />)
+
+    const menuButton = within(container).getByRole('button', { name: 'Open menu' })
+    expect(menuButton).toHaveAttribute('aria-expanded', 'false')
+    expect(container.querySelector('#mobile-nav-menu')).toBeNull()
+
+    fireEvent.click(menuButton)
+
+    expect(menuButton).toHaveAttribute('aria-expanded', 'true')
+    expect(screen.getByRole('button', { name: 'Close menu' })).toBeTruthy()
+    const mobileMenu = container.querySelector('#mobile-nav-menu')
+    expect(mobileMenu).toBeTruthy()
+    expect(within(mobileMenu).getByRole('link', { name: 'Records' })).toBeTruthy()
+  })
+
+  it('closes mobile menu after selecting a mobile nav link', () => {
+    const { container } = render(<App />)
+
+    const menuButton = within(container).getByRole('button', { name: 'Open menu' })
+    fireEvent.click(menuButton)
+
+    const mobileMenu = container.querySelector('#mobile-nav-menu')
+    expect(mobileMenu).toBeTruthy()
+
+    const recordsLink = within(mobileMenu).getByRole('link', { name: 'Records' })
+    fireEvent.click(recordsLink)
+
+    expect(within(container).getByRole('button', { name: 'Open menu' })).toHaveAttribute(
+      'aria-expanded',
+      'false',
+    )
+    expect(container.querySelector('#mobile-nav-menu')).toBeNull()
   })
 })
