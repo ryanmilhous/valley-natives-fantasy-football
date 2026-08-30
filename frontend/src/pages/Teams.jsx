@@ -5,7 +5,8 @@ import PageHero from '../components/ui/PageHero';
 import Panel from '../components/ui/Panel';
 import FilterBar from '../components/ui/FilterBar';
 import StatBadge from '../components/ui/StatBadge';
-import ValleyGlyph from '../components/brand/ValleyGlyph';
+import ValleyPhotoBadge from '../components/brand/ValleyPhotoBadge';
+import { valleyPhotos } from '../theme/valleyPhotos';
 
 function Teams() {
   const [owners, setOwners] = useState([]);
@@ -43,7 +44,11 @@ function Teams() {
         title="Owner Profiles"
         subtitle="Career snapshots, trends, and seasonal history"
       >
-        <ValleyGlyph className="h-16 w-16 opacity-90" accent="teal" />
+        <ValleyPhotoBadge
+          src={valleyPhotos.felton.src}
+          alt={valleyPhotos.felton.alt}
+          label="Felton"
+        />
       </PageHero>
 
       {/* Owner Selector */}

@@ -3,7 +3,8 @@ import apiService from '../services/api';
 import PageHero from '../components/ui/PageHero';
 import FilterBar from '../components/ui/FilterBar';
 import StatBadge from '../components/ui/StatBadge';
-import ValleyGlyph from '../components/brand/ValleyGlyph';
+import ValleyPhotoBadge from '../components/brand/ValleyPhotoBadge';
+import { valleyPhotos } from '../theme/valleyPhotos';
 
 function Trades() {
   const [trades, setTrades] = useState([]);
@@ -94,7 +95,11 @@ function Trades() {
           </>
         )}
       >
-        <ValleyGlyph accent="coral" className="h-16 w-16 opacity-90" />
+        <ValleyPhotoBadge
+          src={valleyPhotos.felton.src}
+          alt={valleyPhotos.felton.alt}
+          label="Downtown Felton"
+        />
       </PageHero>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">

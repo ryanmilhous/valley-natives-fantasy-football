@@ -4,7 +4,8 @@ import PageHero from '../components/ui/PageHero';
 import FilterBar from '../components/ui/FilterBar';
 import Panel from '../components/ui/Panel';
 import DataTableShell from '../components/ui/DataTableShell';
-import ValleyGlyph from '../components/brand/ValleyGlyph';
+import ValleyPhotoBadge from '../components/brand/ValleyPhotoBadge';
+import { valleyPhotos } from '../theme/valleyPhotos';
 
 function HeadToHead() {
   const [h2hData, setH2hData] = useState({});
@@ -70,7 +71,11 @@ function HeadToHead() {
         title="Head-to-Head Records"
         subtitle="All-time matchup records from 2007-2025"
       >
-        <ValleyGlyph accent="rose" className="h-16 w-16 opacity-90" />
+        <ValleyPhotoBadge
+          src={valleyPhotos.felton.src}
+          alt={valleyPhotos.felton.alt}
+          label="San Lorenzo Valley"
+        />
       </PageHero>
 
       {/* Owner Selectors */}

@@ -3,7 +3,8 @@ import apiService from '../services/api';
 import PageHero from '../components/ui/PageHero';
 import FilterBar from '../components/ui/FilterBar';
 import DataTableShell from '../components/ui/DataTableShell';
-import ValleyGlyph from '../components/brand/ValleyGlyph';
+import ValleyPhotoBadge from '../components/brand/ValleyPhotoBadge';
+import { valleyPhotos } from '../theme/valleyPhotos';
 
 function Matchups() {
   const [matchups, setMatchups] = useState([]);
@@ -78,7 +79,11 @@ function Matchups() {
         title="Matchup History"
         subtitle={`${matchups.length} total matchups across all seasons`}
       >
-        <ValleyGlyph accent="rose" className="h-16 w-16 opacity-90" />
+        <ValleyPhotoBadge
+          src={valleyPhotos.redwoods.src}
+          alt={valleyPhotos.redwoods.alt}
+          label="Henry Cowell Redwoods"
+        />
       </PageHero>
 
       {/* Filters */}

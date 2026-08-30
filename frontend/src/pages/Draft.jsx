@@ -4,7 +4,8 @@ import PageHero from '../components/ui/PageHero';
 import FilterBar from '../components/ui/FilterBar';
 import DataTableShell from '../components/ui/DataTableShell';
 import StatBadge from '../components/ui/StatBadge';
-import ValleyGlyph from '../components/brand/ValleyGlyph';
+import ValleyPhotoBadge from '../components/brand/ValleyPhotoBadge';
+import { valleyPhotos } from '../theme/valleyPhotos';
 
 function Draft() {
   const [draft, setDraft] = useState([]);
@@ -215,7 +216,11 @@ function Draft() {
           </>
         )}
       >
-        <ValleyGlyph accent="teal" className="h-16 w-16 opacity-90" />
+        <ValleyPhotoBadge
+          src={valleyPhotos.roaringCamp.src}
+          alt={valleyPhotos.roaringCamp.alt}
+          label="Roaring Camp"
+        />
       </PageHero>
 
       {/* Filters */}
