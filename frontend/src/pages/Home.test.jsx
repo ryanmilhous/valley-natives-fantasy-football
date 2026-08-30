@@ -95,6 +95,7 @@ describe('Home', () => {
     expect(container.querySelector('.vn-filter-bar')).toBeTruthy()
 
     expect(screen.getByText(/Owners are ranked using a point system:/)).toBeInTheDocument()
+    expect(screen.getByRole('table', { name: 'All-time owner standings table' })).toBeInTheDocument()
   })
 
   it('keeps default ranking points tie-break sort and owner column sorting behavior', async () => {
@@ -106,13 +107,19 @@ describe('Home', () => {
     expect(within(dataRows[0]).getByText('Zane')).toBeInTheDocument()
     expect(within(dataRows[1]).getByText('Alex')).toBeInTheDocument()
 
-    fireEvent.click(screen.getAllByText('Owner')[0])
+    const ownerSortButton = screen.getAllByRole('button', { name: /sort by owner/i })[0]
+    const ownerHeader = screen.getAllByRole('columnheader', { name: /owner/i })[0]
+    expect(ownerHeader).toHaveAttribute('aria-sort', 'none')
+
+    fireEvent.click(ownerSortButton)
     const rowsAfterAsc = screen.getAllByRole('row').slice(1)
+    expect(ownerHeader).toHaveAttribute('aria-sort', 'ascending')
     expect(within(rowsAfterAsc[0]).getByText('Alex')).toBeInTheDocument()
     expect(within(rowsAfterAsc[1]).getByText('Zane')).toBeInTheDocument()
 
-    fireEvent.click(screen.getAllByText('Owner')[0])
+    fireEvent.click(ownerSortButton)
     const rowsAfterDesc = screen.getAllByRole('row').slice(1)
+    expect(ownerHeader).toHaveAttribute('aria-sort', 'descending')
     expect(within(rowsAfterDesc[0]).getByText('Zane')).toBeInTheDocument()
     expect(within(rowsAfterDesc[1]).getByText('Alex')).toBeInTheDocument()
   })

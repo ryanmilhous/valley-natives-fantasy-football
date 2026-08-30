@@ -195,11 +195,16 @@ describe('Records', () => {
     expect(screen.getByRole('heading', { name: 'Season Records' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Streak Records' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Wild Records' })).toBeInTheDocument()
+    expect(screen.getByRole('table', { name: 'Single game records table' })).toBeInTheDocument()
+    expect(screen.getByRole('table', { name: 'Season records table' })).toBeInTheDocument()
+    expect(screen.getByRole('table', { name: 'Streak records table' })).toBeInTheDocument()
+    expect(screen.getByRole('table', { name: 'Wild records table' })).toBeInTheDocument()
 
     expect(container.querySelector('.vn-page-hero')).toBeTruthy()
     expect(container.querySelector('.vn-panel')).toBeTruthy()
     expect(container.querySelector('.vn-data-table-shell')).toBeTruthy()
     expect(container.querySelector('.vn-stat-badge')).toBeTruthy()
+    expect(screen.getAllByLabelText(/table scroll container/i).length).toBeGreaterThan(0)
   })
 
   it('preserves record value formatting and year range semantics', async () => {

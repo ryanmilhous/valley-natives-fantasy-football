@@ -131,31 +131,48 @@ function Seasons() {
 
     if (finalStanding === 1) {
       return (
-        <span className="text-2xl" title="Champion">
-          🥇
-        </span>
+        <>
+          <span className="text-2xl" title="Champion" aria-hidden="true">
+            🥇
+          </span>
+          <span className="sr-only">Champion</span>
+        </>
       )
     } else if (finalStanding === 2) {
       return (
-        <span className="text-2xl" title="Runner-up">
-          🥈
-        </span>
+        <>
+          <span className="text-2xl" title="Runner-up" aria-hidden="true">
+            🥈
+          </span>
+          <span className="sr-only">Runner-up</span>
+        </>
       )
     } else if (finalStanding === 3) {
       return (
-        <span className="text-2xl" title="3rd Place">
-          🥉
-        </span>
+        <>
+          <span className="text-2xl" title="3rd Place" aria-hidden="true">
+            🥉
+          </span>
+          <span className="sr-only">3rd Place</span>
+        </>
       )
     } else if (isToiletBowl) {
       return (
-        <span className="text-2xl" title="Toilet Bowl (Last Place)">
-          🚽
-        </span>
+        <>
+          <span className="text-2xl" title="Toilet Bowl (Last Place)" aria-hidden="true">
+            🚽
+          </span>
+          <span className="sr-only">Toilet Bowl (Last Place)</span>
+        </>
       )
     }
 
-    return <span className="text-white/30">-</span>
+    return (
+      <>
+        <span className="text-white/30" aria-hidden="true">-</span>
+        <span className="sr-only">No podium finish</span>
+      </>
+    )
   }
 
   const trophySummary = useMemo(() => {
@@ -201,7 +218,7 @@ function Seasons() {
               data-testid="owner-select"
               value={selectedOwnerForChart?.owner || ''}
               onChange={(e) => setSelectedOwnerForChart(owners.find((o) => o.owner === e.target.value))}
-              className="min-w-52 rounded-lg border border-white/20 bg-slate-900/80 px-3 py-2 text-white"
+              className="min-w-52 rounded-lg border border-white/20 bg-slate-900/80 px-3 py-2 text-white focus-visible:ring-2 focus-visible:ring-[var(--vn-gold-500)] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
             >
               {owners.map((owner) => (
                 <option key={owner.owner} value={owner.owner}>
@@ -282,7 +299,7 @@ function Seasons() {
               data-testid="season-select"
               value={selectedYear || ''}
               onChange={(e) => setSelectedYear(parseInt(e.target.value, 10))}
-              className="min-w-40 rounded-lg border border-white/20 bg-slate-900/80 px-3 py-2 text-white"
+              className="min-w-40 rounded-lg border border-white/20 bg-slate-900/80 px-3 py-2 text-white focus-visible:ring-2 focus-visible:ring-[var(--vn-gold-500)] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
             >
               {years.map((year) => (
                 <option key={year} value={year}>
@@ -295,7 +312,8 @@ function Seasons() {
         }
       >
         <DataTableShell title={`${selectedYear || ''} Standings`}>
-          <table aria-label="Season standings table" className="min-w-full text-sm">
+          <div className="vn-table-scroll" tabIndex={0} aria-label="Season standings table scroll container">
+            <table aria-label="Season standings table" className="min-w-full text-sm">
             <thead>
               <tr className="border-b border-white/10 text-left text-white/60 uppercase tracking-wide text-xs">
                 <th className="px-3 py-2">Rank</th>
@@ -325,7 +343,8 @@ function Seasons() {
                 </tr>
               ))}
             </tbody>
-          </table>
+            </table>
+          </div>
         </DataTableShell>
       </Panel>
 
@@ -356,7 +375,8 @@ function Seasons() {
 
         <div className="mt-5">
           <DataTableShell title="Championship Timeline" subtitle="Season-by-season podium results.">
-            <table className="min-w-full text-sm">
+            <div className="vn-table-scroll" tabIndex={0} aria-label="Championship timeline table scroll container">
+              <table aria-label="Championship timeline table" className="min-w-full text-sm">
               <thead>
                 <tr className="border-b border-white/10 text-left text-white/60 uppercase tracking-wide text-xs">
                   <th className="px-3 py-2">Year</th>
@@ -375,7 +395,8 @@ function Seasons() {
                   </tr>
                 ))}
               </tbody>
-            </table>
+              </table>
+            </div>
           </DataTableShell>
         </div>
       </Panel>

@@ -18,7 +18,7 @@ function NavLink({ to, children, onClick }) {
     <Link
       to={to}
       onClick={onClick}
-      className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+      className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 motion-reduce:transition-none focus-visible:ring-2 focus-visible:ring-[var(--vn-gold-500)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--vn-bg-800)] ${
         isActive
           ? 'bg-[var(--vn-gold-500)]/20 text-[var(--vn-text-primary)] shadow-lg'
           : 'text-[var(--vn-text-secondary)] hover:text-[var(--vn-text-primary)] hover:bg-[var(--vn-surface-700)]/70'
@@ -36,7 +36,10 @@ function App() {
     <Router>
       <div className="vn-shell min-h-screen bg-gradient-to-br from-[var(--vn-bg-900)] via-[var(--vn-bg-800)] to-[var(--vn-bg-900)] text-[var(--vn-text-primary)]">
         {/* Navigation */}
-        <nav className="vn-nav sticky top-0 z-50 border-b border-[var(--vn-gold-500)]/20 bg-gradient-to-r from-[var(--vn-surface-700)]/95 via-[var(--vn-redwood-600)]/85 to-[var(--vn-surface-700)]/95 backdrop-blur-lg shadow-2xl">
+        <nav
+          aria-label="Primary navigation"
+          className="vn-nav sticky top-0 z-50 border-b border-[var(--vn-gold-500)]/20 bg-gradient-to-r from-[var(--vn-surface-700)]/95 via-[var(--vn-redwood-600)]/85 to-[var(--vn-surface-700)]/95 backdrop-blur-lg shadow-2xl"
+        >
           <div className="container mx-auto px-4 sm:px-6">
             <div className="flex items-center justify-between h-16 sm:h-20">
               <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
@@ -64,7 +67,10 @@ function App() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg text-[var(--vn-text-primary)] hover:bg-[var(--vn-surface-700)]/70 transition-colors"
+                aria-expanded={mobileMenuOpen}
+                aria-controls="mobile-nav-menu"
+                aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+                className="lg:hidden p-2 rounded-lg text-[var(--vn-text-primary)] hover:bg-[var(--vn-surface-700)]/70 transition-colors motion-reduce:transition-none focus-visible:ring-2 focus-visible:ring-[var(--vn-gold-500)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--vn-bg-800)]"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   {mobileMenuOpen ? (
@@ -78,7 +84,7 @@ function App() {
 
             {/* Mobile Navigation Menu */}
             {mobileMenuOpen && (
-              <div className="lg:hidden pb-4 space-y-2">
+              <div id="mobile-nav-menu" className="lg:hidden pb-4 space-y-2">
                 <NavLink to="/" onClick={() => setMobileMenuOpen(false)}>Home</NavLink>
                 <NavLink to="/records" onClick={() => setMobileMenuOpen(false)}>Records</NavLink>
                 <NavLink to="/seasons" onClick={() => setMobileMenuOpen(false)}>Seasons</NavLink>

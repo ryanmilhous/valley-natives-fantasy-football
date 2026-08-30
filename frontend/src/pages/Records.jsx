@@ -272,31 +272,33 @@ function Records() {
       : null,
   ].filter(Boolean)
 
-  const renderTable = (rows) => (
+  const renderTable = (rows, tableLabel) => (
     <DataTableShell empty={!rows.length} emptyMessage="No records available yet.">
-      <table className="min-w-full text-sm">
-        <thead>
-          <tr className="border-b border-white/10 text-left text-white/60 uppercase tracking-wide text-xs">
-            <th className="px-3 py-2">Record</th>
-            <th className="px-3 py-2">Value</th>
-            <th className="px-3 py-2">Entry</th>
-            <th className="px-3 py-2">Context</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row) => (
-            <tr key={row.key} className="border-b border-white/5 align-top">
-              <td className="px-3 py-3 font-semibold text-white">{row.record}</td>
-              <td className="px-3 py-3 text-yellow-300 font-semibold">{row.value}</td>
-              <td className="px-3 py-3 text-white/80">
-                <div>{row.entry}</div>
-                <div className="text-white/60 text-xs mt-1">{row.detail}</div>
-              </td>
-              <td className="px-3 py-3 text-white/60 text-xs">{row.context}</td>
+      <div className="vn-table-scroll" tabIndex={0} aria-label={`${tableLabel} scroll container`}>
+        <table aria-label={tableLabel} className="min-w-full text-sm">
+          <thead>
+            <tr className="border-b border-white/10 text-left text-white/60 uppercase tracking-wide text-xs">
+              <th className="px-3 py-2">Record</th>
+              <th className="px-3 py-2">Value</th>
+              <th className="px-3 py-2">Entry</th>
+              <th className="px-3 py-2">Context</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr key={row.key} className="border-b border-white/5 align-top">
+                <td className="px-3 py-3 font-semibold text-white">{row.record}</td>
+                <td className="px-3 py-3 text-yellow-300 font-semibold">{row.value}</td>
+                <td className="px-3 py-3 text-white/80">
+                  <div>{row.entry}</div>
+                  <div className="text-white/60 text-xs mt-1">{row.detail}</div>
+                </td>
+                <td className="px-3 py-3 text-white/60 text-xs">{row.context}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </DataTableShell>
   )
 
@@ -339,19 +341,19 @@ function Records() {
       </Panel>
 
       <Panel title="Single Game Records" subtitle="Weekly extremes across the full archive.">
-        {renderTable(singleGameRecords)}
+        {renderTable(singleGameRecords, 'Single game records table')}
       </Panel>
 
       <Panel title="Season Records" subtitle="Best and worst full-season outcomes.">
-        {renderTable(seasonRecords)}
+        {renderTable(seasonRecords, 'Season records table')}
       </Panel>
 
       <Panel title="Streak Records" subtitle="Longest sustained runs across seasons.">
-        {renderTable(streakRecords)}
+        {renderTable(streakRecords, 'Streak records table')}
       </Panel>
 
       <Panel title="Wild Records" subtitle="Outlier events that still define league history.">
-        {renderTable(wildRecords)}
+        {renderTable(wildRecords, 'Wild records table')}
       </Panel>
     </div>
   )

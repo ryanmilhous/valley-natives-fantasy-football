@@ -181,6 +181,10 @@ describe('Seasons', () => {
     expect(screen.getByRole('heading', { name: 'Season Archive' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Owner Performance Over Time' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Championship Timeline' })).toBeInTheDocument()
+    expect(screen.getByRole('table', { name: 'Season standings table' })).toBeInTheDocument()
+    expect(screen.getByRole('table', { name: 'Championship timeline table' })).toBeInTheDocument()
+    expect(screen.getByLabelText('Season standings table scroll container')).toBeInTheDocument()
+    expect(screen.getByLabelText('Championship timeline table scroll container')).toBeInTheDocument()
 
     expect(container.querySelector('.vn-page-hero')).toBeTruthy()
     expect(container.querySelector('.vn-panel')).toBeTruthy()
@@ -199,6 +203,8 @@ describe('Seasons', () => {
     expect(within(standingsTable).getByTitle('Runner-up')).toBeInTheDocument()
     expect(within(standingsTable).getByTitle('3rd Place')).toBeInTheDocument()
     expect(within(standingsTable).getByTitle('Toilet Bowl (Last Place)')).toBeInTheDocument()
+    expect(within(standingsTable).getByText('Champion')).toBeInTheDocument()
+    expect(within(standingsTable).getByText('Runner-up')).toBeInTheDocument()
 
     fireEvent.change(screen.getAllByTestId('season-select')[0], { target: { value: '2023' } })
 
